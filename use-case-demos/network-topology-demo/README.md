@@ -1,8 +1,7 @@
-#  Network Topology Demo
+# Network Topology Demo
 
 ## Summary
-Using PuppyGraph in this demo, we dynamically trace and display the network pathways from specific server nodes to downstream load balancers, 
-including scenarios involving failed nodes. 
+Using PuppyGraph in this demo, we dynamically trace and display the network pathways from specific server nodes to downstream load balancers, including scenarios involving failed nodes. 
 
 This visualization aids in rapid identification of critical points and potential vulnerabilities, enhancing network security management and response strategies.
 
