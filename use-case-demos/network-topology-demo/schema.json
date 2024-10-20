@@ -1,0 +1,202 @@
+{
+  "catalogs": [
+    {
+      "name": "iceberg_test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "loadbalancer",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "netdb",
+            "table": "loadbalancer"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "String",
+              "field": "IP",
+              "alias": "IP"
+            }
+          ]
+        }
+      },
+      {
+        "label": "servicenode",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "netdb",
+            "table": "servicenode"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "String",
+              "field": "IP",
+              "alias": "IP"
+            },
+            {
+              "type": "Double",
+              "field": "CPU",
+              "alias": "CPU"
+            },
+            {
+              "type": "Double",
+              "field": "Mem",
+              "alias": "Mem"
+            },
+            {
+              "type": "Double",
+              "field": "Disk",
+              "alias": "Disk"
+            },
+            {
+              "type": "String",
+              "field": "status",
+              "alias": "status"
+            },
+            {
+              "type": "Long",
+              "field": "balancerId",
+              "alias": "balancerId"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "request",
+        "fromVertex": "servicenode",
+        "toVertex": "loadbalancer",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "netdb",
+          "table": "request"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "nodeId",
+              "alias": "nodeId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "balancerId",
+              "alias": "balancerId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "name",
+            "alias": "name"
+          }
+        ]
+      },
+      {
+        "label": "distribute",
+        "fromVertex": "loadbalancer",
+        "toVertex": "servicenode",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "netdb",
+          "table": "distribute"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "balancerId",
+              "alias": "balancerId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "nodeId",
+              "alias": "nodeId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "name",
+            "alias": "name"
+          }
+        ]
+      }
+    ]
+  }
+}
