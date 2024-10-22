@@ -1,0 +1,702 @@
+{
+  "catalogs": [
+    {
+      "name": "iceberg_test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Customer",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "brazil_e_commerce",
+            "table": "olist_customers"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "customer_unique_id",
+                "alias": "customer_unique_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "customer_zip_code_prefix",
+              "alias": "customer_zip_code_prefix"
+            },
+            {
+              "type": "String",
+              "field": "customer_city",
+              "alias": "customer_city"
+            },
+            {
+              "type": "String",
+              "field": "customer_state",
+              "alias": "customer_state"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Order",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "brazil_e_commerce",
+            "table": "olist_orders"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "order_id",
+                "alias": "order_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "customer_unique_id",
+              "alias": "customer_unique_id"
+            },
+            {
+              "type": "String",
+              "field": "order_status",
+              "alias": "order_status"
+            },
+            {
+              "type": "DateTime",
+              "field": "order_purchase_timestamp",
+              "alias": "purchase_timestamp"
+            },
+            {
+              "type": "DateTime",
+              "field": "order_approved_at",
+              "alias": "approved_at"
+            },
+            {
+              "type": "DateTime",
+              "field": "order_delivered_carrier_date",
+              "alias": "delivered_carrier_date"
+            },
+            {
+              "type": "DateTime",
+              "field": "order_delivered_customer_date",
+              "alias": "delivered_customer_date"
+            },
+            {
+              "type": "DateTime",
+              "field": "order_estimated_delivery_date",
+              "alias": "estimated_delivery_date"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Geo",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "brazil_e_commerce",
+            "table": "olist_geolocation"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "geolocation_zip_code_prefix",
+                "alias": "geolocation_zip_code_prefix"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Double",
+              "field": "geolocation_lat",
+              "alias": "geolocation_lat"
+            },
+            {
+              "type": "Double",
+              "field": "geolocation_lng",
+              "alias": "geolocation_lng"
+            },
+            {
+              "type": "String",
+              "field": "geolocation_city",
+              "alias": "geolocation_city"
+            },
+            {
+              "type": "String",
+              "field": "geolocation_state",
+              "alias": "geolocation_state"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Product",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "brazil_e_commerce",
+            "table": "olist_products"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "product_id",
+                "alias": "product_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "product_category_name",
+              "alias": "product_category_name"
+            },
+            {
+              "type": "Int",
+              "field": "product_photos_qty",
+              "alias": "product_photos_qty"
+            },
+            {
+              "type": "Int",
+              "field": "product_weight_g",
+              "alias": "product_weight_g"
+            },
+            {
+              "type": "Int",
+              "field": "product_length_cm",
+              "alias": "product_length_cm"
+            },
+            {
+              "type": "Int",
+              "field": "product_height_cm",
+              "alias": "product_height_cm"
+            },
+            {
+              "type": "Int",
+              "field": "product_width_cm",
+              "alias": "product_width_cm"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Seller",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "brazil_e_commerce",
+            "table": "olist_sellers"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "seller_id",
+                "alias": "seller_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "seller_zip_code_prefix",
+              "alias": "seller_zip_code_prefix"
+            },
+            {
+              "type": "String",
+              "field": "seller_city",
+              "alias": "seller_city"
+            },
+            {
+              "type": "String",
+              "field": "seller_state",
+              "alias": "seller_state"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Payment",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "brazil_e_commerce",
+            "table": "olist_order_payments"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "payment_id",
+                "alias": "payment_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "order_id"
+            },
+            {
+              "type": "Int",
+              "field": "payment_sequential",
+              "alias": "payment_sequential"
+            },
+            {
+              "type": "String",
+              "field": "payment_type",
+              "alias": "payment_type"
+            },
+            {
+              "type": "Int",
+              "field": "payment_installments",
+              "alias": "payment_installments"
+            },
+            {
+              "type": "Float",
+              "field": "payment_value",
+              "alias": "payment_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Review",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "brazil_e_commerce",
+            "table": "olist_order_reviews"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "review_id",
+                "alias": "review_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "order_id"
+            },
+            {
+              "type": "Int",
+              "field": "review_score",
+              "alias": "review_score"
+            },
+            {
+              "type": "String",
+              "field": "review_comment_title",
+              "alias": "review_comment_title"
+            },
+            {
+              "type": "String",
+              "field": "review_comment_message",
+              "alias": "review_comment_message"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "CusToOrder",
+        "fromVertex": "Customer",
+        "toVertex": "Order",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "brazil_e_commerce",
+          "table": "olist_orders"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "customer_unique_id",
+              "alias": "customer_unique_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "order_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "DateTime",
+            "field": "order_delivered_customer_date",
+            "alias": "delivered_customer_date"
+          }
+        ]
+      },
+      {
+        "label": "OrderToProduct",
+        "fromVertex": "Order",
+        "toVertex": "Product",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "brazil_e_commerce",
+          "table": "olist_order_items"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "unique_item_id",
+              "alias": "unique_item_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "order_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "product_id",
+              "alias": "product_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Int",
+            "field": "order_item_id",
+            "alias": "order_item_id"
+          },
+          {
+            "type": "DateTime",
+            "field": "shipping_limit_date",
+            "alias": "shipping_limit_date"
+          },
+          {
+            "type": "Float",
+            "field": "price",
+            "alias": "price"
+          },
+          {
+            "type": "Float",
+            "field": "freight_value",
+            "alias": "freight_value"
+          }
+        ]
+      },
+      {
+        "label": "OrderToSeller",
+        "fromVertex": "Order",
+        "toVertex": "Seller",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "brazil_e_commerce",
+          "table": "olist_order_items"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "unique_item_id",
+              "alias": "unique_item_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "order_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "seller_id",
+              "alias": "to_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "seller_id",
+            "alias": "seller_id"
+          },
+          {
+            "type": "Int",
+            "field": "order_item_id",
+            "alias": "order_item_id"
+          },
+          {
+            "type": "DateTime",
+            "field": "shipping_limit_date",
+            "alias": "shipping_limit_date"
+          },
+          {
+            "type": "Float",
+            "field": "price",
+            "alias": "price"
+          },
+          {
+            "type": "Float",
+            "field": "freight_value",
+            "alias": "freight_value"
+          }
+        ]
+      },
+      {
+        "label": "OrderToPayment",
+        "fromVertex": "Order",
+        "toVertex": "Payment",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "brazil_e_commerce",
+          "table": "olist_order_payments"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "payment_id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "order_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "payment_id",
+              "alias": "payment_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Int",
+            "field": "payment_sequential",
+            "alias": "payment_sequential"
+          }
+        ]
+      },
+      {
+        "label": "SellerToOrder",
+        "fromVertex": "Seller",
+        "toVertex": "Order",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "brazil_e_commerce",
+          "table": "olist_order_items"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "unique_item_id",
+              "alias": "unique_item_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "seller_id",
+              "alias": "seller_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "order_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Int",
+            "field": "order_item_id",
+            "alias": "order_item_id"
+          },
+          {
+            "type": "DateTime",
+            "field": "shipping_limit_date",
+            "alias": "shipping_limit_date"
+          },
+          {
+            "type": "Float",
+            "field": "price",
+            "alias": "price"
+          },
+          {
+            "type": "Float",
+            "field": "freight_value",
+            "alias": "freight_value"
+          }
+        ]
+      },
+      {
+        "label": "SellerToGeo",
+        "fromVertex": "Seller",
+        "toVertex": "Geo",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "brazil_e_commerce",
+          "table": "olist_sellers"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "seller_id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "seller_id",
+              "alias": "seller_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "seller_zip_code_prefix",
+              "alias": "seller_zip_code_prefix"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "seller_city",
+            "alias": "seller_city"
+          },
+          {
+            "type": "String",
+            "field": "seller_state",
+            "alias": "seller_state"
+          }
+        ]
+      },
+      {
+        "label": "ReviewToOrder",
+        "fromVertex": "Review",
+        "toVertex": "Order",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "brazil_e_commerce",
+          "table": "olist_order_reviews"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "review_id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "review_id",
+              "alias": "review_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "order_id",
+              "alias": "order_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Int",
+            "field": "review_score",
+            "alias": "review_score"
+          },
+          {
+            "type": "String",
+            "field": "review_comment_message",
+            "alias": "review_comment_message"
+          }
+        ]
+      }
+    ]
+  }
+}

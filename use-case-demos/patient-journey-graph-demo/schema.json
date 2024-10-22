@@ -1,0 +1,379 @@
+{
+  "catalogs": [
+    {
+      "name": "iceberg_test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "patient",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "mimiciv_hosp",
+            "table": "patients"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "subject_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "gender",
+              "alias": "gender"
+            },
+            {
+              "type": "Int",
+              "field": "subject_id",
+              "alias": "subject_id"
+            },
+            {
+              "type": "Int",
+              "field": "anchor_age",
+              "alias": "anchor_age"
+            },
+            {
+              "type": "Int",
+              "field": "anchor_year",
+              "alias": "anchor_year"
+            },
+            {
+              "type": "String",
+              "field": "anchor_year_group",
+              "alias": "anchor_year_group"
+            },
+            {
+              "type": "Date",
+              "field": "dod",
+              "alias": "dod"
+            }
+          ]
+        }
+      },
+      {
+        "label": "admission",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "mimiciv_hosp",
+            "table": "admissions"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "hadm_id",
+                "alias": "hadm_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "admission_type",
+              "alias": "admission_type"
+            },
+            {
+              "type": "String",
+              "field": "admission_location",
+              "alias": "admission_location"
+            },
+            {
+              "type": "DateTime",
+              "field": "admittime",
+              "alias": "admittime"
+            },
+            {
+              "type": "String",
+              "field": "discharge_location",
+              "alias": "discharge_location"
+            },
+            {
+              "type": "DateTime",
+              "field": "dischtime",
+              "alias": "dischtime"
+            },
+            {
+              "type": "String",
+              "field": "insurance",
+              "alias": "insurance"
+            }
+          ]
+        }
+      },
+      {
+        "label": "diagnosis",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "mimiciv_hosp",
+            "table": "diagnoses_icd"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "unique_id",
+                "alias": "unique_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Int",
+              "field": "seq_num",
+              "alias": "seq_num"
+            },
+            {
+              "type": "String",
+              "field": "icd_code",
+              "alias": "icd_code"
+            },
+            {
+              "type": "Int",
+              "field": "icd_version",
+              "alias": "icd_version"
+            }
+          ]
+        }
+      },
+      {
+        "label": "dim_diagnosis",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "mimiciv_hosp",
+            "table": "d_icd_diagnoses"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "icd_code_full",
+                "alias": "icd_code_full"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "icd_code",
+              "alias": "icd_code"
+            },
+            {
+              "type": "Int",
+              "field": "icd_version",
+              "alias": "icd_version"
+            },
+            {
+              "type": "String",
+              "field": "long_title",
+              "alias": "long_title"
+            }
+          ]
+        }
+      },
+      {
+        "label": "provider",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "mimiciv_hosp",
+            "table": "provider"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "provider_id",
+                "alias": "provider_id"
+              }
+            ]
+          },
+          "attributes": []
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "admitted_to",
+        "fromVertex": "patient",
+        "toVertex": "admission",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "mimiciv_hosp",
+          "table": "admissions"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "hadm_id",
+              "alias": "hadm_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "subject_id",
+              "alias": "subject_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "hadm_id",
+              "alias": "to_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "diagnosed_as",
+        "fromVertex": "admission",
+        "toVertex": "diagnosis",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "mimiciv_hosp",
+          "table": "diagnoses_icd"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "unique_id",
+              "alias": "unique_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "hadm_id",
+              "alias": "hadm_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "unique_id",
+              "alias": "to_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Int",
+            "field": "seq_num",
+            "alias": "seq_num"
+          }
+        ]
+      },
+      {
+        "label": "belongs_dim",
+        "fromVertex": "diagnosis",
+        "toVertex": "dim_diagnosis",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "mimiciv_hosp",
+          "table": "diagnoses_icd"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "unique_id",
+              "alias": "unique_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "unique_id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "icd_code_full",
+              "alias": "icd_code_full"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "provided_by",
+        "fromVertex": "admission",
+        "toVertex": "provider",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "mimiciv_hosp",
+          "table": "admissions"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "hadm_id",
+              "alias": "hadm_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "hadm_id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "admit_provider_id",
+              "alias": "admit_provider_id"
+            }
+          ]
+        },
+        "attributes": []
+      }
+    ]
+  }
+}

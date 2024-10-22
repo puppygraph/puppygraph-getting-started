@@ -1,0 +1,423 @@
+{
+  "catalogs": [
+    {
+      "name": "iceberg_test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "User",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "fraud_db",
+            "table": "User"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Int",
+              "field": "fraudMoneyTransfer",
+              "alias": "fraudMoneyTransfer"
+            },
+            {
+              "type": "Date",
+              "field": "firstChargebackMtDate",
+              "alias": "firstChargebackMtDate"
+            },
+            {
+              "type": "Float",
+              "field": "moneyTransferErrorCancelAmount",
+              "alias": "moneyTransferErrorCancelAmount"
+            },
+            {
+              "type": "String",
+              "field": "guid",
+              "alias": "guid"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Card",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "fraud_db",
+            "table": "Card"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "cardType",
+              "alias": "cardType"
+            },
+            {
+              "type": "String",
+              "field": "level",
+              "alias": "level"
+            },
+            {
+              "type": "String",
+              "field": "guid",
+              "alias": "guid"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Device",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "fraud_db",
+            "table": "Device"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "os",
+              "alias": "os"
+            },
+            {
+              "type": "String",
+              "field": "device",
+              "alias": "device"
+            },
+            {
+              "type": "String",
+              "field": "guid",
+              "alias": "guid"
+            }
+          ]
+        }
+      },
+      {
+        "label": "IP",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "fraud_db",
+            "table": "IP"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "guid",
+              "alias": "guid"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "USE_DEVICE",
+        "fromVertex": "User",
+        "toVertex": "Device",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "fraud_db",
+          "table": "USED"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "from_user_id",
+              "alias": "from_user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "to_device_id",
+              "alias": "to_device_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Date",
+            "field": "deviceDate",
+            "alias": "deviceDate"
+          }
+        ]
+      },
+      {
+        "label": "P2P",
+        "fromVertex": "User",
+        "toVertex": "User",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "fraud_db",
+          "table": "P2P"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "from_user_id",
+              "alias": "from_user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "to_user_id",
+              "alias": "to_user_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "DateTime",
+            "field": "transactionDateTime",
+            "alias": "transactionDateTime"
+          },
+          {
+            "type": "Float",
+            "field": "totalAmount",
+            "alias": "totalAmount"
+          }
+        ]
+      },
+      {
+        "label": "REFERRED",
+        "fromVertex": "User",
+        "toVertex": "User",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "fraud_db",
+          "table": "REFERRED"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "from_user_id",
+              "alias": "from_user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "to_user_id",
+              "alias": "to_user_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_CARD",
+        "fromVertex": "User",
+        "toVertex": "Card",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "fraud_db",
+          "table": "HAS_CC"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "from_user_id",
+              "alias": "from_user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "to_card_id",
+              "alias": "to_card_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Date",
+            "field": "cardDate",
+            "alias": "cardDate"
+          }
+        ]
+      },
+      {
+        "label": "HAS_IP",
+        "fromVertex": "User",
+        "toVertex": "IP",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "fraud_db",
+          "table": "HAS_IP"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "from_user_id",
+              "alias": "from_user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "to_ip_id",
+              "alias": "to_ip_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Date",
+            "field": "ipDate",
+            "alias": "ipDate"
+          }
+        ]
+      },
+      {
+        "label": "PatternAssociation",
+        "fromVertex": "User",
+        "toVertex": "User",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "fraud_db",
+          "table": "SharedCardTransfers"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "from_user_id",
+              "alias": "from_user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "to_user_id",
+              "alias": "to_user_id"
+            }
+          ]
+        },
+        "attributes": []
+      }
+    ]
+  }
+}
