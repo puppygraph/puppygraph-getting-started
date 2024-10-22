@@ -1,0 +1,371 @@
+{
+  "catalogs": [
+    {
+      "name": "iceberg_test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Group",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "Financial_Service",
+            "table": "Group"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "ID",
+                "alias": "ID"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "Name",
+              "alias": "Name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Person",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "Financial_Service",
+            "table": "Person"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "ID",
+                "alias": "ID"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "Name",
+              "alias": "Name"
+            },
+            {
+              "type": "Date",
+              "field": "Birthday",
+              "alias": "Birthday"
+            },
+            {
+              "type": "String",
+              "field": "Email",
+              "alias": "Email"
+            },
+            {
+              "type": "String",
+              "field": "PhoneNum",
+              "alias": "PhoneNum"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Trust",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "Financial_Service",
+            "table": "Trust"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "ID",
+                "alias": "ID"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "Name",
+              "alias": "Name"
+            },
+            {
+              "type": "String",
+              "field": "TrustType",
+              "alias": "TrustType"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Account",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "Financial_Service",
+            "table": "Account"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "ID",
+                "alias": "ID"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "AccountNumber",
+              "alias": "AccountNumber"
+            },
+            {
+              "type": "String",
+              "field": "AccountType",
+              "alias": "AccountType"
+            },
+            {
+              "type": "Double",
+              "field": "Balance",
+              "alias": "Balance"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Securities",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "Financial_Service",
+            "table": "Securities"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "ID",
+                "alias": "ID"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "SecurityType",
+              "alias": "SecurityType"
+            },
+            {
+              "type": "String",
+              "field": "SecurityName",
+              "alias": "SecurityName"
+            },
+            {
+              "type": "Float",
+              "field": "CurrentPrice",
+              "alias": "CurrentPrice"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "GroupHasPerson",
+        "fromVertex": "Group",
+        "toVertex": "Person",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "GroupPerson"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "ID",
+              "alias": "ID"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "GroupID",
+              "alias": "GroupID"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "PersonID",
+              "alias": "PersonID"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "PersonHasTrust",
+        "fromVertex": "Person",
+        "toVertex": "Trust",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "PersonTrust"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "ID",
+              "alias": "ID"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "PersonID",
+              "alias": "PersonID"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "TrustID",
+              "alias": "TrustID"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Float",
+            "field": "Weight",
+            "alias": "Weight"
+          }
+        ]
+      },
+      {
+        "label": "TrustHasAccount",
+        "fromVertex": "Trust",
+        "toVertex": "Account",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "TrustAccount"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "ID",
+              "alias": "ID"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "TrustID",
+              "alias": "TrustID"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "AccountID",
+              "alias": "AccountID"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "AccountHasSecurities",
+        "fromVertex": "Account",
+        "toVertex": "Securities",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "AccountSecurities"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "ID",
+              "alias": "ID"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "AccountID",
+              "alias": "AccountID"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "SecurityID",
+              "alias": "SecurityID"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Int",
+            "field": "Quantity",
+            "alias": "Quantity"
+          },
+          {
+            "type": "Date",
+            "field": "PurchaseDate",
+            "alias": "PurchaseDate"
+          },
+          {
+            "type": "Float",
+            "field": "PurchasePrice",
+            "alias": "PurchasePrice"
+          }
+        ]
+      }
+    ]
+  }
+}
