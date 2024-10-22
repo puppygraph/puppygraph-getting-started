@@ -17,7 +17,7 @@ This knowledge graph enables the detection of fraudulent activities on a larger 
 - **`README.md`**: Provides an overview of the project, including setup instructions and key details about the fraud detection process.
 - **`docker-compose.yaml`**: Sets up the necessary services using Docker, defining containers and environments such as databases and applications to run the demo.
 - **`wcc_fraud_detection.py`**: Implements the WCC algorithm to identify suspected fraudulent users based on their connections to known fraudsters.
-- **`parquet_data/`**:  Contains Parquet files generated from CSV files, used for importing data into Iceberg for further analysis.
+- **`parquet_data/`**:  Contains Parquet files generated from CSV files, used for importing data into Iceberg for further analysis. This dataset was provided by [p2p-dataset](https://drive.google.com/drive/folders/1LaNFObKnZb1Ty8T7kPLCYlXDUlHU7FGa). It is licensed under the Open Data Commons Attribution License (ODC-BY). Modifications have been made to the original dataset. You can find the license details [here](https://opendatacommons.org/licenses/by/).
 
 ## Deployment
 - Run the following command to start the Apache Iceberg services and PuppyGraph:
