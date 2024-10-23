@@ -1,0 +1,501 @@
+id,customername,city,state,location_id
+306,Customer 306,Chicago,NY,1
+317,Customer 317,Chicago,NY,1
+322,Customer 322,Chicago,NY,1
+326,Customer 326,Chicago,NY,1
+331,Customer 331,Chicago,CA,1
+333,Customer 333,Chicago,CA,1
+336,Customer 336,Chicago,IL,1
+343,Customer 343,Chicago,NY,1
+349,Customer 349,Chicago,IL,1
+358,Customer 358,Chicago,NY,1
+361,Customer 361,Chicago,CA,1
+363,Customer 363,Chicago,NY,1
+367,Customer 367,Chicago,IL,1
+371,Customer 371,Chicago,NY,1
+378,Customer 378,Chicago,IL,1
+380,Customer 380,Chicago,IL,1
+384,Customer 384,Chicago,CA,1
+385,Customer 385,Chicago,CA,1
+388,Customer 388,Chicago,IL,1
+393,Customer 393,Chicago,CA,1
+395,Customer 395,Chicago,IL,1
+396,Customer 396,Chicago,CA,1
+397,Customer 397,Chicago,NY,1
+399,Customer 399,Chicago,IL,1
+304,Customer 304,New York,CA,4
+309,Customer 309,New York,IL,4
+310,Customer 310,New York,NY,4
+312,Customer 312,New York,CA,4
+316,Customer 316,New York,IL,4
+325,Customer 325,New York,CA,4
+328,Customer 328,New York,NY,4
+337,Customer 337,New York,CA,4
+338,Customer 338,New York,IL,4
+344,Customer 344,New York,IL,4
+345,Customer 345,New York,IL,4
+347,Customer 347,New York,NY,4
+348,Customer 348,New York,CA,4
+350,Customer 350,New York,NY,4
+353,Customer 353,New York,CA,4
+355,Customer 355,New York,NY,4
+359,Customer 359,New York,IL,4
+360,Customer 360,New York,CA,4
+365,Customer 365,New York,NY,4
+370,Customer 370,New York,CA,4
+373,Customer 373,New York,NY,4
+374,Customer 374,New York,NY,4
+376,Customer 376,New York,CA,4
+377,Customer 377,New York,NY,4
+379,Customer 379,New York,CA,4
+381,Customer 381,New York,IL,4
+387,Customer 387,New York,NY,4
+390,Customer 390,New York,IL,4
+391,Customer 391,New York,NY,4
+394,Customer 394,New York,NY,4
+302,Customer 302,San Francisco,CA,3
+305,Customer 305,San Francisco,CA,3
+307,Customer 307,San Francisco,IL,3
+313,Customer 313,San Francisco,NY,3
+314,Customer 314,San Francisco,IL,3
+318,Customer 318,San Francisco,NY,3
+319,Customer 319,San Francisco,IL,3
+320,Customer 320,San Francisco,IL,3
+321,Customer 321,San Francisco,NY,3
+324,Customer 324,San Francisco,IL,3
+327,Customer 327,San Francisco,IL,3
+329,Customer 329,San Francisco,IL,3
+334,Customer 334,San Francisco,IL,3
+335,Customer 335,San Francisco,IL,3
+339,Customer 339,San Francisco,NY,3
+340,Customer 340,San Francisco,IL,3
+342,Customer 342,San Francisco,CA,3
+354,Customer 354,San Francisco,NY,3
+364,Customer 364,San Francisco,IL,3
+369,Customer 369,San Francisco,IL,3
+382,Customer 382,San Francisco,NY,3
+383,Customer 383,San Francisco,NY,3
+386,Customer 386,San Francisco,IL,3
+392,Customer 392,San Francisco,CA,3
+398,Customer 398,San Francisco,NY,3
+400,Customer 400,San Francisco,NY,3
+301,Customer 301,Los Angeles,NY,22
+303,Customer 303,Los Angeles,CA,22
+308,Customer 308,Los Angeles,IL,22
+311,Customer 311,Los Angeles,NY,22
+315,Customer 315,Los Angeles,NY,22
+323,Customer 323,Los Angeles,CA,22
+330,Customer 330,Los Angeles,NY,22
+332,Customer 332,Los Angeles,CA,22
+341,Customer 341,Los Angeles,CA,22
+346,Customer 346,Los Angeles,NY,22
+351,Customer 351,Los Angeles,IL,22
+352,Customer 352,Los Angeles,NY,22
+356,Customer 356,Los Angeles,NY,22
+357,Customer 357,Los Angeles,NY,22
+362,Customer 362,Los Angeles,NY,22
+366,Customer 366,Los Angeles,NY,22
+368,Customer 368,Los Angeles,NY,22
+372,Customer 372,Los Angeles,CA,22
+375,Customer 375,Los Angeles,NY,22
+389,Customer 389,Los Angeles,NY,22
+101,Customer 101,Chicago,NY,1
+102,Customer 102,Chicago,NY,1
+110,Customer 110,Chicago,NY,1
+112,Customer 112,Chicago,NY,1
+124,Customer 124,Chicago,NY,1
+134,Customer 134,Chicago,CA,1
+138,Customer 138,Chicago,NY,1
+141,Customer 141,Chicago,CA,1
+145,Customer 145,Chicago,IL,1
+147,Customer 147,Chicago,NY,1
+148,Customer 148,Chicago,CA,1
+167,Customer 167,Chicago,NY,1
+170,Customer 170,Chicago,NY,1
+172,Customer 172,Chicago,NY,1
+173,Customer 173,Chicago,CA,1
+177,Customer 177,Chicago,NY,1
+180,Customer 180,Chicago,IL,1
+181,Customer 181,Chicago,IL,1
+185,Customer 185,Chicago,IL,1
+191,Customer 191,Chicago,IL,1
+193,Customer 193,Chicago,CA,1
+196,Customer 196,Chicago,CA,1
+199,Customer 199,Chicago,NY,1
+179,Customer 179,Chicago,IL,49
+103,Customer 103,New York,IL,4
+106,Customer 106,New York,NY,4
+9,Customer 9,Chicago,NY,1
+17,Customer 17,Chicago,IL,1
+19,Customer 19,Chicago,NY,1
+23,Customer 23,Chicago,IL,1
+31,Customer 31,Chicago,CA,1
+37,Customer 37,Chicago,CA,1
+39,Customer 39,Chicago,IL,1
+51,Customer 51,Chicago,IL,1
+53,Customer 53,Chicago,NY,1
+64,Customer 64,Chicago,CA,1
+65,Customer 65,Chicago,CA,1
+73,Customer 73,Chicago,NY,1
+79,Customer 79,Chicago,IL,1
+80,Customer 80,Chicago,IL,1
+81,Customer 81,Chicago,NY,1
+87,Customer 87,Chicago,NY,1
+88,Customer 88,Chicago,IL,1
+92,Customer 92,Chicago,NY,1
+98,Customer 98,Chicago,IL,1
+100,Customer 100,Chicago,NY,1
+413,Customer 413,Chicago,CA,1
+415,Customer 415,Chicago,CA,1
+416,Customer 416,Chicago,NY,1
+418,Customer 418,Chicago,IL,1
+419,Customer 419,Chicago,CA,1
+420,Customer 420,Chicago,NY,1
+425,Customer 425,Chicago,NY,1
+428,Customer 428,Chicago,NY,1
+432,Customer 432,Chicago,CA,1
+434,Customer 434,Chicago,CA,1
+436,Customer 436,Chicago,IL,1
+437,Customer 437,Chicago,IL,1
+438,Customer 438,Chicago,CA,1
+440,Customer 440,Chicago,NY,1
+441,Customer 441,Chicago,NY,1
+445,Customer 445,Chicago,CA,1
+448,Customer 448,Chicago,NY,1
+459,Customer 459,Chicago,IL,1
+463,Customer 463,Chicago,NY,1
+464,Customer 464,Chicago,CA,1
+466,Customer 466,Chicago,CA,1
+467,Customer 467,Chicago,IL,1
+470,Customer 470,Chicago,NY,1
+471,Customer 471,Chicago,CA,1
+473,Customer 473,Chicago,IL,1
+474,Customer 474,Chicago,NY,1
+478,Customer 478,Chicago,IL,1
+479,Customer 479,Chicago,IL,1
+481,Customer 481,Chicago,NY,1
+484,Customer 484,Chicago,IL,1
+485,Customer 485,Chicago,IL,1
+487,Customer 487,Chicago,CA,1
+489,Customer 489,Chicago,CA,1
+491,Customer 491,Chicago,NY,1
+494,Customer 494,Chicago,CA,1
+497,Customer 497,Chicago,CA,1
+499,Customer 499,Chicago,NY,1
+3,Customer 3,New York,NY,4
+20,Customer 20,New York,CA,4
+24,Customer 24,New York,CA,4
+25,Customer 25,New York,CA,4
+28,Customer 28,New York,CA,4
+33,Customer 33,New York,NY,4
+34,Customer 34,New York,IL,4
+35,Customer 35,New York,CA,4
+41,Customer 41,New York,NY,4
+42,Customer 42,New York,CA,4
+47,Customer 47,New York,CA,4
+52,Customer 52,New York,CA,4
+54,Customer 54,New York,IL,4
+56,Customer 56,New York,NY,4
+57,Customer 57,New York,NY,4
+59,Customer 59,New York,CA,4
+66,Customer 66,New York,IL,4
+68,Customer 68,New York,IL,4
+72,Customer 72,New York,CA,4
+74,Customer 74,New York,IL,4
+77,Customer 77,New York,NY,4
+83,Customer 83,New York,NY,4
+86,Customer 86,New York,NY,4
+89,Customer 89,New York,NY,4
+402,Customer 402,New York,CA,4
+403,Customer 403,New York,IL,4
+406,Customer 406,New York,IL,4
+435,Customer 435,New York,IL,4
+442,Customer 442,New York,NY,4
+444,Customer 444,New York,NY,4
+447,Customer 447,New York,IL,4
+450,Customer 450,New York,IL,4
+452,Customer 452,New York,NY,4
+453,Customer 453,New York,CA,4
+454,Customer 454,New York,NY,4
+465,Customer 465,New York,IL,4
+476,Customer 476,New York,NY,4
+477,Customer 477,New York,NY,4
+483,Customer 483,New York,CA,4
+488,Customer 488,New York,NY,4
+4,Customer 4,San Francisco,NY,3
+5,Customer 5,San Francisco,CA,3
+6,Customer 6,San Francisco,NY,3
+13,Customer 13,San Francisco,CA,3
+14,Customer 14,San Francisco,NY,3
+16,Customer 16,San Francisco,IL,3
+18,Customer 18,San Francisco,CA,3
+22,Customer 22,San Francisco,CA,3
+26,Customer 26,San Francisco,CA,3
+27,Customer 27,San Francisco,CA,3
+43,Customer 43,San Francisco,IL,3
+46,Customer 46,San Francisco,IL,3
+49,Customer 49,San Francisco,NY,3
+55,Customer 55,San Francisco,IL,3
+58,Customer 58,San Francisco,IL,3
+61,Customer 61,San Francisco,IL,3
+62,Customer 62,San Francisco,IL,3
+63,Customer 63,San Francisco,IL,3
+67,Customer 67,San Francisco,NY,3
+70,Customer 70,San Francisco,CA,3
+76,Customer 76,San Francisco,IL,3
+78,Customer 78,San Francisco,CA,3
+82,Customer 82,San Francisco,CA,3
+84,Customer 84,San Francisco,NY,3
+85,Customer 85,San Francisco,CA,3
+90,Customer 90,San Francisco,IL,3
+91,Customer 91,San Francisco,CA,3
+96,Customer 96,San Francisco,IL,3
+97,Customer 97,San Francisco,NY,3
+405,Customer 405,San Francisco,CA,3
+107,Customer 107,New York,CA,4
+109,Customer 109,New York,NY,4
+114,Customer 114,New York,IL,4
+117,Customer 117,New York,NY,4
+120,Customer 120,New York,NY,4
+123,Customer 123,New York,CA,4
+127,Customer 127,New York,NY,4
+128,Customer 128,New York,IL,4
+140,Customer 140,New York,IL,4
+144,Customer 144,New York,IL,4
+146,Customer 146,New York,NY,4
+153,Customer 153,New York,IL,4
+163,Customer 163,New York,NY,4
+166,Customer 166,New York,NY,4
+178,Customer 178,New York,CA,4
+186,Customer 186,New York,NY,4
+195,Customer 195,New York,NY,4
+111,Customer 111,San Francisco,CA,3
+115,Customer 115,San Francisco,IL,3
+118,Customer 118,San Francisco,CA,3
+119,Customer 119,San Francisco,NY,3
+121,Customer 121,San Francisco,CA,3
+129,Customer 129,San Francisco,IL,3
+131,Customer 131,San Francisco,IL,3
+136,Customer 136,San Francisco,CA,3
+137,Customer 137,San Francisco,IL,3
+139,Customer 139,San Francisco,NY,3
+142,Customer 142,San Francisco,IL,3
+143,Customer 143,San Francisco,NY,3
+150,Customer 150,San Francisco,NY,3
+151,Customer 151,San Francisco,CA,3
+155,Customer 155,San Francisco,NY,3
+156,Customer 156,San Francisco,IL,3
+160,Customer 160,San Francisco,IL,3
+165,Customer 165,San Francisco,IL,3
+168,Customer 168,San Francisco,IL,3
+169,Customer 169,San Francisco,NY,3
+171,Customer 171,San Francisco,NY,3
+174,Customer 174,San Francisco,CA,3
+188,Customer 188,San Francisco,IL,3
+189,Customer 189,San Francisco,IL,3
+190,Customer 190,San Francisco,IL,3
+192,Customer 192,San Francisco,NY,3
+194,Customer 194,San Francisco,CA,3
+197,Customer 197,San Francisco,NY,3
+104,Customer 104,Los Angeles,IL,22
+105,Customer 105,Los Angeles,NY,22
+108,Customer 108,Los Angeles,CA,22
+113,Customer 113,Los Angeles,IL,22
+116,Customer 116,Los Angeles,NY,22
+122,Customer 122,Los Angeles,NY,22
+125,Customer 125,Los Angeles,NY,22
+126,Customer 126,Los Angeles,NY,22
+130,Customer 130,Los Angeles,NY,22
+132,Customer 132,Los Angeles,CA,22
+133,Customer 133,Los Angeles,IL,22
+135,Customer 135,Los Angeles,CA,22
+149,Customer 149,Los Angeles,CA,22
+152,Customer 152,Los Angeles,NY,22
+154,Customer 154,Los Angeles,CA,22
+157,Customer 157,Los Angeles,IL,22
+158,Customer 158,Los Angeles,NY,22
+159,Customer 159,Los Angeles,NY,22
+161,Customer 161,Los Angeles,IL,22
+162,Customer 162,Los Angeles,NY,22
+164,Customer 164,Los Angeles,IL,22
+175,Customer 175,Los Angeles,IL,22
+176,Customer 176,Los Angeles,CA,22
+182,Customer 182,Los Angeles,CA,22
+183,Customer 183,Los Angeles,CA,22
+184,Customer 184,Los Angeles,CA,22
+187,Customer 187,Los Angeles,NY,22
+198,Customer 198,Los Angeles,CA,22
+200,Customer 200,Los Angeles,CA,22
+206,Customer 206,Chicago,CA,1
+207,Customer 207,Chicago,IL,1
+208,Customer 208,Chicago,NY,1
+210,Customer 210,Chicago,CA,1
+213,Customer 213,Chicago,CA,1
+215,Customer 215,Chicago,IL,1
+217,Customer 217,Chicago,NY,1
+219,Customer 219,Chicago,NY,1
+220,Customer 220,Chicago,NY,1
+230,Customer 230,Chicago,IL,1
+238,Customer 238,Chicago,CA,1
+243,Customer 243,Chicago,IL,1
+250,Customer 250,Chicago,NY,1
+253,Customer 253,Chicago,NY,1
+257,Customer 257,Chicago,CA,1
+269,Customer 269,Chicago,CA,1
+285,Customer 285,Chicago,IL,1
+289,Customer 289,Chicago,CA,1
+297,Customer 297,Chicago,IL,1
+298,Customer 298,Chicago,CA,1
+216,Customer 216,New York,NY,4
+218,Customer 218,New York,NY,4
+223,Customer 223,New York,NY,4
+227,Customer 227,New York,NY,4
+244,Customer 244,New York,IL,4
+245,Customer 245,New York,IL,4
+247,Customer 247,New York,IL,4
+249,Customer 249,New York,NY,4
+252,Customer 252,New York,IL,4
+254,Customer 254,New York,NY,4
+261,Customer 261,New York,CA,4
+263,Customer 263,New York,CA,4
+266,Customer 266,New York,CA,4
+267,Customer 267,New York,CA,4
+270,Customer 270,New York,IL,4
+272,Customer 272,New York,CA,4
+275,Customer 275,New York,NY,4
+279,Customer 279,New York,NY,4
+280,Customer 280,New York,CA,4
+282,Customer 282,New York,NY,4
+284,Customer 284,New York,NY,4
+286,Customer 286,New York,NY,4
+290,Customer 290,New York,NY,4
+293,Customer 293,New York,IL,4
+295,Customer 295,New York,NY,4
+204,Customer 204,San Francisco,NY,3
+205,Customer 205,San Francisco,CA,3
+209,Customer 209,San Francisco,IL,3
+212,Customer 212,San Francisco,NY,3
+221,Customer 221,San Francisco,CA,3
+222,Customer 222,San Francisco,CA,3
+224,Customer 224,San Francisco,NY,3
+231,Customer 231,San Francisco,IL,3
+234,Customer 234,San Francisco,CA,3
+237,Customer 237,San Francisco,NY,3
+240,Customer 240,San Francisco,CA,3
+246,Customer 246,San Francisco,CA,3
+248,Customer 248,San Francisco,NY,3
+251,Customer 251,San Francisco,NY,3
+260,Customer 260,San Francisco,CA,3
+262,Customer 262,San Francisco,IL,3
+265,Customer 265,San Francisco,IL,3
+268,Customer 268,San Francisco,CA,3
+274,Customer 274,San Francisco,NY,3
+278,Customer 278,San Francisco,NY,3
+281,Customer 281,San Francisco,CA,3
+283,Customer 283,San Francisco,IL,3
+294,Customer 294,San Francisco,CA,3
+296,Customer 296,San Francisco,CA,3
+201,Customer 201,Los Angeles,IL,22
+202,Customer 202,Los Angeles,IL,22
+203,Customer 203,Los Angeles,CA,22
+211,Customer 211,Los Angeles,IL,22
+214,Customer 214,Los Angeles,CA,22
+225,Customer 225,Los Angeles,CA,22
+226,Customer 226,Los Angeles,CA,22
+228,Customer 228,Los Angeles,NY,22
+229,Customer 229,Los Angeles,CA,22
+232,Customer 232,Los Angeles,IL,22
+233,Customer 233,Los Angeles,CA,22
+235,Customer 235,Los Angeles,CA,22
+236,Customer 236,Los Angeles,IL,22
+239,Customer 239,Los Angeles,CA,22
+241,Customer 241,Los Angeles,IL,22
+242,Customer 242,Los Angeles,NY,22
+255,Customer 255,Los Angeles,IL,22
+256,Customer 256,Los Angeles,IL,22
+258,Customer 258,Los Angeles,IL,22
+259,Customer 259,Los Angeles,IL,22
+264,Customer 264,Los Angeles,NY,22
+271,Customer 271,Los Angeles,CA,22
+273,Customer 273,Los Angeles,CA,22
+276,Customer 276,Los Angeles,IL,22
+277,Customer 277,Los Angeles,IL,22
+287,Customer 287,Los Angeles,CA,22
+288,Customer 288,Los Angeles,IL,22
+291,Customer 291,Los Angeles,IL,22
+292,Customer 292,Los Angeles,IL,22
+299,Customer 299,Los Angeles,IL,22
+300,Customer 300,Los Angeles,CA,22
+407,Customer 407,San Francisco,CA,3
+408,Customer 408,San Francisco,NY,3
+409,Customer 409,San Francisco,IL,3
+412,Customer 412,San Francisco,NY,3
+417,Customer 417,San Francisco,CA,3
+421,Customer 421,San Francisco,IL,3
+422,Customer 422,San Francisco,NY,3
+426,Customer 426,San Francisco,NY,3
+427,Customer 427,San Francisco,NY,3
+430,Customer 430,San Francisco,NY,3
+433,Customer 433,San Francisco,NY,3
+439,Customer 439,San Francisco,CA,3
+443,Customer 443,San Francisco,IL,3
+446,Customer 446,San Francisco,NY,3
+451,Customer 451,San Francisco,IL,3
+456,Customer 456,San Francisco,NY,3
+457,Customer 457,San Francisco,NY,3
+458,Customer 458,San Francisco,NY,3
+460,Customer 460,San Francisco,IL,3
+461,Customer 461,San Francisco,NY,3
+469,Customer 469,San Francisco,CA,3
+480,Customer 480,San Francisco,CA,3
+482,Customer 482,San Francisco,CA,3
+490,Customer 490,San Francisco,IL,3
+492,Customer 492,San Francisco,CA,3
+498,Customer 498,San Francisco,CA,3
+500,Customer 500,San Francisco,NY,3
+1,Customer 1,Los Angeles,CA,22
+2,Customer 2,Los Angeles,NY,22
+7,Customer 7,Los Angeles,NY,22
+8,Customer 8,Los Angeles,NY,22
+10,Customer 10,Los Angeles,NY,22
+11,Customer 11,Los Angeles,NY,22
+12,Customer 12,Los Angeles,NY,22
+15,Customer 15,Los Angeles,CA,22
+21,Customer 21,Los Angeles,IL,22
+29,Customer 29,Los Angeles,IL,22
+30,Customer 30,Los Angeles,CA,22
+32,Customer 32,Los Angeles,CA,22
+36,Customer 36,Los Angeles,IL,22
+38,Customer 38,Los Angeles,NY,22
+40,Customer 40,Los Angeles,NY,22
+44,Customer 44,Los Angeles,IL,22
+45,Customer 45,Los Angeles,IL,22
+48,Customer 48,Los Angeles,CA,22
+50,Customer 50,Los Angeles,CA,22
+60,Customer 60,Los Angeles,CA,22
+69,Customer 69,Los Angeles,IL,22
+71,Customer 71,Los Angeles,IL,22
+75,Customer 75,Los Angeles,NY,22
+93,Customer 93,Los Angeles,CA,22
+94,Customer 94,Los Angeles,IL,22
+95,Customer 95,Los Angeles,IL,22
+99,Customer 99,Los Angeles,IL,22
+401,Customer 401,Los Angeles,CA,22
+404,Customer 404,Los Angeles,IL,22
+410,Customer 410,Los Angeles,CA,22
+411,Customer 411,Los Angeles,IL,22
+414,Customer 414,Los Angeles,CA,22
+423,Customer 423,Los Angeles,IL,22
+424,Customer 424,Los Angeles,IL,22
+429,Customer 429,Los Angeles,CA,22
+431,Customer 431,Los Angeles,IL,22
+449,Customer 449,Los Angeles,IL,22
+455,Customer 455,Los Angeles,IL,22
+462,Customer 462,Los Angeles,NY,22
+468,Customer 468,Los Angeles,NY,22
+472,Customer 472,Los Angeles,NY,22
+475,Customer 475,Los Angeles,IL,22
+486,Customer 486,Los Angeles,NY,22
+493,Customer 493,Los Angeles,IL,22
+495,Customer 495,Los Angeles,NY,22
+496,Customer 496,Los Angeles,IL,22

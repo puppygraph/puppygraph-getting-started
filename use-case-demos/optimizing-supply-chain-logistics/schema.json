@@ -1,0 +1,906 @@
+{
+  "catalogs": [
+    {
+      "name": "jdbc_redshift",
+      "type": "redshift",
+      "jdbc": {
+        "username": "your-username",
+        "password": "your-password",
+        "jdbcUri": "jdbc:redshift://xxxx:5439/your-database",
+        "driverClass": "com.amazon.redshift.Driver"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Product",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "products"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "productname",
+              "alias": "productname"
+            },
+            {
+              "type": "Double",
+              "field": "price",
+              "alias": "price"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Factory",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "factory"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "factoryname",
+              "alias": "factoryname"
+            },
+            {
+              "type": "Long",
+              "field": "locationid",
+              "alias": "locationid"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Location",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "locations"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "address",
+              "alias": "address"
+            },
+            {
+              "type": "String",
+              "field": "city",
+              "alias": "city"
+            },
+            {
+              "type": "String",
+              "field": "country",
+              "alias": "country"
+            },
+            {
+              "type": "Double",
+              "field": "lat",
+              "alias": "lat"
+            },
+            {
+              "type": "Double",
+              "field": "lng",
+              "alias": "lng"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Inventory",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "inventory"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Int",
+              "field": "quantity",
+              "alias": "quantity"
+            },
+            {
+              "type": "DateTime",
+              "field": "lastupdated",
+              "alias": "lastupdated"
+            },
+            {
+              "type": "String",
+              "field": "status",
+              "alias": "status"
+            }
+          ]
+        }
+      },
+      {
+        "label": "MatInventory",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "materialinventory"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "quantity",
+              "alias": "quantity"
+            },
+            {
+              "type": "DateTime",
+              "field": "lastupdated",
+              "alias": "lastupdated"
+            },
+            {
+              "type": "String",
+              "field": "status",
+              "alias": "status"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Material",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "materials"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "materialname",
+              "alias": "materialname"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Customer",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "customers"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "customername",
+              "alias": "customername"
+            },
+            {
+              "type": "String",
+              "field": "city",
+              "alias": "city"
+            }
+          ]
+        }
+      },
+      {
+        "label": "ProductOrder",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "productsales"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "customerid",
+              "alias": "customerid"
+            },
+            {
+              "type": "Long",
+              "field": "productid",
+              "alias": "productid"
+            },
+            {
+              "type": "Long",
+              "field": "quantity",
+              "alias": "quantity"
+            },
+            {
+              "type": "DateTime",
+              "field": "saledate",
+              "alias": "saledate"
+            },
+            {
+              "type": "Double",
+              "field": "totalprice",
+              "alias": "totalprice"
+            }
+          ]
+        }
+      },
+      {
+        "label": "MaterialOrder",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "jdbc_redshift",
+            "schema": "supply",
+            "table": "materialorders"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "materialid",
+              "alias": "materialid"
+            },
+            {
+              "type": "Long",
+              "field": "factoryid",
+              "alias": "factoryid"
+            },
+            {
+              "type": "Long",
+              "field": "quantity",
+              "alias": "quantity"
+            },
+            {
+              "type": "DateTime",
+              "field": "orderdate",
+              "alias": "orderdate"
+            },
+            {
+              "type": "DateTime",
+              "field": "expectedarrivaldate",
+              "alias": "expectedarrivaldate"
+            },
+            {
+              "type": "String",
+              "field": "status",
+              "alias": "status"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "FactoryLocation",
+        "fromVertex": "Factory",
+        "toVertex": "Location",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "factory"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "locationid",
+              "alias": "locationid"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ProductInventory",
+        "fromVertex": "Product",
+        "toVertex": "Inventory",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "inventory"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "productid",
+              "alias": "productid"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "to_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Int",
+            "field": "quantity",
+            "alias": "quantity"
+          },
+          {
+            "type": "DateTime",
+            "field": "lastupdated",
+            "alias": "lastupdated"
+          }
+        ]
+      },
+      {
+        "label": "InventoryLocation",
+        "fromVertex": "Inventory",
+        "toVertex": "Location",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "inventory"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "locationid",
+              "alias": "locationid"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "CustomerLocation",
+        "fromVertex": "Customer",
+        "toVertex": "Location",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "customers"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "location_id",
+              "alias": "location_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ProductComposition",
+        "fromVertex": "Product",
+        "toVertex": "Material",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "productcomposition"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "productid",
+              "alias": "productid"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "materialid",
+              "alias": "materialid"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Long",
+            "field": "quantity",
+            "alias": "quantity"
+          }
+        ]
+      },
+      {
+        "label": "ProOrderToPro",
+        "fromVertex": "ProductOrder",
+        "toVertex": "Product",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "productsales"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "productid",
+              "alias": "productid"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Long",
+            "field": "quantity",
+            "alias": "quantity"
+          }
+        ]
+      },
+      {
+        "label": "ProOrderToCus",
+        "fromVertex": "ProductOrder",
+        "toVertex": "Customer",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "productsales"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "customerid",
+              "alias": "customerid"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Long",
+            "field": "quantity",
+            "alias": "quantity"
+          }
+        ]
+      },
+      {
+        "label": "MatOrderToMat",
+        "fromVertex": "MaterialOrder",
+        "toVertex": "Material",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "materialorders"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "materialid",
+              "alias": "materialid"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Long",
+            "field": "quantity",
+            "alias": "quantity"
+          }
+        ]
+      },
+      {
+        "label": "MatOrderToFac",
+        "fromVertex": "MaterialOrder",
+        "toVertex": "Factory",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "materialorders"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "factoryid",
+              "alias": "factoryid"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Long",
+            "field": "quantity",
+            "alias": "quantity"
+          }
+        ]
+      },
+      {
+        "label": "MaterialInventory",
+        "fromVertex": "Material",
+        "toVertex": "MatInventory",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "materialinventory"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "materialid",
+              "alias": "materialid"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "to_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Long",
+            "field": "quantity",
+            "alias": "quantity"
+          },
+          {
+            "type": "DateTime",
+            "field": "lastupdated",
+            "alias": "lastupdated"
+          }
+        ]
+      },
+      {
+        "label": "MatInventoryLocation",
+        "fromVertex": "MatInventory",
+        "toVertex": "Location",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "materialinventory"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "locationid",
+              "alias": "locationid"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "MatFactory",
+        "fromVertex": "Material",
+        "toVertex": "Factory",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "materialfactory"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "material_id",
+              "alias": "material_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "factory_id",
+              "alias": "factory_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "Distance",
+        "fromVertex": "Location",
+        "toVertex": "Location",
+        "tableSource": {
+          "catalog": "jdbc_redshift",
+          "schema": "supply",
+          "table": "distance"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "from_loc_id",
+              "alias": "from_loc_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "to_loc_id",
+              "alias": "to_loc_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "distance",
+            "alias": "distance"
+          }
+        ]
+      }
+    ]
+  }
+}
