@@ -1,0 +1,1070 @@
+{
+  "catalogs": [
+    {
+      "name": "drugcentral",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "postgres",
+        "password": "postgres123",
+        "jdbcUri": "jdbc:postgresql://postgres:5432/postgres",
+        "driverClass": "org.postgresql.Driver"
+      }
+    },
+    {
+      "name": "iceberg_test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "BioActivity",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "act_table_full"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "act_id",
+                "alias": "act_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "accession",
+              "alias": "accession"
+            },
+            {
+              "type": "String",
+              "field": "gene",
+              "alias": "gene"
+            },
+            {
+              "type": "String",
+              "field": "swissprot",
+              "alias": "swissprot"
+            },
+            {
+              "type": "Double",
+              "field": "act_value",
+              "alias": "act_value"
+            },
+            {
+              "type": "String",
+              "field": "act_unit",
+              "alias": "act_unit"
+            },
+            {
+              "type": "String",
+              "field": "act_type",
+              "alias": "act_type"
+            },
+            {
+              "type": "String",
+              "field": "act_comment",
+              "alias": "act_comment"
+            },
+            {
+              "type": "String",
+              "field": "act_source",
+              "alias": "act_source"
+            },
+            {
+              "type": "String",
+              "field": "relation",
+              "alias": "relation"
+            },
+            {
+              "type": "Short",
+              "field": "moa",
+              "alias": "moa"
+            },
+            {
+              "type": "String",
+              "field": "moa_source",
+              "alias": "moa_source"
+            },
+            {
+              "type": "String",
+              "field": "act_source_url",
+              "alias": "act_source_url"
+            },
+            {
+              "type": "String",
+              "field": "moa_source_url",
+              "alias": "moa_source_url"
+            },
+            {
+              "type": "Short",
+              "field": "first_in_class",
+              "alias": "first_in_class"
+            },
+            {
+              "type": "String",
+              "field": "tdl",
+              "alias": "tdl"
+            },
+            {
+              "type": "String",
+              "field": "organism",
+              "alias": "organism"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Drug",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "structures"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "String",
+              "field": "cd_formula",
+              "alias": "cd_formula"
+            },
+            {
+              "type": "Double",
+              "field": "cd_molweight",
+              "alias": "cd_molweight"
+            },
+            {
+              "type": "String",
+              "field": "cas_reg_no",
+              "alias": "cas_reg_no"
+            },
+            {
+              "type": "Double",
+              "field": "clogp",
+              "alias": "clogp"
+            },
+            {
+              "type": "Int",
+              "field": "lipinski",
+              "alias": "lipinski"
+            },
+            {
+              "type": "Int",
+              "field": "o_n",
+              "alias": "o_n"
+            },
+            {
+              "type": "Int",
+              "field": "oh_nh",
+              "alias": "oh_nh"
+            },
+            {
+              "type": "Float",
+              "field": "tpsa",
+              "alias": "tpsa"
+            },
+            {
+              "type": "Double",
+              "field": "alogs",
+              "alias": "alogs"
+            },
+            {
+              "type": "Int",
+              "field": "rotb",
+              "alias": "rotb"
+            },
+            {
+              "type": "String",
+              "field": "status",
+              "alias": "status"
+            },
+            {
+              "type": "String",
+              "field": "mrdef",
+              "alias": "mrdef"
+            },
+            {
+              "type": "Int",
+              "field": "no_formulations",
+              "alias": "no_formulations"
+            }
+          ]
+        }
+      },
+      {
+        "label": "AdverseEvent",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "faers_puppyview"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "meddra_code",
+                "alias": "meddra_code"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "meddra_name",
+              "alias": "meddra_name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Stem",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "drugdb",
+            "table": "inn_stem"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "stem",
+                "alias": "stem"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "definition",
+              "alias": "definition"
+            },
+            {
+              "type": "String",
+              "field": "national_name",
+              "alias": "national_name"
+            },
+            {
+              "type": "Int",
+              "field": "length",
+              "alias": "length"
+            }
+          ]
+        }
+      },
+      {
+        "label": "DrugClass",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "drug_class"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "String",
+              "field": "source",
+              "alias": "source"
+            },
+            {
+              "type": "Short",
+              "field": "is_group",
+              "alias": "is_group"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Pdb",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "pdb_puppyview"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "pdb",
+                "alias": "pdb"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "chain_id",
+              "alias": "chain_id"
+            },
+            {
+              "type": "String",
+              "field": "accession",
+              "alias": "accession"
+            },
+            {
+              "type": "String",
+              "field": "title",
+              "alias": "title"
+            },
+            {
+              "type": "Int",
+              "field": "pubmed_id",
+              "alias": "pubmed_id"
+            },
+            {
+              "type": "String",
+              "field": "exp_method",
+              "alias": "exp_method"
+            },
+            {
+              "type": "Date",
+              "field": "deposition_date",
+              "alias": "deposition_date"
+            },
+            {
+              "type": "String",
+              "field": "ligand_id",
+              "alias": "ligand_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Approval",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "drugdb",
+            "table": "approval"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Date",
+              "field": "approval",
+              "alias": "approval"
+            },
+            {
+              "type": "String",
+              "field": "type",
+              "alias": "type"
+            },
+            {
+              "type": "String",
+              "field": "applicant",
+              "alias": "applicant"
+            },
+            {
+              "type": "Boolean",
+              "field": "orphan",
+              "alias": "orphan"
+            }
+          ]
+        }
+      },
+      {
+        "label": "OrangeBookProduct",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "ob_product"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "ingredient",
+              "alias": "ingredient"
+            },
+            {
+              "type": "String",
+              "field": "trade_name",
+              "alias": "trade_name"
+            },
+            {
+              "type": "String",
+              "field": "applicant",
+              "alias": "applicant"
+            },
+            {
+              "type": "String",
+              "field": "strength",
+              "alias": "strength"
+            },
+            {
+              "type": "String",
+              "field": "appl_type",
+              "alias": "appl_type"
+            },
+            {
+              "type": "String",
+              "field": "appl_no",
+              "alias": "appl_no"
+            },
+            {
+              "type": "String",
+              "field": "te_code",
+              "alias": "te_code"
+            },
+            {
+              "type": "Date",
+              "field": "approval_date",
+              "alias": "approval_date"
+            },
+            {
+              "type": "Short",
+              "field": "rld",
+              "alias": "rld"
+            },
+            {
+              "type": "String",
+              "field": "type",
+              "alias": "type"
+            },
+            {
+              "type": "String",
+              "field": "applicant_full_name",
+              "alias": "applicant_full_name"
+            },
+            {
+              "type": "String",
+              "field": "dose_form",
+              "alias": "dose_form"
+            },
+            {
+              "type": "String",
+              "field": "route",
+              "alias": "route"
+            },
+            {
+              "type": "String",
+              "field": "product_no",
+              "alias": "product_no"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Target",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "target_dictionary"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "String",
+              "field": "target_class",
+              "alias": "target_class"
+            },
+            {
+              "type": "Short",
+              "field": "protein_components",
+              "alias": "protein_components"
+            },
+            {
+              "type": "String",
+              "field": "protein_type",
+              "alias": "protein_type"
+            },
+            {
+              "type": "String",
+              "field": "tdl",
+              "alias": "tdl"
+            }
+          ]
+        }
+      },
+      {
+        "label": "TargetComponent",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "target_component"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "accession",
+              "alias": "accession"
+            },
+            {
+              "type": "String",
+              "field": "swissprot",
+              "alias": "swissprot"
+            },
+            {
+              "type": "String",
+              "field": "organism",
+              "alias": "organism"
+            },
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "String",
+              "field": "gene",
+              "alias": "gene"
+            },
+            {
+              "type": "Long",
+              "field": "geneid",
+              "alias": "geneid"
+            },
+            {
+              "type": "String",
+              "field": "tdl",
+              "alias": "tdl"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Exclusivity",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "drugcentral",
+            "schema": "public",
+            "table": "ob_exclusivity"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Int",
+                "field": "id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "exclusivity_code",
+              "alias": "exclusivity_code"
+            },
+            {
+              "type": "Date",
+              "field": "exclusivity_date",
+              "alias": "exclusivity_date"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "HAS_BIOACTIVITY",
+        "fromVertex": "Drug",
+        "toVertex": "BioActivity",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "act_table_full"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "act_id",
+              "alias": "act_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "struct_id",
+              "alias": "struct_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "act_id",
+              "alias": "to_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "TARGET_TO",
+        "fromVertex": "BioActivity",
+        "toVertex": "Target",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "act_table_full"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "act_id",
+              "alias": "act_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "act_id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "target_id",
+              "alias": "target_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_ADVERSEEVENT_ALL",
+        "fromVertex": "Drug",
+        "toVertex": "AdverseEvent",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "faers"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "struct_id",
+              "alias": "struct_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "meddra_code",
+              "alias": "meddra_code"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "level",
+            "alias": "level"
+          },
+          {
+            "type": "Double",
+            "field": "llr",
+            "alias": "llr"
+          },
+          {
+            "type": "Double",
+            "field": "llr_threshold",
+            "alias": "llr_threshold"
+          },
+          {
+            "type": "Int",
+            "field": "drug_ae",
+            "alias": "drug_ae"
+          },
+          {
+            "type": "Int",
+            "field": "drug_no_ae",
+            "alias": "drug_no_ae"
+          },
+          {
+            "type": "Int",
+            "field": "no_drug_ae",
+            "alias": "no_drug_ae"
+          },
+          {
+            "type": "Int",
+            "field": "no_drug_no_ae",
+            "alias": "no_drug_no_ae"
+          }
+        ]
+      },
+      {
+        "label": "HAS_STEM",
+        "fromVertex": "Drug",
+        "toVertex": "Stem",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "stem_puppyview"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "stem",
+              "alias": "stem"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "DRUG_BELONGS_TO",
+        "fromVertex": "Drug",
+        "toVertex": "DrugClass",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "struct2drgclass"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "struct_id",
+              "alias": "struct_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "drug_class_id",
+              "alias": "drug_class_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "FORM_COMPLEX_WITH",
+        "fromVertex": "Drug",
+        "toVertex": "Pdb",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "pdb"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "struct_id",
+              "alias": "struct_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "pdb",
+              "alias": "pdb"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "APPROVE",
+        "fromVertex": "Approval",
+        "toVertex": "Drug",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "drugdb",
+          "table": "approval"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "from_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "struct_id",
+              "alias": "struct_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "RECORD_IN_ORANGEBOOK",
+        "fromVertex": "Drug",
+        "toVertex": "OrangeBookProduct",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "struct2obprod_puppyview"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "struct_id",
+              "alias": "struct_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "prod_id",
+              "alias": "prod_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "strength",
+            "alias": "strength"
+          }
+        ]
+      },
+      {
+        "label": "HAS_COMPONENT",
+        "fromVertex": "Target",
+        "toVertex": "TargetComponent",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "td2tc_puppyview"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "target_id",
+              "alias": "target_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "component_id",
+              "alias": "component_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_EXCLUSIVITY",
+        "fromVertex": "OrangeBookProduct",
+        "toVertex": "Exclusivity",
+        "tableSource": {
+          "catalog": "drugcentral",
+          "schema": "public",
+          "table": "ob_exclusivity_puppyview"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "product_id",
+              "alias": "product_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Int",
+              "field": "id",
+              "alias": "to_id"
+            }
+          ]
+        },
+        "attributes": []
+      }
+    ]
+  }
+}
