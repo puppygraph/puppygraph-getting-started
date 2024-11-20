@@ -1,0 +1,737 @@
+{
+  "catalogs": [
+    {
+      "name": "iceberg_test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "User",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "Users"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "user_id",
+                "alias": "user_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "username",
+              "alias": "username"
+            }
+          ]
+        }
+      },
+      {
+        "label": "InternetGateway",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "InternetGateways"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "internet_gateway_id",
+                "alias": "internet_gateway_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "VPC",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "VPCs"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "vpc_id",
+                "alias": "vpc_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Subnet",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "Subnets"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "subnet_id",
+                "alias": "subnet_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "vpc_id",
+              "alias": "vpc_id"
+            },
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "SecurityGroup",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "SecurityGroups"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "security_group_id",
+                "alias": "security_group_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "NetworkInterface",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "NetworkInterfaces"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "network_interface_id",
+                "alias": "network_interface_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "subnet_id",
+              "alias": "subnet_id"
+            },
+            {
+              "type": "Long",
+              "field": "security_group_id",
+              "alias": "security_group_id"
+            },
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "VMInstance",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "VMInstances"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "vm_instance_id",
+                "alias": "vm_instance_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            },
+            {
+              "type": "Long",
+              "field": "role_id",
+              "alias": "role_id"
+            },
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Role",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "Roles"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "role_id",
+                "alias": "role_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Resource",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "Resources"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "resource_id",
+                "alias": "resource_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "PublicIP",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "PublicIPs"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "public_ip_id",
+                "alias": "public_ip_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "ip_address",
+              "alias": "ip_address"
+            },
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "PrivateIP",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "PrivateIPs"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "private_ip_id",
+                "alias": "private_ip_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "ip_address",
+              "alias": "ip_address"
+            },
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "IngressRule",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "iceberg_test",
+            "schema": "security_graph",
+            "table": "IngressRules"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "ingress_rule_id",
+                "alias": "ingress_rule_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "security_group_id",
+              "alias": "security_group_id"
+            },
+            {
+              "type": "String",
+              "field": "protocol",
+              "alias": "protocol"
+            },
+            {
+              "type": "String",
+              "field": "port_range",
+              "alias": "port_range"
+            },
+            {
+              "type": "String",
+              "field": "source",
+              "alias": "source"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "ACCESS",
+        "fromVertex": "User",
+        "toVertex": "InternetGateway",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "UserInternetGatewayAccess"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "user_id",
+              "alias": "user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "internet_gateway_id",
+              "alias": "internet_gateway_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "GATEWAY_TO",
+        "fromVertex": "InternetGateway",
+        "toVertex": "VPC",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "InternetGatewayVPC"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "internet_gateway_id",
+              "alias": "internet_gateway_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "vpc_id",
+              "alias": "vpc_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "CONTAINS",
+        "fromVertex": "VPC",
+        "toVertex": "Subnet",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "Subnets"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "vpc_id",
+              "alias": "vpc_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "subnet_id",
+              "alias": "subnet_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HOSTS_INTERFACE",
+        "fromVertex": "Subnet",
+        "toVertex": "NetworkInterface",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "NetworkInterfaces"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "subnet_id",
+              "alias": "subnet_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "PROTECTS",
+        "fromVertex": "SecurityGroup",
+        "toVertex": "NetworkInterface",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "NetworkInterfaces"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "security_group_id",
+              "alias": "security_group_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ATTACHED_TO",
+        "fromVertex": "NetworkInterface",
+        "toVertex": "VMInstance",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "VMInstances"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "vm_instance_id",
+              "alias": "vm_instance_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ASSIGNED_ROLE",
+        "fromVertex": "VMInstance",
+        "toVertex": "Role",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "VMInstances"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "vm_instance_id",
+              "alias": "vm_instance_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "role_id",
+              "alias": "role_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ALLOWS_ACCESS_TO",
+        "fromVertex": "Role",
+        "toVertex": "Resource",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "RoleResourceAccess"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "role_id",
+              "alias": "role_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "resource_id",
+              "alias": "resource_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_PUBLIC_IP",
+        "fromVertex": "NetworkInterface",
+        "toVertex": "PublicIP",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "PublicIPs"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "public_ip_id",
+              "alias": "public_ip_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_PRIVATE_IP",
+        "fromVertex": "NetworkInterface",
+        "toVertex": "PrivateIP",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "PrivateIPs"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "private_ip_id",
+              "alias": "private_ip_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_RULE",
+        "fromVertex": "SecurityGroup",
+        "toVertex": "IngressRule",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "IngressRules"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "security_group_id",
+              "alias": "security_group_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "ingress_rule_id",
+              "alias": "ingress_rule_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ALLOWS_TRAFFIC_FROM",
+        "fromVertex": "IngressRule",
+        "toVertex": "InternetGateway",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "IngressRuleInternetGateway"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "ingress_rule_id",
+              "alias": "ingress_rule_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "internet_gateway_id",
+              "alias": "internet_gateway_id"
+            }
+          ]
+        },
+        "attributes": []
+      }
+    ]
+  }
+}
