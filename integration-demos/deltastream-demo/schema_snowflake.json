@@ -1,0 +1,1098 @@
+{
+  "catalogs": [
+    {
+      "name": "test",
+      "type": "snowflake",
+      "jdbc": {
+        "username": "${ENV:SNOW_USER}",
+        "password": "${ENV:SNOW_PWD}",
+        "jdbcUri": "jdbc:snowflake://${ENV:SNOW_ACCOUNT_ID}.snowflakecomputing.com/?database=DELTA_STREAM_DB&schema=PUBLIC",
+        "driverClass": "net.snowflake.client.jdbc.SnowflakeDriver"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Loan",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "test",
+            "schema": "PUBLIC",
+            "table": "loan"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "loanId",
+                "alias": "loanId"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Double",
+              "field": "loanAmount",
+              "alias": "loanAmount"
+            },
+            {
+              "type": "Double",
+              "field": "balance",
+              "alias": "balance"
+            },
+            {
+              "type": "String",
+              "field": "createTime",
+              "alias": "createTime"
+            },
+            {
+              "type": "String",
+              "field": "loanUsage",
+              "alias": "loanUsage"
+            },
+            {
+              "type": "Double",
+              "field": "interestRate",
+              "alias": "interestRate"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Person",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "test",
+            "schema": "PUBLIC",
+            "table": "person"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "personId",
+                "alias": "personId"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "personName",
+              "alias": "personName"
+            },
+            {
+              "type": "Boolean",
+              "field": "isBlocked",
+              "alias": "isBlocked"
+            },
+            {
+              "type": "String",
+              "field": "createTime",
+              "alias": "createTime"
+            },
+            {
+              "type": "String",
+              "field": "gender",
+              "alias": "gender"
+            },
+            {
+              "type": "String",
+              "field": "birthday",
+              "alias": "birthday"
+            },
+            {
+              "type": "String",
+              "field": "country",
+              "alias": "country"
+            },
+            {
+              "type": "String",
+              "field": "city",
+              "alias": "city"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Account",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "test",
+            "schema": "PUBLIC",
+            "table": "account"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "accountId",
+                "alias": "accountId"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "createTime",
+              "alias": "createTime"
+            },
+            {
+              "type": "Boolean",
+              "field": "isBlocked",
+              "alias": "isBlocked"
+            },
+            {
+              "type": "String",
+              "field": "accoutType",
+              "alias": "accoutType"
+            },
+            {
+              "type": "String",
+              "field": "nickname",
+              "alias": "nickname"
+            },
+            {
+              "type": "String",
+              "field": "phonenum",
+              "alias": "phonenum"
+            },
+            {
+              "type": "String",
+              "field": "email",
+              "alias": "email"
+            },
+            {
+              "type": "String",
+              "field": "freqLoginType",
+              "alias": "freqLoginType"
+            },
+            {
+              "type": "String",
+              "field": "lastLoginTime",
+              "alias": "lastLoginTime"
+            },
+            {
+              "type": "String",
+              "field": "accountLevel",
+              "alias": "accountLevel"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Company",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "test",
+            "schema": "PUBLIC",
+            "table": "company"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "companyId",
+                "alias": "companyId"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "companyName",
+              "alias": "companyName"
+            },
+            {
+              "type": "Boolean",
+              "field": "isBlocked",
+              "alias": "isBlocked"
+            },
+            {
+              "type": "String",
+              "field": "createTime",
+              "alias": "createTime"
+            },
+            {
+              "type": "String",
+              "field": "country",
+              "alias": "country"
+            },
+            {
+              "type": "String",
+              "field": "city",
+              "alias": "city"
+            },
+            {
+              "type": "String",
+              "field": "business",
+              "alias": "business"
+            },
+            {
+              "type": "String",
+              "field": "description",
+              "alias": "description"
+            },
+            {
+              "type": "String",
+              "field": "url",
+              "alias": "url"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Medium",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "test",
+            "schema": "PUBLIC",
+            "table": "medium"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "mediumId",
+                "alias": "mediumId"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "mediumType",
+              "alias": "mediumType"
+            },
+            {
+              "type": "Boolean",
+              "field": "isBlocked",
+              "alias": "isBlocked"
+            },
+            {
+              "type": "String",
+              "field": "createTime",
+              "alias": "createTime"
+            },
+            {
+              "type": "String",
+              "field": "lastLoginTime",
+              "alias": "lastLoginTime"
+            },
+            {
+              "type": "String",
+              "field": "riskLevel",
+              "alias": "riskLevel"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "CompanyInvestCompany",
+        "fromVertex": "Company",
+        "toVertex": "Company",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "companyinvestcompany"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "companyinvestcompanyId",
+              "alias": "companyinvestcompanyId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "investorId",
+              "alias": "investorId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "companyId",
+              "alias": "companyId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "ratio",
+            "alias": "ratio"
+          },
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          }
+        ]
+      },
+      {
+        "label": "CompanyOwnAccount",
+        "fromVertex": "Company",
+        "toVertex": "Account",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "companyownaccount"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "companyownaccountId",
+              "alias": "companyownaccountId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "companyId",
+              "alias": "companyId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "accountId",
+              "alias": "accountId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          }
+        ]
+      },
+      {
+        "label": "CompanyGuaranteeCompany",
+        "fromVertex": "Company",
+        "toVertex": "Company",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "companyguaranteecompany"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "companyguaranteecompanyId",
+              "alias": "companyguaranteecompanyId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "fromId",
+              "alias": "fromId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "toId",
+              "alias": "toId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          },
+          {
+            "type": "String",
+            "field": "relation",
+            "alias": "relation"
+          }
+        ]
+      },
+      {
+        "label": "AccountWithdrawAccount",
+        "fromVertex": "Account",
+        "toVertex": "Account",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "accountwithdrawaccount"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "accountwithdrawaccountId",
+              "alias": "accountwithdrawaccountId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "fromId",
+              "alias": "fromId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "toId",
+              "alias": "toId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "amount",
+            "alias": "amount"
+          },
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          }
+        ]
+      },
+      {
+        "label": "PersonGuaranteePerson",
+        "fromVertex": "Person",
+        "toVertex": "Person",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "personguaranteeperson"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "personguaranteepersonId",
+              "alias": "personguaranteepersonId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "fromId",
+              "alias": "fromId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "toId",
+              "alias": "toId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          },
+          {
+            "type": "String",
+            "field": "relation",
+            "alias": "relation"
+          }
+        ]
+      },
+      {
+        "label": "AccountRepayLoan",
+        "fromVertex": "Account",
+        "toVertex": "Loan",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "accountrepayloan"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "accountrepayloanId",
+              "alias": "accountrepayloanId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "accountId",
+              "alias": "accountId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "loanId",
+              "alias": "loanId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "amount",
+            "alias": "amount"
+          },
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          }
+        ]
+      },
+      {
+        "label": "PersonInvestCompany",
+        "fromVertex": "Person",
+        "toVertex": "Company",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "personinvestcompany"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "personinvestcompanyId",
+              "alias": "personinvestcompanyId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "investorId",
+              "alias": "investorId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "companyId",
+              "alias": "companyId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "ratio",
+            "alias": "ratio"
+          },
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          }
+        ]
+      },
+      {
+        "label": "PersonApplyLoan",
+        "fromVertex": "Person",
+        "toVertex": "Loan",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "personapplyloan"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "personapplyloanId",
+              "alias": "personapplyloanId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "personId",
+              "alias": "personId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "loanId",
+              "alias": "loanId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          },
+          {
+            "type": "String",
+            "field": "org",
+            "alias": "org"
+          }
+        ]
+      },
+      {
+        "label": "LoanDepositAccount",
+        "fromVertex": "Loan",
+        "toVertex": "Account",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "loandepositaccount"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "loandepositaccountId",
+              "alias": "loandepositaccountId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "loanId",
+              "alias": "loanId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "accountId",
+              "alias": "accountId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "amount",
+            "alias": "amount"
+          },
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          }
+        ]
+      },
+      {
+        "label": "PersonOwnAccount",
+        "fromVertex": "Person",
+        "toVertex": "Account",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "personownaccount"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "personownaccountId",
+              "alias": "personownaccountId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "personId",
+              "alias": "personId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "accountId",
+              "alias": "accountId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          }
+        ]
+      },
+      {
+        "label": "MediumSignInAccount",
+        "fromVertex": "Medium",
+        "toVertex": "Account",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "mediumsigninaccount"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "mediumsigninaccountId",
+              "alias": "mediumsigninaccountId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "mediumId",
+              "alias": "mediumId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "accountId",
+              "alias": "accountId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          },
+          {
+            "type": "String",
+            "field": "location",
+            "alias": "location"
+          }
+        ]
+      },
+      {
+        "label": "AccountTransferAccount",
+        "fromVertex": "Account",
+        "toVertex": "Account",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "accounttransferaccount"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "accounttransferaccountId",
+              "alias": "accounttransferaccountId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "fromId",
+              "alias": "fromId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "toId",
+              "alias": "toId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "amount",
+            "alias": "amount"
+          },
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          },
+          {
+            "type": "Long",
+            "field": "orderNum",
+            "alias": "orderNum"
+          },
+          {
+            "type": "String",
+            "field": "comment",
+            "alias": "comment"
+          },
+          {
+            "type": "String",
+            "field": "payType",
+            "alias": "payType"
+          },
+          {
+            "type": "String",
+            "field": "goodsType",
+            "alias": "goodsType"
+          }
+        ]
+      },
+      {
+        "label": "CompanyApplyLoan",
+        "fromVertex": "Company",
+        "toVertex": "Loan",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "PUBLIC",
+          "table": "companyapplyloan"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "companyapplyloanId",
+              "alias": "companyapplyloanId"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "companyId",
+              "alias": "companyId"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "loanId",
+              "alias": "loanId"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "createTime",
+            "alias": "createTime"
+          },
+          {
+            "type": "String",
+            "field": "org",
+            "alias": "org"
+          }
+        ]
+      }
+    ]
+  }
+}
+    "vertices": [
+      {
+        "label": "PERSON",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "test",
+            "schema": "MODERN",
+            "table": "PERSON"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "ID",
+                "alias": "ID"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "NAME",
+              "alias": "NAME"
+            },
+            {
+              "type": "Long",
+              "field": "AGE",
+              "alias": "AGE"
+            }
+          ]
+        }
+      },
+      {
+        "label": "SOFTWARE",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "test",
+            "schema": "MODERN",
+            "table": "SOFTWARE"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "ID",
+                "alias": "ID"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "NAME",
+              "alias": "NAME"
+            },
+            {
+              "type": "String",
+              "field": "LANG",
+              "alias": "LANG"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "KNOWS",
+        "fromVertex": "PERSON",
+        "toVertex": "PERSON",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "MODERN",
+          "table": "KNOWS"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "ID",
+              "alias": "ID"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "FROM_ID",
+              "alias": "FROM_ID"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "TO_ID",
+              "alias": "TO_ID"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "WEIGHT",
+            "alias": "WEIGHT"
+          }
+        ]
+      },
+      {
+        "label": "CREATED",
+        "fromVertex": "PERSON",
+        "toVertex": "SOFTWARE",
+        "tableSource": {
+          "catalog": "test",
+          "schema": "MODERN",
+          "table": "CREATED"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "ID",
+              "alias": "ID"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "FROM_ID",
+              "alias": "FROM_ID"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "TO_ID",
+              "alias": "TO_ID"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Double",
+            "field": "WEIGHT",
+            "alias": "WEIGHT"
+          }
+        ]
+      }
+    ]
+  }
+}
