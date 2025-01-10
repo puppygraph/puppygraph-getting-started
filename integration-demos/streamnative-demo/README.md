@@ -1,13 +1,13 @@
 ## Demo: Integrating StreamNative's Ursa Cluster with PuppyGraph
 
 ## Summary
-This demo showcases real-time analysis by integrating StreamNative's Ursa cluster with PuppyGraph. We begin by deploying an Ursa cluster and producing stock data. After setting up Unity Catalog to manage the compacted data (data optimized for efficient querying), we deploy PuppyGraph and connect it to this data source. Finally, we update incremental data and observe the changes reflected in PuppyGraph in real-time.
+This demo showcases real-time analysis by integrating StreamNative's Ursa cluster with PuppyGraph. We begin by deploying an Ursa cluster and producing snapshot data. After setting up Unity Catalog to manage the compacted data (data optimized for efficient querying), we deploy PuppyGraph and connect it to this data source. Finally, we update incremental data and observe the changes reflected in PuppyGraph in real-time.
 
 * **`README.md`:**  This file! It provides an overview of the project, setup instructions, and key details.
 * **`data`:** Contains the datasets used in the demo.
-    * `stock_data.json`: Initial stock data for import.
+    * `snapshot_data.json`: Initial snapshot data for import.
     * `incremental_data.json`: Data for simulating a real-time stream.
-* **`import_data.py`:** A Python script to import data into the system. Use the `-s` option to import stock data and `-i` for incremental data.
+* **`import_data.py`:** A Python script to import data into the system. Use the `-s` option to import snapshot data and `-i` for incremental data.
 * **`create_table.sql`:** A SQL script to create table using the compacted data. It is used to set up Unity Catalog in Databricks for the compacted data.
 * **`graph_schema.json`:** The graph schema of the compacted data for PuppyGraph.
 
@@ -43,7 +43,7 @@ Note for step 7:
     This demo uses the default namespace public.default for data production, so you don't have to create new tenant and namespace.
 
 
-## Producing the Stack Data
+## Producing the Snapshot Data
 
 In script `import_data.py`, replace `<server_url>`, `<schema_registry_url>` with the actual values. You can see them in the `Details` tab of your cluster in StreamNative Cloud Console.
 Also Replace `<jwt_token>` with the API key of your service account.
@@ -53,7 +53,7 @@ Also Replace `<jwt_token>` with the API key of your service account.
   <figcaption> </figcaption>
 </figure>
 
-Run the script `import_data.py` with option `-s` to produce the stack data.
+Run the script `import_data.py` with option `-s` to produce the snapshot data.
 ```bash
 python import_data.py -s
 ```
@@ -67,7 +67,7 @@ Now if you access StreamNative Cloud Console, you can see the topics.
 
 ## Set up Unity Catalog for Compacted Data
 
-After producing the stock data, allow approximately 1 to 2 minutes for the compaction process to complete. The compacted data will then appear in your AWS S3 bucket at the s3 URI you configured in the previous section. The s3 URI may look like `s3://aws-xxxx-xxxx-gamvt-tiered-storage-snc/xxxx-xxxx-xxxx-ursa/compaction/`. 
+After producing the snapshot data, allow approximately 1 to 2 minutes for the compaction process to complete. The compacted data will then appear in your AWS S3 bucket at the s3 URI you configured in the previous section. The s3 URI may look like `s3://aws-xxxx-xxxx-gamvt-tiered-storage-snc/xxxx-xxxx-xxxx-ursa/compaction/`. 
 
 Now you can go to Databricks console and set up [Unity Catalog](https://docs.databricks.com/en/data-governance/unity-catalog/index.html#setup). 
 The table format of compacted data is delta lake. 
@@ -131,7 +131,7 @@ In Web UI, select the file `schema.json` in the `Upload Graph Schema JSON` secti
 </figure>
 
 ## Query the graph
-You can try some [Gremlin or Cypher queries](https://docs.puppygraph.com/querying/) of the stack data for PuppyGraph.
+You can try some [Gremlin or Cypher queries](https://docs.puppygraph.com/querying/) of the snapshot data for PuppyGraph.
 - Navigate to the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
 - After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization. You can do this by clicking the "Clear" button located in the top-right corner of the page.
 - For Cypher queries, you can use [Graph Notebook and Cypher Console](https://docs.puppygraph.com/querying/querying-using-opencypher/). Be sure to add `:>` before the cypher query when using Cypher Console. 
@@ -176,16 +176,16 @@ transfer traces.
    ```
 
 Note: 
- Example queries 3 and 4 will return `null` for stack data because those vertices will be imported in the incremental data.
+ Example queries 3 and 4 will return `null` for snapshot data because those vertices will be imported in the incremental data.
 
 <figure style="width: 80%;">
-  <img src="figures/query_stack_data.png" alt="Alt text">
+  <img src="figures/query_snapshot_data.png" alt="Alt text">
   <figcaption> </figcaption>
 </figure>
 
 ## Producing the Incremental Data
 
-Run the script `import_data.py` with option `-i` to produce the stack data.
+Run the script `import_data.py` with option `-i` to produce the snapshot data.
 ```bash
 python import_data.py -i
 ```

@@ -10,7 +10,7 @@ from confluent_kafka.serialization import StringSerializer,SerializationContext,
 
 
 DELAY_TIME = 0.01
-STOCK_DATA_PATH = "data/stock_data.json"
+SNAPSHOT_DATA_PATH = "data/snapshot_data.json"
 INCREMENTAL_DATA_PATH = "data/incremental_data.json"
 
 # Kafka and Schema Registry configuration
@@ -340,24 +340,24 @@ def import_data(file_path, delay_time=0):
 
     producer.flush()
 
-def import_stock_data():
-    import_data(STOCK_DATA_PATH)
+def import_snapshot_data():
+    import_data(SNAPSHOT_DATA_PATH)
 
 def import_incremental_data():
     import_data(INCREMENTAL_DATA_PATH, delay_time=DELAY_TIME)
 
 def main():
-    parser = argparse.ArgumentParser(description='Import stock data and incremental data.')
+    parser = argparse.ArgumentParser(description='Import snapshot data and incremental data.')
     
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument('-s', action='store_true', help='Import stock data.')
+    group.add_argument('-s', action='store_true', help='Import snapshot data.')
     group.add_argument('-i', action='store_true', help='Import incremental data.')
     args = parser.parse_args()
     
     if args.s:
-        print("Importing stock data...")
-        import_stock_data()
-        print("Finished importing stock data.")
+        print("Importing snapshot data...")
+        import_snapshot_data()
+        print("Finished importing snapshot data.")
         
     if args.i:
         print("Importing incremental data...")
