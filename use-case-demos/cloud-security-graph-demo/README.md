@@ -26,6 +26,20 @@ The Demo Data Preparation step below populate some example data for demonstratio
 For real-world use cases, you can directly connect your existing data sources to PuppyGraph without the need for data preparation.
 
 ## Data Preparation
+- We will create a virtual environment and run the python script `CsvToParquet.py` to convert CSV files to Parquet format. On some Linux distributions, you may need to install `python3-venv` first.
+```bash
+# On some Linux distributions, install `python3-venv` first.
+sudo apt-get update
+sudo apt-get install python3-venv
+```
+
+- Create a virtual environment, activate it and install the necessary packages.
+```bash
+python3 -m venv demo_venv
+source demo_venv/bin/activate
+pip install pandas pyarrow
+```
+
 - Convert CSV files to Parquet format:
 ```bash
 python3 CsvToParquet.py ./csv_data ./parquet_data
@@ -34,7 +48,7 @@ python3 CsvToParquet.py ./csv_data ./parquet_data
 ## Deployment
 - Start the Apache Iceberg services and PuppyGraph by running:
 ```bash
-sudo docker compose up -d
+docker compose up -d
 ```
 Example output:
 ```bash
@@ -50,7 +64,7 @@ Example output:
 ## Data Import
 - Start the Spark-SQL shell to access Iceberg:
 ```bash
-sudo docker exec -it spark-iceberg spark-sql
+docker exec -it spark-iceberg spark-sql
 ```
 The shell prompt will appear as:
 ```shell
@@ -292,5 +306,5 @@ g.V().hasLabel('SecurityGroup').as('sg')
 ## Cleanup and Teardown
 - To stop and remove the containers, networks, and volumes, run:
 ```bash
-sudo docker compose down --volumes --remove-orphans
+docker compose down --volumes --remove-orphans
 ```
