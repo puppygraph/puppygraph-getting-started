@@ -1,0 +1,49 @@
+services:
+  kafka:
+    image: apache/kafka:latest
+    container_name: kafka
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,PLAINTEXT_HOST://:19092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:19092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_NUM_PARTITIONS: 1
+    ports:
+      - "19092:19092"
+    networks:
+      - risingwave_net
+
+  risingwave:
+    image: risingwavelabs/risingwave:latest
+    container_name: risingwave
+    ports:
+      - "4566:4566"
+      - "5691:5691"
+    networks:
+      - risingwave_net
+
+  puppygraph:
+    image: puppygraph/puppygraph:stable
+    pull_policy: always
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+      - DATAACCESS_DATA_CACHE_STRATEGY=adaptive
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+    networks:
+      - risingwave_net
+
+networks:
+  risingwave_net:
+    name: puppy-risingwave
