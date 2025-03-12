@@ -76,18 +76,39 @@ spark-sql ()>
 CREATE DATABASE security_graph;
 
 CREATE EXTERNAL TABLE security_graph.Users (
-  user_id BIGINT,
-  username STRING
+  user_id               BIGINT,
+  username              STRING,
+  email                 STRING,
+  phone                 STRING,
+  created_at            TIMESTAMP,
+  last_login            TIMESTAMP,
+  account_status        STRING,
+  authentication_method STRING,
+  failed_login_attempts INT
 ) USING iceberg;
 
 CREATE EXTERNAL TABLE security_graph.InternetGateways (
-  internet_gateway_id BIGINT,
-  name STRING
+  internet_gateway_id   BIGINT,
+  name                  STRING,
+  region                STRING,
+  status                STRING
 ) USING iceberg;
 
 CREATE EXTERNAL TABLE security_graph.UserInternetGatewayAccess (
-  user_id BIGINT,
-  internet_gateway_id BIGINT
+  user_id               BIGINT,
+  internet_gateway_id   BIGINT,
+  access_level          STRING,
+  granted_at            TIMESTAMP,
+  expires_at            TIMESTAMP,
+  last_accessed_at      TIMESTAMP
+) USING iceberg;
+
+CREATE EXTERNAL TABLE security_graph.UserInternetGatewayAccessLog (
+  log_id                BIGINT,
+  user_id               BIGINT,
+  internet_gateway_id   BIGINT,
+  access_time           TIMESTAMP,
+  access_type           STRING
 ) USING iceberg;
 
 CREATE EXTERNAL TABLE security_graph.VPCs (
@@ -171,13 +192,39 @@ CREATE EXTERNAL TABLE security_graph.IngressRuleInternetGateway (
 ) USING iceberg;
 
 INSERT INTO security_graph.Users
-SELECT * FROM parquet.`/parquet_data/Users.parquet`;
+SELECT
+    user_id,
+    username,
+    email,
+    phone,
+    CAST(created_at AS TIMESTAMP),
+    CAST(last_login AS TIMESTAMP),
+    account_status,
+    authentication_method,
+    failed_login_attempts
+FROM parquet.`/parquet_data/Users.parquet`;
 
 INSERT INTO security_graph.InternetGateways
 SELECT * FROM parquet.`/parquet_data/InternetGateways.parquet`;
 
 INSERT INTO security_graph.UserInternetGatewayAccess
-SELECT * FROM parquet.`/parquet_data/UserInternetGatewayAccess.parquet`;
+SELECT
+    user_id,
+    internet_gateway_id,
+    access_level,
+    CAST(granted_at AS TIMESTAMP),
+    CAST(expires_at AS TIMESTAMP),
+    CAST(last_accessed_at AS TIMESTAMP)
+FROM parquet.`/parquet_data/UserInternetGatewayAccess.parquet`;
+
+INSERT INTO security_graph.UserInternetGatewayAccessLog
+SELECT
+    log_id,
+    user_id,
+    internet_gateway_id,
+    CAST(access_time AS TIMESTAMP),
+    access_type
+FROM parquet.`/parquet_data/UserInternetGatewayAccessLog.parquet`;
 
 INSERT INTO security_graph.VPCs
 SELECT * FROM parquet.`/parquet_data/VPCs.parquet`;
@@ -273,7 +320,7 @@ g.V().hasLabel('NetworkInterface').as('ni')
     .in('GATEWAY_TO').hasLabel('InternetGateway').as('igw')
     .in('ACCESS').hasLabel('User').as('user')
   .path()
-
+  .limit(1000)
 ```
 
 3. Find roles that have been granted excessive access permissions, along with their associated virtual machine instances.
@@ -300,6 +347,53 @@ g.V().hasLabel('SecurityGroup').as('sg')
   .out('PROTECTS').hasLabel('NetworkInterface').as('ni')
   .out('ATTACHED_TO').hasLabel('VMInstance').as('vm')
   .path()
+
+```
+
+5. Tracing Admin Access Paths from Users to Internet Gateways.
+```gremlin
+g.V().hasLabel('User').as('user')
+  .outE('ACCESS').has('access_level', 'admin').as('edge')
+  .inV()
+  .path()
+  
+```
+
+6. Retrieve All Access Records for User (user_id=123) Sorted by Access Time.
+```gremlin
+g.V("User[100]")
+  .outE('ACCESS_RECORD')
+  .has('access_time', gt("2024-12-01 00:00:00"))
+  .order().by('access_time', desc)
+  .valueMap()
+
+```
+
+7. Top 10 Users with Highest Access Record Count.
+```gremlin
+g.V().hasLabel('User')
+  .project('user','accessCount')
+    .by(valueMap('user_id','username','phone','email'))
+    .by(
+      outE('ACCESS_RECORD')
+        .has('access_time', gt("2024-01-01 00:00:00"))
+        .has('access_time', lt("2025-3-31 23:59:59"))
+        .count()
+    )
+  .order().by(select('accessCount'), desc)
+  .limit(10)
+
+```
+
+8. Aggregate Total Access Count per Region.
+```gremlin
+g.V().hasLabel('InternetGateway').
+  project('region','accessCount').
+    by('region').
+    by(inE('ACCESS_RECORD').count()).
+  group().
+    by(select('region')).
+    by(__.fold().unfold().select('accessCount').sum())
 
 ```
 

@@ -42,6 +42,41 @@
               "type": "String",
               "field": "username",
               "alias": "username"
+            },
+            {
+              "type": "String",
+              "field": "email",
+              "alias": "email"
+            },
+            {
+              "type": "String",
+              "field": "phone",
+              "alias": "phone"
+            },
+            {
+              "type": "Datetime",
+              "field": "created_at",
+              "alias": "created_at"
+            },
+            {
+              "type": "Datetime",
+              "field": "last_login",
+              "alias": "last_login"
+            },
+            {
+              "type": "String",
+              "field": "account_status",
+              "alias": "account_status"
+            },
+            {
+              "type": "String",
+              "field": "authentication_method",
+              "alias": "authentication_method"
+            },
+            {
+              "type": "Int",
+              "field": "failed_login_attempts",
+              "alias": "failed_login_attempts"
             }
           ]
         }
@@ -68,6 +103,16 @@
               "type": "String",
               "field": "name",
               "alias": "name"
+            },
+            {
+              "type": "String",
+              "field": "region",
+              "alias": "region"
+            },
+            {
+              "type": "String",
+              "field": "status",
+              "alias": "status"
             }
           ]
         }
@@ -411,7 +456,77 @@
             }
           ]
         },
-        "attributes": []
+        "attributes": [
+          {
+            "type": "String",
+            "field": "access_level",
+            "alias": "access_level"
+          },
+          {
+            "type": "Datetime",
+            "field": "granted_at",
+            "alias": "granted_at"
+          },
+          {
+            "type": "Datetime",
+            "field": "expires_at",
+            "alias": "expires_at"
+          },
+          {
+            "type": "Datetime",
+            "field": "last_accessed_at",
+            "alias": "last_accessed_at"
+          }
+        ]
+      },
+      {
+        "label": "ACCESS_RECORD",
+        "fromVertex": "User",
+        "toVertex": "InternetGateway",
+        "tableSource": {
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "UserInternetGatewayAccessLog"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "log_id",
+              "alias": "log_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "user_id",
+              "alias": "user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "internet_gateway_id",
+              "alias": "internet_gateway_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "access_type",
+            "alias": "access_type"
+          },
+          {
+            "type": "Datetime",
+            "field": "access_time",
+            "alias": "access_time"
+          }
+        ]
       },
       {
         "label": "GATEWAY_TO",
