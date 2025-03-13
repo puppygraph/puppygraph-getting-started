@@ -107,8 +107,7 @@ CREATE EXTERNAL TABLE security_graph.UserInternetGatewayAccessLog (
   log_id                BIGINT,
   user_id               BIGINT,
   internet_gateway_id   BIGINT,
-  access_time           TIMESTAMP,
-  access_type           STRING
+  access_time           TIMESTAMP
 ) USING iceberg;
 
 CREATE EXTERNAL TABLE security_graph.VPCs (
@@ -222,8 +221,7 @@ SELECT
     log_id,
     user_id,
     internet_gateway_id,
-    CAST(access_time AS TIMESTAMP),
-    access_type
+    CAST(access_time AS TIMESTAMP)
 FROM parquet.`/parquet_data/UserInternetGatewayAccessLog.parquet`;
 
 INSERT INTO security_graph.VPCs

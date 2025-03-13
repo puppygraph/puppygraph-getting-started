@@ -517,11 +517,6 @@
         },
         "attributes": [
           {
-            "type": "String",
-            "field": "access_type",
-            "alias": "access_type"
-          },
-          {
             "type": "Datetime",
             "field": "access_time",
             "alias": "access_time"
