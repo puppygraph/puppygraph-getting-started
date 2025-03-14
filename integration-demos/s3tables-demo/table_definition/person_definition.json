@@ -1,0 +1,17 @@
+{
+    "tableBucketARN": "arn:aws:s3tables:<region>:<account-id>:bucket/<table-bucket-name>",
+    "namespace": "puppygraph_test",
+    "name": "person",
+    "format": "ICEBERG",
+    "metadata": {
+        "iceberg": {
+            "schema": {
+                "fields": [
+                     {"name": "id", "type": "string","required": true},
+                     {"name": "name", "type": "string"},
+                     {"name": "age", "type": "int"}
+                ]
+            }
+        }
+    }
+}
