@@ -77,7 +77,7 @@ Log into the PuppyGraph Web UI at http://localhost:8081 with the following crede
 
 ### Modeling the Graph
 Upload the schema:
-- Replace the placeholder in `schema.json` by your real value. (`tabl-bucket-arn` is something like `arn:aws:s3tables:<region>:<account-id>:bucket/<table-bucket-name>`.)
+- Replace the placeholder in `schema.json` by your real value. (`table-bucket-arn` is something like `arn:aws:s3tables:<region>:<account-id>:bucket/<table-bucket-name>`.)
 - In Web UI, select the file `schema.json` under **Upload Graph Schema JSON**, then click on **Upload**.
 
 Optional: You can also create the schema using the schema builder via click on **Create graph schema**. You will add vertices and edges step by step. See the demo [video](https://www.youtube.com/watch?v=aKmHxjlComo).
