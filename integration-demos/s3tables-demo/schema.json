@@ -1,0 +1,182 @@
+{
+    "catalogs": [
+      {
+        "name": "test",
+        "type": "iceberg",
+        "metastore": {
+          "type": "s3tables",
+          "region": "<region>",
+          "accessKey": "<access-key>",
+          "secretKey": "<secret-key>",
+          "warehouse": "<table-bucket-arn>",
+          "enableIcebergMetaCache": "true",
+          "icebergMetaCacheTTL": "180"
+        },
+        "storage": {
+          "useInstanceProfile": "false",
+          "region": "<region>",
+          "accessKey": "<access-key>",
+          "secretKey": "<secret-key>",
+          "enableSsl": "false",
+          "type": "S3",
+          "useDefaultCredentialsProviderChain": "false"
+        }
+      }
+    ],
+    "graph": {
+      "vertices": [
+        {
+          "label": "person",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "puppygraph_test",
+              "table": "person"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "name"
+              },
+              {
+                "type": "INT",
+                "field": "age",
+                "alias": "age"
+              }
+            ]
+          }
+        },
+        {
+          "label": "software",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "puppygraph_test",
+              "table": "software"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "name"
+              },
+              {
+                "type": "STRING",
+                "field": "lang",
+                "alias": "lang"
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "label": "knows",
+          "fromVertex": "person",
+          "toVertex": "person",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "puppygraph_test",
+            "table": "knows"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "id",
+                "alias": "id_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "from_id",
+                "alias": "from_from_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "to_id",
+                "alias": "to_to_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "DOUBLE",
+              "field": "weight",
+              "alias": "weight"
+            }
+          ]
+        },
+        {
+          "label": "created",
+          "fromVertex": "person",
+          "toVertex": "software",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "puppygraph_test",
+            "table": "created"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "id",
+                "alias": "id_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "fromid",
+                "alias": "from_fromid"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "to_id",
+                "alias": "to_to_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "DOUBLE",
+              "field": "weight",
+              "alias": "weight"
+            }
+          ]
+        }
+      ]
+    }
+  }
