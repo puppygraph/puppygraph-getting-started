@@ -67,7 +67,7 @@ INSERT INTO knows VALUES
 
 ### Start PuppyGraph
 ```bash
-docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 -d --name puppy --rm --pull=always puppygraph:puppygraph-dev:preview20250314
+docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 -d --name puppy --rm --pull=always puppygraph/puppygraph-dev:preview20250314
 ```
 
 ### Log into the UI
