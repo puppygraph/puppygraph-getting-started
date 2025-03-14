@@ -6,8 +6,8 @@
         "metastore": {
           "type": "s3tables",
           "region": "<region>",
-          "accessKey": "<accessKey>",
-          "secretKey": "<secretKey>",
+          "accessKey": "<access-key>",
+          "secretKey": "<secret-key>",
           "warehouse": "<table-bucket-arn>",
           "enableIcebergMetaCache": "true",
           "icebergMetaCacheTTL": "180"
@@ -15,8 +15,8 @@
         "storage": {
           "useInstanceProfile": "false",
           "region": "<region>",
-          "accessKey": "<accessKey>",
-          "secretKey": "<secretKey>",
+          "accessKey": "<access-key>",
+          "secretKey": "<secret-key>",
           "enableSsl": "false",
           "type": "S3",
           "useDefaultCredentialsProviderChain": "false"
