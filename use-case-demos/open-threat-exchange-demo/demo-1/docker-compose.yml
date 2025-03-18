@@ -1,0 +1,30 @@
+services:
+  puppygraph:
+    image: puppygraph/puppygraph:stable
+    pull_policy: always
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+      - DATAACCESS_DATA_CACHE_STRATEGY=adaptive
+    networks:
+      postgres_net:
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+  postgres:
+    image: postgres:14.1-alpine
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres123
+    networks:
+      postgres_net:
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+networks:
+  postgres_net:
+    name: puppy-postgres
