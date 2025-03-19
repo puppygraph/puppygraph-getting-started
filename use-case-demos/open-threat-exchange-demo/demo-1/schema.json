@@ -1,0 +1,641 @@
+{
+    "catalogs": [
+      {
+        "name": "test",
+        "type": "postgresql",
+        "jdbc": {
+          "username": "postgres",
+          "password": "postgres123",
+          "jdbcUri": "jdbc:postgresql://postgres:5432/postgres",
+          "driverClass": "org.postgresql.Driver"
+        }
+      }
+    ],
+    "graph": {
+      "vertices": [
+        {
+          "label": "pulse",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "pulse"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "name"
+              },
+              {
+                "type": "STRING",
+                "field": "description",
+                "alias": "description"
+              },
+              {
+                "type": "STRING",
+                "field": "tlp",
+                "alias": "tlp"
+              },
+              {
+                "type": "BOOLEAN",
+                "field": "public",
+                "alias": "public"
+              },
+              {
+                "type": "STRING",
+                "field": "adversary",
+                "alias": "adversary"
+              },
+              {
+                "type": "DATETIME",
+                "field": "created",
+                "alias": "created"
+              },
+              {
+                "type": "DATETIME",
+                "field": "modified",
+                "alias": "modified"
+              },
+              {
+                "type": "STRING",
+                "field": "author_name",
+                "alias": "author_name"
+              },
+              {
+                "type": "INT",
+                "field": "revision",
+                "alias": "revision"
+              }
+            ]
+          }
+        },
+        {
+          "label": "attack",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "attack"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "label": "country",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "country"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "INT",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "name"
+              }
+            ]
+          }
+        },
+        {
+          "label": "groups",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "groups"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "INT",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "label": "indicator",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "indicator"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "LONG",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "indicator",
+                "alias": "indicator"
+              },
+              {
+                "type": "STRING",
+                "field": "type",
+                "alias": "type"
+              },
+              {
+                "type": "DATETIME",
+                "field": "created",
+                "alias": "created"
+              },
+              {
+                "type": "DATETIME",
+                "field": "expiration",
+                "alias": "expiration"
+              },
+              {
+                "type": "BOOLEAN",
+                "field": "is_active",
+                "alias": "is_active"
+              },
+              {
+                "type": "STRING",
+                "field": "role",
+                "alias": "role"
+              }
+            ]
+          }
+        },
+        {
+          "label": "industry",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "industry"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "INT",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "name"
+              }
+            ]
+          }
+        },
+        {
+          "label": "malware",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "malware"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "INT",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "name"
+              }
+            ]
+          }
+        },
+        {
+          "label": "reference",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "reference"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "INT",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "url",
+                "alias": "url"
+              }
+            ]
+          }
+        },
+        {
+          "label": "tag",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "test",
+              "schema": "public",
+              "table": "tag"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "INT",
+                  "field": "id",
+                  "alias": "id_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "name"
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "label": "pulse_indicator",
+          "fromVertex": "pulse",
+          "toVertex": "indicator",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "public",
+            "table": "pulse_indicator"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "id_pulse_id"
+              },
+              {
+                "type": "LONG",
+                "field": "indicator_id",
+                "alias": "id_indicator_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "from_pulse_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "indicator_id",
+                "alias": "to_indicator_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "pulse_attack",
+          "fromVertex": "pulse",
+          "toVertex": "attack",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "public",
+            "table": "pulse_attack"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "id_pulse_id"
+              },
+              {
+                "type": "STRING",
+                "field": "attack_id",
+                "alias": "id_attack_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "from_pulse_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "attack_id",
+                "alias": "to_attack_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "pulse_country",
+          "fromVertex": "pulse",
+          "toVertex": "country",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "public",
+            "table": "pulse_country"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "id_pulse_id"
+              },
+              {
+                "type": "INT",
+                "field": "country_id",
+                "alias": "id_country_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "from_pulse_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "INT",
+                "field": "country_id",
+                "alias": "to_country_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "pulse_groups",
+          "fromVertex": "pulse",
+          "toVertex": "groups",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "public",
+            "table": "pulse_groups"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "id_pulse_id"
+              },
+              {
+                "type": "INT",
+                "field": "group_id",
+                "alias": "id_group_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "from_pulse_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "INT",
+                "field": "group_id",
+                "alias": "to_group_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "pulse_industry",
+          "fromVertex": "pulse",
+          "toVertex": "industry",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "public",
+            "table": "pulse_industry"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "id_pulse_id"
+              },
+              {
+                "type": "INT",
+                "field": "industry_id",
+                "alias": "id_industry_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "from_pulse_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "INT",
+                "field": "industry_id",
+                "alias": "to_industry_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "pulse_malware",
+          "fromVertex": "pulse",
+          "toVertex": "malware",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "public",
+            "table": "pulse_malware"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "id_pulse_id"
+              },
+              {
+                "type": "INT",
+                "field": "malware_id",
+                "alias": "id_malware_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "from_pulse_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "INT",
+                "field": "malware_id",
+                "alias": "to_malware_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "pulse_reference",
+          "fromVertex": "pulse",
+          "toVertex": "reference",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "public",
+            "table": "pulse_reference"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "id_pulse_id"
+              },
+              {
+                "type": "INT",
+                "field": "reference_id",
+                "alias": "id_reference_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "from_pulse_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "INT",
+                "field": "reference_id",
+                "alias": "to_reference_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "pulse_tag",
+          "fromVertex": "pulse",
+          "toVertex": "tag",
+          "tableSource": {
+            "catalog": "test",
+            "schema": "public",
+            "table": "pulse_tag"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "id_pulse_id"
+              },
+              {
+                "type": "INT",
+                "field": "tag_id",
+                "alias": "id_tag_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "pulse_id",
+                "alias": "from_pulse_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "INT",
+                "field": "tag_id",
+                "alias": "to_tag_id"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }

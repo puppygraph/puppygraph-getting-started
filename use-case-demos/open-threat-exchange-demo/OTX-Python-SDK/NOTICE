@@ -1,0 +1,14 @@
+NOTICE
+
+This project includes modifications to the original OTX-Python-SDK by AlienVault.
+The original work is licensed under the Apache License 2.0.
+
+Modifications made by PuppyGraph in 2025:
+- Updated import path for `Retry` (`requests.packages.urllib3.util` -> `urllib3.util.retry`).
+- Fixed the logic in `OTXv2.walkapi_iter()` so it correctly stops after yielding the expected number of items.
+- Updated `setup.py`:
+  - Changed version to `1.5.12+mytest` to differentiate this modified version.
+  - Removed `url` and `download_url` fields to avoid confusion.
+
+
+This modified version remains licensed under the Apache License 2.0.

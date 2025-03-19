@@ -1,0 +1,17 @@
+DROP TABLE pulse_groups;
+DROP TABLE groups;
+DROP TABLE pulse_reference;
+DROP TABLE reference;
+DROP TABLE pulse_attack;
+DROP TABLE attack;
+DROP TABLE pulse_malware;
+DROP TABLE malware;
+DROP TABLE pulse_industry;
+DROP TABLE industry;
+DROP TABLE pulse_country;
+DROP TABLE country;
+DROP TABLE pulse_tag;
+DROP TABLE tag;
+DROP TABLE pulse_indicator;
+DROP TABLE indicator;
+DROP TABLE pulse;
