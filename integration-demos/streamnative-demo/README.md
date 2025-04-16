@@ -107,34 +107,18 @@ Open your browser and navigate to localhost:8081 (or your instance's URL) to acc
 - Username: `puppygraph`
 - Password: `puppygraph123`
 
-<figure style="width: 80%;">
-  <img src="figures/puppygraph_login.png" alt="Alt text">
-  <figcaption> </figcaption>
-</figure>
-
 ## Connecting to the Compacted Data
 To connect PuppyGraph to the compacted data, you need to define the graph schema. You can use PuppyGraph's Web UI to do that, adding the vertices and edges manually through the interface, or compose the JSON schema file and upload it to PuppyGraph. The file `graph_schema.json` is ready for you to use.
-
-<figure style="width: 80%;">
-  <img src="figures/puppygraph_webui.png" alt="Alt text">
-  <figcaption> </figcaption>
-</figure>
 
 In `graph_schema.json`, replace all occurrences of `<Databricks catalog name>`, `<Databricks host>`, `<Databricks token>`, `<Region>`, `<Access key>`, `<Secret key>`, `<schema name>` with the actual values. For details about these fields, refer to the PuppyGraph 
 [connecting document](https://docs.puppygraph.com/connecting/connecting-to-delta-lake/).
 
 In Web UI, select the file `schema.json` in the `Upload Graph Schema JSON` section and click on Upload.
 
-<figure style="width: 80%;">
-  <img src="figures/schema_graph.png" alt="Alt text">
-  <figcaption> </figcaption>
-</figure>
-
 ## Query the graph
 You can try some [Gremlin or Cypher queries](https://docs.puppygraph.com/querying/) of the snapshot data for PuppyGraph.
-- Navigate to the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
+- Navigate to the Query panel on the left side. The **Graph Query** tab offers an interactive environment for querying the graph using Gremlin and openCypher.
 - After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization. You can do this by clicking the "Clear" button located in the top-right corner of the page.
-- For Cypher queries, you can use [Graph Notebook and Cypher Console](https://docs.puppygraph.com/querying/querying-using-opencypher/). Be sure to add `:>` before the cypher query when using Cypher Console. 
 
 Some example queries:
 1. Gremlin query: Get the number of accounts.
@@ -149,8 +133,8 @@ Some example queries:
    ```groovy
     g.V("Account[268245652805255366]").as('v').
         project('outs', 'ins').
-            by(select('v').outE('AccountTransferAccount').has('createTime', between("2022-01-01T00:00:00.000Z", "2024-01-01T00:00:00.000Z")).fold()).
-            by(select('v').inE('AccountTransferAccount').has('createTime', between("2022-01-01T00:00:00.000Z", "2024-01-01T00:00:00.000Z")).fold()).
+            by(select('v').outE('AccountTransferAccount').has('createTime', between("2022-01-01 00:00:00", "2024-01-01 00:00:00")).fold()).
+            by(select('v').inE('AccountTransferAccount').has('createTime', between("2022-01-01 00:00:00", "2024-01-01 00:00:00")).fold()).
         project('sumOutEdgeAmount', 'maxOutEdgeAmount', 'numOutEdge', 
         'sumInEdgeAmount', 'maxInEdgeAmount', 'numInEdge').
             by(select('outs').coalesce(unfold().values('amount').sum(), constant(0))).
@@ -165,23 +149,18 @@ transfer traces.
     ```groovy
     g.V("Person[24189255811812]").out("PersonOwnAccount").
         repeat(outE('AccountTransferAccount').
-            has('createTime', between("2022-01-01T00:00:00.000Z", "2024-01-01T00:00:00.000Z")).
+            has('createTime', between("2022-01-01 00:00:00", "2024-01-01 00:00:00")).
             where(or(loops().is(0), where(gt('e_last')).by('createTime'))  
         ).as('e_last').inV().as('a').dedup().by(select(all, 'a'))
     ).emit().times(3).simplePath().path()
     ```
-5. Cypher query: Get the number of accounts.
+1. Cypher query: Get the number of accounts.
    ```cypher
    MATCH (x:Account) RETURN count(x)
    ```
 
 Note: 
  Example queries 3 and 4 will return `null` for snapshot data because those vertices will be imported in the incremental data.
-
-<figure style="width: 80%;">
-  <img src="figures/query_snapshot_data.png" alt="Alt text">
-  <figcaption> </figcaption>
-</figure>
 
 ## Producing the Incremental Data
 
@@ -191,13 +170,3 @@ python import_data.py -i
 ```
 
 You can try SQL queries in Databricks and Gremlin or Cypher queries in PuppyGraph regularly and observe changes in the results. New results are available approximately every 1 to 2 minutes.
-
-<figure style="width: 40%;">
-  <img src="figures/real_time_data_impact_on_query_results.png" alt="Alt text">
-  <figcaption>Results of example query 1 at different times.</figcaption>
-</figure>
-
-<figure style="width: 90%;">
-  <img src="figures/example_query_4_final_graph.png" alt="Alt text">
-  <figcaption>Final result of example query 4 with graph visualization.</figcaption>
-</figure>

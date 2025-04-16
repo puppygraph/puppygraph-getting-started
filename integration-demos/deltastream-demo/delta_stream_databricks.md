@@ -601,8 +601,8 @@ docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 \
 3. Upload the schema:
 - Select the file `schema_databricks.json` in the Upload Graph Schema JSON section and click on Upload.
 
-4. Querying the Graph Using Gremlin
-- Navigate to the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
+1. Querying the Graph
+- Navigate to the Query panel on the left side. The **Graph Query** tab offers an interactive environment for querying the graph using Gremlin and openCypher.
 
 Example Queries:
 

@@ -111,7 +111,7 @@ quit;
 
 ## Querying the Graph
 
-- Click on the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
+- Click on the Query panel on the left side. The **Graph Query** tab offers an interactive environment for querying the graph using Gremlin and openCypher.
 
 1. Query the number of load balancers
 ```gremlin

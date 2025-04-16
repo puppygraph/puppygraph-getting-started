@@ -146,7 +146,7 @@ quit;
 
 ## Querying the Graph
 
-- Navigate to the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
+- Navigate to the Query panel on the left side. The **Graph Query** tab offers an interactive environment for querying the graph using Gremlin and openCypher.
 - After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization. 
   You can do this by clicking the "Clear" button located in the top-right corner of the page.
 

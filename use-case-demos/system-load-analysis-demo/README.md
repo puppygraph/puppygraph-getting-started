@@ -144,9 +144,9 @@ quit;
 2. Upload the schema:
 - Select the file `schema.json` in the Upload Graph Schema JSON section and click on Upload.
 
-## Querying the Graph using Gremlin
+## Querying the Graph
 
-- Navigate to the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
+- Navigate to the Query panel on the left side. The **Graph Query** tab offers an interactive environment for querying the graph using Gremlin and openCypher.
 - After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization. 
   You can do this by clicking the "Clear" button located in the top-right corner of the page.
 
@@ -170,14 +170,9 @@ g.V().hasLabel('ComponentHistory')
   .path()
 ```
 
-## Querying the Graph using Cypher
-
-- Navigate to the Query panel on the left side. The Cypher Console tab offers an interactive environment for querying the graph using Cypher.
-
-  Example Queries:
-1. Rank the importance of each component using the PageRank algorithm based on the topology and frequency of invocations.
+3. Rank the importance of each component using the PageRank algorithm based on the topology and frequency of invocations.
 ```cypher
-:> CALL algo.paral.pagerank({labels: ['Component'], relationshipTypes: ['HasInvocation'], relationshipWeightProperty: 'invocate_times', dampingFactor: 0.85}) YIELD id, score RETURN id, score ORDER BY score DESC
+CALL algo.paral.pagerank({labels: ['Component'], relationshipTypes: ['HasInvocation'], relationshipWeightProperty: 'invocate_times', dampingFactor: 0.85}) YIELD id, score RETURN id, score ORDER BY score DESC
 ```
 
 ## Cleanup and Teardown
