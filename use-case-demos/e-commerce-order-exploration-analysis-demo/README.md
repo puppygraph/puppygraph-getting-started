@@ -220,7 +220,7 @@ quit;
 
 ## Querying the Graph
 
-- Navigate to the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
+- Navigate to the Query panel on the left side. The **Graph Query** tab offers an interactive environment for querying the graph using Gremlin and openCypher.
 
 Example Queries:
 1. City Sales Ranking (Top 10):

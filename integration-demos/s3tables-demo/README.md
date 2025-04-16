@@ -87,7 +87,6 @@ Optional: You can also create the schema using the schema builder via click on *
 Navigate to **Query** in the Web UI:
 
 - Use **Graph Query** for Gremlin/openCypher queries with visualization.
-- Use **Graph Notebook** for Gremlin/openCypher queries.
 
 ### Example Queries
 

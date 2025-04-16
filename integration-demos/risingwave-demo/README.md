@@ -79,9 +79,8 @@ Upload the schema:
 
 ## Querying via PuppyGraph
 You can try some [Gremlin or Cypher queries](https://docs.puppygraph.com/querying/) of the snapshot data for PuppyGraph.
-- Navigate to the **Query** panel on the left side. The **Gremlin Query** tab provides an interactive environment for querying the graph using Gremlin.
+- Navigate to the **Query** panel on the left side. The **Graph Query** tab provides an interactive environment for querying the graph using Gremlin and openCypher.
 - After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization. Click **Clear** at the top-right corner of the page.
-- For Cypher queries, you can use [Graph Notebook and Cypher Console](https://docs.puppygraph.com/querying/querying-using-opencypher/). Be sure to add `:>` before the cypher query when using Cypher Console. 
 
 Some example queries:
 
@@ -103,12 +102,12 @@ Example queries 3 will return `null` for snapshot data because those vertices ar
         project('outs', 'ins').
             by(select('v').outE('AccountTransferAccount').
                 has('createTime', between(
-                    datetime("2022-01-01T00:00:00.000Z"), datetime("2024-01-01T00:00:00.000Z")
+                    "2022-01-01 00:00:00", "2024-01-01 00:00:00"
                 )).fold()
             ).
             by(select('v').inE('AccountTransferAccount').
                 has('createTime', between(
-                    datetime("2022-01-01T00:00:00.000Z"), datetime("2024-01-01T00:00:00.000Z")
+                    "2022-01-01 00:00:00", "2024-01-01 00:00:00"
                 )).fold()
             ).
         project('sumOutEdgeAmount', 'maxOutEdgeAmount', 'numOutEdge', 

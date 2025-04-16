@@ -205,12 +205,12 @@ quit;
 
 1. Query confirmed financial fraud users
 ```cypher
-:> MATCH (u:User) WHERE u.fraudMoneyTransfer = 1 RETURN u
+MATCH (u:User) WHERE u.fraudMoneyTransfer = 1 RETURN u
 ```
 
 2. Group accounts with transfer records and shared credit cards using the WCC algorithm
 ```cypher
-:> CALL algo.wcc({labels: ['User'],relationshipTypes: ['PatternAssociation']}) YIELD id, componentId RETURN componentId, collect(id) as ids order by size(ids) desc
+CALL algo.wcc({labels: ['User'],relationshipTypes: ['PatternAssociation']}) YIELD id, componentId RETURN componentId, collect(id) as ids order by size(ids) desc
 ```
 
 ## Querying the Graph by Code

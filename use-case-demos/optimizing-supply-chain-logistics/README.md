@@ -151,9 +151,8 @@ sudo docker run -p 8080:8080 -p 8081:8081 -p 8182:8182 -p 7687:7687 -d --name pu
 
 ## Querying the Graph
 
-- Navigate to the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
-- After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization. 
-  You can do this by clicking the "Clear" button located in the top-right corner of the page.
+- Navigate to the Query panel on the left side. The **Graph Query** tab offers an interactive environment for querying the graph using Gremlin and openCypher.
+- After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization. You can do this by clicking the "Clear" button located in the top-right corner of the page.
 
 Example Queries:
 1. Query the top 5 best-selling products.

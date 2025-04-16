@@ -165,7 +165,7 @@ quit;
 
 ## Querying the Graph using Gremlin
 
-- Navigate to the Query panel on the left side. The Gremlin Query tab offers an interactive environment for querying the graph using Gremlin.
+- Navigate to the Query panel on the left side. The **Graph Query** tab offers an interactive environment for querying the graph using Gremlin and openCypher.
 
 Example Queries:
 1. Count the number of unique paths from "Group" to "Securities" by traversing through "Person", "Trust", "Account"
@@ -206,13 +206,9 @@ g.V().hasLabel('Group')
   .limit(local, 10)
 ```
 
-## Querying the Graph using Cypher
-
-- Navigate to the Query panel on the left side. The Cypher Console tab offers an interactive environment for querying the graph using Cypher.
-Example Queries:
-1. Query the top 10 persons who hold the most of the specified security, considering the weight factor.
+4. Query the top 10 persons who hold the most of the specified security, considering the weight factor.
 ```cypher
-:> MATCH (s:Securities {SecurityName: 'Webster-Crawford'})<-[as:AccountHasSecurities]-(a:Account)<-[:TrustHasAccount]-(t:Trust)<-[pt:PersonHasTrust]->(p:Person) WITH p, as.Quantity * pt.Weight AS weightedQuantity RETURN p.Name, sum(weightedQuantity) AS totalWeightedQuantity ORDER BY totalWeightedQuantity DESC LIMIT 10
+MATCH (s:Securities {SecurityName: 'Webster-Crawford'})<-[as:AccountHasSecurities]-(a:Account)<-[:TrustHasAccount]-(t:Trust)<-[pt:PersonHasTrust]->(p:Person) WITH p, as.Quantity * pt.Weight AS weightedQuantity RETURN p.Name, sum(weightedQuantity) AS totalWeightedQuantity ORDER BY totalWeightedQuantity DESC LIMIT 10
 ```
 
 ## Cleanup and Teardown
