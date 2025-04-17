@@ -113,9 +113,7 @@ Upload the schema:
 
 Navigate to **Query** in the Web UI:
 
-- Use **Gremlin Query** for Gremlin queries with visualization (Cypher visualization is coming soon).
-- Use **Graph Notebook** for Gremlin/Cypher queries.
-
+- Use **Graph Query** for Gremlin/openCypher queries with visualization.
 
 
 ### Example Queries
