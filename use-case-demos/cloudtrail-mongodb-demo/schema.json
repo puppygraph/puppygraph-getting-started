@@ -1,0 +1,445 @@
+{
+    "catalogs":[
+        {
+            "name": "mongodb_cloudtrail",
+            "type": "mongodb",
+            "jdbc": {
+                "username": "",
+                "password": "",
+                "jdbcUri": "",
+                "driverClass": "com.mongodb.jdbc.MongoDriver"
+            }
+        }
+    ],
+    "graph": {
+      "vertices": [
+        {
+          "label": "Account",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "mongodb_cloudtrail",
+              "schema": "cloudtrail",
+              "table": "Account"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "account_id",
+                  "alias": "puppy_id_account_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "account_id",
+                "alias": "account_id"
+              },
+              {
+                "type": "STRING",
+                "field": "account_alias",
+                "alias": "account_alias"
+              },
+              {
+                "type": "STRING",
+                "field": "email",
+                "alias": "email"
+              },
+              {
+                "type": "STRING",
+                "field": "phone",
+                "alias": "phone"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Session",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "mongodb_cloudtrail",
+              "schema": "cloudtrail",
+              "table": "Session"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "session_id",
+                  "alias": "puppy_id_session_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "session_id",
+                "alias": "session_id"
+              },
+              {
+                "type": "DATETIME",
+                "field": "creation_date",
+                "alias": "creation_date"
+              },
+              {
+                "type": "BOOLEAN",
+                "field": "mfa_authenticated",
+                "alias": "mfa_authenticated"
+              },
+              {
+                "type": "STRING",
+                "field": "additional_info",
+                "alias": "additional_info"
+              },
+              {
+                "type": "STRING",
+                "field": "identity_id",
+                "alias": "identity_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Identity",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "mongodb_cloudtrail",
+              "schema": "cloudtrail",
+              "table": "Identity"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "identity_id",
+                  "alias": "puppy_id_identity_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "identity_id",
+                "alias": "identity_id"
+              },
+              {
+                "type": "STRING",
+                "field": "type",
+                "alias": "type"
+              },
+              {
+                "type": "STRING",
+                "field": "principal_id",
+                "alias": "principal_id"
+              },
+              {
+                "type": "STRING",
+                "field": "arn",
+                "alias": "arn"
+              },
+              {
+                "type": "STRING",
+                "field": "user_name",
+                "alias": "user_name"
+              },
+              {
+                "type": "STRING",
+                "field": "account_id",
+                "alias": "account_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Event",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "mongodb_cloudtrail",
+              "schema": "cloudtrail",
+              "table": "Event"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "event_id",
+                  "alias": "puppy_id_event_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "event_id",
+                "alias": "event_id"
+              },
+              {
+                "type": "DATETIME",
+                "field": "event_time",
+                "alias": "event_time"
+              },
+              {
+                "type": "STRING",
+                "field": "event_source",
+                "alias": "event_source"
+              },
+              {
+                "type": "STRING",
+                "field": "event_name",
+                "alias": "event_name"
+              },
+              {
+                "type": "STRING",
+                "field": "source_ip",
+                "alias": "source_ip"
+              },
+              {
+                "type": "STRING",
+                "field": "user_agent",
+                "alias": "user_agent"
+              },
+              {
+                "type": "STRING",
+                "field": "request_params",
+                "alias": "request_params"
+              },
+              {
+                "type": "STRING",
+                "field": "response_params",
+                "alias": "response_params"
+              },
+              {
+                "type": "STRING",
+                "field": "identity_id",
+                "alias": "identity_id"
+              },
+              {
+                "type": "STRING",
+                "field": "session_id",
+                "alias": "session_id"
+              },
+              {
+                "type": "STRING",
+                "field": "account_id",
+                "alias": "account_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "Resource",
+          "oneToOne": {
+            "tableSource": {
+              "catalog": "mongodb_cloudtrail",
+              "schema": "cloudtrail",
+              "table": "Resource"
+            },
+            "id": {
+              "fields": [
+                {
+                  "type": "STRING",
+                  "field": "resource_id",
+                  "alias": "puppy_id_resource_id"
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "field": "resource_id",
+                "alias": "resource_id"
+              },
+              {
+                "type": "STRING",
+                "field": "resource_name",
+                "alias": "resource_name"
+              },
+              {
+                "type": "STRING",
+                "field": "resource_type",
+                "alias": "resource_type"
+              },
+              {
+                "type": "STRING",
+                "field": "additional_metadata",
+                "alias": "additional_metadata"
+              }
+            ]
+          }
+        }
+      ],
+      "edges": [
+        {
+          "label": "HasIdentity",
+          "fromVertex": "Account",
+          "toVertex": "Identity",
+          "tableSource": {
+            "catalog": "mongodb_cloudtrail",
+            "schema": "cloudtrail",
+            "table": "Identity"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "identity_id",
+                "alias": "puppy_id_identity_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "account_id",
+                "alias": "puppy_from_account_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "identity_id",
+                "alias": "puppy_to_identity_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "HasSession",
+          "fromVertex": "Identity",
+          "toVertex": "Session",
+          "tableSource": {
+            "catalog": "mongodb_cloudtrail",
+            "schema": "cloudtrail",
+            "table": "Session"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "session_id",
+                "alias": "puppy_id_session_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "identity_id",
+                "alias": "puppy_from_identity_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "session_id",
+                "alias": "puppy_to_session_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "RecordsEvent",
+          "fromVertex": "Session",
+          "toVertex": "Event",
+          "tableSource": {
+            "catalog": "mongodb_cloudtrail",
+            "schema": "cloudtrail",
+            "table": "Event"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "event_id",
+                "alias": "puppy_id_event_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "session_id",
+                "alias": "puppy_from_session_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "event_id",
+                "alias": "puppy_to_event_id"
+              }
+            ]
+          }
+        },
+        {
+          "label": "OperatesOn",
+          "fromVertex": "Event",
+          "toVertex": "Resource",
+          "tableSource": {
+            "catalog": "mongodb_cloudtrail",
+            "schema": "cloudtrail",
+            "table": "EventResource"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "event_id",
+                "alias": "puppy_id_event_id"
+              }
+            ]
+          },
+          "fromId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "event_id",
+                "alias": "puppy_from_event_id"
+              }
+            ]
+          },
+          "toId": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "resource_id",
+                "alias": "puppy_to_resource_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "event_id",
+              "alias": "event_id"
+            },
+            {
+              "type": "STRING",
+              "field": "resource_id",
+              "alias": "resource_id"
+            },
+            {
+              "type": "STRING",
+              "field": "pre_state",
+              "alias": "pre_state"
+            },
+            {
+              "type": "STRING",
+              "field": "post_state",
+              "alias": "post_state"
+            }
+          ]
+        }
+      ]
+    }
+  }
