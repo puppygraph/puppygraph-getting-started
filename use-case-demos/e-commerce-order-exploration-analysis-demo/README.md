@@ -226,13 +226,19 @@ Example Queries:
 1. City Sales Ranking (Top 10):
 ```gremlin
 g.V().hasLabel('Order')
-  .out('OrderToSeller').hasLabel('Seller')
-  .map{ it.get().value('seller_city') + ", " + it.get().value('seller_state') }
+  .out('OrderToSeller').filter{ t -> t.get() != null }
+  .hasLabel('Seller')
+  .map{ s ->
+    def v = s.get()
+    def city = v.property('seller_city').orElse('unknown').toString()
+    def state = v.property('seller_state').orElse('unknown').toString()
+    city + ", " + state
+  }
   .groupCount()
   .order(local).by(values, desc)
   .unfold()
   .limit(10)
-  .project('location', 'count')
+  .project('location','count')
     .by(keys)
     .by(values)
 ```
@@ -284,15 +290,21 @@ g.V().hasLabel('Seller')
   .in('ReviewToOrder')
   .has('review_score')
   .group()
-    .by(select('seller'))
-    .by(__.values('review_score').mean().coalesce(__.identity(), __.constant(0)))
+  .by(select('seller'))
+  .by(
+    __.values('review_score')
+      .mean()
+  )
   .unfold()
-  .project('seller', 'reviews')
-    .by(select(keys))
-    .by(select(values))
-  .order()
-    .by('reviews', desc)
-  .limit(10)
+  .map { entry ->
+    def e = (Map.Entry) entry.get()
+    def seller = e.getKey()
+    def reviews = e.getValue() ?: 0.0
+    ['seller': seller, 'reviews': reviews]
+ }
+.order()
+  .by('reviews', desc)
+.limit(10)
 ```
 
 ## Cleanup and Teardown

@@ -362,7 +362,7 @@ g.V().hasLabel('InternetGateway').
   group().
     by(select('region')).
     by(__.fold().unfold().select('accessCount').sum()).
-  order().by(region')
+  order().by('region')
     
 ```
 **cypher:**
