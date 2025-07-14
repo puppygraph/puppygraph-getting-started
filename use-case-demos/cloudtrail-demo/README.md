@@ -244,7 +244,7 @@ g.V().hasLabel('Account').as('a')
 3. Identify Accounts Operating on a Specific Resource Type.
 ```cypher
 MATCH (a:Account)-[:HasIdentity]->(i:Identity)-[:HasSession]->(s:Session)-[:RecordsEvent]->(e:Event)-[:OperatesOn]->(r:Resource)
-WHERE r.resource_type = 's3bucket'
+WHERE r.resource_type = 'S3Bucket'
 RETURN a.account_id AS Account,
        r.resource_name AS S3BucketName,
        e.event_id AS EventID
@@ -257,7 +257,7 @@ g.V().hasLabel('Account').as('a')
   .out('HasSession').hasLabel('Session').as('s')
   .out('RecordsEvent').hasLabel('Event').as('e')
   .out('OperatesOn').hasLabel('Resource').as('r')
-  .has('resource_type', 's3bucket')
+  .has('resource_type', 'S3Bucket')
   .select('a', 'r', 'e')
   .by(valueMap('account_id').unfold())
   .by(valueMap('resource_name').unfold())
@@ -268,7 +268,7 @@ g.V().hasLabel('Account').as('a')
 4. Retrieve Detailed Multi-Hop Paths for EC2 Instances.
 ```cypher
 MATCH path = (a:Account)-[:HasIdentity]->(i:Identity)-[:HasSession]->(s:Session)-[:RecordsEvent]->(e:Event)-[:OperatesOn]->(r:Resource)
-WHERE r.resource_type = 'ec2instance'
+WHERE r.resource_type = 'EC2Instance'
 RETURN path
 LIMIT 25
 ```
@@ -279,7 +279,7 @@ g.V().hasLabel('Account').as('a')
   .out('HasSession').hasLabel('Session').as('s')
   .out('RecordsEvent').hasLabel('Event').as('e')
   .out('OperatesOn').hasLabel('Resource').as('r')
-  .has('resource_type', 'ec2instance')
+  .has('resource_type', 'EC2Instance')
   .path()
   .limit(25)
 ```
