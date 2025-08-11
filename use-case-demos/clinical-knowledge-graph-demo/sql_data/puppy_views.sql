@@ -95,7 +95,7 @@ from doid_xref dx
 where starts_with(source, 'UMLS_CUI');
 
 create or replace view stem_puppyview as
-select id, stem 
+select id, stem::text as stem
 from structures
 where stem is not null;
 
