@@ -135,8 +135,10 @@ g.V().hasLabel('servicenode').has('status', 'failed')
 ```gremlin
 g.V('servicenode[4]')
   .emit()
-  .repeat(out('request','distribute').simplePath()).path()
-  .order().by({ it.size() }, desc)
+  .repeat(out('request','distribute').simplePath())
+  .times(3)
+  .path()
+  .limit(1000)
 ```
 ![img_query04_r.png](img/img_query04_r.png)
 
@@ -151,6 +153,7 @@ g.V().hasLabel('servicenode').has('status', 'failed')
   .repeat(out('request', 'distribute').simplePath())
   .times(3)
   .path()
+  .limit(1000)
 ```
 ![img_query05.png](img/img_query05.png)
 
