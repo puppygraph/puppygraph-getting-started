@@ -66,11 +66,11 @@ services:
       until (/usr/bin/mc alias set minio http://minio:9000 admin password) do echo '...waiting...' && sleep 1; done;
       /usr/bin/mc rm -r --force minio/warehouse;
       /usr/bin/mc mb minio/warehouse;
-      /usr/bin/mc policy set public minio/warehouse;
+      /usr/bin/mc anonymous set public minio/warehouse;
       tail -f /dev/null
       "
   puppygraph:
-    image: puppygraph/puppygraph:0.62
+    image: puppygraph/puppygraph:stable
     container_name: puppygraph
     networks:
       iceberg_net:
