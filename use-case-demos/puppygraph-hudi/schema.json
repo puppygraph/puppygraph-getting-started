@@ -1,0 +1,847 @@
+{
+  "catalogs": [
+    {
+      "name": "hudi_security_graph",
+      "type": "hudi",
+      "metastore": {
+        "type": "HMS",
+        "hiveMetastoreUrl": "thrift://metastore:9083"
+      },
+      "storage": {
+        "type": "S3",
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "User",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "Users"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "user_id",
+                "alias": "user_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "username",
+              "alias": "username"
+            },
+            {
+              "type": "String",
+              "field": "email",
+              "alias": "email"
+            },
+            {
+              "type": "String",
+              "field": "phone",
+              "alias": "phone"
+            },
+            {
+              "type": "Datetime",
+              "field": "created_at",
+              "alias": "created_at"
+            },
+            {
+              "type": "Datetime",
+              "field": "last_login",
+              "alias": "last_login"
+            },
+            {
+              "type": "String",
+              "field": "account_status",
+              "alias": "account_status"
+            },
+            {
+              "type": "String",
+              "field": "authentication_method",
+              "alias": "authentication_method"
+            },
+            {
+              "type": "Long",
+              "field": "failed_login_attempts",
+              "alias": "failed_login_attempts"
+            }
+          ]
+        }
+      },
+      {
+        "label": "InternetGateway",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "InternetGateways"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "internet_gateway_id",
+                "alias": "internet_gateway_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "String",
+              "field": "region",
+              "alias": "region"
+            },
+            {
+              "type": "String",
+              "field": "status",
+              "alias": "status"
+            }
+          ]
+        }
+      },
+      {
+        "label": "VPC",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "VPCs"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "vpc_id",
+                "alias": "vpc_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Subnet",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "Subnets"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "subnet_id",
+                "alias": "subnet_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "vpc_id",
+              "alias": "vpc_id"
+            },
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "SecurityGroup",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "SecurityGroups"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "security_group_id",
+                "alias": "security_group_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "NetworkInterface",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "NetworkInterfaces"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "network_interface_id",
+                "alias": "network_interface_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "subnet_id",
+              "alias": "subnet_id"
+            },
+            {
+              "type": "Long",
+              "field": "security_group_id",
+              "alias": "security_group_id"
+            },
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "VMInstance",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "VMInstances"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "vm_instance_id",
+                "alias": "vm_instance_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            },
+            {
+              "type": "Long",
+              "field": "role_id",
+              "alias": "role_id"
+            },
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Role",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "Roles"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "role_id",
+                "alias": "role_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Resource",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "Resources"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "resource_id",
+                "alias": "resource_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "PublicIP",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "PublicIPs"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "public_ip_id",
+                "alias": "public_ip_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "ip_address",
+              "alias": "ip_address"
+            },
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "PrivateIP",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "PrivateIPs"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "private_ip_id",
+                "alias": "private_ip_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "ip_address",
+              "alias": "ip_address"
+            },
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "IngressRule",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "hudi_security_graph",
+            "schema": "security_graph",
+            "table": "IngressRules"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "Long",
+                "field": "ingress_rule_id",
+                "alias": "ingress_rule_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "Long",
+              "field": "security_group_id",
+              "alias": "security_group_id"
+            },
+            {
+              "type": "String",
+              "field": "protocol",
+              "alias": "protocol"
+            },
+            {
+              "type": "String",
+              "field": "port_range",
+              "alias": "port_range"
+            },
+            {
+              "type": "String",
+              "field": "source",
+              "alias": "source"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "ACCESS",
+        "fromVertex": "User",
+        "toVertex": "InternetGateway",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "UserInternetGatewayAccess"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "user_id",
+              "alias": "user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "internet_gateway_id",
+              "alias": "internet_gateway_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "access_level",
+            "alias": "access_level"
+          },
+          {
+            "type": "Datetime",
+            "field": "granted_at",
+            "alias": "granted_at"
+          },
+          {
+            "type": "Datetime",
+            "field": "expires_at",
+            "alias": "expires_at"
+          },
+          {
+            "type": "Datetime",
+            "field": "last_accessed_at",
+            "alias": "last_accessed_at"
+          }
+        ]
+      },
+      {
+        "label": "ACCESS_RECORD",
+        "fromVertex": "User",
+        "toVertex": "InternetGateway",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "UserInternetGatewayAccessLog"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "log_id",
+              "alias": "log_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "user_id",
+              "alias": "user_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "internet_gateway_id",
+              "alias": "internet_gateway_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "Datetime",
+            "field": "access_time",
+            "alias": "access_time"
+          }
+        ]
+      },
+      {
+        "label": "GATEWAY_TO",
+        "fromVertex": "InternetGateway",
+        "toVertex": "VPC",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "InternetGatewayVPC"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "internet_gateway_id",
+              "alias": "internet_gateway_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "vpc_id",
+              "alias": "vpc_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "CONTAINS",
+        "fromVertex": "VPC",
+        "toVertex": "Subnet",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "Subnets"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "vpc_id",
+              "alias": "vpc_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "subnet_id",
+              "alias": "subnet_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HOSTS_INTERFACE",
+        "fromVertex": "Subnet",
+        "toVertex": "NetworkInterface",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "NetworkInterfaces"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "subnet_id",
+              "alias": "subnet_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "PROTECTS",
+        "fromVertex": "SecurityGroup",
+        "toVertex": "NetworkInterface",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "NetworkInterfaces"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "security_group_id",
+              "alias": "security_group_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ATTACHED_TO",
+        "fromVertex": "NetworkInterface",
+        "toVertex": "VMInstance",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "VMInstances"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "vm_instance_id",
+              "alias": "vm_instance_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ASSIGNED_ROLE",
+        "fromVertex": "VMInstance",
+        "toVertex": "Role",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "VMInstances"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "vm_instance_id",
+              "alias": "vm_instance_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "role_id",
+              "alias": "role_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ALLOWS_ACCESS_TO",
+        "fromVertex": "Role",
+        "toVertex": "Resource",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "RoleResourceAccess"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "role_id",
+              "alias": "role_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "resource_id",
+              "alias": "resource_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_PUBLIC_IP",
+        "fromVertex": "NetworkInterface",
+        "toVertex": "PublicIP",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "PublicIPs"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "public_ip_id",
+              "alias": "public_ip_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_PRIVATE_IP",
+        "fromVertex": "NetworkInterface",
+        "toVertex": "PrivateIP",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "PrivateIPs"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "network_interface_id",
+              "alias": "network_interface_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "private_ip_id",
+              "alias": "private_ip_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_RULE",
+        "fromVertex": "SecurityGroup",
+        "toVertex": "IngressRule",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "IngressRules"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "security_group_id",
+              "alias": "security_group_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "ingress_rule_id",
+              "alias": "ingress_rule_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "ALLOWS_TRAFFIC_FROM",
+        "fromVertex": "IngressRule",
+        "toVertex": "InternetGateway",
+        "tableSource": {
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "IngressRuleInternetGateway"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "ingress_rule_id",
+              "alias": "ingress_rule_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "Long",
+              "field": "internet_gateway_id",
+              "alias": "internet_gateway_id"
+            }
+          ]
+        },
+        "attributes": []
+      }
+    ]
+  }
+}

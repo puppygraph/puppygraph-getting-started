@@ -1,0 +1,110 @@
+services:
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    container_name: postgres
+    hostname: postgres
+    networks:
+      hudi_net:
+    volumes:
+      - hive-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: 'metastore_db'
+      POSTGRES_USER: 'hive'
+      POSTGRES_PASSWORD: 'password'
+    ports:
+      - '5432:5432'
+  metastore:
+    image: apache/hive:4.0.0
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    container_name: metastore
+    hostname: metastore
+    networks:
+      hudi_net:
+    volumes:
+      - warehouse:/opt/hive/data/warehouse
+      - ./hive-conf:/opt/hive/conf
+      - ./lib/postgresql-42.5.1.jar:/opt/hive/lib/postgres.jar:ro
+      - ./lib/hadoop-aws-3.3.4.jar:/opt/hadoop/share/hadoop/tools/lib/hadoop-aws-3.3.4.jar:ro
+      - ./lib/aws-java-sdk-bundle-1.12.262.jar:/opt/hadoop/share/hadoop/tools/lib/aws-java-sdk-bundle-1.12.262.jar:ro
+    environment:
+      DB_DRIVER: postgres
+      SERVICE_NAME: 'metastore'
+      HIVE_AUX_JARS_PATH: /opt/hive/lib/postgres.jar
+      HADOOP_CONF_DIR: /opt/hive/conf
+      HADOOP_CLASSPATH: /opt/hadoop/share/hadoop/tools/lib/*:/opt/hive/lib/*
+      SERVICE_OPTS: '-Xmx1G -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
+                     -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db
+                     -Djavax.jdo.option.ConnectionUserName=hive
+                     -Djavax.jdo.option.ConnectionPassword=password'
+    ports:
+      - '9083:9083'
+  minio:
+    image: minio/minio
+    container_name: minio
+    networks:
+      hudi_net:
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=password
+    ports:
+      - 9001:9001
+      - 9000:9000
+    command: ["server", "/data", "--console-address", ":9001"]
+  mc:
+    image: minio/mc
+    depends_on:
+      - minio
+    container_name: mc
+    networks:
+      hudi_net:
+    environment:
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=password
+      - AWS_REGION=us-east-1
+    entrypoint: >
+      /bin/sh -c "
+      until (/usr/bin/mc alias set minio http://minio:9000 admin password) do echo '.waiting.' && sleep 1; done;
+      /usr/bin/mc ls minio/warehouse >/dev/null 2>&1 || /usr/bin/mc mb minio/warehouse;
+      /usr/bin/mc anonymous set public minio/warehouse;
+      tail -f /dev/null
+      "
+  spark:
+    image: apache/spark:3.5.6
+    depends_on:
+      - metastore
+      - minio
+    networks:
+      hudi_net:
+    volumes:
+      - ./spark-conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
+      - ./parquet_data:/parquet_data:ro
+      - ./init.sql:/init.sql:ro
+    environment:
+      AWS_ACCESS_KEY_ID: admin
+      AWS_SECRET_ACCESS_KEY: password
+    command: ["bash", "-lc", "tail -f /dev/null"]
+  puppygraph:
+    image: puppygraph/puppygraph:0.37
+    container_name: puppygraph
+    networks:
+      hudi_net:
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+      - METRICS_ENABLED=true
+      - GREMLINSERVER_METRICS_ENABLED=true
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+
+volumes:
+  hive-db:
+  warehouse:
+
+networks:
+  hudi_net:
+    name: puppy-hudi
