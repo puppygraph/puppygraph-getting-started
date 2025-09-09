@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>javax.jdo.option.ConnectionURL</name>
+    <value>jdbc:postgresql://postgres:5432/metastore_db</value>
+  </property>
+  <property>
+    <name>javax.jdo.option.ConnectionDriverName</name>
+    <value>org.postgresql.Driver</value>
+  </property>
+  <property>
+    <name>javax.jdo.option.ConnectionUserName</name>
+    <value>hive</value>
+  </property>
+  <property>
+    <name>javax.jdo.option.ConnectionPassword</name>
+    <value>password</value>
+  </property>
+
+  <property>
+    <name>hive.metastore.schema.verification</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>hive.metastore.warehouse.dir</name>
+    <value>/opt/hive/data/warehouse</value>
+  </property>
+</configuration>
