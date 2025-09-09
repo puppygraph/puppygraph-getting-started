@@ -31,7 +31,6 @@ curl -L -o lib/aws-java-sdk-bundle-1.12.262.jar \
 ## Loading Data
 Start up the Docker container:
 ```
-docker run -d --name puppy --rm --pull=always puppygraph/puppygraph:stable && docker stop puppy
 docker compose up -d
 ```
 
