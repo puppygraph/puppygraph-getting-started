@@ -1,3 +1,8 @@
+# Integrating Apache Hudi Tables and Querying Data Using PuppyGraph
+
+## Summary
+This demo showcases a basic graph analysis workflow by integrating Apache Hudi tables with PuppyGraph.
+
 Components of the project:
 - Storage: MinIO/S3 – Object store for Hudi data
 - Data Lakehouse: Apache Hudi – Brings database functionality to your data lakes
@@ -6,8 +11,14 @@ Components of the project:
   - Spark – Initial table writes
   - PuppyGraph – Graph query engine for complex, multi-hop graph queries
 
-# Steps to Run
-## Data Preparation
+This process streamlines storage, data processing and visualization, enabling graph insights from relational data.
+
+## Prerequisites
+* [Docker and Docker Compose](https://docs.docker.com/compose/)
+* [Python 3 and virtual environment](https://docs.python.org/3/library/venv.html)
+
+## Steps to Run
+### Data Preparation
 ```
 python3 -m venv demo
 source demo/bin/activate
@@ -15,7 +26,7 @@ pip install -r requirements.txt
 python3 CsvToParquet.py ./csv_data ./parquet_data
 ```
 
-## Installing Dependencies
+### Installing Dependencies
 ```
 mkdir -p lib
 curl -L -o lib/postgresql-42.5.1.jar \
@@ -28,7 +39,7 @@ curl -L -o lib/aws-java-sdk-bundle-1.12.262.jar \
   https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar
 ```
 
-## Loading Data
+### Loading Data
 Start up the Docker container:
 ```
 docker compose up -d
@@ -39,7 +50,7 @@ Once everything is up and running, you can now populate the database:
 docker compose exec spark /opt/spark/bin/spark-sql -f /init.sql
 ```
 
-## Modeling the Graph
+### Modeling the Graph
 1. Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
 - Username: `puppygraph`
 - Password: `puppygraph123`
@@ -47,7 +58,7 @@ docker compose exec spark /opt/spark/bin/spark-sql -f /init.sql
 2. Upload the schema:
 - Select the file `schema.json` in the Upload Graph Schema JSON section and click on Upload.
 
-## Querying the Graph using Gremlin and Cypher
+### Querying the Graph using Gremlin and Cypher
 - Navigate to the Query panel on the left side. The Graph Query tab offers an interactive environment for querying the graph using Gremlin and Cypher.
 - After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization. 
   You can do this by clicking the "Clear Canvas" button located in the top-right corner of the page.
@@ -155,7 +166,7 @@ g.V().hasLabel('SecurityGroup').as('sg')
   .path()
 ```
 
-## Cleanup and Teardown
+### Cleanup and Teardown
 - To stop and remove the containers, networks, and volumes, run:
 ```
 docker compose down --volumes --remove-orphans
