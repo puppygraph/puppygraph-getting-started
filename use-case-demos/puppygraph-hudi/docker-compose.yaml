@@ -94,8 +94,6 @@ services:
     environment:
       - PUPPYGRAPH_USERNAME=puppygraph
       - PUPPYGRAPH_PASSWORD=puppygraph123
-      - METRICS_ENABLED=true
-      - GREMLINSERVER_METRICS_ENABLED=true
     ports:
       - "8081:8081"
       - "8182:8182"
