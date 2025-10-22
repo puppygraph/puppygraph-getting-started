@@ -1,0 +1,470 @@
+{
+  "catalogs": [
+    {
+      "name": "Telecom_Example",
+      "type": "duckdb",
+      "jdbc": {
+        "jdbcUri": "jdbc:duckdb:/data/my_project.duckdb",
+        "driverClass": "org.duckdb.DuckDBDriver",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Customer",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "Telecom_Example",
+            "schema": "main",
+            "table": "customers"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "customer_id",
+                "alias": "puppy_id_customer_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "customer_id",
+              "alias": "customer_id"
+            },
+            {
+              "type": "LONG",
+              "field": "age",
+              "alias": "age"
+            },
+            {
+              "type": "LONG",
+              "field": "tenure_months",
+              "alias": "tenure_months"
+            },
+            {
+              "type": "STRING",
+              "field": "phone_number",
+              "alias": "phone_number"
+            },
+            {
+              "type": "LONG",
+              "field": "churned",
+              "alias": "churned"
+            },
+            {
+              "type": "STRING",
+              "field": "family_plan_id",
+              "alias": "family_plan_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Phone_Number",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "Telecom_Example",
+            "schema": "main",
+            "table": "customer_calls"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "source_customer",
+                "alias": "puppy_id_source_customer"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "source_customer",
+              "alias": "source_customer"
+            },
+            {
+              "type": "STRING",
+              "field": "target_customer",
+              "alias": "target_customer"
+            },
+            {
+              "type": "LONG",
+              "field": "call_duration",
+              "alias": "call_duration"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Family_Plan",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "Telecom_Example",
+            "schema": "main",
+            "table": "family_plans"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "family_plan_id",
+                "alias": "puppy_id_family_plan_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "primary_id",
+              "alias": "primary_id"
+            },
+            {
+              "type": "STRING",
+              "field": "plan_id",
+              "alias": "plan_id"
+            },
+            {
+              "type": "STRING",
+              "field": "family_plan_id",
+              "alias": "family_plan_id"
+            },
+            {
+              "type": "STRING",
+              "field": "members",
+              "alias": "members"
+            },
+            {
+              "type": "STRING",
+              "field": "shared_location",
+              "alias": "shared_location"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Ticket",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "Telecom_Example",
+            "schema": "main",
+            "table": "customer_support"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "ticket_id",
+                "alias": "puppy_id_ticket_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "ticket_id",
+              "alias": "ticket_id"
+            },
+            {
+              "type": "STRING",
+              "field": "customer_id",
+              "alias": "customer_id"
+            },
+            {
+              "type": "STRING",
+              "field": "channel",
+              "alias": "channel"
+            },
+            {
+              "type": "STRING",
+              "field": "issue_type",
+              "alias": "issue_type"
+            },
+            {
+              "type": "LONG",
+              "field": "resolution_time_min",
+              "alias": "resolution_time_min"
+            },
+            {
+              "type": "BOOLEAN",
+              "field": "escalated",
+              "alias": "escalated"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "satisfaction_score",
+              "alias": "satisfaction_score"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "customer_calls",
+        "fromVertex": "Phone_Number",
+        "toVertex": "Phone_Number",
+        "tableSource": {
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "customer_calls"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "target_customer",
+              "alias": "puppy_id_target_customer"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "source_customer",
+              "alias": "puppy_from_source_customer"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "target_customer",
+              "alias": "puppy_to_target_customer"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "source_customer",
+            "alias": "source_customer"
+          },
+          {
+            "type": "STRING",
+            "field": "target_customer",
+            "alias": "target_customer"
+          },
+          {
+            "type": "LONG",
+            "field": "call_duration",
+            "alias": "call_duration"
+          }
+        ]
+      },
+      {
+        "label": "Member",
+        "fromVertex": "Family_Plan",
+        "toVertex": "Customer",
+        "tableSource": {
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "family_plans"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "primary_id",
+              "alias": "puppy_id_primary_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "family_plan_id",
+              "alias": "puppy_from_family_plan_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "members",
+              "alias": "puppy_to_members"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "primary_id",
+            "alias": "primary_id"
+          },
+          {
+            "type": "STRING",
+            "field": "plan_id",
+            "alias": "plan_id"
+          },
+          {
+            "type": "STRING",
+            "field": "family_plan_id",
+            "alias": "family_plan_id"
+          },
+          {
+            "type": "STRING",
+            "field": "members",
+            "alias": "members"
+          },
+          {
+            "type": "STRING",
+            "field": "shared_location",
+            "alias": "shared_location"
+          }
+        ]
+      },
+      {
+        "label": "Filed",
+        "fromVertex": "Customer",
+        "toVertex": "Ticket",
+        "tableSource": {
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "customer_support"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "ticket_id",
+              "alias": "puppy_id_ticket_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "customer_id",
+              "alias": "puppy_from_customer_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "ticket_id",
+              "alias": "puppy_to_ticket_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "ticket_id",
+            "alias": "ticket_id"
+          },
+          {
+            "type": "STRING",
+            "field": "customer_id",
+            "alias": "customer_id"
+          },
+          {
+            "type": "STRING",
+            "field": "channel",
+            "alias": "channel"
+          },
+          {
+            "type": "STRING",
+            "field": "issue_type",
+            "alias": "issue_type"
+          },
+          {
+            "type": "LONG",
+            "field": "resolution_time_min",
+            "alias": "resolution_time_min"
+          },
+          {
+            "type": "BOOLEAN",
+            "field": "escalated",
+            "alias": "escalated"
+          },
+          {
+            "type": "DOUBLE",
+            "field": "satisfaction_score",
+            "alias": "satisfaction_score"
+          }
+        ]
+      },
+      {
+        "label": "Cust_Number",
+        "fromVertex": "Customer",
+        "toVertex": "Phone_Number",
+        "tableSource": {
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "customers"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "customer_id",
+              "alias": "puppy_id_customer_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "customer_id",
+              "alias": "puppy_from_customer_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "phone_number",
+              "alias": "puppy_to_phone_number"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "customer_id",
+            "alias": "customer_id"
+          },
+          {
+            "type": "LONG",
+            "field": "age",
+            "alias": "age"
+          },
+          {
+            "type": "LONG",
+            "field": "tenure_months",
+            "alias": "tenure_months"
+          },
+          {
+            "type": "STRING",
+            "field": "phone_number",
+            "alias": "phone_number"
+          },
+          {
+            "type": "LONG",
+            "field": "churned",
+            "alias": "churned"
+          },
+          {
+            "type": "STRING",
+            "field": "family_plan_id",
+            "alias": "family_plan_id"
+          }
+        ]
+      }
+    ]
+  }
+}
