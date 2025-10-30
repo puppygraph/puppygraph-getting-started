@@ -13,7 +13,7 @@ random.seed(42)
 NUM_CUSTOMERS = 1002
 NUM_PLANS = 5
 NUM_DEVICES = 10
-NUM_ISOLATED_CUSTOMERS = (int)(NUM_CUSTOMERS * 0.01)  # 1% isolated customers
+NUM_ISOLATED_CUSTOMERS = int(NUM_CUSTOMERS * 0.01)  # 1% isolated customers
 
 end_date = datetime.now()
 
@@ -70,7 +70,7 @@ def generate_support_interactions(customers, num_interactions=500):
         resolution_time = int(random.gauss(mu=30, sigma=15))  # in minutes
         resolution_time = max(5, min(120, resolution_time))  # clamp to 5-120 mins
         escalated = random.random() < 0.1 if issue != 'cancellation' else True
-        satisfaction = random.choices(satisfaction_scores, weights=[0.04, 0.06, 0.1, 0.15, 0.15, 0.5], k = 1)[0]
+        satisfaction = random.choices(satisfaction_scores, weights=[0.04, 0.06, 0.1, 0.15, 0.15, 0.5], k=1)[0]
 
         support_data.append({
             "ticket_id": ticket_id,
@@ -97,7 +97,7 @@ for i in range(5000):  # 5,000 random call interactions
         # If the source is isolated, choose a random target from all customers
         tgt = random.choice(list(set(customers["customer_id"]) - {src} - isolated_customers))
     time = end_date - timedelta(days=random.random() * 90)
-    calls.append((customer_id_to_phone[src], customer_id_to_phone[tgt], (int)(random.randint(1, 10000)*(random.random()/2)**2+1), time))  # Random call duration between 1 and 10000 seconds
+    calls.append((customer_id_to_phone[src], customer_id_to_phone[tgt], int(random.randint(1, 10000)*(random.random()/2)**2+1), time))  # Random call duration between 1 and 10000 seconds
 customer_calls = pd.DataFrame(calls, columns=["source_customer", "target_customer", "call_duration", "call_time"])
 
 new_calls = []
@@ -141,7 +141,7 @@ for i in range(NUM_CIRCLES):
                     call_circles.append({
                         "source_customer": customer_id_to_phone[person],
                         "target_customer": customer_id_to_phone[friend],
-                        "call_duration": (int)(random.randint(1, 10000)*(random.random()/2)**2+1),
+                        "call_duration": int(random.randint(1, 10000)*(random.random()/2)**2+1),
                         "call_time": end_date - timedelta(days=random.random() * 90)
                     })
     CIRCLE_SIZE = random.randint(2, 15)  # Random circle size between 2 and 15
@@ -183,7 +183,7 @@ for i in range(num_family_plans):
                     call_circles.append({
                         "source_customer": customer_id_to_phone[member],
                         "target_customer": customer_id_to_phone[other_fam],
-                        "call_duration": (int)(random.randint(1, 10000)*(random.random()/2)**2+1),
+                        "call_duration": int(random.randint(1, 10000)*(random.random()/2)**2+1),
                         "call_time": end_date - timedelta(days=random.random() * 90)
                     })
 
