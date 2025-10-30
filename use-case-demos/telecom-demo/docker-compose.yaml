@@ -6,7 +6,6 @@ services:
     environment:
       - PUPPYGRAPH_USERNAME=puppygraph
       - PUPPYGRAPH_PASSWORD=puppygraph123
-      # - DUCKDB_FILE=/home/share/mydatabase.duckdb
     networks:
       duckdb_net:
     ports:
