@@ -85,7 +85,6 @@ def generate_support_interactions(customers, num_interactions=500):
 
     return pd.DataFrame(support_data)
 
-friend_edges = defaultdict(set)
 isolated_customers = set(np.random.choice(customers["customer_id"], NUM_ISOLATED_CUSTOMERS, replace=False))
 calls = []
 customer_id_to_phone = dict(zip(customers["customer_id"], customers["phone_number"]))
