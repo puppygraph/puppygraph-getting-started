@@ -87,7 +87,6 @@ def generate_support_interactions(customers, num_interactions=500):
 
 friend_edges = defaultdict(set)
 isolated_customers = set(np.random.choice(customers["customer_id"], NUM_ISOLATED_CUSTOMERS, replace=False))
-non_isolated_customers = set(customers["customer_id"]) - isolated_customers
 calls = []
 customer_id_to_phone = dict(zip(customers["customer_id"], customers["phone_number"]))
 for i in range(5000):  # 5,000 random call interactions
