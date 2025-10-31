@@ -95,8 +95,8 @@ for i in range(5000):  # 5,000 random call interactions
     if src not in isolated_customers:
         # If the source is isolated, choose a random target from all customers
         tgt = random.choice(list(set(customers["customer_id"]) - {src} - isolated_customers))
-    time = end_date - timedelta(days=random.random() * 90)
-    calls.append((customer_id_to_phone[src], customer_id_to_phone[tgt], int(random.randint(1, 10000)*(random.random()/2)**2+1), time))  # Random call duration between 1 and 10000 seconds
+        time = end_date - timedelta(days=random.random() * 90)
+        calls.append((customer_id_to_phone[src], customer_id_to_phone[tgt], int(random.randint(1, 10000)*(random.random()/2)**2+1), time))  # Random call duration between 1 and 10000 seconds
 customer_calls = pd.DataFrame(calls, columns=["source_customer", "target_customer", "call_duration", "call_time"])
 
 new_calls = []
@@ -156,7 +156,7 @@ customer_to_family_plan = {}
 available_customers = set(customers["customer_id"])
 num_family_plans = 50  # Number of family plan groups
 for i in range(num_family_plans):
-    family_size = random.randint(2, 6)  # Family plan size between 3 and 6
+    family_size = random.randint(2, 6)  # Family plan size between 2 and 6
     family_members = random.sample(list(available_customers), family_size)
     available_customers -= set(family_members)
     family_plan_id = f"FAM_PLAN_{i}"
@@ -170,7 +170,7 @@ for i in range(num_family_plans):
             "members": family_members,
             "shared_location": shared_location,
         })
-    if random.random() < 0.1:
+    if random.random() < 0.1: #Some Family Plans have no calls
         pass
     for member in family_members:
         customer_locations_dict[member] = shared_location
@@ -178,7 +178,7 @@ for i in range(num_family_plans):
         customers.loc[customers["customer_id"] == member, "churned"] = 0
         for other_fam in family_members:
             if member != other_fam:
-                for _ in range(random.randint(1, 15)):  # Each pair can have 6 to 20 calls (double counting)
+                for _ in range(random.randint(1, 15)):  # Each pair can have 2 to 30 calls (double counting)
                     call_circles.append({
                         "source_customer": customer_id_to_phone[member],
                         "target_customer": customer_id_to_phone[other_fam],
