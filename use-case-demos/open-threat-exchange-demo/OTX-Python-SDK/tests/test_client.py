@@ -36,8 +36,10 @@ def create_user(username, password, email, group_ids=None):
     j = json.loads(r.text)
     r = requests.get(ALIEN_DEV_SERVER + 'otxapi/user/?detailed=true', headers={'Authorization': j['key']})
     j = r.json()
-    print("creating user {} (key={} groups={})".format(username, j['api_keys'][0]['api_key'],  group_ids))
-    return j['api_keys'][0]['api_key']
+    api_key = j['api_keys'][0]['api_key']
+    masked_key = api_key[-4:] if isinstance(api_key, str) and len(api_key) >= 4 else "****"
+    print("creating user {} (key=***{} (masked) groups={})".format(username, masked_key, group_ids))
+    return api_key
 
 
 def delete_user(username):
