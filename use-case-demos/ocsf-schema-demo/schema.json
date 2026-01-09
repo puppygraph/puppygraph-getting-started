@@ -1,0 +1,247 @@
+{
+  "catalogs": [
+    {
+      "name": "ocsf_sql",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "admin",
+        "password": "password",
+        "jdbcUri": "jdbc:postgresql://ocsf_db:5432/ocsf_demo",
+        "driverClass": "org.postgresql.Driver",
+        "driverUrl": "https://jdbc.postgresql.org/download/postgresql-42.7.3.jar",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "User",
+        "oneToOne": {
+          "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "users" },
+          "id": { "fields": [{ "type": "STRING", "field": "user_id", "alias": "id" }] },
+          "attributes": [
+            { "type": "STRING", "field": "username", "alias": "username" },
+            { "type": "STRING", "field": "email", "alias": "email" },
+            { "type": "STRING", "field": "department", "alias": "department" },
+            { "type": "STRING", "field": "role", "alias": "role" },
+            { "type": "BOOLEAN", "field": "is_admin", "alias": "is_admin" }
+          ]
+        }
+      },
+      {
+        "label": "Device",
+        "oneToOne": {
+          "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "devices" },
+          "id": { "fields": [{ "type": "STRING", "field": "device_id", "alias": "id" }] },
+          "attributes": [
+            { "type": "STRING", "field": "hostname", "alias": "hostname" },
+            { "type": "STRING", "field": "ip_address", "alias": "ip_address" },
+            { "type": "STRING", "field": "os_type", "alias": "os_type" },
+            { "type": "INT", "field": "risk_score", "alias": "risk_score" }
+          ]
+        }
+      },
+      {
+        "label": "Resource",
+        "oneToOne": {
+          "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "resources" },
+          "id": { "fields": [{ "type": "STRING", "field": "resource_id", "alias": "id" }] },
+          "attributes": [
+            { "type": "STRING", "field": "resource_name", "alias": "name" },
+            { "type": "STRING", "field": "criticality", "alias": "criticality" },
+            { "type": "STRING", "field": "resource_type", "alias": "type" },
+            { "type": "BOOLEAN", "field": "contains_pii", "alias": "contains_pii" }
+          ]
+        }
+      },
+      {
+        "label": "Malware",
+        "oneToOne": {
+          "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "malware_detection_alerts" },
+          "id": { "fields": [{ "type": "STRING", "field": "malware_name", "alias": "id" }] },
+          "attributes": [
+            { "type": "STRING", "field": "malware_family", "alias": "family" }
+          ]
+        }
+      },
+      {
+        "label": "Process",
+        "oneToOne": {
+          "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "process_execution_events" },
+          "id": { "fields": [{ "type": "STRING", "field": "process_name", "alias": "id" }] },
+          "attributes": [
+            { "type": "STRING", "field": "process_name", "alias": "name" }
+          ]
+        }
+      },
+      {
+        "label": "File",
+        "oneToOne": {
+          "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "file_activity_events" },
+          "id": { "fields": [{ "type": "STRING", "field": "filepath", "alias": "id" }] },
+          "attributes": [
+            { "type": "STRING", "field": "filepath", "alias": "path" }
+          ]
+        }
+      },
+      {
+        "label": "Policy",
+        "oneToOne": {
+          "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "policy_violation_events" },
+          "id": { "fields": [{ "type": "STRING", "field": "policy_name", "alias": "id" }] },
+          "attributes": [
+            { "type": "STRING", "field": "policy_name", "alias": "name" }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "Authenticated",
+        "fromVertex": "User",
+        "toVertex": "Device",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "authentication_events" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "user_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "device_id", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "timestamp", "alias": "timestamp" },
+          { "type": "STRING", "field": "outcome", "alias": "outcome" },
+          { "type": "STRING", "field": "auth_type", "alias": "auth_type" },
+          { "type": "STRING", "field": "source_ip", "alias": "source_ip" }
+        ]
+      },
+      {
+        "label": "NetworkFlow",
+        "fromVertex": "Device",
+        "toVertex": "Device",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "network_flows" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "src_device_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "dst_device_id", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "timestamp", "alias": "timestamp" },
+          { "type": "INT", "field": "dst_port", "alias": "port" },
+          { "type": "STRING", "field": "protocol", "alias": "protocol" },
+          { "type": "LONG", "field": "bytes_sent", "alias": "bytes_sent" },
+          { "type": "STRING", "field": "status", "alias": "status" }
+        ]
+      },
+      {
+        "label": "AccessedResource",
+        "fromVertex": "Device",
+        "toVertex": "Resource",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "resource_access_events" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "device_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "resource_id", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "timestamp", "alias": "timestamp" },
+          { "type": "STRING", "field": "access_type", "alias": "access_type" },
+          { "type": "STRING", "field": "outcome", "alias": "outcome" },
+          { "type": "LONG", "field": "data_size_bytes", "alias": "data_size" }
+        ]
+      },
+      {
+        "label": "HasRelationship",
+        "fromVertex": "User",
+        "toVertex": "Device",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "user_device_relationships" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "user_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "device_id", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "STRING", "field": "access_type", "alias": "type" },
+          { "type": "DATETIME", "field": "last_access", "alias": "last_access" }
+        ]
+      },
+      {
+        "label": "HasDependency",
+        "fromVertex": "Device",
+        "toVertex": "Resource",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "device_resource_relationships" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "device_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "resource_id", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "LONG", "field": "access_count", "alias": "access_count" },
+          { "type": "DATETIME", "field": "last_access", "alias": "last_access" }
+        ]
+      },
+      {
+        "label": "AccountModified",
+        "fromVertex": "User",
+        "toVertex": "User",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "account_change_events" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "initiated_by_user_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "target_user_id", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "timestamp", "alias": "timestamp" },
+          { "type": "STRING", "field": "change_type", "alias": "change_type" }
+        ]
+      },
+      {
+        "label": "EscalatedPrivilege",
+        "fromVertex": "User",
+        "toVertex": "Device",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "privilege_escalation_events" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "user_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "device_id", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "timestamp", "alias": "timestamp" },
+          { "type": "STRING", "field": "escalation_type", "alias": "escalation_type" },
+          { "type": "STRING", "field": "outcome", "alias": "outcome" }
+        ]
+      },
+      {
+        "label": "DetectedMalware",
+        "fromVertex": "Device",
+        "toVertex": "Malware",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "malware_detection_alerts" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "device_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "malware_name", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "detection_time", "alias": "timestamp" },
+          { "type": "STRING", "field": "action", "alias": "action" },
+          { "type": "STRING", "field": "severity", "alias": "severity" }
+        ]
+      },
+      {
+        "label": "RunningProcess",
+        "fromVertex": "Device",
+        "toVertex": "Process",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "process_execution_events" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "device_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "process_name", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "timestamp", "alias": "timestamp" },
+          { "type": "STRING", "field": "user_id", "alias": "executed_by_user" },
+          { "type": "STRING", "field": "command_line", "alias": "cmd" }
+        ]
+      },
+      {
+        "label": "ViolatedPolicy",
+        "fromVertex": "User",
+        "toVertex": "Policy",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "policy_violation_events" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "user_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "policy_name", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "timestamp", "alias": "timestamp" },
+          { "type": "STRING", "field": "device_id", "alias": "device_id" },
+          { "type": "STRING", "field": "violation_type", "alias": "violation_type" }
+        ]
+      },
+      {
+        "label": "InteractedWithFile",
+        "fromVertex": "User",
+        "toVertex": "File",
+        "tableSource": { "catalog": "ocsf_sql", "schema": "public", "table": "file_activity_events" },
+        "fromId": { "fields": [{ "type": "STRING", "field": "user_id", "alias": "from_id" }] },
+        "toId": { "fields": [{ "type": "STRING", "field": "filepath", "alias": "to_id" }] },
+        "attributes": [
+          { "type": "DATETIME", "field": "timestamp", "alias": "timestamp" },
+          { "type": "STRING", "field": "device_id", "alias": "device_id" },
+          { "type": "STRING", "field": "operation", "alias": "operation" }
+        ]
+      }
+    ]
+  }
+}
