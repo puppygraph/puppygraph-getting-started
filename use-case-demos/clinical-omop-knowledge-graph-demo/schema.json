@@ -1,0 +1,3722 @@
+{
+  "catalogs": [
+    {
+      "name": "omop_mysql",
+      "type": "mysql",
+      "jdbc": {
+        "username": "puppygraph",
+        "password": "puppygraph",
+        "jdbcUri": "jdbc:mysql://host.docker.internal:3306/omop?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
+        "driverClass": "com.mysql.cj.jdbc.Driver",
+        "driverUrl": "http://host.docker.internal:8000/mysql-connector-j-8.0.33.jar",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "person",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "person"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "person_id",
+                "alias": "puppy_id_person_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "gender_concept_id",
+              "alias": "gender_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "year_of_birth",
+              "alias": "year_of_birth"
+            },
+            {
+              "type": "STRING",
+              "field": "month_of_birth",
+              "alias": "month_of_birth"
+            },
+            {
+              "type": "STRING",
+              "field": "day_of_birth",
+              "alias": "day_of_birth"
+            },
+            {
+              "type": "STRING",
+              "field": "birth_datetime",
+              "alias": "birth_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "race_concept_id",
+              "alias": "race_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "ethnicity_concept_id",
+              "alias": "ethnicity_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "location_id",
+              "alias": "location_id"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "care_site_id",
+              "alias": "care_site_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_source_value",
+              "alias": "person_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "gender_source_value",
+              "alias": "gender_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "gender_source_concept_id",
+              "alias": "gender_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "race_source_value",
+              "alias": "race_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "race_source_concept_id",
+              "alias": "race_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "ethnicity_source_value",
+              "alias": "ethnicity_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "ethnicity_source_concept_id",
+              "alias": "ethnicity_source_concept_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "visit_occurrence",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "visit_occurrence"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "visit_occurrence_id",
+                "alias": "puppy_id_visit_occurrence_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_concept_id",
+              "alias": "visit_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_start_date",
+              "alias": "visit_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_start_datetime",
+              "alias": "visit_start_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_end_date",
+              "alias": "visit_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_end_datetime",
+              "alias": "visit_end_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_type_concept_id",
+              "alias": "visit_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "care_site_id",
+              "alias": "care_site_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_source_value",
+              "alias": "visit_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_source_concept_id",
+              "alias": "visit_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "admitting_source_concept_id",
+              "alias": "admitting_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "admitting_source_value",
+              "alias": "admitting_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "discharge_to_concept_id",
+              "alias": "discharge_to_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "discharge_to_source_value",
+              "alias": "discharge_to_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "preceding_visit_occurrence_id",
+              "alias": "preceding_visit_occurrence_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "condition_occurrence",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "condition_occurrence"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "condition_occurrence_id",
+                "alias": "puppy_id_condition_occurrence_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "condition_occurrence_id",
+              "alias": "condition_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_concept_id",
+              "alias": "condition_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_start_date",
+              "alias": "condition_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_start_datetime",
+              "alias": "condition_start_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_end_date",
+              "alias": "condition_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_end_datetime",
+              "alias": "condition_end_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_type_concept_id",
+              "alias": "condition_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "stop_reason",
+              "alias": "stop_reason"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_id",
+              "alias": "visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_source_value",
+              "alias": "condition_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_source_concept_id",
+              "alias": "condition_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_status_source_value",
+              "alias": "condition_status_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_status_concept_id",
+              "alias": "condition_status_concept_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "drug_exposure",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "drug_exposure"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "drug_exposure_id",
+                "alias": "puppy_id_drug_exposure_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "drug_exposure_id",
+              "alias": "drug_exposure_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_concept_id",
+              "alias": "drug_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_exposure_start_date",
+              "alias": "drug_exposure_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_exposure_start_datetime",
+              "alias": "drug_exposure_start_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_exposure_end_date",
+              "alias": "drug_exposure_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_exposure_end_datetime",
+              "alias": "drug_exposure_end_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "verbatim_end_date",
+              "alias": "verbatim_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_type_concept_id",
+              "alias": "drug_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "stop_reason",
+              "alias": "stop_reason"
+            },
+            {
+              "type": "STRING",
+              "field": "refills",
+              "alias": "refills"
+            },
+            {
+              "type": "STRING",
+              "field": "quantity",
+              "alias": "quantity"
+            },
+            {
+              "type": "STRING",
+              "field": "days_supply",
+              "alias": "days_supply"
+            },
+            {
+              "type": "STRING",
+              "field": "sig",
+              "alias": "sig"
+            },
+            {
+              "type": "STRING",
+              "field": "route_concept_id",
+              "alias": "route_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "lot_number",
+              "alias": "lot_number"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_id",
+              "alias": "visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_source_value",
+              "alias": "drug_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_source_concept_id",
+              "alias": "drug_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "route_source_value",
+              "alias": "route_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "dose_unit_source_value",
+              "alias": "dose_unit_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "procedure_occurrence",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "procedure_occurrence"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "procedure_occurrence_id",
+                "alias": "puppy_id_procedure_occurrence_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "procedure_occurrence_id",
+              "alias": "procedure_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "procedure_concept_id",
+              "alias": "procedure_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "procedure_date",
+              "alias": "procedure_date"
+            },
+            {
+              "type": "STRING",
+              "field": "procedure_datetime",
+              "alias": "procedure_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "procedure_type_concept_id",
+              "alias": "procedure_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "modifier_concept_id",
+              "alias": "modifier_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "quantity",
+              "alias": "quantity"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_id",
+              "alias": "visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "procedure_source_value",
+              "alias": "procedure_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "procedure_source_concept_id",
+              "alias": "procedure_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "modifier_source_value",
+              "alias": "modifier_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "measurement",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "measurement"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "measurement_id",
+                "alias": "puppy_id_measurement_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "measurement_id",
+              "alias": "measurement_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "measurement_concept_id",
+              "alias": "measurement_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "measurement_date",
+              "alias": "measurement_date"
+            },
+            {
+              "type": "STRING",
+              "field": "measurement_datetime",
+              "alias": "measurement_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "measurement_time",
+              "alias": "measurement_time"
+            },
+            {
+              "type": "STRING",
+              "field": "measurement_type_concept_id",
+              "alias": "measurement_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "operator_concept_id",
+              "alias": "operator_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "value_as_number",
+              "alias": "value_as_number"
+            },
+            {
+              "type": "STRING",
+              "field": "value_as_concept_id",
+              "alias": "value_as_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "unit_concept_id",
+              "alias": "unit_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "range_low",
+              "alias": "range_low"
+            },
+            {
+              "type": "STRING",
+              "field": "range_high",
+              "alias": "range_high"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_id",
+              "alias": "visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "measurement_source_value",
+              "alias": "measurement_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "measurement_source_concept_id",
+              "alias": "measurement_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "unit_source_value",
+              "alias": "unit_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "value_source_value",
+              "alias": "value_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "observation",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "observation"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "observation_id",
+                "alias": "puppy_id_observation_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "observation_id",
+              "alias": "observation_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "observation_concept_id",
+              "alias": "observation_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "observation_date",
+              "alias": "observation_date"
+            },
+            {
+              "type": "STRING",
+              "field": "observation_datetime",
+              "alias": "observation_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "observation_type_concept_id",
+              "alias": "observation_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "value_as_number",
+              "alias": "value_as_number"
+            },
+            {
+              "type": "STRING",
+              "field": "value_as_string",
+              "alias": "value_as_string"
+            },
+            {
+              "type": "STRING",
+              "field": "value_as_concept_id",
+              "alias": "value_as_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "qualifier_concept_id",
+              "alias": "qualifier_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "unit_concept_id",
+              "alias": "unit_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_id",
+              "alias": "visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "observation_source_value",
+              "alias": "observation_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "observation_source_concept_id",
+              "alias": "observation_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "unit_source_value",
+              "alias": "unit_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "qualifier_source_value",
+              "alias": "qualifier_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "device_exposure",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "device_exposure"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "device_exposure_id",
+                "alias": "puppy_id_device_exposure_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "device_exposure_id",
+              "alias": "device_exposure_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "device_concept_id",
+              "alias": "device_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "device_exposure_start_date",
+              "alias": "device_exposure_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "device_exposure_start_datetime",
+              "alias": "device_exposure_start_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "device_exposure_end_date",
+              "alias": "device_exposure_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "device_exposure_end_datetime",
+              "alias": "device_exposure_end_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "device_type_concept_id",
+              "alias": "device_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "unique_device_id",
+              "alias": "unique_device_id"
+            },
+            {
+              "type": "STRING",
+              "field": "quantity",
+              "alias": "quantity"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_id",
+              "alias": "visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "device_source_value",
+              "alias": "device_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "device_source_concept_id",
+              "alias": "device_source_concept_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "note",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "note"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "note_id",
+                "alias": "puppy_id_note_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "note_id",
+              "alias": "note_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "note_date",
+              "alias": "note_date"
+            },
+            {
+              "type": "STRING",
+              "field": "note_datetime",
+              "alias": "note_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "note_type_concept_id",
+              "alias": "note_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "note_class_concept_id",
+              "alias": "note_class_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "note_title",
+              "alias": "note_title"
+            },
+            {
+              "type": "STRING",
+              "field": "note_text",
+              "alias": "note_text"
+            },
+            {
+              "type": "STRING",
+              "field": "encoding_concept_id",
+              "alias": "encoding_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "language_concept_id",
+              "alias": "language_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_id",
+              "alias": "visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "note_source_value",
+              "alias": "note_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "note_nlp",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "note_nlp"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "note_nlp_id",
+                "alias": "puppy_id_note_nlp_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "note_nlp_id",
+              "alias": "note_nlp_id"
+            },
+            {
+              "type": "STRING",
+              "field": "note_id",
+              "alias": "note_id"
+            },
+            {
+              "type": "STRING",
+              "field": "section_concept_id",
+              "alias": "section_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "snippet",
+              "alias": "snippet"
+            },
+            {
+              "type": "STRING",
+              "field": "offset",
+              "alias": "offset"
+            },
+            {
+              "type": "STRING",
+              "field": "lexical_variant",
+              "alias": "lexical_variant"
+            },
+            {
+              "type": "STRING",
+              "field": "note_nlp_concept_id",
+              "alias": "note_nlp_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "note_nlp_source_concept_id",
+              "alias": "note_nlp_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "nlp_system",
+              "alias": "nlp_system"
+            },
+            {
+              "type": "STRING",
+              "field": "nlp_date",
+              "alias": "nlp_date"
+            },
+            {
+              "type": "STRING",
+              "field": "nlp_datetime",
+              "alias": "nlp_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "term_exists",
+              "alias": "term_exists"
+            },
+            {
+              "type": "STRING",
+              "field": "term_temporal",
+              "alias": "term_temporal"
+            },
+            {
+              "type": "STRING",
+              "field": "term_modifiers",
+              "alias": "term_modifiers"
+            }
+          ]
+        }
+      },
+      {
+        "label": "death",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "death"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "person_id",
+                "alias": "puppy_id_person_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "death_date",
+              "alias": "death_date"
+            },
+            {
+              "type": "STRING",
+              "field": "death_datetime",
+              "alias": "death_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "death_type_concept_id",
+              "alias": "death_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "cause_concept_id",
+              "alias": "cause_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "cause_source_value",
+              "alias": "cause_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "cause_source_concept_id",
+              "alias": "cause_source_concept_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "provider",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "provider"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "provider_id",
+                "alias": "puppy_id_provider_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_name",
+              "alias": "provider_name"
+            },
+            {
+              "type": "STRING",
+              "field": "npi",
+              "alias": "npi"
+            },
+            {
+              "type": "STRING",
+              "field": "dea",
+              "alias": "dea"
+            },
+            {
+              "type": "STRING",
+              "field": "specialty_concept_id",
+              "alias": "specialty_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "care_site_id",
+              "alias": "care_site_id"
+            },
+            {
+              "type": "STRING",
+              "field": "year_of_birth",
+              "alias": "year_of_birth"
+            },
+            {
+              "type": "STRING",
+              "field": "gender_concept_id",
+              "alias": "gender_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_source_value",
+              "alias": "provider_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "specialty_source_value",
+              "alias": "specialty_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "specialty_source_concept_id",
+              "alias": "specialty_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "gender_source_value",
+              "alias": "gender_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "gender_source_concept_id",
+              "alias": "gender_source_concept_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "care_site",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "care_site"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "care_site_id",
+                "alias": "puppy_id_care_site_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "care_site_id",
+              "alias": "care_site_id"
+            },
+            {
+              "type": "STRING",
+              "field": "care_site_name",
+              "alias": "care_site_name"
+            },
+            {
+              "type": "STRING",
+              "field": "place_of_service_concept_id",
+              "alias": "place_of_service_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "location_id",
+              "alias": "location_id"
+            },
+            {
+              "type": "STRING",
+              "field": "care_site_source_value",
+              "alias": "care_site_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "place_of_service_source_value",
+              "alias": "place_of_service_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "location",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "location"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "location_id",
+                "alias": "puppy_id_location_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "location_id",
+              "alias": "location_id"
+            },
+            {
+              "type": "STRING",
+              "field": "address_1",
+              "alias": "address_1"
+            },
+            {
+              "type": "STRING",
+              "field": "address_2",
+              "alias": "address_2"
+            },
+            {
+              "type": "STRING",
+              "field": "city",
+              "alias": "city"
+            },
+            {
+              "type": "STRING",
+              "field": "state",
+              "alias": "state"
+            },
+            {
+              "type": "STRING",
+              "field": "zip",
+              "alias": "zip"
+            },
+            {
+              "type": "STRING",
+              "field": "county",
+              "alias": "county"
+            },
+            {
+              "type": "STRING",
+              "field": "location_source_value",
+              "alias": "location_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "payer_plan_period",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "payer_plan_period"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "payer_plan_period_id",
+                "alias": "puppy_id_payer_plan_period_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "payer_plan_period_id",
+              "alias": "payer_plan_period_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "payer_plan_period_start_date",
+              "alias": "payer_plan_period_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "payer_plan_period_end_date",
+              "alias": "payer_plan_period_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "payer_concept_id",
+              "alias": "payer_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "payer_source_value",
+              "alias": "payer_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "plan_concept_id",
+              "alias": "plan_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "plan_source_value",
+              "alias": "plan_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "sponsor_concept_id",
+              "alias": "sponsor_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "sponsor_source_value",
+              "alias": "sponsor_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "family_source_value",
+              "alias": "family_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "stop_reason_concept_id",
+              "alias": "stop_reason_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "stop_reason_source_value",
+              "alias": "stop_reason_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "observation_period",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "observation_period"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "observation_period_id",
+                "alias": "puppy_id_observation_period_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "observation_period_id",
+              "alias": "observation_period_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "observation_period_start_date",
+              "alias": "observation_period_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "observation_period_end_date",
+              "alias": "observation_period_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "period_type_concept_id",
+              "alias": "period_type_concept_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "cost",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "cost"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "cost_id",
+                "alias": "puppy_id_cost_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "cost_id",
+              "alias": "cost_id"
+            },
+            {
+              "type": "STRING",
+              "field": "cost_event_id",
+              "alias": "cost_event_id"
+            },
+            {
+              "type": "STRING",
+              "field": "cost_domain_id",
+              "alias": "cost_domain_id"
+            },
+            {
+              "type": "STRING",
+              "field": "cost_type_concept_id",
+              "alias": "cost_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "currency_concept_id",
+              "alias": "currency_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "total_charge",
+              "alias": "total_charge"
+            },
+            {
+              "type": "STRING",
+              "field": "total_cost",
+              "alias": "total_cost"
+            },
+            {
+              "type": "STRING",
+              "field": "total_paid",
+              "alias": "total_paid"
+            },
+            {
+              "type": "STRING",
+              "field": "paid_by_payer",
+              "alias": "paid_by_payer"
+            },
+            {
+              "type": "STRING",
+              "field": "paid_by_patient",
+              "alias": "paid_by_patient"
+            },
+            {
+              "type": "STRING",
+              "field": "paid_patient_copay",
+              "alias": "paid_patient_copay"
+            },
+            {
+              "type": "STRING",
+              "field": "paid_patient_coinsurance",
+              "alias": "paid_patient_coinsurance"
+            },
+            {
+              "type": "STRING",
+              "field": "paid_patient_deductible",
+              "alias": "paid_patient_deductible"
+            },
+            {
+              "type": "STRING",
+              "field": "paid_by_primary",
+              "alias": "paid_by_primary"
+            },
+            {
+              "type": "STRING",
+              "field": "paid_ingredient_cost",
+              "alias": "paid_ingredient_cost"
+            },
+            {
+              "type": "STRING",
+              "field": "paid_dispensing_fee",
+              "alias": "paid_dispensing_fee"
+            },
+            {
+              "type": "STRING",
+              "field": "payer_plan_period_id",
+              "alias": "payer_plan_period_id"
+            },
+            {
+              "type": "STRING",
+              "field": "amount_allowed",
+              "alias": "amount_allowed"
+            },
+            {
+              "type": "STRING",
+              "field": "revenue_code_concept_id",
+              "alias": "revenue_code_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "revenue_code_source_value",
+              "alias": "revenue_code_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "drg_concept_id",
+              "alias": "drg_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "drg_source_value",
+              "alias": "drg_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "condition_era",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "condition_era"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "condition_era_id",
+                "alias": "puppy_id_condition_era_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "condition_era_id",
+              "alias": "condition_era_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_concept_id",
+              "alias": "condition_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_era_start_date",
+              "alias": "condition_era_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_era_end_date",
+              "alias": "condition_era_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "condition_occurrence_count",
+              "alias": "condition_occurrence_count"
+            }
+          ]
+        }
+      },
+      {
+        "label": "drug_era",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "drug_era"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "drug_era_id",
+                "alias": "puppy_id_drug_era_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "drug_era_id",
+              "alias": "drug_era_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_concept_id",
+              "alias": "drug_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_era_start_date",
+              "alias": "drug_era_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_era_end_date",
+              "alias": "drug_era_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "drug_exposure_count",
+              "alias": "drug_exposure_count"
+            },
+            {
+              "type": "STRING",
+              "field": "gap_days",
+              "alias": "gap_days"
+            }
+          ]
+        }
+      },
+      {
+        "label": "specimen",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "specimen"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "specimen_id",
+                "alias": "puppy_id_specimen_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "specimen_id",
+              "alias": "specimen_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "specimen_concept_id",
+              "alias": "specimen_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "specimen_type_concept_id",
+              "alias": "specimen_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "specimen_date",
+              "alias": "specimen_date"
+            },
+            {
+              "type": "STRING",
+              "field": "specimen_datetime",
+              "alias": "specimen_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "quantity",
+              "alias": "quantity"
+            },
+            {
+              "type": "STRING",
+              "field": "unit_concept_id",
+              "alias": "unit_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "anatomic_site_concept_id",
+              "alias": "anatomic_site_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "disease_status_concept_id",
+              "alias": "disease_status_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "specimen_source_id",
+              "alias": "specimen_source_id"
+            },
+            {
+              "type": "STRING",
+              "field": "specimen_source_value",
+              "alias": "specimen_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "unit_source_value",
+              "alias": "unit_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "anatomic_site_source_value",
+              "alias": "anatomic_site_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "disease_status_source_value",
+              "alias": "disease_status_source_value"
+            }
+          ]
+        }
+      },
+      {
+        "label": "visit_detail",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "omop_mysql",
+            "schema": "omop",
+            "table": "visit_detail"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "visit_detail_id",
+                "alias": "puppy_id_visit_detail_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "visit_detail_id",
+              "alias": "visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "person_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_concept_id",
+              "alias": "visit_detail_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_start_date",
+              "alias": "visit_detail_start_date"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_start_datetime",
+              "alias": "visit_detail_start_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_end_date",
+              "alias": "visit_detail_end_date"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_end_datetime",
+              "alias": "visit_detail_end_datetime"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_type_concept_id",
+              "alias": "visit_detail_type_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "provider_id"
+            },
+            {
+              "type": "STRING",
+              "field": "care_site_id",
+              "alias": "care_site_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_source_value",
+              "alias": "visit_detail_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_source_concept_id",
+              "alias": "visit_detail_source_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "admitted_from_concept_id",
+              "alias": "admitted_from_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "admitted_from_source_value",
+              "alias": "admitted_from_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "discharged_to_concept_id",
+              "alias": "discharged_to_concept_id"
+            },
+            {
+              "type": "STRING",
+              "field": "discharged_to_source_value",
+              "alias": "discharged_to_source_value"
+            },
+            {
+              "type": "STRING",
+              "field": "preceding_visit_detail_id",
+              "alias": "preceding_visit_detail_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_detail_parent_id",
+              "alias": "visit_detail_parent_id"
+            },
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "visit_occurrence_id"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "person_visit",
+        "fromVertex": "person",
+        "toVertex": "visit_occurrence",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "visit_occurrence"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_id_visit_occurrence_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "puppy_from_person_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_to_visit_occurrence_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_concept_id",
+            "alias": "visit_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_start_date",
+            "alias": "visit_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_start_datetime",
+            "alias": "visit_start_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_end_date",
+            "alias": "visit_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_end_datetime",
+            "alias": "visit_end_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_type_concept_id",
+            "alias": "visit_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "care_site_id",
+            "alias": "care_site_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_source_value",
+            "alias": "visit_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_source_concept_id",
+            "alias": "visit_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "admitting_source_concept_id",
+            "alias": "admitting_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "admitting_source_value",
+            "alias": "admitting_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "discharge_to_concept_id",
+            "alias": "discharge_to_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "discharge_to_source_value",
+            "alias": "discharge_to_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "preceding_visit_occurrence_id",
+            "alias": "preceding_visit_occurrence_id"
+          }
+        ]
+      },
+      {
+        "label": "visit_condition",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "condition_occurrence",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "condition_occurrence"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "condition_occurrence_id",
+              "alias": "puppy_id_condition_occurrence_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "condition_occurrence_id",
+              "alias": "puppy_to_condition_occurrence_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "condition_occurrence_id",
+            "alias": "condition_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_concept_id",
+            "alias": "condition_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_start_date",
+            "alias": "condition_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_start_datetime",
+            "alias": "condition_start_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_end_date",
+            "alias": "condition_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_end_datetime",
+            "alias": "condition_end_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_type_concept_id",
+            "alias": "condition_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "stop_reason",
+            "alias": "stop_reason"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_detail_id",
+            "alias": "visit_detail_id"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_source_value",
+            "alias": "condition_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_source_concept_id",
+            "alias": "condition_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_status_source_value",
+            "alias": "condition_status_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_status_concept_id",
+            "alias": "condition_status_concept_id"
+          }
+        ]
+      },
+      {
+        "label": "visit_drug",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "drug_exposure",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "drug_exposure"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "drug_exposure_id",
+              "alias": "puppy_id_drug_exposure_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "drug_exposure_id",
+              "alias": "puppy_to_drug_exposure_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "drug_exposure_id",
+            "alias": "drug_exposure_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_concept_id",
+            "alias": "drug_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_exposure_start_date",
+            "alias": "drug_exposure_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_exposure_start_datetime",
+            "alias": "drug_exposure_start_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_exposure_end_date",
+            "alias": "drug_exposure_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_exposure_end_datetime",
+            "alias": "drug_exposure_end_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "verbatim_end_date",
+            "alias": "verbatim_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_type_concept_id",
+            "alias": "drug_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "stop_reason",
+            "alias": "stop_reason"
+          },
+          {
+            "type": "STRING",
+            "field": "refills",
+            "alias": "refills"
+          },
+          {
+            "type": "STRING",
+            "field": "quantity",
+            "alias": "quantity"
+          },
+          {
+            "type": "STRING",
+            "field": "days_supply",
+            "alias": "days_supply"
+          },
+          {
+            "type": "STRING",
+            "field": "sig",
+            "alias": "sig"
+          },
+          {
+            "type": "STRING",
+            "field": "route_concept_id",
+            "alias": "route_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "lot_number",
+            "alias": "lot_number"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_detail_id",
+            "alias": "visit_detail_id"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_source_value",
+            "alias": "drug_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_source_concept_id",
+            "alias": "drug_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "route_source_value",
+            "alias": "route_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "dose_unit_source_value",
+            "alias": "dose_unit_source_value"
+          }
+        ]
+      },
+      {
+        "label": "visit_procedure",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "procedure_occurrence",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "procedure_occurrence"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "procedure_occurrence_id",
+              "alias": "puppy_id_procedure_occurrence_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "procedure_occurrence_id",
+              "alias": "puppy_to_procedure_occurrence_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "procedure_occurrence_id",
+            "alias": "procedure_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "procedure_concept_id",
+            "alias": "procedure_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "procedure_date",
+            "alias": "procedure_date"
+          },
+          {
+            "type": "STRING",
+            "field": "procedure_datetime",
+            "alias": "procedure_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "procedure_type_concept_id",
+            "alias": "procedure_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "modifier_concept_id",
+            "alias": "modifier_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "quantity",
+            "alias": "quantity"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_detail_id",
+            "alias": "visit_detail_id"
+          },
+          {
+            "type": "STRING",
+            "field": "procedure_source_value",
+            "alias": "procedure_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "procedure_source_concept_id",
+            "alias": "procedure_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "modifier_source_value",
+            "alias": "modifier_source_value"
+          }
+        ]
+      },
+      {
+        "label": "visit_measurement",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "measurement",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "measurement"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "measurement_id",
+              "alias": "puppy_id_measurement_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "measurement_id",
+              "alias": "puppy_to_measurement_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "measurement_id",
+            "alias": "measurement_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "measurement_concept_id",
+            "alias": "measurement_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "measurement_date",
+            "alias": "measurement_date"
+          },
+          {
+            "type": "STRING",
+            "field": "measurement_datetime",
+            "alias": "measurement_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "measurement_time",
+            "alias": "measurement_time"
+          },
+          {
+            "type": "STRING",
+            "field": "measurement_type_concept_id",
+            "alias": "measurement_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "operator_concept_id",
+            "alias": "operator_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "value_as_number",
+            "alias": "value_as_number"
+          },
+          {
+            "type": "STRING",
+            "field": "value_as_concept_id",
+            "alias": "value_as_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "unit_concept_id",
+            "alias": "unit_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "range_low",
+            "alias": "range_low"
+          },
+          {
+            "type": "STRING",
+            "field": "range_high",
+            "alias": "range_high"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_detail_id",
+            "alias": "visit_detail_id"
+          },
+          {
+            "type": "STRING",
+            "field": "measurement_source_value",
+            "alias": "measurement_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "measurement_source_concept_id",
+            "alias": "measurement_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "unit_source_value",
+            "alias": "unit_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "value_source_value",
+            "alias": "value_source_value"
+          }
+        ]
+      },
+      {
+        "label": "visit_observation",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "observation",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "observation"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "observation_id",
+              "alias": "puppy_id_observation_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "observation_id",
+              "alias": "puppy_to_observation_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "observation_id",
+            "alias": "observation_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "observation_concept_id",
+            "alias": "observation_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "observation_date",
+            "alias": "observation_date"
+          },
+          {
+            "type": "STRING",
+            "field": "observation_datetime",
+            "alias": "observation_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "observation_type_concept_id",
+            "alias": "observation_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "value_as_number",
+            "alias": "value_as_number"
+          },
+          {
+            "type": "STRING",
+            "field": "value_as_string",
+            "alias": "value_as_string"
+          },
+          {
+            "type": "STRING",
+            "field": "value_as_concept_id",
+            "alias": "value_as_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "qualifier_concept_id",
+            "alias": "qualifier_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "unit_concept_id",
+            "alias": "unit_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_detail_id",
+            "alias": "visit_detail_id"
+          },
+          {
+            "type": "STRING",
+            "field": "observation_source_value",
+            "alias": "observation_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "observation_source_concept_id",
+            "alias": "observation_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "unit_source_value",
+            "alias": "unit_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "qualifier_source_value",
+            "alias": "qualifier_source_value"
+          }
+        ]
+      },
+      {
+        "label": "visit_device",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "device_exposure",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "device_exposure"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "device_exposure_id",
+              "alias": "puppy_id_device_exposure_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "device_exposure_id",
+              "alias": "puppy_to_device_exposure_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "device_exposure_id",
+            "alias": "device_exposure_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "device_concept_id",
+            "alias": "device_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "device_exposure_start_date",
+            "alias": "device_exposure_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "device_exposure_start_datetime",
+            "alias": "device_exposure_start_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "device_exposure_end_date",
+            "alias": "device_exposure_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "device_exposure_end_datetime",
+            "alias": "device_exposure_end_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "device_type_concept_id",
+            "alias": "device_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "unique_device_id",
+            "alias": "unique_device_id"
+          },
+          {
+            "type": "STRING",
+            "field": "quantity",
+            "alias": "quantity"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_detail_id",
+            "alias": "visit_detail_id"
+          },
+          {
+            "type": "STRING",
+            "field": "device_source_value",
+            "alias": "device_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "device_source_concept_id",
+            "alias": "device_source_concept_id"
+          }
+        ]
+      },
+      {
+        "label": "visit_note",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "note",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "note"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "note_id",
+              "alias": "puppy_id_note_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "note_id",
+              "alias": "puppy_to_note_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "note_id",
+            "alias": "note_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "note_date",
+            "alias": "note_date"
+          },
+          {
+            "type": "STRING",
+            "field": "note_datetime",
+            "alias": "note_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "note_type_concept_id",
+            "alias": "note_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "note_class_concept_id",
+            "alias": "note_class_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "note_title",
+            "alias": "note_title"
+          },
+          {
+            "type": "STRING",
+            "field": "note_text",
+            "alias": "note_text"
+          },
+          {
+            "type": "STRING",
+            "field": "encoding_concept_id",
+            "alias": "encoding_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "language_concept_id",
+            "alias": "language_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_detail_id",
+            "alias": "visit_detail_id"
+          },
+          {
+            "type": "STRING",
+            "field": "note_source_value",
+            "alias": "note_source_value"
+          }
+        ]
+      },
+      {
+        "label": "note_note_nlp",
+        "fromVertex": "note",
+        "toVertex": "note_nlp",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "note_nlp"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "note_nlp_id",
+              "alias": "puppy_id_note_nlp_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "note_id",
+              "alias": "puppy_from_note_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "note_nlp_id",
+              "alias": "puppy_to_note_nlp_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "note_nlp_id",
+            "alias": "note_nlp_id"
+          },
+          {
+            "type": "STRING",
+            "field": "note_id",
+            "alias": "note_id"
+          },
+          {
+            "type": "STRING",
+            "field": "section_concept_id",
+            "alias": "section_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "snippet",
+            "alias": "snippet"
+          },
+          {
+            "type": "STRING",
+            "field": "offset",
+            "alias": "offset"
+          },
+          {
+            "type": "STRING",
+            "field": "lexical_variant",
+            "alias": "lexical_variant"
+          },
+          {
+            "type": "STRING",
+            "field": "note_nlp_concept_id",
+            "alias": "note_nlp_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "note_nlp_source_concept_id",
+            "alias": "note_nlp_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "nlp_system",
+            "alias": "nlp_system"
+          },
+          {
+            "type": "STRING",
+            "field": "nlp_date",
+            "alias": "nlp_date"
+          },
+          {
+            "type": "STRING",
+            "field": "nlp_datetime",
+            "alias": "nlp_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "term_exists",
+            "alias": "term_exists"
+          },
+          {
+            "type": "STRING",
+            "field": "term_temporal",
+            "alias": "term_temporal"
+          },
+          {
+            "type": "STRING",
+            "field": "term_modifiers",
+            "alias": "term_modifiers"
+          }
+        ]
+      },
+      {
+        "label": "person_death",
+        "fromVertex": "person",
+        "toVertex": "death",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "death"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "puppy_id_person_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "puppy_from_person_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "puppy_to_person_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "death_date",
+            "alias": "death_date"
+          },
+          {
+            "type": "STRING",
+            "field": "death_datetime",
+            "alias": "death_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "death_type_concept_id",
+            "alias": "death_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "cause_concept_id",
+            "alias": "cause_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "cause_source_value",
+            "alias": "cause_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "cause_source_concept_id",
+            "alias": "cause_source_concept_id"
+          }
+        ]
+      },
+      {
+        "label": "person_obs_period",
+        "fromVertex": "person",
+        "toVertex": "observation_period",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "observation_period"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "observation_period_id",
+              "alias": "puppy_id_observation_period_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "puppy_from_person_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "observation_period_id",
+              "alias": "puppy_to_observation_period_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "observation_period_id",
+            "alias": "observation_period_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "observation_period_start_date",
+            "alias": "observation_period_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "observation_period_end_date",
+            "alias": "observation_period_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "period_type_concept_id",
+            "alias": "period_type_concept_id"
+          }
+        ]
+      },
+      {
+        "label": "person_payer",
+        "fromVertex": "person",
+        "toVertex": "payer_plan_period",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "payer_plan_period"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "payer_plan_period_id",
+              "alias": "puppy_id_payer_plan_period_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "puppy_from_person_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "payer_plan_period_id",
+              "alias": "puppy_to_payer_plan_period_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "payer_plan_period_id",
+            "alias": "payer_plan_period_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "payer_plan_period_start_date",
+            "alias": "payer_plan_period_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "payer_plan_period_end_date",
+            "alias": "payer_plan_period_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "payer_concept_id",
+            "alias": "payer_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "payer_source_value",
+            "alias": "payer_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "plan_concept_id",
+            "alias": "plan_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "plan_source_value",
+            "alias": "plan_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "sponsor_concept_id",
+            "alias": "sponsor_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "sponsor_source_value",
+            "alias": "sponsor_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "family_source_value",
+            "alias": "family_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "stop_reason_concept_id",
+            "alias": "stop_reason_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "stop_reason_source_value",
+            "alias": "stop_reason_source_value"
+          }
+        ]
+      },
+      {
+        "label": "visit_provider",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "provider",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "visit_occurrence"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_id_visit_occurrence_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "provider_id",
+              "alias": "puppy_to_provider_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_concept_id",
+            "alias": "visit_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_start_date",
+            "alias": "visit_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_start_datetime",
+            "alias": "visit_start_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_end_date",
+            "alias": "visit_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_end_datetime",
+            "alias": "visit_end_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_type_concept_id",
+            "alias": "visit_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "care_site_id",
+            "alias": "care_site_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_source_value",
+            "alias": "visit_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_source_concept_id",
+            "alias": "visit_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "admitting_source_concept_id",
+            "alias": "admitting_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "admitting_source_value",
+            "alias": "admitting_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "discharge_to_concept_id",
+            "alias": "discharge_to_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "discharge_to_source_value",
+            "alias": "discharge_to_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "preceding_visit_occurrence_id",
+            "alias": "preceding_visit_occurrence_id"
+          }
+        ]
+      },
+      {
+        "label": "visit_site",
+        "fromVertex": "visit_occurrence",
+        "toVertex": "care_site",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "visit_occurrence"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_id_visit_occurrence_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "visit_occurrence_id",
+              "alias": "puppy_from_visit_occurrence_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "care_site_id",
+              "alias": "puppy_to_care_site_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "visit_occurrence_id",
+            "alias": "visit_occurrence_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_concept_id",
+            "alias": "visit_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_start_date",
+            "alias": "visit_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_start_datetime",
+            "alias": "visit_start_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_end_date",
+            "alias": "visit_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_end_datetime",
+            "alias": "visit_end_datetime"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_type_concept_id",
+            "alias": "visit_type_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "provider_id",
+            "alias": "provider_id"
+          },
+          {
+            "type": "STRING",
+            "field": "care_site_id",
+            "alias": "care_site_id"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_source_value",
+            "alias": "visit_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "visit_source_concept_id",
+            "alias": "visit_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "admitting_source_concept_id",
+            "alias": "admitting_source_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "admitting_source_value",
+            "alias": "admitting_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "discharge_to_concept_id",
+            "alias": "discharge_to_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "discharge_to_source_value",
+            "alias": "discharge_to_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "preceding_visit_occurrence_id",
+            "alias": "preceding_visit_occurrence_id"
+          }
+        ]
+      },
+      {
+        "label": "care_location",
+        "fromVertex": "care_site",
+        "toVertex": "location",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "care_site"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "care_site_id",
+              "alias": "puppy_id_care_site_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "care_site_id",
+              "alias": "puppy_from_care_site_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "location_id",
+              "alias": "puppy_to_location_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "care_site_id",
+            "alias": "care_site_id"
+          },
+          {
+            "type": "STRING",
+            "field": "care_site_name",
+            "alias": "care_site_name"
+          },
+          {
+            "type": "STRING",
+            "field": "place_of_service_concept_id",
+            "alias": "place_of_service_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "location_id",
+            "alias": "location_id"
+          },
+          {
+            "type": "STRING",
+            "field": "care_site_source_value",
+            "alias": "care_site_source_value"
+          },
+          {
+            "type": "STRING",
+            "field": "place_of_service_source_value",
+            "alias": "place_of_service_source_value"
+          }
+        ]
+      },
+      {
+        "label": "person_condition_era",
+        "fromVertex": "person",
+        "toVertex": "condition_era",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "condition_era"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "condition_era_id",
+              "alias": "puppy_id_condition_era_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "puppy_from_person_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "condition_era_id",
+              "alias": "puppy_to_condition_era_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "condition_era_id",
+            "alias": "condition_era_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_concept_id",
+            "alias": "condition_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_era_start_date",
+            "alias": "condition_era_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_era_end_date",
+            "alias": "condition_era_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "condition_occurrence_count",
+            "alias": "condition_occurrence_count"
+          }
+        ]
+      },
+      {
+        "label": "person_drug_era",
+        "fromVertex": "person",
+        "toVertex": "drug_era",
+        "tableSource": {
+          "catalog": "omop_mysql",
+          "schema": "omop",
+          "table": "drug_era"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "drug_era_id",
+              "alias": "puppy_id_drug_era_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "person_id",
+              "alias": "puppy_from_person_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "drug_era_id",
+              "alias": "puppy_to_drug_era_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "drug_era_id",
+            "alias": "drug_era_id"
+          },
+          {
+            "type": "STRING",
+            "field": "person_id",
+            "alias": "person_id"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_concept_id",
+            "alias": "drug_concept_id"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_era_start_date",
+            "alias": "drug_era_start_date"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_era_end_date",
+            "alias": "drug_era_end_date"
+          },
+          {
+            "type": "STRING",
+            "field": "drug_exposure_count",
+            "alias": "drug_exposure_count"
+          },
+          {
+            "type": "STRING",
+            "field": "gap_days",
+            "alias": "gap_days"
+          }
+        ]
+      }
+    ]
+  }
+}
