@@ -5,10 +5,14 @@
       "type": "iceberg",
       "metastore": {
         "type": "s3tables",
+        "useInstanceProfile": "false",
         "region": "<region>",
         "accessKey": "<access-key>",
         "secretKey": "<secret-key>",
-        "warehouse": "<table-bucket-arn>"
+        "warehouse": "<table-bucket-arn>",
+        "enableIcebergMetaCache": "true",
+        "icebergMetaCacheTTL": "180",
+        "useDefaultCredentialsProviderChain": "false"
       },
       "storage": {
         "useInstanceProfile": "false",

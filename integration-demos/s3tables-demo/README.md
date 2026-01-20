@@ -1,5 +1,7 @@
 # Integrating AWS S3 Tables and Querying Data Using PuppyGraph
 
+For a more complex S3 Tables demo, please refer to the [CloudTrail S3 Tables demo](../../use-case-demos/cloudtrail-s3tables-demo/).
+
 ## Summary
 This demo showcases a graph analysis workflow by integrating aws S3 tables with PuppyGraph. 
 We create s3 tables in aws s3 table buckets, then query it using PuppyGraph’s graph database interface. 
@@ -23,7 +25,7 @@ Follow the getting-started tutorial of s3 tables to create a table bucket.
 Use aws cli to create a namespace. Replace the placeholders with your real value.
 ```bash
 aws s3tables create-namespace \
-    --table-bucket-arn arn:aws:s3tables:<region>:<account-id>:bucket/<table-bucket-name> \
+    --table-bucket-arn <table-bucket-arn> \
     --namespace puppygraph_test
 ```
 
@@ -67,7 +69,11 @@ INSERT INTO knows VALUES
 
 ### Start PuppyGraph
 ```bash
-docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 -d --name puppy --rm --pull=always puppygraph/puppygraph-dev:preview20250314
+docker run \
+  -p 8081:8081 -p 8182:8182 -p 7687:7687 \
+  -e PUPPYGRAPH_PASSWORD=puppygraph123  -e QUERY_TIMEOUT=5m \
+  -d --name puppy --rm --pull=always \
+  puppygraph/puppygraph:stable
 ```
 
 ### Log into the UI
@@ -114,7 +120,45 @@ Navigate to **Query** in the Web UI:
     ```
 
 ### Teardown
-Stop the PuppyGraph container.
-```bash
-docker stop puppy
-```
+- Stop the PuppyGraph container.
+  ```bash
+  docker stop puppy
+  ```
+- To delete the created tables, namespace, and bucket, use the aws cli commands:
+  ```bash
+  # Delete the tables
+  aws s3tables delete-table \
+      --region <region> \
+      --table-bucket-arn <table-bucket-arn> \
+      --namespace puppygraph_test  \
+      --table-name person 
+
+  aws s3tables delete-table \
+      --region <region> \
+      --table-bucket-arn <table-bucket-arn> \
+      --namespace puppygraph_test  \
+      --table-name software
+
+  aws s3tables delete-table \
+      --region <region> \
+      --table-bucket-arn <table-bucket-arn> \
+      --namespace puppygraph_test  \
+      --table-name knows
+  
+  aws s3tables delete-table \
+      --region <region> \
+      --table-bucket-arn <table-bucket-arn> \
+      --namespace puppygraph_test  \
+      --table-name created
+
+  # Delete the namespace
+  aws s3tables delete-namespace \
+      --region <region> \
+      --table-bucket-arn <table-bucket-arn> \
+      --namespace puppygraph_test
+  
+  # Delete the table bucket
+  aws s3tables delete-table-bucket \
+      --region <region> \
+      --table-bucket-arn <table-bucket-arn>
+  ```
