@@ -1,0 +1,16 @@
+service,span_count,avg_latency_ms,p95_latency_ms
+frontend,1888,15.727,62.008
+product-catalog,796,2.444,9.393
+load-generator,750,27.644,81.514
+flagd,330,21818.348,1.136
+cart,312,2.523,6.808
+checkout,302,10.961,52.063
+product-reviews,119,15147.123,63.997
+email,84,5.561,17.187
+recommendation,79,8.733,19.583
+shipping,51,4.658,12.519
+currency,50,1.28,3.274
+fraud-detection,48,25027.669,92.898
+ad,43,27907.639,1.048
+payment,42,2.293,6.359
+quote,20,0.124,0.234
