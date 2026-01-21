@@ -72,7 +72,7 @@ Create a clean OMOP database:
 
 Run the SQL import script (omop_full.sql contains schema + vocab + ETL loading):
 
-	mysql --local-infile=1 -u root -p < /Users/heyuanfei/omop_full.sql
+	mysql --local-infile=1 -u root -p < ./omop_full.sql
 
 Verify major tables:
 
@@ -176,7 +176,8 @@ Catalog Type	MySQL 8
 Catalog Name	omop_mysql
 Username	root
 Password	your_password
-JDBC URL	jdbc:mysql://host.docker.internal:3306/omop?allowPublicKeyRetrieval=true&useSSL=false
+JDBC URL jdbc:mysql://host.docker.internal:3306/omop?
+useSSL=true&requireSSL=true&verifyServerCertificate=true
 Driver Class	com.mysql.cj.jdbc.Driver
 Driver URL	http://host.docker.internal:8000/mysql-connector-j-8.0.33.jar
 

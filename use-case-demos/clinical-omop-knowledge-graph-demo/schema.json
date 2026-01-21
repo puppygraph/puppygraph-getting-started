@@ -1,11 +1,14 @@
 {
+  "auth": {
+  "username": "${PG_USERNAME}",
+  "password": "${PG_PASSWORD}"
+  },
   "catalogs": [
     {
       "name": "omop_mysql",
       "type": "mysql",
       "jdbc": {
-        "username": "puppygraph",
-        "password": "puppygraph",
+        
         "jdbcUri": "jdbc:mysql://host.docker.internal:3306/omop?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
         "driverClass": "com.mysql.cj.jdbc.Driver",
         "driverUrl": "http://host.docker.internal:8000/mysql-connector-j-8.0.33.jar",
