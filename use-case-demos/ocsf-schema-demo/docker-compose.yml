@@ -1,0 +1,38 @@
+version: '3'
+services:
+  # Database
+  postgres:
+    image: postgres:15
+    container_name: ocsf_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ocsf_demo
+    volumes:
+      - ./data:/data              #mounts data folder (containing CSV files) into the DB
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql #runs SQL script on startup
+    ports:
+      - "5432:5432"
+    networks:
+      - internal_network #to force the 2 Docker containers to talk to each other only (not accidentally to your PC)
+
+  # PuppyGraph
+  puppygraph:
+    image: puppygraph/puppygraph:stable
+    container_name: puppygraph_engine
+    ports:
+      - "8081:8081"  # UI Port
+      - "8182:8182"  # Gremlin Port
+    volumes:
+      - ./schema.json:/etc/puppygraph/schema.json
+      - ./data:/data
+    command: ["--config", "/etc/puppygraph/schema.json"]
+    depends_on:
+      - postgres
+    networks:
+      - internal_network  
+
+#define the private line
+networks:
+  internal_network:
+    driver: bridge
