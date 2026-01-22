@@ -1,5 +1,5 @@
 -- USERS
-CREATE TABLE IF NOT EXISTS delta.`file:///delta/demo/Users` (
+CREATE TABLE IF NOT EXISTS delta.`/delta/demo/Users` (
   user_id BIGINT,
   username STRING,
   email STRING,
@@ -71,14 +71,6 @@ CREATE TABLE IF NOT EXISTS delta.`/delta/demo/VPCs` (
   vpc_id BIGINT,
   name STRING
 ) USING DELTA;
-
-CREATE TABLE IF NOT EXISTS delta.`/delta/demo/InternetGatewayVPC` (
-  internet_gateway_id BIGINT,
-  vpc_id BIGINT
-) USING DELTA;
-
-INSERT INTO puppygraph.demo.VPCs
-SELECT * FROM parquet.`/parquet_data/VPCs.parquet`;
 
 -- IGW ↔ VPC
 CREATE TABLE IF NOT EXISTS delta.`/delta/demo/InternetGatewayVPC` (

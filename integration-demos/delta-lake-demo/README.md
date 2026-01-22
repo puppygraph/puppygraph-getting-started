@@ -1,6 +1,6 @@
 # PuppyGraph + Delta Lake = Graph Lakehouse
 ## Summary
-This demo showcases a basic graph analysis workflow by integrating Apache Hudi tables with PuppyGraph.
+This demo showcases a basic graph analysis workflow by integrating Delta Lake tables with PuppyGraph.
 
 Components of the project:
 
