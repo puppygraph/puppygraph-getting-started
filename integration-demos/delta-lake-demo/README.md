@@ -74,7 +74,7 @@ MATCH path = (u:User)-[r:ACCESS {access_level: 'admin'}]->(ig:InternetGateway)
 RETURN u,r,ig
 ```
 
-2. Retrieve All Access Records for User (user_id=123) Sorted by Access Time.
+2. Retrieve All Access Records for User (user_id=100) Sorted by Access Time.
 
 **Gremlin:**
 ```gremlin
@@ -103,7 +103,7 @@ g.V().hasLabel('User')
     .by(
       outE('ACCESS_RECORD')
         .has('access_time', gt("2024-01-01 00:00:00"))
-        .has('access_time', lt("2025-3-31 23:59:59"))
+        .has('access_time', lt("2025-03-31 23:59:59"))
         .count()
     )
   .order().by(select('accessCount'), desc)
