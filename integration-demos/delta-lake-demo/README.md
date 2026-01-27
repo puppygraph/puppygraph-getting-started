@@ -34,7 +34,6 @@ docker compose up -d
 
 We can now register our tables under Unity Catalog:
 ```
-chmod +x create.sh
 ./create.sh 
 ```
 
