@@ -15,7 +15,6 @@ This process streamlines storage, data processing and visualization, enabling gr
 
 ## Prerequisites
 * [Docker and Docker Compose](https://docs.docker.com/compose/)
-* [Python 3 and virtual environment](https://docs.python.org/3/library/venv.html)
 
 ## Steps to Run
 ### Loading Data
