@@ -28,12 +28,12 @@ We can now register our tables under Unity Catalog:
 ./register.sh
 ```
 
-Once everything is up and running, you can now populate the database:
+We'll start up the Spark shell:
 ```
 docker exec -it spark /opt/spark/bin/spark-sql
 ```
 
-We can create our tables and insert the dummy data:
+And create our tables and insert the dummy data:
 ```
 CREATE TABLE IF NOT EXISTS delta.`/delta/demo/person` (
   id STRING, 
