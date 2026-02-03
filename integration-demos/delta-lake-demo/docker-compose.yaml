@@ -6,7 +6,6 @@ services:
       deltalake_net:
     volumes:
       - ./delta:/delta
-      - ./create.sh:/tmp/create.sh
     ports:
       - "9000:8080"
       - "3000:3000"
@@ -17,15 +16,13 @@ services:
       deltalake_net:
     volumes:
       - ./spark-conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
-      - ./sql:/sql:ro
-      - ./parquet_data:/parquet_data:ro
       - ./delta:/delta
     environment:
       AWS_ACCESS_KEY_ID: admin
       AWS_SECRET_ACCESS_KEY: password
     command: ["bash", "-lc", "tail -f /dev/null"]
   puppygraph:
-    image: puppygraph/puppygraph:stable
+    image: puppygraph/puppygraph:0.97a
     container_name: puppygraph
     networks:
       deltalake_net:
