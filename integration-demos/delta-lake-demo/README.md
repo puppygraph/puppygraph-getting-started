@@ -97,7 +97,7 @@ INSERT INTO delta.`/delta/demo/knows` VALUES
 
 ### Sample Query
 Input the following query string to find out the creators of the software 'ripple'. The query result would be “josh”:
-```gremlin
+```cypher
 MATCH (p:person)-[:created]->(s:software {name:'ripple'})
 RETURN p.name
 ```
