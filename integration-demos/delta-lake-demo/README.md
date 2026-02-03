@@ -96,9 +96,10 @@ INSERT INTO delta.`/delta/demo/knows` VALUES
   You can do this by clicking the "Clear Canvas" button located in the top-right corner of the page.
 
 ### Sample Query
-Input the following query string to get all the software created by people that marko knows:
+Input the following query string to find out the creators of the software 'ripple'. The query result would be “josh”:
 ```gremlin
-g.V().has("name", "marko").out("knows").out("created").valueMap()
+MATCH (p:person)-[:created]->(s:software {name:'ripple'})
+RETURN p.name
 ```
 
 ## Cleanup and Teardown
