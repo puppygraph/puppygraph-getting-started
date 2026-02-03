@@ -1,0 +1,44 @@
+services:
+  unitycatalog:
+    image: unitycatalog/unitycatalog:latest
+    container_name: unitycatalog
+    networks:
+      deltalake_net:
+    volumes:
+      - ./delta:/delta
+      - ./create.sh:/tmp/create.sh
+    ports:
+      - "9000:8080"
+      - "3000:3000"
+  spark:
+    image: apache/spark:3.5.6
+    container_name: spark
+    networks:
+      deltalake_net:
+    volumes:
+      - ./spark-conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
+      - ./sql:/sql:ro
+      - ./parquet_data:/parquet_data:ro
+      - ./delta:/delta
+    environment:
+      AWS_ACCESS_KEY_ID: admin
+      AWS_SECRET_ACCESS_KEY: password
+    command: ["bash", "-lc", "tail -f /dev/null"]
+  puppygraph:
+    image: puppygraph/puppygraph:stable
+    container_name: puppygraph
+    networks:
+      deltalake_net:
+    volumes:
+      - ./delta:/delta
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+
+networks:
+  deltalake_net:
+    name: puppy-deltalake
