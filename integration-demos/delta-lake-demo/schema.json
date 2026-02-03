@@ -93,7 +93,7 @@
             {
               "type": "STRING",
               "field": "id",
-              "alias": "puppy_id_id"
+              "alias": "id"
             }
           ]
         },
@@ -102,7 +102,7 @@
             {
               "type": "STRING",
               "field": "from_id",
-              "alias": "puppy_from_from_id"
+              "alias": "from_id"
             }
           ]
         },
@@ -111,7 +111,7 @@
             {
               "type": "STRING",
               "field": "to_id",
-              "alias": "puppy_to_to_id"
+              "alias": "to_id"
             }
           ]
         },
@@ -137,7 +137,7 @@
             {
               "type": "STRING",
               "field": "id",
-              "alias": "puppy_id_id"
+              "alias": "id"
             }
           ]
         },
@@ -146,7 +146,7 @@
             {
               "type": "STRING",
               "field": "from_id",
-              "alias": "puppy_from_from_id"
+              "alias": "from_id"
             }
           ]
         },
@@ -155,7 +155,7 @@
             {
               "type": "STRING",
               "field": "to_id",
-              "alias": "puppy_to_to_id"
+              "alias": "to_id"
             }
           ]
         },
