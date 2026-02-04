@@ -1,5 +1,3 @@
-/parquet_data
 /delta
-/demo
 
 !.git*
