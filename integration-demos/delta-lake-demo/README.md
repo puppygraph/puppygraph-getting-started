@@ -23,11 +23,6 @@ Start up the Docker container:
 docker compose up -d
 ```
 
-We can now register our tables under Unity Catalog:
-```
-./register.sh
-```
-
 We'll start up the Spark shell:
 ```
 docker exec -it spark /opt/spark/bin/spark-sql
@@ -79,6 +74,13 @@ INSERT INTO delta.`/delta/demo/created` VALUES
 INSERT INTO delta.`/delta/demo/knows` VALUES
                                         ('e7', 'v1', 'v2', 0.5),
                                         ('e8', 'v1', 'v4', 1.0);
+
+quit;
+```
+
+We can now register our tables under Unity Catalog:
+```
+./register.sh
 ```
 
 ### Modeling the Graph
