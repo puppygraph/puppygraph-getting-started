@@ -1,0 +1,29 @@
+graph:
+  name: otel_service_dependency
+  description: >
+    OpenTelemetry service-level dependency graph derived from trace data.
+    Nodes are services, edges represent call relationships with latency metrics.
+
+nodes:
+  - name: Service
+    table: services
+    id:
+      column: service
+    properties:
+      service_name:
+        column: service
+
+edges:
+  - name: CALLS
+    from: Service
+    to: Service
+    table: service_edges
+    source:
+      column: src_service
+    target:
+      column: dst_service
+    properties:
+      call_count:
+        column: call_count
+      avg_latency_ms:
+        column: avg_latency_ms
