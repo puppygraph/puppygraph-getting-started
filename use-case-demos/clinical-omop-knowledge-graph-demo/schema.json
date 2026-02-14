@@ -1,0 +1,416 @@
+{
+  "catalogs": [
+    {
+      "name": "test",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "postgres",
+        "password": "postgres",
+        "jdbcUri": "jdbc:postgresql://postgres:5432/mimic",
+        "driverClass": "org.postgresql.Driver",
+        "enableMetaCache": "false"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Patient",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "person"},
+          "id": {"fields": [{"type": "LONG", "field": "person_id", "alias": "puppy_id_person_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "INT", "field": "gender_concept_id", "alias": "gender_concept_id"},
+            {"type": "INT", "field": "year_of_birth", "alias": "year_of_birth"},
+            {"type": "INT", "field": "month_of_birth", "alias": "month_of_birth"},
+            {"type": "INT", "field": "day_of_birth", "alias": "day_of_birth"},
+            {"type": "INT", "field": "race_concept_id", "alias": "race_concept_id"},
+            {"type": "INT", "field": "ethnicity_concept_id", "alias": "ethnicity_concept_id"},
+            {"type": "INT", "field": "location_id", "alias": "location_id"},
+            {"type": "LONG", "field": "provider_id", "alias": "provider_id"},
+            {"type": "LONG", "field": "care_site_id", "alias": "care_site_id"}
+          ]
+        }
+      },
+      {
+        "label": "Visit",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "visit_occurrence"},
+          "id": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_id_visit_occurrence_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "visit_occurrence_id", "alias": "visit_occurrence_id"},
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "INT", "field": "visit_concept_id", "alias": "visit_concept_id"},
+            {"type": "DATE", "field": "visit_start_date", "alias": "visit_start_date"},
+            {"type": "DATE", "field": "visit_end_date", "alias": "visit_end_date"},
+            {"type": "INT", "field": "visit_type_concept_id", "alias": "visit_type_concept_id"},
+            {"type": "LONG", "field": "provider_id", "alias": "provider_id"},
+            {"type": "LONG", "field": "care_site_id", "alias": "care_site_id"},
+            {"type": "INT", "field": "discharge_to_concept_id", "alias": "discharge_to_concept_id"},
+            {"type": "INT", "field": "admitting_source_concept_id", "alias": "admitting_source_concept_id"}
+          ]
+        }
+      },
+      {
+        "label": "Condition",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "condition_occurrence"},
+          "id": {"fields": [{"type": "LONG", "field": "condition_occurrence_id", "alias": "puppy_id_condition_occurrence_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "condition_occurrence_id", "alias": "condition_occurrence_id"},
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "INT", "field": "condition_concept_id", "alias": "condition_concept_id"},
+            {"type": "DATE", "field": "condition_start_date", "alias": "condition_start_date"},
+            {"type": "DATE", "field": "condition_end_date", "alias": "condition_end_date"},
+            {"type": "INT", "field": "condition_type_concept_id", "alias": "condition_type_concept_id"},
+            {"type": "INT", "field": "condition_status_concept_id", "alias": "condition_status_concept_id"},
+            {"type": "LONG", "field": "visit_occurrence_id", "alias": "visit_occurrence_id"}
+          ]
+        }
+      },
+      {
+        "label": "Drug",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "drug_exposure"},
+          "id": {"fields": [{"type": "LONG", "field": "drug_exposure_id", "alias": "puppy_id_drug_exposure_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "drug_exposure_id", "alias": "drug_exposure_id"},
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "INT", "field": "drug_concept_id", "alias": "drug_concept_id"},
+            {"type": "DATE", "field": "drug_exposure_start_date", "alias": "drug_exposure_start_date"},
+            {"type": "DATE", "field": "drug_exposure_end_date", "alias": "drug_exposure_end_date"},
+            {"type": "INT", "field": "drug_type_concept_id", "alias": "drug_type_concept_id"},
+            {"type": "DOUBLE", "field": "quantity", "alias": "quantity"},
+            {"type": "INT", "field": "days_supply", "alias": "days_supply"},
+            {"type": "STRING", "field": "sig", "alias": "sig"},
+            {"type": "INT", "field": "route_concept_id", "alias": "route_concept_id"},
+            {"type": "LONG", "field": "visit_occurrence_id", "alias": "visit_occurrence_id"}
+          ]
+        }
+      },
+      {
+        "label": "Procedure",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "procedure_occurrence"},
+          "id": {"fields": [{"type": "LONG", "field": "procedure_occurrence_id", "alias": "puppy_id_procedure_occurrence_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "procedure_occurrence_id", "alias": "procedure_occurrence_id"},
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "INT", "field": "procedure_concept_id", "alias": "procedure_concept_id"},
+            {"type": "DATE", "field": "procedure_date", "alias": "procedure_date"},
+            {"type": "INT", "field": "procedure_type_concept_id", "alias": "procedure_type_concept_id"},
+            {"type": "INT", "field": "modifier_concept_id", "alias": "modifier_concept_id"},
+            {"type": "INT", "field": "quantity", "alias": "quantity"},
+            {"type": "LONG", "field": "visit_occurrence_id", "alias": "visit_occurrence_id"}
+          ]
+        }
+      },
+      {
+        "label": "Measurement",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "measurement"},
+          "id": {"fields": [{"type": "LONG", "field": "measurement_id", "alias": "puppy_id_measurement_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "measurement_id", "alias": "measurement_id"},
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "INT", "field": "measurement_concept_id", "alias": "measurement_concept_id"},
+            {"type": "DATE", "field": "measurement_date", "alias": "measurement_date"},
+            {"type": "INT", "field": "measurement_type_concept_id", "alias": "measurement_type_concept_id"},
+            {"type": "DOUBLE", "field": "value_as_number", "alias": "value_as_number"},
+            {"type": "INT", "field": "value_as_concept_id", "alias": "value_as_concept_id"},
+            {"type": "INT", "field": "unit_concept_id", "alias": "unit_concept_id"},
+            {"type": "DOUBLE", "field": "range_low", "alias": "range_low"},
+            {"type": "DOUBLE", "field": "range_high", "alias": "range_high"},
+            {"type": "LONG", "field": "visit_occurrence_id", "alias": "visit_occurrence_id"}
+          ]
+        }
+      },
+      {
+        "label": "Observation",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "observation"},
+          "id": {"fields": [{"type": "LONG", "field": "observation_id", "alias": "puppy_id_observation_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "observation_id", "alias": "observation_id"},
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "INT", "field": "observation_concept_id", "alias": "observation_concept_id"},
+            {"type": "DATE", "field": "observation_date", "alias": "observation_date"},
+            {"type": "INT", "field": "observation_type_concept_id", "alias": "observation_type_concept_id"},
+            {"type": "DOUBLE", "field": "value_as_number", "alias": "value_as_number"},
+            {"type": "STRING", "field": "value_as_string", "alias": "value_as_string"},
+            {"type": "INT", "field": "value_as_concept_id", "alias": "value_as_concept_id"},
+            {"type": "INT", "field": "qualifier_concept_id", "alias": "qualifier_concept_id"},
+            {"type": "INT", "field": "unit_concept_id", "alias": "unit_concept_id"},
+            {"type": "LONG", "field": "visit_occurrence_id", "alias": "visit_occurrence_id"}
+          ]
+        }
+      },
+      {
+        "label": "Death",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "death"},
+          "id": {"fields": [{"type": "LONG", "field": "person_id", "alias": "puppy_id_person_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "DATE", "field": "death_date", "alias": "death_date"},
+            {"type": "INT", "field": "death_type_concept_id", "alias": "death_type_concept_id"},
+            {"type": "INT", "field": "cause_concept_id", "alias": "cause_concept_id"}
+          ]
+        }
+      },
+      {
+        "label": "Concept",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "concept"},
+          "id": {"fields": [{"type": "INT", "field": "concept_id", "alias": "puppy_id_concept_id"}]},
+          "attributes": [
+            {"type": "INT", "field": "concept_id", "alias": "concept_id"},
+            {"type": "STRING", "field": "concept_name", "alias": "concept_name"},
+            {"type": "STRING", "field": "domain_id", "alias": "domain_id"},
+            {"type": "STRING", "field": "vocabulary_id", "alias": "vocabulary_id"},
+            {"type": "STRING", "field": "concept_class_id", "alias": "concept_class_id"},
+            {"type": "STRING", "field": "standard_concept", "alias": "standard_concept"},
+            {"type": "STRING", "field": "concept_code", "alias": "concept_code"}
+          ]
+        }
+      },
+      {
+        "label": "Provider",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "provider"},
+          "id": {"fields": [{"type": "LONG", "field": "provider_id", "alias": "puppy_id_provider_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "provider_id", "alias": "provider_id"},
+            {"type": "STRING", "field": "provider_name", "alias": "provider_name"},
+            {"type": "STRING", "field": "npi", "alias": "npi"},
+            {"type": "STRING", "field": "dea", "alias": "dea"},
+            {"type": "INT", "field": "specialty_concept_id", "alias": "specialty_concept_id"},
+            {"type": "LONG", "field": "care_site_id", "alias": "care_site_id"},
+            {"type": "INT", "field": "gender_concept_id", "alias": "gender_concept_id"}
+          ]
+        }
+      },
+      {
+        "label": "CareSite",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "care_site"},
+          "id": {"fields": [{"type": "LONG", "field": "care_site_id", "alias": "puppy_id_care_site_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "care_site_id", "alias": "care_site_id"},
+            {"type": "STRING", "field": "care_site_name", "alias": "care_site_name"},
+            {"type": "INT", "field": "place_of_service_concept_id", "alias": "place_of_service_concept_id"},
+            {"type": "INT", "field": "location_id", "alias": "location_id"}
+          ]
+        }
+      },
+      {
+        "label": "Location",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "location"},
+          "id": {"fields": [{"type": "INT", "field": "location_id", "alias": "puppy_id_location_id"}]},
+          "attributes": [
+            {"type": "INT", "field": "location_id", "alias": "location_id"},
+            {"type": "STRING", "field": "address_1", "alias": "address_1"},
+            {"type": "STRING", "field": "city", "alias": "city"},
+            {"type": "STRING", "field": "state", "alias": "state"},
+            {"type": "STRING", "field": "zip", "alias": "zip"},
+            {"type": "STRING", "field": "county", "alias": "county"}
+          ]
+        }
+      },
+      {
+        "label": "PayerPlan",
+        "oneToOne": {
+          "tableSource": {"catalog": "test", "schema": "mimic", "table": "payer_plan_period"},
+          "id": {"fields": [{"type": "LONG", "field": "payer_plan_period_id", "alias": "puppy_id_payer_plan_period_id"}]},
+          "attributes": [
+            {"type": "LONG", "field": "payer_plan_period_id", "alias": "payer_plan_period_id"},
+            {"type": "LONG", "field": "person_id", "alias": "person_id"},
+            {"type": "INT", "field": "payer_concept_id", "alias": "payer_concept_id"},
+            {"type": "INT", "field": "plan_concept_id", "alias": "plan_concept_id"},
+            {"type": "DATE", "field": "payer_plan_period_start_date", "alias": "payer_plan_period_start_date"},
+            {"type": "DATE", "field": "payer_plan_period_end_date", "alias": "payer_plan_period_end_date"}
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "visited",
+        "fromVertex": "Patient", "toVertex": "Visit",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "visit_occurrence"},
+        "id": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_id_visit_occurrence_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "person_id", "alias": "puppy_from_person_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_to_visit_occurrence_id"}]},
+        "attributes": [
+          {"type": "DATE", "field": "visit_start_date", "alias": "date"},
+          {"type": "INT", "field": "visit_concept_id", "alias": "type"}
+        ]
+      },
+      {
+        "label": "diagnosed_with",
+        "fromVertex": "Visit", "toVertex": "Condition",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "condition_occurrence"},
+        "id": {"fields": [{"type": "LONG", "field": "condition_occurrence_id", "alias": "puppy_id_condition_occurrence_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_from_visit_occurrence_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "condition_occurrence_id", "alias": "puppy_to_condition_occurrence_id"}]},
+        "attributes": [
+          {"type": "DATE", "field": "condition_start_date", "alias": "date"}
+        ]
+      },
+      {
+        "label": "prescribed",
+        "fromVertex": "Visit", "toVertex": "Drug",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "drug_exposure"},
+        "id": {"fields": [{"type": "LONG", "field": "drug_exposure_id", "alias": "puppy_id_drug_exposure_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_from_visit_occurrence_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "drug_exposure_id", "alias": "puppy_to_drug_exposure_id"}]},
+        "attributes": [
+          {"type": "DATE", "field": "drug_exposure_start_date", "alias": "date"}
+        ]
+      },
+      {
+        "label": "underwent_procedure",
+        "fromVertex": "Visit", "toVertex": "Procedure",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "procedure_occurrence"},
+        "id": {"fields": [{"type": "LONG", "field": "procedure_occurrence_id", "alias": "puppy_id_procedure_occurrence_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_from_visit_occurrence_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "procedure_occurrence_id", "alias": "puppy_to_procedure_occurrence_id"}]},
+        "attributes": [
+          {"type": "DATE", "field": "procedure_date", "alias": "date"}
+        ]
+      },
+      {
+        "label": "measured",
+        "fromVertex": "Visit", "toVertex": "Measurement",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "measurement"},
+        "id": {"fields": [{"type": "LONG", "field": "measurement_id", "alias": "puppy_id_measurement_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_from_visit_occurrence_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "measurement_id", "alias": "puppy_to_measurement_id"}]},
+        "attributes": [
+          {"type": "DATE", "field": "measurement_date", "alias": "date"}
+        ]
+      },
+      {
+        "label": "observed",
+        "fromVertex": "Visit", "toVertex": "Observation",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "observation"},
+        "id": {"fields": [{"type": "LONG", "field": "observation_id", "alias": "puppy_id_observation_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_from_visit_occurrence_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "observation_id", "alias": "puppy_to_observation_id"}]},
+        "attributes": [
+          {"type": "DATE", "field": "observation_date", "alias": "date"}
+        ]
+      },
+      {
+        "label": "treated_by",
+        "fromVertex": "Visit", "toVertex": "Provider",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "visit_occurrence"},
+        "id": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_id_visit_occurrence_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_from_visit_occurrence_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "provider_id", "alias": "puppy_to_provider_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "occurred_at",
+        "fromVertex": "Visit", "toVertex": "CareSite",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "visit_occurrence"},
+        "id": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_id_visit_occurrence_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_from_visit_occurrence_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "care_site_id", "alias": "puppy_to_care_site_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "employed_at",
+        "fromVertex": "Provider", "toVertex": "CareSite",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "provider"},
+        "id": {"fields": [{"type": "LONG", "field": "provider_id", "alias": "puppy_id_provider_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "provider_id", "alias": "puppy_from_provider_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "care_site_id", "alias": "puppy_to_care_site_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "located_at",
+        "fromVertex": "CareSite", "toVertex": "Location",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "care_site"},
+        "id": {"fields": [{"type": "LONG", "field": "care_site_id", "alias": "puppy_id_care_site_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "care_site_id", "alias": "puppy_from_care_site_id"}]},
+        "toId": {"fields": [{"type": "INT", "field": "location_id", "alias": "puppy_to_location_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "died",
+        "fromVertex": "Patient", "toVertex": "Death",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "death"},
+        "id": {"fields": [{"type": "LONG", "field": "person_id", "alias": "puppy_id_person_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "person_id", "alias": "puppy_from_person_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "person_id", "alias": "puppy_to_person_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "insured_by",
+        "fromVertex": "Patient", "toVertex": "PayerPlan",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "payer_plan_period"},
+        "id": {"fields": [{"type": "LONG", "field": "payer_plan_period_id", "alias": "puppy_id_payer_plan_period_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "person_id", "alias": "puppy_from_person_id"}]},
+        "toId": {"fields": [{"type": "LONG", "field": "payer_plan_period_id", "alias": "puppy_to_payer_plan_period_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "condition_is_concept",
+        "fromVertex": "Condition", "toVertex": "Concept",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "condition_occurrence"},
+        "id": {"fields": [{"type": "LONG", "field": "condition_occurrence_id", "alias": "puppy_id_condition_occurrence_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "condition_occurrence_id", "alias": "puppy_from_condition_occurrence_id"}]},
+        "toId": {"fields": [{"type": "INT", "field": "condition_concept_id", "alias": "puppy_to_condition_concept_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "drug_is_concept",
+        "fromVertex": "Drug", "toVertex": "Concept",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "drug_exposure"},
+        "id": {"fields": [{"type": "LONG", "field": "drug_exposure_id", "alias": "puppy_id_drug_exposure_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "drug_exposure_id", "alias": "puppy_from_drug_exposure_id"}]},
+        "toId": {"fields": [{"type": "INT", "field": "drug_concept_id", "alias": "puppy_to_drug_concept_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "procedure_is_concept",
+        "fromVertex": "Procedure", "toVertex": "Concept",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "procedure_occurrence"},
+        "id": {"fields": [{"type": "LONG", "field": "procedure_occurrence_id", "alias": "puppy_id_procedure_occurrence_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "procedure_occurrence_id", "alias": "puppy_from_procedure_occurrence_id"}]},
+        "toId": {"fields": [{"type": "INT", "field": "procedure_concept_id", "alias": "puppy_to_procedure_concept_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "measurement_is_concept",
+        "fromVertex": "Measurement", "toVertex": "Concept",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "measurement"},
+        "id": {"fields": [{"type": "LONG", "field": "measurement_id", "alias": "puppy_id_measurement_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "measurement_id", "alias": "puppy_from_measurement_id"}]},
+        "toId": {"fields": [{"type": "INT", "field": "measurement_concept_id", "alias": "puppy_to_measurement_concept_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "observation_is_concept",
+        "fromVertex": "Observation", "toVertex": "Concept",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "observation"},
+        "id": {"fields": [{"type": "LONG", "field": "observation_id", "alias": "puppy_id_observation_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "observation_id", "alias": "puppy_from_observation_id"}]},
+        "toId": {"fields": [{"type": "INT", "field": "observation_concept_id", "alias": "puppy_to_observation_concept_id"}]},
+        "attributes": []
+      },
+      {
+        "label": "visit_is_concept",
+        "fromVertex": "Visit", "toVertex": "Concept",
+        "tableSource": {"catalog": "test", "schema": "mimic", "table": "visit_occurrence"},
+        "id": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_id_visit_occurrence_id"}]},
+        "fromId": {"fields": [{"type": "LONG", "field": "visit_occurrence_id", "alias": "puppy_from_visit_occurrence_id"}]},
+        "toId": {"fields": [{"type": "INT", "field": "visit_concept_id", "alias": "puppy_to_visit_concept_id"}]},
+        "attributes": []
+      }
+    ]
+  }
+}

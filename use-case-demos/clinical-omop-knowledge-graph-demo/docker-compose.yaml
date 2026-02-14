@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mimic
+    networks:
+      demo_net:
+    ports:
+      - "5432:5432"
+    
+  puppygraph:
+    image: puppygraph/puppygraph:0.109
+    container_name: puppygraph
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    networks:
+      demo_net:
+  
+networks:
+  demo_net:
+    name: mimic-omop-demo
