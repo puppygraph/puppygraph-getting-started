@@ -1,0 +1,11 @@
+vertex_id,name,number,type,state
+f_11,Sunroof,F001,Optional,Available
+f_12,Bluetooth,F002,Standard,Available
+f_13,Navigation,F003,Optional,N/A
+f_14,Heated Seats,F004,Standard,Available
+f_15,Backup Camera,F005,Optional,Available
+f_16,Leather Seats,F006,Standard,Available
+f_17,Adaptive Cruise,F007,Optional,Available
+f_18,Blind Spot Monitor,F008,Standard,Available
+f_19,Remote Start,F009,Optional,N/A
+f_20,Apple CarPlay,F010,Standard,Available

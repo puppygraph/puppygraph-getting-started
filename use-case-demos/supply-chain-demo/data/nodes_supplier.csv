@@ -1,0 +1,11 @@
+vertex_id,name,address,contact,phone_number
+s_31,Supplier A,123 Street,John Doe,1234567890
+s_32,Supplier B,456 Avenue,Emily Smith,0987654321
+s_33,Supplier C,789 Boulevard,Robert Brown,1112233445
+s_34,Supplier D,101 Place,Maria Johnson,2223344556
+s_35,Supplier E,202 Drive,Michael Williams,3334455667
+s_36,Supplier F,303 Lane,Susan Miller,4445566778
+s_37,Supplier G,404 Road,Chris Lee,5556677889
+s_38,Supplier H,505 Street,Jane Wilson,6667788990
+s_39,Supplier I,606 Way,Brian Anderson,7778899001
+s_40,Supplier J,707 Avenue,Linda Hall,8889900112

@@ -1,0 +1,327 @@
+{
+  "catalogs": [
+    {
+      "name": "supply_chain_sql",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "admin",
+        "password": "password",
+        "jdbcUri": "jdbc:postgresql://supply_chain_db:5432/supplychain",
+        "driverClass": "org.postgresql.Driver",
+        "driverUrl": "https://jdbc.postgresql.org/download/postgresql-42.7.3.jar",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "CarModel",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "supply_chain_sql",
+            "schema": "public",
+            "table": "nodes_car_model"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "vertex_id",
+                "alias": "puppy_id_vertex_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "vertex_id",
+              "alias": "vertex_id"
+            },
+            {
+              "type": "STRING",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "INT",
+              "field": "number",
+              "alias": "number"
+            },
+            {
+              "type": "INT",
+              "field": "year",
+              "alias": "year"
+            },
+            {
+              "type": "STRING",
+              "field": "type",
+              "alias": "type"
+            },
+            {
+              "type": "STRING",
+              "field": "engine_type",
+              "alias": "engine_type"
+            },
+            {
+              "type": "STRING",
+              "field": "size",
+              "alias": "size"
+            },
+            {
+              "type": "INT",
+              "field": "seats",
+              "alias": "seats"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Feature",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "supply_chain_sql",
+            "schema": "public",
+            "table": "nodes_feature"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "vertex_id",
+                "alias": "puppy_id_vertex_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "vertex_id",
+              "alias": "vertex_id"
+            },
+            {
+              "type": "STRING",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "STRING",
+              "field": "number",
+              "alias": "number"
+            },
+            {
+              "type": "STRING",
+              "field": "type",
+              "alias": "type"
+            },
+            {
+              "type": "STRING",
+              "field": "state",
+              "alias": "state"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Part",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "supply_chain_sql",
+            "schema": "public",
+            "table": "nodes_part"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "vertex_id",
+                "alias": "puppy_id_vertex_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "vertex_id",
+              "alias": "vertex_id"
+            },
+            {
+              "type": "STRING",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "STRING",
+              "field": "number",
+              "alias": "number"
+            },
+            {
+              "type": "INT",
+              "field": "price",
+              "alias": "price"
+            },
+            {
+              "type": "STRING",
+              "field": "date",
+              "alias": "date"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Supplier",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "supply_chain_sql",
+            "schema": "public",
+            "table": "nodes_supplier"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "vertex_id",
+                "alias": "puppy_id_vertex_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "vertex_id",
+              "alias": "vertex_id"
+            },
+            {
+              "type": "STRING",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "STRING",
+              "field": "address",
+              "alias": "address"
+            },
+            {
+              "type": "STRING",
+              "field": "contact",
+              "alias": "contact"
+            },
+            {
+              "type": "STRING",
+              "field": "phone_number",
+              "alias": "phone_number"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "with_feature",
+        "fromVertex": "CarModel",
+        "toVertex": "Feature",
+        "tableSource": {
+          "catalog": "supply_chain_sql",
+          "schema": "public",
+          "table": "with_feature"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "src_node_id",
+              "alias": "puppy_from_src_node_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "dst_node_id",
+              "alias": "puppy_to_dst_node_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "DOUBLE",
+            "field": "version",
+            "alias": "version"
+          }
+        ]
+      },
+      {
+        "label": "is_supplied_by",
+        "fromVertex": "Part",
+        "toVertex": "Supplier",
+        "tableSource": {
+          "catalog": "supply_chain_sql",
+          "schema": "public",
+          "table": "is_supplied_by"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "src_id",
+              "alias": "puppy_from_src_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "dst_id",
+              "alias": "puppy_to_dst_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "DOUBLE",
+            "field": "version",
+            "alias": "version"
+          }
+        ]
+      },
+      {
+        "label": "is_composed_of",
+        "fromVertex": "Feature",
+        "toVertex": "Part",
+        "tableSource": {
+          "catalog": "supply_chain_sql",
+          "schema": "public",
+          "table": "is_composed_of"
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "src_id",
+              "alias": "puppy_from_src_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "dst_id",
+              "alias": "puppy_to_dst_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "DOUBLE",
+            "field": "version",
+            "alias": "version"
+          }
+        ]
+      }
+    ]
+  }
+}
