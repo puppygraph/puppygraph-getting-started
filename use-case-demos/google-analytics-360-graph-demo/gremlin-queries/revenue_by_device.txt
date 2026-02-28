@@ -1,0 +1,6 @@
+g.E().
+  has('total_revenue', P.gt(0)).
+  group().
+    by('device').
+    by(values('total_revenue').sum()).
+  next()
