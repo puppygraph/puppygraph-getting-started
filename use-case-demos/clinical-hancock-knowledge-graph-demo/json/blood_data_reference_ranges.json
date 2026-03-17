@@ -1,0 +1,382 @@
+[
+ {
+  "group":"Hematology",
+  "LOINC_name":"Leukocytes [#\/volume] in Blood",
+  "analyte_name":"Leukocytes",
+  "unit":"x10^3\/\u00b5l",
+  "normal_male_min":4.0,
+  "normal_male_max":11.5,
+  "normal_female_min":4.0,
+  "normal_female_max":11.0
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Hemoglobin [Mass\/volume] in Blood",
+  "analyte_name":"Hemoglobin",
+  "unit":"g\/dl",
+  "normal_male_min":14.0,
+  "normal_male_max":17.0,
+  "normal_female_min":11.8,
+  "normal_female_max":15.5
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Platelets [#\/volume] in Blood",
+  "analyte_name":"Platelets",
+  "unit":"x10^3\/\u00b5l",
+  "normal_male_min":160.0,
+  "normal_male_max":400.0,
+  "normal_female_min":160.0,
+  "normal_female_max":400.0
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Erythrocytes [#\/volume] in Blood",
+  "analyte_name":"Erythrocytes",
+  "unit":"x10^6\/\u00b5l",
+  "normal_male_min":4.4,
+  "normal_male_max":5.6,
+  "normal_female_min":3.9,
+  "normal_female_max":5.2
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Hematocrit [Volume Fraction] of Blood",
+  "analyte_name":"Hematocrit",
+  "unit":"%",
+  "normal_male_min":40.0,
+  "normal_male_max":50.0,
+  "normal_female_min":35.0,
+  "normal_female_max":46.0
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Erythrocyte mean corpuscular hemoglobin [Entitic mass]",
+  "analyte_name":"MCH",
+  "unit":"pg",
+  "normal_male_min":27.0,
+  "normal_male_max":32.0,
+  "normal_female_min":26.0,
+  "normal_female_max":33.0
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Erythrocyte mean corpuscular volume [Entitic volume]",
+  "analyte_name":"MCV",
+  "unit":"fl",
+  "normal_male_min":82.0,
+  "normal_male_max":96.0,
+  "normal_female_min":81.0,
+  "normal_female_max":98.0
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Erythrocyte mean corpuscular hemoglobin concentration [Mass\/volume]",
+  "analyte_name":"MHCH",
+  "unit":"g\/dl",
+  "normal_male_min":32.0,
+  "normal_male_max":35.0,
+  "normal_female_min":32.0,
+  "normal_female_max":36.0
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Erythrocyte distribution width [Ratio]",
+  "analyte_name":"RDW",
+  "unit":"%",
+  "normal_male_min":12.0,
+  "normal_male_max":14.3,
+  "normal_female_min":11.6,
+  "normal_female_max":16.2
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Platelet mean volume [Entitic volume] in Blood",
+  "analyte_name":"MPV",
+  "unit":"fl",
+  "normal_male_min":9.0,
+  "normal_male_max":12.0,
+  "normal_female_min":7.8,
+  "normal_female_max":11.0
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Granulocytes [#\/volume] in Blood",
+  "analyte_name":"Granulocytes",
+  "unit":"x10^3\/\u00b5l",
+  "normal_male_min":1.8,
+  "normal_male_max":9.0,
+  "normal_female_min":1.6,
+  "normal_female_max":7.8
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Eosinophils [#\/volume] in Blood",
+  "analyte_name":"Eosinophils",
+  "unit":"x10^3\/\u00b5l",
+  "normal_male_min":0.0,
+  "normal_male_max":0.6,
+  "normal_female_min":0.0,
+  "normal_female_max":0.5
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Basophils [#\/volume] in Blood",
+  "analyte_name":"Basophils",
+  "unit":"x10^3\/\u00b5l",
+  "normal_male_min":0.0,
+  "normal_male_max":0.07,
+  "normal_female_min":0.0,
+  "normal_female_max":0.1
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Lymphocytes [#\/volume] in Blood",
+  "analyte_name":"Lymphocytes",
+  "unit":"x10^3\/\u00b5l",
+  "normal_male_min":1.0,
+  "normal_male_max":3.0,
+  "normal_female_min":1.0,
+  "normal_female_max":3.5
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Monocytes [#\/volume] in Blood",
+  "analyte_name":"Monocytes",
+  "unit":"x10^3\/\u00b5l",
+  "normal_male_min":0.2,
+  "normal_male_max":1.0,
+  "normal_female_min":0.1,
+  "normal_female_max":0.9
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Granulocytes\/100 leukocytes in Blood by Automated count",
+  "analyte_name":"Granulocytes %",
+  "unit":"%",
+  "normal_male_min":41.0,
+  "normal_male_max":74.0,
+  "normal_female_min":null,
+  "normal_female_max":null
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Eosinophils\/100 leukocytes in Blood",
+  "analyte_name":"Eosinophils %",
+  "unit":"%",
+  "normal_male_min":0.0,
+  "normal_male_max":7.0,
+  "normal_female_min":null,
+  "normal_female_max":null
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Basophils\/100 leukocytes in Blood",
+  "analyte_name":"Basophils %",
+  "unit":"%",
+  "normal_male_min":0.0,
+  "normal_male_max":1.2,
+  "normal_female_min":null,
+  "normal_female_max":null
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Lymphocytes\/100 leukocytes in Blood",
+  "analyte_name":"Lymphocytes %",
+  "unit":"%",
+  "normal_male_min":18.0,
+  "normal_male_max":46.0,
+  "normal_female_min":null,
+  "normal_female_max":null
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Monocytes\/100 leukocytes in Blood",
+  "analyte_name":"Monocytes %",
+  "unit":"%",
+  "normal_male_min":4.0,
+  "normal_male_max":15.0,
+  "normal_female_min":null,
+  "normal_female_max":null
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Platelet distribution width [Entitic volume] in Blood by Automated count",
+  "analyte_name":"PDW",
+  "unit":"fl",
+  "normal_male_min":10.0,
+  "normal_male_max":16.0,
+  "normal_female_min":10.0,
+  "normal_female_max":16.0
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Platelets Large\/Platelets in Blood by Automated count",
+  "analyte_name":"PLCR",
+  "unit":"%",
+  "normal_male_min":null,
+  "normal_male_max":null,
+  "normal_female_min":null,
+  "normal_female_max":null
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Granulocytes Immature\/100 leukocytes in Blood",
+  "analyte_name":"Immature Granulocytyes",
+  "unit":"%",
+  "normal_male_min":null,
+  "normal_male_max":null,
+  "normal_female_min":null,
+  "normal_female_max":null
+ },
+ {
+  "group":"Hematology",
+  "LOINC_name":"Normoblasts\/100 leukocytes [Ratio] in Blood",
+  "analyte_name":"Normoblasts",
+  "unit":"%",
+  "normal_male_min":null,
+  "normal_male_max":null,
+  "normal_female_min":null,
+  "normal_female_max":null
+ },
+ {
+  "group":"Routine",
+  "LOINC_name":"Activated partial thromboplastin time (aPTT) in Blood by Coagulation assay",
+  "analyte_name":"aPPT",
+  "unit":"s",
+  "normal_male_min":23.6,
+  "normal_male_max":34.8,
+  "normal_female_min":23.6,
+  "normal_female_max":34.8
+ },
+ {
+  "group":"Routine",
+  "LOINC_name":"INR in Blood by Coagulation assay",
+  "analyte_name":"INR",
+  "unit":null,
+  "normal_male_min":0.85,
+  "normal_male_max":1.15,
+  "normal_female_min":0.85,
+  "normal_female_max":1.15
+ },
+ {
+  "group":"Routine",
+  "LOINC_name":"Prothrombin time (PT) actual\/normal in Platelet poor plasma by Coagulation assay",
+  "analyte_name":"PT",
+  "unit":"%",
+  "normal_male_min":70.0,
+  "normal_male_max":null,
+  "normal_female_min":70.0,
+  "normal_female_max":null
+ },
+ {
+  "group":"Routine",
+  "LOINC_name":"Thrombin time in Platelet poor plasma by Coagulation assay",
+  "analyte_name":"Thrombin time",
+  "unit":"s",
+  "normal_male_min":0.0,
+  "normal_male_max":21.0,
+  "normal_female_min":0.0,
+  "normal_female_max":21.0
+ },
+ {
+  "group":"Electrolytes",
+  "LOINC_name":"Potassium [Moles\/volume] in Serum or Plasma",
+  "analyte_name":"Potassium",
+  "unit":"mmol\/l",
+  "normal_male_min":3.6,
+  "normal_male_max":4.8,
+  "normal_female_min":3.6,
+  "normal_female_max":4.8
+ },
+ {
+  "group":"Electrolytes",
+  "LOINC_name":"Sodium [Moles\/volume] in Serum or Plasma",
+  "analyte_name":"Sodium",
+  "unit":"mmol\/l",
+  "normal_male_min":135.0,
+  "normal_male_max":145.0,
+  "normal_female_min":135.0,
+  "normal_female_max":145.0
+ },
+ {
+  "group":"Electrolytes",
+  "LOINC_name":"Chloride [Moles\/volume] in Serum or Plasma",
+  "analyte_name":"Chloride",
+  "unit":"mmol\/l",
+  "normal_male_min":98.0,
+  "normal_male_max":108.0,
+  "normal_female_min":98.0,
+  "normal_female_max":108.0
+ },
+ {
+  "group":"Renal function",
+  "LOINC_name":"Creatinine [Mass\/volume] in Serum or Plasma",
+  "analyte_name":"Creatinine",
+  "unit":"mg\/dl",
+  "normal_male_min":0.67,
+  "normal_male_max":1.17,
+  "normal_female_min":0.51,
+  "normal_female_max":0.95
+ },
+ {
+  "group":"Renal function",
+  "LOINC_name":"Urea [Mass\/volume] in Serum or Plasma",
+  "analyte_name":"Urea",
+  "unit":"mg\/dl",
+  "normal_male_min":17.0,
+  "normal_male_max":43.0,
+  "normal_female_min":17.0,
+  "normal_female_max":43.0
+ },
+ {
+  "group":"Mineral; bone; joint; connective tissue",
+  "LOINC_name":"Calcium [Moles\/volume] in Serum or Plasma",
+  "analyte_name":"Calcium",
+  "unit":"mmol\/l",
+  "normal_male_min":2.2,
+  "normal_male_max":2.65,
+  "normal_female_min":2.2,
+  "normal_female_max":2.65
+ },
+ {
+  "group":"Mineral; bone; joint; connective tissue",
+  "LOINC_name":"Magnesium [Moles\/volume] in Serum or Plasma",
+  "analyte_name":"Magnesium",
+  "unit":"mmol\/l",
+  "normal_male_min":0.7,
+  "normal_male_max":1.1,
+  "normal_female_min":0.7,
+  "normal_female_max":1.1
+ },
+ {
+  "group":"Sugars\/Sugar metabolism",
+  "LOINC_name":"Glucose [Mass\/volume] in Serum or Plasma",
+  "analyte_name":"Glucose",
+  "unit":"mg\/dl",
+  "normal_male_min":70.0,
+  "normal_male_max":110.0,
+  "normal_female_min":70.0,
+  "normal_female_max":110.0
+ },
+ {
+  "group":"Protein",
+  "LOINC_name":"C reactive protein [Mass\/volume] in Serum or Plasma",
+  "analyte_name":"CRP",
+  "unit":"mg\/l",
+  "normal_male_min":0.0,
+  "normal_male_max":5.0,
+  "normal_female_min":0.0,
+  "normal_female_max":5.0
+ },
+ {
+  "group":"OG",
+  "LOINC_name":"Glomerular filtration rate\/1.73 sq M.predicted by Creatinine-based formula (MDRD)",
+  "analyte_name":"Glomerular filtration rate",
+  "unit":"ml\/min",
+  "normal_male_min":null,
+  "normal_male_max":null,
+  "normal_female_min":null,
+  "normal_female_max":null
+ }
+]
