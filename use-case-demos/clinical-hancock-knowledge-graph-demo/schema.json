@@ -1,0 +1,1157 @@
+{
+    "catalogs": [
+    {
+      "name": "demo",
+      "type": "iceberg",
+      "metastore": {
+        "type": "glue",
+        "useInstanceProfile": "false",
+        "region": "${ENV:AWS_REGION}",
+        "accessKey": "${ENV:AWS_ACCESS_KEY_ID}",
+        "secretKey": "${ENV:AWS_SECRET_ACCESS_KEY}",
+        "enableIcebergMetaCache": "true",
+        "icebergMetaCacheTTL": "180",
+        "useDefaultCredentialsProviderChain": "false"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "region": "${ENV:AWS_REGION}",
+        "accessKey": "${ENV:AWS_ACCESS_KEY_ID}",
+        "secretKey": "${ENV:AWS_SECRET_ACCESS_KEY}",
+        "enableSsl": "true",
+        "type": "S3",
+        "useDefaultCredentialsProviderChain": "false"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "InitialDiagnosis",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "clinical_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "INT",
+              "field": "year_of_initial_diagnosis",
+              "alias": "year_of_initial_diagnosis"
+            },
+            {
+              "type": "INT",
+              "field": "age_at_initial_diagnosis",
+              "alias": "age_at_initial_diagnosis"
+            },
+            {
+              "type": "STRING",
+              "field": "primarily_metastasis",
+              "alias": "primarily_metastasis"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Patient",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "clinical_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "patient_id"
+            },
+            {
+              "type": "STRING",
+              "field": "sex",
+              "alias": "sex"
+            },
+            {
+              "type": "STRING",
+              "field": "smoking_status",
+              "alias": "smoking_status"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Tumor",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "pathological_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "primary_tumor_site",
+              "alias": "primary_tumor_site"
+            },
+            {
+              "type": "STRING",
+              "field": "pt_stage",
+              "alias": "pt_stage"
+            },
+            {
+              "type": "STRING",
+              "field": "grading",
+              "alias": "grading"
+            },
+            {
+              "type": "STRING",
+              "field": "hpv_association_p16",
+              "alias": "hpv_association_p16"
+            },
+            {
+              "type": "STRING",
+              "field": "carcinoma_in_situ",
+              "alias": "carcinoma_in_situ"
+            },
+            {
+              "type": "STRING",
+              "field": "histologic_type",
+              "alias": "histologic_type"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "infiltration_depth_in_mm",
+              "alias": "infiltration_depth_in_mm"
+            }
+          ]
+        }
+      },
+      {
+        "label": "TumorRemoval",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "pathological_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "resection_status",
+              "alias": "resection_status"
+            },
+            {
+              "type": "STRING",
+              "field": "resection_status_carcinoma_in_situ",
+              "alias": "resection_status_carcinoma_in_situ"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "closest_resection_margin_in_cm",
+              "alias": "closest_resection_margin_in_cm"
+            }
+          ]
+        }
+      },
+      {
+        "label": "LymphNodeStatus",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "pathological_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "pn_stage",
+              "alias": "pn_stage"
+            },
+            {
+              "type": "INT",
+              "field": "number_of_positive_lymph_nodes",
+              "alias": "number_of_positive_lymph_nodes"
+            },
+            {
+              "type": "INT",
+              "field": "number_of_resected_lymph_nodes",
+              "alias": "number_of_resected_lymph_nodes"
+            }
+          ]
+        }
+      },
+      {
+        "label": "TumorInvasion",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "pathological_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "perinodal_invasion",
+              "alias": "perinodal_invasion"
+            },
+            {
+              "type": "STRING",
+              "field": "lymphovascular_invasion_l",
+              "alias": "lymphovascular_invasion_l"
+            },
+            {
+              "type": "STRING",
+              "field": "vascular_invasion_v",
+              "alias": "vascular_invasion_v"
+            },
+            {
+              "type": "STRING",
+              "field": "perineural_invasion_pn",
+              "alias": "perineural_invasion_pn"
+            }
+          ]
+        }
+      },
+      {
+        "label": "FirstTreatment",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "clinical_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "first_treatment_intent",
+              "alias": "first_treatment_intent"
+            },
+            {
+              "type": "STRING",
+              "field": "first_treatment_modality",
+              "alias": "first_treatment_modality"
+            },
+            {
+              "type": "INT",
+              "field": "days_to_first_treatment",
+              "alias": "days_to_first_treatment"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Metastasis",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "metastases"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "metastasis_id",
+                "alias": "metastasis_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "INT",
+              "field": "metastasis_order",
+              "alias": "metastasis_order"
+            },
+            {
+              "type": "STRING",
+              "field": "locations",
+              "alias": "locations"
+            },
+            {
+              "type": "INT",
+              "field": "days_to_metastasis",
+              "alias": "days_to_metastasis"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Progression",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "progressions"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "progression_id",
+                "alias": "progression_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "INT",
+              "field": "progression_order",
+              "alias": "progression_order"
+            },
+            {
+              "type": "INT",
+              "field": "days_to_progress",
+              "alias": "days_to_progress"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Recurrence",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "recurrences"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "INT",
+              "field": "days_to_recurrence",
+              "alias": "days_to_recurrence"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Outcome",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "clinical_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "survival_status",
+              "alias": "survival_status"
+            },
+            {
+              "type": "STRING",
+              "field": "survival_status_with_cause",
+              "alias": "survival_status_with_cause"
+            },
+            {
+              "type": "INT",
+              "field": "days_to_last_information",
+              "alias": "days_to_last_information"
+            }
+          ]
+        }
+      },
+      {
+        "label": "BloodTest",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "blood_data"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "blood_test_id",
+                "alias": "blood_test_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "DOUBLE",
+              "field": "value",
+              "alias": "value"
+            },
+            {
+              "type": "STRING",
+              "field": "unit",
+              "alias": "unit"
+            },
+            {
+              "type": "STRING",
+              "field": "analyte_name",
+              "alias": "analyte_name"
+            },
+            {
+              "type": "STRING",
+              "field": "loinc_code",
+              "alias": "loinc_code"
+            },
+            {
+              "type": "STRING",
+              "field": "loinc_name",
+              "alias": "loinc_name"
+            },
+            {
+              "type": "STRING",
+              "field": "group",
+              "alias": "group"
+            },
+            {
+              "type": "INT",
+              "field": "days_before_first_treatment",
+              "alias": "days_before_first_treatment"
+            }
+          ]
+        }
+      },
+      {
+        "label": "ReferenceRange",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "blood_data_reference_ranges"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "loinc_name",
+                "alias": "loinc_name"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "group",
+              "alias": "group"
+            },
+            {
+              "type": "STRING",
+              "field": "analyte_name",
+              "alias": "analyte_name"
+            },
+            {
+              "type": "STRING",
+              "field": "unit",
+              "alias": "unit"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "normal_male_min",
+              "alias": "normal_male_min"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "normal_male_max",
+              "alias": "normal_male_max"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "normal_female_min",
+              "alias": "normal_female_min"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "normal_female_max",
+              "alias": "normal_female_max"
+            }
+          ]
+        }
+      },
+      {
+        "label": "AdjuvantTreatment",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "hancock_db",
+            "table": "adjuvant_treatments"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "patient_id",
+                "alias": "id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "adjuvant_treatment_intent",
+              "alias": "adjuvant_treatment_intent"
+            },
+            {
+              "type": "STRING",
+              "field": "adjuvant_radiotherapy",
+              "alias": "adjuvant_radiotherapy"
+            },
+            {
+              "type": "STRING",
+              "field": "adjuvant_radiotherapy_modality",
+              "alias": "adjuvant_radiotherapy_modality"
+            },
+            {
+              "type": "STRING",
+              "field": "adjuvant_systemic_therapy",
+              "alias": "adjuvant_systemic_therapy"
+            },
+            {
+              "type": "STRING",
+              "field": "adjuvant_systemic_therapy_modality",
+              "alias": "adjuvant_systemic_therapy_modality"
+            },
+            {
+              "type": "STRING",
+              "field": "adjuvant_radiochemotherapy",
+              "alias": "adjuvant_radiochemotherapy"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "RECEIVED_INITIAL_DIAGNOSIS",
+        "fromVertex": "Patient",
+        "toVertex": "InitialDiagnosis",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "clinical_data"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAS_TUMOR",
+        "fromVertex": "Patient",
+        "toVertex": "Tumor",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "pathological_data"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAS_TUMOR_REMOVAL",
+        "fromVertex": "Tumor",
+        "toVertex": "TumorRemoval",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "pathological_data"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAS_LYMPH_NODE_STATUS",
+        "fromVertex": "Tumor",
+        "toVertex": "LymphNodeStatus",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "pathological_data"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAS_TUMOR_INVASION",
+        "fromVertex": "Tumor",
+        "toVertex": "TumorInvasion",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "pathological_data"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "UNDERWENT_FIRST_TREATMENT",
+        "fromVertex": "Patient",
+        "toVertex": "FirstTreatment",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "clinical_data"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAD_METASTASIS",
+        "fromVertex": "Patient",
+        "toVertex": "Metastasis",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "first_metastases"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "metastasis_id",
+              "alias": "puppy_to_metastasis_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAD_PROGRESSION",
+        "fromVertex": "Patient",
+        "toVertex": "Progression",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "first_progressions"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "progression_id",
+              "alias": "puppy_to_progression_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAD_RECURRENCE",
+        "fromVertex": "Patient",
+        "toVertex": "Recurrence",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "recurrences"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAS_OUTCOME",
+        "fromVertex": "Patient",
+        "toVertex": "Outcome",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "clinical_data"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAD_BLOOD_TEST",
+        "fromVertex": "Patient",
+        "toVertex": "BloodTest",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "blood_data"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "blood_test_id",
+              "alias": "puppy_id_blood_test_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "blood_test_id",
+              "alias": "puppy_to_blood_test_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "HAS_REFERENCE_RANGE",
+        "fromVertex": "BloodTest",
+        "toVertex": "ReferenceRange",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "blood_test_reference_ranges"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "blood_test_id",
+              "alias": "puppy_id_blood_test_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "blood_test_id",
+              "alias": "puppy_from_blood_test_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "loinc_name",
+              "alias": "puppy_to_loinc_name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "UNDERWENT_ADJUVANT_TREATMENT",
+        "fromVertex": "Patient",
+        "toVertex": "AdjuvantTreatment",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "adjuvant_treatments"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_id_patient_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_from_patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "patient_id",
+              "alias": "puppy_to_patient_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "NEXT_METASTASIS",
+        "fromVertex": "Metastasis",
+        "toVertex": "Metastasis",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "metastases"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "metastasis_id",
+              "alias": "puppy_id_metastasis_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "prev_metastasis_id",
+              "alias": "puppy_from_prev_metastasis_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "metastasis_id",
+              "alias": "puppy_to_metastasis_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "NEXT_PROGRESSION",
+        "fromVertex": "Progression",
+        "toVertex": "Progression",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "hancock_db",
+          "table": "progressions"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "progression_id",
+              "alias": "puppy_id_progression_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "prev_progression_id",
+              "alias": "puppy_from_prev_progression_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "progression_id",
+              "alias": "puppy_to_progression_id"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
