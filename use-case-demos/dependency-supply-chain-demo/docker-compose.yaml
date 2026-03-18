@@ -1,0 +1,31 @@
+services:
+  puppygraph:
+    image: puppygraph/puppygraph:stable
+    pull_policy: always
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    networks:
+      postgres_net:
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+  postgres:
+    image: postgres:14.1-alpine
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres123
+    networks:
+      postgres_net:
+    ports:
+      - "5432:5432"
+    volumes:
+      # Uncomment this line below to allow data to persist across container restarts
+      # - ./postgres-data:/var/lib/postgresql/data
+      - ./data:/docker-entrypoint-initdb.d
+networks:
+  postgres_net:
+    name: puppy-postgres
