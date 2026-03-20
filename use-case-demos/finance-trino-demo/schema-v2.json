@@ -1,0 +1,3117 @@
+{
+  "catalog": [
+    {
+      "name": "iceberg_catalog",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    },
+    {
+      "name": "trino_catalog",
+      "type": "trino",
+      "jdbc": {
+        "username": "trino",
+        "jdbcUri": "jdbc:trino://trino:8080/iceberg",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "loan",
+          "mappedField": [
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "loanAmount",
+              "targetFieldName": "loanAmount"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "loanUsage",
+              "targetFieldName": "loanUsage"
+            },
+            {
+              "sourceFieldName": "interestRate",
+              "targetFieldName": "interestRate"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_loan",
+          "mappedField": [
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "loanAmount",
+              "targetFieldName": "loanAmount"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "loanUsage",
+              "targetFieldName": "loanUsage"
+            },
+            {
+              "sourceFieldName": "interestRate",
+              "targetFieldName": "interestRate"
+            }
+          ]
+        }
+      },
+      "label": "Loan",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "loanAmount",
+          "type": "Double"
+        },
+        {
+          "name": "balance",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "loanUsage",
+          "type": "String"
+        },
+        {
+          "name": "interestRate",
+          "type": "Double"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "person",
+          "mappedField": [
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "personName",
+              "targetFieldName": "personName"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "gender",
+              "targetFieldName": "gender"
+            },
+            {
+              "sourceFieldName": "birthday",
+              "targetFieldName": "birthday"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_person",
+          "mappedField": [
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "personName",
+              "targetFieldName": "personName"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "gender",
+              "targetFieldName": "gender"
+            },
+            {
+              "sourceFieldName": "birthday",
+              "targetFieldName": "birthday"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            }
+          ]
+        }
+      },
+      "label": "Person",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "personName",
+          "type": "String"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "gender",
+          "type": "String"
+        },
+        {
+          "name": "birthday",
+          "type": "Date"
+        },
+        {
+          "name": "country",
+          "type": "String"
+        },
+        {
+          "name": "city",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "account",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "accountType",
+              "targetFieldName": "accountType"
+            },
+            {
+              "sourceFieldName": "nickname",
+              "targetFieldName": "nickname"
+            },
+            {
+              "sourceFieldName": "phonenum",
+              "targetFieldName": "phonenum"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "freqLoginType",
+              "targetFieldName": "freqLoginType"
+            },
+            {
+              "sourceFieldName": "lastLoginTime",
+              "targetFieldName": "lastLoginTime"
+            },
+            {
+              "sourceFieldName": "accountLevel",
+              "targetFieldName": "accountLevel"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_account",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "accountType",
+              "targetFieldName": "accountType"
+            },
+            {
+              "sourceFieldName": "nickname",
+              "targetFieldName": "nickname"
+            },
+            {
+              "sourceFieldName": "phonenum",
+              "targetFieldName": "phonenum"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "freqLoginType",
+              "targetFieldName": "freqLoginType"
+            },
+            {
+              "sourceFieldName": "lastLoginTime",
+              "targetFieldName": "lastLoginTime"
+            },
+            {
+              "sourceFieldName": "accountLevel",
+              "targetFieldName": "accountLevel"
+            }
+          ]
+        }
+      },
+      "label": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "accountType",
+          "type": "String"
+        },
+        {
+          "name": "nickname",
+          "type": "String"
+        },
+        {
+          "name": "phonenum",
+          "type": "String"
+        },
+        {
+          "name": "email",
+          "type": "String"
+        },
+        {
+          "name": "freqLoginType",
+          "type": "String"
+        },
+        {
+          "name": "lastLoginTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "accountLevel",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "company",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "companyName",
+              "targetFieldName": "companyName"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            },
+            {
+              "sourceFieldName": "business",
+              "targetFieldName": "business"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "url",
+              "targetFieldName": "url"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_company",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "companyName",
+              "targetFieldName": "companyName"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            },
+            {
+              "sourceFieldName": "business",
+              "targetFieldName": "business"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "url",
+              "targetFieldName": "url"
+            }
+          ]
+        }
+      },
+      "label": "Company",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "companyName",
+          "type": "String"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "country",
+          "type": "String"
+        },
+        {
+          "name": "city",
+          "type": "String"
+        },
+        {
+          "name": "business",
+          "type": "String"
+        },
+        {
+          "name": "description",
+          "type": "String"
+        },
+        {
+          "name": "url",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "medium",
+          "mappedField": [
+            {
+              "sourceFieldName": "mediumId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "mediumType",
+              "targetFieldName": "mediumType"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "lastLoginTime",
+              "targetFieldName": "lastLoginTime"
+            },
+            {
+              "sourceFieldName": "riskLevel",
+              "targetFieldName": "riskLevel"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_medium",
+          "mappedField": [
+            {
+              "sourceFieldName": "mediumId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "mediumType",
+              "targetFieldName": "mediumType"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "lastLoginTime",
+              "targetFieldName": "lastLoginTime"
+            },
+            {
+              "sourceFieldName": "riskLevel",
+              "targetFieldName": "riskLevel"
+            }
+          ]
+        }
+      },
+      "label": "Medium",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "mediumType",
+          "type": "String"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "lastLoginTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "riskLevel",
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "companyinvestcompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyinvestcompanyId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "investorId",
+              "targetFieldName": "investorId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_companyinvestcompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyinvestcompanyId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "investorId",
+              "targetFieldName": "investorId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "CompanyInvestCompany",
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Company",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "investorId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ratio",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "companyownaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyownaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_companyownaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyownaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "CompanyOwnAccount",
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "companyguaranteecompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyguaranteecompanyId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_companyguaranteecompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyguaranteecompanyId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        }
+      },
+      "label": "CompanyGuaranteeCompany",
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Company",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "fromId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "toId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "relation",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "accountwithdrawaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountwithdrawaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_accountwithdrawaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountwithdrawaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "AccountWithdrawAccount",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "fromId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "toId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "personguaranteeperson",
+          "mappedField": [
+            {
+              "sourceFieldName": "personguaranteepersonId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_personguaranteeperson",
+          "mappedField": [
+            {
+              "sourceFieldName": "personguaranteepersonId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        }
+      },
+      "label": "PersonGuaranteePerson",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Person",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "fromId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "toId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "relation",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "accountrepayloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountrepayloanId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_accountrepayloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountrepayloanId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "AccountRepayLoan",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Loan",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "personinvestcompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "personinvestcompanyId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "investorId",
+              "targetFieldName": "investorId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_personinvestcompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "personinvestcompanyId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "investorId",
+              "targetFieldName": "investorId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "PersonInvestCompany",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Company",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "investorId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ratio",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "personapplyloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "personapplyloanId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "org",
+              "targetFieldName": "org"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_personapplyloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "personapplyloanId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "org",
+              "targetFieldName": "org"
+            }
+          ]
+        }
+      },
+      "label": "PersonApplyLoan",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Loan",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "personId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "org",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "loandepositaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "loandepositaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_loandepositaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "loandepositaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "LoanDepositAccount",
+      "fromNodeLabel": "Loan",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "personownaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "personownaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_personownaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "personownaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "PersonOwnAccount",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "personId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "mediumsigninaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "mediumsigninaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "mediumId",
+              "targetFieldName": "mediumId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "location",
+              "targetFieldName": "location"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_mediumsigninaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "mediumsigninaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "mediumId",
+              "targetFieldName": "mediumId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "location",
+              "targetFieldName": "location"
+            }
+          ]
+        }
+      },
+      "label": "MediumSignInAccount",
+      "fromNodeLabel": "Medium",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "mediumId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "location",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "accounttransferaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "accounttransferaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "orderNum",
+              "targetFieldName": "orderNum"
+            },
+            {
+              "sourceFieldName": "comment",
+              "targetFieldName": "comment"
+            },
+            {
+              "sourceFieldName": "payType",
+              "targetFieldName": "payType"
+            },
+            {
+              "sourceFieldName": "goodsType",
+              "targetFieldName": "goodsType"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_accounttransferaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "accounttransferaccountId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "orderNum",
+              "targetFieldName": "orderNum"
+            },
+            {
+              "sourceFieldName": "comment",
+              "targetFieldName": "comment"
+            },
+            {
+              "sourceFieldName": "payType",
+              "targetFieldName": "payType"
+            },
+            {
+              "sourceFieldName": "goodsType",
+              "targetFieldName": "goodsType"
+            }
+          ]
+        }
+      },
+      "label": "AccountTransferAccount",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "fromId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "toId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "orderNum",
+          "type": "String"
+        },
+        {
+          "name": "comment",
+          "type": "String"
+        },
+        {
+          "name": "payType",
+          "type": "String"
+        },
+        {
+          "name": "goodsType",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "companyapplyloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyapplyloanId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "org",
+              "targetFieldName": "org"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_companyapplyloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyapplyloanId",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "org",
+              "targetFieldName": "org"
+            }
+          ]
+        }
+      },
+      "label": "CompanyApplyLoan",
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Loan",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "org",
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "localTable": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "personapplyloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "personapplyloanId",
+              "targetFieldName": "personapplyloanId"
+            },
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "org",
+              "targetFieldName": "org"
+            }
+          ]
+        }
+      },
+      "name": "base_personapplyloan",
+      "column": [
+        {
+          "name": "personapplyloanId",
+          "type": "Long"
+        },
+        {
+          "name": "personId",
+          "type": "Long"
+        },
+        {
+          "name": "loanId",
+          "type": "Long"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "org",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "personapplyloanId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "medium",
+          "mappedField": [
+            {
+              "sourceFieldName": "mediumId",
+              "targetFieldName": "mediumId"
+            },
+            {
+              "sourceFieldName": "mediumType",
+              "targetFieldName": "mediumType"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "lastLoginTime",
+              "targetFieldName": "lastLoginTime"
+            },
+            {
+              "sourceFieldName": "riskLevel",
+              "targetFieldName": "riskLevel"
+            }
+          ]
+        }
+      },
+      "name": "base_medium",
+      "column": [
+        {
+          "name": "mediumId",
+          "type": "Long"
+        },
+        {
+          "name": "mediumType",
+          "type": "String"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "lastLoginTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "riskLevel",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "mediumId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "person",
+          "mappedField": [
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "personName",
+              "targetFieldName": "personName"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "gender",
+              "targetFieldName": "gender"
+            },
+            {
+              "sourceFieldName": "birthday",
+              "targetFieldName": "birthday"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            }
+          ]
+        }
+      },
+      "name": "base_person",
+      "column": [
+        {
+          "name": "personId",
+          "type": "Long"
+        },
+        {
+          "name": "personName",
+          "type": "String"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "gender",
+          "type": "String"
+        },
+        {
+          "name": "birthday",
+          "type": "Date"
+        },
+        {
+          "name": "country",
+          "type": "String"
+        },
+        {
+          "name": "city",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "personId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "companyinvestcompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyinvestcompanyId",
+              "targetFieldName": "companyinvestcompanyId"
+            },
+            {
+              "sourceFieldName": "investorId",
+              "targetFieldName": "investorId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "name": "base_companyinvestcompany",
+      "column": [
+        {
+          "name": "companyinvestcompanyId",
+          "type": "Long"
+        },
+        {
+          "name": "investorId",
+          "type": "Long"
+        },
+        {
+          "name": "companyId",
+          "type": "Long"
+        },
+        {
+          "name": "ratio",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "companyinvestcompanyId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "account",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "accountType",
+              "targetFieldName": "accountType"
+            },
+            {
+              "sourceFieldName": "nickname",
+              "targetFieldName": "nickname"
+            },
+            {
+              "sourceFieldName": "phonenum",
+              "targetFieldName": "phonenum"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "freqLoginType",
+              "targetFieldName": "freqLoginType"
+            },
+            {
+              "sourceFieldName": "lastLoginTime",
+              "targetFieldName": "lastLoginTime"
+            },
+            {
+              "sourceFieldName": "accountLevel",
+              "targetFieldName": "accountLevel"
+            }
+          ]
+        }
+      },
+      "name": "base_account",
+      "column": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "accountType",
+          "type": "String"
+        },
+        {
+          "name": "nickname",
+          "type": "String"
+        },
+        {
+          "name": "phonenum",
+          "type": "String"
+        },
+        {
+          "name": "email",
+          "type": "String"
+        },
+        {
+          "name": "freqLoginType",
+          "type": "String"
+        },
+        {
+          "name": "lastLoginTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "accountLevel",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "accountId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "loandepositaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "loandepositaccountId",
+              "targetFieldName": "loandepositaccountId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "name": "base_loandepositaccount",
+      "column": [
+        {
+          "name": "loandepositaccountId",
+          "type": "Long"
+        },
+        {
+          "name": "loanId",
+          "type": "Long"
+        },
+        {
+          "name": "accountId",
+          "type": "Long"
+        },
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "loandepositaccountId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "personinvestcompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "personinvestcompanyId",
+              "targetFieldName": "personinvestcompanyId"
+            },
+            {
+              "sourceFieldName": "investorId",
+              "targetFieldName": "investorId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "name": "base_personinvestcompany",
+      "column": [
+        {
+          "name": "personinvestcompanyId",
+          "type": "Long"
+        },
+        {
+          "name": "investorId",
+          "type": "Long"
+        },
+        {
+          "name": "companyId",
+          "type": "Long"
+        },
+        {
+          "name": "ratio",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "personinvestcompanyId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "companyguaranteecompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyguaranteecompanyId",
+              "targetFieldName": "companyguaranteecompanyId"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        }
+      },
+      "name": "base_companyguaranteecompany",
+      "column": [
+        {
+          "name": "companyguaranteecompanyId",
+          "type": "Long"
+        },
+        {
+          "name": "fromId",
+          "type": "Long"
+        },
+        {
+          "name": "toId",
+          "type": "Long"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "relation",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "companyguaranteecompanyId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "loan",
+          "mappedField": [
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "loanAmount",
+              "targetFieldName": "loanAmount"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "loanUsage",
+              "targetFieldName": "loanUsage"
+            },
+            {
+              "sourceFieldName": "interestRate",
+              "targetFieldName": "interestRate"
+            }
+          ]
+        }
+      },
+      "name": "base_loan",
+      "column": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        },
+        {
+          "name": "loanAmount",
+          "type": "Double"
+        },
+        {
+          "name": "balance",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "loanUsage",
+          "type": "String"
+        },
+        {
+          "name": "interestRate",
+          "type": "Double"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "loanId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "companyapplyloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyapplyloanId",
+              "targetFieldName": "companyapplyloanId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "org",
+              "targetFieldName": "org"
+            }
+          ]
+        }
+      },
+      "name": "base_companyapplyloan",
+      "column": [
+        {
+          "name": "companyapplyloanId",
+          "type": "Long"
+        },
+        {
+          "name": "companyId",
+          "type": "Long"
+        },
+        {
+          "name": "loanId",
+          "type": "Long"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "org",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "companyapplyloanId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "accountrepayloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountrepayloanId",
+              "targetFieldName": "accountrepayloanId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "name": "base_accountrepayloan",
+      "column": [
+        {
+          "name": "accountrepayloanId",
+          "type": "Long"
+        },
+        {
+          "name": "accountId",
+          "type": "Long"
+        },
+        {
+          "name": "loanId",
+          "type": "Long"
+        },
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "accountrepayloanId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "accountwithdrawaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountwithdrawaccountId",
+              "targetFieldName": "accountwithdrawaccountId"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "name": "base_accountwithdrawaccount",
+      "column": [
+        {
+          "name": "accountwithdrawaccountId",
+          "type": "Long"
+        },
+        {
+          "name": "fromId",
+          "type": "Long"
+        },
+        {
+          "name": "toId",
+          "type": "Long"
+        },
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "accountwithdrawaccountId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "accounttransferaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "accounttransferaccountId",
+              "targetFieldName": "accounttransferaccountId"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "orderNum",
+              "targetFieldName": "orderNum"
+            },
+            {
+              "sourceFieldName": "comment",
+              "targetFieldName": "comment"
+            },
+            {
+              "sourceFieldName": "payType",
+              "targetFieldName": "payType"
+            },
+            {
+              "sourceFieldName": "goodsType",
+              "targetFieldName": "goodsType"
+            }
+          ]
+        }
+      },
+      "name": "base_accounttransferaccount",
+      "column": [
+        {
+          "name": "accounttransferaccountId",
+          "type": "Long"
+        },
+        {
+          "name": "fromId",
+          "type": "Long"
+        },
+        {
+          "name": "toId",
+          "type": "Long"
+        },
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "orderNum",
+          "type": "String"
+        },
+        {
+          "name": "comment",
+          "type": "String"
+        },
+        {
+          "name": "payType",
+          "type": "String"
+        },
+        {
+          "name": "goodsType",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "accounttransferaccountId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "companyownaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyownaccountId",
+              "targetFieldName": "companyownaccountId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "name": "base_companyownaccount",
+      "column": [
+        {
+          "name": "companyownaccountId",
+          "type": "Long"
+        },
+        {
+          "name": "companyId",
+          "type": "Long"
+        },
+        {
+          "name": "accountId",
+          "type": "Long"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "companyownaccountId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "mediumsigninaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "mediumsigninaccountId",
+              "targetFieldName": "mediumsigninaccountId"
+            },
+            {
+              "sourceFieldName": "mediumId",
+              "targetFieldName": "mediumId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "location",
+              "targetFieldName": "location"
+            }
+          ]
+        }
+      },
+      "name": "base_mediumsigninaccount",
+      "column": [
+        {
+          "name": "mediumsigninaccountId",
+          "type": "Long"
+        },
+        {
+          "name": "mediumId",
+          "type": "Long"
+        },
+        {
+          "name": "accountId",
+          "type": "Long"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "location",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "mediumsigninaccountId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "personownaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "personownaccountId",
+              "targetFieldName": "personownaccountId"
+            },
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "name": "base_personownaccount",
+      "column": [
+        {
+          "name": "personownaccountId",
+          "type": "Long"
+        },
+        {
+          "name": "personId",
+          "type": "Long"
+        },
+        {
+          "name": "accountId",
+          "type": "Long"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "personownaccountId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_catalog",
+          "schema": "demo",
+          "table": "personguaranteeperson",
+          "mappedField": [
+            {
+              "sourceFieldName": "personguaranteepersonId",
+              "targetFieldName": "personguaranteepersonId"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        }
+      },
+      "name": "base_personguaranteeperson",
+      "column": [
+        {
+          "name": "personguaranteepersonId",
+          "type": "Long"
+        },
+        {
+          "name": "fromId",
+          "type": "Long"
+        },
+        {
+          "name": "toId",
+          "type": "Long"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "relation",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "personguaranteepersonId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trino_catalog",
+          "schema": "demo",
+          "table": "company",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "companyName",
+              "targetFieldName": "companyName"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            },
+            {
+              "sourceFieldName": "business",
+              "targetFieldName": "business"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "url",
+              "targetFieldName": "url"
+            }
+          ]
+        }
+      },
+      "name": "base_company",
+      "column": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        },
+        {
+          "name": "companyName",
+          "type": "String"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "createTime",
+          "type": "DateTime"
+        },
+        {
+          "name": "country",
+          "type": "String"
+        },
+        {
+          "name": "city",
+          "type": "String"
+        },
+        {
+          "name": "business",
+          "type": "String"
+        },
+        {
+          "name": "description",
+          "type": "String"
+        },
+        {
+          "name": "url",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "companyId"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    }
+  ]
+}
