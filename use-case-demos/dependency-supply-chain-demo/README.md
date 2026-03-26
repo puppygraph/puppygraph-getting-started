@@ -8,7 +8,7 @@ This demo uses PostgreSQL to store all the example data.
 **Overview:**
 
 - **`docker-compose.yaml`**: Defines the docker services needed to run the demo. This includes both the PostgreSQL database and the PuppyGraph instance.
-- **`data/`**: Contains metadata (dependencies, maintainers, download statistics) of top npm packages, as well as randomly generated internal services and vulnerabilities. The PostgreSQL setup script is located at `data/init.sql`.
+- **`data/`**: Contains randomly generated metadata (dependencies, maintainers, download statistics) for packages, as well as randomly generated internal services and vulnerabilities. The PostgreSQL setup script is located at `data/init.sql`.
 
 ## Prerequisites:
 
