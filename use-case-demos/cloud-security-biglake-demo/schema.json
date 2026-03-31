@@ -1,0 +1,2536 @@
+{
+  "catalog": [
+    {
+      "name": "biglake_rest",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "https://biglake.googleapis.com/iceberg/v1/restcatalog",
+        "warehouse": "${ENV:GCS_BUCKET}",
+        "security": "google",
+        "enableIcebergMetaCache": "true",
+        "icebergMetaCacheTTL": "180",
+        "headers": {
+          "x-goog-user-project": "${ENV:GCP_PROJECT}"
+        }
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Users",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "phone",
+              "targetFieldName": "phone"
+            },
+            {
+              "sourceFieldName": "created_at",
+              "targetFieldName": "created_at"
+            },
+            {
+              "sourceFieldName": "last_login",
+              "targetFieldName": "last_login"
+            },
+            {
+              "sourceFieldName": "account_status",
+              "targetFieldName": "account_status"
+            },
+            {
+              "sourceFieldName": "authentication_method",
+              "targetFieldName": "authentication_method"
+            },
+            {
+              "sourceFieldName": "failed_login_attempts",
+              "targetFieldName": "failed_login_attempts"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_users",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "phone",
+              "targetFieldName": "phone"
+            },
+            {
+              "sourceFieldName": "created_at",
+              "targetFieldName": "created_at"
+            },
+            {
+              "sourceFieldName": "last_login",
+              "targetFieldName": "last_login"
+            },
+            {
+              "sourceFieldName": "account_status",
+              "targetFieldName": "account_status"
+            },
+            {
+              "sourceFieldName": "authentication_method",
+              "targetFieldName": "authentication_method"
+            },
+            {
+              "sourceFieldName": "failed_login_attempts",
+              "targetFieldName": "failed_login_attempts"
+            }
+          ]
+        }
+      },
+      "label": "User",
+      "id": [
+        {
+          "name": "user_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "username",
+          "type": "String"
+        },
+        {
+          "name": "email",
+          "type": "String"
+        },
+        {
+          "name": "phone",
+          "type": "String"
+        },
+        {
+          "name": "created_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "last_login",
+          "type": "Datetime"
+        },
+        {
+          "name": "account_status",
+          "type": "String"
+        },
+        {
+          "name": "authentication_method",
+          "type": "String"
+        },
+        {
+          "name": "failed_login_attempts",
+          "type": "Int"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "InternetGateways",
+          "mappedField": [
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "region",
+              "targetFieldName": "region"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_internetgateways",
+          "mappedField": [
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "region",
+              "targetFieldName": "region"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            }
+          ]
+        }
+      },
+      "label": "InternetGateway",
+      "id": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "region",
+          "type": "String"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "VPCs",
+          "mappedField": [
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_vpcs",
+          "mappedField": [
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "VPC",
+      "id": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Subnets",
+          "mappedField": [
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_subnets",
+          "mappedField": [
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "Subnet",
+      "id": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "SecurityGroups",
+          "mappedField": [
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_securitygroups",
+          "mappedField": [
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "SecurityGroup",
+      "id": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "NetworkInterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_networkinterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "NetworkInterface",
+      "id": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        },
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "VMInstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_vminstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "VMInstance",
+      "id": [
+        {
+          "name": "vm_instance_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        },
+        {
+          "name": "role_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Roles",
+          "mappedField": [
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_roles",
+          "mappedField": [
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "Role",
+      "id": [
+        {
+          "name": "role_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Resources",
+          "mappedField": [
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_resources",
+          "mappedField": [
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "Resource",
+      "id": [
+        {
+          "name": "resource_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "PublicIPs",
+          "mappedField": [
+            {
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_publicips",
+          "mappedField": [
+            {
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        }
+      },
+      "label": "PublicIP",
+      "id": [
+        {
+          "name": "public_ip_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ip_address",
+          "type": "String"
+        },
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "PrivateIPs",
+          "mappedField": [
+            {
+              "sourceFieldName": "private_ip_id",
+              "targetFieldName": "private_ip_id"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_privateips",
+          "mappedField": [
+            {
+              "sourceFieldName": "private_ip_id",
+              "targetFieldName": "private_ip_id"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        }
+      },
+      "label": "PrivateIP",
+      "id": [
+        {
+          "name": "private_ip_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ip_address",
+          "type": "String"
+        },
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "IngressRules",
+          "mappedField": [
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            },
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "protocol",
+              "targetFieldName": "protocol"
+            },
+            {
+              "sourceFieldName": "port_range",
+              "targetFieldName": "port_range"
+            },
+            {
+              "sourceFieldName": "source",
+              "targetFieldName": "source"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_ingressrules",
+          "mappedField": [
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            },
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "protocol",
+              "targetFieldName": "protocol"
+            },
+            {
+              "sourceFieldName": "port_range",
+              "targetFieldName": "port_range"
+            },
+            {
+              "sourceFieldName": "source",
+              "targetFieldName": "source"
+            }
+          ]
+        }
+      },
+      "label": "IngressRule",
+      "id": [
+        {
+          "name": "ingress_rule_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        },
+        {
+          "name": "protocol",
+          "type": "String"
+        },
+        {
+          "name": "port_range",
+          "type": "String"
+        },
+        {
+          "name": "source",
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "UserInternetGatewayAccess",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "access_level",
+              "targetFieldName": "access_level"
+            },
+            {
+              "sourceFieldName": "granted_at",
+              "targetFieldName": "granted_at"
+            },
+            {
+              "sourceFieldName": "expires_at",
+              "targetFieldName": "expires_at"
+            },
+            {
+              "sourceFieldName": "last_accessed_at",
+              "targetFieldName": "last_accessed_at"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_userinternetgatewayaccess",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "access_level",
+              "targetFieldName": "access_level"
+            },
+            {
+              "sourceFieldName": "granted_at",
+              "targetFieldName": "granted_at"
+            },
+            {
+              "sourceFieldName": "expires_at",
+              "targetFieldName": "expires_at"
+            },
+            {
+              "sourceFieldName": "last_accessed_at",
+              "targetFieldName": "last_accessed_at"
+            }
+          ]
+        }
+      },
+      "label": "ACCESS",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "InternetGateway",
+      "fromKey": [
+        {
+          "name": "user_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "access_level",
+          "type": "String"
+        },
+        {
+          "name": "granted_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "expires_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "last_accessed_at",
+          "type": "Datetime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "UserInternetGatewayAccessLog",
+          "mappedField": [
+            {
+              "sourceFieldName": "log_id",
+              "targetFieldName": "log_id"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "access_time",
+              "targetFieldName": "access_time"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_userinternetgatewayaccesslog",
+          "mappedField": [
+            {
+              "sourceFieldName": "log_id",
+              "targetFieldName": "log_id"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "access_time",
+              "targetFieldName": "access_time"
+            }
+          ]
+        }
+      },
+      "label": "ACCESS_RECORD",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "InternetGateway",
+      "id": [
+        {
+          "name": "log_id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "user_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "access_time",
+          "type": "Datetime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "InternetGatewayVPC",
+          "mappedField": [
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_internetgatewayvpc",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            }
+          ]
+        }
+      },
+      "label": "GATEWAY_TO",
+      "fromNodeLabel": "InternetGateway",
+      "toNodeLabel": "VPC",
+      "fromKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Subnets",
+          "mappedField": [
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_subnets",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            }
+          ]
+        }
+      },
+      "label": "CONTAINS",
+      "fromNodeLabel": "VPC",
+      "toNodeLabel": "Subnet",
+      "fromKey": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "NetworkInterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_networkinterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        }
+      },
+      "label": "HOSTS_INTERFACE",
+      "fromNodeLabel": "Subnet",
+      "toNodeLabel": "NetworkInterface",
+      "fromKey": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "NetworkInterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_networkinterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        }
+      },
+      "label": "PROTECTS",
+      "fromNodeLabel": "SecurityGroup",
+      "toNodeLabel": "NetworkInterface",
+      "fromKey": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "VMInstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_vminstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            }
+          ]
+        }
+      },
+      "label": "ATTACHED_TO",
+      "fromNodeLabel": "NetworkInterface",
+      "toNodeLabel": "VMInstance",
+      "fromKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "vm_instance_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "VMInstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_vminstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            }
+          ]
+        }
+      },
+      "label": "ASSIGNED_ROLE",
+      "fromNodeLabel": "VMInstance",
+      "toNodeLabel": "Role",
+      "fromKey": [
+        {
+          "name": "vm_instance_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "role_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "RoleResourceAccess",
+          "mappedField": [
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_roleresourceaccess",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            }
+          ]
+        }
+      },
+      "label": "ALLOWS_ACCESS_TO",
+      "fromNodeLabel": "Role",
+      "toNodeLabel": "Resource",
+      "fromKey": [
+        {
+          "name": "role_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "resource_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "PublicIPs",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_publicips",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
+            }
+          ]
+        }
+      },
+      "label": "HAS_PUBLIC_IP",
+      "fromNodeLabel": "NetworkInterface",
+      "toNodeLabel": "PublicIP",
+      "fromKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "public_ip_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "PrivateIPs",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "private_ip_id",
+              "targetFieldName": "private_ip_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_privateips",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "private_ip_id",
+              "targetFieldName": "private_ip_id"
+            }
+          ]
+        }
+      },
+      "label": "HAS_PRIVATE_IP",
+      "fromNodeLabel": "NetworkInterface",
+      "toNodeLabel": "PrivateIP",
+      "fromKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "private_ip_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "IngressRules",
+          "mappedField": [
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_ingressrules",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            }
+          ]
+        }
+      },
+      "label": "HAS_RULE",
+      "fromNodeLabel": "SecurityGroup",
+      "toNodeLabel": "IngressRule",
+      "fromKey": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "ingress_rule_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "IngressRuleInternetGateway",
+          "mappedField": [
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_ingressruleinternetgateway",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            }
+          ]
+        }
+      },
+      "label": "ALLOWS_TRAFFIC_FROM",
+      "fromNodeLabel": "IngressRule",
+      "toNodeLabel": "InternetGateway",
+      "fromKey": [
+        {
+          "name": "ingress_rule_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ]
+    }
+  ],
+  "localTable": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "NetworkInterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "name": "base_networkinterfaces",
+      "column": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        },
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        },
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "network_interface_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "SecurityGroups",
+          "mappedField": [
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "name": "base_securitygroups",
+      "column": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "security_group_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "VMInstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "name": "base_vminstances",
+      "column": [
+        {
+          "name": "vm_instance_id",
+          "type": "Long"
+        },
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        },
+        {
+          "name": "role_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "vm_instance_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Users",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "phone",
+              "targetFieldName": "phone"
+            },
+            {
+              "sourceFieldName": "created_at",
+              "targetFieldName": "created_at"
+            },
+            {
+              "sourceFieldName": "last_login",
+              "targetFieldName": "last_login"
+            },
+            {
+              "sourceFieldName": "account_status",
+              "targetFieldName": "account_status"
+            },
+            {
+              "sourceFieldName": "authentication_method",
+              "targetFieldName": "authentication_method"
+            },
+            {
+              "sourceFieldName": "failed_login_attempts",
+              "targetFieldName": "failed_login_attempts"
+            }
+          ]
+        }
+      },
+      "name": "base_users",
+      "column": [
+        {
+          "name": "user_id",
+          "type": "Long"
+        },
+        {
+          "name": "username",
+          "type": "String"
+        },
+        {
+          "name": "email",
+          "type": "String"
+        },
+        {
+          "name": "phone",
+          "type": "String"
+        },
+        {
+          "name": "created_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "last_login",
+          "type": "Datetime"
+        },
+        {
+          "name": "account_status",
+          "type": "String"
+        },
+        {
+          "name": "authentication_method",
+          "type": "String"
+        },
+        {
+          "name": "failed_login_attempts",
+          "type": "Int"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "user_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "InternetGateways",
+          "mappedField": [
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "region",
+              "targetFieldName": "region"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            }
+          ]
+        }
+      },
+      "name": "base_internetgateways",
+      "column": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "region",
+          "type": "String"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "internet_gateway_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "RoleResourceAccess",
+          "mappedField": [
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            }
+          ]
+        }
+      },
+      "name": "base_roleresourceaccess",
+      "column": [
+        {
+          "name": "role_id",
+          "type": "Long"
+        },
+        {
+          "name": "resource_id",
+          "type": "Long"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "role_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "PrivateIPs",
+          "mappedField": [
+            {
+              "sourceFieldName": "private_ip_id",
+              "targetFieldName": "private_ip_id"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        }
+      },
+      "name": "base_privateips",
+      "column": [
+        {
+          "name": "private_ip_id",
+          "type": "Long"
+        },
+        {
+          "name": "ip_address",
+          "type": "String"
+        },
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "private_ip_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Roles",
+          "mappedField": [
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "name": "base_roles",
+      "column": [
+        {
+          "name": "role_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "role_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Subnets",
+          "mappedField": [
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "name": "base_subnets",
+      "column": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        },
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "subnet_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "IngressRuleInternetGateway",
+          "mappedField": [
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            }
+          ]
+        }
+      },
+      "name": "base_ingressruleinternetgateway",
+      "column": [
+        {
+          "name": "ingress_rule_id",
+          "type": "Long"
+        },
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "ingress_rule_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "Resources",
+          "mappedField": [
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "name": "base_resources",
+      "column": [
+        {
+          "name": "resource_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "resource_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "VPCs",
+          "mappedField": [
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "name": "base_vpcs",
+      "column": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "vpc_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "UserInternetGatewayAccessLog",
+          "mappedField": [
+            {
+              "sourceFieldName": "log_id",
+              "targetFieldName": "log_id"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "access_time",
+              "targetFieldName": "access_time"
+            }
+          ]
+        }
+      },
+      "name": "base_userinternetgatewayaccesslog",
+      "column": [
+        {
+          "name": "log_id",
+          "type": "Long"
+        },
+        {
+          "name": "user_id",
+          "type": "Long"
+        },
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        },
+        {
+          "name": "access_time",
+          "type": "Datetime"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "log_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "UserInternetGatewayAccess",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "access_level",
+              "targetFieldName": "access_level"
+            },
+            {
+              "sourceFieldName": "granted_at",
+              "targetFieldName": "granted_at"
+            },
+            {
+              "sourceFieldName": "expires_at",
+              "targetFieldName": "expires_at"
+            },
+            {
+              "sourceFieldName": "last_accessed_at",
+              "targetFieldName": "last_accessed_at"
+            }
+          ]
+        }
+      },
+      "name": "base_userinternetgatewayaccess",
+      "column": [
+        {
+          "name": "user_id",
+          "type": "Long"
+        },
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        },
+        {
+          "name": "access_level",
+          "type": "String"
+        },
+        {
+          "name": "granted_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "expires_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "last_accessed_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "user_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "InternetGatewayVPC",
+          "mappedField": [
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            }
+          ]
+        }
+      },
+      "name": "base_internetgatewayvpc",
+      "column": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        },
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "internet_gateway_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "IngressRules",
+          "mappedField": [
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            },
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "protocol",
+              "targetFieldName": "protocol"
+            },
+            {
+              "sourceFieldName": "port_range",
+              "targetFieldName": "port_range"
+            },
+            {
+              "sourceFieldName": "source",
+              "targetFieldName": "source"
+            }
+          ]
+        }
+      },
+      "name": "base_ingressrules",
+      "column": [
+        {
+          "name": "ingress_rule_id",
+          "type": "Long"
+        },
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        },
+        {
+          "name": "protocol",
+          "type": "String"
+        },
+        {
+          "name": "port_range",
+          "type": "String"
+        },
+        {
+          "name": "source",
+          "type": "String"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "ingress_rule_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "biglake_rest",
+          "schema": "security_demo",
+          "table": "PublicIPs",
+          "mappedField": [
+            {
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        }
+      },
+      "name": "base_publicips",
+      "column": [
+        {
+          "name": "public_ip_id",
+          "type": "Long"
+        },
+        {
+          "name": "ip_address",
+          "type": "String"
+        },
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "public_ip_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    }
+  ]
+}

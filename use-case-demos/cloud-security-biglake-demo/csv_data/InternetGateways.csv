@@ -1,0 +1,11 @@
+internet_gateway_id,name,region,status
+1,Gateway_ppvz,us-west-2,active
+2,Gateway_lfmn,us-west-2,active
+3,Gateway_ltdj,us-west-2,pending
+4,Gateway_wznl,us-east-1,pending
+5,Gateway_cfmw,us-east-1,pending
+6,Gateway_embd,us-west-2,active
+7,Gateway_uvck,us-east-1,active
+8,Gateway_girg,eu-central-1,pending
+9,Gateway_qkmg,eu-central-1,inactive
+10,Gateway_hsbg,us-east-1,inactive
