@@ -1,0 +1,2 @@
+topVisitId = g.E(). has('visit_id'). order().by('total_revenue', desc). limit(1). values('visit_id'). next() 
+g.E(). has('visit_id', topVisitId)
