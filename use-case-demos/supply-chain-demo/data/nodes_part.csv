@@ -1,0 +1,11 @@
+vertex_id,name,number,price,date
+p_21,Brake Pad,P001,50,2023-01-01
+p_22,Engine,P002,2000,2023-05-03
+p_23,Tire,P003,100,2022-08-14
+p_24,Transmission,P004,1500,2022-02-20
+p_25,Radiator,P005,250,2022-06-15
+p_26,Window Glass,P006,60,2021-11-23
+p_27,Battery,P007,120,2023-03-09
+p_28,Headlight,P008,90,2023-07-30
+p_29,Alternator,P009,180,2022-09-04
+p_30,Air Filter,P010,20,2023-04-22
