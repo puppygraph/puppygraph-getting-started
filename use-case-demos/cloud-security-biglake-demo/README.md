@@ -1,8 +1,10 @@
-# PuppyGraph on Google Cloud BigLake: Ontology Enforcement for the Open Lakehouse
+# PuppyGraph on Google Cloud Lakehouse: Ontology Enforcement for the Open Lakehouse
+
+> **Note:** Google Cloud Lakehouse was formerly known as **BigLake**, and the Lakehouse Runtime Catalog was formerly known as the **BigLake Metastore**. Some API endpoints, IAM role names, and Google Cloud documentation URLs still use the legacy `biglake` identifier during the rebranding transition.
 
 ## Summary
 
-This demo showcases how PuppyGraph connects directly to BigLake Iceberg tables to provide an enforced ontology layer that AI agents can rely on for accurate query generation and self-correction.
+This demo showcases how PuppyGraph connects directly to Google Cloud Lakehouse Iceberg tables to provide an enforced ontology layer that AI agents can rely on for accurate query generation and self-correction.
 
 Using a synthesized **cloud security network** dataset, the demo models infrastructure entities (users, VPCs, subnets, security groups, VMs, etc.) and their relationships as a graph. PuppyGraph acts as a machine-readable ontology that:
 
@@ -22,15 +24,15 @@ PuppyGraph also includes a built-in AI agent that leverages this ontology native
               |                     |
               +----------+----------+
                          |
-                    BigLake Metastore
+               Lakehouse Runtime Catalog
                   (Iceberg REST Catalog)
                          |
                   Google Cloud Storage
                   (Iceberg Data Files)
 ```
 
-- **Data storage**: Google Cloud Storage via BigLake Iceberg tables
-- **Catalog**: BigLake Metastore with Iceberg REST Catalog API
+- **Data storage**: Google Cloud Storage via Google Cloud Lakehouse Iceberg tables
+- **Catalog**: Lakehouse Runtime Catalog with Iceberg REST Catalog API
 - **Authentication**: GoogleAuthManager with service account key files
 - **Data ingestion**: Apache Spark with Iceberg + GCP bundle
 - **Ontology Layer**: PuppyGraph
@@ -46,7 +48,7 @@ docker --version
 You also need:
 
 - A Google Cloud project with BigLake API enabled.
-- A GCS bucket and a BigLake catalog with the end-user credential mode. See [Create a BigLake Iceberg catalog](https://docs.cloud.google.com/biglake/docs/blms-rest-catalog) for instructions. Note that you just need to create the catalog without creating any tables, as the demo will create sample tables for you.
+- A GCS bucket and a Lakehouse Runtime Catalog with the end-user credential mode. See [Create a Lakehouse Iceberg REST catalog](https://docs.cloud.google.com/biglake/docs/blms-rest-catalog) for instructions. Note that you just need to create the catalog without creating any tables, as the demo will create sample tables for you.
 - A service account with the following roles:
   - `roles/biglake.editor` ([BigLake Editor](https://cloud.google.com/biglake/docs/access-control#biglake.editor)) on the project
   - `roles/storage.objectUser` ([Storage Object User](https://cloud.google.com/storage/docs/access-control/iam-roles#standard-roles)) on the Cloud Storage bucket
@@ -81,13 +83,13 @@ If you are using a service account key file, set the `GOOGLE_APPLICATION_CREDENT
 export GOOGLE_APPLICATION_CREDENTIALS=<path-to-your-key-file>
 ```
 
-Run the data script to read the CSV files, create BigLake Iceberg tables, and upload the data:
+Run the data script to read the CSV files, create Google Cloud Lakehouse Iceberg tables, and upload the data:
 
 ```bash
 env $(cat .env | xargs) python data.py
 ```
 
-This creates the `security_demo` namespace and uploads tables as BigLake Iceberg tables.
+This creates the `security_demo` namespace and uploads tables as Google Cloud Lakehouse Iceberg tables.
 
 ## Deploying PuppyGraph
 
@@ -127,7 +129,7 @@ Replace `<key_file>` with the path to your service account key file.
 
 4. Click **Local** in the toolbar. If local tables are not loaded or loading, click **Load Data** to load the data to local tables.
 
-The schema defines 12 vertex types and 13 edge types that map directly to the underlying BigLake Iceberg tables. This schema enforces the ontology as PuppyGraph validates all queries against it and returns structured errors for invalid references, providing the feedback loop that AI agents need for self-correction.
+The schema defines 12 vertex types and 13 edge types that map directly to the underlying Google Cloud Lakehouse Iceberg tables. This schema enforces the ontology as PuppyGraph validates all queries against it and returns structured errors for invalid references, providing the feedback loop that AI agents need for self-correction.
 
 ## Querying the Graph with Gremlin and openCypher
 
@@ -181,13 +183,13 @@ You can then ask follow-up questions such as "What VMs are exposed via public IP
   docker stop puppy
   ```
 
-- To delete the BigLake Iceberg tables created for this demo, run `drop_tables.py` with the same environment and Python virtual environment configured as for `data.py`.
+- To delete the Google Cloud Lakehouse Iceberg tables created for this demo, run `drop_tables.py` with the same environment and Python virtual environment configured as for `data.py`.
 
   ```bash
   env $(cat .env | xargs) python drop_tables.py
   ```
 
-- Remove the BigLake catalog you created for this demo in the Google Cloud Console.
+- Remove the Lakehouse Runtime Catalog you created for this demo in the Google Cloud Console.
 
 - Remove your service account key file and `.env` if you no longer need them.
 
