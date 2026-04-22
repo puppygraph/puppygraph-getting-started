@@ -8,7 +8,7 @@ namespace = "security_demo"
 gcs_bucket = os.environ["GCS_BUCKET"]
 gcp_project = os.environ["GCP_PROJECT"]
 
-spark = SparkSession.builder.appName("cloud_security_biglake_drop") \
+spark = SparkSession.builder.appName("cloud_security_lakehouse_drop") \
   .config('spark.jars.packages', 'org.apache.iceberg:iceberg-spark-runtime-4.0_2.13:1.10.1,org.apache.iceberg:iceberg-gcp-bundle:1.10.1') \
   .config(f'spark.sql.catalog.{catalog_name}', 'org.apache.iceberg.spark.SparkCatalog') \
   .config(f'spark.sql.catalog.{catalog_name}.type', 'rest') \
