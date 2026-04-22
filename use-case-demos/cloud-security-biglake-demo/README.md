@@ -1,6 +1,6 @@
 # PuppyGraph on Google Cloud Lakehouse: Ontology Enforcement for the Open Lakehouse
 
-> **Note:** Google Cloud Lakehouse was formerly known as **BigLake**, and the Lakehouse Runtime Catalog was formerly known as the **BigLake Metastore**. Some API endpoints, IAM role names, and Google Cloud documentation URLs still use the legacy `biglake` identifier during the rebranding transition.
+> **Note:** Google Cloud Lakehouse was formerly known as **BigLake**, and the Lakehouse runtime catalog was formerly known as the **BigLake Metastore**. Some API endpoints, IAM role names, and Google Cloud documentation URLs still use the legacy `biglake` identifier during the rebranding transition.
 
 ## Summary
 
@@ -32,7 +32,7 @@ PuppyGraph also includes a built-in AI agent that leverages this ontology native
 ```
 
 - **Data storage**: Google Cloud Storage via Google Cloud Lakehouse Iceberg tables
-- **Catalog**: Lakehouse Runtime Catalog with Iceberg REST Catalog API
+- **Catalog**: Lakehouse runtime catalog with Iceberg REST Catalog API
 - **Authentication**: GoogleAuthManager with service account key files
 - **Data ingestion**: Apache Spark with Iceberg + GCP bundle
 - **Ontology Layer**: PuppyGraph
@@ -48,7 +48,7 @@ docker --version
 You also need:
 
 - A Google Cloud project with BigLake API enabled.
-- A GCS bucket and a Lakehouse Runtime Catalog with the end-user credential mode. See [Create a Lakehouse Iceberg REST catalog](https://docs.cloud.google.com/biglake/docs/blms-rest-catalog) for instructions. Note that you just need to create the catalog without creating any tables, as the demo will create sample tables for you.
+- A GCS bucket and a Lakehouse runtime catalog with the end-user credential mode. See [Create a Lakehouse Iceberg REST catalog](https://docs.cloud.google.com/biglake/docs/blms-rest-catalog) for instructions. Note that you just need to create the catalog without creating any tables, as the demo will create sample tables for you.
 - A service account with the following roles:
   - `roles/biglake.editor` ([BigLake Editor](https://cloud.google.com/biglake/docs/access-control#biglake.editor)) on the project
   - `roles/storage.objectUser` ([Storage Object User](https://cloud.google.com/storage/docs/access-control/iam-roles#standard-roles)) on the Cloud Storage bucket
@@ -189,7 +189,7 @@ You can then ask follow-up questions such as "What VMs are exposed via public IP
   env $(cat .env | xargs) python drop_tables.py
   ```
 
-- Remove the Lakehouse Runtime Catalog you created for this demo in the Google Cloud Console.
+- Remove the Lakehouse runtime catalog you created for this demo in the Google Cloud Console.
 
 - Remove your service account key file and `.env` if you no longer need them.
 
