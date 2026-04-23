@@ -1,0 +1,361 @@
+{
+  "catalogs": [
+    {
+      "name": "postgres_data",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "postgres",
+        "password": "postgres123",
+        "jdbcUri": "jdbc:postgresql://postgres:5432/postgres",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Package",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "postgres_data",
+            "schema": "public",
+            "table": "packages"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "puppy_id_name"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "name",
+              "alias": "name"
+            },
+            {
+              "type": "INT",
+              "field": "weekly_downloads",
+              "alias": "weekly_downloads"
+            },
+            {
+              "type": "DATETIME",
+              "field": "last_publish",
+              "alias": "last_publish"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Service",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "postgres_data",
+            "schema": "public",
+            "table": "services"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "name",
+                "alias": "puppy_id_name"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Maintainer",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "postgres_data",
+            "schema": "public",
+            "table": "maintainers"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "username",
+                "alias": "puppy_id_username"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "username",
+              "alias": "username"
+            },
+            {
+              "type": "STRING",
+              "field": "email",
+              "alias": "email"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Vulnerability",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "postgres_data",
+            "schema": "public",
+            "table": "vulnerabilities"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "INT",
+                "field": "id",
+                "alias": "puppy_id_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "INT",
+              "field": "id",
+              "alias": "id"
+            },
+            {
+              "type": "INT",
+              "field": "severity",
+              "alias": "severity"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "USES",
+        "fromVertex": "Service",
+        "toVertex": "Package",
+        "tableSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "service_dependencies"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "INT",
+              "field": "id",
+              "alias": "puppy_id_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "service",
+              "alias": "puppy_from_service"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "dependency",
+              "alias": "puppy_to_dependency"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "INT",
+            "field": "id",
+            "alias": "id"
+          },
+          {
+            "type": "STRING",
+            "field": "service",
+            "alias": "service"
+          },
+          {
+            "type": "STRING",
+            "field": "dependency",
+            "alias": "dependency"
+          }
+        ]
+      },
+      {
+        "label": "DEPENDS_ON",
+        "fromVertex": "Package",
+        "toVertex": "Package",
+        "tableSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "dependencies"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "INT",
+              "field": "id",
+              "alias": "puppy_id_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "package",
+              "alias": "puppy_from_package"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "dependency",
+              "alias": "puppy_to_dependency"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "INT",
+            "field": "id",
+            "alias": "id"
+          },
+          {
+            "type": "STRING",
+            "field": "package",
+            "alias": "package"
+          },
+          {
+            "type": "STRING",
+            "field": "dependency",
+            "alias": "dependency"
+          }
+        ]
+      },
+      {
+        "label": "MAINTAINED_BY",
+        "fromVertex": "Package",
+        "toVertex": "Maintainer",
+        "tableSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "package_maintained_by"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "INT",
+              "field": "id",
+              "alias": "puppy_id_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "package",
+              "alias": "puppy_from_package"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "maintainer",
+              "alias": "puppy_to_maintainer"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "INT",
+            "field": "id",
+            "alias": "id"
+          },
+          {
+            "type": "STRING",
+            "field": "package",
+            "alias": "package"
+          },
+          {
+            "type": "STRING",
+            "field": "maintainer",
+            "alias": "maintainer"
+          }
+        ]
+      },
+      {
+        "label": "VULNERABLE",
+        "fromVertex": "Package",
+        "toVertex": "Vulnerability",
+        "tableSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "vulnerabilities"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "INT",
+              "field": "id",
+              "alias": "puppy_id_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "package",
+              "alias": "puppy_from_package"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "INT",
+              "field": "id",
+              "alias": "puppy_to_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "INT",
+            "field": "id",
+            "alias": "id"
+          },
+          {
+            "type": "STRING",
+            "field": "package",
+            "alias": "package"
+          },
+          {
+            "type": "INT",
+            "field": "severity",
+            "alias": "severity"
+          }
+        ]
+      }
+    ]
+  }
+}
