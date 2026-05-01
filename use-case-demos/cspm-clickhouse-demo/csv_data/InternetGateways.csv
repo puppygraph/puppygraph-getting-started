@@ -1,0 +1,5 @@
+internet_gateway_id,name,region,status
+1,igw-prod-payments,us-east-1,active
+2,igw-prod-platform,us-east-1,active
+3,igw-staging-billing,us-west-2,active
+4,igw-dev-sandbox,us-west-2,active

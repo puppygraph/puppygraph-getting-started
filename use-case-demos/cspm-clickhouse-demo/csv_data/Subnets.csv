@@ -1,0 +1,17 @@
+subnet_id,vpc_id,name
+1,1,subnet-prod-payments-public-1a
+2,1,subnet-prod-payments-private-1a
+3,1,subnet-prod-payments-public-1b
+4,1,subnet-prod-payments-private-1b
+5,2,subnet-prod-platform-public-1a
+6,2,subnet-prod-platform-private-1a
+7,2,subnet-prod-platform-public-1b
+8,2,subnet-prod-platform-private-1b
+9,3,subnet-staging-billing-public-1a
+10,3,subnet-staging-billing-private-1a
+11,3,subnet-staging-billing-public-1b
+12,3,subnet-staging-billing-private-1b
+13,4,subnet-dev-sandbox-public-1a
+14,4,subnet-dev-sandbox-private-1a
+15,4,subnet-dev-sandbox-public-1b
+16,4,subnet-dev-sandbox-private-1b
