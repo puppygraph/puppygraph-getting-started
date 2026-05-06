@@ -20,12 +20,13 @@ load_dotenv()
 
 @dataclass
 class Transaction:
-    date_processed: str
-    date_of_transaction: str
-    card_id: str
-    details: str
-    withdrawals: str
-    deposits: str
+    txn_date: str
+    value_date: str
+    cheque_no: str
+    description: str
+    branch_code: str
+    debit: str
+    credit: str
     balance: str
 
 
@@ -61,10 +62,20 @@ def parse_money(value: Any) -> Decimal | None:
     text = clean_text(value)
     if text is None:
         return None
-    text = text.replace("$", "").replace(",", "").strip()
+
+    text = (
+        text.replace("Rs.", "")
+            .replace("Rs", "")
+            .replace("INR", "")
+            .replace("$", "")
+            .replace(",", "")
+            .strip()
+    )
+
     if not text:
         return None
-    try: 
+
+    try:
         return Decimal(text)
     except InvalidOperation:
         return None
@@ -111,21 +122,23 @@ class ExtractBankStatementExecutor:
                         "type": "object",
                         "additionalProperties": False,
                         "properties": {
-                            "date_processed": {"type": "string"},
-                            "date_of_transaction": {"type": "string"},
-                            "card_id": {"type": "string"},
-                            "details": {"type": "string"},
-                            "withdrawals": {"type": "string"},
-                            "deposits": {"type": "string"},
+                            "txn_date": {"type": "string"},
+                            "value_date": {"type": "string"},
+                            "cheque_no": {"type": "string"},
+                            "description": {"type": "string"},
+                            "branch_code": {"type": "string"},
+                            "debit": {"type": "string"},
+                            "credit": {"type": "string"},
                             "balance": {"type": "string"},
                         },
                         "required": [
-                            "date_processed",
-                            "date_of_transaction",
-                            "card_id",
-                            "details",
-                            "withdrawals",
-                            "deposits",
+                            "txn_date",
+                            "value_date",
+                            "cheque_no",
+                            "description",
+                            "branch_code",
+                            "debit",
+                            "credit",
                             "balance",
                         ],
                     },
@@ -153,55 +166,87 @@ class ExtractBankStatementExecutor:
         mime = self._guess_mime(filename)
 
         instructions = """
+        You are extracting structured data from a bank statement.
+
         CRITICAL TRANSACTION EXTRACTION RULES:
 
         You must extract EVERY transaction row from the statement.
         Do NOT return only the first transaction.
         Do NOT return only one example transaction.
         Do NOT summarize transaction history.
+
         The "transactions" array must contain all transaction rows visible in the PDF.
 
-        If a transaction table spans multiple pages, extract rows from every page.
-        If rows have multi-line descriptions, merge the lines into one transaction object.
-        If deposit and withdrawal columns both exist, preserve both columns exactly.
-        If a row is a deposit/credit, the deposits field must contain the amount.
-        If a row is a withdrawal/debit, the withdrawals field must contain the amount.
-        
+        The transaction table columns are:
 
-        You are extracting structured data from a bank statement.
+        - Txn Date
+        - Value Date
+        - Cheque No.
+        - Description
+        - Branch Code
+        - Debit
+        - Credit
+        - Balance
+
+        Map these columns exactly:
+
+        - "Txn Date" -> "txn_date"
+        - "Value Date" -> "value_date"
+        - "Cheque No." -> "cheque_no"
+        - "Description" -> "description"
+        - "Branch Code" -> "branch_code"
+        - "Debit" -> "debit"
+        - "Credit" -> "credit"
+        - "Balance" -> "balance"
 
         STRICT REQUIREMENTS:
 
-        1. Extract ONLY real bank transaction rows from the main account activity section.
+        1. Extract ONLY real transaction rows from the main transaction table.
+
         Ignore:
-        - policy text
-        - overdraft summary
-        - monthly service fee summary sections that are not transaction rows
-        - worksheet pages
+        - repeated page headers
+        - repeated table headers
+        - disclaimers
+        - footer text
+        - "SYNTHETIC DATA - MACHINE GENERATED"
         - marketing text
         - explanations or legends
 
         2. Extract EVERY transaction row.
         - Do NOT skip any rows.
-        - Include checks, withdrawals, deposits, transfers, fees, purchases, returns, ACH items, wire items, and branch/store withdrawals.
+        - Include NEFT, RTGS, IMPS, UPI, cash, cheque, ATM, service charge, GST, dividend, reversal, and clearing transactions.
 
         3. Handle multi-line rows:
-        - Some transactions are split across multiple lines.
-        - Merge them into ONE transaction.
+        - Some descriptions are split across multiple lines.
+        - Merge wrapped description lines into ONE transaction object.
+        - Do not create a new transaction unless a new Txn Date appears.
 
-        4. Preserve order exactly as in the document.
+        4. Preserve transaction order exactly as shown in the statement.
 
         5. Field rules:
-        - If amount is a withdrawal, put it in "withdrawals"
-        - If amount is a deposit, put it in "deposits"
-        - Do NOT put both
-        - If a value is missing or unclear, use empty string ""
+        - If a value is missing or unclear, use empty string "".
+        - If Debit is blank, use "".
+        - If Credit is blank, use "".
+        - Do NOT move debit amounts into credit.
+        - Do NOT move credit amounts into debit.
+        - Preserve amount text as shown, including currency symbols if present.
 
-        6. DO NOT hallucinate:
-        - Do not invent transactions
-        - Do not infer hidden rows
+        6. Header metadata:
+        - Extract account_number from "Account Number".
+        - Extract account_holder from "Account Holders Name".
+        - Extract business_name from the customer/business name shown near the top.
+        - Extract address from the address block.
+        - Extract opening_balance from "Opening Balance".
+        - Extract closing_balance from "Closing Balance".
+        - Extract statement_period from the searched date range.
+        - If statement_number, statement_date, page_no, total_withdrawals, or total_deposits are not clearly present, use "".
 
-        7. Return ONLY valid JSON matching the schema.
+        7. DO NOT hallucinate:
+        - Do not invent transactions.
+        - Do not infer hidden rows.
+        - Do not calculate missing totals unless explicitly shown.
+
+        8. Return ONLY valid JSON matching the schema.
         """
 
         if mime == "application/pdf":
@@ -391,22 +436,25 @@ class PostgresBankStatementTargetConnector:
 
                 cur.execute(
                     f"""
-                    CREATE TABLE IF NOT EXISTS {current.schema}.transactions (
-                        transaction_id TEXT PRIMARY KEY,
-                        statement_id TEXT NOT NULL,
-                        row_index INT NOT NULL,
-                        date_processed TEXT,
-                        date_of_transaction TEXT,
-                        card_id TEXT,
-                        details TEXT,
-                        withdrawals NUMERIC,
-                        deposits NUMERIC,
-                        balance NUMERIC,
-                        raw_json JSONB NOT NULL,
-                        FOREIGN KEY (statement_id)
-                            REFERENCES {current.schema}.statements(statement_id)
-                            ON DELETE CASCADE
-                    );
+                        CREATE TABLE IF NOT EXISTS {current.schema}.transactions (
+                            transaction_id TEXT PRIMARY KEY,
+                            statement_id TEXT NOT NULL,
+                            account_id TEXT NOT NULL,
+                            filename TEXT NOT NULL,
+                            row_index INT NOT NULL,
+                            txn_date TEXT,
+                            value_date TEXT,
+                            cheque_no TEXT,
+                            description TEXT,
+                            branch_code TEXT,
+                            debit NUMERIC,
+                            credit NUMERIC,
+                            balance NUMERIC,
+                            raw_json JSONB NOT NULL,
+                            FOREIGN KEY (statement_id)
+                                REFERENCES {current.schema}.statements(statement_id)
+                                ON DELETE CASCADE
+                        );
                     """
                 )
 
@@ -534,13 +582,14 @@ class PostgresBankStatementTargetConnector:
             transaction_id = stable_id(
                 statement_id,
                 idx,
-                tx.get("date_processed"),
-                tx.get("date_of_transaction"),
-                tx.get("details"),
-                tx.get("withdrawals"),
-                tx.get("deposits"),
+                tx.get("txn_date"),
+                tx.get("value_date"),
+                tx.get("cheque_no"),
+                tx.get("description"),
+                tx.get("branch_code"),
+                tx.get("debit"),
+                tx.get("credit"),
                 tx.get("balance"),
-                tx.get("card_id"),
             )
 
             cur.execute(
@@ -551,16 +600,17 @@ class PostgresBankStatementTargetConnector:
                     account_id,
                     filename,
                     row_index,
-                    date_processed,
-                    date_of_transaction,
-                    card_id,
-                    details,
-                    withdrawals,
-                    deposits,
+                    txn_date,
+                    value_date,
+                    cheque_no,
+                    description,
+                    branch_code,
+                    debit,
+                    credit,
                     balance,
                     raw_json
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb);
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb);
                 """,
                 (
                     transaction_id,
@@ -568,12 +618,13 @@ class PostgresBankStatementTargetConnector:
                     account_id,
                     filename,
                     idx,
-                    clean_text(tx.get("date_processed")),
-                    clean_text(tx.get("date_of_transaction")),
-                    clean_text(tx.get("card_id")),
-                    clean_text(tx.get("details")),
-                    parse_money(tx.get("withdrawals")),
-                    parse_money(tx.get("deposits")),
+                    clean_text(tx.get("txn_date")),
+                    clean_text(tx.get("value_date")),
+                    clean_text(tx.get("cheque_no")),
+                    clean_text(tx.get("description")),
+                    clean_text(tx.get("branch_code")),
+                    parse_money(tx.get("debit")),
+                    parse_money(tx.get("credit")),
                     parse_money(tx.get("balance")),
                     json.dumps(tx, ensure_ascii=False),
                 ),
@@ -644,7 +695,7 @@ def build_flow(flow_builder: cocoindex.FlowBuilder, data_scope: cocoindex.DataSc
 def main():
     cocoindex.init()
     build_flow.setup(report_to_stdout=True)
-    build_flow.update(print_stats=True, reexport_targets=True)
+    build_flow.update(reexport_targets=True)
 
 
 if __name__ == "__main__":
