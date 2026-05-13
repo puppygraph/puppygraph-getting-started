@@ -30,5 +30,5 @@ strictyaml==1.7.3
 tenacity==9.1.4
 typing-extensions==4.15.0
 typing-inspection==0.4.2
-urllib3==2.6.3
+urllib3==2.7.0
 zstandard==0.25.0
