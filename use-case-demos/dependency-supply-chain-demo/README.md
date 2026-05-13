@@ -54,32 +54,32 @@ Example Queries:
 1. Find all direct dependencies for the "auth" service
 
 ```cypher
-MATCH (s:Service{name: "auth"})-[:USES]->(p:Package)
-RETURN s, p
+MATCH path = (s:Service{name: "auth"})-[:USES]->(p:Package)
+RETURN path
 ```
 
 2. Find all dependencies (direct and indirect) for the "auth" service
 
 ```cypher
-MATCH (s:Service{name: "auth"})-[:USES|DEPENDS_ON*..10]->(p:Package)
-RETURN DISTINCT s, p
+MATCH path = (s:Service{name: "auth"})-[:USES|DEPENDS_ON*..10]->(p:Package)
+RETURN path
 ```
 
 3. Find services that depend on a vulnerable package with a severity score greater than 5 and sort by decreasing severity
 
 ```cypher
-MATCH (s:Service)-[:USES|DEPENDS_ON*..10]->(p:Package)-[:VULNERABLE]->(v:Vulnerability)
+MATCH path = (s:Service)-[:USES|DEPENDS_ON*..10]->(p:Package)-[:VULNERABLE]->(v:Vulnerability)
 WHERE v.severity > 5
-RETURN DISTINCT s, p, v.severity
+RETURN s, p, v.severity, path
 ORDER BY v.severity DESC
 ```
 
 4. Find services that depend on packages that are maintained by maintainers who own a vulnerable package and sort by decreasing severity
 
 ```cypher
-MATCH (s:Service)-[:USES|DEPENDS_ON*..10]->(p:Package)-[:MAINTAINED_BY]->
+MATCH path = (s:Service)-[:USES|DEPENDS_ON*..10]->(p:Package)-[:MAINTAINED_BY]->
   (m:Maintainer)<-[:MAINTAINED_BY]-(vp:Package)-[:VULNERABLE]->(v:Vulnerability)
-RETURN DISTINCT s, p, m, vp, v.severity
+RETURN s, p, m, vp, v.severity, path
 ORDER BY v.severity DESC
 ```
 
