@@ -1,6 +1,6 @@
 services:
   puppygraph:
-    image: puppygraph/puppygraph:stable
+    image: puppygraph/puppygraph:1.0-preview
     pull_policy: always
     container_name: puppygraph
     environment:
