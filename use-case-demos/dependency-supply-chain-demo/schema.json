@@ -1,0 +1,986 @@
+{
+  "catalog": [
+    {
+      "name": "postgres_data",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "postgres",
+        "password": "postgres123",
+        "jdbcUri": "jdbc:postgresql://postgres:5432/postgres",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "packages",
+          "mappedField": [
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "puppy_id_name"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "weekly_downloads",
+              "targetFieldName": "weekly_downloads"
+            },
+            {
+              "sourceFieldName": "last_publish",
+              "targetFieldName": "last_publish"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_packages",
+          "mappedField": [
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "puppy_id_name"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "weekly_downloads",
+              "targetFieldName": "weekly_downloads"
+            },
+            {
+              "sourceFieldName": "last_publish",
+              "targetFieldName": "last_publish"
+            }
+          ]
+        }
+      },
+      "label": "Package",
+      "id": [
+        {
+          "name": "puppy_id_name",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "weekly_downloads",
+          "type": "INT"
+        },
+        {
+          "name": "last_publish",
+          "type": "DATETIME"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "services",
+          "mappedField": [
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "puppy_id_name"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_services",
+          "mappedField": [
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "puppy_id_name"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "Service",
+      "id": [
+        {
+          "name": "puppy_id_name",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "maintainers",
+          "mappedField": [
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "puppy_id_username"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_maintainers",
+          "mappedField": [
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "puppy_id_username"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            }
+          ]
+        }
+      },
+      "label": "Maintainer",
+      "id": [
+        {
+          "name": "puppy_id_username",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "username",
+          "type": "STRING"
+        },
+        {
+          "name": "email",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "vulnerabilities",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "severity",
+              "targetFieldName": "severity"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_vulnerabilities",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "severity",
+              "targetFieldName": "severity"
+            }
+          ]
+        }
+      },
+      "label": "Vulnerability",
+      "id": [
+        {
+          "name": "puppy_id_id",
+          "type": "INT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "severity",
+          "type": "INT"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "service_dependencies",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "service",
+              "targetFieldName": "puppy_from_service"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "puppy_to_dependency"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "service",
+              "targetFieldName": "service"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "dependency"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_service_dependencies",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "service",
+              "targetFieldName": "puppy_from_service"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "puppy_to_dependency"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "service",
+              "targetFieldName": "service"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "dependency"
+            }
+          ]
+        }
+      },
+      "label": "USES",
+      "fromNodeLabel": "Service",
+      "toNodeLabel": "Package",
+      "id": [
+        {
+          "name": "puppy_id_id",
+          "type": "INT"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_service",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_dependency",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "service",
+          "type": "STRING"
+        },
+        {
+          "name": "dependency",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "dependencies",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "puppy_from_package"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "puppy_to_dependency"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "dependency"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_dependencies",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "puppy_from_package"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "puppy_to_dependency"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "dependency"
+            }
+          ]
+        }
+      },
+      "label": "DEPENDS_ON",
+      "fromNodeLabel": "Package",
+      "toNodeLabel": "Package",
+      "id": [
+        {
+          "name": "puppy_id_id",
+          "type": "INT"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_package",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_dependency",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "package",
+          "type": "STRING"
+        },
+        {
+          "name": "dependency",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "package_maintained_by",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "puppy_from_package"
+            },
+            {
+              "sourceFieldName": "maintainer",
+              "targetFieldName": "puppy_to_maintainer"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            },
+            {
+              "sourceFieldName": "maintainer",
+              "targetFieldName": "maintainer"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_package_maintained_by",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "puppy_from_package"
+            },
+            {
+              "sourceFieldName": "maintainer",
+              "targetFieldName": "puppy_to_maintainer"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            },
+            {
+              "sourceFieldName": "maintainer",
+              "targetFieldName": "maintainer"
+            }
+          ]
+        }
+      },
+      "label": "MAINTAINED_BY",
+      "fromNodeLabel": "Package",
+      "toNodeLabel": "Maintainer",
+      "id": [
+        {
+          "name": "puppy_id_id",
+          "type": "INT"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_package",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_maintainer",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "package",
+          "type": "STRING"
+        },
+        {
+          "name": "maintainer",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "vulnerabilities",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "puppy_from_package"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_to_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            },
+            {
+              "sourceFieldName": "severity",
+              "targetFieldName": "severity"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_vulnerabilities",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_id_id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "puppy_from_package"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "puppy_to_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            },
+            {
+              "sourceFieldName": "severity",
+              "targetFieldName": "severity"
+            }
+          ]
+        }
+      },
+      "label": "VULNERABLE",
+      "fromNodeLabel": "Package",
+      "toNodeLabel": "Vulnerability",
+      "id": [
+        {
+          "name": "puppy_id_id",
+          "type": "INT"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_package",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_id",
+          "type": "INT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "package",
+          "type": "STRING"
+        },
+        {
+          "name": "severity",
+          "type": "INT"
+        }
+      ]
+    }
+  ],
+  "localTable": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "dependencies",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "dependency"
+            }
+          ]
+        }
+      },
+      "name": "base_dependencies",
+      "column": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "package",
+          "type": "STRING"
+        },
+        {
+          "name": "dependency",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "package_maintained_by",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            },
+            {
+              "sourceFieldName": "maintainer",
+              "targetFieldName": "maintainer"
+            }
+          ]
+        }
+      },
+      "name": "base_package_maintained_by",
+      "column": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "package",
+          "type": "STRING"
+        },
+        {
+          "name": "maintainer",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "maintainers",
+          "mappedField": [
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            }
+          ]
+        }
+      },
+      "name": "base_maintainers",
+      "column": [
+        {
+          "name": "username",
+          "type": "STRING"
+        },
+        {
+          "name": "email",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "username"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "services",
+          "mappedField": [
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "name": "base_services",
+      "column": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "name"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "service_dependencies",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "service",
+              "targetFieldName": "service"
+            },
+            {
+              "sourceFieldName": "dependency",
+              "targetFieldName": "dependency"
+            }
+          ]
+        }
+      },
+      "name": "base_service_dependencies",
+      "column": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "service",
+          "type": "STRING"
+        },
+        {
+          "name": "dependency",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "vulnerabilities",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "severity",
+              "targetFieldName": "severity"
+            },
+            {
+              "sourceFieldName": "package",
+              "targetFieldName": "package"
+            }
+          ]
+        }
+      },
+      "name": "base_vulnerabilities",
+      "column": [
+        {
+          "name": "id",
+          "type": "INT"
+        },
+        {
+          "name": "severity",
+          "type": "INT"
+        },
+        {
+          "name": "package",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "packages",
+          "mappedField": [
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "weekly_downloads",
+              "targetFieldName": "weekly_downloads"
+            },
+            {
+              "sourceFieldName": "last_publish",
+              "targetFieldName": "last_publish"
+            }
+          ]
+        }
+      },
+      "name": "base_packages",
+      "column": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "weekly_downloads",
+          "type": "INT"
+        },
+        {
+          "name": "last_publish",
+          "type": "DATETIME"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "name"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    }
+  ]
+}
