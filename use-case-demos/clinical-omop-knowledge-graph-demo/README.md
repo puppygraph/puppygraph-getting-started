@@ -65,7 +65,7 @@ docker exec -i spark /opt/spark/bin/pyspark < import_csv.py
    - Password: `puppygraph123`
 
 2. Upload the schema:
-   - In the **Upload Graph Schema JSON** section, select the file `schema.json` and click **Upload**.
+   - In the **Upload Graph Schema JSON** section, select the file `schema.json` and click **Upload**. When prompted whether to cache data after upload, select **Cache data only**.
    - You can also upload the schema using `curl`:
 
         ```bash
