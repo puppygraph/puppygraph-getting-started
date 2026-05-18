@@ -10,7 +10,7 @@ This demo illustrates how **PuppyGraph** enables complex multi-hop queries on he
 - **Multi-Dimensional Analysis:** Discover complex patients with diverse healthcare interactions across conditions, medications, and measurements
 - **Care Coordination:** Identify high-risk patients requiring coordinated care management
 
-The system uses **PostgreSQL** as the data storage backend and **PuppyGraph** as the graph query engine, allowing seamless integration of relational healthcare data into a graph structure for powerful multi-hop analytics.
+The system uses **Unity Catalog** with **Delta Lake** tables, and **Apache Spark** for the initial writes. **PuppyGraph** is used as the graph query engine, allowing seamless integration of relational healthcare data into a graph structure for powerful multi-hop analytics.
 
 ## Project Structure
 
@@ -19,7 +19,8 @@ The system uses **PostgreSQL** as the data storage backend and **PuppyGraph** as
 ├── docker-compose.yaml
 ├── schema.json
 ├── create_tables.sql
-├── import_csv.sql
+├── import_csv.py
+├── register.sh
 └── 1_omop_data_csv/       # Place MIMIC-IV OMOP CSV files here
 ```
 
@@ -29,7 +30,7 @@ The system uses **PostgreSQL** as the data storage backend and **PuppyGraph** as
 
 ## Deployment
 
-1. Start PostgreSQL and PuppyGraph by running:
+1. Start Unity Catalog, Apache Spark, and PuppyGraph by running:
 ```bash
 docker compose up -d
 ```
@@ -41,15 +42,20 @@ docker compose up -d
    - Scroll to the bottom of the page to find the data files
    - Download the CSV files and place them into the `1_omop_data_csv` directory.
 
-2. Copy the downloaded data into the postgres container:
+2. Copy the downloaded data into the Spark container:
 ```bash
-docker cp ./1_omop_data_csv postgres:/tmp/
+docker cp ./1_omop_data_csv spark:/tmp/
 ```
 
-3. From the `mimic-omop` project directory on the host machine, execute the SQL files to create tables and import data:  
+3. From the `clinical-omop-knowledge-graph-demo` project directory on the host machine, execute the SQL files to create tables and import data:
 ```bash
-docker exec -i postgres psql -U postgres -d mimic < ./create_tables.sql
-docker exec -i postgres psql -U postgres -d mimic < ./import_csv.sql
+docker exec -i spark /opt/spark/bin/spark-sql < create_tables.sql
+docker exec -i spark /opt/spark/bin/pyspark < import_csv.py
+```
+
+4. From the `clinical-omop-knowledge-graph-demo` project directory on the host machine, execute the following Bash script to register the tables in Unity Catalog:
+```bash
+./register.sh
 ```
 
 ## Modeling the Graph
