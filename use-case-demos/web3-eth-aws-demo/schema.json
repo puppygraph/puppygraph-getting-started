@@ -1,0 +1,800 @@
+{
+  "catalog": [
+    {
+      "name": "test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "glue",
+        "useInstanceProfile": "false",
+        "region": "${ENV:AWS_REGION}",
+        "accessKey": "${ENV:AWS_ACCESS_KEY_ID}",
+        "secretKey": "${ENV:AWS_SECRET_ACCESS_KEY}",
+        "enableIcebergMetaCache": "true",
+        "icebergMetaCacheTTL": "180",
+        "useDefaultCredentialsProviderChain": "false"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "region": "${ENV:AWS_REGION}",
+        "accessKey": "${ENV:AWS_ACCESS_KEY_ID}",
+        "secretKey": "${ENV:AWS_SECRET_ACCESS_KEY}",
+        "enableSsl": "false",
+        "type": "S3",
+        "useDefaultCredentialsProviderChain": "false"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "unionDataSource": {
+          "enabled": true,
+          "input": [
+            {
+              "catalog": "test",
+              "schema": "eth_iceberg",
+              "table": "token_transfers",
+              "mappedField": [
+                {
+                  "sourceFieldName": "token_address",
+                  "targetFieldName": "token_address"
+                }
+              ]
+            },
+            {
+              "catalog": "test",
+              "schema": "eth_iceberg",
+              "table": "token_transfers",
+              "mappedField": [
+                {
+                  "sourceFieldName": "from_address",
+                  "targetFieldName": "token_address"
+                }
+              ]
+            },
+            {
+              "catalog": "test",
+              "schema": "eth_iceberg",
+              "table": "token_transfers",
+              "mappedField": [
+                {
+                  "sourceFieldName": "to_address",
+                  "targetFieldName": "token_address"
+                }
+              ]
+            },
+            {
+              "catalog": "test",
+              "schema": "eth_iceberg",
+              "table": "transactions",
+              "mappedField": [
+                {
+                  "sourceFieldName": "receipt_contract_address",
+                  "targetFieldName": "token_address"
+                }
+              ]
+            },
+            {
+              "catalog": "test",
+              "schema": "eth_iceberg",
+              "table": "transactions",
+              "mappedField": [
+                {
+                  "sourceFieldName": "from_address",
+                  "targetFieldName": "token_address"
+                }
+              ]
+            },
+            {
+              "catalog": "test",
+              "schema": "eth_iceberg",
+              "table": "transactions",
+              "mappedField": [
+                {
+                  "sourceFieldName": "to_address",
+                  "targetFieldName": "token_address"
+                }
+              ]
+            }
+          ],
+          "dedupKey": [
+            "token_address"
+          ]
+        }
+      },
+      "label": "Address",
+      "id": [
+        {
+          "name": "token_address",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "test",
+          "schema": "eth_iceberg",
+          "table": "token_transfers",
+          "mappedField": [
+            {
+              "sourceFieldName": "from_address",
+              "targetFieldName": "from_address"
+            },
+            {
+              "sourceFieldName": "to_address",
+              "targetFieldName": "to_address"
+            },
+            {
+              "sourceFieldName": "transaction_hash",
+              "targetFieldName": "transaction_hash"
+            },
+            {
+              "sourceFieldName": "token_address",
+              "targetFieldName": "token_address"
+            },
+            {
+              "sourceFieldName": "value",
+              "targetFieldName": "value"
+            },
+            {
+              "sourceFieldName": "block_timestamp",
+              "targetFieldName": "block_timestamp"
+            },
+            {
+              "sourceFieldName": "block_number",
+              "targetFieldName": "block_number"
+            },
+            {
+              "sourceFieldName": "block_hash",
+              "targetFieldName": "block_hash"
+            },
+            {
+              "sourceFieldName": "log_index",
+              "targetFieldName": "log_index"
+            }
+          ]
+        },
+        "localDataSource": {
+          "localTableName": "local_token_transfers",
+          "mappedField": [
+            {
+              "sourceFieldName": "from_address",
+              "targetFieldName": "from_address"
+            },
+            {
+              "sourceFieldName": "to_address",
+              "targetFieldName": "to_address"
+            },
+            {
+              "sourceFieldName": "transaction_hash",
+              "targetFieldName": "transaction_hash"
+            },
+            {
+              "sourceFieldName": "token_address",
+              "targetFieldName": "token_address"
+            },
+            {
+              "sourceFieldName": "value",
+              "targetFieldName": "value"
+            },
+            {
+              "sourceFieldName": "block_timestamp",
+              "targetFieldName": "block_timestamp"
+            },
+            {
+              "sourceFieldName": "block_number",
+              "targetFieldName": "block_number"
+            },
+            {
+              "sourceFieldName": "block_hash",
+              "targetFieldName": "block_hash"
+            },
+            {
+              "sourceFieldName": "log_index",
+              "targetFieldName": "log_index"
+            },
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            }
+          ]
+        }
+      },
+      "label": "TRANSFERS_TOKEN_TO",
+      "fromNodeLabel": "Address",
+      "toNodeLabel": "Address",
+      "fromKey": [
+        {
+          "name": "from_address",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_address",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "transaction_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "token_address",
+          "type": "STRING"
+        },
+        {
+          "name": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "block_number",
+          "type": "LONG"
+        },
+        {
+          "name": "block_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "log_index",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "test",
+          "schema": "eth_iceberg",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "hash",
+              "targetFieldName": "hash"
+            },
+            {
+              "sourceFieldName": "from_address",
+              "targetFieldName": "from_address"
+            },
+            {
+              "sourceFieldName": "to_address",
+              "targetFieldName": "to_address"
+            },
+            {
+              "sourceFieldName": "date",
+              "targetFieldName": "date"
+            },
+            {
+              "sourceFieldName": "nonce",
+              "targetFieldName": "nonce"
+            },
+            {
+              "sourceFieldName": "transaction_index",
+              "targetFieldName": "transaction_index"
+            },
+            {
+              "sourceFieldName": "value",
+              "targetFieldName": "value"
+            },
+            {
+              "sourceFieldName": "gas",
+              "targetFieldName": "gas"
+            },
+            {
+              "sourceFieldName": "gas_price",
+              "targetFieldName": "gas_price"
+            },
+            {
+              "sourceFieldName": "receipt_gas_used",
+              "targetFieldName": "receipt_gas_used"
+            },
+            {
+              "sourceFieldName": "receipt_contract_address",
+              "targetFieldName": "receipt_contract_address"
+            },
+            {
+              "sourceFieldName": "receipt_status",
+              "targetFieldName": "receipt_status"
+            },
+            {
+              "sourceFieldName": "block_timestamp",
+              "targetFieldName": "block_timestamp"
+            },
+            {
+              "sourceFieldName": "block_number",
+              "targetFieldName": "block_number"
+            },
+            {
+              "sourceFieldName": "max_fee_per_gas",
+              "targetFieldName": "max_fee_per_gas"
+            },
+            {
+              "sourceFieldName": "max_priority_fee_per_gas",
+              "targetFieldName": "max_priority_fee_per_gas"
+            },
+            {
+              "sourceFieldName": "transaction_type",
+              "targetFieldName": "transaction_type"
+            },
+            {
+              "sourceFieldName": "receipt_effective_gas_price",
+              "targetFieldName": "receipt_effective_gas_price"
+            }
+          ]
+        },
+        "localDataSource": {
+          "localTableName": "local_transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "hash",
+              "targetFieldName": "hash"
+            },
+            {
+              "sourceFieldName": "from_address",
+              "targetFieldName": "from_address"
+            },
+            {
+              "sourceFieldName": "to_address",
+              "targetFieldName": "to_address"
+            },
+            {
+              "sourceFieldName": "date",
+              "targetFieldName": "date"
+            },
+            {
+              "sourceFieldName": "nonce",
+              "targetFieldName": "nonce"
+            },
+            {
+              "sourceFieldName": "transaction_index",
+              "targetFieldName": "transaction_index"
+            },
+            {
+              "sourceFieldName": "value",
+              "targetFieldName": "value"
+            },
+            {
+              "sourceFieldName": "gas",
+              "targetFieldName": "gas"
+            },
+            {
+              "sourceFieldName": "gas_price",
+              "targetFieldName": "gas_price"
+            },
+            {
+              "sourceFieldName": "receipt_gas_used",
+              "targetFieldName": "receipt_gas_used"
+            },
+            {
+              "sourceFieldName": "receipt_contract_address",
+              "targetFieldName": "receipt_contract_address"
+            },
+            {
+              "sourceFieldName": "receipt_status",
+              "targetFieldName": "receipt_status"
+            },
+            {
+              "sourceFieldName": "block_timestamp",
+              "targetFieldName": "block_timestamp"
+            },
+            {
+              "sourceFieldName": "block_number",
+              "targetFieldName": "block_number"
+            },
+            {
+              "sourceFieldName": "max_fee_per_gas",
+              "targetFieldName": "max_fee_per_gas"
+            },
+            {
+              "sourceFieldName": "max_priority_fee_per_gas",
+              "targetFieldName": "max_priority_fee_per_gas"
+            },
+            {
+              "sourceFieldName": "transaction_type",
+              "targetFieldName": "transaction_type"
+            },
+            {
+              "sourceFieldName": "receipt_effective_gas_price",
+              "targetFieldName": "receipt_effective_gas_price"
+            }
+          ]
+        }
+      },
+      "label": "TRANSACTS_TO",
+      "fromNodeLabel": "Address",
+      "toNodeLabel": "Address",
+      "id": [
+        {
+          "name": "hash",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_address",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_address",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "date",
+          "type": "STRING"
+        },
+        {
+          "name": "nonce",
+          "type": "LONG"
+        },
+        {
+          "name": "transaction_index",
+          "type": "LONG"
+        },
+        {
+          "name": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "gas",
+          "type": "LONG"
+        },
+        {
+          "name": "gas_price",
+          "type": "LONG"
+        },
+        {
+          "name": "receipt_gas_used",
+          "type": "LONG"
+        },
+        {
+          "name": "receipt_contract_address",
+          "type": "STRING"
+        },
+        {
+          "name": "receipt_status",
+          "type": "LONG"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "block_number",
+          "type": "LONG"
+        },
+        {
+          "name": "max_fee_per_gas",
+          "type": "LONG"
+        },
+        {
+          "name": "max_priority_fee_per_gas",
+          "type": "LONG"
+        },
+        {
+          "name": "transaction_type",
+          "type": "LONG"
+        },
+        {
+          "name": "receipt_effective_gas_price",
+          "type": "LONG"
+        }
+      ]
+    }
+  ],
+  "localTable": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "test",
+          "schema": "eth_iceberg",
+          "table": "token_transfers",
+          "mappedField": [
+            {
+              "sourceFieldName": "from_address",
+              "targetFieldName": "from_address"
+            },
+            {
+              "sourceFieldName": "to_address",
+              "targetFieldName": "to_address"
+            },
+            {
+              "sourceFieldName": "transaction_hash",
+              "targetFieldName": "transaction_hash"
+            },
+            {
+              "sourceFieldName": "token_address",
+              "targetFieldName": "token_address"
+            },
+            {
+              "sourceFieldName": "value",
+              "targetFieldName": "value"
+            },
+            {
+              "sourceFieldName": "block_timestamp",
+              "targetFieldName": "block_timestamp"
+            },
+            {
+              "sourceFieldName": "block_number",
+              "targetFieldName": "block_number"
+            },
+            {
+              "sourceFieldName": "block_hash",
+              "targetFieldName": "block_hash"
+            },
+            {
+              "sourceFieldName": "log_index",
+              "targetFieldName": "log_index"
+            }
+          ]
+        }
+      },
+      "name": "local_token_transfers",
+      "column": [
+        {
+          "name": "from_address",
+          "type": "STRING"
+        },
+        {
+          "name": "to_address",
+          "type": "STRING"
+        },
+        {
+          "name": "transaction_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "token_address",
+          "type": "STRING"
+        },
+        {
+          "name": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "block_number",
+          "type": "LONG"
+        },
+        {
+          "name": "block_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "log_index",
+          "type": "LONG"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "indexColumn": [
+        "from_address"
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "from_address"
+            ]
+          }
+        }
+      ],
+      "orderBy": [
+        {
+          "column": "from_address"
+        }
+      ],
+      "colocateKey": "co_13o0en_transfers_token_to",
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "test",
+          "schema": "eth_iceberg",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "hash",
+              "targetFieldName": "hash"
+            },
+            {
+              "sourceFieldName": "from_address",
+              "targetFieldName": "from_address"
+            },
+            {
+              "sourceFieldName": "to_address",
+              "targetFieldName": "to_address"
+            },
+            {
+              "sourceFieldName": "date",
+              "targetFieldName": "date"
+            },
+            {
+              "sourceFieldName": "nonce",
+              "targetFieldName": "nonce"
+            },
+            {
+              "sourceFieldName": "transaction_index",
+              "targetFieldName": "transaction_index"
+            },
+            {
+              "sourceFieldName": "value",
+              "targetFieldName": "value"
+            },
+            {
+              "sourceFieldName": "gas",
+              "targetFieldName": "gas"
+            },
+            {
+              "sourceFieldName": "gas_price",
+              "targetFieldName": "gas_price"
+            },
+            {
+              "sourceFieldName": "receipt_gas_used",
+              "targetFieldName": "receipt_gas_used"
+            },
+            {
+              "sourceFieldName": "receipt_contract_address",
+              "targetFieldName": "receipt_contract_address"
+            },
+            {
+              "sourceFieldName": "receipt_status",
+              "targetFieldName": "receipt_status"
+            },
+            {
+              "sourceFieldName": "block_timestamp",
+              "targetFieldName": "block_timestamp"
+            },
+            {
+              "sourceFieldName": "block_number",
+              "targetFieldName": "block_number"
+            },
+            {
+              "sourceFieldName": "max_fee_per_gas",
+              "targetFieldName": "max_fee_per_gas"
+            },
+            {
+              "sourceFieldName": "max_priority_fee_per_gas",
+              "targetFieldName": "max_priority_fee_per_gas"
+            },
+            {
+              "sourceFieldName": "transaction_type",
+              "targetFieldName": "transaction_type"
+            },
+            {
+              "sourceFieldName": "receipt_effective_gas_price",
+              "targetFieldName": "receipt_effective_gas_price"
+            }
+          ]
+        }
+      },
+      "name": "local_transactions",
+      "column": [
+        {
+          "name": "hash",
+          "type": "STRING"
+        },
+        {
+          "name": "from_address",
+          "type": "STRING"
+        },
+        {
+          "name": "to_address",
+          "type": "STRING"
+        },
+        {
+          "name": "date",
+          "type": "STRING"
+        },
+        {
+          "name": "nonce",
+          "type": "LONG"
+        },
+        {
+          "name": "transaction_index",
+          "type": "LONG"
+        },
+        {
+          "name": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "gas",
+          "type": "LONG"
+        },
+        {
+          "name": "gas_price",
+          "type": "LONG"
+        },
+        {
+          "name": "receipt_gas_used",
+          "type": "LONG"
+        },
+        {
+          "name": "receipt_contract_address",
+          "type": "STRING"
+        },
+        {
+          "name": "receipt_status",
+          "type": "LONG"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "block_number",
+          "type": "LONG"
+        },
+        {
+          "name": "max_fee_per_gas",
+          "type": "LONG"
+        },
+        {
+          "name": "max_priority_fee_per_gas",
+          "type": "LONG"
+        },
+        {
+          "name": "transaction_type",
+          "type": "LONG"
+        },
+        {
+          "name": "receipt_effective_gas_price",
+          "type": "LONG"
+        }
+      ],
+      "indexColumn": [
+        "hash"
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "hash"
+            ]
+          }
+        }
+      ],
+      "orderBy": [
+        {
+          "column": "hash"
+        }
+      ],
+      "partitionBy": {
+        "partitionColumn": [
+          {
+            "column": "date",
+            "partitionTimeUnit": "DAY",
+            "dateFormat": "%Y-%m-%d"
+          }
+        ]
+      },
+      "colocateKey": "co_hx8893_transacts_to",
+      "replicationNum": 1
+    }
+  ]
+}
