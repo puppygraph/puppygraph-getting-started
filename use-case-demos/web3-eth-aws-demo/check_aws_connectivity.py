@@ -2,6 +2,8 @@ import argparse
 import os
 import sys
 import boto3
+from botocore import UNSIGNED
+from botocore.config import Config
 
 from config import SOURCE_BUCKET, TARGET_BUCKET, TARGET_DB
 
@@ -18,8 +20,7 @@ def check_sts_identity():
 
 
 def check_source_bucket():
-    s3 = boto3.client("s3")
-    # public bucket — no credentials needed, but confirm it's reachable
+    s3 = boto3.client("s3", config=Config(signature_version=UNSIGNED))
     result = s3.list_objects_v2(
         Bucket=SOURCE_BUCKET,
         Prefix="v1.0/eth/transactions/",
