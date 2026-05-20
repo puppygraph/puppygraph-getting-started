@@ -58,7 +58,7 @@ uv run check_aws_connectivity.py --profile demo
 ```
 
 ### 5. Register the Iceberg table
-Spin up the official Spark container and run `setup.py` via `spark-submit`. This creates an empty Iceberg table in Glue and registers the Parquet files for your configured date range — no data is moved.
+Spin up the official Spark container and run `setup.py` via `spark-submit`. This creates an empty Iceberg table in Glue and registers all Parquet files currently present under `s3://$TARGET_BUCKET/eth/<table>/` — no data is moved. If your bucket already contains multiple date partitions, make sure it only includes the partitions you want to register before running this step.
 ```bash
 docker run -it \
   --name spark-container \
