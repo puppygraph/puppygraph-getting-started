@@ -1,7 +1,7 @@
 import argparse
 import os
 from pyspark.sql import SparkSession
-from config import TABLES, ETH_SCHEMAS, TARGET_BUCKET, TARGET_DB
+from config import AWS_REGION, TABLES, ETH_SCHEMAS, TARGET_BUCKET, TARGET_DB
 
 spark = SparkSession.builder \
     .master("local[*]") \
@@ -10,8 +10,8 @@ spark = SparkSession.builder \
     .config("spark.sql.catalog.glue_catalog.type", "glue") \
     .config("spark.sql.catalog.glue_catalog.warehouse", f"s3://{TARGET_BUCKET}/iceberg/") \
     .config("spark.sql.catalog.glue_catalog.io-impl", "org.apache.iceberg.aws.s3.S3FileIO") \
-    .config("spark.sql.catalog.glue_catalog.client.region", os.environ["AWS_REGION"]) \
-    .config("spark.hadoop.fs.s3a.endpoint", f"s3.{os.environ['AWS_REGION']}.amazonaws.com") \
+    .config("spark.sql.catalog.glue_catalog.client.region", AWS_REGION) \
+    .config("spark.hadoop.fs.s3a.endpoint", f"s3.{AWS_REGION}.amazonaws.com") \
     .config("spark.hadoop.fs.s3.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem") \
     .getOrCreate()
 

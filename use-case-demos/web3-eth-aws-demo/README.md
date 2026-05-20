@@ -44,6 +44,7 @@ The following can be configured via environment variables (or exported before ru
 ```bash
 export TARGET_BUCKET="aws-web3-eth-demo" # Bucket for s3 data and metadata
 export TARGET_DB="eth_iceberg" # Glue database name
+export AWS_REGION = "us-east-1"
 export DATE_START="2026-01-02"
 export DATE_END="2026-01-02"
 ```
@@ -112,7 +113,7 @@ docker run \
    - Username: `puppygraph`
    - Password: `puppygraph123`
 
-2. Upload the schema `schema.json` after replacing the credential placeholders (`access-key`, `secret-key`, and `region`) with your actual values:
+2. Upload the schema `schema.json`:
    - Select `schema.json` in the Upload Graph Schema JSON section and click **Upload**.
    - You can also use `curl` to upload the schema from the terminal:
      ```bash

@@ -2,6 +2,7 @@ import os
 
 TABLES = ["transactions", "token_transfers"]
 
+AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
 SOURCE_BUCKET = "aws-public-blockchain"
 TARGET_BUCKET = os.environ.get("TARGET_BUCKET", "aws-web3-eth-demo")
 TARGET_DB = os.environ.get("TARGET_DB", "eth_iceberg")
