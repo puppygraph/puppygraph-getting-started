@@ -1,36 +1,16 @@
+import os
+
 TABLES = ["transactions", "token_transfers"]
 
 SOURCE_BUCKET = "aws-public-blockchain"
-TARGET_BUCKET = "aws-web3-eth-demo"
-TARGET_DB     = "eth_iceberg"
+TARGET_BUCKET = os.environ.get("TARGET_BUCKET", "aws-web3-eth-demo")
+TARGET_DB = os.environ.get("TARGET_DB", "eth_iceberg")
 
-DATE_START = "2026-01-02"
-DATE_END   = "2026-01-02"
+DATE_START = os.environ.get("DATE_START", "2026-01-01")
+DATE_END = os.environ.get("DATE_END", "2026-01-01")
 
 # Schemas from https://github.com/aws-solutions-library-samples/guidance-for-digital-assets-on-aws
 ETH_SCHEMAS = {
-    "blocks": """
-        `date`               STRING,
-        `timestamp`          TIMESTAMP,
-        `number`             BIGINT,
-        `hash`               STRING,
-        `parent_hash`        STRING,
-        `nonce`              STRING,
-        `sha3_uncles`        STRING,
-        `logs_bloom`         STRING,
-        `transactions_root`  STRING,
-        `state_root`         STRING,
-        `receipts_root`      STRING,
-        `miner`              STRING,
-        `difficulty`         DOUBLE,
-        `total_difficulty`   DOUBLE,
-        `size`               BIGINT,
-        `extra_data`         STRING,
-        `gas_limit`          BIGINT,
-        `gas_used`           BIGINT,
-        `transaction_count`  BIGINT,
-        `base_fee_per_gas`   BIGINT
-    """,
     "transactions": """
         `date`                          STRING,
         `hash`                          STRING,
@@ -62,49 +42,6 @@ ETH_SCHEMAS = {
         `value`              DOUBLE,
         `transaction_hash`   STRING,
         `log_index`          BIGINT,
-        `block_timestamp`    TIMESTAMP,
-        `block_number`       BIGINT,
-        `block_hash`         STRING
-    """,
-    "logs": """
-        `date`               STRING,
-        `log_index`          BIGINT,
-        `transaction_hash`   STRING,
-        `transaction_index`  BIGINT,
-        `address`            STRING,
-        `data`               STRING,
-        `topics`             ARRAY<STRING>,
-        `block_timestamp`    TIMESTAMP,
-        `block_number`       BIGINT,
-        `block_hash`         STRING
-    """,
-    "traces": """
-        `date`               STRING,
-        `transaction_hash`   STRING,
-        `transaction_index`  BIGINT,
-        `from_address`       STRING,
-        `to_address`         STRING,
-        `value`              DOUBLE,
-        `input`              STRING,
-        `output`             STRING,
-        `trace_type`         STRING,
-        `call_type`          STRING,
-        `reward_type`        STRING,
-        `gas`                BIGINT,
-        `gas_used`           BIGINT,
-        `subtraces`          BIGINT,
-        `trace_address`      STRING,
-        `error`              STRING,
-        `status`             BIGINT,
-        `block_timestamp`    TIMESTAMP,
-        `block_number`       BIGINT,
-        `block_hash`         STRING,
-        `trace_id`           STRING
-    """,
-    "contracts": """
-        `date`               STRING,
-        `address`            STRING,
-        `bytecode`           STRING,
         `block_timestamp`    TIMESTAMP,
         `block_number`       BIGINT,
         `block_hash`         STRING
