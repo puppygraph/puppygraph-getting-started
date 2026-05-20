@@ -1,5 +1,4 @@
 import argparse
-import os
 from pyspark.sql import SparkSession
 from config import AWS_REGION, TABLES, ETH_SCHEMAS, TARGET_BUCKET, TARGET_DB
 
