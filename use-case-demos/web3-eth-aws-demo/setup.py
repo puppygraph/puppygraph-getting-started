@@ -57,29 +57,31 @@ if __name__ == "__main__":
         end = date.fromisoformat(args.delete_partitions[1])
         now = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
 
-        current = start
-        while current <= end:
-            date_str = current.isoformat()
+        for table in TABLES:
+            current = start
+            while current <= end:
+                date_str = current.isoformat()
 
-            for table in TABLES:
                 spark.sql(f"""
                     DELETE FROM glue_catalog.{TARGET_DB}.{table}
                     WHERE date = '{date_str}'
                 """)
                 print(f"Deleted {table} partition {date_str} from Iceberg")
 
-                spark.sql(f"""
-                    CALL glue_catalog.system.expire_snapshots(
-                        table => 'glue_catalog.{TARGET_DB}.{table}',
-                        older_than => TIMESTAMP '{now}'
-                    )
-                """)
-
                 s3_path = f"s3://{TARGET_BUCKET}/eth/{table}/date={date_str}/"
                 subprocess.run(["aws", "s3", "rm", s3_path, "--recursive"], check=True)
                 print(f"Deleted S3 files for {table} date={date_str}")
 
-            current += timedelta(days=1)
+                current += timedelta(days=1)
+
+            spark.sql(f"""
+                CALL glue_catalog.system.expire_snapshots(
+                    table       => 'glue_catalog.{TARGET_DB}.{table}',
+                    older_than  => TIMESTAMP '{now}',
+                    retain_last => 1
+                )
+            """)
+            print(f"Expired snapshots for {table}")
 
     if args.create:
         for table in TABLES:

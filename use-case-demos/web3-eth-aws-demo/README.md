@@ -15,8 +15,8 @@ The Data Preparation step below populates a date-scoped subset of Ethereum trans
 
 ### 1. Configure AWS credentials
 ```bash
-aws configure --profile your-profile
-export AWS_PROFILE=your-profile
+aws configure --profile demo
+export AWS_PROFILE=demo
 ```
 
 Copy `.env.example` to `.env` and fill in your values:
@@ -36,25 +36,29 @@ uv pip install -r requirements.txt
 ### 3. Create a private S3 bucket for Parquet data
 
 ```bash
-aws s3 mb s3://your-private-bucket
-aws s3 mb s3://aws-web3-eth-demo
+aws s3 mb s3://aws-web3-eth-demo --profile demo
 ```
 
-To adjust the date range of the data, edit `config.py`:
-```python
-DATE_START = "2026-01-01"
-DATE_END   = "2026-01-01"
+The following can be configured via environment variables (or exported before running):
+
+```bash
+export TARGET_BUCKET="aws-web3-eth-demo" # Bucket for s3 data and metadata
+export TARGET_DB="eth_iceberg" # Glue database name
+export DATE_START="2026-01-02"
+export DATE_END="2026-01-02"
 ```
 
 Then fetch the data:
 ```bash
-uv run get_data.py --profile your-profile
+uv run get_data.py --profile demo
 ```
+
+Replace `aws-web3-eth-demo` with your own bucket name if needed, and update `TARGET_BUCKET` in `config.py` to match
 
 ### 4. Run the connectivity check
 Verifies your credentials, bucket access, and Glue reachability before running anything that writes metadata.
 ```bash
-uv run check_aws_connectivity.py --profile your-profile
+uv run check_aws_connectivity.py --profile demo
 ```
 
 ### 5. Register the Iceberg table
@@ -79,6 +83,16 @@ spark-submit \
   --packages "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.9.2,org.apache.iceberg:iceberg-aws-bundle:1.9.2,org.apache.hadoop:hadoop-aws:3.3.4" \
   --conf "spark.jars.ivy=/spark-container/ivy" \
   setup.py --create --add-files
+```
+
+To delete partitions:
+```
+pip install awscli
+
+spark-submit \
+  --packages "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.9.2,org.apache.iceberg:iceberg-aws-bundle:1.9.2,org.apache.hadoop:hadoop-aws:3.3.4" \
+  --conf "spark.jars.ivy=/spark-container/ivy" \
+  setup.py --delete-partitions 2026-01-02 2026-01-02
 ```
 
 The setup script supports the following flags:
@@ -182,7 +196,7 @@ docker stop puppy
 
 To remove the Iceberg data and Glue database created for this demo, run:
 ```bash
-aws s3 rm s3://your-private-bucket/iceberg/ --recursive
-aws s3 rm s3://your-private-bucket/eth/ --recursive
-aws glue delete-database --name eth_iceberg
+aws s3 rm s3://aws-web3-eth-demo/iceberg/ --recursive --profile demo
+aws s3 rm s3://aws-web3-eth-demo/eth/ --recursive --profile demo
+aws glue delete-database --name eth_iceberg --profile demo
 ```
