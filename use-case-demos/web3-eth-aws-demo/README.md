@@ -16,7 +16,7 @@ aws configure --profile demo
 export AWS_PROFILE=demo
 ```
 
-Copy `.env.example` to `.env` and fill in your values:
+Copy `.env.example` to `.env` and fill in your your AWS credentials and region:
 ```bash
 cp .env.example .env
 ```
@@ -42,8 +42,8 @@ The following can be configured via environment variables (or exported before ru
 export TARGET_BUCKET="aws-web3-eth-demo" # Bucket for s3 data and metadata
 export TARGET_DB="eth_iceberg" # Glue database name
 export AWS_REGION="us-east-1"
-export DATE_START="2026-01-02"
-export DATE_END="2026-01-02"
+export DATE_START="2026-01-01"
+export DATE_END="2026-01-01"
 ```
 
 Then fetch the data:
@@ -135,7 +135,7 @@ LIMIT 100
 ```
 ![](/use-case-demos/web3-eth-aws-demo/images/1.png)
 
-1. Which wallets are feeding the collection address?
+2. Which wallets are feeding the collection address?
 ```cypher
 MATCH path = (src:Address)-[:TRANSFERS_TOKEN_TO*1..3]->(x:Address)
 WHERE id(x) = 'Address[0x00000000000000000000000006fd7938a3bfe3be6eee4c8626048d7489f793b0]'
@@ -146,7 +146,7 @@ LIMIT 300
 ```
 ![](/use-case-demos/web3-eth-aws-demo/images/2.png)
 
-1. Where does the USDT flow after leaving the collection point?
+3. Where does the USDT flow after leaving the collection point?
 ```cypher
 MATCH path = (x:Address)-[:TRANSFERS_TOKEN_TO*1..3]->(dst:Address)
 WHERE id(x) = 'Address[0x00000000000000000000000006fd7938a3bfe3be6eee4c8626048d7489f793b0]'
