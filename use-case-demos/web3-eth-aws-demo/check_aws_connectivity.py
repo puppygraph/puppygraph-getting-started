@@ -23,8 +23,7 @@ def check_source_bucket():
     result = s3.list_objects_v2(
         Bucket=SOURCE_BUCKET,
         Prefix="v1.0/eth/transactions/",
-        MaxKeys=3,
-        RequestPayer="requester"
+        MaxKeys=3
     )
     print(f"[OK] Source bucket readable: sample={result.get('KeyCount', 0)} keys")
 
