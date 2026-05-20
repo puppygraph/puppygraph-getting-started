@@ -583,7 +583,7 @@
         },
         {
           "name": "PUPPY_DEFAULT_EDGE_ID",
-          "type": "Long",
+          "type": "LONG",
           "autoIncrement": true
         }
       ],
