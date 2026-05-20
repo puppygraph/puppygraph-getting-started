@@ -126,8 +126,6 @@ Navigate to the Query panel on the left side. The Graph Query tab offers an inte
 
 Example Queries:
 
-Example Queries:
-
 1. Who is the controller funding, and at what scale?
 ```cypher
 MATCH path = (controller:Address)-[:TRANSACTS_TO*2..3]->(wallet:Address)
@@ -137,7 +135,7 @@ LIMIT 100
 ```
 ![](/use-case-demos/web3-eth-aws-demo/images/1.png)
 
-2. Which wallets are feeding the collection address?
+1. Which wallets are feeding the collection address?
 ```cypher
 MATCH path = (src:Address)-[:TRANSFERS_TOKEN_TO*1..3]->(x:Address)
 WHERE id(x) = 'Address[0x00000000000000000000000006fd7938a3bfe3be6eee4c8626048d7489f793b0]'
@@ -148,7 +146,7 @@ LIMIT 300
 ```
 ![](/use-case-demos/web3-eth-aws-demo/images/2.png)
 
-3. Where does the USDT flow after leaving the collection point?
+1. Where does the USDT flow after leaving the collection point?
 ```cypher
 MATCH path = (x:Address)-[:TRANSFERS_TOKEN_TO*1..3]->(dst:Address)
 WHERE id(x) = 'Address[0x00000000000000000000000006fd7938a3bfe3be6eee4c8626048d7489f793b0]'
