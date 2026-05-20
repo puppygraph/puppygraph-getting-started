@@ -1,15 +1,12 @@
 # Ethereum Blockchain Graph Demo
 
 ## Summary
-This demo shows how to query the [AWS Public Blockchain Dataset](https://registry.opendata.aws/aws-public-blockchain/) as a graph using PuppyGraph. In this demo, we start from a [known phishing wallet](https://etherscan.io/address/0xbe356f13b7b1bc6d89abcbd6272b40427231411f), trace USDT flows through intermediary addresses and surface hidden cycles connecting suspicious entities. The result is a zero-ETL graph query layer over live blockchain data.
+This demo shows how to query the [AWS Public Blockchain Dataset](https://registry.opendata.aws/aws-public-blockchain/) as a graph using PuppyGraph. Starting from a [known phishing wallet](https://etherscan.io/address/0xbe356f13b7b1bc6d89abcbd6272b40427231411f) flagged by HashDit, we trace ETH gas-funding infrastructure and USDT flows through a coordinated collection network to its final destinations. Zero ETL required.
 
 ## Prerequisites
 - Docker
 - AWS CLI
 - An AWS account with permissions for S3 and Glue
-
-## Note
-The Data Preparation step below populates a date-scoped subset of Ethereum transaction data for demonstration purposes. For real-world use cases, you can directly connect your existing data sources to PuppyGraph without data preparation. You can either use publicly available sample data or apply your own datasets.
 
 ## Data Preparation
 
@@ -129,52 +126,38 @@ Navigate to the Query panel on the left side. The Graph Query tab offers an inte
 
 Example Queries:
 
-1. Find All Wallets Feeding a Suspicious Address
-   ```cypher
-   MATCH path = (funder:Address)-[:TRANSFERS_TOKEN_TO*2..3]->(x:Address)
-   WHERE id(x) = 'Address[0x000000000000000000000000bdf9c0abe5b265671ad4efc365f6c0ad05d4fe89]'
-     AND ALL(e IN relationships(path)
-         WHERE e.token_address = '0xdac17f958d2ee523a2206206994597c13d831ec7')
-   RETURN path
-   LIMIT 300
-   ```
-  ![](/use-case-demos/web3-eth-aws-demo/images/1.png)
+Example Queries:
 
-2. Trace USDT Flows Leaving a Suspicious Wallet
-   ```cypher
-   MATCH path = (x:Address)-[:TRANSFERS_TOKEN_TO*2..3]->(dest:Address)
-   WHERE id(x) = 'Address[0x000000000000000000000000bdf9c0abe5b265671ad4efc365f6c0ad05d4fe89]'
-     AND ALL(e IN relationships(path)
-         WHERE e.token_address = '0xdac17f958d2ee523a2206206994597c13d831ec7')
-   RETURN path
-   LIMIT 50
-   ```
-   ![](/use-case-demos/web3-eth-aws-demo/images/2.png)
+1. Who is the controller funding, and at what scale?
+```cypher
+MATCH path = (controller:Address)-[:TRANSACTS_TO*2..3]->(wallet:Address)
+WHERE id(controller) = 'Address[0xbe356f13b7b1bc6d89abcbd6272b40427231411f]'
+RETURN path, id(wallet)
+LIMIT 100
+```
+![](/use-case-demos/web3-eth-aws-demo/images/1.png)
 
-3. Detect Hidden Cycles Through a Known Intermediary
-   ```cypher
-   MATCH path = (x:Address)-[:TRANSFERS_TOKEN_TO*4..6]->(x)
-   WHERE id(x) = 'Address[0x000000000000000000000000bdf9c0abe5b265671ad4efc365f6c0ad05d4fe89]'
-     AND ALL(e IN relationships(path)
-         WHERE e.token_address = '0xdac17f958d2ee523a2206206994597c13d831ec7')
-     AND ANY(n IN nodes(path)
-         WHERE id(n) = 'Address[0x000000000000000000000000c266110eaae9bdfb2111e7b97e8303c4bc327420]')
-   RETURN path
-   LIMIT 10
-   ```
-  ![](/use-case-demos/web3-eth-aws-demo/images/3.png)
+2. Which wallets are feeding the collection address?
+```cypher
+MATCH path = (src:Address)-[:TRANSFERS_TOKEN_TO*1..3]->(x:Address)
+WHERE id(x) = 'Address[0x00000000000000000000000006fd7938a3bfe3be6eee4c8626048d7489f793b0]'
+  AND ALL(e IN relationships(path)
+      WHERE e.token_address = '0xdac17f958d2ee523a2206206994597c13d831ec7')
+RETURN path
+LIMIT 300
+```
+![](/use-case-demos/web3-eth-aws-demo/images/2.png)
 
-4. Surface Round-Trip Paths Through the Poisoning Wallet
-   ```cypher
-   MATCH path = (x:Address)-[:TRANSFERS_TOKEN_TO*2..3]->(poison:Address)-[:TRANSFERS_TOKEN_TO*2..3]->(x)
-   WHERE id(x) = 'Address[0x000000000000000000000000bdf9c0abe5b265671ad4efc365f6c0ad05d4fe89]'
-     AND id(poison) = 'Address[0x000000000000000000000000c266110eaae9bdfb2111e7b97e8303c4bc327420]'
-     AND ALL(e IN relationships(path)
-         WHERE e.token_address = '0xdac17f958d2ee523a2206206994597c13d831ec7')
-   RETURN path
-   LIMIT 10
-   ```
-   ![](/use-case-demos/web3-eth-aws-demo/images/4.png)
+3. Where does the USDT flow after leaving the collection point?
+```cypher
+MATCH path = (x:Address)-[:TRANSFERS_TOKEN_TO*1..3]->(dst:Address)
+WHERE id(x) = 'Address[0x00000000000000000000000006fd7938a3bfe3be6eee4c8626048d7489f793b0]'
+  AND ALL(e IN relationships(path)
+      WHERE e.token_address = '0xdac17f958d2ee523a2206206994597c13d831ec7')
+RETURN path
+LIMIT 300
+```
+![](/use-case-demos/web3-eth-aws-demo/images/3.png)
 
 ## Cleanup and Teardown
 To stop and remove the PuppyGraph container, run:
