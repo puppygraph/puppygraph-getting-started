@@ -53,8 +53,6 @@ Then fetch the data:
 uv run get_data.py --profile demo
 ```
 
-Replace `aws-web3-eth-demo` with your own bucket name if needed, and update `TARGET_BUCKET` in `config.py` to match
-
 ### 4. Run the connectivity check
 Verifies your credentials, bucket access, and Glue reachability before running anything that writes metadata.
 ```bash
@@ -85,22 +83,11 @@ spark-submit \
   setup.py --create --add-files
 ```
 
-To delete partitions:
-```
-pip install awscli
-
-spark-submit \
-  --packages "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.9.2,org.apache.iceberg:iceberg-aws-bundle:1.9.2,org.apache.hadoop:hadoop-aws:3.3.4" \
-  --conf "spark.jars.ivy=/spark-container/ivy" \
-  setup.py --delete-partitions 2026-01-02 2026-01-02
-```
-
 The setup script supports the following flags:
 
 - `--create` — Creates the Iceberg tables in Glue if they don't already exist.
 - `--add-files` — Registers the Parquet files for the configured date range as Iceberg metadata. No data is moved.
 - `--create --add-files` — Run together for a fresh setup.
-- `--delete-partitions START END` — Cleanly removes partitions from Iceberg and S3 for the given date range, e.g. `--delete-partitions 2026-01-02 2026-01-07`.
 
 Type `exit` when done, then clean up the container:
 ```bash
@@ -196,6 +183,7 @@ docker stop puppy
 
 To remove the Iceberg data and Glue database created for this demo, run:
 ```bash
+# Replace aws-web3-eth-demo and eth_iceberg if you changed the defaults
 aws s3 rm s3://aws-web3-eth-demo/iceberg/ --recursive --profile demo
 aws s3 rm s3://aws-web3-eth-demo/eth/ --recursive --profile demo
 aws glue delete-database --name eth_iceberg --profile demo
