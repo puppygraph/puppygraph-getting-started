@@ -765,36 +765,7 @@
           "name": "receipt_effective_gas_price",
           "type": "LONG"
         }
-      ],
-      "indexColumn": [
-        "hash"
-      ],
-      "distributeBy": [
-        {
-          "bucket": {
-            "num": 12,
-            "column": [
-              "hash"
-            ]
-          }
-        }
-      ],
-      "orderBy": [
-        {
-          "column": "hash"
-        }
-      ],
-      "partitionBy": {
-        "partitionColumn": [
-          {
-            "column": "date",
-            "partitionTimeUnit": "DAY",
-            "dateFormat": "%Y-%m-%d"
-          }
-        ]
-      },
-      "colocateKey": "co_hx8893_transacts_to",
-      "replicationNum": 1
+      ]
     }
   ]
 }
