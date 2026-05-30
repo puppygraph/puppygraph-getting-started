@@ -28,7 +28,8 @@ class Transaction:
     debit: str
     credit: str
     balance: str
-
+    counterparty: str
+    payment_rail: str
 
 @dataclass
 class BankStatement:
@@ -130,6 +131,8 @@ class ExtractBankStatementExecutor:
                             "debit": {"type": "string"},
                             "credit": {"type": "string"},
                             "balance": {"type": "string"},
+                            "counterparty": {"type": "string"},
+                            "payment_rail": {"type": "string"},
                         },
                         "required": [
                             "txn_date",
@@ -140,6 +143,8 @@ class ExtractBankStatementExecutor:
                             "debit",
                             "credit",
                             "balance",
+                            "counterparty",
+                            "payment_rail",
                         ],
                     },
                 },
@@ -160,7 +165,7 @@ class ExtractBankStatementExecutor:
                 "transactions",
             ],
         }
-    
+
 
     def __call__(self, content: bytes, filename: str) -> cocoindex.Json:
         mime = self._guess_mime(filename)
@@ -241,12 +246,30 @@ class ExtractBankStatementExecutor:
         - Extract statement_period from the searched date range.
         - If statement_number, statement_date, page_no, total_withdrawals, or total_deposits are not clearly present, use "".
 
-        7. DO NOT hallucinate:
+        7. For each transaction, also extract:
+        - "counterparty": the entity name sending or receiving money, extracted from the description.
+          - For NEFT/RTGS: the company or person name at the end (after the last meaningful dash segment).
+          - For IMPS Dr/Cr: the name after the reference number.
+          - For IMPS BRN SALARY TRF BY: the company name after the last dash.
+          - For UPI: the name after the reference number (e.g. "SAVITHA IYER" from "UPI/DR/940292034180/SAVITHA IYER/...").
+          - For Cheque (Chq Paid): the person name between the 2nd and 3rd dash.
+          - For Cash/ATM: the name if present, otherwise use "SELF".
+          - For By Clg (clearing): the entity name after the comma.
+          - For Service Charges, Dividend, Reversal: use the relevant label or entity name.
+          - If unclear, use "".
+        - "payment_rail": the transfer method. Use exactly one of:
+          NEFT, RTGS, IMPS, UPI, Cheque, Cash, ATM, Clearing, Dividend, Reversal, ServiceCharge, Salary.
+          - "Salary" for IMPS BRN SALARY TRF BY transactions.
+          - "Reversal" for any REVERSAL- or FAILED- prefixed transactions.
+          - "ServiceCharge" for Service Charges entries.
+          - If unclear, use "".
+
+        8. DO NOT hallucinate:
         - Do not invent transactions.
         - Do not infer hidden rows.
         - Do not calculate missing totals unless explicitly shown.
 
-        8. Return ONLY valid JSON matching the schema.
+        9. Return ONLY valid JSON matching the schema.
         """
 
         if mime == "application/pdf":
@@ -342,7 +365,7 @@ class AggregateJsonFileTargetConnector:
             out_dir = os.path.dirname(target.output_file)
             if out_dir:
                 os.makedirs(out_dir, exist_ok=True)
-            
+
             existing: dict[str, Any] = {}
 
             if os.path.exists(target.output_file):
@@ -355,7 +378,7 @@ class AggregateJsonFileTargetConnector:
                                     existing[row["filename"]] = row
                     except json.JSONDecodeError:
                         existing = {}
-                          
+
             for data_key, row in mutations.items():
                 key_str = str(data_key)
 
@@ -364,7 +387,7 @@ class AggregateJsonFileTargetConnector:
                 else:
                     row_with_key = dict(row)
                     row_with_key["filename"] = key_str
-                    existing[key_str] = row_with_key   
+                    existing[key_str] = row_with_key
 
             merged_rows = [existing[k] for k in sorted(existing.keys())]
 
@@ -436,25 +459,27 @@ class PostgresBankStatementTargetConnector:
 
                 cur.execute(
                     f"""
-                        CREATE TABLE IF NOT EXISTS {current.schema}.transactions (
-                            transaction_id TEXT PRIMARY KEY,
-                            statement_id TEXT NOT NULL,
-                            account_id TEXT NOT NULL,
-                            filename TEXT NOT NULL,
-                            row_index INT NOT NULL,
-                            txn_date TEXT,
-                            value_date TEXT,
-                            cheque_no TEXT,
-                            description TEXT,
-                            branch_code TEXT,
-                            debit NUMERIC,
-                            credit NUMERIC,
-                            balance NUMERIC,
-                            raw_json JSONB NOT NULL,
-                            FOREIGN KEY (statement_id)
-                                REFERENCES {current.schema}.statements(statement_id)
-                                ON DELETE CASCADE
-                        );
+                    CREATE TABLE IF NOT EXISTS {current.schema}.transactions (
+                        transaction_id TEXT PRIMARY KEY,
+                        statement_id TEXT NOT NULL,
+                        account_id TEXT NOT NULL,
+                        filename TEXT NOT NULL,
+                        row_index INT NOT NULL,
+                        txn_date TEXT,
+                        value_date TEXT,
+                        cheque_no TEXT,
+                        description TEXT,
+                        branch_code TEXT,
+                        debit NUMERIC,
+                        credit NUMERIC,
+                        balance NUMERIC,
+                        counterparty TEXT,
+                        payment_rail TEXT,
+                        raw_json JSONB NOT NULL,
+                        FOREIGN KEY (statement_id)
+                            REFERENCES {current.schema}.statements(statement_id)
+                            ON DELETE CASCADE
+                    );
                     """
                 )
 
@@ -608,9 +633,11 @@ class PostgresBankStatementTargetConnector:
                     debit,
                     credit,
                     balance,
+                    counterparty,
+                    payment_rail,
                     raw_json
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb);
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb);
                 """,
                 (
                     transaction_id,
@@ -626,6 +653,8 @@ class PostgresBankStatementTargetConnector:
                     parse_money(tx.get("debit")),
                     parse_money(tx.get("credit")),
                     parse_money(tx.get("balance")),
+                    clean_text(tx.get("counterparty")),
+                    clean_text(tx.get("payment_rail")),
                     json.dumps(tx, ensure_ascii=False),
                 ),
             )
@@ -686,14 +715,18 @@ def build_flow(flow_builder: cocoindex.FlowBuilder, data_scope: cocoindex.DataSc
         "bank_statement_postgres",
         PostgresBankStatementTarget(
             dsn=os.environ["POSTGRES_DSN"],
-            schema=os.environ.get("POSTGRES_SCHEMA", "public"),  
+            schema=os.environ.get("POSTGRES_SCHEMA", "public"),
         ),
         primary_key_fields=["filename"],
     )
 
 
 def main():
-    cocoindex.init()
+    cocoindex.init(cocoindex.Settings(
+        database=cocoindex.setting.DatabaseConnectionSpec(
+            url=os.environ["COCOINDEX_DATABASE_URL"]
+        )
+    ))
     build_flow.setup(report_to_stdout=True)
     build_flow.update(reexport_targets=True)
 

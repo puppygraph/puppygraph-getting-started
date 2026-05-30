@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    networks:
+      postgres_net:
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: myapp_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  puppygraph:
+    image: puppygraph/puppygraph:1.0-preview
+    container_name: puppygraph
+    networks:
+      postgres_net:
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+
+networks:
+  postgres_net:
+    name: puppy-postgres
+
+volumes:
+  postgres_data:
