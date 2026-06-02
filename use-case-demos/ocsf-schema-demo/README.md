@@ -12,7 +12,7 @@ By modeling security telemetry as a graph over [OCSF (Open Cybersecurity Schema 
 Using Cypher queries, users can traverse the security graph to reconstruct attack chains and uncover threats that would otherwise require expensive multi-table joins across siloed event logs. This practical approach demonstrates how graph traversal simplifies incident investigation and security auditing at scale.
 
 **Overview:**
-- **`docker-compose.yml`**: Defines the docker services needed to run the demo. This includes both the PostgreSQL database and the PuppyGraph instance.
+- **`docker-compose.yaml`**: Defines the docker services needed to run the demo. This includes both the PostgreSQL database and the PuppyGraph instance.
 - **`data/`**: Contains raw CSV source files for all entities.
 - **`sql/init.sql`**: SQL script for table creation and importing CSV data into PostgreSQL.
 - **`schema.json`**: Complete graph mapping configuration for PuppyGraph.
