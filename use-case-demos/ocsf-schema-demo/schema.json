@@ -8,7 +8,6 @@
         "password": "password",
         "jdbcUri": "jdbc:postgresql://ocsf_db:5432/ocsf_demo",
         "driverClass": "org.postgresql.Driver",
-        "driverUrl": "https://jdbc.postgresql.org/download/postgresql-42.7.3.jar",
         "enableMetaCache": "true",
         "metaCacheExpireSec": "600"
       }

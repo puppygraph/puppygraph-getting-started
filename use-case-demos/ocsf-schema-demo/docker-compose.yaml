@@ -14,7 +14,6 @@ services:
     networks:
       - puppy-postgres
 
-  # PuppyGraph
   puppygraph:
     image: puppygraph/puppygraph:1.0-preview
     container_name: puppygraph
@@ -24,15 +23,13 @@ services:
     ports:
       - "8081:8081"
       - "8182:8182"
+      - "7687:7687"
     volumes:
-      - ./schema.json:/etc/puppygraph/schema.json
       - ./data:/data
-    command: ["--config", "/etc/puppygraph/schema.json"]
     depends_on:
       - postgres
     networks:
       - puppy-postgres
 
-#define the private line
 networks:
   puppy-postgres:
