@@ -14,7 +14,7 @@ By modeling the supply chain as a graph, users can trace complex dependency scen
 Using Gremlin and Cypher queries, users can traverse the supply chain graph to uncover these risks and gain insights for improving supply chain resilience. This practical approach demonstrates how graph traversal simplifies dependency tracking and risk assessment across complex, multi-level supply chains.
 
 **Overview:**
-- **`docker-compose.yml`**: Defines the docker services needed to run the demo. This includes both the PostgreSQL database and the PuppyGraph instance.
+- **`docker-compose.yaml`**: Defines the docker services needed to run the demo. This includes both the PostgreSQL database and the PuppyGraph instance.
 - **`data/`**: Contains randomly generated CSV source files for all supply chain entities.
 - **`sql/init.sql`**: SQL script for table creation and importing CSV data into PostgreSQL.
 - **`schema.json`**: Complete graph mapping configuration for PuppyGraph.
