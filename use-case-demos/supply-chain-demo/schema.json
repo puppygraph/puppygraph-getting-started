@@ -6,7 +6,7 @@
       "jdbc": {
         "username": "admin",
         "password": "password",
-        "jdbcUri": "jdbc:postgresql://supply_chain_db:5432/supply_chain_db",
+        "jdbcUri": "jdbc:postgresql://postgres:5432/supply_chain_db",
         "driverClass": "org.postgresql.Driver",
         "enableMetaCache": "true",
         "metaCacheExpireSec": "600"
