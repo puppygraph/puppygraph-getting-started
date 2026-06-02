@@ -1,0 +1,11 @@
+vertex_id,name,number,year,type,engine_type,size,seats
+m_1,Model A,001,2023,Sedan,Gasoline,Compact,4
+m_2,Model B,002,2023,Coupe,Electric,Compact,2
+m_3,Model C,003,2022,SUV,Hybrid,Large,7
+m_4,Model D,004,2022,Truck,Diesel,Extra Large,5
+m_5,Model E,005,2021,Sedan,Electric,Medium,5
+m_6,Model F,006,2021,Convertible,Gasoline,Compact,2
+m_7,Model G,007,2023,Crossover,Hybrid,Medium,5
+m_8,Model H,008,2020,Hatchback,Electric,Compact,4
+m_9,Model I,009,2022,Sedan,Gasoline,Large,5
+m_10,Model J,010,2021,SUV,Hybrid,Extra Large,7

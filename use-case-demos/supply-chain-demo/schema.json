@@ -1,0 +1,1092 @@
+{
+  "catalog": [
+    {
+      "name": "supply_chain",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "admin",
+        "password": "password",
+        "jdbcUri": "jdbc:postgresql://postgres:5432/supply_chain_db",
+        "driverClass": "org.postgresql.Driver",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "nodes_car_model",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "puppy_id_vertex_id"
+            },
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "year",
+              "targetFieldName": "year"
+            },
+            {
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "engine_type",
+              "targetFieldName": "engine_type"
+            },
+            {
+              "sourceFieldName": "size",
+              "targetFieldName": "size"
+            },
+            {
+              "sourceFieldName": "seats",
+              "targetFieldName": "seats"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_nodes_car_model",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "puppy_id_vertex_id"
+            },
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "year",
+              "targetFieldName": "year"
+            },
+            {
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "engine_type",
+              "targetFieldName": "engine_type"
+            },
+            {
+              "sourceFieldName": "size",
+              "targetFieldName": "size"
+            },
+            {
+              "sourceFieldName": "seats",
+              "targetFieldName": "seats"
+            }
+          ]
+        }
+      },
+      "label": "CarModel",
+      "id": [
+        {
+          "name": "puppy_id_vertex_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "vertex_id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "number",
+          "type": "INT"
+        },
+        {
+          "name": "year",
+          "type": "INT"
+        },
+        {
+          "name": "type",
+          "type": "STRING"
+        },
+        {
+          "name": "engine_type",
+          "type": "STRING"
+        },
+        {
+          "name": "size",
+          "type": "STRING"
+        },
+        {
+          "name": "seats",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "nodes_feature",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "puppy_id_vertex_id"
+            },
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "state",
+              "targetFieldName": "state"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_nodes_feature",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "puppy_id_vertex_id"
+            },
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "state",
+              "targetFieldName": "state"
+            }
+          ]
+        }
+      },
+      "label": "Feature",
+      "id": [
+        {
+          "name": "puppy_id_vertex_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "vertex_id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "number",
+          "type": "STRING"
+        },
+        {
+          "name": "type",
+          "type": "STRING"
+        },
+        {
+          "name": "state",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "nodes_part",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "puppy_id_vertex_id"
+            },
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "price",
+              "targetFieldName": "price"
+            },
+            {
+              "sourceFieldName": "date",
+              "targetFieldName": "date"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_nodes_part",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "puppy_id_vertex_id"
+            },
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "price",
+              "targetFieldName": "price"
+            },
+            {
+              "sourceFieldName": "date",
+              "targetFieldName": "date"
+            }
+          ]
+        }
+      },
+      "label": "Part",
+      "id": [
+        {
+          "name": "puppy_id_vertex_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "vertex_id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "number",
+          "type": "STRING"
+        },
+        {
+          "name": "price",
+          "type": "INT"
+        },
+        {
+          "name": "date",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "nodes_supplier",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "puppy_id_vertex_id"
+            },
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "address",
+              "targetFieldName": "address"
+            },
+            {
+              "sourceFieldName": "contact",
+              "targetFieldName": "contact"
+            },
+            {
+              "sourceFieldName": "phone_number",
+              "targetFieldName": "phone_number"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_nodes_supplier",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "puppy_id_vertex_id"
+            },
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "address",
+              "targetFieldName": "address"
+            },
+            {
+              "sourceFieldName": "contact",
+              "targetFieldName": "contact"
+            },
+            {
+              "sourceFieldName": "phone_number",
+              "targetFieldName": "phone_number"
+            }
+          ]
+        }
+      },
+      "label": "Supplier",
+      "id": [
+        {
+          "name": "puppy_id_vertex_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "vertex_id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "address",
+          "type": "STRING"
+        },
+        {
+          "name": "contact",
+          "type": "STRING"
+        },
+        {
+          "name": "phone_number",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "with_feature",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_node_id",
+              "targetFieldName": "puppy_from_src_node_id"
+            },
+            {
+              "sourceFieldName": "dst_node_id",
+              "targetFieldName": "puppy_to_dst_node_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_with_feature",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "src_node_id",
+              "targetFieldName": "puppy_from_src_node_id"
+            },
+            {
+              "sourceFieldName": "dst_node_id",
+              "targetFieldName": "puppy_to_dst_node_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        }
+      },
+      "label": "with_feature",
+      "fromNodeLabel": "CarModel",
+      "toNodeLabel": "Feature",
+      "fromKey": [
+        {
+          "name": "puppy_from_src_node_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_dst_node_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "version",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "is_supplied_by",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_id",
+              "targetFieldName": "puppy_from_src_id"
+            },
+            {
+              "sourceFieldName": "dst_id",
+              "targetFieldName": "puppy_to_dst_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_is_supplied_by",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "src_id",
+              "targetFieldName": "puppy_from_src_id"
+            },
+            {
+              "sourceFieldName": "dst_id",
+              "targetFieldName": "puppy_to_dst_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        }
+      },
+      "label": "is_supplied_by",
+      "fromNodeLabel": "Part",
+      "toNodeLabel": "Supplier",
+      "fromKey": [
+        {
+          "name": "puppy_from_src_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_dst_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "version",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "is_composed_of",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_id",
+              "targetFieldName": "puppy_from_src_id"
+            },
+            {
+              "sourceFieldName": "dst_id",
+              "targetFieldName": "puppy_to_dst_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_is_composed_of",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "src_id",
+              "targetFieldName": "puppy_from_src_id"
+            },
+            {
+              "sourceFieldName": "dst_id",
+              "targetFieldName": "puppy_to_dst_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        }
+      },
+      "label": "is_composed_of",
+      "fromNodeLabel": "Feature",
+      "toNodeLabel": "Part",
+      "fromKey": [
+        {
+          "name": "puppy_from_src_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_dst_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "version",
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  ],
+  "localTable": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "nodes_car_model",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "year",
+              "targetFieldName": "year"
+            },
+            {
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "engine_type",
+              "targetFieldName": "engine_type"
+            },
+            {
+              "sourceFieldName": "size",
+              "targetFieldName": "size"
+            },
+            {
+              "sourceFieldName": "seats",
+              "targetFieldName": "seats"
+            }
+          ]
+        }
+      },
+      "name": "base_nodes_car_model",
+      "column": [
+        {
+          "name": "vertex_id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "number",
+          "type": "INT"
+        },
+        {
+          "name": "year",
+          "type": "INT"
+        },
+        {
+          "name": "type",
+          "type": "STRING"
+        },
+        {
+          "name": "engine_type",
+          "type": "STRING"
+        },
+        {
+          "name": "size",
+          "type": "STRING"
+        },
+        {
+          "name": "seats",
+          "type": "INT"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "vertex_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "nodes_feature",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "state",
+              "targetFieldName": "state"
+            }
+          ]
+        }
+      },
+      "name": "base_nodes_feature",
+      "column": [
+        {
+          "name": "vertex_id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "number",
+          "type": "STRING"
+        },
+        {
+          "name": "type",
+          "type": "STRING"
+        },
+        {
+          "name": "state",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "vertex_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "is_composed_of",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_id",
+              "targetFieldName": "src_id"
+            },
+            {
+              "sourceFieldName": "dst_id",
+              "targetFieldName": "dst_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        }
+      },
+      "name": "base_is_composed_of",
+      "column": [
+        {
+          "name": "src_id",
+          "type": "STRING"
+        },
+        {
+          "name": "dst_id",
+          "type": "STRING"
+        },
+        {
+          "name": "version",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "src_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "is_supplied_by",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_id",
+              "targetFieldName": "src_id"
+            },
+            {
+              "sourceFieldName": "dst_id",
+              "targetFieldName": "dst_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        }
+      },
+      "name": "base_is_supplied_by",
+      "column": [
+        {
+          "name": "src_id",
+          "type": "STRING"
+        },
+        {
+          "name": "dst_id",
+          "type": "STRING"
+        },
+        {
+          "name": "version",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "src_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "nodes_supplier",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "address",
+              "targetFieldName": "address"
+            },
+            {
+              "sourceFieldName": "contact",
+              "targetFieldName": "contact"
+            },
+            {
+              "sourceFieldName": "phone_number",
+              "targetFieldName": "phone_number"
+            }
+          ]
+        }
+      },
+      "name": "base_nodes_supplier",
+      "column": [
+        {
+          "name": "vertex_id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "address",
+          "type": "STRING"
+        },
+        {
+          "name": "contact",
+          "type": "STRING"
+        },
+        {
+          "name": "phone_number",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "vertex_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "nodes_part",
+          "mappedField": [
+            {
+              "sourceFieldName": "vertex_id",
+              "targetFieldName": "vertex_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "number",
+              "targetFieldName": "number"
+            },
+            {
+              "sourceFieldName": "price",
+              "targetFieldName": "price"
+            },
+            {
+              "sourceFieldName": "date",
+              "targetFieldName": "date"
+            }
+          ]
+        }
+      },
+      "name": "base_nodes_part",
+      "column": [
+        {
+          "name": "vertex_id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "number",
+          "type": "STRING"
+        },
+        {
+          "name": "price",
+          "type": "INT"
+        },
+        {
+          "name": "date",
+          "type": "STRING"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "vertex_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "supply_chain",
+          "schema": "public",
+          "table": "with_feature",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_node_id",
+              "targetFieldName": "src_node_id"
+            },
+            {
+              "sourceFieldName": "dst_node_id",
+              "targetFieldName": "dst_node_id"
+            },
+            {
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
+            }
+          ]
+        }
+      },
+      "name": "base_with_feature",
+      "column": [
+        {
+          "name": "src_node_id",
+          "type": "STRING"
+        },
+        {
+          "name": "dst_node_id",
+          "type": "STRING"
+        },
+        {
+          "name": "version",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "src_node_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    }
+  ]
+}

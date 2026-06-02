@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: supply_chain_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: supply_chain_db
+    volumes:
+      - ./data:/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - puppy-postgres
+
+  puppygraph:
+    image: puppygraph/puppygraph:1.0-preview
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+    depends_on:
+      - postgres
+    networks:
+      - puppy-postgres
+
+networks:
+  puppy-postgres:
