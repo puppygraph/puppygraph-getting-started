@@ -1,0 +1,2483 @@
+{
+  "catalog": [
+    {
+      "name": "ocsf_sql",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "admin",
+        "password": "password",
+        "jdbcUri": "jdbc:postgresql://ocsf_db:5432/ocsf_demo",
+        "driverClass": "org.postgresql.Driver",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "users",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "department",
+              "targetFieldName": "department"
+            },
+            {
+              "sourceFieldName": "role",
+              "targetFieldName": "role"
+            },
+            {
+              "sourceFieldName": "is_admin",
+              "targetFieldName": "is_admin"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_users",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "department",
+              "targetFieldName": "department"
+            },
+            {
+              "sourceFieldName": "role",
+              "targetFieldName": "role"
+            },
+            {
+              "sourceFieldName": "is_admin",
+              "targetFieldName": "is_admin"
+            }
+          ]
+        }
+      },
+      "label": "User",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "username",
+          "type": "STRING"
+        },
+        {
+          "name": "email",
+          "type": "STRING"
+        },
+        {
+          "name": "department",
+          "type": "STRING"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        },
+        {
+          "name": "is_admin",
+          "type": "BOOLEAN"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "devices",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "hostname",
+              "targetFieldName": "hostname"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "os_type",
+              "targetFieldName": "os_type"
+            },
+            {
+              "sourceFieldName": "risk_score",
+              "targetFieldName": "risk_score"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_devices",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "hostname",
+              "targetFieldName": "hostname"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "os_type",
+              "targetFieldName": "os_type"
+            },
+            {
+              "sourceFieldName": "risk_score",
+              "targetFieldName": "risk_score"
+            }
+          ]
+        }
+      },
+      "label": "Device",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "hostname",
+          "type": "STRING"
+        },
+        {
+          "name": "ip_address",
+          "type": "STRING"
+        },
+        {
+          "name": "os_type",
+          "type": "STRING"
+        },
+        {
+          "name": "risk_score",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "resources",
+          "mappedField": [
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "resource_name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "criticality",
+              "targetFieldName": "criticality"
+            },
+            {
+              "sourceFieldName": "resource_type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "contains_pii",
+              "targetFieldName": "contains_pii"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_resources",
+          "mappedField": [
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "resource_name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "criticality",
+              "targetFieldName": "criticality"
+            },
+            {
+              "sourceFieldName": "resource_type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "contains_pii",
+              "targetFieldName": "contains_pii"
+            }
+          ]
+        }
+      },
+      "label": "Resource",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "criticality",
+          "type": "STRING"
+        },
+        {
+          "name": "type",
+          "type": "STRING"
+        },
+        {
+          "name": "contains_pii",
+          "type": "BOOLEAN"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "malware_detection_alerts",
+          "mappedField": [
+            {
+              "sourceFieldName": "malware_name",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "malware_family",
+              "targetFieldName": "family"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_malware_detection_alerts",
+          "mappedField": [
+            {
+              "sourceFieldName": "malware_name",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "malware_family",
+              "targetFieldName": "family"
+            }
+          ]
+        }
+      },
+      "label": "Malware",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "family",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "process_execution_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "process_name",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "process_name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_process_execution_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "process_name",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "process_name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "Process",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "file_activity_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "filepath",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "filepath",
+              "targetFieldName": "path"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_file_activity_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "filepath",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "filepath",
+              "targetFieldName": "path"
+            }
+          ]
+        }
+      },
+      "label": "File",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "path",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "policy_violation_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "policy_name",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "policy_name",
+              "targetFieldName": "name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_policy_violation_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "policy_name",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "policy_name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "Policy",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "authentication_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            },
+            {
+              "sourceFieldName": "auth_type",
+              "targetFieldName": "auth_type"
+            },
+            {
+              "sourceFieldName": "source_ip",
+              "targetFieldName": "source_ip"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_authentication_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            },
+            {
+              "sourceFieldName": "auth_type",
+              "targetFieldName": "auth_type"
+            },
+            {
+              "sourceFieldName": "source_ip",
+              "targetFieldName": "source_ip"
+            }
+          ]
+        }
+      },
+      "label": "Authenticated",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "Device",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "outcome",
+          "type": "STRING"
+        },
+        {
+          "name": "auth_type",
+          "type": "STRING"
+        },
+        {
+          "name": "source_ip",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "network_flows",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "dst_device_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "dst_port",
+              "targetFieldName": "port"
+            },
+            {
+              "sourceFieldName": "protocol",
+              "targetFieldName": "protocol"
+            },
+            {
+              "sourceFieldName": "bytes_sent",
+              "targetFieldName": "bytes_sent"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_network_flows",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "src_device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "dst_device_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "dst_port",
+              "targetFieldName": "port"
+            },
+            {
+              "sourceFieldName": "protocol",
+              "targetFieldName": "protocol"
+            },
+            {
+              "sourceFieldName": "bytes_sent",
+              "targetFieldName": "bytes_sent"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            }
+          ]
+        }
+      },
+      "label": "NetworkFlow",
+      "fromNodeLabel": "Device",
+      "toNodeLabel": "Device",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "port",
+          "type": "INT"
+        },
+        {
+          "name": "protocol",
+          "type": "STRING"
+        },
+        {
+          "name": "bytes_sent",
+          "type": "LONG"
+        },
+        {
+          "name": "status",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "resource_access_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "access_type",
+              "targetFieldName": "access_type"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            },
+            {
+              "sourceFieldName": "data_size_bytes",
+              "targetFieldName": "data_size"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_resource_access_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "access_type",
+              "targetFieldName": "access_type"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            },
+            {
+              "sourceFieldName": "data_size_bytes",
+              "targetFieldName": "data_size"
+            }
+          ]
+        }
+      },
+      "label": "AccessedResource",
+      "fromNodeLabel": "Device",
+      "toNodeLabel": "Resource",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "access_type",
+          "type": "STRING"
+        },
+        {
+          "name": "outcome",
+          "type": "STRING"
+        },
+        {
+          "name": "data_size",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "user_device_relationships",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "access_type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "last_access",
+              "targetFieldName": "last_access"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_user_device_relationships",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "access_type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "last_access",
+              "targetFieldName": "last_access"
+            }
+          ]
+        }
+      },
+      "label": "HasRelationship",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "Device",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "type",
+          "type": "STRING"
+        },
+        {
+          "name": "last_access",
+          "type": "DATETIME"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "device_resource_relationships",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "access_count",
+              "targetFieldName": "access_count"
+            },
+            {
+              "sourceFieldName": "last_access",
+              "targetFieldName": "last_access"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_device_resource_relationships",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "access_count",
+              "targetFieldName": "access_count"
+            },
+            {
+              "sourceFieldName": "last_access",
+              "targetFieldName": "last_access"
+            }
+          ]
+        }
+      },
+      "label": "HasDependency",
+      "fromNodeLabel": "Device",
+      "toNodeLabel": "Resource",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "access_count",
+          "type": "LONG"
+        },
+        {
+          "name": "last_access",
+          "type": "DATETIME"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "account_change_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "initiated_by_user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "target_user_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "change_type",
+              "targetFieldName": "change_type"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_account_change_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "initiated_by_user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "target_user_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "change_type",
+              "targetFieldName": "change_type"
+            }
+          ]
+        }
+      },
+      "label": "AccountModified",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "User",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "change_type",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "privilege_escalation_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "escalation_type",
+              "targetFieldName": "escalation_type"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_privilege_escalation_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "escalation_type",
+              "targetFieldName": "escalation_type"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            }
+          ]
+        }
+      },
+      "label": "EscalatedPrivilege",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "Device",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "escalation_type",
+          "type": "STRING"
+        },
+        {
+          "name": "outcome",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "malware_detection_alerts",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "malware_name",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "detection_time",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "action",
+              "targetFieldName": "action"
+            },
+            {
+              "sourceFieldName": "severity",
+              "targetFieldName": "severity"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_malware_detection_alerts",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "malware_name",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "detection_time",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "action",
+              "targetFieldName": "action"
+            },
+            {
+              "sourceFieldName": "severity",
+              "targetFieldName": "severity"
+            }
+          ]
+        }
+      },
+      "label": "DetectedMalware",
+      "fromNodeLabel": "Device",
+      "toNodeLabel": "Malware",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "action",
+          "type": "STRING"
+        },
+        {
+          "name": "severity",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "process_execution_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "process_name",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "executed_by_user"
+            },
+            {
+              "sourceFieldName": "command_line",
+              "targetFieldName": "cmd"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_process_execution_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "process_name",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "executed_by_user"
+            },
+            {
+              "sourceFieldName": "command_line",
+              "targetFieldName": "cmd"
+            }
+          ]
+        }
+      },
+      "label": "RunningProcess",
+      "fromNodeLabel": "Device",
+      "toNodeLabel": "Process",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "executed_by_user",
+          "type": "STRING"
+        },
+        {
+          "name": "cmd",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "policy_violation_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "policy_name",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "violation_type",
+              "targetFieldName": "violation_type"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_policy_violation_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "policy_name",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "violation_type",
+              "targetFieldName": "violation_type"
+            }
+          ]
+        }
+      },
+      "label": "ViolatedPolicy",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "Policy",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "violation_type",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "file_activity_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "filepath",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "operation",
+              "targetFieldName": "operation"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_file_activity_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "PUPPY_DEFAULT_EDGE_ID",
+              "targetFieldName": "PUPPY_DEFAULT_EDGE_ID"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "filepath",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "operation",
+              "targetFieldName": "operation"
+            }
+          ]
+        }
+      },
+      "label": "InteractedWithFile",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "File",
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "operation",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "localTable": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "resources",
+          "mappedField": [
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "resource_name",
+              "targetFieldName": "resource_name"
+            },
+            {
+              "sourceFieldName": "criticality",
+              "targetFieldName": "criticality"
+            },
+            {
+              "sourceFieldName": "resource_type",
+              "targetFieldName": "resource_type"
+            },
+            {
+              "sourceFieldName": "contains_pii",
+              "targetFieldName": "contains_pii"
+            }
+          ]
+        }
+      },
+      "name": "base_resources",
+      "column": [
+        {
+          "name": "resource_id",
+          "type": "STRING"
+        },
+        {
+          "name": "resource_name",
+          "type": "STRING"
+        },
+        {
+          "name": "criticality",
+          "type": "STRING"
+        },
+        {
+          "name": "resource_type",
+          "type": "STRING"
+        },
+        {
+          "name": "contains_pii",
+          "type": "BOOLEAN"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "resource_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "network_flows",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_device_id",
+              "targetFieldName": "src_device_id"
+            },
+            {
+              "sourceFieldName": "dst_device_id",
+              "targetFieldName": "dst_device_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "dst_port",
+              "targetFieldName": "dst_port"
+            },
+            {
+              "sourceFieldName": "protocol",
+              "targetFieldName": "protocol"
+            },
+            {
+              "sourceFieldName": "bytes_sent",
+              "targetFieldName": "bytes_sent"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            }
+          ]
+        }
+      },
+      "name": "base_network_flows",
+      "column": [
+        {
+          "name": "src_device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "dst_device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "dst_port",
+          "type": "INT"
+        },
+        {
+          "name": "protocol",
+          "type": "STRING"
+        },
+        {
+          "name": "bytes_sent",
+          "type": "LONG"
+        },
+        {
+          "name": "status",
+          "type": "STRING"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "src_device_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "file_activity_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "filepath",
+              "targetFieldName": "filepath"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "operation",
+              "targetFieldName": "operation"
+            }
+          ]
+        }
+      },
+      "name": "base_file_activity_events",
+      "column": [
+        {
+          "name": "filepath",
+          "type": "STRING"
+        },
+        {
+          "name": "user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "operation",
+          "type": "STRING"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "filepath"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "user_device_relationships",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "access_type",
+              "targetFieldName": "access_type"
+            },
+            {
+              "sourceFieldName": "last_access",
+              "targetFieldName": "last_access"
+            }
+          ]
+        }
+      },
+      "name": "base_user_device_relationships",
+      "column": [
+        {
+          "name": "user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "access_type",
+          "type": "STRING"
+        },
+        {
+          "name": "last_access",
+          "type": "DATETIME"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "user_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "policy_violation_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "policy_name",
+              "targetFieldName": "policy_name"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "violation_type",
+              "targetFieldName": "violation_type"
+            }
+          ]
+        }
+      },
+      "name": "base_policy_violation_events",
+      "column": [
+        {
+          "name": "policy_name",
+          "type": "STRING"
+        },
+        {
+          "name": "user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "violation_type",
+          "type": "STRING"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "policy_name"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "process_execution_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "process_name",
+              "targetFieldName": "process_name"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "command_line",
+              "targetFieldName": "command_line"
+            }
+          ]
+        }
+      },
+      "name": "base_process_execution_events",
+      "column": [
+        {
+          "name": "process_name",
+          "type": "STRING"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "command_line",
+          "type": "STRING"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "process_name"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "resource_access_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "access_type",
+              "targetFieldName": "access_type"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            },
+            {
+              "sourceFieldName": "data_size_bytes",
+              "targetFieldName": "data_size_bytes"
+            }
+          ]
+        }
+      },
+      "name": "base_resource_access_events",
+      "column": [
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "resource_id",
+          "type": "STRING"
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "access_type",
+          "type": "STRING"
+        },
+        {
+          "name": "outcome",
+          "type": "STRING"
+        },
+        {
+          "name": "data_size_bytes",
+          "type": "LONG"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "device_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "authentication_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            },
+            {
+              "sourceFieldName": "auth_type",
+              "targetFieldName": "auth_type"
+            },
+            {
+              "sourceFieldName": "source_ip",
+              "targetFieldName": "source_ip"
+            }
+          ]
+        }
+      },
+      "name": "base_authentication_events",
+      "column": [
+        {
+          "name": "user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "outcome",
+          "type": "STRING"
+        },
+        {
+          "name": "auth_type",
+          "type": "STRING"
+        },
+        {
+          "name": "source_ip",
+          "type": "STRING"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "user_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "malware_detection_alerts",
+          "mappedField": [
+            {
+              "sourceFieldName": "malware_name",
+              "targetFieldName": "malware_name"
+            },
+            {
+              "sourceFieldName": "malware_family",
+              "targetFieldName": "malware_family"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "detection_time",
+              "targetFieldName": "detection_time"
+            },
+            {
+              "sourceFieldName": "action",
+              "targetFieldName": "action"
+            },
+            {
+              "sourceFieldName": "severity",
+              "targetFieldName": "severity"
+            }
+          ]
+        }
+      },
+      "name": "base_malware_detection_alerts",
+      "column": [
+        {
+          "name": "malware_name",
+          "type": "STRING"
+        },
+        {
+          "name": "malware_family",
+          "type": "STRING"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "detection_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "action",
+          "type": "STRING"
+        },
+        {
+          "name": "severity",
+          "type": "STRING"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "malware_name"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "privilege_escalation_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "escalation_type",
+              "targetFieldName": "escalation_type"
+            },
+            {
+              "sourceFieldName": "outcome",
+              "targetFieldName": "outcome"
+            }
+          ]
+        }
+      },
+      "name": "base_privilege_escalation_events",
+      "column": [
+        {
+          "name": "user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "escalation_type",
+          "type": "STRING"
+        },
+        {
+          "name": "outcome",
+          "type": "STRING"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "user_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "devices",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "hostname",
+              "targetFieldName": "hostname"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "os_type",
+              "targetFieldName": "os_type"
+            },
+            {
+              "sourceFieldName": "risk_score",
+              "targetFieldName": "risk_score"
+            }
+          ]
+        }
+      },
+      "name": "base_devices",
+      "column": [
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "hostname",
+          "type": "STRING"
+        },
+        {
+          "name": "ip_address",
+          "type": "STRING"
+        },
+        {
+          "name": "os_type",
+          "type": "STRING"
+        },
+        {
+          "name": "risk_score",
+          "type": "INT"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "device_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "device_resource_relationships",
+          "mappedField": [
+            {
+              "sourceFieldName": "device_id",
+              "targetFieldName": "device_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "access_count",
+              "targetFieldName": "access_count"
+            },
+            {
+              "sourceFieldName": "last_access",
+              "targetFieldName": "last_access"
+            }
+          ]
+        }
+      },
+      "name": "base_device_resource_relationships",
+      "column": [
+        {
+          "name": "device_id",
+          "type": "STRING"
+        },
+        {
+          "name": "resource_id",
+          "type": "STRING"
+        },
+        {
+          "name": "access_count",
+          "type": "LONG"
+        },
+        {
+          "name": "last_access",
+          "type": "DATETIME"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "device_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "users",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "department",
+              "targetFieldName": "department"
+            },
+            {
+              "sourceFieldName": "role",
+              "targetFieldName": "role"
+            },
+            {
+              "sourceFieldName": "is_admin",
+              "targetFieldName": "is_admin"
+            }
+          ]
+        }
+      },
+      "name": "base_users",
+      "column": [
+        {
+          "name": "user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "username",
+          "type": "STRING"
+        },
+        {
+          "name": "email",
+          "type": "STRING"
+        },
+        {
+          "name": "department",
+          "type": "STRING"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        },
+        {
+          "name": "is_admin",
+          "type": "BOOLEAN"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "user_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "ocsf_sql",
+          "schema": "public",
+          "table": "account_change_events",
+          "mappedField": [
+            {
+              "sourceFieldName": "initiated_by_user_id",
+              "targetFieldName": "initiated_by_user_id"
+            },
+            {
+              "sourceFieldName": "target_user_id",
+              "targetFieldName": "target_user_id"
+            },
+            {
+              "sourceFieldName": "timestamp",
+              "targetFieldName": "timestamp"
+            },
+            {
+              "sourceFieldName": "change_type",
+              "targetFieldName": "change_type"
+            }
+          ]
+        }
+      },
+      "name": "base_account_change_events",
+      "column": [
+        {
+          "name": "initiated_by_user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "target_user_id",
+          "type": "STRING"
+        },
+        {
+          "name": "timestamp",
+          "type": "DATETIME"
+        },
+        {
+          "name": "change_type",
+          "type": "STRING"
+        },
+        {
+          "name": "PUPPY_DEFAULT_EDGE_ID",
+          "type": "Long",
+          "autoIncrement": true
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "initiated_by_user_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    }
+  ]
+}
