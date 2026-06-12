@@ -1,14 +1,6 @@
 # MIMIC-OMOP Healthcare Graph Demo
 
-The Observational Medical Outcomes Partnership (OMOP) was a public-private partnership established in the US to inform the appropriate use of observational healthcare databases for studying the effects of medical products. A core output of this project was the OMOP Common Data Model (CDM) which represents healthcare data from diverse sources in a consistent and standardized way. Such models allow portability of analysis and development of tools that facilitate research [1-3].
 
-MIMIC is an electronic health record database that is widely used around the world in research and education [4,5]. We carried out work to convert the latest version of MIMIC - MIMIC-IV - into the Observational Medical Outcomes Partnership (OMOP) model [3].
-
-This project outlines development of a demo version of the dataset, based on a 100 patient subset of the full MIMIC-IV dataset. The following three modules of the MIMIC-IV dataset were included:
-
-core: patient stay information (i.e. admissions and transfers)
-hosp: hospital level data for patients: labs, micro, and electronic medication administration
-icu: Event tables from the ICU, similar to those in MIMIC-III [6,7]
 
 ## Summary
 
