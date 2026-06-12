@@ -3,6 +3,8 @@
 ## Summary
 This demo shows how to query the [AWS Public Blockchain Dataset](https://registry.opendata.aws/aws-public-blockchain/) as a graph using PuppyGraph. Starting from a [known phishing wallet](https://etherscan.io/address/0xbe356f13b7b1bc6d89abcbd6272b40427231411f) flagged by HashDit, we trace ETH gas-funding infrastructure and USDT flows through a coordinated collection network to its final destinations. Zero ETL required.
 
+AWS Public Blockchain Data was accessed on 2026-05-20 from https://registry.opendata.aws/aws-public-blockchain.
+
 ## Prerequisites
 - Docker
 - AWS CLI
