@@ -1,0 +1,2 @@
+CREATE DATABASE cocoindex_db;
+GRANT ALL PRIVILEGES ON DATABASE cocoindex_db TO myuser;
