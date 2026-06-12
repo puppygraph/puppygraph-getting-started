@@ -1,15 +1,5 @@
 # MIMIC-OMOP Healthcare Graph Demo
 
-The Observational Medical Outcomes Partnership (OMOP) was a public-private partnership established in the US to inform the appropriate use of observational healthcare databases for studying the effects of medical products. A core output of this project was the OMOP Common Data Model (CDM) which represents healthcare data from diverse sources in a consistent and standardized way. Such models allow portability of analysis and development of tools that facilitate research [1-3].
-
-MIMIC is an electronic health record database that is widely used around the world in research and education [4,5]. We carried out work to convert the latest version of MIMIC - MIMIC-IV - into the Observational Medical Outcomes Partnership (OMOP) model [3].
-
-This project outlines development of a demo version of the dataset, based on a 100 patient subset of the full MIMIC-IV dataset. The following three modules of the MIMIC-IV dataset were included:
-
-core: patient stay information (i.e. admissions and transfers)
-hosp: hospital level data for patients: labs, micro, and electronic medication administration
-icu: Event tables from the ICU, similar to those in MIMIC-III [6,7]
-
 ## Summary
 
 This demo illustrates how **PuppyGraph** enables complex multi-hop queries on healthcare data using the [MIMIC-IV demo data in the OMOP Common Data Model v0.9](https://physionet.org/content/mimic-iv-demo-omop/0.9/). The graph model allows healthcare analysts and researchers to:
@@ -56,7 +46,7 @@ docker compose up -d
 docker cp ./1_omop_data_csv postgres:/tmp/
 ```
 
-3. From the `mimic-omop` project directory on the host machine, execute the SQL files to create tables and import data:
+3. From the `mimic-omop` project directory on the host machine, execute the SQL files to create tables and import data:  
 ```bash
 docker exec -i postgres psql -U postgres -d mimic < ./create_tables.sql
 docker exec -i postgres psql -U postgres -d mimic < ./import_csv.sql
