@@ -1,7 +1,5 @@
 # MIMIC-OMOP Healthcare Graph Demo
 
-
-
 ## Summary
 
 This demo illustrates how **PuppyGraph** enables complex multi-hop queries on healthcare data using the [MIMIC-IV demo data in the OMOP Common Data Model v0.9](https://physionet.org/content/mimic-iv-demo-omop/0.9/). The graph model allows healthcare analysts and researchers to:
@@ -48,7 +46,7 @@ docker compose up -d
 docker cp ./1_omop_data_csv postgres:/tmp/
 ```
 
-3. From the `mimic-omop` project directory on the host machine, execute the SQL files to create tables and import data:
+3. From the `mimic-omop` project directory on the host machine, execute the SQL files to create tables and import data:  
 ```bash
 docker exec -i postgres psql -U postgres -d mimic < ./create_tables.sql
 docker exec -i postgres psql -U postgres -d mimic < ./import_csv.sql
