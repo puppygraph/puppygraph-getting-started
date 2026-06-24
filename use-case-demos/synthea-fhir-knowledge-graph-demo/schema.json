@@ -1,0 +1,352 @@
+{
+  "catalogs": [
+    {
+      "name": "duckdb_data",
+      "type": "duckdb",
+      "jdbc": {
+        "jdbcUri": "jdbc:duckdb:/data/data.duckdb",
+        "driverClass": "org.duckdb.DuckDBDriver"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Patient",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "duckdb_data",
+            "schema": "main",
+            "table": "patients"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "patient_id",
+                "alias": "patient_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "gender",
+              "alias": "gender"
+            },
+            {
+              "type": "Long",
+              "field": "birth_year",
+              "alias": "birth_year"
+            },
+            {
+              "type": "Long",
+              "field": "age",
+              "alias": "age"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Condition",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "duckdb_data",
+            "schema": "main",
+            "table": "conditions"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "condition_code",
+                "alias": "condition_code"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "condition_display",
+              "alias": "condition_display"
+            },
+            {
+              "type": "String",
+              "field": "recorded_date",
+              "alias": "recorded_date"
+            },
+            {
+              "type": "String",
+              "field": "clinical_status",
+              "alias": "clinical_status"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Practitioner",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "duckdb_data",
+            "schema": "main",
+            "table": "practitioners"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "practitioner_id",
+                "alias": "practitioner_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "name",
+              "alias": "name"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Medication",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "duckdb_data",
+            "schema": "main",
+            "table": "medication_requests"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "drug_name",
+                "alias": "drug_name"
+              }
+            ]
+          },
+          "attributes": []
+        }
+      },
+      {
+        "label": "Observation",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "duckdb_data",
+            "schema": "main",
+            "table": "observations"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "String",
+                "field": "observation_code",
+                "alias": "observation_code"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "String",
+              "field": "observation_display",
+              "alias": "observation_display"
+            },
+            {
+              "type": "String",
+              "field": "value_type",
+              "alias": "value_type"
+            },
+            {
+              "type": "String",
+              "field": "effective_date",
+              "alias": "effective_date"
+            },
+            {
+              "type": "Double",
+              "field": "value_numeric",
+              "alias": "value_numeric"
+            },
+            {
+              "type": "String",
+              "field": "value_text",
+              "alias": "value_text"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "HAS_CONDITION",
+        "fromVertex": "Patient",
+        "toVertex": "Condition",
+        "tableSource": {
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "conditions"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "edge_id",
+              "alias": "edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "patient_id",
+              "alias": "patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "condition_code",
+              "alias": "condition_code"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "condition_display",
+            "alias": "condition_display"
+          }
+        ]
+      },
+      {
+        "label": "TREATED_BY",
+        "fromVertex": "Patient",
+        "toVertex": "Practitioner",
+        "tableSource": {
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "medication_requests"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "edge_id",
+              "alias": "edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "patient_id",
+              "alias": "patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "practitioner_id",
+              "alias": "practitioner_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "drug_name",
+            "alias": "drug_name"
+          }
+        ]
+      },
+      {
+        "label": "TAKES",
+        "fromVertex": "Patient",
+        "toVertex": "Medication",
+        "tableSource": {
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "medication_requests"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "edge_id",
+              "alias": "edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "patient_id",
+              "alias": "patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "drug_name",
+              "alias": "drug_name"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_OBSERVATION",
+        "fromVertex": "Patient",
+        "toVertex": "Observation",
+        "tableSource": {
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "observations"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "edge_id",
+              "alias": "edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "patient_id",
+              "alias": "patient_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "String",
+              "field": "observation_code",
+              "alias": "observation_code"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "String",
+            "field": "observation_display",
+            "alias": "observation_display"
+          }
+        ]
+      }
+    ]
+  }
+}
