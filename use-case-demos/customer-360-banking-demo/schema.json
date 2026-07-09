@@ -1,0 +1,551 @@
+{
+  "catalogs": [
+    {
+      "name": "bank360",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "postgres",
+        "password": "puppygraph123",
+        "jdbcUri": "jdbc:postgresql://bank360-postgres:5432/bank360",
+        "driverClass": "org.postgresql.Driver"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "Client",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "bank360",
+            "schema": "public",
+            "table": "client"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "client_id",
+                "alias": "puppy_id_client_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "LONG",
+              "field": "district_id",
+              "alias": "district_id"
+            },
+            { "type": "STRING", "field": "name", "alias": "name" }
+          ]
+        }
+      },
+      {
+        "label": "Account",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "bank360",
+            "schema": "public",
+            "table": "account"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "account_id",
+                "alias": "puppy_id_account_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "LONG",
+              "field": "district_id",
+              "alias": "district_id"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Disposition",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "bank360",
+            "schema": "public",
+            "table": "disp"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "disp_id",
+                "alias": "puppy_id_disp_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "type",
+              "alias": "role"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Loan",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "bank360",
+            "schema": "public",
+            "table": "loan"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "loan_id",
+                "alias": "puppy_id_loan_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "LONG",
+              "field": "amount",
+              "alias": "amount"
+            },
+            {
+              "type": "STRING",
+              "field": "status",
+              "alias": "loan_status"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Card",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "bank360",
+            "schema": "public",
+            "table": "card"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "card_id",
+                "alias": "puppy_id_card_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "type",
+              "alias": "card_type"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Order",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "bank360",
+            "schema": "public",
+            "table": "orders"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "order_id",
+                "alias": "puppy_id_order_id"
+              }
+            ]
+          },
+          "attributes": [
+            { "type": "DOUBLE", "field": "amount", "alias": "amount" },
+            { "type": "STRING", "field": "k_symbol", "alias": "order_category" }
+          ]
+        }
+      },
+      {
+        "label": "Transaction",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "bank360",
+            "schema": "public",
+            "table": "trans"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+              "field": "trans_id",
+                "alias": "puppy_id_trans_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "DOUBLE",
+              "field": "amount",
+              "alias": "amount"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "balance",
+              "alias": "balance"
+            }
+          ]
+        }
+      },
+      {
+        "label": "District",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "bank360",
+            "schema": "public",
+            "table": "district"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "LONG",
+                "field": "district_id",
+                "alias": "puppy_id_district_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "district_name",
+              "alias": "district_name"
+            },
+            {
+              "type": "LONG",
+              "field": "avg_salary",
+              "alias": "avg_salary"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "HAS_DISPOSITION",
+        "fromVertex": "Client",
+        "toVertex": "Disposition",
+        "tableSource": {
+          "catalog": "bank360",
+          "schema": "public",
+          "table": "disp"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "disp_id",
+              "alias": "puppy_id_disp_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "client_id",
+              "alias": "puppy_from_client_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "disp_id",
+              "alias": "puppy_to_disp_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "FOR_ACCOUNT",
+        "fromVertex": "Disposition",
+        "toVertex": "Account",
+        "tableSource": {
+          "catalog": "bank360",
+          "schema": "public",
+          "table": "disp"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "disp_id",
+              "alias": "puppy_id_disp_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "disp_id",
+              "alias": "puppy_from_disp_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "account_id",
+              "alias": "puppy_to_account_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_LOAN",
+        "fromVertex": "Account",
+        "toVertex": "Loan",
+        "tableSource": {
+          "catalog": "bank360",
+          "schema": "public",
+          "table": "loan"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "loan_id",
+              "alias": "puppy_id_loan_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "account_id",
+              "alias": "puppy_from_account_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "loan_id",
+              "alias": "puppy_to_loan_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "status",
+            "alias": "loan_status"
+          }
+        ]
+      },
+      {
+        "label": "HAS_CARD",
+        "fromVertex": "Disposition",
+        "toVertex": "Card",
+        "tableSource": {
+          "catalog": "bank360",
+          "schema": "public",
+          "table": "card"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "card_id",
+              "alias": "puppy_id_card_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "disp_id",
+              "alias": "puppy_from_disp_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "card_id",
+              "alias": "puppy_to_card_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_TRANSACTION",
+        "fromVertex": "Account",
+        "toVertex": "Transaction",
+        "tableSource": {
+          "catalog": "bank360",
+          "schema": "public",
+          "table": "trans"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "trans_id",
+              "alias": "puppy_id_trans_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "account_id",
+              "alias": "puppy_from_account_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "trans_id",
+              "alias": "puppy_to_trans_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "HAS_ORDER",
+        "fromVertex": "Account",
+        "toVertex": "Order",
+        "tableSource": {
+          "catalog": "bank360",
+          "schema": "public",
+          "table": "orders"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "order_id",
+              "alias": "puppy_id_order_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "account_id",
+              "alias": "puppy_from_account_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "order_id",
+              "alias": "puppy_to_order_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "LIVES_IN",
+        "fromVertex": "Client",
+        "toVertex": "District",
+        "tableSource": {
+          "catalog": "bank360",
+          "schema": "public",
+          "table": "client"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "client_id",
+              "alias": "puppy_id_client_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "client_id",
+              "alias": "puppy_from_client_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "district_id",
+              "alias": "puppy_to_district_id"
+            }
+          ]
+        },
+        "attributes": []
+      },
+      {
+        "label": "OPENED_IN",
+        "fromVertex": "Account",
+        "toVertex": "District",
+        "tableSource": {
+          "catalog": "bank360",
+          "schema": "public",
+          "table": "account"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "account_id",
+              "alias": "puppy_id_account_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "account_id",
+              "alias": "puppy_from_account_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "LONG",
+              "field": "district_id",
+              "alias": "puppy_to_district_id"
+            }
+          ]
+        },
+        "attributes": []
+      }
+    ]
+  }
+}
