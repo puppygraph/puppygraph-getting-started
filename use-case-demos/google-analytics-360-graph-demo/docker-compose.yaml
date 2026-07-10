@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  puppygraph:
+    image: puppygraph/puppygraph:stable 
+    pull_policy: always
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    networks:
+      - mysql_net
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+
+  mysql:
+    image: mysql:8.0.33
+    container_name: mysql-server
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql123
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpassword
+      - MYSQL_DATABASE=mydatabase
+    networks:
+      - mysql_net
+    ports:
+      - "3306:3306"
+
+networks:
+  mysql_net:
+    name: puppy-mysql
