@@ -1,0 +1,45 @@
+services:
+  puppygraph:
+    image: puppygraph/puppygraph:0.77
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    networks:
+      postgres_net:
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+  cybersecurity-ui:
+    build:
+      context: ./cybersecurity-dashboard
+      dockerfile: Dockerfile
+      args:
+        - PUPPYGRAPH_HOST=puppygraph
+    container_name: cybersecurity-ui
+    environment:
+      - PUPPYGRAPH_HOST=puppygraph
+    ports:
+      - "3000:3000"
+    networks:
+      postgres_net:
+    depends_on:
+      - postgres
+      - puppygraph
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    volumes:
+      - ./postgres-init:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_DB=cybersecurity_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres123
+    networks:
+      postgres_net:
+    ports:
+      - "5432:5432"
+networks:
+  postgres_net:
+    name: puppy-postgres
