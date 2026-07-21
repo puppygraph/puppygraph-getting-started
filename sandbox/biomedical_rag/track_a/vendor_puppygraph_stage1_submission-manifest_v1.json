@@ -1,0 +1,40 @@
+{
+  "vendor_id": "puppygraph",
+  "stage": 1,
+  "track": "A",
+  "dataset": "PrimeKG Dataverse v2.1",
+  "authoritative_version": 1,
+  "graph_submission": false,
+  "execution_environment": "live_puppygraph_run",
+  "answers_pending_live_graph": false,
+  "artifacts": [
+    {
+      "file": "vendor_puppygraph_stage1_query-results_v1.json",
+      "sha256": "29726715f585a160d56b87206ff11ca34be569e238dc4d4a1e02a9304d1a8e47"
+    },
+    {
+      "file": "vendor_puppygraph_stage1_qa-results_v1.jsonl",
+      "sha256": "ef86e644864a8984bdb7daadde97e125a05dcaf544f50087adac980f3c98d6ac"
+    },
+    {
+      "file": "vendor_puppygraph_stage1_reasoning-traces_v1.json",
+      "sha256": "830c14c994a46f58d7115c3b16da878a0f11836daa719ed780abf95a03a67f8e"
+    },
+    {
+      "file": "vendor_puppygraph_stage1_metrics-selfreport_v1.md",
+      "sha256": "20219e76a0862afd568551d00528cbbf965f1ab638e9d4794efe9d0e39f59004"
+    },
+    {
+      "file": "vendor_puppygraph_stage1_ops-report_v1.md",
+      "sha256": "b2df4bea1eadef35b7457c40cb0ad87b7ffbb86fcfe835e187f2f116f8ea66bd"
+    },
+    {
+      "file": "vendor_puppygraph_stage1_methodology_v1.md",
+      "sha256": "66a8063ad11016040f7263fcc9b4ec94c1897659bde59626cea62422215d4168"
+    },
+    {
+      "file": "vendor_puppygraph_stage1_clarification-log_v1.md",
+      "sha256": "4de3df9f62d696bdf829db593c0b6cbe432ef75a1ec3f0ff179e7e7330c8213c"
+    }
+  ]
+}
