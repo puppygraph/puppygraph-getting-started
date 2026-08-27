@@ -19,7 +19,7 @@ Spin up the MySQL container environment in Command Prompt:
 docker compose up -d
 
 ### 2. Load the 2 Databases
-
+Put this line into the CMD so that the database can be filled with data:
 docker exec -i <CONTAINER_NAME> mysql -u root -p798255 < players_dump.sql
 
 ### 3. Add your API Key
