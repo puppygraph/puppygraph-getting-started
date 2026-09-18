@@ -1,0 +1,7 @@
+puppygraph_output/
+synthea/output/
+__pycache__/
+*.py[cod]
+.venv/
+demo_venv/
+.ipynb_checkpoints/
