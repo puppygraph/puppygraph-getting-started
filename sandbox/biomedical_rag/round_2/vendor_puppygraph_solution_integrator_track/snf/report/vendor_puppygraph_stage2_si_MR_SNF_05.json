@@ -1,0 +1,179 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "SNF",
+  "claim_id": "MR_SNF_05",
+  "encounter_information": {
+    "claim_number": "MR_SNF_05",
+    "payer": "Cigna Medicare Advantage",
+    "dates_of_service": "2026-05-05\u20132026-05-23",
+    "facility_pos": "Wasatch Peaks Rehabilitation Center",
+    "attending_provider": "Dr. Joseph Tran, MD",
+    "patient": "Patricia Kowalski \u2014 MRN: MRN-7102948",
+    "medical_record": "MR_SNF_05.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "revenue_code": "0192",
+      "code": "0192",
+      "dos_from": "2026-05-05",
+      "dos_to": "2026-05-22",
+      "billed_units": 13
+    },
+    {
+      "revenue_code": "0191",
+      "code": "0191",
+      "dos_from": "2026-05-05",
+      "dos_to": "2026-05-22",
+      "billed_units": 4
+    },
+    {
+      "revenue_code": "Non-Covered",
+      "code": null,
+      "dos_from": "2026-05-23",
+      "dos_to": "2026-05-23",
+      "billed_units": 1
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_revenue_code": "0192",
+      "dos_from": "2026-05-05",
+      "dos_to": "2026-05-22",
+      "billed_units": 13,
+      "determination": "Finding",
+      "adjusted_date_of_service": "2026-05-05-2026-05-22 (exclude 2026-05-09, 2026-05-10, 2026-05-16, 2026-05-17)",
+      "corrected_revenue_code": "0191",
+      "adjusted_units_billed": 9,
+      "confidence": 0.4,
+      "confidence_basis": "0/9 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 6', 'Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 8', 'get_daily_services result, service_date 2026-05-05', 'get_daily_services result, service_date 2026-05-11', 'get_daily_services result, service_date 2026-05-22', 'get_per_diem_level_notes result, service_date 2026-05-09', 'get_per_diem_level_notes result, service_date 2026-05-10', 'get_per_diem_level_notes result, service_date 2026-05-16', 'get_per_diem_level_notes result, service_date 2026-05-17']."
+    },
+    {
+      "line": 2,
+      "billed_revenue_code": "0191",
+      "dos_from": "2026-05-05",
+      "dos_to": "2026-05-22",
+      "billed_units": 4,
+      "determination": "No Finding",
+      "adjusted_date_of_service": null,
+      "corrected_revenue_code": null,
+      "adjusted_units_billed": null,
+      "confidence": 0.4,
+      "confidence_basis": "4/8 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['HISTORY & PHYSICAL - ADMISSION, p. 8', 'SKILLED NURSING PROGRESS NOTE | 05/10/2026, p. 115-116', 'SKILLED NURSING PROGRESS NOTE | 05/16/2026, p. 127-128', 'SKILLED NURSING PROGRESS NOTE | 05/17/2026, p. 129-130']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Claim MR_SNF_05 (patient Patricia Kowalski, MRN MRN-7102948): Line billed revenue code 0192 (rehabilitation therapy) 13 units covering 2026-05-05 through 2026-05-22. Policy reference (SNF Level of Care Reference Guide) defines 'Skilled need' and the applicable revenue codes and indicates that per-diem level billing must be supported by daily clinical/therapy documentation (Policy doc: 'Skilled need' and 'Revenue codes 0191-0194'): - Policy: \"Skilled need: A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers.\" (Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 6). - Policy: \"Revenue codes 0191-0194: Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy)...\" (Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 8). Clinical documentation retrieved: therapy sessions with PT 90 minutes + OT 60 minutes are explicitly documented on many dates within the billed span (examples): - {\"service_date\": \"2026-05-05\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6} (get_daily_services result for 2026-05-05). - {\"service_date\": \"2026-05-11\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6} (get_daily_services result for 2026-05-11). - {\"service_date\": \"2026-05-22\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6} (get_daily_services result for 2026-05-22). However, the facility's per-diem level determination extraction shows an explicit null (no per-diem-level statement) for every date; the tool's note explains null does not itself prove a date is unsupported but we must rely on the clinical services present/absent to determine support. Critically, there are four dates inside the billed DOS range with no therapy sessions documented in the retrieved daily_services rows: 2026-05-09, 2026-05-10, 2026-05-16, and 2026-05-17. The per-diem-level rows for those dates are: {\"service_date\": \"2026-05-09\", \"level_determination_statement\": null}, {\"service_date\": \"2026-05-10\", \"level_determination_statement\": null}, {\"service_date\": \"2026-05-16\", \"level_determination_statement\": null}, {\"service_date\": \"2026-05-17\", \"level_determination_statement\": null} (get_per_diem_level_notes result rows). Because revenue code 0192 (rehabilitation therapy) requires documentation of ongoing therapy/skilled therapy need for the specific date, and no therapy visits are documented for those four dates in the record produced to this review, those specific dates within the billed span lack the direct therapy support required to justify billing 0192 on those days. Determination and recommended correction: Partial denial/downcoding of the billed 0192 line. Remove/reclassify 2026-05-09, 2026-05-10, 2026-05-16, and 2026-05-17 from the 0192 line because therapy is not documented for those dates. The 0192 line should be limited to dates with documented therapy. Based on the retrieved daily therapy entries, those supported dates within the span are 2026-05-05, 05-06, 05-07, 05-08, 05-11, 05-12, 05-13, 05-14, 05-15, 05-18, 05-19, 05-20, 05-21, 05-22 (14 dates). Because the submitted units for the 0192 line were 13, and four dates in the billed date range lack therapy documentation and therefore should not be billed as 0192, the auditor recommends excluding the four unsupported dates from 0192 and reclassifying them (most appropriate to 0191 skilled nursing if nursing skilled care is documented, or to Non-Covered if no skilled service exists). For purposes of this determination the recommended adjusted units for 0192 are 9 (13 billed units minus the 4 unsupported dates within the billed span); the unsupported dates should be re-billed/reclassified appropriately. Caveats: There is no payer-specific per-diem numeric threshold in the dataset (the system fell back to the payer-agnostic reference guide), and the facility did not record explicit per-diem-level statements for any date (get_per_diem_level_notes returned null for all dates). If the provider supplies contemporaneous nursing skilled documentation for the four dates or other entries showing skilled therapy occurred (progress notes, alternative therapy documentation not returned in the current extraction), those records may rebut this finding. The correction here is based strictly on the retrieved daily_services rows and the reference guide language requiring licensed therapy involvement to support 0192 (citations below). Reviewed revenue line: Rev code 0191 (Level 1 skilled nursing) for 4 days within 2026-05-05 -> 2026-05-22. Clinical record supports Level 1 designation on the weekend dates in this range and documents skilled PT/OT sessions on weekdays (these sessions are billed separately under therapy revenue codes). Key points: (1) Admission H&P and the Interdisciplinary Plan of Care establish a SNF-level need for skilled PT/OT and nursing after right total hip arthroplasty (H&P admit and Plan of Care; PhysTherapy/OT evaluations certify skilled services and frequency) (HISTORY & PHYSICAL - ADMISSION, p. 8; INTERDISCIPLINARY PLAN OF CARE - SNF STAY, p. 10-11; Physical Therapy evaluation, p. 18-20; Occupational Therapy evaluation, p. 21-23). (2) PT progress notes document 90-minute skilled PT sessions (Revenue Code 0421) on therapy days (e.g., 05/05 and 05/06), demonstrating that therapy care was provided and appropriately documented on weekdays (Physical Therapy, p. 25; Physical Therapy, p. 27). (3) Skilled Nursing progress notes explicitly document weekend days with no therapy and state that Rev 0191 (Level 1 Skilled Nursing) billing applies for those dates and that 2.0 skilled nursing hours were provided (SKILLED NURSING PROGRESS NOTE, 05/10/2026, p. 115-116; SKILLED NURSING PROGRESS NOTE, 05/16/2026, p. 127-128; SKILLED NURSING PROGRESS NOTE, 05/17/2026, p. 129-130). Taken together the clinical record supports billing Level 1 (Rev 0191) for the weekend/no-therapy days within the billed date range while therapy days are separately documented (and billed) under therapy revenue codes. Therefore the documentation supports the billed per-diem level for the revenue line's dates as submitted. Citations to the specific supporting passages are listed in evidence_cited below.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Audit determination for Claim MR_SNF_05 - Per-diem revenue line billed as 0192 (rehabilitation therapy), DOS 05/05/2026-05/22/2026, 13 units Dear Provider, We reviewed the medical record for patient Patricia Kowalski (MRN MRN-7102948) for the above-referenced SNF claim. The claim includes a per-diem line billed under revenue code 0192 (rehabilitation therapy) for the period 2026-05-05 through 2026-05-22 (13 days). Our review applied the SNF Level of Care reference guide, which requires that a billed rehabilitation per-diem be supported by documentation of skilled therapy involvement on the specific date(s) billed (see policy: \"Skilled need\" and \"Revenue codes 0191-0194\"). Finding: Not all dates in the billed 0192 date span are supported by documented therapy. The medical record extraction shows documented physical and occupational therapy visits (e.g., PT 90 minutes on 2026-05-05, 05-11, 05-22 and OT 60 minutes on those same dates), but four dates within the billed span have no therapy visit documented in the records returned to this review: 2026-05-09, 2026-05-10, 2026-05-16, and 2026-05-17. The facility did not provide explicit per-diem-level statements for these dates. Because rehabilitation per-diem billing (0192) requires documented skilled therapy services on the specific day billed, these four dates are not supported for 0192 as presented. Correction: Exclude 2026-05-09, 2026-05-10, 2026-05-16, and 2026-05-17 from the 0192 per-diem line. These dates should be reclassified as appropriate (0191 skilled nursing if skilled nursing services are documented on those specific dates, or as non-covered days if no skilled services are documented). Based on the record provided, reduce the 0192 billed units by four (13 billed -> adjusted 9 units) to remove unsupported therapy days from the 0192 line. If you believe these dates are supported for 0192, please furnish contemporaneous documentation showing licensed therapy was provided on those dates (progress notes, therapy start/stop times, or other therapy documentation) or documentation of a per-diem-level nursing/therapy determination for each contested date. Supporting record excerpts relied upon in this determination are cited below. If you submit additional documentation demonstrating therapy/skilled need on the above dates, we will reopen the review of those dates. Sincerely, Clinical Audit Team Evidence relied upon: - SNF Level of Care - Definitions and Reference Guide: \"Skilled need: A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers.\" (Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 6) - SNF Level of Care - Definitions and Reference Guide: \"Revenue codes 0191-0194: Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy)...\" (Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 8) - Therapy documentation examples (supporting 0192 on documented dates): get_daily_services row for 2026-05-05 and others (see attached extraction). - Per-diem level extraction for unsupported dates shows no level statement (get_per_diem_level_notes rows for 2026-05-09, 2026-05-10, 2026-05-16, 2026-05-17).",
+  "metrics": {
+    "cost_of_processing_usd": 0.041181,
+    "time_to_run_seconds": 180.475,
+    "retrieval_seconds": 34.397,
+    "judge_seconds": 146.078,
+    "retrieval_turns": 7,
+    "total_cost_per_claim_usd": 30.571181,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.041181
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 6",
+      "role": "contradicts billed code",
+      "excerpt": "Skilled need: A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers."
+    },
+    {
+      "citation": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 8",
+      "role": "supports billed code",
+      "excerpt": "Revenue codes 0191-0194: Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy), 0193 (sub-acute), 0194 (weanable ventilator management)."
+    },
+    {
+      "citation": "get_daily_services result, service_date 2026-05-05",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-05-05\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    },
+    {
+      "citation": "get_daily_services result, service_date 2026-05-11",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-05-11\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    },
+    {
+      "citation": "get_daily_services result, service_date 2026-05-22",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-05-22\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    },
+    {
+      "citation": "get_per_diem_level_notes result, service_date 2026-05-09",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-05-09\", \"level_determination_statement\": null}"
+    },
+    {
+      "citation": "get_per_diem_level_notes result, service_date 2026-05-10",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-05-10\", \"level_determination_statement\": null}"
+    },
+    {
+      "citation": "get_per_diem_level_notes result, service_date 2026-05-16",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-05-16\", \"level_determination_statement\": null}"
+    },
+    {
+      "citation": "get_per_diem_level_notes result, service_date 2026-05-17",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-05-17\", \"level_determination_statement\": null}"
+    },
+    {
+      "citation": "HISTORY & PHYSICAL - ADMISSION, p. 8",
+      "role": "supports billed code",
+      "excerpt": "Admit to Wasatch Peaks Rehabilitation Center for skilled PT, OT and nursing services."
+    },
+    {
+      "citation": "INTERDISCIPLINARY PLAN OF CARE - SNF STAY, p. 10-11",
+      "role": "supports billed code",
+      "excerpt": "Auth AUTH-2026-61204 (21 authorized days)"
+    },
+    {
+      "citation": "Physical Therapy, p. 18-20",
+      "role": "supports billed code",
+      "excerpt": "I certify the need for these medically necessary services furnished under this plan of treatment while under my care from 05/05/2026 through 06/04/2026."
+    },
+    {
+      "citation": "Physical Therapy, p. 25",
+      "role": "supports billed code",
+      "excerpt": "Total minutes this session: 90 minutes (6 billable units) | Revenue Code: 0421"
+    },
+    {
+      "citation": "Physical Therapy, p. 27",
+      "role": "supports billed code",
+      "excerpt": "Total minutes this session: 90 minutes (6 billable units) | Revenue Code: 0421"
+    },
+    {
+      "citation": "SKILLED NURSING PROGRESS NOTE | 05/10/2026, p. 115-116",
+      "role": "supports billed code",
+      "excerpt": "Weekend day - no therapy scheduled. Skilled nursing care provided per physician orders. ... No PT, OT, or SLP services provided today - weekend; therapy schedule resumes Monday. Fall prevention maintained. Patient cooperative and oriented x4. No PT or OT documentation for this date. Rev 0191 (Level 1 Skilled Nursing) billing applies for this date. Skilled nursing hours documented: 2.0 hours."
+    },
+    {
+      "citation": "SKILLED NURSING PROGRESS NOTE | 05/16/2026, p. 127-128",
+      "role": "supports billed code",
+      "excerpt": "Weekend day - no therapy scheduled. Skilled nursing care provided per physician orders. ... No PT, OT, or SLP services provided today - weekend; therapy schedule resumes Monday. Rev 0191, Level 1."
+    },
+    {
+      "citation": "SKILLED NURSING PROGRESS NOTE | 05/17/2026, p. 129-130",
+      "role": "supports billed code",
+      "excerpt": "Weekend day - no therapy scheduled. Skilled nursing care provided per physician orders. ... No PT, OT, or SLP services provided today - weekend; therapy schedule resumes Monday. Rev 0191, Level 1."
+    }
+  ],
+  "recovery_type": "Partial Recovery",
+  "skilled_services": "Both",
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

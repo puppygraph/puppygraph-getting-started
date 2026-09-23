@@ -1,0 +1,328 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_01",
+  "encounter_information": {
+    "claim_number": "MR_01",
+    "payer": "Cascade Health PPO",
+    "dates_of_service": "2026-01-06\u20132026-04-11",
+    "facility_pos": "Cascadia Regional Medical Center",
+    "attending_provider": null,
+    "patient": "Elena Papadopoulos \u2014 MRN: MRN-2093471",
+    "medical_record": "MR_01.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "A40.3",
+      "description": "Sepsis due to Streptococcus pneumoniae",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R65.21",
+      "description": "Severe sepsis with septic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J13",
+      "description": "Pneumonia due to Streptococcus pneumoniae",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J80",
+      "description": "Acute respiratory distress syndrome",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J95.851",
+      "description": "Ventilator associated pneumonia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B96.5",
+      "description": "Pseudomonas as the cause of diseases classified elsewhere",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I48.91",
+      "description": "Unspecified atrial fibrillation",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "F05",
+      "description": "Delirium due to known physiological condition",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G72.81",
+      "description": "Critical illness myopathy",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.C11",
+      "description": "Acute embolism and thrombosis of right internal jugular vein",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.11",
+      "description": "Dependence on respirator [ventilator] status",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.2",
+      "description": "Dependence on renal dialysis",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I21.4",
+      "description": "Non-ST elevation (NSTEMI) myocardial infarction",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "03HY32Z",
+      "description": "Insertion of monitoring device into upper artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "05H93JZ",
+      "description": "Insertion of infusion device into right femoral vein, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BJ08ZZ",
+      "description": "Inspection of tracheobronchial tree, via natural or artificial opening endoscopic"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0B110F4",
+      "description": "Bypass trachea to cutaneous with tracheostomy device, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0DH60UZ",
+      "description": "Insertion of feeding device into stomach, percutaneous endoscopic approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D80Z",
+      "description": "Performance of urinary filtration, prolonged intermittent, less than 6 hours per day"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Transfer to Long-Term Acute Care Hospital (documented in Discharge / Transfer Summary)",
+      "revised_diagnosis_set": [
+        "A40.3",
+        "R65.21",
+        "J13",
+        "J96.01",
+        "J80",
+        "N17.9",
+        "J95.851",
+        "B96.5",
+        "I48.91",
+        "F05",
+        "G72.81",
+        "I82.C11",
+        "E11.65",
+        "J44.9",
+        "I10",
+        "E78.5",
+        "Z99.11"
+      ],
+      "revised_procedure_set": [
+        "0BH17EZ",
+        "02HV33Z",
+        "03HY32Z",
+        "05H93JZ",
+        "0BJ08ZZ",
+        "0B110F4",
+        "0DH60UZ",
+        "5A1D90Z",
+        "5A1D80Z"
+      ],
+      "confidence": 0.4,
+      "confidence_basis": "9/10 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Discharge / Transfer Summary, p. 818']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Claim MR_01 billed principal diagnosis A40.3 (Sepsis due to Streptococcus pneumoniae) with R65.21 (severe sepsis / septic shock) and multiple MCC/CC-level pulmonary, renal, and device-status codes. Three discrete coding errors were identified on review of the record vs. the governing policies and clinical documentation: 1) Unsupported acute myocardial infarction (I21.4) - remove. Rationale: The cardiology note documents new atrial fibrillation with RVR and lists troponin values but does not document AMI as a confirmed diagnosis; the I21.4 policy requires a documented troponin rise/fall pattern and provider diagnosis of AMI for code assignment. Evidence: Cardiology Consultation documents the clinical assessment as \"New AF with RVR ... Likely secondary/reversible\" without documenting AMI (Cardiology Consultation, p. 639). The AMI policy requires a rise/fall troponin pattern and explicit provider diagnosis for I21.4 (Policy Documents/DRG/Acute Myocardial Infarction.docx, Validation Criteria: \"1. Criterion 1 - Troponin Rise/Fall Pattern: Detection of a rise and/or fall of cardiac troponin values with at least one value above the 99th percentile ...\" ). Because the provider never documents AMI, I21.4 is not supported and should be removed. 2) Ventilator-associated pneumonia (J95.851) POA and severity flags incorrect - POA must be N and J95.851 is MCC (not CC). Rationale: The clinical notes explicitly document a hospital-acquired VAP developing on hospital day 6 and the Infectious Diseases and ICU notes treat it as VAP; policy states J95.851 is an MCC and must carry POA=N because it is, by definition, hospital-acquired. Evidence: Infectious Diseases Consultation: \"Severe CAP complicated by day-6 VAP.\" (Infectious Diseases Consultation, p. 139). Critical Care Progress Note documents suspected VAP with new infiltrate and purulent secretions (Critical Care Progress Note, p. 139). Policy: \"J95.851 - Ventilator associated pneumonia [MCC]\" and \"J95.851 should always carry POA = N as it is a hospital-acquired condition by definition.\" (Policy Documents/DRG/Ventilator-Associated Pneumonia.docx, Scope / VAP POA Indicator and Quality Reporting Implications). The claim currently shows J95.851 POA=Y and CC; this must be corrected to POA=N and MCC. 3) Dependence on renal dialysis status code (Z99.2) left active despite documented renal recovery - remove. Rationale: The discharge/transfer documentation states renal recovery and that hemodialysis was discontinued prior to transfer; a dependence/status code for ongoing dialysis (Z99.2) is not supported at discharge. Evidence: Discharge / Transfer Summary: \"Renal function recovered and hemodialysis was discontinued;\" and Transfer/Discharge Summary lists hemodialysis discontinued and transfer to LTAC (Discharge / Transfer Summary, p. 818). The AKI diagnosis (N17.9) is supported by nephrology consultation and initiation of RRT (Nephrology Consultation documents RRT initiation; Policy Documents/DRG/Acute Kidney Injury.docx presumption rule that initiation of RRT supports AKI coding). N17.9 should remain; Z99.2 (dependence on dialysis) is unsupported at discharge and should be removed. Support for coding that should remain: - A40.3 (sepsis due to S. pneumoniae) is supported by provider documentation of sepsis/septic shock and positive cultures: Infectious Diseases note: \"Admission blood cultures grew Streptococcus pneumoniae (now cleared);\" and the admitting H&P documents septic shock with lactate 5.1 and initiation of vasopressors and intubation (History & Physical (Admitting), p. 770). The sepsis/septic shock policy requires provider documentation plus organism identification or clinical presumption; both are present (Policy Documents/DRG/Sepsis and Septic Shock.docx, Validation Criteria; policy table row: \"Identified Organism: Streptococcus pneumoniae; ICD-10-CM Sepsis Code: A40.3 ... CC/MCC Status: MCC\"). - R65.21 (severe sepsis with septic shock) is supported by documentation of vasopressor use and lactate >2 after resuscitation (History & Physical (Admitting), p. 770; policy criteria in Sepsis and Septic Shock validation section). - J96.01 (acute respiratory failure with hypoxia), J80 (ARDS), N17.9 (AKI), J95.851 (VAP - keep code but correct POA/severity), and the procedure codes (endotracheal intubation, lines, bronchoscopy, tracheostomy, PEG, prolonged ventilation >96 hours, CRRT/HD procedure codes listed in Billing & Coding Summary) are supported by the medical record and policy pathways cited (Respiratory Therapy notes, Pulmonary consult, Nephrology consult, Discharge Summary). - Principal diagnosis sequencing: A40.3 as principal (position 1) with R65.21 as a secondary severe sepsis/septic shock code is consistent with the sepsis policy (Policy Documents/DRG/Sepsis and Septic Shock.docx, Scope/Validation Criteria) and the treating providers' documentation that septic shock secondary to severe pneumonia drove the ICU admission. Corrections applied in this review (claim-level): - Remove I21.4 (Non-ST elevation MI) - not supported by provider documentation required for AMI coding. - Remove Z99.2 (Dependence on renal dialysis) - dialysis was discontinued prior to transfer/discharge so dependence is not active at discharge. - Change J95.851 POA flag to N and classify it as MCC per policy (the code remains on the claim because the record documents a VAP event). - All other billed diagnoses and procedures remain as documented. - Principal diagnosis remains A40.3 (Sepsis due to Streptococcus pneumoniae) with R65.21 as an additional MCC. Key citations used in this determination are listed in the evidence_cited section below (each excerpt reproduced verbatim with document and page reference).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Claim MR_01 - DRG coding determination and required corrections To: Health Information Management / Medical Records Department We audited the clinical documentation and coding for inpatient claim MR_01 (admit 2026-01-06, transfer 2026-04-11). The record supports high-acuity sepsis from community-acquired pneumonia with complications including ARDS, acute respiratory failure, renal injury requiring RRT, ventilator-associated pneumonia, ICU-acquired weakness, and catheter-associated right internal jugular DVT. Based on the three-way review of the billed codes, the medical record, and the applicable coding policy criteria, we made the following finding and corrections: Finding (summary): 1) The diagnosis I21.4 (NSTEMI) is not supported by the medical record as required by the AMI coding policy (no provider-documented AMI and no documented troponin rise/fall meeting the policy's AMI criteria). Therefore I21.4 is removed from the final diagnosis list. 2) The diagnosis J95.851 (ventilator-associated pneumonia) is supported by clinical documentation, but was assigned an incorrect POA flag and severity tier on the billed claim. Policy requires J95.851 to be POA = N (hospital-acquired) and it is an MCC; correct the POA to N and the severity to MCC. 3) The status code Z99.2 (dependence on renal dialysis) is unsupported at discharge/transfer: the discharge/transfer documentation states renal recovery and that hemodialysis was discontinued. Accordingly, Z99.2 is removed from the final diagnosis list. Basis (specific clinical and policy points relied upon): - Provider documentation and microbiology support organism-specific sepsis due to Streptococcus pneumoniae (Admission blood cultures grew Streptococcus pneumoniae), and the record documents septic shock with lactate >2 mmol/L and vasopressor therapy - supporting A40.3 and R65.21 per the sepsis policy. (See attached citations.) - VAP developed during the hospitalization (documented as day-6 VAP, ICU notes and ID consult), which by definition is hospital-acquired and must carry POA = N; policy explicitly characterizes J95.851 as an MCC. The claim currently shows J95.851 POA=Y and CC - those flags are incorrect and must be corrected. - Cardiology documentation confirms new atrial fibrillation but does not document AMI; AMI coding policy requires a documented troponin rise/fall and provider diagnosis of AMI. As no provider attests to AMI in the chart, I21.4 must be removed. - Discharge documentation states hemodialysis was discontinued and renal function recovered; Z99.2 (dependence on dialysis) is therefore not supported at discharge and must be removed. Correction being made (claim-level): - Principal diagnosis retained as A40.3 - Sepsis due to Streptococcus pneumoniae (position 1). R65.21 retained as supporting severe sepsis/septic shock. - Remove I21.4 (NSTEMI) from the billed diagnosis list. - Remove Z99.2 (Dependence on renal dialysis) from the billed diagnosis list. - Correct J95.851 to POA = N and severity = MCC (code remains). - All billed ICD-10-PCS procedures (endotracheal intubation, central venous device insertions, monitoring device insertions, bronchoscopy, tracheostomy, PEG placement, prolonged ventilation >96 hours, and dialysis procedure codes for CRRT/HD) are supported by the operative/procedure and consult notes and remain billed. Action requested: Please update the claim to reflect the removals and POA/severity corrections above. If you disagree with removal of I21.4 or Z99.2, please provide the specific provider-authored documentation supporting those codes (explicit provider diagnosis of AMI with associated troponin rise/fall per institutional assay reference or documentation that the patient remained dialysis-dependent at discharge). Sincerely, Clinical Coding Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.052098,
+    "time_to_run_seconds": 181.575,
+    "retrieval_seconds": 42.577,
+    "retrieval_turns": 2,
+    "judge_seconds": 138.998,
+    "total_cost_per_claim_usd": 30.582098,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.052098
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), p. 770",
+      "role": "supports billed code",
+      "excerpt": "In the ED the patient met criteria for septic shock with a lactate of 5.1 mmol/L that failed to clear after a 30 mL/kg balanced crystalloid bolus. Given profound hypoxemic respiratory failure and depressed mental status the patient underwent rapid-sequence intubation, and broad-spectrum antimicrobials and vasopressor support were initiated."
+    },
+    {
+      "citation": "Infectious Diseases Consultation, p. 139",
+      "role": "supports billed code",
+      "excerpt": "Admission blood cultures grew Streptococcus pneumoniae (now cleared); BAL pending."
+    },
+    {
+      "citation": "Policy Documents/DRG/Sepsis and Septic Shock.docx, Validation Criteria \u007f ICD-10-CM Organism-Specific Sepsis Code Selection Guide",
+      "role": "supports billed code",
+      "excerpt": "Identified Organism: Streptococcus pneumoniae; ICD-10-CM Sepsis Code: A40.3; Additional Organism Code Needed?: No - organism embedded in code; CC/MCC Status: MCC"
+    },
+    {
+      "citation": "Policy Documents/DRG/Sepsis and Septic Shock.docx, Validation Criteria \u007f Medical - Septic Shock Confirmed on Admission Pathway",
+      "role": "supports billed code",
+      "excerpt": "2. Criterion 2 - Vasopressor Administration Documented[1]: At least ONE vasopressor agent documented in the medication administration record (MAR) or ICU flowsheet for hemodynamic support in the context of sepsis:"
+    },
+    {
+      "citation": "Infectious Diseases Consultation, p. 139",
+      "role": "contradicts billed code",
+      "excerpt": "Severe CAP complicated by day-6 VAP."
+    },
+    {
+      "citation": "Policy Documents/DRG/Ventilator-Associated Pneumonia.docx, Scope / VAP POA Indicator and Quality Reporting Implications",
+      "role": "contradicts billed code",
+      "excerpt": "J95.851 should always carry POA = N as it is a hospital-acquired condition by definition."
+    },
+    {
+      "citation": "Critical Care Progress Note, p. 139",
+      "role": "supports billed code",
+      "excerpt": "Interval: fever recrudescence, rising WBC, purulent secretions and new right infiltrate - VAP suspected; antimicrobials broadened per ID"
+    },
+    {
+      "citation": "Cardiology Consultation, p. 639",
+      "role": "contradicts billed code",
+      "excerpt": "Assessment New AF with RVR in the setting of sepsis, catecholamines, and electrolyte shifts; preserved ejection fraction on bedside echo. Likely secondary/reversible."
+    },
+    {
+      "citation": "Policy Documents/DRG/Acute Myocardial Infarction.docx, Validation Criteria \u007f Medical (Spontaneous AMI - Type 1 and Type 2) Pathway",
+      "role": "contradicts billed code",
+      "excerpt": "1. Criterion 1 - Troponin Rise/Fall Pattern[1]: Detection of a rise and/or fall of cardiac troponin values with at least one value above the 99th percentile upper reference limit (URL) of the reference population, documented by serial cardiac biomarker measurements in the medical record laboratory results."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, p. 818",
+      "role": "contradicts billed code",
+      "excerpt": "Renal function recovered and hemodialysis was discontinued;"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

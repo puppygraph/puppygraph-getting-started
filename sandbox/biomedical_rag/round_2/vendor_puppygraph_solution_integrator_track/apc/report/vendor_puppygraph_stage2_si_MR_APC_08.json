@@ -1,0 +1,133 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "APC",
+  "claim_id": "MR_APC_08",
+  "encounter_information": {
+    "claim_number": "APC-2026-30442",
+    "payer": "Meridian Health Plan",
+    "dates_of_service": "2026-03-17",
+    "facility_pos": "Riverside Community Hospital - Outpatient Procedures Clinic",
+    "attending_provider": "Dr. Aaron Kessler, MD",
+    "patient": "Brenda Kowalski \u2014 MRN: MRN-2245173",
+    "medical_record": "MR_APC_04.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "cpt_hcpcs": "17110",
+      "mod": null,
+      "description": "Destruction of benign lesion(s)",
+      "si": "T",
+      "apc": "5051",
+      "rw": 2.0,
+      "opps_rate": 560.0,
+      "billed_charge": 420.0
+    },
+    {
+      "cpt_hcpcs": "99213",
+      "mod": "25",
+      "description": "Office/outpatient visit, established patient, low-to-moderate complexity",
+      "si": "Q3",
+      "apc": "5012",
+      "rw": 1.25,
+      "opps_rate": 92.0,
+      "billed_charge": 165.0
+    }
+  ],
+  "total_billed_charges": 585.0,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_cpt_hcpcs": "17110",
+      "determination": "No Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.4,
+      "confidence_basis": "5/6 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Intraoperative Record, p. 22-24']."
+    },
+    {
+      "line": 2,
+      "billed_cpt_hcpcs": "99213-25",
+      "determination": "Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.8,
+      "confidence_basis": "All 4 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": "17110",
+  "adjusted_apc_set": "5051",
+  "system_note": "Claim APC-2026-30442 / Patient MRN-2245173 - Billed line 1: CPT 17110 (Destruction of benign lesion[s]), no modifier. Governing-policy lookup returned no is_target policy specifically restricting or redefining CPT 17110; a separate APC concept about modifier -25 was returned but is not a code-specific denial of 17110. The medical record documents the planned procedure (Pre-Operative Assessment), the intraoperative confirmation of the procedure, and a detailed operative note describing the single 0.8 cm seborrheic keratosis that was destroyed by curettage and electrodesiccation, with no specimen submitted (i.e., lesion destroyed in situ). These facts meet the clinical documentation expectations for a minor destruction procedure billed as 17110. Key supporting documentation: Pre-Operative Assessment & Anesthesia Evaluation (planned procedure = CPT 17110) (Pre-Operative Assessment & Anesthesia Evaluation, p. 16-17); Operative Note (procedure performed, lesion size/site, technique: curettage + electrodesiccation) (Operative Note, p. 25-26); Intraoperative Record confirming the correct procedure and that the lesion was destroyed in place (Intraoperative Record, p. 22-24). Therefore the record supports the billed CPT 17110 as submitted. Note: the claim also contains a same-day 99213-25 E/M line; the returned APC concept text about modifier -25 sets requirements for billing a separate E/M on the same day as a minor procedure. That E/M line should be reviewed against that policy separately, but it does not alter the determination for line 1 (17110). Billed line: CPT 99213-25 (Office/outpatient visit, established patient, low-to-moderate complexity, modifier -25) billed same day as CPT 17110 (destruction of benign lesion). Governing policy (APC-08) requires that modifier -25 be supported by documentation of a significant, separately identifiable E/M service with a dedicated history/exam and a distinct assessment and plan beyond routine pre-/post-procedure work (APC-08, APC Coding Concept - Modifier -25 on Same-Day E/M with a Minor Procedure). The medical record documents the scheduled minor procedure as the chief complaint and provides focused HPI/exam addressing the lesion (History & Physical Examination, p.4-5; Operative Note, p.25-26). The record does note intermittent chest discomfort in the ROS (History & Physical Examination, p.4-5), but both the Operative Note and the Post-Procedure Progress Note explicitly state that no separate evaluation or workup was performed and that the chest complaint was only noted, not worked up or given a distinct assessment/plan: \"No separate cardiac evaluation, telemetry, or additional history-taking beyond the routine pre-procedure review was performed or documented during this encounter.\" (Operative Note, p.25-26) and \"Chest discomfort mentioned during review of systems was noted but not further worked up today; no EKG, labs, or cardiology referral ordered; patient advised to schedule a separate visit or call if symptoms worsen or new symptoms develop.\" (Physician Progress / Post-Procedure Note, p.38-39). Because the chart lacks documentation of an expanded history/exam targeted to a separate complaint and there is no distinct assessment/plan or actions taken for the chest complaint, the policy criteria for billing 99213 with modifier -25 are not met. Correction: remove the 99213-25 line (no substitute CPT line is appropriate; the procedure CPT 17110 remains supported). Evidence citations: APC-08 policy concept_text; Operative Note p.25-26; History & Physical Examination p.4-5; Physician Progress / Post-Procedure Note p.38-39.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Audit of Claim APC-2026-30442 - Line 2 (CPT 99213-25) Dear Provider, We completed an audit of the above-referenced claim/line. You billed CPT 99213 with modifier -25 on 03/12/2026 in addition to CPT 17110 (destruction of benign lesion). The applicable policy (APC-08, \"APC Coding Concept - Modifier -25 on Same-Day E/M with a Minor Procedure\") requires documentation of a significant, separately identifiable E/M service above and beyond the routine pre-/post-procedure evaluation. Specifically, supporting documentation must show a dedicated history and exam addressing an additional complaint and a distinct assessment and plan (for example, diagnostic testing ordered, a referral placed, or treatment initiated) for that complaint. The medical record does not meet these requirements. The operative and post-procedure notes document that the visit was for a scheduled destruction of a single benign seborrheic keratosis and that no separate evaluation was performed for the incidental chest symptom: \"No separate cardiac evaluation, telemetry, or additional history-taking beyond the routine pre-procedure review was performed or documented during this encounter.\" (Operative Note, 03/12/2026). The post-procedure note further documents: \"Chest discomfort mentioned during review of systems was noted but not further worked up today; no EKG, labs, or cardiology referral ordered; patient advised to schedule a separate visit or call if symptoms worsen or new symptoms develop.\" (Physician Progress / Post-Procedure Note, 03/12/2026). Under APC-08, documentation that a complaint appears only within a review-of-systems or brief notation, without an expanded history/exam and a distinct assessment/plan, does not support separate billing with modifier -25. Accordingly, we are making the following correction: removal of CPT 99213-25 from this date of service. The procedure CPT 17110 remains supported by the record and will be billed as documented. If you disagree with this determination, please submit documentation demonstrating a separately identifiable E/M service on that date (for example, a dedicated history/exam and a distinct assessment/plan or orders/referrals tied to the additional complaint) for reconsideration. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.04574,
+    "time_to_run_seconds": 114.248,
+    "retrieval_seconds": 24.279,
+    "judge_seconds": 89.97,
+    "retrieval_turns": 12,
+    "total_cost_per_claim_usd": 30.57574,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.04574
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Pre-Operative Assessment & Anesthesia Evaluation, p. 16-17",
+      "role": "supports billed code",
+      "excerpt": "Planned Procedure: Destruction of benign skin lesion, mid-back (CPT 17110)"
+    },
+    {
+      "citation": "Operative Note, p. 25-26",
+      "role": "supports billed code",
+      "excerpt": "PROCEDURE PERFORMED: Destruction of benign skin lesion, mid-back (CPT 17110)"
+    },
+    {
+      "citation": "Operative Note, p. 25-26",
+      "role": "supports billed code",
+      "excerpt": "The target lesion was identified as a 0.8 cm raised, verrucous, hyperpigmented lesion consistent with the previously biopsied benign seborrheic keratosis, located just lateral to the T7 spinous process."
+    },
+    {
+      "citation": "Operative Note, p. 25-26",
+      "role": "supports billed code",
+      "excerpt": "Once adequate anesthesia was confirmed by lack of response to light touch, the lesion was destroyed using a combination of sharp curettage and light electrodesiccation with the hyfrecator to achieve hemostasis at the base."
+    },
+    {
+      "citation": "Intraoperative Record, p. 22-24",
+      "role": "supports billed code",
+      "excerpt": "Correct Procedure Confirmed | Destruction of benign skin lesion, mid-back (CPT 17110) | Yes"
+    },
+    {
+      "citation": "Intraoperative Record, p. 22-24",
+      "role": "supports billed code",
+      "excerpt": "Specimen confirmed | None submitted to pathology; lesion was destroyed in place and not sent for separate histologic analysis, as benign histology was already confirmed by biopsy six weeks prior."
+    },
+    {
+      "citation": "APC-08, APC Coding Concept - Modifier -25 on Same-Day E/M with a Minor Procedure",
+      "role": "contradicts billed code",
+      "excerpt": "99213-25 - Office/outpatient visit, established patient, low-to-moderate complexity, billed with modifier -25 same day as a minor procedure Modifier -25 requires a significant, separately identifiable E/M service above and beyond the usual pre- and post-procedure work already bundled into a scheduled minor procedure. Supporting documentation should include a dedicated history and exam addressing the additional complaint and, critically, a distinct assessment and plan (e.g., diagnostic workup ordered, referral made, or treatment initiated) for that complaint. A complaint that appears only within a review-of-systems checklist, without an expanded history, a targeted exam, or any resulting plan, does not meet the threshold; the pre-procedure visit's routine evaluation of the scheduled complaint is not, by itself, a separately billable E/M service."
+    },
+    {
+      "citation": "Operative Note, p.25-26",
+      "role": "contradicts billed code",
+      "excerpt": "No separate cardiac evaluation, telemetry, or additional history-taking beyond the routine pre-procedure review was performed or documented during this encounter."
+    },
+    {
+      "citation": "Physician Progress / Post-Procedure Note, p.38-39",
+      "role": "contradicts billed code",
+      "excerpt": "Chest discomfort mentioned during review of systems was noted but not further worked up today; no EKG, labs, or cardiology referral ordered; patient advised to schedule a separate visit or call if symptoms worsen or new symptoms develop."
+    },
+    {
+      "citation": "History & Physical Examination, p.4-5",
+      "role": "contradicts billed code",
+      "excerpt": "Cardiovascular: Patient mentions occasional intermittent chest discomfort over the past month, non-exertional, resolves spontaneously; denies palpitations, diaphoresis, or radiation."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

@@ -1,0 +1,335 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_10",
+  "encounter_information": {
+    "claim_number": "MR_10",
+    "payer": "Lake Ontario Health Cooperative",
+    "dates_of_service": "2026-04-15\u20132026-08-15",
+    "facility_pos": "Lake Ontario Regional Medical Center",
+    "attending_provider": null,
+    "patient": "Dmitri Voronin \u2014 MRN: MRN-2384917",
+    "medical_record": "MR_10.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I21.09",
+      "description": "ST elevation myocardial infarction involving other coronary artery of anterior wall",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R57.0",
+      "description": "Cardiogenic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I50.23",
+      "description": "Acute on chronic systolic (congestive) heart failure",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I46.9",
+      "description": "Cardiac arrest, cause unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I48.91",
+      "description": "Unspecified atrial fibrillation",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.89XA",
+      "description": "Other complications of procedures, not elsewhere classified, initial encounter",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.4XXA",
+      "description": "Infection following a procedure, initial encounter",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B95.61",
+      "description": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.401",
+      "description": "Acute embolism and thrombosis of unspecified deep veins of right lower extremity",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z66",
+      "description": "Do not resuscitate",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I12.0",
+      "description": "Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "A41.9",
+      "description": "Sepsis, unspecified organism",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02703DZ",
+      "description": "Dilation of coronary artery, one site with drug-eluting intraluminal device, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HA3RZ",
+      "description": "Insertion of short-term external heart assist system into heart, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HW3TZ",
+      "description": "Insertion of intraluminal device into thoracic aorta, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "021009W",
+      "description": "Bypass coronary artery, one site from aorta with autologous venous tissue, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "021109W",
+      "description": "Bypass coronary artery, two sites from aorta with autologous venous tissue, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "06BQ0ZZ",
+      "description": "Excision of right saphenous vein, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1221Z",
+      "description": "Performance of cardiac output, continuous"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Transfer to Cardiac Rehabilitation Facility",
+      "revised_diagnosis_set": [
+        "I21.09",
+        "R57.0",
+        "I50.23",
+        "J96.01",
+        "I46.9",
+        "N17.9",
+        "I48.91",
+        "T81.89XA",
+        "T81.4XXA",
+        "A41.01",
+        "R65.21",
+        "I82.401",
+        "I25.10",
+        "E11.65",
+        "I10",
+        "E78.5",
+        "Z66"
+      ],
+      "revised_procedure_set": [
+        "02703DZ",
+        "02HA3RZ",
+        "02HW3TZ",
+        "021009W",
+        "021109W",
+        "06BQ0ZZ",
+        "0BH17EZ",
+        "5A1D90Z",
+        "5A1221Z"
+      ],
+      "confidence": 0.4,
+      "confidence_basis": "10/13 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['History & Physical (Admitting), History & Physical, pp. 668-224', 'Critical Care Progress Note, Critical Care Progress Note, pp. 224-568', 'Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 936-937']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Principal diagnosis I21.09 (STEMI) with multiple MCC/CCs including R57.0 (cardiogenic shock, MCC), J96.01 (acute respiratory failure w/ hypoxia, MCC), A41.9 (sepsis, MCC) and I12.0 (hypertensive CKD stage 5, MCC). Procedures include PCI (02703DZ), Impella/IABP (02HA3RZ, 02HW3TZ), CABG codes (021009W, 021109W) and prolonged mechanical ventilation (5A1D90Z). What the medical record documents (line-level evidence): - STEMI with cardiogenic shock present on arrival: H&P and consults document hypotension (BP 84/54), elevated lactate, and immediate use of mechanical circulatory support (Impella CP and IABP) with vasopressors/inotropes (norepinephrine, dobutamine) (History & Physical (Admitting), History & Physical, pp. 668-224; Interventional Cardiology Consultation, Interventional Cardiology Consultation, p. 568-483). Evidence: ABG/SpO2 and lactate consistent with shock and hypoxemia (History & Physical (Admitting), History & Physical, pp. 668-224; Critical Care Progress Note, Critical Care Progress Note, pp. 224-568). - Acute respiratory failure with hypoxia and invasive mechanical ventilation is documented on admission and ICU notes, with ABG/SpO2 values and requirement for mechanical ventilation (History & Physical (Admitting), History & Physical, pp. 668-224; Critical Care Progress Note, Critical Care Progress Note, pp. 224-568). Per policy, intubation/ventilation attributed to respiratory failure satisfies objective hypoxemia criteria (policy excerpt cited below). - Septic shock / sepsis is documented in the problem list with onset 04/15/2026 and objective data consistent with severe infection (very high procalcitonin, elevated lactate, WBC) (Hospital Problem List, Hospital Problem List, p. 424; Critical Care Progress Note, Critical Care Progress Note, pp. 224-568). - Cardiac arrest (pulseless VT) occurred on ICU day 4 (post-admission) with ROSC; documentation places the arrest during the hospitalization (Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 936-937). - Acute kidney injury is described as contrast-induced AKI (Nephrology Consultation, Nephrology Consultation, p. 351) with recovery; there is no contemporaneous documentation of pre-existing hypertensive CKD stage 5 or ESRD that would support I12.0 as coded. Policy requirements (selected excerpts): - Cardiogenic shock (R57.0) requires provider documentation plus hemodynamic instability or MCS; the policy permits a presumption of hemodynamic criteria when mechanical circulatory support is initiated and attributed to cardiac cause (Policy Documents/DRG/Cardiogenic Shock.docx, Validation Criteria). - Acute hypoxemic respiratory failure (J96.01) requires provider documentation and objective hypoxemia; the policy presumes objective hypoxemia when invasive mechanical ventilation is initiated and attributed to respiratory failure (Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Validation Criteria). - Sepsis coding (A41.-) requires provider documentation of sepsis; when septic shock is present the policy requires reporting R65.21 (severe sepsis with septic shock) in addition to the sepsis code (Policy Documents/DRG/Sepsis and Septic Shock.docx, Validation Criteria). Auditor assessment and required corrections: 1. R57.0 (cardiogenic shock) - Supported. Multiple provider notes document cardiogenic shock and placement of mechanical circulatory support for cardiac pump failure (Impella CP + IABP) with vasopressors and elevated lactate; policy presumption for MCS applies. Leave R57.0 on the record. - Evidence: H&P Plan (Impella/IABP, norepinephrine/dobutamine) and Interventional Cardiology consult documenting \"Cardiogenic shock requiring Impella CP and IABP support.\" (History & Physical (Admitting), History & Physical, pp. 668-224; Interventional Cardiology Consultation, Interventional Cardiology Consultation, p. 568-483). 2. J96.01 (acute respiratory failure w/ hypoxia) - Supported. Admission ABG/SpO2 values and documented invasive mechanical ventilation meet policy criteria (presumption applies). Leave J96.01. - Evidence: ABG PaO2 62 on NRB and SpO2 88%; notes document intubation and mechanical ventilation (History & Physical (Admitting), History & Physical, pp. 668-224; Critical Care Progress Note, Critical Care Progress Note, pp. 224-568). 3. A41.9 (sepsis, unspecified) and B95.61 (MSSA) - Documentation shows a superficial sternal wound infection with methicillin-susceptible S. aureus and a documented septic shock problem entry (Hospital Problem List) with elevated lactate and vasopressor use. Per sepsis coding guidance, when organism is identified and sepsis/septic shock is present the correct coding is the organism-specific A41.- code (A41.01 for MSSA) and R65.21 should be coded when septic shock is documented. The claim billed A41.9 + B95.61 but did not include R65.21; this undercodes the septic shock severity and miscoded organism specificity. Action: replace A41.9 + B95.61 with organism-specific sepsis A41.01 and add R65.21 (severe sepsis with septic shock) as an additional diagnosis. - Evidence: Hospital Problem List documents \"Septic shock | R65.21 | 04/15/2026\" and Discharge/Transfer Summary documents \"superficial sternal wound infection (MSSA) treated with cefazolin\" (Hospital Problem List, Hospital Problem List, p. 424; Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 936-937). 4. I46.9 (cardiac arrest) - Supported as a diagnosis (arrest occurred), but the claim marks POA = Y. Documentation places the arrest on ICU day 4 (after admission). POA should be changed to N (not present on admission). Action: correct POA indicator for I46.9 to N. - Evidence: Discharge / Transfer Summary: \"pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS\" (Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 936-937). 5. I12.0 (hypertensive CKD with stage 5 / ESRD) - Not supported. Nephrology consultation and problem list document contrast-induced AKI (N17.9) with recovery; there is no documentation of pre-existing stage 5 CKD or ESRD. Action: remove I12.0 from the diagnosis list; retain N17.9 (AKI) as documented. - Evidence: Nephrology Consultation: \"KDIGO stage 2 AKI from iodinated contrast exposure... Creatinine peak 2.8...\" and Hospital Problem List documents \"AKI requiring RRT | N17.9 | 04/17/2026 | Resolved\" (Nephrology Consultation, Nephrology Consultation, p. 351; Hospital Problem List, Hospital Problem List, p. 424). 6. Procedures: The major procedures billed (PCI with DES, mechanical circulatory support insertion, IABP, CABG with saphenous vein harvest, endotracheal intubation and prolonged ventilation, and continuous cardiac output monitoring) are corroborated by procedure and operative notes, device placement documentation, ventilation/ventilator flowsheets, and the discharge summary. Leave procedure set as billed unless ICD-10-PCS coding validation by coding team identifies laterality/site specificity issues. Correction summary (claim-level): - Remove I12.0 (hypertensive CKD stage 5 / ESRD) - unsupported chronic ESRD documentation. - Replace A41.9 + B95.61 with A41.01 (sepsis due to MSSA) and add R65.21 (severe sepsis with septic shock) to reflect documented septic shock and identified organism (this upgrades sepsis severity consistent with documentation). - Correct POA for I46.9 (cardiac arrest) to N (occurred during hospitalization on ICU day 4). Revised diagnosis and procedure lists are provided below (complete corrected lists). Discharge disposition (as documented) is a transfer to a cardiac rehabilitation facility; see citation below. Key clinical citations (selected) and rationale are listed in evidence_cited for line-by-line auditability.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "To: Health Information Management / Provider Re: Audit determination for inpatient claim MR_10 (admit 04/15/2026) We audited the medical record and claim for the 04/15/2026 admission. The medical record documents an acute anterior ST-elevation myocardial infarction (STEMI) with cardiogenic shock and multi-organ complications, and supports major procedure claims (PCI, mechanical circulatory support, CABG, prolonged mechanical ventilation). However, our three-way review against governing coding policy identified the following required corrections that change the claim-level code set and severity reporting. Findings and Basis: 1) Missing/incorrect sepsis coding (Finding): The chart documents septic shock on admission with objective evidence (elevated lactate, vasopressor use, markedly elevated procalcitonin) and an identified organism (superficial sternal wound infection due to methicillin-susceptible Staphylococcus aureus). Per sepsis coding guidance, when septic shock is documented, R65.21 (severe sepsis with septic shock) must be reported in addition to the sepsis code and, when organism is identified, the organism-specific A41.- code should be used rather than A41.9. The claim billed A41.9 and B95.61 but did not include R65.21; therefore the claim underreports sepsis severity and mis-specifies the organism coding. (See Hospital Problem List and Discharge Summary evidence.) 2) Incorrect POA for cardiac arrest (Finding): The record documents a pulseless ventricular tachycardia arrest on ICU day 4 with ROSC. This event occurred during the admission, not on presentation; the claim lists I46.9 as POA = Y. The POA indicator should be corrected to N. (See Discharge / Transfer Summary evidence.) 3) Unsupported chronic kidney disease stage 5 (Finding): I12.0 (hypertensive CKD with stage 5/ESRD) is billed as an MCC but the nephrology notes and problem list document an acute, contrast-induced AKI with recovery (N17.9). There is no documentation of pre-existing stage 5 CKD or chronic dialysis dependence to justify I12.0. I12.0 should be removed. (See Nephrology Consultation and Hospital Problem List evidence.) Corrections applied to the claim (claim-level correction): - Principal diagnosis remains I21.09 (STEMI) - supported by history, ECG, troponin and acute management. - Add R65.21 (severe sepsis with septic shock) as an additional diagnosis and replace A41.9/B95.61 with A41.01 (sepsis due to MSSA) based on provider documentation of MSSA wound infection and septic shock. - Change POA indicator for I46.9 (cardiac arrest) to N. - Remove I12.0 (hypertensive chronic kidney disease stage 5 / ESRD) - retain N17.9 for documented contrast-induced AKI. Corrective action requested: Please update the coded diagnosis set to reflect the above (add R65.21; replace A41.9/B95.61 with A41.01; remove I12.0) and amend the POA indicator for I46.9 to N. If your team believes alternative coding is appropriate based on chart documentation not included in our audit dataset, please provide the source clinician documentation (signed progress note, operative note, or problem-list entry) that substantiates pre-existing CKD stage 5 or that documents sepsis coding differently. Sincerely, Senior Clinical Claims Auditor (Documentation and policy citations supporting this determination are attached in the audit file.)",
+  "metrics": {
+    "cost_of_processing_usd": 0.060836,
+    "time_to_run_seconds": 175.793,
+    "retrieval_seconds": 32.21,
+    "retrieval_turns": 5,
+    "judge_seconds": 143.583,
+    "total_cost_per_claim_usd": 30.590836,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.060836
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), History & Physical, pp. 668-224",
+      "role": "supports billed code",
+      "excerpt": "Plan 2. Cardiogenic shock: Impella CP + IABP support; inotropes (dobutamine); norepinephrine for MAP; monitor mixed venous."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, pp. 668-224",
+      "role": "supports billed code",
+      "excerpt": "ABG pH 7.28 / PaCO2 34 / PaO2 62 on NRB 15L."
+    },
+    {
+      "citation": "Interventional Cardiology Consultation, Interventional Cardiology Consultation, p. 568-483",
+      "role": "supports billed code",
+      "excerpt": "Consultation requested by the primary care team. Chart reviewed and patient examined at the bedside. Acute anterior STEMI with hemodynamic collapse. TIMI 2 flow post-PCI to proximal LAD; residual multivessel disease in circumflex and RCA territories. Cardiogenic shock requiring Impella CP and IABP support."
+    },
+    {
+      "citation": "Critical Care Progress Note, Critical Care Progress Note, pp. 224-568",
+      "role": "supports billed code",
+      "excerpt": "ABG (02:00): pH 7.29 / PaCO2 43 / PaO2 60 / HCO3 19; Lac 5.4 mmol/L; PCT 27.7 ng/mL; Troponin 0.09 ng/mL."
+    },
+    {
+      "citation": "Hospital Problem List, Hospital Problem List, p. 424",
+      "role": "contradicts billed code",
+      "excerpt": "Septic shock | R65.21 | 04/15/2026 | Resolved | Off vasopressors day 10"
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 936-937",
+      "role": "contradicts billed code",
+      "excerpt": "The course was complicated by contrast-induced acute kidney injury (KDIGO 2, non-dialysis), pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS and targeted temperature management, and cardiogenic shock refractory to medical therapy."
+    },
+    {
+      "citation": "Nephrology Consultation, Nephrology Consultation, p. 351",
+      "role": "contradicts billed code",
+      "excerpt": "KDIGO stage 2 AKI from iodinated contrast exposure in setting of cardiogenic shock and poor perfusion. Creatinine peak 2.8; oliguric with adequate response to careful diuresis."
+    },
+    {
+      "citation": "Hospital Problem List, Hospital Problem List, p. 424",
+      "role": "supports billed code",
+      "excerpt": "AKI requiring RRT | N17.9 | 04/17/2026 | Resolved | Renal recovery day 24; HD DC'd"
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 936-937",
+      "role": "supports billed code",
+      "excerpt": "superficial sternal wound infection (MSSA) treated with cefazolin and wound VAC therapy"
+    },
+    {
+      "citation": "Transfer Instructions, Transfer Instructions, pp. 525-933",
+      "role": "supports billed code",
+      "excerpt": "Destination: Cardiac Rehabilitation Facility"
+    },
+    {
+      "citation": "Policy Documents/DRG/Cardiogenic Shock.docx, Validation Criteria",
+      "role": "supports billed code",
+      "excerpt": "[1] Presumption rule: When the medical record documents initiation of mechanical circulatory support (intra-aortic balloon pump, Impella device, or venoarterial ECMO) with provider attribution to hemodynamic instability from cardiac cause, Criterion 2 is presumed satisfied even if the blood pressure thresholds are not explicitly documented as sustained below 90 mmHg, provided the provider documents cardiogenic shock as the indication for device placement."
+    },
+    {
+      "citation": "Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Validation Criteria",
+      "role": "supports billed code",
+      "excerpt": "[1] Presumption rule: When the provider documents initiation of invasive mechanical ventilation and attributes the need for ventilation to acute respiratory failure, Criterion 2 (objective hypoxemia measurement) is presumed satisfied even if a pre-intubation room-air ABG is not documented."
+    },
+    {
+      "citation": "Policy Documents/DRG/Sepsis and Septic Shock.docx, Validation Criteria \u001a Medical - Septic Shock Confirmed on Admission Pathway",
+      "role": "contradicts billed code",
+      "excerpt": "When the patient is admitted in septic shock requiring vasopressors (see R65.21), the documentation of vasopressor requirement and lactate > 2 mmol/L after volume resuscitation is sufficient to satisfy Criterion 2 regardless of whether SIRS criteria are individually documented, as septic shock is a subset of sepsis with hemodynamic criteria meeting the Sepsis-3 definition. In this scenario, both the sepsis code (A40.-, A41.-) and severe sepsis with septic shock (R65.21) should be reported."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

@@ -1,0 +1,158 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "claim_id": "RM_01",
+  "encounter_information": {
+    "claim_number": "RM_01",
+    "payer": "Cascade Health PPO",
+    "dates_of_service": "2026-05-02\u20132026-05-15",
+    "facility_pos": "Cascadia Regional Medical Center",
+    "attending_provider": "Dr. Elena Whitfield, MD (Critical Care Medicine)",
+    "patient": "Elena Papadopoulos \u2014 MRN: MRN-2093471",
+    "medical_record": "RM_01.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J15.9",
+      "description": "Pneumonia due to other specified organism",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N18.0",
+      "description": "Chronic kidney disease, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I48.91",
+      "description": "Unspecified atrial fibrillation",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.2",
+      "description": "Dependence on renal dialysis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.40",
+      "description": "Encephalopathy, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1522F",
+      "description": "Performance of urinary filtration, intermittent, less than 6 hr/day"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "finding_reason": "Same or related condition",
+      "confidence": 0.4,
+      "confidence_basis": "5/6 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['get_index_claim result (index_claim_number MR_01)']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Reviewed Cascade Health PPO Readmission Review Guideline and the index (MR_01) documentation. Cascade's guideline applies a 30-day review window (\"30 days from prior discharge\") and asks whether the readmission diagnosis is the same as, or clinically related to, the condition treated during the prior stay (B1). The readmission falls within the payer's review window (gap_days = 21). The readmission principal diagnosis is J96.01 (acute respiratory failure with hypoxia) and that exact code was also billed on the index stay. Index narrative documents ongoing ventilator-dependent respiratory failure with tracheostomy and active plans for trach-collar weaning at discharge (Admit: 2026-01-06 Transfer: 2026-04-11; Discharge diagnoses include \"ventilator-dependent respiratory failure with tracheostomy (weaning)\"). Per Cascade policy B1, a readmission where the readmission diagnosis is the same as or clinically related to the prior stay qualifies as a Finding. Section C exclusions were reviewed (direct transfers, scheduled readmissions, LTAC/SNF/IRF admissions, etc.); none of those exclusions are documented in the retrieved records for this readmission. Evidence used: Cascade guideline review-window and B1 criterion (Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, positions 4 and 12), the get_index_claim linkage note showing the readmission principal diagnosis is also billed on the index stay (get_index_claim result for MR_01), and the index Discharge / Transfer Summary documenting persistent ventilator-dependent respiratory failure and the 04/11/2026 transfer. Therefore, the readmission is a Finding under the payer's \"same or related condition\" criterion (readmission related to the index respiratory failure).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Readmission review for RM_01 (prior admission MR_01) We completed a readmission review per Cascade Health PPO's Readmission Review Guideline (effective 03/01/2024). Cascade's guideline applies a 30-day review window from the prior discharge. The readmission for RM_01 occurred 21 days after discharge from MR_01 and is therefore within the 30-day review window. Finding: This readmission is related to the index admission and qualifies as a Finding under the guideline's \"same or related condition\" criterion. Basis: The readmission principal diagnosis is J96.01 (acute respiratory failure with hypoxia), which is also billed on the index stay (MR_01). The index discharge summary documents ongoing ventilator-dependent respiratory failure with tracheostomy and active weaning plans at the time of transfer on 04/11/2026. Cascade's guideline (Section B1) explicitly states that when the readmission diagnosis is the same as, or clinically related to, the condition treated during the prior stay, the readmission qualifies as a Finding. No exclusions (for example, a documented direct transfer or scheduled readmission) were identified in the records retrieved for this review. Correction: Based on this Finding, the readmission RM_01 is determined to be clinically related to the prior index stay MR_01 under Cascade Health PPO policy and will be processed per the payer's readmission adjustment rules. If you disagree with this determination, please submit any additional supporting clinical documentation (for example, the readmission admission note or other contemporaneous records demonstrating an unrelated new acute event) for reconsideration. Sincerely, Clinical Readmission Auditor",
+  "metrics": {
+    "cost_of_processing_usd": 0.021881,
+    "time_to_run_seconds": 75.155,
+    "retrieval_seconds": 9.241,
+    "retrieval_turns": 4,
+    "judge_seconds": 65.914,
+    "total_cost_per_claim_usd": 30.551881,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.021881
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, Review Window, position 4",
+      "role": "supports billed code",
+      "excerpt": "30 days from prior discharge"
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, position 12",
+      "role": "supports billed code",
+      "excerpt": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2."
+    },
+    {
+      "citation": "get_index_claim result (index_claim_number MR_01)",
+      "role": "supports billed code",
+      "excerpt": "The readmission's OWN PRINCIPAL diagnosis (J96.01 - Acute respiratory failure with hypoxia) is ALSO billed on the index stay - this is the strongest structured signal available, worth investigating first."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, p. 818-819",
+      "role": "supports billed code",
+      "excerpt": "Admit: 2026-01-06 Transfer: 2026-04-11"
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, p. 818-819",
+      "role": "supports billed code",
+      "excerpt": "Discharge / Transfer Diagnoses Resolving sepsis and pneumonia; ventilator-dependent respiratory failure with tracheostomy (weaning); resolved ventilator-associated pneumonia (Pseudomonas); acute kidney injury with renal recovery, hemodialysis discontinued; resolved atrial fibrillation;"
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, position 21",
+      "role": "supports billed code",
+      "excerpt": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

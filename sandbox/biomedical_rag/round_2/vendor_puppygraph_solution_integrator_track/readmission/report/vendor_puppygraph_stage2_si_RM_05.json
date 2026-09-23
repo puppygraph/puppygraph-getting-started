@@ -1,0 +1,142 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "claim_id": "RM_05",
+  "encounter_information": {
+    "claim_number": "RM_05",
+    "payer": "Lone Star Health Advantage",
+    "dates_of_service": "2026-06-11\u20132026-06-21",
+    "facility_pos": "St. Ambrose Mercy Health System",
+    "attending_provider": "Dr. Anisha Chen, MD (Critical Care Medicine)",
+    "patient": "Rafael E. Alvarez \u2014 MRN: MRN-7523061",
+    "medical_record": "RM_05.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.10",
+      "description": "Type 2 diabetes mellitus with ketoacidosis without coma",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R65.21",
+      "description": "Severe sepsis with septic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "L97.119",
+      "description": "Non-pressure chronic ulcer of right calf, unspecified severity",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "M72.6",
+      "description": "Necrotizing fasciitis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T79.3XXA",
+      "description": "Post-traumatic wound infection, initial encounter",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0JBQXZZ",
+      "description": "Excision of right upper leg subcutaneous tissue and fascia, external approach"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "finding_reason": "Same or related condition; Surgical complication (wound infection)",
+      "confidence": 0.8,
+      "confidence_basis": "All 6 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Reviewed readmission claim RM_05 (admit 06/11/2026) paired with index MR_05 (discharge 06/06/2026). Lone Star Health Advantage's guideline uses a 30-day review window; this readmission occurred 5 days after prior discharge and is therefore in-scope (Policy: \"30 days from prior discharge\"). The readmission principal diagnosis is E11.10 (DKA), which was also billed on the index stay. The medical record explicitly documents the clinical relationship between the two admissions and identifies a wound/graft infection as a complication of the index surgical care: the Discharge Summary states the readmission was for recurrent DKA and a skin graft wound infection that is a complication of prior surgical care. This satisfies Lone Star's relatedness criteria under both the 'same or related condition' and the 'surgical complication' questions (policy text requires documentation that the readmission diagnosis is the same/related or is a complication of prior surgical care). No guideline exclusion applies (exclusions listed do not include this clinical scenario). Therefore, per Lone Star Health Advantage Readmission Review Guideline Section B (questions on same/related condition and surgical complication) the readmission meets criteria for a Finding. Evidence: Lone Star guideline (\"30 days from prior discharge\"; questions on \"same or related condition\" and \"surgical complication\") and the facility Discharge Summary and Discharge / Transfer Summary documenting recurrent DKA and wound infection as a complication of the prior stay (citations below).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: RM_05 (readmission 06/11/2026) paired with index MR_05 (discharge 06/06/2026) Dear Provider, We have completed a readmission review for inpatient claim RM_05 under Lone Star Health Advantage policy. Lone Star Health Advantage's Readmission Review Guideline applies a 30-day review window from prior discharge. Because this readmission occurred within that window, we evaluated clinical relatedness per the payer's criteria. Finding: This readmission is clinically related to the prior stay and is therefore a Finding under Lone Star Health Advantage's Readmission Review Guideline. The determination is based on the following: (1) The readmission principal diagnosis (E11.10, diabetic ketoacidosis) is the same diagnosis billed on the index stay; and (2) the readmission record documents a skin graft wound infection described as a complication of the prior surgical care (index debridement and grafting). Lone Star's guideline explicitly recognizes both 'same or related condition' and 'surgical complication' as criteria that qualify a readmission as a Finding. Basis (policy + clinical documentation relied on): - Policy: Lone Star Health Advantage - Readmission Review Guideline (Review Window: 30 days from prior discharge; criteria include 'The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay' and 'complication of a surgical procedure performed during the prior stay'). - Clinical record: The facility Discharge Summary documents: recurrent DKA as the reason for readmission and explicitly states a skin graft wound infection is a complication of the prior surgical care (index stay MR_05). The Discharge / Transfer Summary documents the hospital course noting readmission for recurrent severe DKA in the setting of insulin non-adherence and associated lower-extremity soft-tissue infection. Correction: Per Lone Star Health Advantage readmission policy, this readmission meets the payer's relatedness criteria and will be processed as a related readmission per the payer's payment rules. If you disagree with this determination, you may submit an appeal with any additional documentation that directly rebuts the clinical linkage between the stays (for example, contemporaneous documentation showing the readmission issue is an entirely new, unrelated event falling within a policy exclusion). Sincerely, Clinical Readmission Auditor (References to the specific policy and clinical notes are included in the auditor system note and evidence list.)",
+  "metrics": {
+    "cost_of_processing_usd": 0.020787,
+    "time_to_run_seconds": 73.158,
+    "retrieval_seconds": 9.198,
+    "retrieval_turns": 4,
+    "judge_seconds": 63.96,
+    "total_cost_per_claim_usd": 30.550787,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.020787
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Lone Star Health Advantage - Readmission Review Guideline.docx, Review Window",
+      "role": "supports billed code",
+      "excerpt": "30 days from prior discharge"
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Lone Star Health Advantage - Readmission Review Guideline.docx, Section B (same/related condition)",
+      "role": "supports billed code",
+      "excerpt": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2."
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Lone Star Health Advantage - Readmission Review Guideline.docx, Section B (surgical complication)",
+      "role": "supports billed code",
+      "excerpt": "Does the documentation support: The readmission reflects a complication of a surgical procedure performed during the prior stay (for example, wound infection, dehiscence, or device malfunction). ____Yes: This readmission qualifies as a Finding under the 'surgical complication' criterion. Continue to Section C. ____No: Continue to question B4."
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Lone Star Health Advantage - Readmission Review Guideline.docx, Section C (exclusions)",
+      "role": "supports billed code",
+      "excerpt": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination."
+    },
+    {
+      "citation": "DISCHARGE SUMMARY, DISCHARGE SUMMARY, pp. 123-124",
+      "role": "supports billed code",
+      "excerpt": "Clinical Relationship: Index admission MR_05 (02/19-06/06/2026): DKA (E11.10) and NSTI right thigh (M72.6) requiring surgical debridements and skin grafting. Readmission RM_05 (06/11-06/21/2026): Recurrent DKA (E11.10) - same principal diagnosis as index admission; skin graft wound infection - complication of prior surgical care. Both admissions share E11.10 as the principal coded diagnosis."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 119-123",
+      "role": "supports billed code",
+      "excerpt": "Hospital Course Rafael E. Alvarez was readmitted with recurrent severe diabetic ketoacidosis in the setting of insulin non-adherence, complicated by cellulitis with a small early soft-tissue abscess of the lower extremity."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

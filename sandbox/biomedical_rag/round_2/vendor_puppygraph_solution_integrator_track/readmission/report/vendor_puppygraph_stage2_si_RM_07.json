@@ -1,0 +1,132 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "claim_id": "RM_07",
+  "encounter_information": {
+    "claim_number": "RM_07",
+    "payer": "Cascade Health PPO",
+    "dates_of_service": "2026-07-09\u20132026-07-19",
+    "facility_pos": "Cascadia Regional Medical Center",
+    "attending_provider": "Dr. Rajiv Menon, MD (Cardiovascular Critical Care)",
+    "patient": "Isabella Chen-Rodriguez \u2014 MRN: MRN-5827194",
+    "medical_record": "RM_07.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I26.99",
+      "description": "Other pulmonary embolism without acute cor pulmonale",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.411",
+      "description": "Acute embolism and thrombosis of right femoral vein",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "D68.51",
+      "description": "Activated protein C resistance",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I50.30",
+      "description": "Unspecified diastolic (congestive) heart failure",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.1",
+      "description": "Anoxic brain damage, not elsewhere classified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z79.01",
+      "description": "Long-term (current) use of anticoagulants",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02CK3ZZ",
+      "description": "Extirpation of matter from right pulmonary artery, percutaneous approach"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "finding_reason": "Same or related condition",
+      "confidence": 0.8,
+      "confidence_basis": "All 4 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Readmission claim RM_07 (admit 07/09/2026, gap_days=5) was reviewed against Cascade Health PPO's Readmission Review Guideline (effective 03/01/2024). Gate: Cascade's review window is \"30 days from prior discharge\" (Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, Review Window:, position 4), and RM_07 occurred within that window (index discharge 07/04/2026 -> readmit 07/09/2026; gap 5 days). Clinical relatedness: the facility discharge summary explicitly documents the relationship between the two stays: \"Clinical Relationship: Index admission MR_07 (03/13-07/04/2026): Massive bilateral PE with cardiac arrest; thrombolysis; IVC filter; activated protein C resistance (D68.51) identified. Readmission RM_07 (07/09-07/19/2026): Recurrent bilateral PE (I26.99) and right femoral DVT (I82.411) - same class of thromboembolic disease as the index admission. Underlying thrombophilia (D68.51) present on both admissions and drives the recurrence.\" (DISCHARGE SUMMARY, DISCHARGE SUMMARY, p. 120-121). Under Cascade's Section B criteria the guideline asks whether \"The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay\" and states that an affirmative answer qualifies as a Finding under the 'same or related condition' criterion (Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, position 12). No Section C exclusion applies: the guideline lists exclusions (direct transfers; scheduled staged care; burn, SNF/LTAC/rehab, AMA discharge, newborn/obstetric, transplant, behavioral health) and instructs that a listed exclusion would produce No Finding (Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, position 21). The medical record does not document any exclusion circumstance (patient discharged home, planned hematology/pulmonology follow-up, not a transfer, not scheduled/staged, not AMA, not transplant/OB/behavioral, etc.; see Discharge / Transfer Summary and Case Management notes: DISCHARGE / TRANSFER SUMMARY, p. 116-120; Case Management Assessment, p. 115). Conclusion: documentation supports that RM_07 is clinically related to index MR_07 under the Cascade Health PPO criterion \"same or related condition\" (recurrent PE/DVT in the same thromboembolic disease process driven by an identified thrombophilia), and no exclusion applies. Finding reason: \"Same or related condition.\" Evidence cited below supports the gate (30-day window), the criterion, and absence of exclusions.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Readmission review of RM_07 (patient Isabella Chen-Rodriguez / MRN MRN-5827194) Dear Provider, We completed a clinical readmission review of inpatient claim RM_07 (admit 07/09/2026) under Cascade Health PPO's Readmission Review Guideline (effective 03/01/2024). This review determines whether the readmission was clinically related to the prior index admission MR_07 (03/13/2026-07/04/2026) and therefore meets the payer's criteria for a readmission Finding. Determination: Finding - Related Readmission (criterion: \"same or related condition\"). Basis for Determination: 1. Review window: Cascade's policy applies to readmissions within \"30 days from prior discharge.\" RM_07 occurred 5 days after the index discharge, which is within the 30-day review window (Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, Review Window: \"30 days from prior discharge\"). 2. Clinical relationship: The facility's Discharge Summary documents the index stay as a massive bilateral pulmonary embolism with cardiac arrest and thrombolysis and documents the readmission as recurrent bilateral PE and right femoral DVT, noting an underlying thrombophilia (activated protein C resistance, D68.51) present on both admissions and driving the recurrence: \"Clinical Relationship: Index admission MR_07 (03/13-07/04/2026): Massive bilateral PE ... Readmission RM_07 (07/09-07/19/2026): Recurrent bilateral PE (I26.99) and right femoral DVT (I82.411) - same class of thromboembolic disease as the index admission. Underlying thrombophilia (D68.51) present on both admissions and drives the recurrence.\" (DISCHARGE SUMMARY, DISCHARGE SUMMARY, p. 120-121). This satisfies Cascade's \"same or related condition\" criterion (Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, position 12). 3. Exclusions: Cascade's guideline lists specific exclusions that would override an otherwise supported criterion (e.g., direct transfers, scheduled staged admissions, burn, SNF/LTAC/rehab, AMA discharge, newborn/OB, transplant, behavioral health). None of those exclusion conditions are documented for RM_07 (see Discharge / Transfer Summary and Case Management notes confirming discharge home and arranged follow-up), so no exclusion applies (Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, position 21). Correction/Action: Based on the above, RM_07 is determined to be clinically related to index MR_07 under Cascade Health PPO's readmission policy (Finding: \"same or related condition\"). Please note this determination for claims adjudication and billing adjustment per Cascade Health PPO policy (e.g., bundling/denial rules as applicable under the payer's reimbursement policy). If you disagree with this determination, you may submit additional documentation that directly rebuts the clinical relationship (for example, evidence of a non-related new acute event, or documentation that one of the explicit policy exclusions applies). Provide any supplemental records to the appeal/review address indicated in the remittance. Sincerely, Clinical Readmission Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.021058,
+    "time_to_run_seconds": 66.783,
+    "retrieval_seconds": 8.036,
+    "retrieval_turns": 4,
+    "judge_seconds": 58.747,
+    "total_cost_per_claim_usd": 30.551058,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.021058
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, Review Window:, position 4",
+      "role": "supports billed code",
+      "excerpt": "30 days from prior discharge"
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, position 12",
+      "role": "supports billed code",
+      "excerpt": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2."
+    },
+    {
+      "citation": "DISCHARGE SUMMARY, DISCHARGE SUMMARY, p. 120-121",
+      "role": "supports billed code",
+      "excerpt": "Clinical Relationship: Index admission MR_07 (03/13-07/04/2026): Massive bilateral PE with cardiac arrest; thrombolysis; IVC filter; activated protein C resistance (D68.51) identified. Readmission RM_07 (07/09-07/19/2026): Recurrent bilateral PE (I26.99) and right femoral DVT (I82.411) - same class of thromboembolic disease as the index admission. Underlying thrombophilia (D68.51) present on both admissions and drives the recurrence."
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx, position 21",
+      "role": "supports billed code",
+      "excerpt": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

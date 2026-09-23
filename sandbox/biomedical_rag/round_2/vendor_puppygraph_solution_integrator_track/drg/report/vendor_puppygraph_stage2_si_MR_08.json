@@ -1,0 +1,273 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_08",
+  "encounter_information": {
+    "claim_number": "MR_08",
+    "payer": "Piedmont Blue Advantage HMO",
+    "dates_of_service": "2026-03-24\u20132026-07-18",
+    "facility_pos": "Piedmont Trinity Medical Center",
+    "attending_provider": null,
+    "patient": "Terrence Blackwell \u2014 MRN: MRN-3617082",
+    "medical_record": "MR_08.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.0",
+      "description": "Cyst of cerebral hemisphere",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G41.0",
+      "description": "Grand mal status epilepticus",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R40.9",
+      "description": "Unspecified coma",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J69.0",
+      "description": "Pneumonitis due to inhalation of food and vomit",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J13",
+      "description": "Pneumonia due to Streptococcus pneumoniae",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E22.2",
+      "description": "Syndrome of inappropriate secretion of antidiuretic hormone",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.C11",
+      "description": "Acute embolism and thrombosis of right internal jugular vein",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.1",
+      "description": "Anoxic brain damage, not elsewhere classified",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "F02.81",
+      "description": "Dementia in other diseases classified elsewhere with behavioral disturbance",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R41.1",
+      "description": "Anterograde amnesia",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G81.94",
+      "description": "Hemiplegia, unspecified affecting right dominant side",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.11",
+      "description": "Dependence on respirator [ventilator] status",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "009U3ZX",
+      "description": "Drainage of spinal canal, percutaneous approach, diagnostic"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "03HY32Z",
+      "description": "Insertion of monitoring device into upper artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0B110F4",
+      "description": "Bypass trachea to cutaneous with tracheostomy device, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0DH60UZ",
+      "description": "Insertion of feeding device into stomach, percutaneous endoscopic approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "4A10X4G",
+      "description": "Measurement of central nervous electrical activity, external"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": null,
+      "revised_diagnosis_set": [
+        "G41.0",
+        "B00.4",
+        "J96.01",
+        "J69.0",
+        "J13",
+        "E22.2",
+        "I82.C11",
+        "F02.81",
+        "R41.1",
+        "G81.94",
+        "Z99.11"
+      ],
+      "revised_procedure_set": [
+        "0BH17EZ",
+        "009U3ZX",
+        "02HV33Z",
+        "03HY32Z",
+        "0B110F4",
+        "0DH60UZ",
+        "4A10X4G",
+        "5A1D90Z"
+      ],
+      "confidence": 0.4,
+      "confidence_basis": "10/11 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['History & Physical (Admitting), History & Physical, p. 122']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Claim lines include diagnosis G93.0 as principal (position 1), plus multiple MCC/CCs including G41.0 (status epilepticus), R40.9 (coma), J96.01 (acute respiratory failure w/ hypoxia), J69.0 (aspiration pneumonitis), J13 (S. pneumoniae pneumonia), E22.2 (SIADH), G93.1 (anoxic brain damage), and others. What the record documents: the admitting History & Physical and Discharge/Transfer Summary consistently document that the patient was admitted for refractory status epilepticus secondary to HSV encephalitis (reason for admission: \"Refractory status epilepticus with HSV encephalitis requiring neurocritical care\") with aspiration pneumonia due to S. pneumoniae and acute respiratory failure requiring intubation and prolonged mechanical ventilation. (History & Physical, p. 122; Discharge / Transfer Summary, pp. 1053-1054; Microbiology, p. 77.) Key policy requirements: J96.01 (acute hypoxemic respiratory failure) requires provider documentation of the diagnosis or objective hypoxemia OR the presumption rule when invasive mechanical ventilation is initiated and attributed to respiratory failure; aspiration pneumonitis (J69.0) requires provider attribution of aspiration and compatible imaging/management or an explicit clinical attribution; G93.1 (anoxic brain damage) requires explicit provider attribution to an anoxic/hypoxic event or objective anoxic-injury findings. (Policy: Acute Respiratory Failure with Hypoxia - Validation Criteria; Aspiration Pneumonitis - Validation Criteria; Anoxic Brain Injury - Scope/Validation Criteria.) Reasoning and corrections: 1) Principal diagnosis sequencing error - G93.0 (Cyst of cerebral hemisphere) is billed in principal position but there is no supporting documentation for a cerebral cyst as the condition that occasioned the admission. The record shows admission for refractory status epilepticus with HSV encephalitis; status epilepticus (G41.0) is the condition that clearly occasioned the admission (History & Physical, p. 122; Discharge / Transfer Summary, pp. 1053-1054). I therefore remove G93.0 from the active diagnosis list and sequence G41.0 as principal diagnosis. 2) Unsupported/insufficiently supported diagnosis - G93.1 (anoxic brain damage) is billed as an MCC but the chart does not contain provider documentation attributing brain injury to an anoxic/hypoxic event nor the requisite objective anoxic-injury testing/prognostication notes (policy requires explicit attribution or multimodal prognostication). The clinical narrative attributes cognitive deficits to HSV encephalitis and documents encephalitic changes on MRI; there is no explicit provider statement of \"anoxic brain injury\" or the multimodal anoxic-injury workup required by policy - remove G93.1. (Policy: Anoxic Brain Injury, Scope/Validation Criteria.) 3) POA flag discrepancy for aspiration/pneumonia - the admitting H&P problem list explicitly lists \"Aspiration pneumonia (Streptococcus pneumoniae)\" and the Discharge Summary documents \"resolved aspiration pneumonia (S. pneumoniae).\" These support that aspiration/pneumonia were present on admission; the claim lines show J69.0 and J13 with POA = N. The POA flags should be reviewed and corrected to reflect presence on admission where supported by the provider documentation. (History & Physical, p. 122; Discharge / Transfer Summary, pp. 1053-1054; Microbiology, p. 77.) 4) Acute respiratory failure (J96.01) and >96 hr ventilation (5A1D90Z) are supported - ABG/P/F data and respiratory therapy notes document severe hypoxemia (PaO2 60, P/F 63) and ongoing high FiO2/PEEP while invasively ventilated; the presumption rule in the J96.01 policy supports coding J96.01 when invasive ventilation is initiated for respiratory failure and attributed to it. (Neurology Consultation, p. 519; Respiratory Therapy Note, p. 30; Policy: Acute Respiratory Failure with Hypoxia - Validation Criteria and Presumption rule.) 5) Procedures (intubation, tracheostomy, PEG, central line, monitoring, prolonged ventilation) are documented in operative/procedure notes/RR and supported by medication/therapy flowsheets - keep all billed procedures. Summary correction applied: remove G93.0 and G93.1 from the diagnosis set; sequence G41.0 as principal; retain J96.01, J69.0, J13, E22.2, I82.C11, F02.81, R41.1, G81.94, Z99.11 (and other documented comorbidities present in the chart) - see revised_diagnosis_set below. Procedures remain unchanged. Evidence citations and excerpts supporting the above reasoning are listed in evidence_cited. Recommended action: recode principal diagnosis to G41.0 (status epilepticus), remove G93.0 and G93.1, correct POA flags for aspiration/pneumonia to reflect they were present on admission per provider documentation, and retain procedure codes as billed. Auditor: explicit citations - History & Physical (Admitting), Discharge / Transfer Summary, Microbiology culture, Respiratory Therapy and Neurology consultation notes, and the relevant condition policy documents (J96.01, J69.0, G93.1) are cited below.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Clinical coding review - Admission MR_08 Dear Provider/Coding Team, We performed a DRG-level clinical review of admission MR_08 using the submitted claims and the inpatient medical record. Our review identified a principal-diagnosis sequencing and supporting documentation discrepancy that requires correction. Specifically: 1) The claim currently lists G93.0 (Cyst of cerebral hemisphere) as the principal diagnosis (position 1). The medical record documents that the patient was admitted for refractory status epilepticus requiring neurocritical care secondary to HSV encephalitis (History & Physical; Discharge/Transfer Summary). The documented reason for admission and the active problems indicate that new-onset refractory status epilepticus (G41.0) occasioned the hospitalization and should be sequenced as the principal diagnosis. 2) Two billed codes lack required documentation as submitted: G93.1 (Anoxic brain damage, billed as an MCC) is not supported by explicit provider attribution to an anoxic/hypoxic event nor by the multimodal prognostication or imaging findings required by the governing G93.1 policy. Therefore G93.1 should be removed unless the provider can produce documentation explicitly attributing brain injury to an anoxic/hypoxic event or the required objective testing/prognostication. 3) The record documents aspiration pneumonia with Streptococcus pneumoniae at or immediately following presentation (admitting problem list and discharge summary) with microbiology confirmation; however, the claim lists the aspiration/pneumonia codes (J69.0, J13) as POA = N. The POA flags should be corrected to reflect presence on admission where supported by the provider documentation. Basis for Finding (selected supporting excerpts relied upon): - History & Physical (admitting): chief complaint and active problems list documenting refractory status epilepticus and aspiration pneumonia (H&P, p. 122). - Discharge / Transfer Summary: \"Reason for Admission: Refractory status epilepticus with HSV encephalitis requiring neurocritical care\" and discharge diagnoses noting resolved aspiration pneumonia (S. pneumoniae) and tracheostomy-dependent respiratory status (Discharge / Transfer Summary, pp. 1053-1054). - Microbiology: endotracheal sputum culture with Streptococcus pneumoniae (Microbiology, p. 77). - Respiratory therapy and ABG data: documentation of severe hypoxemia and high ventilator settings including PaO2 60 / P/F 63 and later PaO2 76 with FiO2 70% (Neurology Consultation, p. 519; Respiratory Therapy Note, p. 30). Policy guidance supports coding J96.01 when invasive mechanical ventilation is initiated and attributed to respiratory failure (Policy: Acute Respiratory Failure with Hypoxia). Correction being made: 1) Principal diagnosis will be recoded to G41.0 (Grand mal status epilepticus). 2) Remove G93.0 and G93.1 from the claim diagnoses (no supporting documentation to meet the respective condition policies). 3) Retain J96.01, J69.0, J13, E22.2, I82.C11, F02.81, R41.1, G81.94, Z99.11 and other documented comorbidities supported by the chart. 4) Update POA flags for aspiration/pneumonia per provider documentation (admission problem list and discharge summary). If you disagree with the above corrections and believe additional supporting documentation exists (for example, provider notes explicitly documenting anoxic brain injury or a cerebral cyst that occasioned admission), please supply the specific dated note(s) or attestations so they may be reviewed and considered for reinstatement. Sincerely, Clinical Review Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.042616,
+    "time_to_run_seconds": 136.598,
+    "retrieval_seconds": 14.243,
+    "retrieval_turns": 3,
+    "judge_seconds": 122.354,
+    "total_cost_per_claim_usd": 30.572616,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.042616
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), History & Physical, p. 122",
+      "role": "supports billed code",
+      "excerpt": "Chief Complaint: \"She had a seizure that wouldn't stop and became unresponsive.\""
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, p. 122",
+      "role": "supports billed code",
+      "excerpt": "Active Problem List # | Problem 1 | Refractory status epilepticus, new-onset 6 | Aspiration pneumonia (Streptococcus pneumoniae)"
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 1053-1054",
+      "role": "supports billed code",
+      "excerpt": "Reason for Admission: Refractory status epilepticus with HSV encephalitis requiring neurocritical care."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 1053-1054",
+      "role": "supports billed code",
+      "excerpt": "Discharge / Transfer Diagnoses Resolved refractory status epilepticus; treated HSV-1 encephalitis; ongoing cognitive impairment from encephalitis; residual right-sided weakness; resolved aspiration pneumonia (S. pneumoniae); tracheostomy-dependent respiratory status (trach collar);"
+    },
+    {
+      "citation": "Microbiology, Microbiology, p. 77",
+      "role": "supports billed code",
+      "excerpt": "Endotracheal Sputum Culture - ICU Day 8 Result: Streptococcus pneumoniae, moderate growth."
+    },
+    {
+      "citation": "Respiratory Therapy Note, Respiratory Therapy Note, p. 30",
+      "role": "supports billed code",
+      "excerpt": "Interface/settings (07:00): AC/VC, FiO2 70%, PEEP 12, Vt 329 mL. Gas exchange: pH 7.35 / PaCO2 43 / PaO2 76 (P/F 108)."
+    },
+    {
+      "citation": "Neurology Consultation, Neurology Consultation, p. 519",
+      "role": "supports billed code",
+      "excerpt": "ABG (02:00): pH 7.31 / PaCO2 44 / PaO2 60 / HCO3 19; lactate 5.1 mmol/L; P/F ratio 63."
+    },
+    {
+      "citation": "Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Validation Criteria \u00003a Medical Pathway",
+      "role": "contradicts billed code",
+      "excerpt": "1. Criterion 1 - Provider Documentation of Diagnosis: Provider documentation of acute respiratory failure with hypoxia (or acute hypoxemic respiratory failure) as a clinically confirmed diagnosis in the assessment, problem list, or plan - not as a rule-out or differential diagnosis."
+    },
+    {
+      "citation": "Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Validation Criteria \u00003a Medical Pathway",
+      "role": "supports billed code",
+      "excerpt": "[1] Presumption rule: When the provider documents initiation of invasive mechanical ventilation and attributes the need for ventilation to acute respiratory failure, Criterion 2 (objective hypoxemia measurement) is presumed satisfied even if a pre-intubation room-air ABG is not documented."
+    },
+    {
+      "citation": "Policy Documents/DRG/Aspiration Pneumonitis.docx, Validation Criteria \u00003a Medical Pathway",
+      "role": "supports billed code",
+      "excerpt": "1. Criterion 1 - Provider Documentation of Aspiration and Pulmonary Diagnosis: Provider documentation of an aspiration event (witnessed or clinically inferred from history and presentation) with development of pneumonitis or pneumonia explicitly attributed to aspiration in the assessment or problem list - not as a rule-out or differential diagnosis."
+    },
+    {
+      "citation": "Policy Documents/DRG/Anoxic Brain Injury.docx, Scope",
+      "role": "contradicts billed code",
+      "excerpt": "G93.1 requires provider documentation attributing brain damage specifically to an anoxic or hypoxic event. Auditors must distinguish between acute metabolic encephalopathy (which may be reversible and coded separately) and permanent or evolving anoxic brain damage."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}
