@@ -1,0 +1,118 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "APC",
+  "claim_id": "MR_APC_06",
+  "encounter_information": {
+    "claim_number": "APC-2026-30416",
+    "payer": "Keystone Health Partners PPO",
+    "dates_of_service": "2026-03-17",
+    "facility_pos": "Briarcliff Outpatient Surgery Pavilion",
+    "attending_provider": "Dr. Priya Nandakumar, MD",
+    "patient": "Elias Whitfield \u2014 MRN: MRN-5183042",
+    "medical_record": "MR_APC_06.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "cpt_hcpcs": "20550",
+      "mod": null,
+      "description": "Injection, tendon sheath",
+      "si": "T",
+      "apc": "5071",
+      "rw": 0.89,
+      "opps_rate": 248.0,
+      "billed_charge": 320.0
+    },
+    {
+      "cpt_hcpcs": "76942",
+      "mod": null,
+      "description": "Ultrasonic guidance for needle placement (e.g., biopsy, aspiration, injection, localization device), imaging supervision and interpretation",
+      "si": "N",
+      "apc": "N/A",
+      "rw": 0.0,
+      "opps_rate": 0.0,
+      "billed_charge": 210.0
+    }
+  ],
+  "total_billed_charges": 530.0,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_cpt_hcpcs": "20550",
+      "determination": "No Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.8,
+      "confidence_basis": "All 4 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    },
+    {
+      "line": 2,
+      "billed_cpt_hcpcs": "76942",
+      "determination": "Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.8,
+      "confidence_basis": "All 3 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": "20550",
+  "adjusted_apc_set": "5071",
+  "system_note": "Billed line: CPT 20550 (Injection, tendon sheath) on claim APC-2026-30416 for diagnosis M65.4 (De Quervain's). Medical record documentation directly describes and documents an ultrasound-guided injection into the first dorsal compartment tendon sheath (right wrist) performed on 03/17/2026, including intraoperative technique confirming intrasheath needle placement and injection of triamcinolone/lidocaine. The governing APC policy text retrieved (APC-24 concept) explicitly discusses that 20550 denotes injection into the tendon sheath and distinguishes it from other nearby injection codes; it does not impose additional documentation barriers that would contradict billing. Together the operative note, intraoperative/perioperative records, and the policy concept support the billed 20550 as submitted; no correction is required. Cited documentation: Operative Note (p.24-25) documents the procedure and technique with ultrasound confirmation of intrasheath injectate; Pre-Operative Assessment (p.15-16) and Intraoperative Record (p.21-23) document planned and performed ultrasound-guided tendon sheath injection; APC Coding Concept - Tendon Sheath Injection (De Quervain's) concept_text references 20550 as the tendon sheath injection code and states that tendon-sheath injections are reportable as such. See Evidence Cited for verbatim excerpts and locations. Billed line: CPT 76942 (Ultrasonic guidance for needle placement) was billed on line 2 of claim APC-2026-30416. The operative record documents that ultrasound guidance was used in real time (Operative Note, p. 24-25) and that a portable ultrasound unit was available and used (Intraoperative Record, p. 21-23). However, the governing APC policy for 76942 (APC-06: APC Coding Concept - Ultrasonic Guidance for Needle Placement (76942): Permanent Image Requirement) requires BOTH real-time image guidance and retention of a permanent recorded image or archived accession demonstrating the guidance (APC-06). The operative note describes visualization but does not provide or cite a permanent recorded image, PACS accession number, ultrasound equipment log entry, or other archived image documentation in the retrieved chart pages. Per policy, narrative documentation of real-time visualization alone is insufficient to meet CPT 76942's permanent-image requirement. Therefore 76942 as billed is unsupported by the documentation retrieved and is denied unless the provider supplies the permanent recorded image or an archival record (PACS accession/equipment log) demonstrating image retention. Evidence cited: APC-06 concept text (policy) and Operative Note (p. 24-25) and Intraoperative Record (p. 21-23).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Claim APC-2026-30416 - Line 2 (CPT 76942) Dear Provider, We have completed our review of the documentation submitted in support of CPT 76942 billed for the procedure performed on 03/17/2026 for patient MRN-5183042. Our review compares the submitted medical record to the governing APC policy for CPT 76942 (APC-06). Finding: Denial - Documentation fails to meet CPT 76942 permanent-image documentation requirement. Basis for Finding: - Governing policy (APC-06) for CPT 76942 requires BOTH real-time image guidance during needle placement AND retention of a permanent recorded image demonstrating the guidance was performed. The policy states: \"CPT 76942 requires both real-time image guidance during needle placement and retention of a permanent recorded image demonstrating the guidance was performed; real-time visualization described only in the procedure note, without corroborating evidence of image retention or archiving elsewhere in the chart, does not independently satisfy the permanent-documentation requirement.\" (APC-06, APC Coding Concept - Ultrasonic Guidance for Needle Placement (76942): Permanent Image Requirement). - The Operative Note documents that ultrasound was used for real-time visualization and describes needle placement and injection (Operative Note, p. 24-25): \"A 25-gauge needle was advanced under direct visualization. Ultrasound was utilized to confirm needle placement within the tendon sheath prior to injection.\" The Intraoperative Record documents the presence/use of a portable ultrasound unit (Intraoperative Record, p. 21-23). - The chart pages retrieved and reviewed do not contain a permanent recorded image, PACS accession number, ultrasound equipment log entry, or other archival evidence of saved imaging demonstrating the guidance. Per the governing policy, the narrative operative note alone does not satisfy the CPT 76942 documentation requirement. Correction: The billed CPT 76942 is unsupported as documented in the record retrieved. Absent submission of the required permanent recorded image or archival documentation (e.g., PACS accession or ultrasound equipment log showing saved image(s) tied to this procedure and date/time), the CPT 76942 line will be denied and removed from payment consideration. If you believe the permanent image exists in your systems, please supply the archived image(s) or PACS/equipment accession record that shows the saved image(s) for DOS 03/17/2026 so we may reconsider. If you have questions regarding acceptable forms of image retention or how to submit supplemental documentation, please contact the auditing department. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.044108,
+    "time_to_run_seconds": 104.868,
+    "retrieval_seconds": 27.15,
+    "judge_seconds": 77.718,
+    "retrieval_turns": 11,
+    "total_cost_per_claim_usd": 30.574108,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.044108
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Operative Note, p. 24-25",
+      "role": "supports billed code",
+      "excerpt": "PROCEDURE PERFORMED: Ultrasound-guided injection of the first dorsal compartment tendon sheath, right wrist, with ultrasonic guidance for needle placement (CPT 76942)"
+    },
+    {
+      "citation": "Operative Note, p. 24-25",
+      "role": "supports billed code",
+      "excerpt": "A 25-gauge needle was advanced under direct visualization. Ultrasound was utilized to confirm needle placement within the tendon sheath prior to injection. Once satisfactory positioning was confirmed, a mixture of 1 mL triamcinolone acetonide 40 mg/mL and 1 mL 1% lidocaine was injected into the tendon sheath, with visible distension of the sheath noted on real-time imaging confirming intrasheath (rather than intratendinous) placement of the injectate. The needle was withdrawn without incident."
+    },
+    {
+      "citation": "Pre-Operative Assessment & Anesthesia Evaluation, p. 15-16",
+      "role": "supports billed code",
+      "excerpt": "Planned Procedure: Ultrasound-guided injection of the first dorsal compartment tendon sheath, right wrist, with ultrasonic guidance for needle placement (CPT 76942)"
+    },
+    {
+      "citation": "APC Coding Concept - Tendon Sheath Injection (De Quervain's)",
+      "role": "supports billed code",
+      "excerpt": "20551 - Injection(s), Single Tendon Origin/Insertion De Quervain's tenosynovitis involves the first dorsal wrist compartment - injection is typically performed into the tendon sheath (not the tendon substance or a joint). 20550 (injection into tendon sheath) may be more anatomically precise than 20551 (origin/insertion). Both are T/5071; the distinction is anatomical site of injection. Injections into multiple distinct tendon sheaths in the same session may each be separately reportable."
+    },
+    {
+      "citation": "APC-06, APC Coding Concept - Ultrasonic Guidance for Needle Placement (76942): Permanent Image Requirement",
+      "role": "contradicts billed code",
+      "excerpt": "CPT 76942 requires both real-time image guidance during needle placement and retention of a permanent recorded image demonstrating the guidance was performed; real-time visualization described only in the procedure note, without corroborating evidence of image retention or archiving elsewhere in the chart, does not independently satisfy the permanent-documentation requirement."
+    },
+    {
+      "citation": "Operative Note, p. 24-25",
+      "role": "supports billed code",
+      "excerpt": "A 25-gauge needle was advanced under direct visualization. Ultrasound was utilized to confirm needle placement within the tendon sheath prior to injection."
+    },
+    {
+      "citation": "Intraoperative Record, p. 21-23",
+      "role": "supports billed code",
+      "excerpt": "Equipment Used: Portable ultrasound unit (SonoSite Edge II) with high-frequency linear array transducer, sterile probe cover, 25-gauge 1.5-inch needle"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

@@ -1,0 +1,164 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "SNF",
+  "claim_id": "MR_SNF_08",
+  "encounter_information": {
+    "claim_number": "MR_SNF_08",
+    "payer": "Blue Cross Blue Shield Medicare Advantage",
+    "dates_of_service": "2026-07-01\u20132026-07-22",
+    "facility_pos": "Foothills Rehabilitation & Skilled Care",
+    "attending_provider": "Dr. Alice Monroe, MD",
+    "patient": "Frank Callahan \u2014 MRN: MRN-8203746",
+    "medical_record": "MR_SNF_08.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "revenue_code": "0192",
+      "code": "0192",
+      "dos_from": "2026-07-01",
+      "dos_to": "2026-07-21",
+      "billed_units": 15
+    },
+    {
+      "revenue_code": "0191",
+      "code": "0191",
+      "dos_from": "2026-07-01",
+      "dos_to": "2026-07-21",
+      "billed_units": 5
+    },
+    {
+      "revenue_code": "Non-Covered",
+      "code": null,
+      "dos_from": "2026-07-22",
+      "dos_to": "2026-07-22",
+      "billed_units": 1
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_revenue_code": "0192",
+      "dos_from": "2026-07-01",
+      "dos_to": "2026-07-21",
+      "billed_units": 15,
+      "determination": "No Finding",
+      "adjusted_date_of_service": null,
+      "corrected_revenue_code": null,
+      "adjusted_units_billed": null,
+      "confidence": 0.4,
+      "confidence_basis": "0/9 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Claim node (query result)', 'get_daily_services result (row for 2026-07-01, Physical Therapy)', 'get_daily_services result (row for 2026-07-01, Occupational Therapy)', 'get_daily_services result (row for 2026-07-10, Physical Therapy)', 'get_daily_services result (row for 2026-07-10, Occupational Therapy)', 'get_daily_services result (row for 2026-07-21, Physical Therapy)', 'get_daily_services result (row for 2026-07-21, Occupational Therapy)', 'get_per_diem_level_notes result (example row)', 'Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 6']."
+    },
+    {
+      "line": 2,
+      "billed_revenue_code": "0191",
+      "dos_from": "2026-07-01",
+      "dos_to": "2026-07-21",
+      "billed_units": 5,
+      "determination": "No Finding",
+      "adjusted_date_of_service": null,
+      "corrected_revenue_code": null,
+      "adjusted_units_billed": null,
+      "confidence": 0.4,
+      "confidence_basis": "0/5 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Claim query result', 'Daily services row (2026-07-01, Physical Therapy)', 'Daily services row (2026-07-01, Occupational Therapy)', 'Daily services row (2026-07-20, Physical Therapy)', 'Per-diem level notes row (example date)']."
+    }
+  ],
+  "coding_determination": "No Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Claim MR_SNF_08 revenue line 1 (rev code 0192, 15 units dated 2026-07-01 to 2026-07-21): documentation supports the billed Rehabilitation Therapy per-diem for all billed dates. Evidence: the claim-level fields show the claim has 21 stay days, 20 billed days and 21 authorized days, so billed days do not exceed authorization (Claim node: \"c.claim_billed_days\": 20, \"c.claim_authorized_days\": 21, \"c.claim_stay_days\": 21) (see citation: Claim node (query result)). The facility-documented therapy sessions show consistent, same-day Physical Therapy (90 minutes) plus Occupational Therapy (60 minutes) on each billed date (examples: 2026-07-01 PT 90 mins and OT 60 mins; 2026-07-10 PT 90 mins and OT 60 mins; 2026-07-21 PT 90 mins and OT 60 mins) - these therapy minute totals (150 minutes/day) and presence of multiple therapy disciplines are consistent with the Rehabilitation/therapy per-diem level the facility billed (see citations: get_daily_services rows). The facility did not record any per-diem downcode/exception statements on any of the dates (get_per_diem_level_notes shows level_determination_statement = null for billed dates), which the reference note in the dataset explains commonly indicates the billed level's own threshold was met on those dates. Finally, the payer-specific guideline for this payer is not present in the dataset; audit uses the payer-agnostic SNF Level of Care reference guide which defines \"Skilled need\" as \"A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers,\" supporting that the documented skilled therapy sessions meet the skilled-need requirement for a rehab per-diem (see citation: SNF Level of Care - Definitions and Reference Guide, position 6). No dates within the billed 15 have missing therapy-minute documentation in the get_daily_services extract; therefore no per-day downcoding or unit reduction for this revenue line is indicated by the retrieved record. Recovery Type: Partial Recovery. Skilled Services: Therapy. Reviewed revenue line: billed revenue code 0191 (5 day(s) reported) with DOS range 2026-07-01 to 2026-07-21. Claim-level data show billed_days=20, authorized_days=21, stay_days=21 (see Claim query result). Therapy documentation shows repeated, high-duration therapy sessions (PT 90 minutes + OT 60 minutes) on multiple dates within the DOS window (examples cited below). The facility's per-diem-level extraction shows level_determination_statement = null on all dates (the tool's note explains a null value commonly indicates the facility did not record an exception because the billed level's own threshold was met). Given the documented therapy minutes on at least 15 discrete dates within the billed range (07/01, 07/02, 07/03, 07/06-07/10, 07/13-07/17, 07/20-07/21), there is clear contemporaneous documentation to support at least five high-level (0191) per-diem days within the billed range. Additionally, billed days (20) do not exceed authorized days (21). Therefore no per-diem level finding is made for this revenue line. Citations: Claim query result (c.claim_billed_days/authorized/stay) and daily therapy entries (service_date rows) and per-diem extraction rows (level_determination_statement null) in evidence_cited below.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": null,
+  "metrics": {
+    "cost_of_processing_usd": 0.025227,
+    "time_to_run_seconds": 126.875,
+    "retrieval_seconds": 22.848,
+    "judge_seconds": 104.027,
+    "retrieval_turns": 5,
+    "total_cost_per_claim_usd": 30.555227,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.025227
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Claim node (query result)",
+      "role": "supports billed code",
+      "excerpt": "{\"c.claim_billed_days\": 20, \"c.claim_authorized_days\": 21, \"c.claim_stay_days\": 21, \"c.claim_principal_dx\": \"Z98.89\", \"c.claim_payer\": \"Blue Cross Blue Shield Medicare Advantage\"}"
+    },
+    {
+      "citation": "get_daily_services result (row for 2026-07-01, Physical Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-01\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    },
+    {
+      "citation": "get_daily_services result (row for 2026-07-01, Occupational Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-01\", \"note_title\": \"Occupational Therapy\", \"revenue_code\": \"0431\", \"minutes\": 60, \"billable_units\": 4}"
+    },
+    {
+      "citation": "get_daily_services result (row for 2026-07-10, Physical Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-10\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    },
+    {
+      "citation": "get_daily_services result (row for 2026-07-10, Occupational Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-10\", \"note_title\": \"Occupational Therapy\", \"revenue_code\": \"0431\", \"minutes\": 60, \"billable_units\": 4}"
+    },
+    {
+      "citation": "get_daily_services result (row for 2026-07-21, Physical Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-21\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    },
+    {
+      "citation": "get_daily_services result (row for 2026-07-21, Occupational Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-21\", \"note_title\": \"Occupational Therapy\", \"revenue_code\": \"0431\", \"minutes\": 60, \"billable_units\": 4}"
+    },
+    {
+      "citation": "get_per_diem_level_notes result (example row)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-01\", \"level_determination_statement\": null}"
+    },
+    {
+      "citation": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 6",
+      "role": "supports billed code",
+      "excerpt": "Skilled need: \"A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers.\""
+    },
+    {
+      "citation": "Claim query result",
+      "role": "supports billed code",
+      "excerpt": "{\"c.claim_billed_days\": 20, \"c.claim_authorized_days\": 21, \"c.claim_stay_days\": 21, \"c.claim_facility_name\": \"Foothills Rehabilitation & Skilled Care\", \"c.claim_patient_name\": \"Frank Callahan\", \"c.claim_attending_name\": \"Dr. Alice Monroe, MD\"}"
+    },
+    {
+      "citation": "Daily services row (2026-07-01, Physical Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-01\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    },
+    {
+      "citation": "Daily services row (2026-07-01, Occupational Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-01\", \"note_title\": \"Occupational Therapy\", \"revenue_code\": \"0431\", \"minutes\": 60, \"billable_units\": 4}"
+    },
+    {
+      "citation": "Daily services row (2026-07-20, Physical Therapy)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-20\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    },
+    {
+      "citation": "Per-diem level notes row (example date)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-07-01\", \"level_determination_statement\": null}"
+    }
+  ],
+  "recovery_type": "Partial Recovery",
+  "skilled_services": "Therapy",
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

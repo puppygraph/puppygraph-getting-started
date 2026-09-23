@@ -1,0 +1,149 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "SNF",
+  "claim_id": "MR_SNF_04",
+  "encounter_information": {
+    "claim_number": "MR_SNF_04",
+    "payer": "Humana Medicare Advantage",
+    "dates_of_service": "2026-04-15\u20132026-04-25",
+    "facility_pos": "Pikes Peak Skilled Nursing & Rehabilitation",
+    "attending_provider": "Dr. Helen Park, MD",
+    "patient": "Gerald Muldoon \u2014 MRN: MRN-4093826",
+    "medical_record": "MR_SNF_04.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "revenue_code": "0192",
+      "code": "0192",
+      "dos_from": "2026-04-15",
+      "dos_to": "2026-04-24",
+      "billed_units": 7
+    },
+    {
+      "revenue_code": "0191",
+      "code": "0191",
+      "dos_from": "2026-04-15",
+      "dos_to": "2026-04-24",
+      "billed_units": 2
+    },
+    {
+      "revenue_code": "Non-Covered",
+      "code": null,
+      "dos_from": "2026-04-25",
+      "dos_to": "2026-04-25",
+      "billed_units": 1
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_revenue_code": "0192",
+      "dos_from": "2026-04-15",
+      "dos_to": "2026-04-24",
+      "billed_units": 7,
+      "determination": "Finding",
+      "adjusted_date_of_service": "2026-04-15-2026-04-17;2026-04-20-2026-04-24",
+      "corrected_revenue_code": "0192",
+      "adjusted_units_billed": 7,
+      "confidence": 0.4,
+      "confidence_basis": "0/4 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['get_daily_services, service_date 2026-04-17', 'get_daily_services, service_date 2026-04-20', 'get_per_diem_level_notes, service_date 2026-04-18', 'get_per_diem_level_notes, service_date 2026-04-19']."
+    },
+    {
+      "line": 2,
+      "billed_revenue_code": "0191",
+      "dos_from": "2026-04-15",
+      "dos_to": "2026-04-24",
+      "billed_units": 2,
+      "determination": "Insufficient Evidence",
+      "adjusted_date_of_service": null,
+      "corrected_revenue_code": null,
+      "adjusted_units_billed": null,
+      "confidence": 0.2,
+      "confidence_basis": "Retrieval/judgment abstained (Insufficient Evidence) rather than guess at a determination \u2014 reported at low confidence regardless of citations."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.2,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Billed: revenue code 0192 (Level 2 Rehab Therapy), 7 day(s), DOS range 2026-04-15 to 2026-04-24. Review of facility per-diem notes and therapy flow-sheet minutes shows that therapy minutes are documented on 2026-04-15-2026-04-17 and 2026-04-20-2026-04-24, but there is no therapy-session documentation on 2026-04-18 and 2026-04-19. Evidence: get_daily_services rows show 60 min PT and 45 min OT on 2026-04-17 (\"{\\\"service_date\\\": \\\"2026-04-17\\\", \\\"note_title\\\": \\\"Physical Therapy\\\", \\\"revenue_code\\\": \\\"0421\\\", \\\"minutes\\\": 60, \\\"billable_units\\\": 4}\") and on 2026-04-20 (\"{\\\"service_date\\\": \\\"2026-04-20\\\", \\\"note_title\\\": \\\"Physical Therapy\\\", \\\"revenue_code\\\": \\\"0421\\\", \\\"minutes\\\": 60, \\\"billable_units\\\": 4}\") demonstrating consistent daily therapy minutes on documented dates. The per-diem-level extraction rows for 2026-04-18 and 2026-04-19 show no level determination statement (\"{\\\"service_date\\\": \\\"2026-04-18\\\", \\\"level_determination_statement\\\": null}\" and \"{\\\"service_date\\\": \\\"2026-04-19\\\", \\\"level_determination_statement\\\": null}\"), and no therapy sessions are recorded in the get_daily_services output for those two dates. Because 2026-04-18 and 2026-04-19 lack any documented therapy minutes to support a Level 2 Rehab per-diem, the billed per-diem level is not supported for the full billed DOS range. Correction proposed: narrow the supported DOS to exclude 2026-04-18 and 2026-04-19 (supported therapy dates: 2026-04-15-2026-04-17 and 2026-04-20-2026-04-24); the documentation supports Level 2 on the remaining dates. Citations: get_daily_services rows for 2026-04-17 and 2026-04-20 (minutes documented) and get_per_diem_level_notes rows for 2026-04-18 and 2026-04-19 (no level statement / no therapy documented). Billed line: Rev code 0191 (Level 1 Skilled Nursing), 2 day(s) dated 2026-04-15 to 2026-04-24. Available documentation shows repeated, skilled PT and OT on 04/15-04/17 and 04/20-04/24 (daily PT notes document 60 minutes/session and OT notes document evaluation/plan) and the physician explicitly documents continued skilled care on 04/21 and 04/24. Citations: PT progress note 04/15 documents \"Total minutes this session: 60 minutes (4 billable units) | Revenue Code: 0421\" (Physical Therapy, p.25); PT progress note 04/22 documents \"Total minutes this session: 60 minutes (4 billable units) | Revenue Code: 0421\" (Physical Therapy, p.35); OT evaluation certifies the need for skilled OT and plan of treatment (Occupational Therapy, pp.21-23); physician progress notes state \"Skilled Care Continued: Yes - patient continues to require skilled nursing and therapy services; medical complexity and functional deficits support continued SNF level of care.\" (PHYSICIAN PROGRESS NOTES - SNF STAY, p.138). The facility face sheet also lists \"Billing Summary Rev 0191 (Level 1 Skilled Nursing) days 1-10\" (SECTION 1 - RESIDENT FACE SHEET / DEMOGRAPHICS, p.1) and Section O documents PT and OT minutes/week and that skilled PT/OT and skilled nursing assessment/management are included (SECTION O, p.15). HOWEVER: there are no therapy progress-note entries returned for 2026-04-18 and 2026-04-19 and no daily nursing notes or explicit per-diem-level determination notes for those specific dates in the retrieved set. The get_per_diem_level_notes results are null for all dates (meaning the facility did not record an exception statement), which does not prove support for individual dates without contemporaneous nursing/therapy documentation. Because day-by-day support is required and documentation for 04/18-04/19 (and any nursing skilled services on those dates) is not present in the retrieved record, I cannot confirm the billed 0191 per-diem is supported for the FULL date range. Additional daily nursing notes, MDS/level-determination entries for 04/18-04/19, or clarification of which exact two calendar days the billed units represent are required to make a final determination. Cited excerpts are listed in evidence_cited below (document/section/page and verbatim excerpts).",
+  "hitl_escalation_point": "Line 2: Please provide: (1) daily skilled nursing progress notes or MDS entries for 2026-04-18 and 2026-04-19 that document skilled nursing or therapy need for those dates; (2) any explicit per-diem level determination notes or facility-level statements mapping billed Rev 0191 units to specific calendar dates within 2026-04-15 to 04-24; and (3) confirm whether the two billed 0191 units correspond to specific calendar dates (identify which dates).",
+  "rationale_letter": "Re: Audit of per-diem revenue line (0192) - Claim MR_SNF_04 We reviewed the medical record for the above claim and audited the documentation supporting the billed Level 2 Rehab Therapy per-diem (revenue code 0192) for DOS range 2026-04-15 through 2026-04-24 (7 days billed). Our review found that therapy-session minutes are documented on 2026-04-15, 2026-04-16, 2026-04-17 and 2026-04-20 through 2026-04-24, but there is no therapy-session documentation for 2026-04-18 or 2026-04-19. Basis for finding: the facility's therapy flow-sheet entries document 60 minutes of Physical Therapy and 45 minutes of Occupational Therapy on dates such as 2026-04-17 (\"{\\\"service_date\\\": \\\"2026-04-17\\\", \\\"note_title\\\": \\\"Physical Therapy\\\", \\\"revenue_code\\\": \\\"0421\\\", \\\"minutes\\\": 60, \\\"billable_units\\\": 4}\") and 2026-04-20 (\"{\\\"service_date\\\": \\\"2026-04-20\\\", \\\"note_title\\\": \\\"Physical Therapy\\\", \\\"revenue_code\\\": \\\"0421\\\", \\\"minutes\\\": 60, \\\"billable_units\\\": 4}\") demonstrating the level of therapy provided on those days. The per-diem-level extraction shows no level-determination statement for 2026-04-18 and 2026-04-19 (\"{\\\"service_date\\\": \\\"2026-04-18\\\", \\\"level_determination_statement\\\": null}\" and \"{\\\"service_date\\\": \\\"2026-04-19\\\", \\\"level_determination_statement\\\": null}\"), and there are no therapy session rows in the flow-sheet for those two dates. Without documented therapy minutes on 2026-04-18 and 2026-04-19, those dates do not support the billed Level 2 Rehab per-diem. Correction: exclude 2026-04-18 and 2026-04-19 from the supported DOS for revenue line 0192. Supported dates (per record) are 2026-04-15-2026-04-17 and 2026-04-20-2026-04-24; the billed Level 2 per-diem is not supported for 2026-04-18 and 2026-04-19. If you believe therapy was provided on 2026-04-18 or 2026-04-19, please provide the contemporaneous therapy notes or flow-sheet entries showing the date/time and minutes by discipline. If additional documentation is not available, those dates will be disallowed at the Level 2 per-diem rate. Sincerely, Clinical Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.030909,
+    "time_to_run_seconds": 143.43,
+    "retrieval_seconds": 18.922,
+    "judge_seconds": 124.506,
+    "retrieval_turns": 5,
+    "total_cost_per_claim_usd": 30.560909,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.030909
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "get_daily_services, service_date 2026-04-17",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-04-17\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 60, \"billable_units\": 4}"
+    },
+    {
+      "citation": "get_daily_services, service_date 2026-04-20",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-04-20\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 60, \"billable_units\": 4}"
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-04-18",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-04-18\", \"level_determination_statement\": null}"
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-04-19",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-04-19\", \"level_determination_statement\": null}"
+    },
+    {
+      "citation": "Physical Therapy, Physical Therapy (04/15/2026), p. 25",
+      "role": "supports billed code",
+      "excerpt": "Total minutes this session: 60 minutes (4 billable units) | Revenue Code: 0421"
+    },
+    {
+      "citation": "Physical Therapy, Physical Therapy (04/22/2026), p. 35",
+      "role": "supports billed code",
+      "excerpt": "Total minutes this session: 60 minutes (4 billable units) | Revenue Code: 0421"
+    },
+    {
+      "citation": "Occupational Therapy, Occupational Therapy (04/15/2026), pp. 21-23",
+      "role": "supports billed code",
+      "excerpt": "I certify the need for these medically necessary services furnished under this plan of treatment while under my care from 04/15/2026 through 05/15/2026."
+    },
+    {
+      "citation": "PHYSICIAN PROGRESS NOTES - SNF STAY, PHYSICIAN PROGRESS NOTES (04/21/2026), p. 138",
+      "role": "supports billed code",
+      "excerpt": "Skilled Care Continued: Yes - patient continues to require skilled nursing and therapy services; medical complexity and functional deficits support continued SNF level of care."
+    },
+    {
+      "citation": "SECTION 1 - RESIDENT FACE SHEET / DEMOGRAPHICS, SECTION (04/15/2026), p. 1",
+      "role": "supports billed code",
+      "excerpt": "Billing Summary Rev 0191 (Level 1 Skilled Nursing) days 1-10; Non-Covered day 11"
+    },
+    {
+      "citation": "SECTION O - SPECIAL TREATMENTS, PROCEDURES, AND PROGRAMS, SECTION O (p.15)",
+      "role": "supports billed code",
+      "excerpt": "O0110 - Special Treatments Skilled physical/occupational therapy; skilled nursing assessment and management"
+    },
+    {
+      "citation": "SECTION O - SPECIAL TREATMENTS, PROCEDURES, AND PROGRAMS, SECTION O (p.15)",
+      "role": "supports billed code",
+      "excerpt": "O0400A - Therapies - PT (minutes/week) 210 min/week - see therapy notes"
+    }
+  ],
+  "recovery_type": "Full Recovery",
+  "skilled_services": "Both",
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}
