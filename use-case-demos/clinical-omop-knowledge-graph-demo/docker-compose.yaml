@@ -1,29 +1,41 @@
 services:
-  postgres:
-    image: postgres:15
-    container_name: postgres
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: mimic
+  unitycatalog:
+    image: unitycatalog/unitycatalog:latest
+    container_name: unitycatalog
     networks:
       demo_net:
+    volumes:
+      - ./delta:/delta
     ports:
-      - "5432:5432"
-    
+      - "9000:8080"
+      - "3000:3000"
+  spark:
+    image: apache/spark:3.5.6
+    container_name: spark
+    networks:
+      demo_net:
+    volumes:
+      - ./spark-conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
+      - ./delta:/delta
+    environment:
+      AWS_ACCESS_KEY_ID: admin
+      AWS_SECRET_ACCESS_KEY: password
+    command: ["bash", "-lc", "tail -f /dev/null"]
   puppygraph:
-    image: puppygraph/puppygraph:0.109
+    image: puppygraph/puppygraph:1.0-preview
     container_name: puppygraph
+    networks:
+      demo_net:
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    volumes:
+      - ./delta:/delta
     ports:
       - "8081:8081"
       - "8182:8182"
       - "7687:7687"
-    environment:
-      - PUPPYGRAPH_USERNAME=puppygraph
-      - PUPPYGRAPH_PASSWORD=puppygraph123
-    networks:
-      demo_net:
-  
+
 networks:
   demo_net:
     name: mimic-omop-demo
