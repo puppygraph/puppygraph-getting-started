@@ -18,7 +18,7 @@
         "region": "${ENV:AWS_REGION}",
         "accessKey": "${ENV:AWS_ACCESS_KEY_ID}",
         "secretKey": "${ENV:AWS_SECRET_ACCESS_KEY}",
-        "enableSsl": "false",
+        "enableSsl": "true",
         "type": "S3",
         "useDefaultCredentialsProviderChain": "false"
       }
