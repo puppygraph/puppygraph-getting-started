@@ -1,0 +1,137 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "claim_id": "RM_08",
+  "encounter_information": {
+    "claim_number": "RM_08",
+    "payer": "Piedmont Blue Advantage HMO",
+    "dates_of_service": "2026-07-23\u20132026-08-03",
+    "facility_pos": "Piedmont Trinity Medical Center",
+    "attending_provider": "Dr. Priya Ranganathan, MD (Neurocritical Care)",
+    "patient": "Terrence Blackwell \u2014 MRN: MRN-3617082",
+    "medical_record": "RM_08.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G40.311",
+      "description": "Generalized idiopathic epilepsy, intractable, with status epilepticus",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B00.4",
+      "description": "Herpesviral encephalitis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J69.0",
+      "description": "Pneumonitis due to inhalation of food and vomit",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.40",
+      "description": "Encephalopathy, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.C11",
+      "description": "Acute embolism and thrombosis of right internal jugular vein",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z79.01",
+      "description": "Long-term (current) use of anticoagulants",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0B110F4",
+      "description": "Bypass trachea to cutaneous with tracheostomy device, open approach"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "finding_reason": "Same or related condition",
+      "confidence": 0.8,
+      "confidence_basis": "All 4 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Claim RM_08 (readmit admit 07/23/2026, discharge 08/03/2026) was reviewed against the Piedmont Blue Advantage HMO Readmission Review Guideline (effective 09/15/2023). The payer's review window is 30 days from prior discharge (policy: \"30 days from prior discharge\") and this readmission occurred 5 gap days after the index discharge, so it is in-scope for review (see policy and record citations below). The guideline's Section B asks whether the readmission diagnosis is the same as or clinically related to the condition treated during the prior stay; if yes the readmission is a Finding under the \"same or related condition\" criterion. The readmission medical record DISCHARGE SUMMARY explicitly documents the clinical relationship: it states the index admission MR_08 (03/24-07/18/2026) was status epilepticus (G40.311) secondary to HSV-1 encephalitis and that the readmission RM_08 (07/23-08/03/2026) was a breakthrough generalized epilepsy with status epilepticus (G40.311) described as an acute decompensation of the epilepsy established by the index HSV encephalitis. The readmission principal diagnosis (G40.311) thus represents the same/clinically related condition as the index stay per the medical record. No applicable exclusion from Section C (e.g. scheduled staged procedure, transfer, burn, transplant, behavioral health, SNF/LTACH/IRF, discharge AMA, newborn/obstetric) was identified in the retrieved policy text or the record. Therefore, per Piedmont Blue Advantage HMO's Readmission Review Guideline (30-day window) the readmission meets the \"same or related condition\" criterion and is a Finding. Evidence: Policy - \"30 days from prior discharge\" (Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx, Review Window); Policy - \"Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay.\" (Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx, Section B question (position 12)); Record - DISCHARGE SUMMARY (p.124-125) \"Clinical Relationship: Index admission MR_08 (03/24-07/18/2026): Status epilepticus (G40.311) secondary to HSV-1 encephalitis (B00.4); ... Readmission RM_08 (07/23-08/03/2026): Breakthrough generalized epilepsy with status epilepticus (G40.311) - acute decompensation of the epilepsy established by the index HSV encephalitis. G40.311 present as a principal diagnosis on both admissions.\"; Record - Patient Facesheet (p.3-4) \"Primary Insurance Piedmont Blue Advantage HMO.\"",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Readmission claim RM_08 - Determination under Piedmont Blue Advantage HMO Readmission Review Guideline Dear Provider, We have completed a clinical review of inpatient readmission RM_08 (admit 07/23/2026) in conjunction with the prior index admission MR_08 (03/24/2026-07/18/2026) under the Piedmont Blue Advantage HMO Readmission Review Guideline (effective 09/15/2023). The guideline requires review of readmissions occurring within 30 days of a prior discharge and specifies that a readmission is a Finding when documentation shows the readmission diagnosis is the same as or clinically related to the condition treated during the prior stay. Determination: Finding - \"Same or related condition\" Basis for Determination: - The payer's guideline review window is \"30 days from prior discharge,\" and the readmission occurred 5 days after the index discharge, so the readmission falls within the policy review period (Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx, Review Window: \"30 days from prior discharge\"). - The guideline explicitly designates a readmission as a Finding when \"the readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay.\" (Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx, Section B question (position 12)). - The facility's discharge summary documents the clinical relationship between the two admissions: \"Clinical Relationship: Index admission MR_08 (03/24-07/18/2026): Status epilepticus (G40.311) secondary to HSV-1 encephalitis (B00.4) ... Readmission RM_08 (07/23-08/03/2026): Breakthrough generalized epilepsy with status epilepticus (G40.311) - acute decompensation of the epilepsy established by the index HSV encephalitis. G40.311 present as a principal diagnosis on both admissions.\" (DISCHARGE SUMMARY, p.124-125). This documentation directly supports the payer's \"same or related condition\" criterion. - No Section C exclusion from the payer guideline (e.g., scheduled/staged admission, transfer, discharge AMA, transplant, behavioral health, newborn/obstetric, burn, or admissions to SNF/LTACH/IRF) was identified in the retrieved policy excerpt or clinical record to override this finding. Accordingly, under Piedmont Blue Advantage HMO's Readmission Review Guideline, the readmission RM_08 is determined to be clinically related to the index stay MR_08 and qualifies as a Finding under the \"same or related condition\" criterion. Please contact the payer or auditor contact identified in your administrative notice if you require further information about claim adjudication steps or payment adjustments resulting from this determination. Sincerely, Clinical Review Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.020807,
+    "time_to_run_seconds": 71.82,
+    "retrieval_seconds": 9.479,
+    "retrieval_turns": 4,
+    "judge_seconds": 62.341,
+    "total_cost_per_claim_usd": 30.550807,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.020807
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx, Review Window",
+      "role": "supports billed code",
+      "excerpt": "30 days from prior discharge"
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx, Section B question (position 12)",
+      "role": "supports billed code",
+      "excerpt": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay."
+    },
+    {
+      "citation": "DISCHARGE SUMMARY, DISCHARGE SUMMARY, p. 124-125",
+      "role": "supports billed code",
+      "excerpt": "Clinical Relationship: Index admission MR_08 (03/24-07/18/2026): Status epilepticus (G40.311) secondary to HSV-1 encephalitis (B00.4); tracheostomy for airway management. Readmission RM_08 (07/23-08/03/2026): Breakthrough generalized epilepsy with status epilepticus (G40.311) - acute decompensation of the epilepsy established by the index HSV encephalitis. G40.311 present as a principal diagnosis on both admissions."
+    },
+    {
+      "citation": "Patient Facesheet, Patient Facesheet, p. 3-4",
+      "role": "supports billed code",
+      "excerpt": "Primary Insurance Piedmont Blue Advantage HMO"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

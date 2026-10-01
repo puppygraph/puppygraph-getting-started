@@ -1,0 +1,123 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "APC",
+  "claim_id": "MR_APC_01",
+  "encounter_information": {
+    "claim_number": "APC-2026-40217",
+    "payer": "Meridian Health Plans",
+    "dates_of_service": "2026-03-12",
+    "facility_pos": "Foothills Ambulatory Surgery Center",
+    "attending_provider": "Dr. Patricia Sawyer, MD",
+    "patient": "Derek Holloway \u2014 MRN: MRN-8827341",
+    "medical_record": "MR_APC_01.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "cpt_hcpcs": "29888",
+      "mod": "RT",
+      "description": "Arthroscopically aided ACL reconstruction",
+      "si": "T",
+      "apc": "5115",
+      "rw": 12.4,
+      "opps_rate": 3450.0,
+      "billed_charge": 16500.0
+    },
+    {
+      "cpt_hcpcs": "29881",
+      "mod": "59",
+      "description": "Arthroscopy, knee, surgical; with meniscectomy (medial OR lateral, including any meniscal shaving)",
+      "si": "T",
+      "apc": "5114",
+      "rw": 6.9,
+      "opps_rate": 1920.0,
+      "billed_charge": 3200.0
+    }
+  ],
+  "total_billed_charges": 19700.0,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_cpt_hcpcs": "29888-RT",
+      "determination": "No Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.8,
+      "confidence_basis": "All 4 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    },
+    {
+      "line": 2,
+      "billed_cpt_hcpcs": "29881-59",
+      "determination": "Finding",
+      "adjusted_apc_code": "5114",
+      "corrected_cpt_hcpcs": "29881",
+      "confidence": 0.8,
+      "confidence_basis": "All 4 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": "29888-RT, 29881",
+  "adjusted_apc_set": "5115, 5114",
+  "system_note": "Billed line: CPT 29888-RT (Arthroscopically aided ACL reconstruction). Claim lines also include CPT 29881-59 (arthroscopic meniscectomy) on the same date. The medical record documents an arthroscopic right ACL reconstruction with hamstring autograft and supports billing of 29888-RT: the History & Physical lists the planned procedure as \"Arthroscopic right knee ACL reconstruction with hamstring autograft\" (History & Physical Examination, p. 4-5), the Operative Note states \"PROCEDURE PERFORMED: Arthroscopic right knee ACL reconstruction with hamstring autograft\" (Operative Note, p. 25), and the intraoperative documentation confirms procedure start/stop times and team sign-out for the ACL reconstruction (Intraoperative Record, p. 22-24). The policy excerpt retrieved discusses NCCI bundling of 29881 into 29888 and the strict criteria for allowing modifier 59 (APC Coding Concept - Meniscal Debridement Incidental to ACL Reconstruction (NCCI Bundling of 29881 into 29888)). The Operative Note further clarifies that the only meniscal work was \"minor fraying ... lightly smoothed ... during this same shaver pass ... through the identical anterolateral portal\" done to improve visualization during graft passage (Operative Note, p. 25-26), which is described in the policy as the type of incidental debridement that is not separately reportable. Therefore the documentation supports the billed CPT 29888-RT as performed; no Finding on line 1. Note: the claim also bills 29881-59. Operative documentation describes only incidental smoothing of a chronically frayed lateral meniscus (no pre-op meniscal tear on MRI, and smoothing was performed during the same shaver pass), which-per the retrieved policy language-does not meet the three independent elements required to allow modifier 59 to unbundle 29881 from 29888. That potential bundling/unbundling issue pertains to line 2 (29881-59) and should be reviewed separately, but it does not change the determination for line 1 (29888-RT). Billed line: CPT 29881-59 (Line 2). Governing policy (APC-01) requires three independently documented elements to allow modifier -59 to unbundle 29881 from an arthroscopic ACL reconstruction (29888): a distinct preoperative meniscal diagnosis, an independent operative effort directed at that pathology, and a distinct postoperative diagnosis (APC-01). The medical record does not meet those elements. Preoperative MRI documents \"Both menisci intact, no discrete tear identified\" (Diagnostic Radiology - Imaging Report, p. 11), so there is no distinct preoperative meniscal pathology. The operative note documents that the lateral meniscus showed only \"minor fraying\" that \"was lightly smoothed\" during the same shaver pass and while \"working through the identical anterolateral portal used for notch visualization and subsequent graft passage,\" i.e. an incidental smoothing performed as part of the ACL reconstruction rather than an independent meniscal procedure (Operative Note, p. 25). The postoperative diagnosis lists only the ACL tear and ACL reconstruction (Operative Note, p. 25 / Brief Postoperative Note, p. 27). Per the APC-01 policy text, incidental meniscal debridement to improve visualization for ACL graft passage is not separately reportable and modifier 59 is only allowed when all three documentation elements are independently present; they are not present here. Correction: remove modifier -59; accepted code = 29881. Evidence: APC-01 concept text (APC Coding Concept...), MRI (Diagnostic Radiology - Imaging Report, p. 11), and Operative Note (Operative Note, p. 25).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Audit of claim APC-2026-40217 - Line 2 (Patient MRN: MRN-8827341): Finding - modifier -59 not supported Dear Provider, We completed an audit of Line 2 on claim APC-2026-40217 for patient MRN-8827341 (billed CPT 29881-59). The billed code indicates the provider is separately reporting a meniscectomy (29881) in addition to an arthroscopic ACL reconstruction. Under the governing APC policy (APC-01), CPT 29881 is subject to an NCCI Column 1/Column 2 edit with CPT 29888 (arthroscopically aided ACL reconstruction) when both procedures involve the same knee during the same operative session. Modifier 59 may only override that edit when the record documents all three of the following, independently: (1) a distinct preoperative meniscal pathology, (2) an independent operative effort directed at that meniscal pathology, and (3) a distinct postoperative meniscal diagnosis. Basis for Finding: - Policy: APC-01 states modifier 59 overrides the edit only when the record establishes a distinct meniscal pathology supported by its own preoperative diagnosis, an independent operative effort directed at that pathology, and a distinct postoperative diagnosis. - Preoperative imaging (MRI) documents \"Both menisci intact, no discrete tear identified,\" so there is no preoperative meniscal diagnosis supporting separate meniscal surgery (Diagnostic Radiology - Imaging Report, p. 11). - The operative note documents only \"minor fraying\" of the lateral meniscus that \"was lightly smoothed\" during the same shaver pass and while working through the identical anterolateral portal used for ACL visualization and graft passage - consistent with incidental smoothing performed to facilitate the ACL reconstruction rather than an independent meniscal procedure (Operative Note, p. 25). - The postoperative diagnosis lists only the ACL tear and status post ACL reconstruction; there is no distinct postoperative meniscal diagnosis recorded (Operative Note, p. 25; Brief Postoperative Note, p. 27). Correction: - Modifier -59 is not supported by the documentation and is therefore removed. The corrected procedure code is 29881 (no -59 modifier). If you disagree with this determination, please provide documentation that specifically establishes the three required elements described above (distinct preoperative meniscal diagnosis, documentation of an independent operative effort directed specifically at that meniscal pathology, and a distinct postoperative meniscal diagnosis) so we may reconsider the modifier. Thank you. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.057681,
+    "time_to_run_seconds": 103.655,
+    "retrieval_seconds": 26.117,
+    "judge_seconds": 77.538,
+    "retrieval_turns": 15,
+    "total_cost_per_claim_usd": 30.587681,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.057681
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Operative Note, p. 25",
+      "role": "supports billed code",
+      "excerpt": "PROCEDURE PERFORMED: Arthroscopic right knee ACL reconstruction with hamstring autograft"
+    },
+    {
+      "citation": "History & Physical Examination, p. 4-5",
+      "role": "supports billed code",
+      "excerpt": "Procedure: Arthroscopic right knee ACL reconstruction with hamstring autograft"
+    },
+    {
+      "citation": "Operative Note, p. 25-26",
+      "role": "supports billed code",
+      "excerpt": "During this same shaver pass, and while working through the identical anterolateral portal used for notch visualization and subsequent graft passage, the previously noted minor fraying along the posterior horn of the lateral meniscus was lightly smoothed to improve visualization of the lateral gutter and to prevent instrument catch during graft passage."
+    },
+    {
+      "citation": "APC Coding Concept - Meniscal Debridement Incidental to ACL Reconstruction (NCCI Bundling of 29881 into 29888)",
+      "role": "supports billed code",
+      "excerpt": "CPT 29881 is subject to an NCCI Column 1/Column 2 edit against CPT 29888 (arthroscopically aided anterior cruciate ligament reconstruction) when both involve the same knee during the same operative session; the edit reflects the expectation that incidental meniscal debridement performed to gain visualization for ACL graft passage is not separately reportable. Modifier 59 overrides this edit only when the record establishes a distinct meniscal pathology supported by its own preoperative diagnosis, an independent operative effort directed at that pathology, and a distinct postoperative diagnosis. Reviewers should verify all three elements are independently documented before allowing modifier 59 to unbundle the edit."
+    },
+    {
+      "citation": "APC-01, APC Coding Concept - Meniscal Debridement Incidental to ACL Reconstruction (NCCI Bundling of 29881 into 29888)",
+      "role": "contradicts billed code",
+      "excerpt": "CPT 29881 is subject to an NCCI Column 1/Column 2 edit against CPT 29888 (arthroscopically aided anterior cruciate ligament reconstruction) when both involve the same knee during the same operative session; the edit reflects the expectation that incidental meniscal debridement performed to gain visualization for ACL graft passage is not separately reportable. Modifier 59 overrides this edit only when the record establishes a distinct meniscal pathology supported by its own preoperative diagnosis, an independent operative effort directed at that pathology, and a distinct postoperative diagnosis. Reviewers should verify all three elements are independently documented before allowing modifier 59 to unbundle the edit."
+    },
+    {
+      "citation": "Diagnostic Radiology - Imaging Report, Diagnostic Radiology, p. 11",
+      "role": "contradicts billed code",
+      "excerpt": "IMPRESSION: 1. Complete ACL tear with associated bone contusion pattern typical of pivot-shift mechanism. 2. Both menisci intact, no discrete tear identified."
+    },
+    {
+      "citation": "Operative Note, Operative Note, p. 25",
+      "role": "contradicts billed code",
+      "excerpt": "During this same shaver pass, and while working through the identical anterolateral portal used for notch visualization and subsequent graft passage, the previously noted minor fraying along the posterior horn of the lateral meniscus was lightly smoothed to improve visualization of the lateral gutter and to prevent instrument catch during graft passage."
+    },
+    {
+      "citation": "Operative Note, Operative Note, p. 25",
+      "role": "contradicts billed code",
+      "excerpt": "POST-OPERATIVE DIAGNOSIS: Right knee ACL tear, status post arthroscopic ACL reconstruction with hamstring autograft"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

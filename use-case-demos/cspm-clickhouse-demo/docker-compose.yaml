@@ -1,0 +1,29 @@
+services:
+  puppygraph:
+    image: puppygraph/puppygraph:1.0-preview-20260421
+    pull_policy: always
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    networks:
+      - ch_pg
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse
+    environment:
+      - CLICKHOUSE_USER=ch_user
+      - CLICKHOUSE_PASSWORD=ch_pwd
+    networks:
+      - ch_pg
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+      - "9004:9004"
+networks:
+  ch_pg:
+    name: clickhouse-puppygraph

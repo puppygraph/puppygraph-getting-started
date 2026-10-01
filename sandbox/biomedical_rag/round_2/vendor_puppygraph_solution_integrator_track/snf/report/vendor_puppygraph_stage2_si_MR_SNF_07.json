@@ -1,0 +1,159 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "SNF",
+  "claim_id": "MR_SNF_07",
+  "encounter_information": {
+    "claim_number": "MR_SNF_07",
+    "payer": "Anthem Blue Cross Medicare Advantage",
+    "dates_of_service": "2026-01-08\u20132026-01-22",
+    "facility_pos": "Rio Grande Skilled Nursing Center",
+    "attending_provider": "Dr. Irene Ruiz, MD",
+    "patient": "Harold Simmons \u2014 MRN: MRN-5038291",
+    "medical_record": "MR_SNF_07.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "revenue_code": "0192",
+      "code": "0192",
+      "dos_from": "2026-01-08",
+      "dos_to": "2026-01-21",
+      "billed_units": 10
+    },
+    {
+      "revenue_code": "0191",
+      "code": "0191",
+      "dos_from": "2026-01-08",
+      "dos_to": "2026-01-21",
+      "billed_units": 3
+    },
+    {
+      "revenue_code": "Non-Covered",
+      "code": null,
+      "dos_from": "2026-01-22",
+      "dos_to": "2026-01-22",
+      "billed_units": 1
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_revenue_code": "0192",
+      "dos_from": "2026-01-08",
+      "dos_to": "2026-01-21",
+      "billed_units": 10,
+      "determination": "No Finding",
+      "adjusted_date_of_service": null,
+      "corrected_revenue_code": null,
+      "adjusted_units_billed": null,
+      "confidence": 0.4,
+      "confidence_basis": "5/6 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['get_daily_services (query result)']."
+    },
+    {
+      "line": 2,
+      "billed_revenue_code": "0191",
+      "dos_from": "2026-01-08",
+      "dos_to": "2026-01-21",
+      "billed_units": 3,
+      "determination": "Insufficient Evidence",
+      "adjusted_date_of_service": null,
+      "corrected_revenue_code": null,
+      "adjusted_units_billed": null,
+      "confidence": 0.2,
+      "confidence_basis": "Retrieval/judgment abstained (Insufficient Evidence) rather than guess at a determination \u2014 reported at low confidence regardless of citations."
+    }
+  ],
+  "coding_determination": "Insufficient Evidence",
+  "confidence": 0.2,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Reviewed billed revenue line: Rev Code 0192 (Rehabilitation therapy), 10 units billed for 01/08/2026-01/21/2026. The medical record shows a PT evaluation/certification and an interdisciplinary plan calling for PT/OT 5-7x/week, documented therapy sessions on the 10 billed dates, and explicit facility-level notes that weekend dates had no therapy and were billed Level 1 (Rev 0191). Evidence: the PT Evaluation/Plan documents a certification period and plan of treatment (Physical Therapy, Physical Therapy, p. 18-20) and the Interdisciplinary Plan of Care specifies \"- Skilled PT evaluation and treatment 5-7x/week per plan of care\" (INTERDISCIPLINARY PLAN OF CARE - SNF STAY, p. 10-11). The Treatment Administration Record documents completed therapy on the first therapy date (TREATMENT ADMINISTRATION RECORD | 01/08/2026, p. 139: \"PT session 60 min completed per therapy schedule; nurse facilitated patient preparation; positioning maintained post-treatment\"), and the facility explicitly documents that weekend days had no therapy and were Level 1 per-diem (SKILLED NURSING PROGRESS NOTE | 01/10/2026, p. 86-87: \"No therapy scheduled today (weekend/non-therapy day). Skilled nursing care provided per orders. Level 1 per diem billing (Rev 0191).\"; SKILLED NURSING PROGRESS NOTE | 01/17/2026, p. 100-101: same). The claim billed 10 days of Rev 0192 which matches the documented therapy dates (01/08, 01/09, 01/12-01/16, 01/19-01/21) in the therapy/daily-services extract. The dataset lacks a payer-specific numeric minute threshold for 0192 (fallback reference guide has no minute thresholds), so the audit relies on the facility's therapy plan, certification, and documented sessions. Conclusion: documentation supports the 10 billed 0192 per-diem days as submitted; no adjustment required. Reviewed revenue line: billed revenue code 0191 (Skilled Nursing) for dates 2026-01-08 through 2026-01-21 (claim MR_SNF_07). Claim header documents the skilled care basis as: \"Skilled nursing for cardiac monitoring, diuretic titration, and daily weight monitoring with PT/OT reconditioning following acute decompensation of systolic CHF\" (Claim MR_SNF_07, claim row). Therapy treatment records show PT/OT sessions with 60 min PT + 45 min OT on multiple dates (e.g. 2026-01-08, 2026-01-09, 2026-01-12, 2026-01-13, 2026-01-14, 2026-01-15, 2026-01-16, 2026-01-19, 2026-01-20, 2026-01-21) (get_daily_services output). The dataset contains no payer-specific per-diem numeric thresholds (fallback to payer-agnostic reference guide), which only defines revenue code meanings and states the MDS \"supports but does not replace\" daily clinical documentation (Policy Documents/SNF/...SNF Level of Care - Definitions and Reference Guide.docx, positions 8 and 9). The per-diem-level extraction tool returned NULL level_determination_statement for every date in the range; the tool's metadata notes that a NULL means the facility did not document an explicit per-diem exception and that NULL alone \"does NOT by itself mean the day is unsupported\" (get_per_diem_level_notes output). However, several dates in the billed range have no therapy session rows in the daily services extract (notably 2026-01-10, 2026-01-11, 2026-01-17, 2026-01-18) and no nursing-specific progress notes were retrieved to document the daily skilled nursing interventions referenced in the claim header. Because the reviewer cannot confirm from the retrieved record that licensed skilled nursing services were documented on every billed date in the 01/08-01/21 range (the audit requires day-by-day support), and the dataset lacks payer-specific per-diem criteria and any nursing note evidence for the gap dates, there is insufficient evidence to determine that the billed 0191 level is fully supported for the entire date range. Recommendation: obtain the missing daily nursing notes/MDS entries or payer guideline numeric criteria to validate each billed date before issuing a per-diem downcoding or day-adjustment finding.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": null,
+  "metrics": {
+    "cost_of_processing_usd": 0.034222,
+    "time_to_run_seconds": 142.294,
+    "retrieval_seconds": 31.877,
+    "judge_seconds": 110.417,
+    "retrieval_turns": 5,
+    "total_cost_per_claim_usd": 30.564222,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.034222
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Physical Therapy, Physical Therapy, p. 18-20",
+      "role": "supports billed code",
+      "excerpt": "PT Evaluation and Plan of Treatment Provider: Rio Grande Skilled Nursing Center Certification Period: 01/08/2026 - 02/07/2026"
+    },
+    {
+      "citation": "INTERDISCIPLINARY PLAN OF CARE - SNF STAY, p. 10-11",
+      "role": "supports billed code",
+      "excerpt": "- Skilled PT evaluation and treatment 5-7x/week per plan of care"
+    },
+    {
+      "citation": "TREATMENT ADMINISTRATION RECORD | 01/08/2026 (Thursday) | Day 1 of 14, p. 139",
+      "role": "supports billed code",
+      "excerpt": "PT session 60 min completed per therapy schedule; nurse facilitated patient preparation; positioning maintained post-treatment"
+    },
+    {
+      "citation": "SKILLED NURSING PROGRESS NOTE | 01/10/2026 (Saturday) | Stay Day 3 of 14, p. 86-87",
+      "role": "supports billed code",
+      "excerpt": "No therapy scheduled today (weekend/non-therapy day). Skilled nursing care provided per orders. Level 1 per diem billing (Rev 0191)."
+    },
+    {
+      "citation": "SKILLED NURSING PROGRESS NOTE | 01/17/2026 (Saturday) | Stay Day 10 of 14, p. 100-101",
+      "role": "supports billed code",
+      "excerpt": "No therapy scheduled today (weekend/non-therapy day). Skilled nursing care provided per orders. Level 1 per diem billing (Rev 0191)."
+    },
+    {
+      "citation": "get_daily_services (query result)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-01-08\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 60, \"billable_units\": 4}"
+    },
+    {
+      "citation": "Claim MR_SNF_07 (claim row)",
+      "role": "supports billed code",
+      "excerpt": "Skilled nursing for cardiac monitoring, diuretic titration, and daily weight monitoring with PT/OT reconditioning following acute decompensation of systolic CHF"
+    },
+    {
+      "citation": "get_daily_services output (2026-01-08 PT)",
+      "role": "supports billed code",
+      "excerpt": "Physical Therapy: 60 minutes (Revenue Code: 0421)"
+    },
+    {
+      "citation": "get_daily_services output (2026-01-08 OT)",
+      "role": "supports billed code",
+      "excerpt": "Occupational Therapy: 45 minutes (Revenue Code: 0431)"
+    },
+    {
+      "citation": "get_per_diem_level_notes output",
+      "role": "supports billed code",
+      "excerpt": "level_determination_statement is null on a date when the daily note doesn't state an explicit per-diem-level exception for it - that does NOT by itself mean the day is unsupported; it commonly means the billed level's own minute threshold was met that day, so the facility had no exception to document. A non-null statement is the facility's own basis for downcoding that specific date."
+    },
+    {
+      "citation": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 8",
+      "role": "contradicts billed code",
+      "excerpt": "Revenue codes 0191-0194: Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy), 0193 (sub-acute), 0194 (weanable ventilator management)."
+    },
+    {
+      "citation": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 9",
+      "role": "contradicts billed code",
+      "excerpt": "MDS assessment: The Minimum Data Set assessment completed by the facility at required intervals; supports but does not replace the clinical documentation needed to justify a billed level of care."
+    },
+    {
+      "citation": "get_per_diem_level_notes output (date rows)",
+      "role": "contradicts billed code",
+      "excerpt": "2026-01-10: No determination statement found"
+    }
+  ],
+  "recovery_type": "Partial Recovery",
+  "skilled_services": "Both",
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

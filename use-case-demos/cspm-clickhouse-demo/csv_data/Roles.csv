@@ -1,0 +1,15 @@
+role_id,name
+1,role-payments-readonly
+2,role-payments-app
+3,role-payments-dataeng
+4,role-payments-admin
+5,role-platform-readonly
+6,role-platform-app
+7,role-platform-admin
+8,role-billing-readonly
+9,role-billing-app
+10,role-billing-admin
+11,role-analytics-readonly
+12,role-analytics-dataeng
+13,role-infra-poweruser
+14,role-infra-admin

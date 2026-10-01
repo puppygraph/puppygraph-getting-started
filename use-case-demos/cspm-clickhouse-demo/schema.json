@@ -1,0 +1,881 @@
+{
+  "catalog": [
+    {
+      "name": "clickhouse_data",
+      "type": "clickhouse",
+      "jdbc": {
+        "username": "ch_user",
+        "password": "ch_pwd",
+        "jdbcUri": "jdbc:ch://clickhouse:8123",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "Users",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "phone",
+              "targetFieldName": "phone"
+            },
+            {
+              "sourceFieldName": "created_at",
+              "targetFieldName": "created_at"
+            },
+            {
+              "sourceFieldName": "last_login",
+              "targetFieldName": "last_login"
+            },
+            {
+              "sourceFieldName": "account_status",
+              "targetFieldName": "account_status"
+            },
+            {
+              "sourceFieldName": "authentication_method",
+              "targetFieldName": "authentication_method"
+            },
+            {
+              "sourceFieldName": "failed_login_attempts",
+              "targetFieldName": "failed_login_attempts"
+            }
+          ]
+        }
+      },
+      "label": "User",
+      "id": [
+        {
+          "name": "user_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "username",
+          "type": "STRING"
+        },
+        {
+          "name": "email",
+          "type": "STRING"
+        },
+        {
+          "name": "phone",
+          "type": "STRING"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME"
+        },
+        {
+          "name": "last_login",
+          "type": "DATETIME"
+        },
+        {
+          "name": "account_status",
+          "type": "STRING"
+        },
+        {
+          "name": "authentication_method",
+          "type": "STRING"
+        },
+        {
+          "name": "failed_login_attempts",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "InternetGateways",
+          "mappedField": [
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "region",
+              "targetFieldName": "region"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            }
+          ]
+        }
+      },
+      "label": "InternetGateway",
+      "id": [
+        {
+          "name": "internet_gateway_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "region",
+          "type": "STRING"
+        },
+        {
+          "name": "status",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "VPCs",
+          "mappedField": [
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "VPC",
+      "id": [
+        {
+          "name": "vpc_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "Subnets",
+          "mappedField": [
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "Subnet",
+      "id": [
+        {
+          "name": "subnet_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "SecurityGroups",
+          "mappedField": [
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "SecurityGroup",
+      "id": [
+        {
+          "name": "security_group_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "NetworkInterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "NetworkInterface",
+      "id": [
+        {
+          "name": "network_interface_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "VMInstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "VMInstance",
+      "id": [
+        {
+          "name": "vm_instance_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "Roles",
+          "mappedField": [
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            }
+          ]
+        }
+      },
+      "label": "Role",
+      "id": [
+        {
+          "name": "role_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "Resources",
+          "mappedField": [
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "sensitivity",
+              "targetFieldName": "sensitivity"
+            }
+          ]
+        }
+      },
+      "label": "Resource",
+      "id": [
+        {
+          "name": "resource_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "type",
+          "type": "STRING"
+        },
+        {
+          "name": "sensitivity",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "PublicIPs",
+          "mappedField": [
+            {
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
+            },
+            {
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            }
+          ]
+        }
+      },
+      "label": "PublicIP",
+      "id": [
+        {
+          "name": "public_ip_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ip_address",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "IngressRules",
+          "mappedField": [
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            },
+            {
+              "sourceFieldName": "protocol",
+              "targetFieldName": "protocol"
+            },
+            {
+              "sourceFieldName": "port_range",
+              "targetFieldName": "port_range"
+            },
+            {
+              "sourceFieldName": "source",
+              "targetFieldName": "source"
+            }
+          ]
+        }
+      },
+      "label": "IngressRule",
+      "id": [
+        {
+          "name": "ingress_rule_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "protocol",
+          "type": "STRING"
+        },
+        {
+          "name": "port_range",
+          "type": "STRING"
+        },
+        {
+          "name": "source",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "InternetGatewayVPC",
+          "mappedField": [
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            }
+          ]
+        }
+      },
+      "label": "GATEWAY_TO",
+      "fromNodeLabel": "InternetGateway",
+      "toNodeLabel": "VPC",
+      "fromKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "vpc_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "Subnets",
+          "mappedField": [
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            }
+          ]
+        }
+      },
+      "label": "CONTAINS",
+      "fromNodeLabel": "VPC",
+      "toNodeLabel": "Subnet",
+      "fromKey": [
+        {
+          "name": "vpc_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "subnet_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "NetworkInterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        }
+      },
+      "label": "HOSTS_INTERFACE",
+      "fromNodeLabel": "Subnet",
+      "toNodeLabel": "NetworkInterface",
+      "fromKey": [
+        {
+          "name": "subnet_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "network_interface_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "NetworkInterfaces",
+          "mappedField": [
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            }
+          ]
+        }
+      },
+      "label": "PROTECTS",
+      "fromNodeLabel": "SecurityGroup",
+      "toNodeLabel": "NetworkInterface",
+      "fromKey": [
+        {
+          "name": "security_group_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "network_interface_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "VMInstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            }
+          ]
+        }
+      },
+      "label": "ATTACHED_TO",
+      "fromNodeLabel": "NetworkInterface",
+      "toNodeLabel": "VMInstance",
+      "fromKey": [
+        {
+          "name": "network_interface_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "vm_instance_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "VMInstances",
+          "mappedField": [
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            }
+          ]
+        }
+      },
+      "label": "ASSIGNED_ROLE",
+      "fromNodeLabel": "VMInstance",
+      "toNodeLabel": "Role",
+      "fromKey": [
+        {
+          "name": "vm_instance_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "role_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "RoleResourceAccess",
+          "mappedField": [
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            }
+          ]
+        }
+      },
+      "label": "ALLOWS_ACCESS_TO",
+      "fromNodeLabel": "Role",
+      "toNodeLabel": "Resource",
+      "fromKey": [
+        {
+          "name": "role_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "resource_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "PublicIPs",
+          "mappedField": [
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
+            }
+          ]
+        }
+      },
+      "label": "HAS_PUBLIC_IP",
+      "fromNodeLabel": "NetworkInterface",
+      "toNodeLabel": "PublicIP",
+      "fromKey": [
+        {
+          "name": "network_interface_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "public_ip_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "IngressRules",
+          "mappedField": [
+            {
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            }
+          ]
+        }
+      },
+      "label": "HAS_RULE",
+      "fromNodeLabel": "SecurityGroup",
+      "toNodeLabel": "IngressRule",
+      "fromKey": [
+        {
+          "name": "security_group_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "ingress_rule_id",
+          "type": "HUGEINT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "UserRoleAssumption",
+          "mappedField": [
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "granted_at",
+              "targetFieldName": "granted_at"
+            }
+          ]
+        }
+      },
+      "label": "CAN_ASSUME_ROLE",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "Role",
+      "fromKey": [
+        {
+          "name": "user_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "role_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "granted_at",
+          "type": "DATETIME"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "clickhouse_data",
+          "schema": "cspm",
+          "table": "RoleAssumeRole",
+          "mappedField": [
+            {
+              "sourceFieldName": "from_role_id",
+              "targetFieldName": "from_role_id"
+            },
+            {
+              "sourceFieldName": "to_role_id",
+              "targetFieldName": "to_role_id"
+            }
+          ]
+        }
+      },
+      "label": "CAN_ASSUME",
+      "fromNodeLabel": "Role",
+      "toNodeLabel": "Role",
+      "fromKey": [
+        {
+          "name": "from_role_id",
+          "type": "HUGEINT"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_role_id",
+          "type": "HUGEINT"
+        }
+      ]
+    }
+  ]
+}

@@ -23,7 +23,7 @@ Copy `.env.example` to `.env` and fill in your AWS credentials and region:
 cp .env.example .env
 ```
 
-The `demo` profile is used by the scripts you run locally. The AWS keys in `.env` are for the Docker containers, which don't inherit your shell environment. The other settings in `.env` (bucket, database, dates) are used by both.
+Use the same AWS keys in .env as in your demo profile (aws configure export-credentials --profile demo --format env-no-export prints them)
 
 > [!WARNING]
 > `PUPPYGRAPH_PASSWORD` defaults to `puppygraph123`, PuppyGraph's publicly known default. Change it to a strong password of your own, and never commit `.env` to version control.
@@ -39,7 +39,7 @@ uv pip install -r requirements.txt
 
 The following are configured in `.env`:
 
-- `TARGET_BUCKET`: bucket for S3 data and Iceberg metadata. Bucket names are global across all AWS accounts, so replace `YOUR_ACCOUNT_ID` with your account ID (`aws sts get-caller-identity --query Account --output text --profile demo`).
+- `TARGET_BUCKET`: bucket for S3 data and Iceberg metadata. Bucket names are global across all AWS accounts, so replace `YOUR_ACCOUNT_ID` with your account ID.
 - `TARGET_DB`: Glue database name
 - `AWS_REGION`: AWS region for the bucket and Glue
 - `DATE_START` / `DATE_END`: date range of blockchain data to fetch

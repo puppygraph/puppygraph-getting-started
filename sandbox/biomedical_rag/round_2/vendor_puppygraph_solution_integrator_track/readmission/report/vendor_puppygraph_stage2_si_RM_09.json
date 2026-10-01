@@ -1,0 +1,145 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "claim_id": "RM_09",
+  "encounter_information": {
+    "claim_number": "RM_09",
+    "payer": "Rocky Mountain Health Preferred",
+    "dates_of_service": "2026-08-07\u20132026-08-17",
+    "facility_pos": "Front Range University Hospital",
+    "attending_provider": "Dr. Ravi Subramanian, MD (Critical Care Medicine)",
+    "patient": "Sinead O'Brennan \u2014 MRN: MRN-9042173",
+    "medical_record": "RM_09.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "A41.89",
+      "description": "Other sepsis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T80.218A",
+      "description": "Other infection due to central venous catheter, initial encounter",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J44.9",
+      "description": "Chronic obstructive pulmonary disease, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B96.61",
+      "description": "Methicillin susceptible Staphylococcus aureus as the cause of diseases classified elsewhere",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.11",
+      "description": "Dependence on respirator (ventilator) status",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1935Z",
+      "description": "Assistance with respiratory ventilation, less than 24 consecutive hours"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "finding_reason": "Infection or complication of care - CLABSI from tunneled PICC placed during index stay",
+      "confidence": 0.8,
+      "confidence_basis": "All 4 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Billed readmission: RM_09 (admit 08/07/2026, gap_days=6). Governing policy: Rocky Mountain Health Preferred Readmission Review Guideline (Review Window: 45 days from prior discharge). The guideline's 45-day window applies to all lines of business and is met here (index discharge 08/01/2026 -> readmit 08/07/2026 = 6 days). Evidence in the readmission record explicitly documents that the readmission was caused by a new infection originating from a device placed during the index stay: the discharge summary states the readmission was \"MSSA CLABSI ... originating from the tunneled PICC placed during the index admission\" and that \"The index-stay device directly caused the readmission infection\" (DISCHARGE SUMMARY, Transfer / Discharge Summary \u203a Discharge / Transfer Summary, pp. 122-123). This clinical fact directly matches the guideline's criterion B2: \"The readmission is due to a new infection, bleeding event, or other complication arising from care provided during the prior stay.\" I reviewed the payer's exclusions (direct transfers, scheduled admissions, SNF/LTACH/IRF, AMA discharge, newborn/obstetric, transplant, inpatient behavioral health, etc.) and none apply to this case (patient was discharged home with home health and readmitted from home). Therefore, under Rocky Mountain Health Preferred's guideline, RM_09 meets the \"infection or complication of care\" criterion and the readmission is related to the index stay (Finding). Key citations: Policy - Review Window and infection/complication criterion (Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx); Clinical support - DISCHARGE SUMMARY (Transfer / Discharge Summary \u203a Discharge / Transfer Summary, pp. 122-123).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Readmission review of RM_09 (admit 08/07/2026) - Determination: Finding We have completed Rocky Mountain Health Preferred's readmission review for claim RM_09 using the Rocky Mountain Health Preferred Readmission Review Guideline (effective 06/01/2022). The guideline's review window is 45 days from prior discharge; RM_09 falls within that window (index discharge 08/01/2026 -> readmit 08/07/2026). Finding: This readmission is related to the prior index admission (MR_09) and qualifies as a Finding under the guideline criterion for a new infection/complication arising from prior-stay care. Basis: The facility's discharge summary documents that Readmission RM_09 was \"MSSA CLABSI (A41.89 + T80.218A) originating from the tunneled PICC placed during the index admission. The index-stay device directly caused the readmission infection; the patient was living at home (not institutionalized) at the time of this readmission.\" (DISCHARGE SUMMARY, Transfer / Discharge Summary \u203a Discharge / Transfer Summary, pp. 122-123). This fact meets the guideline question: \"Does the documentation support: The readmission is due to a new infection, bleeding event, or other complication arising from care provided during the prior stay.\" (Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx). Exclusions: The payer's exclusion list was reviewed and none apply (the patient was discharged home with home health and was not a direct transfer, scheduled admission, transplant, newborn/obstetric, or behavioral health admission). Correction/Next Steps: Because this readmission has been adjudicated as related to the index stay under Rocky Mountain Health Preferred's guideline (Infection/Complication of care - CLABSI from PICC placed during MR_09), RM_09 is classified as a related readmission (Finding). This determination will be applied per Rocky Mountain Health Preferred contractual/payment rules for related readmissions. If you disagree with this determination, please provide additional clinical documentation demonstrating either that the PICC was not placed during the index admission, that the bloodstream infection did not originate from the PICC, or documentation meeting a listed exclusion. Sincerely, Readmissions Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.019807,
+    "time_to_run_seconds": 64.548,
+    "retrieval_seconds": 7.341,
+    "retrieval_turns": 4,
+    "judge_seconds": 57.207,
+    "total_cost_per_claim_usd": 30.549807,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.019807
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx, Review Window:",
+      "role": "supports billed code",
+      "excerpt": "45 days from prior discharge"
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx, (Section B, question B2)",
+      "role": "supports billed code",
+      "excerpt": "Does the documentation support: The readmission is due to a new infection, bleeding event, or other complication arising from care provided during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'infection or complication of care' criterion. Continue to Section C. ____No: Continue to question B3."
+    },
+    {
+      "citation": "DISCHARGE SUMMARY, Transfer / Discharge Summary \u203a Discharge / Transfer Summary, pp. 122-123",
+      "role": "supports billed code",
+      "excerpt": "Clinical Relationship: Index admission MR_09 (04/04-08/01/2026): Septic shock (A40.3/R65.21), ARDS (J80), prolonged mechanical ventilation; discharged home with a tunneled PICC placed for home IV antibiotic completion. Readmission RM_09 (08/07-08/17/2026): MSSA CLABSI (A41.89 + T80.218A) originating from the tunneled PICC placed during the index admission. The index-stay device directly caused the readmission infection; the patient was living at home (not institutionalized) at the time of this readmission."
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx, Exclusions (Section C)",
+      "role": "supports billed code",
+      "excerpt": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

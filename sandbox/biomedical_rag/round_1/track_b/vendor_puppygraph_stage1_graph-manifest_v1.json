@@ -1,0 +1,61 @@
+{
+  "vendor_id": "puppygraph",
+  "stage": 1,
+  "schema_version": "graph-1.0",
+  "dataset": "multihop_rag",
+  "source_vocabularies": {
+    "note": "Non-clinical news corpus; no clinical vocabularies apply."
+  },
+  "counts": {
+    "documents": 609,
+    "nodes": 59940,
+    "edges": 147002,
+    "nil_mentions": 0
+  },
+  "provenance_completeness": {
+    "nodes_with_doc_id_pct": 100.0,
+    "edges_with_doc_id_pct": 100.0
+  },
+  "notes": "Full graph (metadata + LLM-extracted entities) exported from Postgres.",
+  "build_info": {
+    "built_at_utc": "2026-07-18T02:14:04+00:00",
+    "construction_path": "metadata+llm-entity-layer (cocoindex_flow.py, exported from Postgres)",
+    "dataset": {
+      "name": "yixuantt/MultiHopRAG",
+      "huggingface_revision": "71ac0d0bd1f951d2d6b70311f7d2ae404e1ffa82",
+      "files": {
+        "corpus.json": {
+          "pinned_sha256": "20b61b5ab84de84a927420c5d265b7ec8d859ae49980699958a787ade9e4d28f",
+          "on_disk_sha256": "20b61b5ab84de84a927420c5d265b7ec8d859ae49980699958a787ade9e4d28f"
+        },
+        "MultiHopRAG.json": {
+          "pinned_sha256": "03cfb4926461f868684903aadc8024447bdda5bb3f6804741424cce338515bff",
+          "on_disk_sha256": "03cfb4926461f868684903aadc8024447bdda5bb3f6804741424cce338515bff"
+        }
+      }
+    },
+    "code": {
+      "git_commit": "a135b877e8e049b52e2f25365f1ca14f7577c90b",
+      "git_dirty": true
+    },
+    "tools": {
+      "python": "3.12.13",
+      "platform": "Linux-6.8.0-1060-aws-x86_64-with-glibc2.35",
+      "dependencies": {
+        "cocoindex": "0.3.39",
+        "neo4j": "6.2.0",
+        "openai": "2.46.0",
+        "psycopg": "3.3.4"
+      }
+    },
+    "llm": {
+      "extraction_model": "gpt-5-mini",
+      "answering_model": "unset (default gpt-4o-mini when run)",
+      "extraction_instruction_sha256": "47bd82d93ff5e81d6fd80a5b0c2ea0504d42671d172fb18339700b8cc64456a6"
+    },
+    "runtime_images": {
+      "postgres": "postgres:15.15",
+      "puppygraph": "puppygraph/puppygraph:1.1.0"
+    }
+  }
+}

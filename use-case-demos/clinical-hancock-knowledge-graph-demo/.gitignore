@@ -1,0 +1,8 @@
+schemas/
+
+hancock_demo.db
+
+.venv
+.env
+
+__pycache__/

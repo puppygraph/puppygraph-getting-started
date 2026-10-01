@@ -1,0 +1,142 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "claim_id": "RM_06",
+  "encounter_information": {
+    "claim_number": "RM_06",
+    "payer": "Great Basin Preferred Care",
+    "dates_of_service": "2026-06-26\u20132026-07-08",
+    "facility_pos": "Great Basin Regional Hospital",
+    "attending_provider": "Dr. Julia Ostrowski, MD (Critical Care Medicine)",
+    "patient": "Winona Whitecrow \u2014 MRN: MRN-1408372",
+    "medical_record": "RM_06.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K86.3",
+      "description": "Pseudocyst of pancreas",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K85.12",
+      "description": "Biliary acute pancreatitis with infected necrosis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.4XXA",
+      "description": "Infection following a procedure, initial encounter",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R65.21",
+      "description": "Severe sepsis with septic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E13.9",
+      "description": "Other specified diabetes mellitus without complications",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K80.20",
+      "description": "Calculus of gallbladder without cholecystitis, without obstruction",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0F9G3ZZ",
+      "description": "Drainage of pancreatic duct, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0W9F3ZZ",
+      "description": "Drainage of abdominal cavity, percutaneous approach"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "finding_reason": "Infection or complication of care (infected pancreatic pseudocyst/infected necrosis related to index necrotizing pancreatitis)",
+      "confidence": 0.8,
+      "confidence_basis": "All 5 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Reviewed readmission RM_06 (admit 06/26/2026, gap_days=6) against index MR_06 (discharge 06/20/2026). Great Basin Preferred Care's guideline specifies a 30-day review window (\"30 days from prior discharge\") so this readmission is in-scope (Policy doc citation: Policy Documents/Readmission/Payer Guidelines/Great Basin Preferred Care - Readmission Review Guideline.docx, position 4). The medical record documents the readmission diagnosis as an infected pancreatic pseudocyst and explicitly states this is a direct late complication of the index necrotizing pancreatitis: \"Clinical Relationship: Index admission MR_06 (03/02-06/20/2026): Necrotizing gallstone pancreatitis (K85.12) with 40-50% necrosis; step-up drainage and VARD performed; cholecystectomy for biliary etiology. Readmission RM_06 (06/26-07/08/2026): Infected pancreatic pseudocyst (K86.3) with infected necrosis (K85.12) - direct late complication of the index necrotizing pancreatitis. Both admissions share K85.12 as a coded diagnosis.\" (DISCHARGE SUMMARY, Transfer / Discharge Summary \u203a Discharge / Transfer Summary, pp. 139-140). Procedural/pathology support for infection is present: \"CT-guided aspiration performed of the pancreatic bed. Purulent material obtained. Gram stain and cultures sent. Confirmatory infection.\" (Pancreatic Necrosis, Chart Notes, p. 73). The payer guideline's relatedness criteria include both \"same or clinically related condition\" and \"new infection/complication arising from care provided during the prior stay\" and require documentation linking the readmission to the index stay; the record meets these criteria (Policy doc citations: positions 12 and 13). The guideline's exclusions (e.g. direct transfers, scheduled admissions, burn, newborn/obstetric, transplant, inpatient behavioral health, admissions to SNF/LTACH/IRF) would override a Finding, but no exclusion applies in this case (Policy Documents/Readmission/Payer Guidelines/Great Basin Preferred Care - Readmission Review Guideline.docx, position 21). Conclusion: the record supports that RM_06 is clinically related to MR_06 and qualifies as a Finding under the payer's readmission guideline (Finding Reason: infection/complication of care related to prior necrotizing pancreatitis). Evidence used: payer guideline (positions 4, 12, 13, 21), the discharge summary clinical relationship statement (pp. 139-140), and CT-guided aspiration note confirming purulent material (p. 73).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Readmission review - RM_06 (admit 06/26/2026) to Great Basin Preferred Care We completed a clinical readmission review of inpatient claim RM_06 and the paired index claim MR_06. Per Great Basin Preferred Care's Readmission Review Guideline (review window: 30 days from prior discharge), this readmission (6 days after the index discharge) is within the review window and subject to review. The documentation shows that the patient was readmitted with an infected pancreatic pseudocyst (K86.3) and infected necrosis. The hospital discharge summary explicitly states that the readmission was a \"direct late complication of the index necrotizing pancreatitis\" (index dx K85.12), and interventional radiology confirmed purulent material from the pancreatic bed on CT-guided aspiration. Under the payer's guideline the readmission therefore meets the criterion for an infection/complication arising from the care provided during the prior stay and is clinically related to the index admission. Finding: The readmission RM_06 is a Finding under Great Basin Preferred Care's readmission policy - specifically, it meets the \"infection or complication of care\" criterion because the infected pancreatic pseudocyst and infected necrosis are documented as a direct complication of the index necrotizing pancreatitis (MR_06). Correction: This readmission will be processed as clinically related to the index stay per the payer's readmission policy. If you disagree with this determination, please provide additional clinical documentation showing that the readmission was unrelated (for example, evidence that the pseudocyst infection arose from a new, unrelated event or that an applicable exclusion applies). Sincerely, Clinical Claims Auditor",
+  "metrics": {
+    "cost_of_processing_usd": 0.019402,
+    "time_to_run_seconds": 77.476,
+    "retrieval_seconds": 6.828,
+    "retrieval_turns": 4,
+    "judge_seconds": 70.649,
+    "total_cost_per_claim_usd": 30.549402,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.019402
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Great Basin Preferred Care - Readmission Review Guideline.docx, position 4",
+      "role": "supports billed code",
+      "excerpt": "30 days from prior discharge"
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Great Basin Preferred Care - Readmission Review Guideline.docx, position 13",
+      "role": "supports billed code",
+      "excerpt": "Does the documentation support: The readmission is due to a new infection, bleeding event, or other complication arising from care provided during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'infection or complication of care' criterion. Continue to Section C. ____No: Continue to question B3."
+    },
+    {
+      "citation": "DISCHARGE SUMMARY, Transfer / Discharge Summary Discharge / Transfer Summary, pp. 139-140",
+      "role": "supports billed code",
+      "excerpt": "Clinical Relationship: Index admission MR_06 (03/02-06/20/2026): Necrotizing gallstone pancreatitis (K85.12) with 40-50% necrosis; step-up drainage and VARD performed; cholecystectomy for biliary etiology. Readmission RM_06 (06/26-07/08/2026): Infected pancreatic pseudocyst (K86.3) with infected necrosis (K85.12) - direct late complication of the index necrotizing pancreatitis. Both admissions share K85.12 as a coded diagnosis."
+    },
+    {
+      "citation": "Pancreatic Necrosis, Chart Notes, p. 73",
+      "role": "supports billed code",
+      "excerpt": "CT-guided aspiration performed of the pancreatic bed. Purulent material obtained. Gram stain and cultures sent. Confirmatory infection."
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Great Basin Preferred Care - Readmission Review Guideline.docx, position 21",
+      "role": "contradicts billed code",
+      "excerpt": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}
