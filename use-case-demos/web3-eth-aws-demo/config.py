@@ -4,7 +4,7 @@ TABLES = ["transactions", "token_transfers"]
 
 AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
 SOURCE_BUCKET = "aws-public-blockchain"
-TARGET_BUCKET = os.environ.get("TARGET_BUCKET", "aws-web3-eth-demo")
+TARGET_BUCKET = os.environ["TARGET_BUCKET"]  # required, no default: S3 bucket names are global
 TARGET_DB = os.environ.get("TARGET_DB", "eth_iceberg")
 
 DATE_START = os.environ.get("DATE_START", "2026-01-01")
