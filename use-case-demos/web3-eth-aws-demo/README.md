@@ -169,7 +169,7 @@ docker stop puppy
 
 To remove the Iceberg data and Glue database created for this demo, run:
 ```bash
-export $(grep -E '^(TARGET_BUCKET|TARGET_DB)=' .env)
+export $(grep -E '^(TARGET_BUCKET|TARGET_DB|AWS_REGION)=' .env)
 aws s3 rm s3://$TARGET_BUCKET/iceberg/ --recursive --profile demo
 aws s3 rm s3://$TARGET_BUCKET/eth/ --recursive --profile demo
 aws glue delete-database --name $TARGET_DB --profile demo
