@@ -23,7 +23,7 @@ Copy `.env.example` to `.env` and fill in your AWS credentials and region:
 cp .env.example .env
 ```
 
-Use the same AWS keys in .env as in your demo profile (aws configure export-credentials --profile demo --format env-no-export prints them)
+Use the same AWS keys in `.env` as in your demo profile (aws configure export-credentials --profile demo --format env-no-export prints them)
 
 > [!WARNING]
 > `PUPPYGRAPH_PASSWORD` defaults to `puppygraph123`, PuppyGraph's publicly known default. Change it to a strong password of your own, and never commit `.env` to version control.
@@ -108,7 +108,6 @@ docker run \
 ```
 
 ## Modeling the Graph
-
 1. Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
    - Username: `puppygraph`
    - Password: the `PUPPYGRAPH_PASSWORD` set in `.env` (default `puppygraph123`)
@@ -123,6 +122,9 @@ docker run \
        --user "puppygraph:$PUPPYGRAPH_PASSWORD" \
        localhost:8081/schema
      ```
+
+> [!NOTE]
+> When uploading the schema, wait until the Cluster panel shows the cluster is up. Uploading too early fails with `replicationNum 1 exceeds the number of available compute nodes (0)`.
 
 ## Querying the Graph
 
