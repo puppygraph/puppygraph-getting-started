@@ -1,0 +1,134 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "claim_id": "RM_03",
+  "encounter_information": {
+    "claim_number": "RM_03",
+    "payer": "Rocky Mountain Health Preferred",
+    "dates_of_service": "2026-05-14\u20132026-05-25",
+    "facility_pos": "Front Range University Hospital",
+    "attending_provider": "Dr. Ilya Ashford, MD (Neurocritical Care)",
+    "patient": "Kenji Nakashima \u2014 MRN: MRN-8309247",
+    "medical_record": "RM_03.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T85.09XA",
+      "description": "Other mechanical complication of ventricular intracranial shunt, initial encounter",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G91.1",
+      "description": "Obstructive hydrocephalus",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G40.311",
+      "description": "Generalized idiopathic epilepsy, intractable, with status epilepticus",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I61.0",
+      "description": "Nontraumatic intracerebral hemorrhage in hemisphere, subcortical",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J69.0",
+      "description": "Pneumonitis due to inhalation of food and vomit",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R40.9",
+      "description": "Unspecified altered consciousness",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "00HV3MZ",
+      "description": "Insertion of neurostimulator lead into cerebrospinal fluid, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0016076",
+      "description": "Bypass cerebral ventricle to peritoneum, open, synthetic substitute"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "finding_reason": "Surgical complication",
+      "confidence": 0.4,
+      "confidence_basis": "4/5 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx, Review Window']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Billed readmission RM_03 (admit 05/14/2026, discharge 05/25/2026) occurs 5 days after index discharge (index MR_03, 01/28/2026-05/09/2026) and is within Rocky Mountain Health Preferred's 45-day review window (policy: \"Review Window: 45 days from prior discharge\"). The payer guideline explicitly counts readmissions due to complications of a surgical procedure (including device malfunction) as a Finding. Clinical documentation links the readmission directly to the device placed during the index stay: the DISCHARGE SUMMARY documents the index admission included VP shunt placement and states the readmission was for \"VP shunt malfunction (T85.09XA) ... direct mechanical complication of the shunt placed during the index ICH admission.\" The readmission hospital course further documents CT showing enlarged ventricles consistent with shunt obstruction and that neurosurgery revised the VP shunt with a new catheter placed. No exclusion (e.g., direct transfer or scheduled/staged admission) is present - discharge destination is documented as \"Home with Home Health Services,\" not a transfer. Based on (1) the readmission being in-window, (2) the payer guideline which counts device malfunction as a surgical complication, and (3) clear contemporaneous documentation tying the VP shunt malfunction to the shunt placed during the index stay, this readmission meets the guideline's \"surgical complication\" criterion and is a Finding. Key citations: Policy - \"Review Window: 45 days from prior discharge\" and \"Does the documentation support: The readmission reflects a complication of a surgical procedure ... device malfunction.\" (Policy document). Clinical record - DISCHARGE SUMMARY (Transfer / Discharge Summary, p. 127-128): \"Clinical Relationship: Index admission MR_03 (01/28-05/09/2026): ... VP shunt placed. Readmission RM_03 (05/14-05/25/2026): VP shunt malfunction (T85.09XA) ... direct mechanical complication of the shunt placed during the index ICH admission.\" and hospital course confirming shunt obstruction and revision; discharge destination \"Home with Home Health Services.\"",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Readmission Review Determination - Claim RM_03 Dear Provider, We completed a readmission review of inpatient claim RM_03 (admit 05/14/2026-discharge 05/25/2026) under Rocky Mountain Health Preferred's Readmission Review Guideline (effective 06/01/2022). The readmission occurred 5 days after discharge from the index admission MR_03 (01/28/2026-05/09/2026), which is within the policy's 45-day review window (\"Review Window: 45 days from prior discharge\"). Finding: This readmission is related to the prior index admission and is therefore a Finding under the plan's readmission policy, specifically the \"surgical complication\" criterion. Basis for Determination: - Policy: The payer's guideline identifies readmissions that are complications of a surgical procedure performed during the prior stay (\"for example, wound infection, dehiscence, or device malfunction\") as a Finding. (Policy: Rocky Mountain Health Preferred - Readmission Review Guideline.) - Clinical record: The facility's Discharge Summary documents that the index admission included placement of a ventriculoperitoneal (VP) shunt and explicitly states the readmission was for \"VP shunt malfunction (T85.09XA) ... direct mechanical complication of the shunt placed during the index ICH admission.\" The readmission hospital course documents CT findings consistent with shunt obstruction and that neurosurgery revised the VP shunt with a new catheter placed. (DISCHARGE SUMMARY, Transfer / Discharge Summary, p. 127-128.) - Exclusions: No exclusion applies. The patient was discharged home with home health services (not directly transferred to another acute facility), so the policy exclusions (e.g., direct transfer, scheduled readmission) do not apply. Action: Per Rocky Mountain Health Preferred readmission policy, this readmission is confirmed as a related readmission under the \"surgical complication\" criterion. Please expect the claim to be processed in accordance with the payer's readmission adjustment procedures. If you believe there is additional clinical documentation that would change this determination (for example, evidence that the shunt malfunction was caused by an unrelated new external event, or documentation meeting a listed exclusion), please submit that documentation for reconsideration. Sincerely, Clinical Review Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.020327,
+    "time_to_run_seconds": 65.419,
+    "retrieval_seconds": 8.9,
+    "retrieval_turns": 4,
+    "judge_seconds": 56.52,
+    "total_cost_per_claim_usd": 30.550327,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.020327
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx, Review Window",
+      "role": "supports billed code",
+      "excerpt": "Review Window: 45 days from prior discharge"
+    },
+    {
+      "citation": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx, 'complication of a surgical procedure' question",
+      "role": "supports billed code",
+      "excerpt": "Does the documentation support: The readmission reflects a complication of a surgical procedure performed during the prior stay (for example, wound infection, dehiscence, or device malfunction)."
+    },
+    {
+      "citation": "DISCHARGE SUMMARY, Transfer / Discharge Summary, p. 127-128",
+      "role": "supports billed code",
+      "excerpt": "Clinical Relationship: Index admission MR_03 (01/28-05/09/2026): Spontaneous ICH (I61.0), obstructive hydrocephalus (G91.1), VP shunt placed. Readmission RM_03 (05/14-05/25/2026): VP shunt malfunction (T85.09XA), obstructive hydrocephalus (G91.1) - direct mechanical complication of the shunt placed during the index ICH admission. I61.0 and G91.1 present on both admissions."
+    },
+    {
+      "citation": "DISCHARGE SUMMARY, Transfer / Discharge Summary, p. 127-128",
+      "role": "supports billed code",
+      "excerpt": "HOSPITAL COURSE SUMMARY 47M with spontaneous ICH and hydrocephalus managed with EVD and VP shunt during index admission MR_03 (01/28-05/09/2026, 102 days) presented 5 days post-discharge with headache, AMS, and GTC seizure. CT head showed enlarged lateral ventricles consistent with shunt obstruction. Neurosurgery revised the VP shunt on Day 2; new catheter placed."
+    },
+    {
+      "citation": "DISCHARGE SUMMARY, Transfer / Discharge Summary, p. 127-128",
+      "role": "supports billed code",
+      "excerpt": "Discharge Destination: Home with Home Health Services"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

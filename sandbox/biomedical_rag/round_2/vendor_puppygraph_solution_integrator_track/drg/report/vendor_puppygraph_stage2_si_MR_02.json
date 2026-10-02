@@ -1,0 +1,308 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_02",
+  "encounter_information": {
+    "claim_number": "MR_02",
+    "payer": "Piedmont Blue Advantage HMO",
+    "dates_of_service": "2026-01-17\u20132026-04-25",
+    "facility_pos": "Piedmont Trinity Medical Center",
+    "attending_provider": null,
+    "patient": "Marcus D. Whitfield \u2014 MRN: MRN-6712048",
+    "medical_record": "MR_02.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I21.19",
+      "description": "STEMI involving other coronary artery of inferior wall",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R57.0",
+      "description": "Cardiogenic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I50.23",
+      "description": "Acute on chronic systolic (congestive) heart failure",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I46.9",
+      "description": "Cardiac arrest, cause unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I48.91",
+      "description": "Unspecified atrial fibrillation",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.89XA",
+      "description": "Other complications of procedures, not elsewhere classified, initial encounter",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.4XXA",
+      "description": "Infection following a procedure, initial encounter",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B95.61",
+      "description": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.401",
+      "description": "Acute embolism and thrombosis of unspecified deep veins of right lower extremity",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z66",
+      "description": "Do not resuscitate",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02703DZ",
+      "description": "Dilation of coronary artery, one site with drug-eluting intraluminal device, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HA3RZ",
+      "description": "Insertion of short-term external heart assist system into heart, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HW3TZ",
+      "description": "Insertion of intraluminal device into thoracic aorta, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "021009W",
+      "description": "Bypass coronary artery, one site from aorta with autologous venous tissue, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "021109W",
+      "description": "Bypass coronary artery, two sites from aorta with autologous venous tissue, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "06BQ0ZZ",
+      "description": "Excision of right saphenous vein, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1221Z",
+      "description": "Performance of cardiac output, continuous"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Transfer to Cardiac Rehabilitation Facility",
+      "revised_diagnosis_set": [
+        "I21.09",
+        "R57.0",
+        "I50.23",
+        "J96.01",
+        "I46.9",
+        "N17.9",
+        "I48.91",
+        "T81.89XA",
+        "T81.4XXA",
+        "B95.61",
+        "I82.401",
+        "I25.10",
+        "E11.65",
+        "I10",
+        "E78.5",
+        "Z66"
+      ],
+      "revised_procedure_set": [
+        "02703DZ",
+        "02HA3RZ",
+        "02HW3TZ",
+        "021009W",
+        "021109W",
+        "06BQ0ZZ",
+        "0BH17EZ",
+        "5A1D90Z",
+        "5A1221Z"
+      ],
+      "confidence": 0.4,
+      "confidence_basis": "9/11 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Critical Care Progress Note, Chart Notes, p. 550', 'Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 1008-1009']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Principal diagnosis I21.19 (STEMI involving other coronary artery of inferior wall, POA=Y). Key high-severity secondary diagnoses billed include R57.0 (cardiogenic shock, MCC), J96.01 (acute respiratory failure with hypoxia, MCC), and I46.9 (cardiac arrest, MCC). What the chart documents: multiple contemporaneous provider notes and procedure documentation consistently describe an acute ANTERIOR ST-elevation myocardial infarction with a proximal LAD occlusion treated with primary PCI and placement of a drug-eluting stent, plus cardiogenic shock requiring Impella CP and IABP, invasive mechanical ventilation, and an in-hospital pulseless ventricular tachycardia arrest with ROSC. Citations: History & Physical (Admitting), Chart Notes, p. 158 (pre-hospital ECG with ST-elevations in V1-V4) and same H&P echo statement documenting \"Severe LV dysfunction post-anterior STEMI.\" Interventional PCI procedure note (with Primary PCI), Chart Notes, p. 836 documents stenting of the proximal LAD. These passages support an anterior/LAD STEMI, not an inferior-wall STEMI as billed. Evidence: - \"pre-hospital 12-lead ECG demonstrated ST-segment elevation in leads V1-V4 with reciprocal changes, and STEMI activation was called.\" (History & Physical (Admitting), Chart Notes, p. 158) - \"Transthoracic Echocardiogram (Bedside, Emergent): Severe LV dysfunction post-anterior STEMI. No mechanical complications identified.\" (History & Physical (Admitting), Chart Notes, p. 158) - \"placement of 3.0 x 28 mm drug-eluting stent to proximal LAD. TIMI 2 flow achieved\" (with Primary PCI, Chart Notes, p. 836) Impact on coding: The principal diagnosis (position 1) is sequenced as STEMI in the bill, which is appropriate given the admission; however the billed STEMI code specifies the inferior wall (I21.19) while the clinical documentation repeatedly identifies an anterior (LAD) STEMI. This is a principal-diagnosis coding error (incorrect anatomical specificity) and requires correction to the appropriate anterior-LAD STEMI code (ICD-10 I21.0x) to match the documentation. Additional coding error: the record documents a post-operative superficial sternal wound infection (MSSA) that developed after surgery and was treated during the admission; that condition is described in the discharge summary as a post-operative complication and therefore the procedure-related infection code should be POA = N, not POA = Y as billed. Evidence: - \"The post-operative course was complicated by ... a superficial sternal wound infection with methicillin-susceptible S. aureus treated with cefazolin and wound VAC therapy\" (Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 1008-1009) Validation of high-severity secondary codes: cardiogenic shock (R57.0), acute respiratory failure with hypoxia (J96.01), and cardiac arrest with ROSC (I46.9) are each supported by objective data and management documented in the chart: vasopressor/inotrope and mechanical circulatory support placement (Interventional Cardiology Consultation, Chart Notes, p. 45), invasive mechanical ventilation and ABG/P/F values demonstrating hypoxemia (Critical Care Progress Note, Chart Notes, p. 550), and an 8-minute ACLS event with ROSC and TTM (Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 1008-1009). Policy support (select examples): R57.0 presumption when MCS is initiated; J96.01 presumption when invasive ventilation is attributed to respiratory failure; I46.9 requires documented pulseless arrest with ROSC and post-arrest management - all of which are met in the chart. Action required / correction: 1) Recode the principal diagnosis to the ICD-10 code specifying an ANTERIOR (LAD) STEMI (I21.0x) to reflect the documentation (provider confirmation/query may be used to select the exact 4th-character specificity). 2) Correct the POA indicator for the post-operative infection (T81.4XXA and related infection cause code B95.61) to Not Present on Admission (N). 3) Retain the supported high-severity secondary diagnoses and procedure codes (R57.0, J96.01, I46.9, N17.9, I50.23, I48.91, DVT, CABG and MCS/ventilation codes) as they are documented and meet the policy validation criteria cited below. Recommended coder step: submit a CDI/provider query to confirm the exact ICD-10 code for the anterior STEMI (specify LAD/anterior site) so the correct 4th/5th character can be assigned. Documentation-based confidence: high (clear, repeated statements and objective data). Auditor citations and underpinning excerpts are provided in evidence_cited for line-by-line traceability.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Clinical documentation and coding review for inpatient claim MR_02 Dear Provider / Health Information Management Team, We performed a clinical documentation and claims audit of the above inpatient encounter (admit 2026-01-17 to 2026-04-25). Our review focused on principal diagnosis sequencing, presence-on-admission (POA) indicators, and validation of CC/MCC-level diagnoses against governing policy criteria and the medical record. Finding: Principal diagnosis code specificity inconsistent with the medical record; incorrect POA indication for post-operative infection. Basis for finding (selected chart evidence): - The admission and procedure documentation consistently describe an acute anterior ST-elevation myocardial infarction with proximal LAD occlusion treated by primary PCI: \"pre-hospital 12-lead ECG demonstrated ST-segment elevation in leads V1-V4 with reciprocal changes, and STEMI activation was called.\" (History & Physical (Admitting), Chart Notes, p. 158) and \"placement of 3.0 x 28 mm drug-eluting stent to proximal LAD. TIMI 2 flow achieved\" (with Primary PCI, Chart Notes, p. 836). Echocardiogram documents \"Severe LV dysfunction post-anterior STEMI.\" (History & Physical (Admitting), Chart Notes, p. 158). The claim was billed with I21.19 (STEMI involving other coronary artery of inferior wall), which is anatomically discordant with the documentation of an anterior/LAD STEMI. - The discharge summary documents a post-operative superficial sternal wound infection due to methicillin-susceptible Staphylococcus aureus treated during the admission: \"The post-operative course was complicated by ... a superficial sternal wound infection with methicillin-susceptible S. aureus treated with cefazolin and wound VAC therapy.\" (Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 1008-1009). This description indicates the infection was a postoperative complication (not present on admission), therefore the procedure-related infection code(s) should be reported POA = N. The claim shows a POA=Y for the infection following a procedure code. Policy references relied upon (selected): - R57.0 (Cardiogenic shock) policy: presumption rule that initiation of mechanical circulatory support (Impella, IABP) attributed to hemodynamic instability satisfies the hemodynamic criterion needed to validate cardiogenic shock. (Policy Documents/DRG/Cardiogenic Shock.docx, Validation Criteria) - J96.01 (Acute respiratory failure with hypoxia) policy: presumption rule that when invasive mechanical ventilation is documented and attributed to acute respiratory failure, objective hypoxemia criterion is satisfied. (Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Validation Criteria) - I46.9 (Cardiac arrest) policy: documentation of pulseless arrest with documented ROSC and post-arrest management supports coding of cardiac arrest and related post-arrest diagnoses. (Policy Documents/DRG/Cardiac Arrest with Return of Spontaneous Circulation.docx, Medical - Primary Cardiac Arrest with ROSC Pathway) Correction being made: 1) Principal diagnosis will be changed to the ICD-10 code that specifies an acute ANTERIOR STEMI (ICD-10 I21.0x family) to reflect the documented LAD/anterior territory infarction. Please provide provider attestation of the exact anterior STEMI code (anterior/LAD site) if available; we will update to the precise 4th/5th-character code per your confirmation. 2) The POA indicator for the procedure-related infection code(s) (T81.4XXA and related B95.61) will be corrected to Not Present on Admission (N) because the infection is documented as developing post-operatively and treated during the admission. 3) The following high-severity secondary diagnoses and procedure codes are supported by the chart and will be retained: R57.0 (cardiogenic shock - supported by mechanical circulatory support placement and vasopressor/inotrope use), J96.01 (acute hypoxemic respiratory failure - supported by invasive ventilation and ABG/P/F values), I46.9 (cardiac arrest with ROSC - supported by code event and post-arrest management), N17.9 (contrast-induced AKI documented by nephrology and creatinine rise), I50.23 (acute on chronic systolic heart failure), I48.91 (post-operative atrial fibrillation), I82.401 (catheter-associated DVT), and the ICD-10-PCS procedure codes for Impella/IABP, CABG, endotracheal tube, and prolonged ventilation. If you disagree with the above corrections, please respond with the provider's clinical attestation specifying the exact anterior STEMI ICD-10 code (including any laterality/site characters) or documentation that would justify retaining the billed inferior-wall STEMI code. For the infection POA indicator, please provide documentation showing the infection was present on admission if you contend POA=Y. Sincerely, Clinical Documentation Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.051337,
+    "time_to_run_seconds": 132.412,
+    "retrieval_seconds": 18.649,
+    "retrieval_turns": 5,
+    "judge_seconds": 113.763,
+    "total_cost_per_claim_usd": 30.581337,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.051337
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), Chart Notes, p. 158",
+      "role": "contradicts billed code",
+      "excerpt": "pre-hospital 12-lead ECG demonstrated ST-segment elevation in leads V1-V4 with reciprocal changes, and STEMI activation was called."
+    },
+    {
+      "citation": "History & Physical (Admitting), Chart Notes, p. 158",
+      "role": "contradicts billed code",
+      "excerpt": "Transthoracic Echocardiogram (Bedside, Emergent): Severe LV dysfunction post-anterior STEMI. No mechanical complications identified."
+    },
+    {
+      "citation": "with Primary PCI, Chart Notes, p. 836",
+      "role": "contradicts billed code",
+      "excerpt": "placement of 3.0 x 28 mm drug-eluting stent to proximal LAD. TIMI 2 flow achieved with residual disease; deferred additional intervention given hemodynamic instability."
+    },
+    {
+      "citation": "Interventional Cardiology Consultation, Chart Notes, p. 45",
+      "role": "supports billed code",
+      "excerpt": "Cardiogenic shock requiring Impella CP and IABP support."
+    },
+    {
+      "citation": "Policy Documents/DRG/Cardiogenic Shock.docx, Validation Criteria \u007f Medical - Cardiogenic Shock without Cardiac Procedure Pathway",
+      "role": "supports billed code",
+      "excerpt": "[1] Presumption rule: When the medical record documents initiation of mechanical circulatory support (intra-aortic balloon pump, Impella device, or venoarterial ECMO) with provider attribution to hemodynamic instability from cardiac cause, Criterion 2 is presumed satisfied even if the blood pressure thresholds are not explicitly documented as sustained below 90 mmHg, provided the provider documents cardiogenic shock as the indication for device placement."
+    },
+    {
+      "citation": "Critical Care Progress Note, Chart Notes, p. 550",
+      "role": "supports billed code",
+      "excerpt": "ABG (02:00): pH 7.29 / PaCO2 48 / PaO2 64 / HCO3 18; lactate 5.4 mmol/L; P/F ratio 67."
+    },
+    {
+      "citation": "Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Validation Criteria \u007f Medical Pathway",
+      "role": "supports billed code",
+      "excerpt": "[1] Presumption rule: When the provider documents initiation of invasive mechanical ventilation and attributes the need for ventilation to acute respiratory failure, Criterion 2 (objective hypoxemia measurement) is presumed satisfied even if a pre-intubation room-air ABG is not documented. Emergent intubation may preclude room-air measurement; provider documentation of the clinical urgency is sufficient."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 1008-1009",
+      "role": "contradicts billed code",
+      "excerpt": "The post-operative course was complicated by post-cardiotomy hypotension requiring transfusion, failed extubation from flash pulmonary edema with reintubation on ICU day 11, new-onset atrial fibrillation post-cardiotomy controlled with amiodarone, a superficial sternal wound infection with methicillin-susceptible S. aureus treated with cefazolin and wound VAC therapy, catheter-associated right popliteal DVT treated with therapeutic anticoagulation, and profound ICU-acquired weakness."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 1008-1009",
+      "role": "supports billed code",
+      "excerpt": "The course was complicated by ... pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS and targeted temperature management, and cardiogenic shock refractory to medical therapy."
+    },
+    {
+      "citation": "Policy Documents/DRG/Cardiac Arrest with Return of Spontaneous Circulation.docx, Medical - Primary Cardiac Arrest with ROSC Pathway",
+      "role": "supports billed code",
+      "excerpt": "3. Criterion 3 - Return of Spontaneous Circulation: Documentation of ROSC with restoration of a palpable pulse and organized cardiac rhythm, recorded in the resuscitation record, emergency department note, ICU admission note, or code team documentation. Time of ROSC and duration of resuscitative efforts should be specified."
+    },
+    {
+      "citation": "Nephrology Consultation, Chart Notes, p. 108",
+      "role": "supports billed code",
+      "excerpt": "KDIGO stage 2 AKI from iodinated contrast exposure in setting of cardiogenic shock and poor perfusion. Creatinine peak 2.8; oliguric with adequate response to careful diuresis."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

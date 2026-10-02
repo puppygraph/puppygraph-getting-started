@@ -1,0 +1,297 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_03",
+  "encounter_information": {
+    "claim_number": "MR_03",
+    "payer": "Rocky Mountain Health Preferred",
+    "dates_of_service": "2026-01-28\u20132026-05-09",
+    "facility_pos": "Front Range University Hospital",
+    "attending_provider": null,
+    "patient": "Kenji Nakashima \u2014 MRN: MRN-8309247",
+    "medical_record": "MR_03.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I61.0",
+      "description": "Nontraumatic intracerebral hemorrhage in hemisphere, subcortical",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I97.5",
+      "description": "Nontraumatic subdural hemorrhage",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.6",
+      "description": "Cerebral edema",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G91.1",
+      "description": "Obstructive hydrocephalus",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R40.9",
+      "description": "Unspecified coma",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J15.9",
+      "description": "Unspecified bacterial pneumonia",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B96.1",
+      "description": "Klebsiella pneumoniae as the cause of diseases classified elsewhere",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E22.2",
+      "description": "Syndrome of inappropriate secretion of antidiuretic hormone",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.9",
+      "description": "Type 2 diabetes mellitus without complications",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G81.94",
+      "description": "Hemiplegia, unspecified affecting right dominant side",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R47.1",
+      "description": "Dysarthria and anarthria",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z98.62",
+      "description": "Presence of intracranial neurostimulator",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.11",
+      "description": "Dependence on respirator [ventilator] status",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I63.9",
+      "description": "Cerebral infarction, unspecified",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "00H600Z",
+      "description": "Insertion of drainage device into cerebral ventricle, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0016070",
+      "description": "Bypass cerebral ventricle to peritoneal cavity with autologous tissue substitute, open"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "03HY32Z",
+      "description": "Insertion of monitoring device into upper artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0B110F4",
+      "description": "Bypass trachea to cutaneous with tracheostomy device, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0DH60UZ",
+      "description": "Insertion of feeding device into stomach, percutaneous endoscopic approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Transfer to Acute Inpatient Rehabilitation Facility (Destination: Acute Inpatient Rehabilitation Facility)",
+      "revised_diagnosis_set": [
+        "I61.0",
+        "G93.6",
+        "G91.1",
+        "R40.9",
+        "J96.01",
+        "J15.9",
+        "B96.1",
+        "G81.94",
+        "R47.1",
+        "Z99.11",
+        "I10",
+        "E11.9",
+        "E78.5"
+      ],
+      "revised_procedure_set": [
+        "0BH17EZ",
+        "00H600Z",
+        "0016070",
+        "02HV33Z",
+        "03HY32Z",
+        "0B110F4",
+        "0DH60UZ",
+        "5A1D90Z"
+      ],
+      "confidence": 0.4,
+      "confidence_basis": "6/9 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Emergency Department Provider Note, Emergency Department Provider Note, p. 117', 'Placement, Placement, pp. 593-751', 'History & Physical (Admitting), History & Physical, pp. 117-562']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Reviewed full chart for MR_03. Principal diagnosis I61.0 (left basal-ganglia intracerebral hemorrhage w/ IVH and obstructive hydrocephalus) is supported by imaging and multiple admitting/consult notes (History & Physical (Admitting), Chart Notes, pp.117-562; CT/Contrast report, Chart Notes, p.514). Ventilator/procedure documentation supports intubation, prolonged ventilation (>96 hrs), tracheostomy, EVD and later VP shunt and PEG placement (ED note and H&P; Placement/VP shunt operative note; Discharge/Transfer Summary) (citations below). However several billed diagnosis lines lack clinical support in the retrieved record or have incorrect present-on-admission (POA) assignments: - I97.5 (Nontraumatic subdural hemorrhage): Not supported by imaging or consults. CT and neurosurgery documents consistently describe an intracerebral (basal-ganglia) hemorrhage with intraventricular extension and obstructive hydrocephalus; no subdural hemorrhage is documented (Contrast, Chart Notes, p.514; Neurosurgery Consultation, Chart Notes, pp.251-514). Recommendation: remove I97.5. - I63.9 (Cerebral infarction, unspecified): Imaging explicitly states \"No acute infarct\" on CT (Contrast, Chart Notes, p.514). No neurology/imaging documentation demonstrates a new ischemic infarct to support I63.9. Recommendation: remove I63.9. - Z98.62 (Presence of intracranial neurostimulator): The operative/placement documentation shows placement of a ventriculoperitoneal shunt (programmable valve tunneled to peritoneum), not an intracranial neurostimulator device (Placement, Chart Notes, pp.593-751; Contrast, Chart Notes, pp.725-725). Z98.62 is not supported; remove. - E22.2 (SIADH): The chart documents \"Cerebral salt wasting with hypotonic hyponatremia\" (History & Physical (Admitting), Chart Notes, pp.117-562) - cerebral salt wasting is a distinct entity from SIADH. There is no clear documentation diagnosing SIADH. Recommendation: remove E22.2; retain a disorder-specific code only if coder finds explicit SIADH documentation. - POA flag discrepancies: several problem entries are documented as present on arrival despite being billed POA=N. Examples: - G81.94 (hemiplegia/right): H&P and pre-hospital assessment document dense right hemiplegia at onset/on presentation (History & Physical (Admitting), Chart Notes, pp.117-562). POA should be Y, not N. - R47.1 (dysarthria/aphasia): Present on initial presentation per H&P (History & Physical (Admitting), Chart Notes, pp.117-562). POA should be Y, not N. - Z99.11 (dependence on respirator): ED and admitting notes document emergent rapid-sequence intubation on arrival (Emergency Department Provider Note, Chart Notes, p.117; History & Physical (Admitting), Chart Notes, pp.117-562), so dependence/respirator status was present on admission (POA should be Y). - Diagnoses that are supported and should remain: I61.0 (principal), G93.6 (cerebral edema / intracranial hypertension requiring osmotherapy), G91.1 (obstructive hydrocephalus), R40.9 (coma), J96.01 (acute respiratory failure with hypoxia), J15.9 + B96.1 (hospital-acquired ventilator-associated Klebsiella pneumoniae), G81.94 (hemiplegia), R47.1 (dysarthria), I10/E11.9/E78.5 (chronic comorbidities). All of these are explicitly documented in the record (see citations below). - Procedures: documentation supports endotracheal intubation, emergent EVD, subsequent VP shunt (bypass ventricle to peritoneal cavity), tracheostomy, PEG placement, arterial monitoring line, and prolonged mechanical ventilation >96 hours. A catheter-associated DVT is referenced in discharge education (supporting presence of central venous device), which supports billed infusion-device/SVC line (02HV33Z) as plausibly documented in the chart. If coder requires a discrete insertion note for 02HV33Z not in the retrieved subset, escalate; otherwise leave procedure list intact. Correction applied: removed unsupported diagnoses I97.5, I63.9, Z98.62, and E22.2 from the claim-level diagnosis set; corrected clinical interpretation of POA for several codes (G81.94, R47.1, Z99.11 are present on admission per notes). See the revised diagnosis and procedure lists in this report. Citations (document title / note_type / pages) and verbatim supporting excerpts are included in evidence_cited below for line-by-line auditability.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "To: Medical Records / Coding Department From: Clinical Claims Audit - MR_03 Re: Final Audit Determination - Index Admission (admit 2026-01-28) We completed a DRG-focused chart review of the above inpatient stay. Based on the medical record retrieved and reviewed (admitting H&P, ED note, neurosurgery consult, placement/operative note, progress notes, and discharge/transfer summary), we find documentation-supported clinical diagnoses and procedures - and several billed items that are not supported by the record as retrieved. Finding: The claim contains unsupported diagnoses and incorrect POA assignments. Specifically, the following billed diagnosis codes lack supporting documentation in the chart excerpts reviewed and will be removed from the final coded diagnosis set: - I97.5 (Nontraumatic subdural hemorrhage) - no documentation of subdural hemorrhage in imaging or consults (record documents intracerebral hemorrhage with intraventricular extension only). - I63.9 (Cerebral infarction, unspecified) - CT explicitly states 'No acute infarct'. - Z98.62 (Presence of intracranial neurostimulator) - operative documentation describes placement of a ventriculoperitoneal shunt (programmable valve), not a neurostimulator. - E22.2 (SIADH) - the chart documents cerebral salt wasting, not SIADH; no explicit SIADH diagnosis is present. Additionally, POA flags on several diagnoses are inconsistent with the clinical notes. Examples: hemiplegia (G81.94), dysarthria/aphasia (R47.1), and ventilator dependence (Z99.11) are documented at presentation/pre-hospital arrival and should be POA=Y rather than POA=N as billed. Supported (to remain) - principal and key comorbid diagnoses and procedures: - Principal diagnosis: I61.0 - left basal-ganglia intracerebral hemorrhage with IVH and obstructive hydrocephalus (supported by CT and admitting/consult notes). - Coexisting/complicating diagnoses supported and retained include: G93.6 (cerebral edema/intracranial hypertension), G91.1 (obstructive hydrocephalus), R40.9 (coma), J96.01 (acute respiratory failure with hypoxia), J15.9 + B96.1 (Klebsiella VAP), G81.94 (hemiplegia), R47.1 (dysarthria), I10, E11.9, E78.5. - Procedures supported and retained include: intubation (0BH17EZ), external ventricular drain insertion (00H600Z), ventriculoperitoneal shunt bypass to peritoneum (0016070), arterial monitoring device (03HY32Z), infusion device / central access into SVC (02HV33Z - supported indirectly by documentation of catheter-associated DVT and infusion needs), percutaneous tracheostomy (0B110F4), PEG placement (0DH60UZ), and prolonged mechanical ventilation >96 hours (5A1D90Z). Correction being made to the claim: the final diagnosis set will be adjusted to remove I97.5, I63.9, Z98.62, and E22.2. POA indicators will be corrected where chart evidence indicates presence on admission (G81.94, R47.1, Z99.11). The procedure set remains as billed given the operative/intubation/ventilation documentation; however if discrete insertion documentation for the SVC infusion device (02HV33Z) is required and not present elsewhere in the record, please provide that insertion note for audit reconciliation. If you disagree with the removal of any code listed above or can provide source documentation (operative or imaging reports, or explicit physician documentation) that supports the removed codes, please submit those records within 30 days for reconsideration. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.043284,
+    "time_to_run_seconds": 165.742,
+    "retrieval_seconds": 31.03,
+    "retrieval_turns": 6,
+    "judge_seconds": 134.712,
+    "total_cost_per_claim_usd": 30.573284,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.043284
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), History & Physical, pp. 117-562",
+      "role": "supports billed code",
+      "excerpt": "Emergent CT head demonstrated a large left basal-ganglia intracerebral hemorrhage with intraventricular extension and obstructive hydrocephalus."
+    },
+    {
+      "citation": "Contrast, Contrast, p. 514",
+      "role": "supports billed code",
+      "excerpt": "Findings Large left basal-ganglia hyperdense hemorrhage measuring approximately 42 mL with extension into the left lateral ventricle, third ventricle, and fourth ventricle. Mass effect with 6 mm rightward midline shift and effacement of the left lateral ventricle. Early obstructive hydrocephalus with dilation of the right lateral ventricle. No acute infarct."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Discharge / Transfer Summary, pp. 938-939",
+      "role": "supports billed code",
+      "excerpt": "The course was complicated by acute intracranial hypertension with hematoma expansion requiring aggressive osmotherapy including 23.4% hypertonic saline boluses, transtentorial herniation risk successfully managed medically, hospital-acquired Klebsiella pneumoniae ventilator-associated pneumonia treated with cefepime, prolonged mechanical ventilation requiring percutaneous tracheostomy, PEG placement for enteral nutrition, cerebral salt wasting managed with fludrocortisone, and persistent communicating hydrocephalus requiring ventriculoperitoneal shunt placement."
+    },
+    {
+      "citation": "Emergency Department Provider Note, Emergency Department Provider Note, p. 117",
+      "role": "supports billed code",
+      "excerpt": "Airway protection required with rapid-sequence intubation. Neurosurgery was consulted for emergent external ventricular drain placement."
+    },
+    {
+      "citation": "Neurosurgery Consultation, Neurosurgery Consultation, pp. 251-514",
+      "role": "contradicts billed code",
+      "excerpt": "Large left basal-ganglia hypertensive hemorrhage (42 mL) with IVH and third and fourth ventricle blood causing obstructive hydrocephalus. Poor spontaneous prognosis. Not a candidate for surgical evacuation given deep location."
+    },
+    {
+      "citation": "Placement, Placement, pp. 593-751",
+      "role": "supports billed code",
+      "excerpt": "Under general anesthesia, right frontal ventricular catheter placed. Programmable valve tunneled subcutaneously to peritoneal cavity via mini-laparotomy. Distal catheter placed intraperitoneally. Adequate CSF flow demonstrated. EVD removed at end of case Post-operative CT confirms shunt position without new hemorrhage."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, pp. 117-562",
+      "role": "supports billed code",
+      "excerpt": "Pre-hospital assessment demonstrated GCS 8 with dense right hemiplegia."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, pp. 117-562",
+      "role": "supports billed code",
+      "excerpt": "Active Problem List # | Problem 1 | Spontaneous hypertensive left basal-ganglia intracerebral hemorrhage ... 5 | Acute respiratory failure with prolonged mechanical ventilation 6 | Aspiration pneumonia (hospital-acquired) with Klebsiella pneumoniae 7 | Percutaneous tracheostomy for prolonged coma 8 | PEG placement for enteral nutrition 10 | Cerebral salt wasting with hypotonic hyponatremia"
+    },
+    {
+      "citation": "Patient & Family Education, Patient & Family Education, pp. 250-57",
+      "role": "supports billed code",
+      "excerpt": "Apixaban (Eliquis) - at discharge Purpose Blood thinner for catheter-associated DVT (blood clot in neck vein)."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

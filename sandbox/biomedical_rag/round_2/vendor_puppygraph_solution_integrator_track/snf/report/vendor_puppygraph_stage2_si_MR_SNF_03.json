@@ -1,0 +1,139 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "SNF",
+  "claim_id": "MR_SNF_03",
+  "encounter_information": {
+    "claim_number": "MR_SNF_03",
+    "payer": "Aetna Medicare Advantage",
+    "dates_of_service": "2026-03-10\u20132026-04-07",
+    "facility_pos": "Sonoran Desert Rehabilitation Center",
+    "attending_provider": "Dr. Marcus Webb, MD",
+    "patient": "Marguerite Okafor \u2014 MRN: MRN-6714209",
+    "medical_record": "MR_SNF_03.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "revenue_code": "0192",
+      "code": "0192",
+      "dos_from": "2026-03-10",
+      "dos_to": "2026-04-06",
+      "billed_units": 27
+    },
+    {
+      "revenue_code": "Non-Covered",
+      "code": null,
+      "dos_from": "2026-04-07",
+      "dos_to": "2026-04-07",
+      "billed_units": 1
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_revenue_code": "0192",
+      "dos_from": "2026-03-10",
+      "dos_to": "2026-04-06",
+      "billed_units": 27,
+      "determination": "Finding",
+      "adjusted_date_of_service": "2026-03-10 to 2026-04-06 except 2026-03-16, 2026-03-18, 2026-03-20, 2026-03-22, 2026-03-25, 2026-03-27, 2026-03-30, 2026-04-01",
+      "corrected_revenue_code": "0191",
+      "adjusted_units_billed": 19,
+      "confidence": 0.4,
+      "confidence_basis": "9/13 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['get_daily_services result row: {\"service_date\": \"2026-03-16\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 45, \"billable_units\": 3}', 'get_daily_services result row: {\"service_date\": \"2026-03-16\", \"note_title\": \"Occupational Therapy\", \"revenue_code\": \"0431\", \"minutes\": 25, \"billable_units\": 1}', 'get_daily_services result row: {\"service_date\": \"2026-03-16\", \"note_title\": \"Speech-Language Pathology\", \"revenue_code\": \"0440\", \"minutes\": 20, \"billable_units\": 1}', 'HISTORY & PHYSICAL - ADMISSION, p. 8']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Claim MR_SNF_03 revenue line 1 billed as Rev Code 0192 (Level 2 Rehab Therapy) for 27 days from 2026-03-10 to 2026-04-06. The record contains explicit, date-specific facility determinations and therapy-minute documentation showing that eight dates within the billed range do NOT meet the Level 2 (0192) threshold and the facility itself documents Level 1 (0191) billing is supported for those dates. Specifically, the facility-level per-diem notes state: \"Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.\" (get_per_diem_level_notes rows for 2026-03-16, 03-18, 03-20, 03-22, 03-25, 03-27, 03-30, 04-01). The daily therapy-session detail for one example date confirms the shortfall: on 2026-03-16 the therapy rows document PT 45 min + OT 25 min + SLP 20 min (total 90 min) (get_daily_services entries for 2026-03-16). Admission and plan-of-care support that the stay was for skilled PT/OT/SLP nursing and that 30 authorized days were available (HISTORY & PHYSICAL - ADMISSION, p. 8; INTERDISCIPLINARY PLAN OF CARE - SNF STAY, pp. 10-11). Because eight billed days are documented below the 120-minute Level 2 threshold and the facility itself flagged those dates as supporting Level 1, the appropriate correction is to downcode those eight dates to Rev Code 0191 and reduce Rev Code 0192 units from 27 to 19. Cited supporting passages: per-diem determination entries for the eight dates (get_per_diem_level_notes) and the corresponding daily service minutes (get_daily_services). No authorized-days exceedance exists (authorization = 30 days per plan).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Claim MR_SNF_03 - Per-diem Level Determination for Rev Code 0192 (03/10/2026-04/06/2026) Dear Provider, We reviewed the medical record for patient Marguerite Okafor (MRN MRN-6714209) related to the SNF stay from 2026-03-10 through 2026-04-06 billed under revenue code 0192 (Level 2 Rehab Therapy). The Interdisciplinary Plan of Care documents the admission for skilled PT/OT/SLP and nursing services and shows 30 authorized days (Auth AUTH-2026-33791). See: \"Auth AUTH-2026-33791 (30 authorized days).\" (INTERDISCIPLINARY PLAN OF CARE - SNF STAY, p. 10). Finding: Eight (8) dates within the billed range do not meet the facility's documented Level 2 therapy-minute threshold and the facility's own per-diem notes support Level 1 (Rev 0191) billing for those dates. The facility's per-diem notes for those dates state: \"Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.\" (per-diem level determination entries for 2026-03-16, 03-18, 03-20, 03-22, 03-25, 03-27, 03-30, 04-01). For example, daily therapy documentation on 2026-03-16 shows PT 45 min, OT 25 min, SLP 20 min (total 90 minutes), consistent with the facility's determination that Level 2 minutes are not met (get_daily_services entries for 2026-03-16). Correction: We are downgrading the following dates from Level 2 (Rev 0192) to Level 1 (Rev 0191): - 2026-03-16, 2026-03-18, 2026-03-20, 2026-03-22, 2026-03-25, 2026-03-27, 2026-03-30, 2026-04-01 (8 days). Accordingly, Rev Code 0192 units are adjusted from 27 days to 19 days (27 billed - 8 downgraded = 19 remaining 0192 days). The eight downgraded days should be billed as Rev Code 0191. Basis for Decision: The facility's own per-diem determinations explicitly state the combined therapy minutes on the cited dates are below the 120-minute Level 2 threshold and that Level 1 billing is supported; the daily therapy records corroborate the lower combined minutes (e.g., 90 total minutes on 2026-03-16). The admission H&P documents the skilled-therapy rationale for the stay but does not negate the per-date minute shortfalls that require the adjustment. See cited record excerpts below. If you disagree with the date-specific downcoding, please provide contemporaneous documentation showing for each disputed date (1) a therapy evaluation/plan of care supporting Level 2 care where required, and (2) combined therapy-minute documentation showing >=120 total therapy minutes for that specific calendar date. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.026301,
+    "time_to_run_seconds": 97.734,
+    "retrieval_seconds": 16.435,
+    "judge_seconds": 81.299,
+    "retrieval_turns": 4,
+    "total_cost_per_claim_usd": 30.556301,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.026301
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-03-16",
+      "role": "contradicts billed code",
+      "excerpt": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date."
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-03-18",
+      "role": "contradicts billed code",
+      "excerpt": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date."
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-03-20",
+      "role": "contradicts billed code",
+      "excerpt": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date."
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-03-22",
+      "role": "contradicts billed code",
+      "excerpt": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date."
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-03-25",
+      "role": "contradicts billed code",
+      "excerpt": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date."
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-03-27",
+      "role": "contradicts billed code",
+      "excerpt": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date."
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-03-30",
+      "role": "contradicts billed code",
+      "excerpt": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date."
+    },
+    {
+      "citation": "get_per_diem_level_notes, service_date 2026-04-01",
+      "role": "contradicts billed code",
+      "excerpt": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date."
+    },
+    {
+      "citation": "get_daily_services result row: {\"service_date\": \"2026-03-16\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 45, \"billable_units\": 3}",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-03-16\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 45, \"billable_units\": 3}"
+    },
+    {
+      "citation": "get_daily_services result row: {\"service_date\": \"2026-03-16\", \"note_title\": \"Occupational Therapy\", \"revenue_code\": \"0431\", \"minutes\": 25, \"billable_units\": 1}",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-03-16\", \"note_title\": \"Occupational Therapy\", \"revenue_code\": \"0431\", \"minutes\": 25, \"billable_units\": 1}"
+    },
+    {
+      "citation": "get_daily_services result row: {\"service_date\": \"2026-03-16\", \"note_title\": \"Speech-Language Pathology\", \"revenue_code\": \"0440\", \"minutes\": 20, \"billable_units\": 1}",
+      "role": "contradicts billed code",
+      "excerpt": "{\"service_date\": \"2026-03-16\", \"note_title\": \"Speech-Language Pathology\", \"revenue_code\": \"0440\", \"minutes\": 20, \"billable_units\": 1}"
+    },
+    {
+      "citation": "HISTORY & PHYSICAL - ADMISSION, p. 8",
+      "role": "supports billed code",
+      "excerpt": "Admit to Sonoran Desert Rehabilitation Center for skilled PT, OT, and SLP and nursing care."
+    },
+    {
+      "citation": "INTERDISCIPLINARY PLAN OF CARE - SNF STAY, pp. 10-11",
+      "role": "supports billed code",
+      "excerpt": "Auth AUTH-2026-33791 (30 authorized days)"
+    }
+  ],
+  "recovery_type": "Partial Recovery",
+  "skilled_services": "Both",
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

@@ -1,0 +1,139 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "SNF",
+  "claim_id": "MR_SNF_02",
+  "encounter_information": {
+    "claim_number": "MR_SNF_02",
+    "payer": "UnitedHealthcare Medicare Advantage",
+    "dates_of_service": "2026-06-02\u20132026-06-16",
+    "facility_pos": "Desert Vista Skilled Nursing & Rehabilitation",
+    "attending_provider": "Dr. Evelyn Cruz, MD",
+    "patient": "Robert Harrington \u2014 MRN: MRN-5820347",
+    "medical_record": "MR_SNF_02.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "revenue_code": "0192",
+      "code": "0192",
+      "dos_from": "2026-06-02",
+      "dos_to": "2026-06-15",
+      "billed_units": 10
+    },
+    {
+      "revenue_code": "0191",
+      "code": "0191",
+      "dos_from": "2026-06-02",
+      "dos_to": "2026-06-15",
+      "billed_units": 3
+    },
+    {
+      "revenue_code": "Non-Covered",
+      "code": null,
+      "dos_from": "2026-06-16",
+      "dos_to": "2026-06-16",
+      "billed_units": 1
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_revenue_code": "0192",
+      "dos_from": "2026-06-02",
+      "dos_to": "2026-06-15",
+      "billed_units": 10,
+      "determination": "No Finding",
+      "adjusted_date_of_service": null,
+      "corrected_revenue_code": null,
+      "adjusted_units_billed": null,
+      "confidence": 0.4,
+      "confidence_basis": "3/6 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 6', 'Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 8', 'get_per_diem_level_notes result note']."
+    },
+    {
+      "line": 2,
+      "billed_revenue_code": "0191",
+      "dos_from": "2026-06-02",
+      "dos_to": "2026-06-15",
+      "billed_units": 3,
+      "determination": "Insufficient Evidence",
+      "adjusted_date_of_service": null,
+      "corrected_revenue_code": null,
+      "adjusted_units_billed": null,
+      "confidence": 0.2,
+      "confidence_basis": "Retrieval/judgment abstained (Insufficient Evidence) rather than guess at a determination \u2014 reported at low confidence regardless of citations."
+    }
+  ],
+  "coding_determination": "Insufficient Evidence",
+  "confidence": 0.2,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Claim MR_SNF_02 - Revenue line 1 billed 0192 (rehabilitation therapy), units=10, DOS range 2026-06-02 to 2026-06-15. Review of the record shows: (1) an interdisciplinary plan of care documenting skilled PT/OT planned 5-7x/week (INTERDISCIPLINARY PLAN OF CARE - SNF STAY, pp. 10-11); (2) a PT evaluation documenting a qualifying prior inpatient hospitalization discharged 06/02/2026 (Physical Therapy, pp. 18-20); and (3) therapy progress notes on ten dates within the billed range documenting high-minute skilled therapy sessions (example: PT progress note documents \"Total minutes this session: 90 minutes (6 billable units) | Revenue Code: 0421\") that align with the 0192 rehabilitation per-diem level. The payer-specific guideline for Aetna Medicare Advantage was not available in the dataset; the payer-agnostic reference guide confirms the concept of a \"skilled need\" and maps revenue code 0192 to rehabilitation therapy (Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, positions 6 and 8). Per-diem-level determination fields returned null for individual dates; the retrieval tool's note explains that a null level_determination_statement commonly means the facility had no exception to document because the billed level's minute threshold was met that day (get_per_diem_level_notes result note). Taken together - documented plan of care calling for frequent skilled PT/OT, a qualifying hospital discharge the day of SNF admission, and repeated PT/OT progress notes showing 90 PT minutes + 60 OT minutes on the ten billed dates - the medical record supports the billed 0192 per-diem level for the ten days billed. Citations: INTERDISCIPLINARY PLAN OF CARE - SNF STAY, pp. 10-11; Physical Therapy evaluation, pp. 18-20; PT progress notes (example p.25); Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, positions 6 and 8; get_per_diem_level_notes result note. Billed line: revenue code 0191, units=3, date range 2026-06-02 to 2026-06-15. Retrieved daily documentation shows substantial therapy minutes on multiple dates within that span (PT 90 min + OT 60 min on 2026-06-02, 06-03, 06-04, 06-05, 06-08, 06-09, 06-10, 06-11, 06-12, 06-15) but no explicit per-diem level determination statements on any date. The dataset's own guidance for the per-diem notes tool states that a null level_determination_statement often indicates the facility did not document an exception because the billed level's threshold was met; conversely, the daily minutes alone are noted as insufficient by themselves to prove the per-diem level without the per-diem-level extraction. Because the revenue line reports 3 billed days across a wide date range, the record must show which SPECIFIC calendar dates were billed at 0191 (so each billed date can be evaluated day-by-day against the payer's per-diem criteria). That mapping is not present in the retrieved rows, and no payer per-diem guideline rows were returned to establish the exact minute/assessment criteria required to support 0191. Therefore I cannot reliably determine whether the three billed days within 6/2-6/15 are fully supported or require downcoding/adjustment; escalate for human review or supply (1) the exact calendar dates the facility billed as 0191 (which of the dates in the range correspond to the 3 units) and (2) the governing per-diem guideline or facility per-diem determination notes to apply the specific level criteria. Citations: see the get_per_diem_level_notes and get_daily_services query results below for the null per-diem statements and the therapy minutes.",
+  "hitl_escalation_point": "Line 2: Please provide (A) the exact calendar dates within 2026-06-02 to 2026-06-15 that the facility billed at revenue code 0191 (which specific three dates correspond to the 3 billed units), and (B) the payer's per-diem guideline or facility per-diem determination criteria used to assign 0191 (so we can apply the threshold/assessment criteria day-by-day).",
+  "rationale_letter": null,
+  "metrics": {
+    "cost_of_processing_usd": 0.031479,
+    "time_to_run_seconds": 137.442,
+    "retrieval_seconds": 23.421,
+    "judge_seconds": 114.021,
+    "retrieval_turns": 5,
+    "total_cost_per_claim_usd": 30.561479,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.031479
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 6",
+      "role": "supports billed code",
+      "excerpt": "Skilled need: A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers."
+    },
+    {
+      "citation": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx, position 8",
+      "role": "supports billed code",
+      "excerpt": "Revenue codes 0191-0194: Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy), 0193 (sub-acute), 0194 (weanable ventilator management)."
+    },
+    {
+      "citation": "INTERDISCIPLINARY PLAN OF CARE - SNF STAY, INTERDISCIPLINARY PLAN OF CARE, pp. 10-11",
+      "role": "supports billed code",
+      "excerpt": "- Skilled PT evaluation and treatment 5-7x/week per plan of care"
+    },
+    {
+      "citation": "Physical Therapy, Physical Therapy, pp. 18-20",
+      "role": "supports billed code",
+      "excerpt": "Prior hospitalization: Valley Hospital Medical Center, Las Vegas, NV - admitted 05/29/2026, discharged 06/02/2026."
+    },
+    {
+      "citation": "Physical Therapy, PT Therapy Progress Report, p. 25",
+      "role": "supports billed code",
+      "excerpt": "Total minutes this session: 90 minutes (6 billable units) | Revenue Code: 0421"
+    },
+    {
+      "citation": "get_per_diem_level_notes result note",
+      "role": "supports billed code",
+      "excerpt": "level_determination_statement is null on a date when the daily note doesn't state an explicit per-diem-level exception for it - that does NOT by itself mean the day is unsupported; it commonly means the billed level's own minute threshold was met that day, so the facility had no exception to document. A non-null statement is the facility's own basis for downcoding that specific date."
+    },
+    {
+      "citation": "get_per_diem_level_notes (query result)",
+      "role": "supports billed code",
+      "excerpt": "level_determination_statement is null on a date when the daily note doesn't state an explicit per-diem-level exception for it - that does NOT by itself mean the day is unsupported; it commonly means the billed level's own minute threshold was met that day, so the facility had no exception to document."
+    },
+    {
+      "citation": "get_daily_services (query result)",
+      "role": "contradicts billed code",
+      "excerpt": "These are the billed minutes per session - they don't by themselves say which per-diem level a date supports. Call get_per_diem_level_notes for this claim before concluding a date's documentation is insufficient: the facility's own daily note frequently states the level determination outright, and that tool extracts it directly rather than requiring you to guess a search keyword."
+    },
+    {
+      "citation": "get_daily_services (row example)",
+      "role": "supports billed code",
+      "excerpt": "{\"service_date\": \"2026-06-02\", \"note_title\": \"Physical Therapy\", \"revenue_code\": \"0421\", \"minutes\": 90, \"billable_units\": 6}"
+    }
+  ],
+  "recovery_type": "Partial Recovery",
+  "skilled_services": "Therapy",
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

@@ -1,0 +1,206 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "APC",
+  "claim_id": "MR_APC_03",
+  "encounter_information": {
+    "claim_number": "APC-2026-58317",
+    "payer": "Aetna Choice POS II",
+    "dates_of_service": "2026-03-12",
+    "facility_pos": "Meridian Endoscopy & Surgical Center",
+    "attending_provider": "Dr. Priya Desai, MD",
+    "patient": "Harold Whitfield \u2014 MRN: MRN-3391847",
+    "medical_record": "MR_APC_03.json",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "cpt_hcpcs": "45385",
+      "mod": null,
+      "description": "Colonoscopy with removal of tumor(s)/polyp(s) by snare technique",
+      "si": "T",
+      "apc": "5311",
+      "rw": 8.2,
+      "opps_rate": 2280.0,
+      "billed_charge": 4600.0
+    },
+    {
+      "cpt_hcpcs": "99152",
+      "mod": null,
+      "description": "Moderate sedation, first 15 minutes",
+      "si": "N",
+      "apc": "N/A",
+      "rw": 0.0,
+      "opps_rate": 0.0,
+      "billed_charge": 380.0
+    },
+    {
+      "cpt_hcpcs": "99153",
+      "mod": null,
+      "description": "Moderate sedation services provided by the same physician performing the diagnostic/therapeutic service; each additional 15 minutes intra-service time (List separately in addition to code for primary procedure)",
+      "si": "N",
+      "apc": "N/A",
+      "rw": 0.0,
+      "opps_rate": 0.0,
+      "billed_charge": 190.0
+    },
+    {
+      "cpt_hcpcs": "99153",
+      "mod": null,
+      "description": "Moderate sedation services provided by the same physician performing the diagnostic/therapeutic service; each additional 15 minutes intra-service time (List separately in addition to code for primary procedure)",
+      "si": "N",
+      "apc": "N/A",
+      "rw": 0.0,
+      "opps_rate": 0.0,
+      "billed_charge": 190.0
+    }
+  ],
+  "total_billed_charges": 5360.0,
+  "required_scoring_fields": [
+    {
+      "line": 1,
+      "billed_cpt_hcpcs": "45385",
+      "determination": "No Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.8,
+      "confidence_basis": "All 5 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    },
+    {
+      "line": 2,
+      "billed_cpt_hcpcs": "99152",
+      "determination": "No Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.8,
+      "confidence_basis": "All 4 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    },
+    {
+      "line": 3,
+      "billed_cpt_hcpcs": "99153",
+      "determination": "Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.8,
+      "confidence_basis": "All 3 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    },
+    {
+      "line": 4,
+      "billed_cpt_hcpcs": "99153",
+      "determination": "Finding",
+      "adjusted_apc_code": null,
+      "corrected_cpt_hcpcs": null,
+      "confidence": 0.4,
+      "confidence_basis": "4/5 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Medication Administration Record, pp. 30-31']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": "45385, 99152",
+  "adjusted_apc_set": "5311, N/A",
+  "system_note": "Billed line: CPT 45385 \"Colonoscopy with removal of tumor(s)/polyp(s) by snare technique\" (claim APC-2026-58317 line 1). Review of the medical record shows the procedure performed exactly as billed: the surgeon documents \"Colonoscopy with snare polypectomy x2\" and an intraoperative narrative describing removal of a 6 mm sessile polyp in the ascending colon and a 4 mm pedunculated polyp in the sigmoid colon using hot snare technique, with immediate retrieval and two separately labeled specimens sent to pathology (Operative Note, p. 25-26). The anatomic pathology report corroborates the operative technique and specimens (Specimen A/B labeled as \"hot snare polypectomy\" with gross measurements of 0.6 cm and 0.4 cm respectively) (Anatomic Pathology Report, p. 37-38). The governing policy text returned by the policy query is not a target rule for CPT 45385 and instead concerns moderate sedation reporting (99153) - the policy row explicitly states that 45385 was not the deliberate subject of the concept returned, so there is no policy requirement in the retrieved policy that would invalidate billing 45385 for a documented snare polypectomy (APC Coding Concept - Moderate Sedation Add-On Time (99153): Sedation Flowsheet vs. Scope-Time Timer). In sum: clinical documentation (operative note + pathology) supports the billed technique and specimen handling for CPT 45385, and the retrieved policy material does not impose any contrary restriction on this code. Determination: No Finding. Billed: Line 2 billed CPT 99152 (Moderate sedation, first 15 minutes). The medical record documents physician-directed, RN-administered moderate (conscious) sedation beginning at 07:25 with medication dosing and continuous monitoring, and a procedure/scope time that includes the initial 15 minutes of sedation. Key supporting documentation: the Operative Note documents that moderate sedation was given by the circulating RN beginning at 07:25 (Operative Note, p. 25-26); the Intraoperative Record documents anesthesia induction and labels the anesthesia type as \"Moderate (conscious) sedation - physician-directed, RN-administered\" with timing entries (Intraoperative Record - Anesthesia & Circulating Nurse, p. 22-24); and the Medication Administration Record shows timestamped sedative medications given at 07:25 (Midazolam 2 mg and Fentanyl 50 mcg) and titration at 07:35 (Medication Administration Record, p. 30-31). The policy lookup returned a non-target APC concept (rule_code APC-05) and explicitly notes there is no is_target policy rule guiding CPT 99152 here, so no policy restriction was found that would preclude billing the initial moderate sedation code. Taken together, the record documents the presence, timing, and monitoring of moderate sedation covering the initial 15 minutes and supports the billed 99152. (Operative Note, p.25-26; Intraoperative Record - Anesthesia & Circulating Nurse, p.22-24; Medication Administration Record, p.30-31; APC Policy APC-05 note.) Billed line: position 3 CPT 99153 (each additional 15 minutes of physician-directed moderate sedation). Claim lines on this claim also include 45385 (colonoscopy w/ snare polypectomy) and 99152 (moderate sedation, first 15 minutes). Governing policy (APC Coding Concept - Moderate Sedation Add-On Time (99153)) requires the sedation flowsheet-measured intra-service interval (from administration of sedating agent to recovery-readiness/hand-off) and states that \"The midpoint of each additional 15-minute increment (approximately 23 total minutes for the first add-on unit) must be reached to support billing that unit of 99153; reviewers should reconcile the sedation flowsheet against any equipment-timer entries elsewhere in the chart before accepting billed 99153 units.\" (APC Coding Concept - Moderate Sedation Add-On Time (99153): Sedation Flowsheet vs. Scope-Time Timer). The medical record documents sedation administration beginning at 07:25 (Midazolam 2 mg IV and Fentanyl 50 mcg IV at 07:25, with an additional Midazolam 1 mg at 07:35) and specifically states recovery-readiness criteria were met at 07:43, after which no further sedation medication was given (Nursing Notes - All Phases, pp. 32-34). Thus the documented sedation intra-service interval is ~18 minutes (07:25-07:43), which does not meet the policy's required midpoint (~23 minutes) to support one add-on 99153 unit. The operative/procedure timer shows scope insertion 07:32 and withdrawal 08:06 (scope time 34 minutes) (Operative Note, pp. 25-26), demonstrating that scope insertion-to-withdrawal (equipment timer) is longer than the documented sedation administration interval and must not be used in place of the sedation flowsheet per the policy. Conclusion: documentation does not support billing the additional 15-minute unit (CPT 99153) as billed on line 3. Recommended correction: remove the billed 99153 unit for this line (corrected CPT/HCPCS null). Citations: APC Coding Concept - Moderate Sedation Add-On Time (99153): Sedation Flowsheet vs. Scope-Time Timer; Nursing Notes - All Phases, pp. 32-34; Operative Note, pp. 25-26. Billed line: CPT 99153 (additional 15-min moderate sedation unit) on claim APC-2026-58317 for patient MRN-3391847. Governing policy requires that intra-service sedation time be measured on the sedation flowsheet (sedation administration start to recovery-readiness/hand-off) and that the midpoint of the first additional 15-minute increment (approximately 23 total minutes) be reached to support one unit of 99153 (APC-03). (APC-03, APC Coding Concept - Moderate Sedation Add-On Time (99153)). Documentation review: the record documents sedation administration beginning at 07:25 (midazolam/fentanyl given at 07:25; midazolam titration at 07:35) and notes that recovery-readiness criteria were met at 07:43 (Nursing Notes; Medication Administration Record; Operative Note). Using the sedation flowsheet interval (07:25 to 07:43) yields approximately 18 minutes of documented intra-service sedation time - less than the ~23 minutes the policy requires to bill a first additional 99153 unit. The operative/room timer shows scope insertion-to-withdrawal 07:32-08:06 (34 minutes), but the policy explicitly states equipment scope timers reflect instrument dwell time and are distinct from sedation administration and should not be used to substitute for the sedation flowsheet when supporting 99153. Conclusion: The medical record does not document the required sedation-flowsheet intra-service duration (\u224823 minutes) to support an additional 15-minute 99153 unit. Therefore line 4 (the billed 99153) is not supported and is a Finding for insufficient documented intra-service sedation duration. Recommended action: remove the billed 99153 line (no substitute code) because the documentation supports only the initial moderate sedation unit (99152) but not an add-on 99153 unit. Citations used in this determination are listed below (policy and chart excerpts): APC-03; Nursing Notes - All Phases, pp.32-34; Medication Administration Record, pp.30-31; Operative Note, pp.25-26; Intraoperative Record - Anesthesia & Circulating Nurse, pp.22-24.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Audit of Claim APC-2026-58317 / Patient MRN MRN-3391847 - CPT 99153 (additional 15-minute moderate sedation unit) Dear Provider, We completed an audit of line 3 on claim APC-2026-58317 for patient MRN-3391847. Line 3 billed CPT 99153 (moderate sedation, each additional 15 minutes) in addition to the primary procedure (colonoscopy with snare polypectomy). The payer's coding guidance for CPT 99153 requires the sedation intra-service time to be measured on the sedation flowsheet (from administration of sedating agent to recovery-readiness/hand-off) and specifies that the midpoint of the first additional 15-minute increment (approximately 23 total minutes) must be reached to bill one unit of 99153 (APC Coding Concept - Moderate Sedation Add-On Time (99153): Sedation Flowsheet vs. Scope-Time Timer). Basis for Finding: - The sedation flowsheet/nursing intraoperative documentation shows sedating agents were first administered at 07:25 (Midazolam 2 mg IV and Fentanyl 50 mcg IV) with a titration dose at 07:35, and recovery-readiness criteria were met at 07:43; no further sedation medications were given after 07:43 (Nursing Notes - All Phases, pp. 32-34). This yields an intra-service sedation interval of approximately 18 minutes (07:25-07:43). - The policy requires approximately 23 minutes to support one add-on 99153 unit; the documented sedation interval (18 minutes) does not meet that threshold. The procedure/scope timer (scope insertion 07:32 to withdrawal 08:06 = 34 minutes) cannot substitute for the sedation flowsheet per the policy (Operative Note, pp. 25-26; APC Coding Concept - Moderate Sedation Add-On Time (99153)). Determination and Correction: - Finding: The billed CPT 99153 (line 3) is not supported by the medical record documentation and does not meet the policy's time requirement for an additional 15-minute unit. Category: Extent/completeness not met. - Correction: Remove the billed CPT 99153 unit for line 3 (no replacement code). Please provide any additional sedation flowsheet entries or other contemporaneous documentation that specifically measure the sedation administration-to-recovery interval reaching the required midpoint (\u224823 minutes) if you disagree with this determination. If you have further documentation to support the billed unit(s), please submit it for reconsideration. Thank you for your cooperation. Sincerely, Clinical Claims Audit Team Re: Claim APC-2026-58317 / Patient MRN-3391847 - Audit Determination for CPT 99153 (additional 15-minute moderate sedation unit) Dear Provider, We completed an audit of the above-referenced claim line (CPT 99153, additional 15-minute unit of physician-directed moderate sedation). Our review compared the billed service to the governing APC coding guidance and the patient medical record. Finding: Not supported - The billed CPT 99153 additional-time unit is not supported by the medical record documentation. Basis for Finding: - Governing policy (APC-03, APC Coding Concept - Moderate Sedation Add-On Time (99153)) requires that intra-service sedation time be measured on the sedation flowsheet (start at administration of sedating agents and end when the patient meets recovery-readiness/hand-off criteria). The policy further states: \"The midpoint of each additional 15-minute increment (approximately 23 total minutes for the first add-on unit) must be reached to support billing that unit of 99153; reviewers should reconcile the sedation flowsheet against any equipment-timer entries elsewhere in the chart before accepting billed 99153 units.\" (APC-03) - The medical record documents sedation medication administration beginning at 07:25 (midazolam 2 mg and fentanyl 50 mcg given at 07:25; an additional midazolam 1 mg at 07:35) and documents that recovery-readiness criteria were met at 07:43. Using the sedation-flowsheet interval (07:25-07:43) yields approximately 18 minutes of documented intra-service sedation time, which is below the policy's ~23-minute threshold required to bill one add-on unit of 99153. Although the endoscopy suite equipment timer shows scope insertion-to-withdrawal of 07:32-08:06 (34 minutes), the policy explicitly states that equipment timer values are distinct from sedation administration and should not be substituted for the sedation flowsheet when supporting 99153. Correction: Remove the billed CPT 99153 line. The documentation supports the initial moderate sedation unit (99152) but does not meet the documented intra-service sedation duration required to support a billed 99153 add-on unit. If you believe additional documentation (for example, an explicit sedation flowsheet showing a longer sedation administration interval) exists and was not included in the record provided for review, please supply that sedation flowsheet showing the sedation administration start and recovery/readiness times so we may re-evaluate. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.098495,
+    "time_to_run_seconds": 259.584,
+    "retrieval_seconds": 48.879,
+    "judge_seconds": 210.707,
+    "retrieval_turns": 20,
+    "total_cost_per_claim_usd": 30.628495,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.098495
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Operative Note, p. 25-26",
+      "role": "supports billed code",
+      "excerpt": "PROCEDURE PERFORMED: Colonoscopy with snare polypectomy x2"
+    },
+    {
+      "citation": "Operative Note, p. 25-26",
+      "role": "supports billed code",
+      "excerpt": "In the ascending colon, a 6 mm sessile polyp was identified and removed in its entirety using hot snare technique in a single pass, with immediate retrieval for pathology."
+    },
+    {
+      "citation": "Anatomic Pathology Report, p. 37-38",
+      "role": "supports billed code",
+      "excerpt": "Specimen A: Ascending colon polyp - hot snare polypectomy."
+    },
+    {
+      "citation": "Anatomic Pathology Report, p. 37-38",
+      "role": "supports billed code",
+      "excerpt": "SPECIMEN A (Ascending colon): One tan-pink sessile mucosal fragment measuring 0.6 x 0.5 x 0.3 cm. Submitted entirely in A1."
+    },
+    {
+      "citation": "APC Coding Concept - Moderate Sedation Add-On Time (99153): Sedation Flowsheet vs. Scope-Time Timer",
+      "role": "supports billed code",
+      "excerpt": "No is_target=true PolicyRule for code='45385' - this code is not the deliberate subject of any policy concept. Returning pricing data AND concept_text from a non-target match (rule_code='APC-03'); that concept text mentions this code only incidentally (it was written about a DIFFERENT code on the same rule_code) - verify it actually applies before treating it as this code's own requirement."
+    },
+    {
+      "citation": "APC Policy APC-05 (APC Coding Concept - ERCP with Biliary and Pancreatic Duct Intervention), note",
+      "role": "supports billed code",
+      "excerpt": "No is_target=true PolicyRule for code='99152' - this code is not the deliberate subject of any policy concept. Returning pricing data AND concept_text from a non-target match (rule_code='APC-05'); that concept text mentions this code only incidentally (it was written about a DIFFERENT code on the same rule_code) - verify it actually applies before treating it as this code's own requirement."
+    },
+    {
+      "citation": "Intraoperative Record - Anesthesia & Circulating Nurse, p. 22-24",
+      "role": "supports billed code",
+      "excerpt": "Anesthesia Induction Initiated | 07:18 | Moderate (conscious) sedation - physician-directed, RN-administered - per anesthesia provider"
+    },
+    {
+      "citation": "Operative Note, p. 25-26",
+      "role": "supports billed code",
+      "excerpt": "Moderate sedation was administered by the circulating RN per standing order beginning at 0725 (see moderate sedation flowsheet, nursing intraop documentation, for administration and monitoring detail)."
+    },
+    {
+      "citation": "Medication Administration Record, p. 30-31",
+      "role": "supports billed code",
+      "excerpt": "07:25 | Midazolam | 2 mg | IV | Moderate sedation induction | RN Boyd (order: Dr. Desai)"
+    },
+    {
+      "citation": "APC Coding Concept - Moderate Sedation Add-On Time (99153): Sedation Flowsheet vs. Scope-Time Timer",
+      "role": "contradicts billed code",
+      "excerpt": "The midpoint of each additional 15-minute increment (approximately 23 total minutes for the first add-on unit) must be reached to support billing that unit of 99153; reviewers should reconcile the sedation flowsheet against any equipment-timer entries elsewhere in the chart before accepting billed 99153 units."
+    },
+    {
+      "citation": "Nursing Notes - All Phases, pp. 32-34",
+      "role": "contradicts billed code",
+      "excerpt": "Moderate sedation flowsheet: Midazolam 2 mg IV and Fentanyl 50 mcg IV administered at 0725 per Dr. Desai's order, followed by an additional Midazolam 1 mg IV titration dose at 0735 for continued patient movement/discomfort. Patient monitored continuously per moderate sedation protocol (continuous pulse oximetry, cardiac monitor, automated BP q5min, capnography, and periodic verbal responsiveness checks) by circulating RN Boyd throughout the case. Recovery-readiness criteria (stable vital signs, purposeful response to verbal stimuli, protective airway reflexes intact) were met at 0743. No further sedation medication was given after 0743, and the patient remained in a light, arousable sedation state through completion of the procedure and scope withdrawal."
+    },
+    {
+      "citation": "Operative Note, pp. 25-26",
+      "role": "supports billed code",
+      "excerpt": "The scope was withdrawn from the patient at 0806 (per endoscopy suite automated procedure timer log), for a total scope insertion-to-withdrawal time of 34 minutes on that timer."
+    },
+    {
+      "citation": "APC-03, APC Coding Concept - Moderate Sedation Add-On Time (99153)",
+      "role": "contradicts billed code",
+      "excerpt": "The midpoint of each additional 15-minute increment (approximately 23 total minutes for the first add-on unit) must be reached to support billing that unit of 99153; reviewers should reconcile the sedation flowsheet against any equipment-timer entries elsewhere in the chart before accepting billed 99153 units."
+    },
+    {
+      "citation": "Nursing Notes - All Phases, pp. 32-34",
+      "role": "contradicts billed code",
+      "excerpt": "Recovery-readiness criteria (stable vital signs, purposeful response to verbal stimuli, protective airway reflexes intact) were met at 0743. No further sedation medication was given after 0743, and the patient remained in a light, arousable sedation state through completion of the procedure and scope withdrawal."
+    },
+    {
+      "citation": "Medication Administration Record, pp. 30-31",
+      "role": "contradicts billed code",
+      "excerpt": "07:25 | Midazolam | 2 mg | IV | Moderate sedation induction | RN Boyd (order: Dr. Desai) 07:35 | Midazolam | 1 mg | IV | Sedation titration during procedure | RN Boyd (order: Dr. Desai)"
+    },
+    {
+      "citation": "Operative Note, pp. 25-26",
+      "role": "contradicts billed code",
+      "excerpt": "Moderate sedation was administered by the circulating RN per standing order beginning at 0725 (see moderate sedation flowsheet, nursing intraop documentation, for administration and monitoring detail)."
+    },
+    {
+      "citation": "Operative Note, pp. 25-26",
+      "role": "contradicts billed code",
+      "excerpt": "scope was withdrawn from the patient at 0806 (per endoscopy suite automated procedure timer log), for a total scope insertion-to-withdrawal time of 34 minutes on that timer."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}
