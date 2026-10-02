@@ -25,7 +25,7 @@ def add_files(spark, table_name):
         CALL glue_catalog.system.add_files(
             table => 'glue_catalog.{TARGET_DB}.{table_name}',
             source_table => '`parquet`.`s3://{TARGET_BUCKET}/eth/{table_name}/`',
-            check_duplicate_files => false
+            check_duplicate_files => true
         )
     """)
     print(f"Iceberg metadata created for {table_name}")
