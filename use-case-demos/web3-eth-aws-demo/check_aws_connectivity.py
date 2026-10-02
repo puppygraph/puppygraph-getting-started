@@ -5,7 +5,7 @@ import boto3
 from botocore import UNSIGNED
 from botocore.config import Config
 
-from config import SOURCE_BUCKET, TARGET_BUCKET, TARGET_DB
+from config import AWS_REGION, SOURCE_BUCKET, TARGET_BUCKET, TARGET_DB
 
 
 def parse_args():
@@ -36,7 +36,7 @@ def check_target_bucket():
 
 
 def check_glue_database():
-    glue = boto3.client("glue")
+    glue = boto3.client("glue", region_name=AWS_REGION)
     try:
         glue.get_database(Name=TARGET_DB)
         print(f"[OK] Glue database found: {TARGET_DB}")

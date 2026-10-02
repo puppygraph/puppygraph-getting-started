@@ -1,3 +1,4 @@
 ivy
 .env
 spark-warehouse
+.venv

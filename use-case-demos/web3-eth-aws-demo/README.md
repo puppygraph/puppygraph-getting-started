@@ -18,12 +18,15 @@ aws configure --profile demo
 export AWS_PROFILE=demo
 ```
 
-Copy `.env.example` to `.env` and fill in your your AWS credentials and region:
+Copy `.env.example` to `.env` and fill in your AWS credentials and region:
 ```bash
 cp .env.example .env
 ```
 
-AWS CLI credentials are for the setup scripts; .env credentials are for the Docker containers, which don't inherit your shell environment.
+Use the same AWS keys in `.env` as in your demo profile (aws configure export-credentials --profile demo --format env-no-export prints them)
+
+> [!WARNING]
+> `PUPPYGRAPH_PASSWORD` defaults to `puppygraph123`, PuppyGraph's publicly known default. Change it to a strong password of your own, and never commit `.env` to version control.
 
 ### 2. Install dependencies
 ```bash
@@ -34,18 +37,17 @@ uv pip install -r requirements.txt
 
 ### 3. Create a private S3 bucket for Parquet data
 
-```bash
-aws s3 mb s3://aws-web3-eth-demo --profile demo
-```
+The following are configured in `.env`:
 
-The following can be configured via environment variables (or exported before running):
+- `TARGET_BUCKET`: bucket for S3 data and Iceberg metadata. Bucket names are global across all AWS accounts, so replace `YOUR_ACCOUNT_ID` with your account ID.
+- `TARGET_DB`: Glue database name
+- `AWS_REGION`: AWS region for the bucket and Glue
+- `DATE_START` / `DATE_END`: date range of blockchain data to fetch
 
+Load them into your shell and create the bucket:
 ```bash
-export TARGET_BUCKET="aws-web3-eth-demo" # Bucket for s3 data and metadata
-export TARGET_DB="eth_iceberg" # Glue database name
-export AWS_REGION="us-east-1"
-export DATE_START="2026-01-01"
-export DATE_END="2026-01-01"
+export $(grep -E '^(TARGET_BUCKET|TARGET_DB|AWS_REGION|DATE_START|DATE_END)=' .env)
+aws s3 mb s3://$TARGET_BUCKET --profile demo
 ```
 
 Then fetch the data:
@@ -86,7 +88,7 @@ spark-submit \
 The setup script supports the following flags:
 
 - `--create` — Creates the Iceberg tables in Glue if they don't already exist.
-- `--add-files` — Registers the Parquet files for the configured date range as Iceberg metadata. No data is moved.
+- `--add-files` — Registers all Parquet files under `s3://$TARGET_BUCKET/eth/` as Iceberg metadata. No data is moved.
 - `--create --add-files` — Run together for a fresh setup.
 
 Type `exit` when done, then clean up the container:
@@ -101,26 +103,28 @@ Start PuppyGraph using Docker by running the following command:
 docker run \
   -p 8081:8081 -p 8182:8182 -p 7687:7687 \
   --env-file .env \
-  -e PUPPYGRAPH_PASSWORD=puppygraph123 \
   -d --name puppy --rm --pull=always \
-  puppygraph/puppygraph:1.0-preview
+  puppygraph/puppygraph:latest
 ```
 
 ## Modeling the Graph
-
 1. Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
    - Username: `puppygraph`
-   - Password: `puppygraph123`
+   - Password: the `PUPPYGRAPH_PASSWORD` set in `.env` (default `puppygraph123`)
 
 2. Upload the schema `schema.json`:
    - Select `schema.json` in the Upload Graph Schema JSON section and click **Upload**.
-   - You can also use `curl` to upload the schema from the terminal:
+   - You can also use `curl` to upload the schema from the terminal. The first line loads `PUPPYGRAPH_PASSWORD` from `.env` into your shell:
      ```bash
+     export $(grep '^PUPPYGRAPH_PASSWORD=' .env)
      curl -XPOST -H "content-type: application/json" \
        --data-binary @./schema.json \
-       --user "puppygraph:puppygraph123" \
+       --user "puppygraph:$PUPPYGRAPH_PASSWORD" \
        localhost:8081/schema
      ```
+
+> [!NOTE]
+> When uploading the schema, wait until the Cluster panel shows the cluster is up. Uploading too early fails with `replicationNum 1 exceeds the number of available compute nodes (0)`.
 
 ## Querying the Graph
 
@@ -167,8 +171,8 @@ docker stop puppy
 
 To remove the Iceberg data and Glue database created for this demo, run:
 ```bash
-# Replace aws-web3-eth-demo and eth_iceberg if you changed the defaults
-aws s3 rm s3://aws-web3-eth-demo/iceberg/ --recursive --profile demo
-aws s3 rm s3://aws-web3-eth-demo/eth/ --recursive --profile demo
-aws glue delete-database --name eth_iceberg --profile demo
+export $(grep -E '^(TARGET_BUCKET|TARGET_DB|AWS_REGION)=' .env)
+aws s3 rm s3://$TARGET_BUCKET/iceberg/ --recursive --profile demo
+aws s3 rm s3://$TARGET_BUCKET/eth/ --recursive --profile demo
+aws glue delete-database --name $TARGET_DB --profile demo
 ```
