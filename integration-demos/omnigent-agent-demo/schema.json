@@ -1,0 +1,127 @@
+{
+  "catalog": [
+    {
+      "name": "postgres_data",
+      "type": "postgresql",
+      "jdbc": {"username": "postgres", "password": "postgres123", "jdbcUri": "jdbc:postgresql://postgres:5432/payments", "driverClass": "org.postgresql.Driver"}
+    }
+  ],
+  "node": [
+    {
+      "label": "Account",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "fraud",
+          "table": "account",
+          "mappedField": [
+            {"sourceFieldName": "id", "targetFieldName": "id"},
+            {"sourceFieldName": "owner_name", "targetFieldName": "owner_name"},
+            {"sourceFieldName": "country", "targetFieldName": "country"},
+            {"sourceFieldName": "status", "targetFieldName": "status"},
+            {"sourceFieldName": "opened_at", "targetFieldName": "opened_at"}
+          ]
+        }
+      },
+      "id": [
+        {"name": "id", "type": "String"}
+      ],
+      "attribute": [
+        {"name": "owner_name", "type": "String"},
+        {"name": "country", "type": "String"},
+        {"name": "status", "type": "String"},
+        {"name": "opened_at", "type": "DateTime"}
+      ]
+    },
+    {
+      "label": "Device",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "fraud",
+          "table": "device",
+          "mappedField": [
+            {"sourceFieldName": "id", "targetFieldName": "id"},
+            {"sourceFieldName": "fingerprint", "targetFieldName": "fingerprint"},
+            {"sourceFieldName": "os", "targetFieldName": "os"}
+          ]
+        }
+      },
+      "id": [
+        {"name": "id", "type": "String"}
+      ],
+      "attribute": [
+        {"name": "fingerprint", "type": "String"},
+        {"name": "os", "type": "String"}
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "label": "USES_DEVICE",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "fraud",
+          "table": "uses_device",
+          "mappedField": [
+            {"sourceFieldName": "id", "targetFieldName": "id"},
+            {"sourceFieldName": "account_id", "targetFieldName": "account_id"},
+            {"sourceFieldName": "device_id", "targetFieldName": "device_id"},
+            {"sourceFieldName": "first_seen", "targetFieldName": "first_seen"}
+          ]
+        }
+      },
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Device",
+      "id": [
+        {"name": "id", "type": "String"}
+      ],
+      "fromKey": [
+        {"name": "account_id", "type": "String"}
+      ],
+      "toKey": [
+        {"name": "device_id", "type": "String"}
+      ],
+      "attribute": [
+        {"name": "first_seen", "type": "DateTime"}
+      ]
+    },
+    {
+      "label": "TRANSFER",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "postgres_data",
+          "schema": "fraud",
+          "table": "transfer",
+          "mappedField": [
+            {"sourceFieldName": "id", "targetFieldName": "id"},
+            {"sourceFieldName": "from_id", "targetFieldName": "from_id"},
+            {"sourceFieldName": "to_id", "targetFieldName": "to_id"},
+            {"sourceFieldName": "amount", "targetFieldName": "amount"},
+            {"sourceFieldName": "ts", "targetFieldName": "ts"}
+          ]
+        }
+      },
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Account",
+      "id": [
+        {"name": "id", "type": "String"}
+      ],
+      "fromKey": [
+        {"name": "from_id", "type": "String"}
+      ],
+      "toKey": [
+        {"name": "to_id", "type": "String"}
+      ],
+      "attribute": [
+        {"name": "amount", "type": "Double"},
+        {"name": "ts", "type": "DateTime"}
+      ]
+    }
+  ]
+}
