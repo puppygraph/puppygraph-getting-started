@@ -1,0 +1,25 @@
+# PuppyGraph MCP server (https://github.com/puppygraph/puppygraph-mcp-server).
+# Auto-discovered by Omnigent from tools/mcp/; tools show up to the model as
+# puppygraph__puppygraph_schema, puppygraph__puppygraph_query, ...
+#
+# Kept in its own file so ${VAR} references in `env` are expanded; through
+# omnigent 0.16.0, inline `type: mcp` entries in config.yaml pass them through
+# literally (https://github.com/omnigent-ai/omnigent/issues/8338, fixed by
+# https://github.com/omnigent-ai/omnigent/pull/8544, not yet released).
+name: puppygraph
+description: Query PuppyGraph (openCypher / Gremlin over existing tables) and read its graph schema.
+transport: stdio
+command: puppygraph-mcp
+env:
+  PUPPYGRAPH_URL: ${PUPPYGRAPH_BOLT_URL}
+  PUPPYGRAPH_USERNAME: ${PUPPYGRAPH_USERNAME}
+  PUPPYGRAPH_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+  PUPPYGRAPH_GREMLIN_URL: ${PUPPYGRAPH_GREMLIN_URL}
+  PUPPYGRAPH_GREMLIN_USERNAME: ${PUPPYGRAPH_USERNAME}
+  PUPPYGRAPH_GREMLIN_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+  PUPPYGRAPH_SCHEMA_URL: ${PUPPYGRAPH_SCHEMA_URL}
+  PUPPYGRAPH_SCHEMA_USERNAME: ${PUPPYGRAPH_USERNAME}
+  PUPPYGRAPH_SCHEMA_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+# Only surface these tools to the model (the server also registers
+# mcp__-prefixed duplicates, which we hide).
+tools: [puppygraph_schema, puppygraph_query, puppygraph_status]
