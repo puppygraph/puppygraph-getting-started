@@ -1,0 +1,102 @@
+# PuppyGraph Analyst: answer multi-hop questions over lakehouse/warehouse data
+# as a graph, through the PuppyGraph MCP server, from inside Omnigent.
+#
+# PuppyGraph maps existing tables (Postgres, Iceberg, Delta Lake / Databricks
+# Unity Catalog, Snowflake, BigQuery, ...) into a graph and serves
+# openCypher/Gremlin over them in place, so there is no ETL and no second copy of the data.
+# Omnigent wires the MCP server in as a governed tool: an allow-list of
+# tools, a read-only guardrail policy, and a spend cap.
+#
+# Setup (PuppyGraph, the `puppygraph-mcp` server, connection settings and
+# OPENAI_API_KEY) is described in ../README.md.
+#
+# The MCP server itself is declared in tools/mcp/puppygraph.yaml.
+#
+# Usage:
+#   omnigent run agent/                  # interactive REPL (web UI: see ../README.md)
+#   omnigent run agent/ -p "question"    # one-shot, headless
+
+spec_version: 1
+name: puppygraph_analyst
+description: >-
+  Graph analyst that answers multi-hop questions (fraud rings, lineage,
+  dependencies, 360 views) over existing tables through PuppyGraph, read-only.
+
+executor:
+  type: omnigent
+  config:
+    # Any Omnigent harness works here (claude-sdk, codex, cursor, pi, ...);
+    # the PuppyGraph MCP tools and guardrails stay the same.
+    harness: openai-agents
+  model: gpt-5.4-mini
+  auth:
+    type: api_key
+    api_key: ${OPENAI_API_KEY}
+
+# Guardrails are evaluated by Omnigent on every tool call, independently of
+# the model and the prompt. They must live under `guardrails.policies` (see
+# "Notes for Omnigent 0.15.0 and 0.16.0" in ../README.md).
+guardrails:
+  policies:
+    # Read-only: deny any graph query that contains a Cypher/Gremlin write or
+    # procedure clause, or a Gremlin script call into PuppyGraph's schema
+    # management API (graph.getTopology2()). CEL must return a map:
+    # {"result": "DENY"} blocks, {} abstains. A missing or non-string query
+    # argument is denied too.
+    puppygraph_read_only:
+      type: function
+      on: [tool_call]
+      function:
+        path: omnigent.policies.builtins.cel.cel_policy
+        arguments:
+          expression: >-
+            event.type == "tool_call" && event.data.name.endsWith("puppygraph_query")
+            ? (
+                !has(event.data.arguments.query)
+                || type(event.data.arguments.query) != string
+                || event.data.arguments.query.matches("(?i)\\b(create|merge|delete|detach|set|remove|drop|addv|adde|mergev|mergee|property|load|call|gettopology\\w*)\\b")
+                ? {"result": "DENY"}
+                : {}
+              )
+            : {}
+          reason: >-
+            The PuppyGraph analyst is read-only. Omnigent policy blocked this
+            query because it contains a write or procedure clause
+            (CREATE/MERGE/DELETE/SET/REMOVE/DROP/CALL,
+            addV/addE/mergeV/mergeE/property/drop) or a schema management call.
+    # Cap runaway tool loops.
+    tool_call_limit:
+      type: function
+      on: [tool_call]
+      function:
+        path: omnigent.policies.builtins.safety.max_tool_calls_per_session
+        arguments:
+          limit: 40
+    # Cap spend per session.
+    budget:
+      type: function
+      on: [request, tool_call]
+      function:
+        path: omnigent.policies.builtins.cost.cost_budget
+        arguments:
+          max_cost_usd: 2.00
+          ask_thresholds_usd: [1.00]
+
+prompt: |
+  You are a graph analyst. You answer questions about connected data using
+  PuppyGraph, which exposes existing relational/lakehouse tables as a graph.
+
+  Tools (from the `puppygraph` MCP server):
+  - `puppygraph_schema`: vertex labels, edge labels and their properties.
+    Call it first; never assume a label or property exists.
+  - `puppygraph_query`: run a read-only openCypher (preferred) or Gremlin query.
+  - `puppygraph_status`: check connectivity if a query fails.
+
+  Rules:
+  - Use openCypher. Vertex ids are returned by `id(n)` and look like
+    `Account[acc_007]`; filter by id with `WHERE id(n) = 'Account[acc_007]'`.
+  - Prefer one multi-hop query (variable-length paths such as
+    `-[:TRANSFER*1..5]->`) over many single-hop lookups.
+  - Always add a LIMIT to exploratory queries.
+  - Queries are read-only; write clauses are blocked by policy.
+  - Show the Cypher you ran with each finding so the answer is auditable.
