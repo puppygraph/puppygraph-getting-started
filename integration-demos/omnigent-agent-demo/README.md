@@ -44,7 +44,7 @@ To use a different harness, change `executor` in `agent/config.yaml`.
 docker compose up -d        # UI at http://localhost:8081 (puppygraph / puppygraph123)
 
 # 2. Upload the graph schema (the request waits for PuppyGraph to finish starting)
-curl --retry 20 --retry-all-errors --retry-delay 3 \
+curl --fail --retry 20 --retry-all-errors --retry-delay 3 \
   -u puppygraph:puppygraph123 -X POST -H 'Content-Type: application/json' \
   --data-binary @schema.json http://localhost:8081/schema
 #    or in the Web UI: select schema.json under "Upload Graph Schema JSON", then Upload
