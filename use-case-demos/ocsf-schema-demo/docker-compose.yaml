@@ -15,7 +15,7 @@ services:
       - puppy-postgres
 
   puppygraph:
-    image: puppygraph/puppygraph:1.0-preview
+    image: puppygraph/puppygraph:latest
     container_name: puppygraph
     environment:
       - PUPPYGRAPH_USERNAME=puppygraph
