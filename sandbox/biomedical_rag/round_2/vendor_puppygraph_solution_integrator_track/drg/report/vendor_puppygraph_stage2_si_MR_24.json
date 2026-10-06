@@ -1,0 +1,276 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_24",
+  "encounter_information": {
+    "claim_number": "MR_24",
+    "payer": "Great Basin Preferred Care",
+    "dates_of_service": "2026-09-16\u20132027-01-29",
+    "facility_pos": "Great Basin Regional Hospital",
+    "attending_provider": "Dr. Ilya Ashford, MD (Neurocritical Care)",
+    "patient": "Tobias Merriwether \u2014 MRN: MRN-2837194",
+    "medical_record": "MR_24.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B00.4",
+      "description": "Herpesviral encephalitis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G41.0",
+      "description": "Grand mal status epilepticus",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R40.9",
+      "description": "Unspecified coma",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J69.0",
+      "description": "Pneumonitis due to inhalation of food and vomit",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J13",
+      "description": "Pneumonia due to Streptococcus pneumoniae",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E22.2",
+      "description": "Syndrome of inappropriate secretion of antidiuretic hormone",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.C11",
+      "description": "Acute embolism and thrombosis of right internal jugular vein",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.1",
+      "description": "Anoxic brain damage, not elsewhere classified",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "F02.81",
+      "description": "Dementia in other diseases classified elsewhere with behavioral disturbance",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R41.1",
+      "description": "Anterograde amnesia",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G81.94",
+      "description": "Hemiplegia, unspecified affecting right dominant side",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.11",
+      "description": "Dependence on respirator [ventilator] status",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I63.9",
+      "description": "Cerebral infarction, unspecified",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "009U3ZX",
+      "description": "Drainage of spinal canal, percutaneous approach, diagnostic"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "03HY32Z",
+      "description": "Insertion of monitoring device into upper artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0B110F4",
+      "description": "Bypass trachea to cutaneous with tracheostomy device, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0DH60UZ",
+      "description": "Insertion of feeding device into stomach, percutaneous endoscopic approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "4A10X4G",
+      "description": "Measurement of central nervous electrical activity, external"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Destination: Acute Inpatient Rehabilitation Facility",
+      "revised_diagnosis_set": [
+        "B00.4",
+        "G41.0",
+        "R40.9",
+        "J96.01",
+        "J69.0",
+        "J13",
+        "E22.2",
+        "I82.C11",
+        "R41.1",
+        "G81.94",
+        "Z99.11"
+      ],
+      "revised_procedure_set": [
+        "0BH17EZ",
+        "009U3ZX",
+        "02HV33Z",
+        "03HY32Z",
+        "0B110F4",
+        "0DH60UZ",
+        "4A10X4G",
+        "5A1D90Z"
+      ],
+      "confidence": 0.8,
+      "confidence_basis": "All 10 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Principal B00.4 (Herpesviral encephalitis) plus multiple MCC/CCs including G41.0 (status epilepticus), R40.9 (coma), J96.01 (acute respiratory failure with hypoxia), J69.0/J13 (aspiration pneumonia / S. pneumoniae), I82.C11 (right IJ DVT), G93.1 (anoxic brain damage), I63.9 (cerebral infarction), F02.81 (dementia) and others; procedures include endotracheal intubation, prolonged ventilation >96 hours, tracheostomy, PEG, continuous EEG, arterial/central access, and diagnostic LP. What the chart documents: Strong, specific support exists for HSV encephalitis (provider diagnosis, positive CSF PCR, MRI temporal-lobe changes, and IV acyclovir), refractory status epilepticus with continuous EEG/burst suppression, acute hypoxemic respiratory failure requiring emergent intubation and prolonged mechanical ventilation with subsequent tracheostomy and PEG, aspiration pneumonia with Streptococcus pneumoniae, and a right internal jugular DVT. Evidence does NOT support coding of acute cerebral infarction (I63.9), anoxic brain damage (G93.1), or dementia (F02.81) as active/acute diagnoses for this admission. Key supporting citations used in this determination (representative excerpts from the chart): - HSV encephalitis: Discharge/Transfer Summary: \"CSF HSV-1 PCR was positive and MRI demonstrated bilateral temporal lobe changes characteristic of HSV encephalitis; a full 21-day course of intravenous acyclovir was completed.\" (Discharge / Transfer Summary, pp. 835-836) - meets the policy's Criterion 2 (positive CSF PCR) and Criterion 3 (IV acyclovir) for B00.4. (Policy: Herpesviral Encephalitis validation criteria require provider diagnosis + CSF PCR or characteristic MRI +/- antiviral therapy.) - HSV clinically suspected on admission: H&P (Admitting): \"The patient was intubated for airway protection with escalation of anticonvulsants and empiric acyclovir initiation given clinical suspicion for HSV encephalitis.\" (History & Physical (Admitting), History & Physical, pp. 630-291) - supports empiric treatment pathway when PCR pending. - Respiratory failure / mechanical ventilation: Neurology Consultation: \"Airway/Support: orally intubated, mechanically ventilated.\" and ABG: \"ABG (02:00): pH 7.29 / PaCO2 45 / PaO2 62 / HCO3 20; lactate 5.4 mmol/L; P/F ratio 65.\" (Neurology Consultation, pp. 61-488) - meets J96.01 objective evidence and, per policy, initiation of invasive mechanical ventilation presumes hypoxemia criteria when emergent measurement on room air is not available. - Aspiration pneumonia / organism: History & Physical (Active Problem List): lists both \"Acute respiratory failure requiring mechanical ventilation\" and \"Aspiration pneumonia (Streptococcus pneumoniae)\" on the admitting problem list, and Discharge Summary documents \"aspiration pneumonia with Streptococcus pneumoniae treated with ceftriaxone\" and resolution. (History & Physical (Admitting), History & Physical, pp. 630-291; Discharge / Transfer Summary, pp. 835-836) - supports J69.0/J13 when provider attributes pneumonia to aspiration and documents organism. - Right internal jugular DVT: Hematology Consultation: \"Venous Duplex Ultrasound: Right internal jugular deep vein thrombosis.\" (Hematology Consultation, pp. 822-822) - supports I82.C11 as a catheter-associated DVT. - Prolonged ventilation / tracheostomy / PEG: Discharge Summary: \"...prolonged mechanical ventilation requiring tracheostomy on ICU day 14, PEG placement for enteral nutrition on ICU day 16...\" (Discharge / Transfer Summary, pp. 835-836) - supports the PCS procedures for tracheostomy/PEG and the ventilation >96 hours procedure. - CONTRADICTORY / UNSUPPORTED: MRI follow-up: \"Interval improvement in bilateral temporal lobe changes with residual encephalomalacia. No new acute abnormalities.\" (Diagnostic Imaging Report - MRI Brain Follow-Up, p. 99) - this language documents post-encephalitic change/encephalomalacia but expressly notes no new acute abnormality, which undermines coding an acute cerebral infarction (I63.9) for this admission in the absence of an explicit provider diagnosis of acute infarct or imaging showing acute ischemia. Likewise there is no explicit provider documentation of \"anoxic brain damage\" in the chart; discharge/summary language attributes cognitive deficits to treated HSV encephalitis and post-encephalitic sequelae rather than a separate anoxic brain injury. - Dementia vs. cognitive impairment: Active Problem List and Discharge Summary document \"Post-encephalitis cognitive dysfunction and memory impairment\" and \"ongoing cognitive impairment from encephalitis\" but do not document a diagnosis of dementia (F02.81). (History & Physical (Admitting), History & Physical, pp. 630-291; Discharge / Transfer Summary, pp. 835-836) - dementia (F02.81) therefore lacks explicit provider documentation linking the cognitive deficits to a formal dementia diagnosis. Action / correction taken in this audit: - Remove unsupported acute diagnoses: I63.9 (Cerebral infarction, unspecified), G93.1 (Anoxic brain damage) and F02.81 (Dementia in other diseases classified elsewhere) are not supported by contemporaneous provider documentation or imaging showing new acute infarction/ischemia or anoxic injury, nor is there a documented diagnosis of dementia. These codes should be deleted from the claim. - Retain and confirm sequencing of principal diagnosis: B00.4 (Herpesviral encephalitis) is supported by provider documentation, positive CSF HSV-1 PCR, characteristic MRI findings, and a completed therapeutic IV acyclovir course - B00.4 as principal diagnosis is appropriate and remains position 1. - Retain the supported MCC/CC diagnoses: G41.0 (status epilepticus), R40.9 (unspecified coma), J96.01 (acute respiratory failure with hypoxia), J69.0 and J13 (aspiration-related pneumonia with S. pneumoniae), E22.2 (SIADH), I82.C11 (right IJ DVT), R41.1 (anterograde amnesia), G81.94 (right hemiplegia/hemiparesis), Z99.11 (tracheostomy/ventilator dependence status) - each is supported by the chart excerpts cited above. - Procedures: The billed procedure list (endotracheal intubation, diagnostic LP/spinal canal drainage, central venous access into SVC, arterial line, tracheostomy, PEG insertion, EEG monitoring, and mechanical ventilation >96 hours) is supported by the record (intubation/mechanical ventilation documented on admission with protracted ventilatory course and tracheostomy on ICU day 14; LP/CSF PCR; arterial line orders; central line/DVT; PEG placement). No procedure removals recommended. POA / coding flags: The chart contains some timing/POA ambiguities in the billing flags: aspiration pneumonia and organism identification are documented early in the admission (admitting H&P Active Problem List and Discharge Summary) suggesting they may be POA=Y rather than POA=N as billed; the catheter-associated right IJ DVT should have its onset date and POA status confirmed in the chart (the Hematology consult documents the ultrasound, but the timing relative to admission must be verified). Please see HITL question below. Conclusion: This claim contains unsupported diagnosis lines (I63.9, G93.1, F02.81) and POA timing inconsistencies that require correction. The principal diagnosis B00.4 and the major procedures (including ventilation >96 hours and tracheostomy) are supported and should remain. Auditor: Senior Clinical Claims Auditor Date: 2027-10-06",
+  "hitl_escalation_point": "Please confirm (with dated provider attestations if available): 1) Whether the right internal jugular DVT (I82.C11) was present on admission or developed during the hospital stay (provide date of first documentation/ultrasound); 2) Whether aspiration pneumonia and the Streptococcus pneumoniae identification were present on admission or developed after admission (provide dates); and 3) Whether a formal diagnosis of dementia (F02.81) was made during this admission (if so, provide the provider note documenting dementia vs. post-encephalitis cognitive impairment).",
+  "rationale_letter": "Re: Clinical documentation review and audit determination for inpatient claim MR_24 Dear Provider(s), We completed a clinical documentation and coding audit for the inpatient admission with claim number MR_24 (admission 2026-09-16, transfer 2027-01-29). Our review compared the medical record documentation to the applicable coding validation policies for the high-severity conditions and procedures billed on the claim. Finding: Unsupported diagnosis codes removed from the claim After review of the medical record and the applicable coding policy guidance, we are removing the following diagnoses from the claim because the medical record does not support them as active/acute diagnoses for this admission: - I63.9 - Cerebral infarction, unspecified - G93.1 - Anoxic brain damage, not elsewhere classified - F02.81 - Dementia in other diseases classified elsewhere with behavioral disturbance Basis for the Finding (documentation relied upon): - HSV encephalitis (B00.4) is confirmed by the record: \"CSF HSV-1 PCR was positive and MRI demonstrated bilateral temporal lobe changes characteristic of HSV encephalitis; a full 21-day course of intravenous acyclovir was completed.\" (Discharge / Transfer Summary, pp. 835-836). The admitting note documents empiric acyclovir initiation for suspected HSV encephalitis (History & Physical (Admitting), History & Physical, pp. 630-291). These items meet the policy validation criteria for B00.4 (provider diagnosis + CSF PCR and antiviral therapy). - Acute respiratory failure (J96.01) and need for invasive ventilation are documented with objective evidence: Neurology Consultation documents invasive ventilation and ABG with severe hypoxemia (\"Airway/Support: orally intubated, mechanically ventilated.\" and \"ABG (02:00): pH 7.29 / PaCO2 45 / PaO2 62 / HCO3 20; ... P/F ratio 65.\") (Neurology Consultation, pp. 61-488), meeting the policy criteria for J96.01. - Aspiration pneumonia with Streptococcus pneumoniae is documented in the admitting problem list and the discharge summary and was treated (History & Physical (Admitting), pp. 630-291; Discharge / Transfer Summary, pp. 835-836), supporting J69.0/J13 when the provider attributes pneumonia to aspiration and identifies organism. - Right internal jugular DVT is confirmed by venous duplex: \"Venous Duplex Ultrasound: Right internal jugular deep vein thrombosis.\" (Hematology Consultation, pp. 822-822), supporting I82.C11. Why codes removed: Lack of documentation to support acute stroke, anoxic brain injury, or dementia - MRI follow-up documents \"Interval improvement in bilateral temporal lobe changes with residual encephalomalacia. No new acute abnormalities.\" (Diagnostic Imaging Report - MRI Brain Follow-Up, p. 99). There is no contemporaneous provider note diagnosing an acute cerebral infarction (I63.9) or anoxic brain damage (G93.1) during this admission. Encephalomalacia is a chronic sequela/structural change rather than documentation of an acute infarct on this encounter. - Although cognitive deficits are documented as \"post-encephalitis cognitive dysfunction\" and \"ongoing cognitive impairment from encephalitis,\" there is no explicit provider diagnosis of dementia (F02.81) in the chart (History & Physical (Admitting), pp. 630-291; Discharge / Transfer Summary, pp. 835-836). Therefore F02.81 is not supported. Correction applied: The claim should be revised to remove I63.9, G93.1, and F02.81. The principal diagnosis B00.4 (Herpesviral encephalitis) is supported and remains in position 1. Other major diagnoses and procedures documented and supported in the record (status epilepticus, acute respiratory failure with hypoxia, aspiration pneumonia due to S. pneumoniae, right IJ DVT, tracheostomy, PEG, mechanical ventilation >96 hours, continuous EEG) remain billed. Request for clarification (if provider disputes removal): Please provide dated, signed documentation from the treating physician that explicitly states the diagnoses of acute cerebral infarction, anoxic brain injury, or dementia with onset during this admission, or provide imaging/lab reports that document new acute ischemia/anoxic injury during this hospitalization. If such documentation exists but was not present in the chart we reviewed, please supply that documentation for re-review. Sincerely, Clinical Documentation Review Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.063071,
+    "time_to_run_seconds": 177.217,
+    "retrieval_seconds": 59.187,
+    "retrieval_turns": 7,
+    "judge_seconds": 118.029,
+    "total_cost_per_claim_usd": 30.593071,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.063071
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 835-836",
+      "role": "supports billed code",
+      "excerpt": "CSF HSV-1 PCR was positive and MRI demonstrated bilateral temporal lobe changes characteristic of HSV encephalitis; a full 21-day course of intravenous acyclovir was completed."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, pp. 630-291",
+      "role": "supports billed code",
+      "excerpt": "The patient was intubated for airway protection with escalation of anticonvulsants and empiric acyclovir initiation given clinical suspicion for HSV encephalitis."
+    },
+    {
+      "citation": "Neurology Consultation, Neurology Consultation, pp. 61-488",
+      "role": "supports billed code",
+      "excerpt": "Airway/Support: orally intubated, mechanically ventilated."
+    },
+    {
+      "citation": "Neurology Consultation, Neurology Consultation, pp. 61-488",
+      "role": "supports billed code",
+      "excerpt": "ABG (02:00): pH 7.29 / PaCO2 45 / PaO2 62 / HCO3 20; lactate 5.4 mmol/L; P/F ratio 65."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, pp. 630-291",
+      "role": "supports billed code",
+      "excerpt": "Active Problem List # | Problem 1 | Refractory status epilepticus, new-onset 2 | HSV-1 encephalitis with temporal lobe involvement 3 | Prolonged burst-suppression treatment with pentobarbital 4 | Continuous EEG monitoring - electrographic seizures resolved 5 | Acute respiratory failure requiring mechanical ventilation 6 | Aspiration pneumonia (Streptococcus pneumoniae)"
+    },
+    {
+      "citation": "Hematology Consultation, Hematology Consultation, p. 822",
+      "role": "supports billed code",
+      "excerpt": "Venous Duplex Ultrasound: Right internal jugular deep vein thrombosis. See the Diagnostic Imaging section for the full report."
+    },
+    {
+      "citation": "Diagnostic Imaging Report - MRI Brain Follow-Up, Diagnostic Imaging Report - MRI Brain Follow-Up, p. 99",
+      "role": "contradicts billed code",
+      "excerpt": "Interval improvement in bilateral temporal lobe changes with residual encephalomalacia. No new acute abnormalities."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 835-836",
+      "role": "supports billed code",
+      "excerpt": "The course was complicated by aspiration pneumonia with Streptococcus pneumoniae treated with ceftriaxone, catheter-associated right internal jugular DVT treated with therapeutic anticoagulation, mild SIADH managed with fluid restriction, prolonged mechanical ventilation requiring tracheostomy on ICU day 14, PEG placement for enteral nutrition on ICU day 16, and profound ICU-acquired weakness."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, pp. 630-291",
+      "role": "contradicts billed code",
+      "excerpt": "Post-encephalitis cognitive dysfunction and memory impairment"
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 835-836",
+      "role": "contradicts billed code",
+      "excerpt": "ongoing cognitive impairment from encephalitis"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

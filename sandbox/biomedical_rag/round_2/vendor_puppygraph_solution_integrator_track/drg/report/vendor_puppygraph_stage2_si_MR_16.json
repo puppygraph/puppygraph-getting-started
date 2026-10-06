@@ -1,0 +1,257 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_16",
+  "encounter_information": {
+    "claim_number": "MR_16",
+    "payer": "Lake Ontario Health Cooperative",
+    "dates_of_service": "2026-06-20\u20132026-11-07",
+    "facility_pos": "Lake Ontario Regional Medical Center",
+    "attending_provider": null,
+    "patient": "Elijah T. Rasmussen \u2014 MRN: MRN-8194720",
+    "medical_record": "MR_16.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B00.4",
+      "description": "Herpesviral encephalitis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G41.0",
+      "description": "Grand mal status epilepticus",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R40.9",
+      "description": "Unspecified coma",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J69.0",
+      "description": "Pneumonitis due to inhalation of food and vomit",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J13",
+      "description": "Pneumonia due to Streptococcus pneumoniae",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E22.2",
+      "description": "Syndrome of inappropriate secretion of antidiuretic hormone",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.C11",
+      "description": "Acute embolism and thrombosis of right internal jugular vein",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.1",
+      "description": "Anoxic brain damage, not elsewhere classified",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "F02.81",
+      "description": "Dementia in other diseases classified elsewhere with behavioral disturbance",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R41.1",
+      "description": "Anterograde amnesia",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G81.94",
+      "description": "Hemiplegia, unspecified affecting right dominant side",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.11",
+      "description": "Dependence on respirator [ventilator] status",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "F03.B0",
+      "description": "Vascular dementia, unspecified severity, without behavioral disturbance",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "009U3ZX",
+      "description": "Drainage of spinal canal, percutaneous approach, diagnostic"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "03HY32Z",
+      "description": "Insertion of monitoring device into upper artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0B110F4",
+      "description": "Bypass trachea to cutaneous with tracheostomy device, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0DH60UZ",
+      "description": "Insertion of feeding device into stomach, percutaneous endoscopic approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "4A10X4G",
+      "description": "Measurement of central nervous electrical activity, external"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Transfer to Acute Inpatient Rehabilitation Facility (per Discharge / Transfer Summary, Transfer: 2026-11-07)",
+      "revised_diagnosis_set": [
+        "G41.0",
+        "B00.4",
+        "J96.01",
+        "R40.9",
+        "J13",
+        "J69.0",
+        "E22.2",
+        "I82.C11",
+        "G81.94",
+        "Z99.11",
+        "R41.1",
+        "G72.81"
+      ],
+      "revised_procedure_set": [
+        "0BH17EZ",
+        "009U3ZX",
+        "02HV33Z",
+        "03HY32Z",
+        "0B110F4",
+        "0DH60UZ",
+        "4A10X4G",
+        "5A1D90Z"
+      ],
+      "confidence": 0.8,
+      "confidence_basis": "All 6 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Claim MR_16 billed B00.4 (Herpesviral encephalitis) as the principal diagnosis (Position 1) with multiple MCC/CC secondary diagnoses (including G41.0 status epilepticus in position 2, J96.01 acute respiratory failure, J13/J69 pneumonia/aspiration coded POA=N, Z99.11 ventilator dependence POA=N, and several dementia/anoxic brain damage codes). What the medical record documents (selected, chart-cited): - The reason for admission and the documented chief complaint was an ongoing seizure/status epilepticus that prompted ED arrival and intubation: \"Chief Complaint: \\\"She had a seizure that wouldn't stop and became unresponsive.\\\"\" (History & Physical (Admitting), p. 161-235). The admitting H&P also documents ongoing electrographic status epilepticus and that the patient was intubated for airway protection and started on empiric acyclovir for suspected HSV encephalitis: \"...EEG evidence of status epilepticus. Benzodiazepines (lorazepam) and levetiracetam were administered ... The patient was intubated for airway protection with escalation of anticonvulsants and empiric acyclovir initiation given clinical suspicion for HSV encephalitis.\" (History & Physical (Admitting), p. 161-235). - The discharge/transfer summary explicitly states the reason for admission as refractory status epilepticus with HSV encephalitis: \"Reason for Admission: Refractory status epilepticus with HSV encephalitis requiring neurocritical care.\" (Discharge / Transfer Summary, p. 1096-1097). The hospital course documents a positive CSF HSV-1 PCR and MRI changes consistent with HSV encephalitis: \"CSF HSV-1 PCR was positive and MRI demonstrated bilateral temporal lobe changes characteristic of HSV encephalitis; a full 21-day course of intravenous acyclovir was completed.\" (Discharge / Transfer Summary, p. 1096-1097). - Pneumonia/aspiration is documented as present during the hospitalization and on the problem list on day of admission: \"Active Problem List ... Aspiration pneumonia (Streptococcus pneumoniae)\" (History & Physical (Admitting), p. 161-235) and the Hospital Problem List documents \"Community-acquired pneumonia (lobar) | J18.1 | 06/20/2026 | Improving | Principal diagnosis\" (Hospital Problem List, p. 188). The progress note documents suspected aspiration pneumonia/VAP: \"Suspected aspiration pneumonia. Await cultures; support respiratory Appears consistent with expected post-critical-illness trajectory.\" (Critical Care Progress Note, p. 15). - Procedures and prolonged ventilator dependence are supported: the chart documents intubation on presentation (Intubation note, p. 603), prolonged mechanical ventilation with >96 hours and later tracheostomy on ICU day 14 and PEG on ICU day 16: \"...prolonged mechanical ventilation requiring tracheostomy on ICU day 14, PEG placement for enteral nutrition on ICU day 16...\" (Discharge / Transfer Summary, p. 1096-1097). - Catheter-associated right internal jugular DVT is documented: \"catheter-associated right internal jugular DVT treated with therapeutic anticoagulation\" (Discharge / Transfer Summary, p. 1096-1097) and the H&P problem list includes \"Deep vein thrombosis (right internal jugular) - catheter-associated\" (History & Physical (Admitting), p. 161-235). Why this yields a Finding and what corrections are required: 1) Principal diagnosis sequencing: The documented reason for admission and the clinician-authored H&P/Discharge repeatedly identify refractory status epilepticus as the presenting/operative problem prompting admission and acute management (intubation, burst suppression). Per ICD-10-CM sequencing guidance (principal diagnosis = condition established after study to be chiefly responsible for occasioning the admission), G41.0 (status epilepticus) should be sequenced as the principal diagnosis (position 1) rather than B00.4. The record supports HSV encephalitis as the underlying etiology and should remain coded, but as a secondary diagnosis. Citations: History & Physical (Admitting), p. 161-235; Discharge / Transfer Summary, p. 1096-1097. 2) POA flag errors and miscoding: The chart documents pneumonia/aspiration on or at the time of admission (H&P problem list and Hospital Problem List dated 06/20/2026). J13/J69 were billed with POA=N, which contradicts the documented onset (admission/ED). Similarly, ventilator dependence (the patient was intubated in the ED and mechanically ventilated on admission) is documented on presentation and therefore Z99.11 should be POA=Y if retained rather than POA=N. Citations: History & Physical (Admitting), p. 161-235; Hospital Problem List, p. 188; Discharge / Transfer Summary, p. 1096-1097. 3) Unsupported/duplicative diagnoses: Several billed diagnoses lack supporting documentation in the retrieved chart or are duplicative manifestations rather than independent, reportable diagnoses. Notably, dementia codes billed (F02.81 and F03.B0) are not supported in the admission H&P (patient is 38 and documented as previously healthy) and should be removed. G93.1 (anoxic brain damage) is not explicitly documented in the clinical narrative or problem list and appears redundant with post-encephalitic cognitive injury; remove unless the provider specifically documents anoxic brain injury per policy. Citations: History & Physical (Admitting), p. 161-235; Discharge / Transfer Summary, p. 1096-1097 (no dementia history; prior health \"previously healthy\"). 4) Procedures: Endotracheal intubation (0BH17EZ), prolonged ventilation (>96 hours, 5A1D90Z), tracheostomy (0B110F4), and PEG placement (0DH6xUZ) are documented and supported; LP/drainage of spinal canal (diagnostic) is supported by LP with positive HSV PCR documentation. Citations: Intubation note, p. 603; Discharge / Transfer Summary, p. 1096-1097. Net correction applied in this review (complete corrected diagnosis and procedure lists provided below). Key actions: resequence principal diagnosis to G41.0, retain B00.4 as a secondary diagnosis, correct POA flags for pneumonia and ventilator-dependence to reflect presence on admission, and remove unsupported dementia/anoxic brain damage codes. Exact code additions/removals are enumerated in the revised lists below. Audit citations (selected): History & Physical (Admitting), p. 161-235; Hospital Problem List, p. 188; Intubation, p. 603; Critical Care Progress Note, p. 15; Discharge / Transfer Summary, p. 1096-1097.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: Audit determination for Claim MR_16 (Inpatient admission 06/20/2026 - 11/07/2026) Dear Provider, We completed an audit of the inpatient claim MR_16. Our review compared the billed diagnosis/procedure list to the medical record and applicable coding sequencing rules. Based on the clinical documentation (admitting History & Physical, daily critical care notes, and the Discharge/Transfer Summary), we have a Finding requiring correction. Finding: Principal diagnosis sequencing error and related coding/POA inaccuracies. Basis for Finding (selected chart facts relied upon): - The admitting History & Physical documents the presenting problem as an ongoing seizure: \"Chief Complaint: \"She had a seizure that wouldn't stop and became unresponsive.\"\" and documents ongoing electrographic status epilepticus that required intubation and escalation to burst suppression (History & Physical (Admitting), p. 161-235). - The Discharge / Transfer Summary documents: \"Reason for Admission: Refractory status epilepticus with HSV encephalitis requiring neurocritical care,\" and documents a positive CSF HSV-1 PCR and MRI findings consistent with HSV encephalitis (Discharge / Transfer Summary, p. 1096-1097). - Pneumonia/aspiration is documented on the problem list with onset 06/20/2026 and is described in the chart as aspiration pneumonia due to Streptococcus pneumoniae (History & Physical (Admitting), p. 161-235; Hospital Problem List, p. 188). - The record documents intubation in the ED and prolonged mechanical ventilation with subsequent tracheostomy on ICU day 14 and PEG placement on ICU day 16 (Intubation, p. 603; Discharge / Transfer Summary, p. 1096-1097). Required corrections (summary): 1) Sequence G41.0 (Grand mal status epilepticus) as the principal diagnosis (position 1). The clinical documentation shows refractory status epilepticus was the condition that occasioned hospital admission and initial critical care management; 2) Retain B00.4 (Herpesviral encephalitis) as a secondary diagnosis (etiology), supported by positive CSF HSV-1 PCR and MRI findings; 3) Correct POA indicators for the pneumonia/aspiration diagnoses and ventilator dependence to reflect that those conditions were present on admission (documentation supports presence at or immediately on presentation); 4) Remove unsupported codes from the billed list, specifically dementia codes (F02.81, F03.B0) and G93.1 (anoxic brain damage) which are not corroborated by the provider documentation in the chart; 5) Retain supported procedure codes for intubation, ventilation >96 hours, tracheostomy, LP (diagnostic drainage of spinal canal), and PEG placement as documented. Correction applied by auditor (complete corrected lists): - Corrected principal diagnosis (position 1): G41.0 - Grand mal status epilepticus - Secondary diagnoses (selected, not exhaustive for all comorbidities documented): B00.4 (HSV encephalitis); J96.01 (acute respiratory failure with hypoxia); R40.9 (unspecified coma); J13 (pneumonia due to Streptococcus pneumoniae); J69.0 (pneumonitis due to inhalation); E22.2 (SIADH); I82.C11 (acute embolism/thrombosis of R internal jugular); G81.94 (hemiplegia, right); Z99.11 (dependence on respirator) - POA flags corrected as indicated in the accompanying audit form. If your team disagrees with any of these corrections (for example, if you believe dementia or anoxic brain injury was present and appropriately documented), please provide the specific clinician-authored documentation (note title, date/time, and verbatim text) that supports those codes/POA indicators so we can reconsider the coding. Thank you for your cooperation. If you have clinical clarifications or additional documentation, please submit them for re-review. Sincerely, Senior Clinical Claims Auditor (Review cites: History & Physical (Admitting), p. 161-235; Hospital Problem List, p. 188; Intubation, p. 603; Critical Care Progress Note, p. 15; Discharge / Transfer Summary, p. 1096-1097.)",
+  "metrics": {
+    "cost_of_processing_usd": 0.030699,
+    "time_to_run_seconds": 108.74,
+    "retrieval_seconds": 16.669,
+    "retrieval_turns": 2,
+    "judge_seconds": 92.071,
+    "total_cost_per_claim_usd": 30.560699,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.030699
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), Note_type: History & Physical, p. 161-235",
+      "role": "supports billed code",
+      "excerpt": "Chief Complaint: \"She had a seizure that wouldn't stop and became unresponsive.\""
+    },
+    {
+      "citation": "History & Physical (Admitting), Note_type: History & Physical, p. 161-235",
+      "role": "supports billed code",
+      "excerpt": "In the ED the patient continued to have focal facial and limb movements with EEG evidence of status epilepticus. Benzodiazepines (lorazepam) and levetiracetam were administered without resolution of clinical or electrographic seizure activity. The patient was intubated for airway protection with escalation of anticonvulsants and empiric acyclovir initiation given clinical suspicion for HSV encephalitis."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Note_type: Discharge / Transfer Summary, p. 1096-1097",
+      "role": "supports billed code",
+      "excerpt": "Reason for Admission: Refractory status epilepticus with HSV encephalitis requiring neurocritical care."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Note_type: Discharge / Transfer Summary, p. 1096-1097",
+      "role": "supports billed code",
+      "excerpt": "CSF HSV-1 PCR was positive and MRI demonstrated bilateral temporal lobe changes characteristic of HSV encephalitis; a full 21-day course of intravenous acyclovir was completed."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Note_type: Discharge / Transfer Summary, p. 1096-1097",
+      "role": "supports billed code",
+      "excerpt": "The course was complicated by aspiration pneumonia with Streptococcus pneumoniae treated with ceftriaxone, catheter-associated right internal jugular DVT treated with therapeutic anticoagulation, mild SIADH managed with fluid restriction, prolonged mechanical ventilation requiring tracheostomy on ICU day 14, PEG placement for enteral nutrition on ICU day 16, and profound ICU-acquired weakness."
+    },
+    {
+      "citation": "Hospital Problem List, Note_type: Hospital Problem List, p. 188",
+      "role": "contradicts billed code",
+      "excerpt": "Community-acquired pneumonia (lobar) | J18.1 | 06/20/2026 | Improving | Principal diagnosis"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

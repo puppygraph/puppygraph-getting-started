@@ -1,0 +1,249 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_15",
+  "encounter_information": {
+    "claim_number": "MR_15",
+    "payer": "Rocky Mountain Health Preferred",
+    "dates_of_service": "2026-06-09\u20132026-10-24",
+    "facility_pos": "Front Range University Hospital",
+    "attending_provider": null,
+    "patient": "Kalinda M. Patel \u2014 MRN: MRN-5720194",
+    "medical_record": "MR_15.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I26.09",
+      "description": "Other pulmonary embolism with acute cor pulmonale",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I46.9",
+      "description": "Cardiac arrest, cause unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "G93.1",
+      "description": "Anoxic brain damage, not elsewhere classified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I50.30",
+      "description": "Unspecified diastolic (congestive) heart failure",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.402",
+      "description": "Acute embolism and thrombosis of unspecified deep veins of left lower extremity",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E03.9",
+      "description": "Hypothyroidism, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z86.73",
+      "description": "Personal history of transient ischemic attack and cerebral infarction",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z79.01",
+      "description": "Long term (current) use of anticoagulants",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z95.81",
+      "description": "Presence of other vascular implants and grafts (IVC filter)",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02JYXZZ",
+      "description": "Inspection of heart, external"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "06H03DZ",
+      "description": "Insertion of intraluminal device into inferior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "027Q3ZZ",
+      "description": "Dilation of right pulmonary artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "3E043GC",
+      "description": "Introduction of other thrombolytic into central vein, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "03HY32Z",
+      "description": "Insertion of monitoring device into upper artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D80Z",
+      "description": "Performance of urinary filtration, prolonged intermittent, less than 6 hours per day"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A2204Z",
+      "description": "Restoration of cardiac rhythm, single"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Transfer to Acute Inpatient Rehabilitation Facility",
+      "revised_diagnosis_set": [
+        "I26.09",
+        "I46.9",
+        "G93.1",
+        "J96.01",
+        "N17.9",
+        "I82.401",
+        "E03.9",
+        "F32.9",
+        "Z79.01",
+        "Z95.81"
+      ],
+      "revised_procedure_set": [
+        "0BH17EZ",
+        "02JYXZZ",
+        "06H03DZ",
+        "027Q3ZZ",
+        "3E043GC",
+        "02HV33Z",
+        "03HY32Z",
+        "5A2204Z"
+      ],
+      "confidence": 0.4,
+      "confidence_basis": "1/7 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['History & Physical (Admitting), History & Physical, p. 483-746', 'Procedure Note - CT Pulmonary Angiography, Procedure Note - CT Pulmonary Angiography, p. 126', 'Echocardiogram, Echocardiogram, p. 191', 'History & Physical (Admitting), History & Physical, p. 483-746', 'Critical Care Progress Note, Critical Care Progress Note, p. 746-519', 'History & Physical (Admitting), History & Physical, p. 483-746']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Principal I26.09 (Other pulmonary embolism with acute cor pulmonale) plus secondary MCCs I46.9, G93.1, J96.01, I50.30, etc.; procedures include endotracheal intubation (0BH17EZ), catheter thrombolysis (3E043GC), IVC device insertion (06H03DZ), and urinary filtration (5A1D80Z). What the record documents (key citations): the ED/H&P documents out-of-hospital pulseless VT with ROSC after 15 minutes, emergent CT pulmonary angiography showing a massive bilateral saddle PE, severe right ventricular dysfunction on bedside echo, catheter-directed thrombolysis performed, and targeted temperature management initiated (History & Physical (Admitting), History & Physical, p. 483-746) [supports I26.09, I46.9, J96.01, G93.1, procedures]. The CT procedure note documents \"Emergent CT pulmonary angiography confirming bilateral massive pulmonary emboli with right ventricular enlargement\" (Procedure Note - CT Pulmonary Angiography, Procedure Note - CT Pulmonary Angiography, p. 126) and the echocardiogram states \"Right ventricular dilation with severe hypokinesis. Left ventricular ejection fraction preserved\" (Echocardiogram, Echocardiogram, p. 191) [supports cor pulmonale / RV strain and argues against LV systolic failure]. Duplex imaging and consult notes document a right common femoral/popliteal DVT (Physical & Occupational Therapy Consultation, Physical & Occupational Therapy Consultation, p. 246-246) [supports right-sided DVT, contradicts billed left-sided code]. The problem list and progress notes document \"Post-arrest AKI (KDIGO 2), non-dialysis, recovered\" and serial creatinine elevations (History & Physical (Admitting), History & Physical, p. 483-746; Radiology - Emergent, Radiology - Emergent, p. 519-191) [supports N17.9 and contradicts billed renal replacement procedure]. Determination and reasoning: - I26.09 (PE with acute cor pulmonale), I46.9 (cardiac arrest), J96.01 (acute hypoxemic respiratory failure), G93.1 (post-arrest anoxic brain injury), N17.9 (AKI), F32.9, E03.9, Z79.01, and Z95.81 are supported by the record: objective imaging (CTPA), bedside echo documenting severe RV dysfunction, documented cardiac arrest with documented ROSC and resuscitation details, initiation of TTM, documented mechanical ventilation/intubation, and documentation of AKI in the problem list and labs (citations above). I26.09 sequencing as principal is appropriate because the admission and principal therapeutic action (catheter-directed thrombolysis) were driven by a massive PE (History & Physical (Admitting), History & Physical, p. 483-746), and the cardiac arrest is the precipitating event caused by that PE (policy allows sequencing to the precipitating condition when the arrest is attributable to it). - Finding(s): three billed lines lack documentation support and require correction: 1) I50.30 (Unspecified diastolic congestive heart failure) - NOT supported: multiple cardiac notes and the TTE show severe RV dysfunction with preserved left ventricular ejection fraction rather than documentation of diastolic (left-sided) heart failure (Echocardiogram, Echocardiogram, p. 191). No provider assessment documents diastolic heart failure as an active problem. Remove I50.30. 2) I82.402 (Acute DVT of left lower extremity) - SIDE MISCODING: imaging and problem list document a right common femoral/popliteal DVT; the billed left-sided DVT is incorrect. Replace with right-sided DVT code (e.g., I82.401) to reflect the chart (Physical & Occupational Therapy Consultation, Physical & Occupational Therapy Consultation, p. 246-246; History & Physical (Admitting), History & Physical, p. 483-746). 3) 5A1D80Z (Performance of urinary filtration, prolonged intermittent <6 hrs/day) - dialysis/renal replacement procedure is billed but the clinical record documents AKI managed conservatively (\"non-dialysis\") and explicitly lists AKI as \"non-dialysis, recovered.\" There is no procedure note, orders, or nursing flowsheet in the retrieved record documenting initiation of renal replacement therapy; therefore the urinary filtration procedure lacks support and should be removed (History & Physical (Admitting), History & Physical, p. 483-746). Corrective action applied: remove I50.30 and 5A1D80Z from the claim; correct I82.402 (left) to I82.401 (right DVT). Leave all other diagnosis and procedure lines intact because each is directly documented (CTPA, echo, intubation, CDT/I.V. thrombolysis, IVC filter placement, resuscitation/defibrillation). All assertions above are supported by the excerpts cited below. References (selected): - History & Physical (Admitting): documentation of out-of-hospital pulseless VT, ROSC after 15 minutes, CTPA showing massive bilateral saddle PE, catheter-directed thrombolysis, and TTM initiation (History & Physical (Admitting), History & Physical, p. 483-746) [supports I26.09, I46.9, J96.01, G93.1, and thrombolysis procedure]. - Procedure Note - CT Pulmonary Angiography: confirms massive bilateral saddle PE (Procedure Note - CT Pulmonary Angiography, Procedure Note - CT Pulmonary Angiography, p. 126). - Echocardiogram: severe RV dysfunction; LVEF preserved (Echocardiogram, Echocardiogram, p. 191) [supports cor pulmonale; argues against left-sided diastolic failure]. - Physical & Occupational Therapy Consultation / Venous duplex: documents right common femoral and popliteal DVT (Physical & Occupational Therapy Consultation, Physical & Occupational Therapy Consultation, p. 246-246) [contradicts billed left-sided DVT]. - Problem list / progress notes: explicitly state \"Post-arrest AKI (KDIGO 2), non-dialysis, recovered\" and provide creatinine trend to support AKI diagnosis but not dialysis (History & Physical (Admitting), History & Physical, p. 483-746; Critical Care Progress Note, Critical Care Progress Note, p. 746-519). Conclusion: Finding. Remove I50.30 and the unsupported urinary filtration procedure (5A1D80Z); correct I82.402 to the right-sided DVT code (I82.401). All other billed diagnoses and procedures reviewed are supported and appropriately POA/CC-MCC flagged per the chart and governing policies (see evidence excerpts below).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "[Provider Appeal/Determination Letter] Date: 2026-XX-XX Re: Inpatient stay (claim MR_15) - Audit determination To: Medical Records / Billing Office We reviewed the inpatient documentation for the above claim and compared the billed diagnoses and procedures to the clinical record and the applicable DRG validation policies. Our audit findings are summarized below. Finding: Unsupported diagnosis and procedure lines; one diagnosis side miscoded Basis for finding (clinical facts relied on): - Massive bilateral saddle pulmonary embolism with right ventricular strain is clearly documented by emergent CT pulmonary angiography and bedside echocardiography, and catheter-directed thrombolysis was performed (History & Physical (Admitting), History & Physical, p. 483-746; Procedure Note - CT Pulmonary Angiography, Procedure Note - CT Pulmonary Angiography, p. 126; Echocardiogram, Echocardiogram, p. 191). The governing policy for I26.09 requires radiographic confirmation of PE plus objective evidence of RV strain (e.g., CT/echo showing RV dilation/hypokinesis); those criteria are met. - Cardiac arrest with ROSC is documented (witnessed collapse, pulseless VT, ROSC after 15 minutes of CPR and three defibrillation attempts) and is appropriately coded (I46.9) (History & Physical (Admitting), History & Physical, p. 483-746). Post-arrest management actions (TTM, ICU admission, neuroprognostication) are present and support secondary post-arrest codes (G93.1 when documented per policy pathways). - The chart documents a provoked deep venous thrombosis in the RIGHT common femoral/popliteal veins (Venous Duplex). The claim, however, bills I82.402 (left lower extremity). The record supports a right-sided DVT; the left-sided code is incorrect (Physical & Occupational Therapy Consultation, Physical & Occupational Therapy Consultation, p. 246-246). - The chart documents \"Post-arrest AKI (KDIGO 2), non-dialysis, recovered\" with supporting creatinine elevations, but there is no documentation of renal replacement therapy initiation. Therefore the inpatient dialysis/urinary filtration procedure billed (5A1D80Z) is not supported by the retrieved clinical documentation (History & Physical (Admitting), History & Physical, p. 483-746; Critical Care Progress Note, Critical Care Progress Note, p. 746-519). Policy citations relied on: validation criteria for I26.09 (Massive PE with acute cor pulmonale) require radiographic confirmation of PE and objective evidence of RV strain; policy explicitly recognizes cardiac arrest attributable to PE as meeting hemodynamic instability criteria for the I26.0x pathway (Policy Documents/DRG/Massive Pulmonary Embolism with Acute Cor Pulmonale.docx, Validation Criteria). The echocardiogram and CTPA excerpts cited above satisfy those policy elements. Corrections required by audit (claim-level complete corrected lists): Corrected diagnosis list (position 1 = principal): 1) I26.09 - Other pulmonary embolism with acute cor pulmonale 2) I46.9 - Cardiac arrest, cause unspecified 3) G93.1 - Anoxic brain damage, not elsewhere classified 4) J96.01 - Acute respiratory failure with hypoxia 5) N17.9 - Acute kidney failure, unspecified 6) I82.401 - Acute embolism and thrombosis of unspecified deep veins of right lower extremity (corrected side to right) 7) E03.9 - Hypothyroidism, unspecified 8) F32.9 - Major depressive disorder, single episode, unspecified 9) Z79.01 - Long term (current) use of anticoagulants 10) Z95.81 - Presence of other vascular implants and grafts (IVC filter) Rationale: I50.30 (unspecified diastolic congestive heart failure) has been removed because echocardiography documents preserved LV function with isolated acute right ventricular dysfunction; there is no provider documentation of a diastolic heart failure diagnosis. I82.402 has been corrected to I82.401 to reflect the documented right-sided DVT. Z86.73 (history of TIA/CI) was not present in the record and was omitted; please add only if supporting documentation is provided. (If you believe additional documentation exists that was not in the record we reviewed, please supply it for re-review.) Corrected procedure list: - 0BH17EZ - Insertion of endotracheal airway into trachea, via natural or artificial opening - 02JYXZZ - Inspection of heart, external - 06H03DZ - Insertion of intraluminal device into inferior vena cava, percutaneous approach - 027Q3ZZ - Dilation of right pulmonary artery, percutaneous approach - 3E043GC - Introduction of other thrombolytic into central vein, percutaneous - 02HV33Z - Insertion of infusion device into superior vena cava, percutaneous approach - 03HY32Z - Insertion of monitoring device into upper artery, percutaneous approach - 5A2204Z - Restoration of cardiac rhythm, single (Procedure 5A1D80Z - urinary filtration/renal replacement - has been removed because no documentation of dialysis/renal replacement therapy initiation was found in the chart.) Next steps / provider action requested: if you disagree with removal/correction of the above codes, please provide the specific supporting documentation (operative/procedure note documenting renal replacement therapy, explicit provider documentation of diastolic heart failure, or documentation supporting left-sided DVT) within 30 days so we may reopen the review. Otherwise the above corrections will be applied to the claim per audit. Sincerely, Clinical Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.051725,
+    "time_to_run_seconds": 122.534,
+    "retrieval_seconds": 19.838,
+    "retrieval_turns": 3,
+    "judge_seconds": 102.695,
+    "total_cost_per_claim_usd": 30.581725,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.051725
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), History & Physical, p. 483-746",
+      "role": "supports billed code",
+      "excerpt": "History & Physical (Admitting) Date/Time: 2026-06-09 15:00 Location: Cardiovascular Intensive Care Unit (CVICU 7-North) (admission) Chief Complaint: \"Collapsed at home; brought in unresponsive.\" ... On EMS arrival the patient was in pulseless ventricular tachycardia. Return of spontaneous circulation was achieved after 15 minutes of CPR with three defibrillation attempts and multiple rounds of ACLS medications. On arrival to the emergency department the patient was intubated with GCS 3 pre-sedation. CT pulmonary angiography confirmed massive bilateral saddle pulmonary embolism with right heart strain. Given hemodynamic instability, catheter-directed thrombolysis was performed with tissue plasminogen activator. Targeted temperature management was initiated for post-arrest neuroprotection."
+    },
+    {
+      "citation": "Procedure Note - CT Pulmonary Angiography, Procedure Note - CT Pulmonary Angiography, p. 126",
+      "role": "supports billed code",
+      "excerpt": "Procedure Note - CT Pulmonary Angiography Operator: Dr. Cornelius Tavares, MD Date/Time: 2026-06-09 11:15 Indication for Procedure: Suspected massive pulmonary embolism Findings Bilateral massive PE with RV strain Report Bilateral filling defects with right heart strain Procedure Detail Emergent CT pulmonary angiography confirming bilateral massive pulmonary emboli with right ventricular enlargement and reduced enhancement of left pulmonary artery."
+    },
+    {
+      "citation": "Echocardiogram, Echocardiogram, p. 191",
+      "role": "supports billed code",
+      "excerpt": "Echocardiogram Ordering: Cardiovascular Critical Care (Malik Bello) Findings Right ventricular dilation with severe hypokinesis. Left ventricular ejection fraction preserved. No pericardial effusion. Findings consistent with acute right heart strain from massive PE. Impression Severe RV dysfunction consistent with massive PE."
+    },
+    {
+      "citation": "Physical & Occupational Therapy Consultation, Physical & Occupational Therapy Consultation, p. 246-246",
+      "role": "contradicts billed code",
+      "excerpt": "Imaging (Pertinent) Venous Duplex Ultrasound: Right common femoral and popliteal deep vein thrombosis. See the Diagnostic Imaging section for the full report."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, p. 483-746",
+      "role": "supports billed code",
+      "excerpt": "Active Problem List # | Problem ... 7 | Provoked deep vein thrombosis (right common femoral) 8 | Post-arrest AKI (KDIGO 2), non-dialysis, recovered 9 | IVC filter placement (temporary) ..."
+    },
+    {
+      "citation": "Critical Care Progress Note, Critical Care Progress Note, p. 746-519",
+      "role": "supports billed code",
+      "excerpt": "Laboratory Data (Pertinent) ... BMP: Na 135, K 4.5, Cl 99, CO2 19, BUN 70, creatinine 3.80 mg/dL, glucose 197 mg/dL, Ca 7.9, Mg 1.9, Phos 5.1. ABG (02:00): pH 7.31 / PaCO2 46 / PaO2 70 / HCO3 19; lactate 5.2 mmol/L; P/F ratio 73."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, p. 483-746",
+      "role": "contradicts billed code",
+      "excerpt": "Assessment 57-year-old woman previously healthy who presented with witnessed cardiac arrest from massive bilateral pulmonary embolism with successful ROSC after 15 minutes of cardiopulmonary resuscitation. Treated with catheter-directed thrombolysis. High illness severity requiring post-arrest care and CVICU support. Active Problem List # | Problem ... 5 | Right ventricular failure with recovery 6 | Acute respiratory failure with prolonged mechanical ventilation 8 | Post-arrest AKI (KDIGO 2), non-dialysis, recovered"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

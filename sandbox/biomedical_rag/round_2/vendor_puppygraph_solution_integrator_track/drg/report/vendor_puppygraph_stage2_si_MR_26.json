@@ -1,0 +1,292 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_26",
+  "encounter_information": {
+    "claim_number": "MR_26",
+    "payer": "Piedmont Blue Advantage HMO",
+    "dates_of_service": "2026-10-08\u20132027-02-14",
+    "facility_pos": "Piedmont Trinity Medical Center",
+    "attending_provider": null,
+    "patient": "Malachi J. Ferrell \u2014 MRN: MRN-6183094",
+    "medical_record": "MR_26.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I21.09",
+      "description": "ST elevation myocardial infarction involving other coronary artery of anterior wall",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R57.0",
+      "description": "Cardiogenic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I50.23",
+      "description": "Acute on chronic systolic (congestive) heart failure",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I46.9",
+      "description": "Cardiac arrest, cause unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I48.91",
+      "description": "Unspecified atrial fibrillation",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.89XA",
+      "description": "Other complications of procedures, not elsewhere classified, initial encounter",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.4XXA",
+      "description": "Infection following a procedure, initial encounter",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B95.61",
+      "description": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.402",
+      "description": "Acute embolism and thrombosis of unspecified deep veins of left lower extremity",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z66",
+      "description": "Do not resuscitate",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02703DZ",
+      "description": "Dilation of coronary artery, one site with drug-eluting intraluminal device, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HA3RZ",
+      "description": "Insertion of short-term external heart assist system into heart, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HW3TZ",
+      "description": "Insertion of intraluminal device into thoracic aorta, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "021009W",
+      "description": "Bypass coronary artery, one site from aorta with autologous venous tissue, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "021109W",
+      "description": "Bypass coronary artery, two sites from aorta with autologous venous tissue, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "06BQ0ZZ",
+      "description": "Excision of right saphenous vein, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1221Z",
+      "description": "Performance of cardiac output, continuous"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": null,
+      "revised_diagnosis_set": [
+        "I21.09",
+        "R57.0",
+        "I50.23",
+        "J96.01",
+        "I46.9",
+        "N17.9",
+        "I48.91",
+        "T81.89XA",
+        "T81.4XXA",
+        "B95.61",
+        "I82.402",
+        "I25.10",
+        "E11.65",
+        "I10",
+        "E78.5",
+        "Z66"
+      ],
+      "revised_procedure_set": [
+        "02703DZ",
+        "02HA3RZ",
+        "02HW3TZ",
+        "021109W",
+        "06BQ0ZZ",
+        "0BH17EZ",
+        "5A1D90Z",
+        "5A1221Z"
+      ],
+      "confidence": 0.4,
+      "confidence_basis": "6/8 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Claim MR_26 billed lines (retrieval output)', 'Claim MR_26 billed lines (retrieval output)']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Principal diagnosis I21.09 (STEMI) with multiple MCCs (R57.0 cardiogenic shock, I50.23 heart failure, J96.01 acute respiratory failure, I46.9 cardiac arrest) and procedures including PCI with DES (02703DZ) and emergency 3-vessel CABG (claim lines include both 021009W and 021109W). What the record shows: The medical record documents acute anterior STEMI on presentation with cardiogenic shock and immediate PCI with a drug-eluting stent, subsequent placement of mechanical circulatory support (Impella CP and IABP), invasive mechanical ventilation, a pulseless ventricular tachycardia arrest on ICU day 4 with ROSC, and emergency 3-vessel CABG on ICU day 7. (H&P; Cath note; Interventional Cardiology consult; Discharge/Transfer Summary; Nephrology consult) See evidence cited below. Findings and rationale: 1) Incorrect POA flag for cardiac arrest (I46.9): The claim marks I46.9 POA=Y, but the clinical course documents the arrest as an inpatient event: \"pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS and targeted temperature management\" (Discharge / Transfer Summary, pp. 1037-1038). Because the arrest clearly occurred after admission, the POA indicator for I46.9 should be N. Evidence: Discharge summary (post-admission arrest) contradicts billed POA=Y. 2) Duplicate / redundant CABG procedure coding: The medical record documents an emergency 3-vessel coronary artery bypass grafting (LIMA to LAD, SVG to OM1 and RCA) performed on ICU day 7 (Discharge / Transfer Summary, pp. 1037-1038). The claim's procedure lines include both 021009W (bypass, one site) and 021109W (bypass, two sites) concurrently. Charging both a 1-site and a 2-site CABG code appears to duplicate the same operative event rather than reflect the single appropriate ICD-10-PCS code for three-site CABG. Action required: coder/clinical documentation specialist must replace the dual 1-site + 2-site CABG coding with the single correct PCS code that represents grafting of three coronary sites (open approach/autologous venous tissue) or otherwise correct per facility coding convention. Evidence: Discharge summary documents 3-vessel CABG; claim procedure lines include both 021009W and 021109W (billed lines retrieval). 3) Other major diagnoses and procedures: R57.0 (cardiogenic shock), J96.01 (acute respiratory failure with hypoxia), I50.23 (acute on chronic systolic HF), N17.9 (AKI), and documentation of PCI with drug-eluting stent and placement of mechanical circulatory support and invasive ventilation are all supported by the record. Examples: H&P documents cardiogenic shock with orders for Impella/IABP and vasopressors (History & Physical (Admitting), pp. 142-468); the cath/procedure note documents placement of a 3.0 x 28 mm drug-eluting stent to the proximal LAD (with Primary PCI, p. 57); the patient was intubated and had ABG/low P/F consistent with hypoxemic respiratory failure and was ventilated >96 hours (multiple ICU notes / Billing summary). Nephrology documents KDIGO stage 2 AKI from contrast with creatinine peak and oliguria (Nephrology Consultation, p. 116). These support the presence and severity (CC/MCC) flags assigned to those diagnoses. Corrections being made by this audit (summary): - Change POA indicator for I46.9 (Cardiac arrest) to N (not present on admission). - Query / correct CABG ICD-10-PCS coding: remove redundant 021009W (one-site) + 021109W (two-site) combination and replace with the single correct PCS code for a 3-vessel CABG (open approach, autologous venous tissue). Until coder confirms the exact 3-site PCS, remove the duplicate 1-site code (021009W) from the billed set. Revised diagnosis list (complete, position 1 = principal): 1. I21.09 2. R57.0 3. I50.23 4. J96.01 5. I46.9 6. N17.9 7. I48.91 8. T81.89XA 9. T81.4XXA 10. B95.61 11. I82.402 12. I25.10 13. E11.65 14. I10 15. E78.5 16. Z66 Revised procedure list (complete): - 02703DZ - 02HA3RZ - 02HW3TZ - 021109W (retain; coder to confirm single correct 3-site code) - 06BQ0ZZ - 0BH17EZ - 5A1D90Z - 5A1221Z (Notes: I retained 021109W and removed the duplicate 021009W pending coder confirmation of the correct single PCS code representing three-vessel CABG. If coder identifies the specific 3-site PCS code, that code should replace 021109W in the final procedure set.) Citations (examples used in this determination): History & Physical (Admitting), pp. 142-468; with Primary PCI (Cath note), p. 57; Interventional Cardiology Consultation, pp. 34-189; Nephrology Consultation, p. 116; Discharge / Transfer Summary, pp. 1037-1038. See evidence_cited for verbatim excerpts and document/page references. Provider action requested: (1) Correct the POA indicator for I46.9 to N. (2) CDI/coder to confirm the single correct ICD-10-PCS code for emergency 3-vessel CABG (open approach, autologous venous tissue) and remove the redundant one-site code. (3) If the facility intends to bill both PCI and CABG for the same encounter (both are supported by documentation), ensure PCS codes reflect the correct number-of-site code for CABG rather than additive 1-site + 2-site entries.",
+  "hitl_escalation_point": "Please confirm (1) the correct POA indicator for I46.9 (cardiac arrest) - record shows arrest occurred on ICU day 4 so POA should be 'N'; (2) the correct single ICD-10-PCS code for the documented emergency 3-vessel CABG (open approach, autologous venous tissue). Should the current two entries (021009W + 021109W) be replaced with the single 3-site PCS code? Provide the final PCS that should remain billed.",
+  "rationale_letter": "Re: DRG audit of inpatient claim MR_26 - Determination of Coding Findings Dear Provider/Coding Team, We completed a clinical audit of claim MR_26 (DRG review) comparing the billed diagnosis and procedure set to the facility medical record and the relevant DRG validation policies. The audit identified two documentation/coding issues that require correction. Finding 1 - Incorrect Present on Admission (POA) indicator for cardiac arrest (I46.9): Basis: The medical record documents that the patient experienced a pulseless ventricular tachycardia arrest on ICU day 4 with successful return of spontaneous circulation after 8 minutes of ACLS and targeted temperature management (Discharge / Transfer Summary, pp. 1037-1038). This clearly indicates the arrest occurred during the inpatient stay and was not present on admission; therefore I46.9 should be reported with a POA indicator of 'N' (not present on admission). The claim currently lists I46.9 as POA=Y. Finding 2 - Redundant procedure coding for coronary artery bypass grafting (CABG): Basis: The operative course documents an emergency 3-vessel coronary artery bypass grafting (LIMA to LAD, SVG to OM1 and RCA) performed on ICU day 7 (Discharge / Transfer Summary, pp. 1037-1038). The claim's procedure lines include both ICD-10-PCS code 021009W (bypass, one site) and 021109W (bypass, two sites). The documentation supports a single 3-vessel CABG procedure; coding both a one-site and a two-site CABG in combination appears to duplicate the operative event rather than correctly reflect the single PCS code that corresponds to three graft sites. Please have CDI/coding replace the dual 1-site + 2-site entries with the single correct PCS code for 3-site CABG (open approach, autologous venous tissue). If local coding policy represents multi-site CABG using separate additive codes, please provide documentation of that policy and the coder rationale so we may reconcile. Supportive record excerpts relied upon (selected): - History & Physical (Admitting), Chart Notes, pp. 142-468: admission assessment documents acute anterior STEMI with cardiogenic shock requiring mechanical circulatory support and intubation. - Cath/procedure note (with Primary PCI), p. 57: \"placement of 3.0 x 28 mm drug-eluting stent to proximal LAD. TIMI 2 flow achieved...\" (supports 02703DZ). - Discharge / Transfer Summary, pp. 1037-1038: \"pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS and targeted temperature management,\" and \"emergency 3-vessel coronary artery bypass grafting (LIMA to LAD, SVG to OM1 and RCA) was performed on ICU day 7...\" - Nephrology Consultation, p. 116: documents KDIGO stage 2 contrast-associated AKI with creatinine peak and oliguria (supports N17.9). Correction to be made by provider/coder: 1. Change POA indicator for I46.9 (Cardiac arrest) to N. If you disagree, please provide documentation that definitively shows the arrest was present on admission. 2. Replace the current CABG coding (021009W + 021109W) with the single ICD-10-PCS code that correctly represents three-site CABG (open approach, autologous venous tissue). If a different coding convention is used at your institution, supply the coder rationale and supporting documentation. If these corrections are not addressed, the claim DRG assignment and payment may be impacted. If you have questions or need further clarification about the documentation excerpts cited above or the applicable coding guidance, please contact the audit team with the requested coder/CDI response. Sincerely, Clinical Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.057108,
+    "time_to_run_seconds": 155.626,
+    "retrieval_seconds": 49.044,
+    "retrieval_turns": 4,
+    "judge_seconds": 106.582,
+    "total_cost_per_claim_usd": 30.587108,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.057108
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), Chart Notes, pp. 142-468",
+      "role": "supports billed code",
+      "excerpt": "50-year-old man with acute anterior ST-elevation myocardial infarction complicated by cardiogenic shock requiring mechanical circulatory support, acute kidney injury from contrast and shock, and pulmonary edema requiring intubation."
+    },
+    {
+      "citation": "with Primary PCI, Chart Notes, p. 57",
+      "role": "supports billed code",
+      "excerpt": "placement of 3.0 x 28 mm drug-eluting stent to proximal LAD. TIMI 2 flow achieved with residual disease;"
+    },
+    {
+      "citation": "Interventional Cardiology Consultation, Chart Notes, pp. 34-189",
+      "role": "supports billed code",
+      "excerpt": "Assessment Acute anterior STEMI with hemodynamic collapse. TIMI 2 flow post-PCI to proximal LAD; residual multivessel disease in circumflex and RCA territories. Cardiogenic shock requiring Impella CP and IABP support."
+    },
+    {
+      "citation": "Nephrology Consultation, Chart Notes, p. 116",
+      "role": "supports billed code",
+      "excerpt": "KDIGO stage 2 AKI from iodinated contrast exposure in setting of cardiogenic shock and poor perfusion. Creatinine peak 2.8; oliguric with adequate response to careful diuresis."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 1037-1038",
+      "role": "contradicts billed code",
+      "excerpt": "The course was complicated by contrast-induced acute kidney injury (KDIGO 2, non-dialysis), pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS and targeted temperature management, and cardiogenic shock refractory to medical therapy."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, pp. 1037-1038",
+      "role": "contradicts billed code",
+      "excerpt": "After multidisciplinary heart-team evaluation, emergency 3-vessel coronary artery bypass grafting (LIMA to LAD, SVG to OM1 and RCA) was performed on ICU day 7 with difficult wean from cardiopulmonary bypass."
+    },
+    {
+      "citation": "Claim MR_26 billed lines (retrieval output)",
+      "role": "contradicts billed code",
+      "excerpt": "Position 5 | I46.9 | Cardiac arrest, cause unspecified | POA = Y"
+    },
+    {
+      "citation": "Claim MR_26 billed lines (retrieval output)",
+      "role": "contradicts billed code",
+      "excerpt": "Procedure lines include: 021009W - Bypass coronary artery, one site from aorta with autologous venous tissue, open approach; 021109W - Bypass coronary artery, two sites from aorta with autologous venous tissue, open approach"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}
