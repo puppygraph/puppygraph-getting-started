@@ -1,5 +1,5 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "iceberg_test",
       "type": "iceberg",
@@ -18,185 +18,240 @@
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "loadbalancer",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "netdb",
-            "table": "loadbalancer"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "netdb",
+          "table": "loadbalancer",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "String",
-              "field": "IP",
-              "alias": "IP"
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "IP",
+              "targetFieldName": "IP"
             }
           ]
         }
       },
-      {
-        "label": "servicenode",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "netdb",
-            "table": "servicenode"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "loadbalancer",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "IP",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "netdb",
+          "table": "servicenode",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "String",
-              "field": "IP",
-              "alias": "IP"
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             },
             {
-              "type": "Double",
-              "field": "CPU",
-              "alias": "CPU"
+              "sourceFieldName": "IP",
+              "targetFieldName": "IP"
             },
             {
-              "type": "Double",
-              "field": "Mem",
-              "alias": "Mem"
+              "sourceFieldName": "CPU",
+              "targetFieldName": "CPU"
             },
             {
-              "type": "Double",
-              "field": "Disk",
-              "alias": "Disk"
+              "sourceFieldName": "Mem",
+              "targetFieldName": "Mem"
             },
             {
-              "type": "String",
-              "field": "status",
-              "alias": "status"
+              "sourceFieldName": "Disk",
+              "targetFieldName": "Disk"
             },
             {
-              "type": "Long",
-              "field": "balancerId",
-              "alias": "balancerId"
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            },
+            {
+              "sourceFieldName": "balancerId",
+              "targetFieldName": "balancerId"
             }
           ]
         }
-      }
-    ],
-    "edges": [
-      {
-        "label": "request",
-        "fromVertex": "servicenode",
-        "toVertex": "loadbalancer",
-        "tableSource": {
-          "catalog": "iceberg_test",
-          "schema": "netdb",
-          "table": "request"
-        },
-        "id": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
-            }
-          ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "nodeId",
-              "alias": "nodeId"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "balancerId",
-              "alias": "balancerId"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "String",
-            "field": "name",
-            "alias": "name"
-          }
-        ]
       },
-      {
-        "label": "distribute",
-        "fromVertex": "loadbalancer",
-        "toVertex": "servicenode",
-        "tableSource": {
+      "label": "servicenode",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "IP",
+          "type": "String"
+        },
+        {
+          "name": "CPU",
+          "type": "Double"
+        },
+        {
+          "name": "Mem",
+          "type": "Double"
+        },
+        {
+          "name": "Disk",
+          "type": "Double"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        },
+        {
+          "name": "balancerId",
+          "type": "Long"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "netdb",
-          "table": "distribute"
-        },
-        "id": {
-          "fields": [
+          "table": "request",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "nodeId",
+              "targetFieldName": "nodeId"
+            },
+            {
+              "sourceFieldName": "balancerId",
+              "targetFieldName": "balancerId"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
+        }
+      },
+      "label": "request",
+      "fromNodeLabel": "servicenode",
+      "toNodeLabel": "loadbalancer",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "nodeId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "balancerId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "netdb",
+          "table": "distribute",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "balancerId",
-              "alias": "balancerId"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "balancerId",
+              "targetFieldName": "balancerId"
+            },
+            {
+              "sourceFieldName": "nodeId",
+              "targetFieldName": "nodeId"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "nodeId",
-              "alias": "nodeId"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "String",
-            "field": "name",
-            "alias": "name"
-          }
-        ]
-      }
-    ]
-  }
+        }
+      },
+      "label": "distribute",
+      "fromNodeLabel": "loadbalancer",
+      "toNodeLabel": "servicenode",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "balancerId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "nodeId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    }
+  ]
 }

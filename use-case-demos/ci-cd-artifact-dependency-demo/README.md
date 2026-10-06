@@ -31,8 +31,8 @@ Example output:
 ```bash
 [+] Running 6/6
 ✔ Network puppy-iceberg         Created
-✔ Container minio               Started
-✔ Container mc                  Started
+✔ Container object-store        Healthy
+✔ Container create-bucket       Started
 ✔ Container iceberg-rest        Started
 ✔ Container spark-iceberg       Started
 ✔ Container puppygraph          Started
@@ -121,7 +121,7 @@ quit;
 - Password: `puppygraph123`
 
 2. Upload the schema:
-- Select the file `schema.json` in the Upload Graph Schema JSON section and click on Upload.
+- Click **Upload Schema**, select the file `schema.json` and click **Upload**.
 
 ## Querying the Graph
 
