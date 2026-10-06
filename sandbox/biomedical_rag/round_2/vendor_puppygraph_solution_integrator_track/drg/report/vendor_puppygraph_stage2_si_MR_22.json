@@ -1,0 +1,287 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_22",
+  "encounter_information": {
+    "claim_number": "MR_22",
+    "payer": "Lake Ontario Health Cooperative",
+    "dates_of_service": "2026-08-25\u20132027-01-13",
+    "facility_pos": "Lake Ontario Regional Medical Center",
+    "attending_provider": null,
+    "patient": "Colin O'Sullivan \u2014 MRN: MRN-7391248",
+    "medical_record": "MR_22.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K85.01",
+      "description": "Idiopathic acute pancreatitis with uninfected necrosis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K85.11",
+      "description": "Biliary acute pancreatitis with uninfected necrosis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K85.82",
+      "description": "Other acute pancreatitis with infected necrosis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K57.21",
+      "description": "Diverticulitis of large intestine with perforation and abscess without bleeding",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K80.2",
+      "description": "Calculus of gallbladder without cholecystitis",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R65.21",
+      "description": "Severe sepsis with septic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "A41.50",
+      "description": "Gram-negative sepsis, unspecified",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B96.1",
+      "description": "Klebsiella pneumoniae as the cause of diseases classified elsewhere",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J80",
+      "description": "Acute respiratory distress syndrome",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I48.91",
+      "description": "Unspecified atrial fibrillation",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.6",
+      "description": "Type 2 diabetes mellitus with other specified complication (new-onset)",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K86.8",
+      "description": "Other specified diseases of pancreas (exocrine insufficiency)",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "K21.9",
+      "description": "Gastro-esophageal reflux disease without esophagitis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0DH64UZ",
+      "description": "Insertion of feeding device into stomach, percutaneous endoscopic approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0FBG3ZZ",
+      "description": "Excision of pancreas, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0F9G30Z",
+      "description": "Drainage of pancreas with drainage device, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0W9G3ZZ",
+      "description": "Drainage of peritoneal cavity, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "03HY32Z",
+      "description": "Insertion of monitoring device into upper artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Destination: Long-Term Acute Care Hospital",
+      "revised_diagnosis_set": [
+        "K85.82",
+        "K57.21",
+        "K80.2",
+        "R65.21",
+        "A41.53",
+        "J96.01",
+        "J80",
+        "N17.9",
+        "I48.91",
+        "E11.6",
+        "K86.8",
+        "I10",
+        "E78.5",
+        "K21.9"
+      ],
+      "revised_procedure_set": [
+        "0BH17EZ",
+        "0DH64UZ",
+        "0F9G30Z",
+        "0W9G3ZZ",
+        "02HV33Z",
+        "03HY32Z",
+        "5A1D90Z"
+      ],
+      "confidence": 0.8,
+      "confidence_basis": "All 7 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Principal diagnosis listed on the claim lines is K85.01 (Idiopathic acute pancreatitis with uninfected necrosis) and the claim also contains K85.11 (biliary acute pancreatitis with uninfected necrosis) plus K85.82 (acute pancreatitis with infected necrosis). Sepsis coding includes R65.21 (severe sepsis with septic shock) and A41.50 (Gram-negative sepsis, unspecified) with B96.1 (Klebsiella) also present. Procedure line 0FBG3ZZ (Excision of pancreas, percutaneous) is billed among drainage/debridement and line placements. What the chart documents (supporting citations): - The admitting H&P and consultant notes document necrotizing gallstone (biliary) pancreatitis with 40-50% necrosis and explicitly identify infected pancreatic necrosis due to Klebsiella pneumoniae that required percutaneous drainage and video-assisted retroperitoneal debridement (VARD). (History & Physical (Admitting); Discharge / Transfer Summary). See evidence excerpts below. - The record documents vasopressor use and elevated lactate on presentation and in ICU progress notes (supporting severe sepsis / septic shock physiology) and documents an identified organism (Klebsiella) treated with meropenem. (Critical Care Progress Note; Discharge / Transfer Summary; H&P). - The airway/ventilation interventions are documented on admission (endotracheal intubation procedure note) and the chart documents prolonged mechanical ventilation (respiratory therapy notes, extubation on ICU day 18), supporting the >96-hour ventilator assistance code. Why this is a Finding (specific problems tied to policy/notes): 1) Incorrect / duplicate pancreatitis coding and principal diagnosis sequencing: the chart documents gallstone (biliary) etiology and infected pancreatic necrosis; coding both K85.01 (idiopathic) and K85.11 (biliary, uninfected) plus K85.82 (infected necrosis) is internally inconsistent and includes codes that are not supported together. The clinical documentation supports pancreatitis due to gallstones with infected necrosis - the principal diagnosis should reflect infected gallstone/necrotizing pancreatitis (see evidence: H&P, Discharge Summary). K85.01 (idiopathic) is not supported by the record's explicit attribution to cholelithiasis. 2) Sepsis organism specificity and POA flags: the record documents Klebsiella pneumoniae as the causative organism and organism-directed therapy (meropenem). Per the sepsis policy, organism-specific sepsis coding (e.g., A41.53 for Klebsiella) should be used when the organism is identified; coding A41.50 (unspecified) plus B96.1 is inconsistent with the policy guidance and with the clinical documentation. Also the claim's POA flags are inconsistent: R65.21 is billed POA=Y while A41.50 is billed POA=N; the medical record documents sepsis physiology and vasopressor use on admission, so the POA indicators should be reconciled and A41.x/R65.21 should be POA=Y if sepsis/septic shock were present on admission. 3) Procedure/technique mismatch: the chart documents CT-guided percutaneous drainage and video-assisted retroperitoneal debridement (VARD) (IR drainage then VARD). These support drainage and debridement codes (e.g., percutaneous drainage of pancreas and retroperitoneal debridement/drain placement), but the billed ICD-10-PCS code 0FBG3ZZ (Excision of pancreas, percutaneous approach) describes excision of pancreatic tissue rather than drainage/debridement and is not supported by the operative/procedure narrative. The percutaneous drainage codes and line insertions (ETT, PICC / central line, arterial line), and >96-hour ventilation are supported and should remain; the excision code should be removed or replaced by an appropriate debridement/drainage PCS after coder/physician confirmation of exact technique. Corrections required (claim-level): - Remove K85.01 (idiopathic pancreatitis) and K85.11 (biliary uninfected necrosis) as duplicate/conflicting with documented infected necrotizing gallstone pancreatitis; sequence principal diagnosis to the code that captures infected necrotizing pancreatitis (claim contains K85.82 and the record documents infected necrosis - principal diagnosis position 1 should reflect necrotizing/infected gallstone pancreatitis). - Replace A41.50 (Gram-negative sepsis, unspecified) + B96.1 with the organism-specific sepsis code (A41.53 - Sepsis due to Klebsiella pneumoniae) and mark POA appropriately (provider documentation/flowsheets show sepsis physiology on admission). Keep R65.21 only if provider documents septic shock and vasopressor requirement/ lactate criteria (the chart does document vasopressors and lactate >2 on presentation). If R65.21 is retained, ensure the coding sequence and POA flags conform with payer policy (sepsis code presence + R65.21 pairing and POA flags). - Remove 0FBG3ZZ (Excision of pancreas) - procedure documentation supports percutaneous drainage and VARD (keep drainage PCS 0F9G30Z and drainage of peritoneal/retroperitoneal collections as applicable), keep 0BH17EZ (ETT), 0DH64UZ (enteral feeding device/PEG site documented), 02HV33Z (central line/PICC), 03HY32Z (arterial/monitoring line), and 5A1D90Z (ventilation >96 hours). Confirm with operative/procedure notes whether any excision occurred; if not, 0FBG3ZZ must be deleted. Required action items / next steps: human review (see HITL question) to confirm exact PCS mapping for VARD vs 'excision', and to confirm sepsis code sequencing and POA flags with respect to payer rule that R65.21 should be paired with A40-/A41.- when present. Citations to chart evidence (document/section/page) used in this determination are listed below and quoted verbatim in evidence_cited.",
+  "hitl_escalation_point": "Please confirm (1) final principal diagnosis sequencing - should position 1 be the infected necrotizing gallstone pancreatitis code (K85.82) or should organism-specific sepsis (A41.53) be sequenced principal per payer rules for R65.21 pairing; (2) provide the VARD/IR operative dictation to confirm whether any pancreatic 'excision' occurred (to determine whether 0FBG3ZZ is appropriate) and (3) confirm POA flags for the sepsis/A41.x and R65.21 codes.",
+  "rationale_letter": "Re: Clinical coding audit - MR_22 To: Medical Records / Coding Department and Attending Physician We reviewed the full medical record for the admission of Colin O'Sullivan (MRN MRN-7391248), admit 08/25/2026 - transfer 01/13/2027, with critical-care course for necrotizing pancreatitis complicated by infection, multi-organ dysfunction, ARDS, and an extended ventilator course. Based on the documentation and applicable sepsis/respiratory failure validation guidance, we have determined the submitted claim requires correction. This letter explains the finding, the clinical basis, and the corrective changes being applied. Finding (summary): The record documents severe necrotizing gallstone pancreatitis with infected pancreatic necrosis due to Klebsiella pneumoniae, septic physiology with vasopressor requirement and elevated lactate on admission, and prolonged mechanical ventilation. The submitted claim contains conflicting and unsupported diagnoses and procedure codes: (1) K85.01 (Idiopathic acute pancreatitis) is not supported when the record explicitly documents gallstone (biliary) etiology; (2) the combination K85.01 + K85.11 + K85.82 is internally inconsistent - documentation supports infected necrotizing pancreatitis (infected by Klebsiella), not an idiopathic/uninfected biliary code; (3) sepsis coding used an unspecified gram-negative sepsis code (A41.50) plus B96.1 rather than the organism-specific sepsis code recommended when the organism is identified; (4) a pancreatic \"excision\" PCS (0FBG3ZZ) was billed though the procedure narrative documents percutaneous drainage and VARD (debridement), not pancreatic tissue excision. Basis (specific documentation and policy relied on): - The History & Physical documents: \"Imaging confirmed severe necrotizing pancreatitis with 40-50% pancreatic necrosis and cholelithiasis as the presumptive etiology.\" (History & Physical (Admitting), p. 241). This supports gallstone (biliary) pancreatitis rather than an idiopathic code. - The problem list and hospital course explicitly state infected pancreatic necrosis with Klebsiella pneumoniae and organism-directed therapy: \"Infected pancreatic necrosis with Klebsiella pneumoniae\" (History & Physical (Admitting), p. 241) and \"infected pancreatic necrosis with Klebsiella pneumoniae treated with meropenem and a step-up approach including CT-guided percutaneous drainage on ICU day 13 followed by video-assisted retroperitoneal debridement on ICU day 16\" (Discharge / Transfer Summary, pp. 1042-1043). Per the sepsis policy, when organism is identified the organism-specific A41.- code (A41.53 for Klebsiella) is preferred/appropriate. - Sepsis physiology and hemodynamic support are documented on admission and in ICU notes (elevated lactate and vasopressor therapy): admission orders include vasopressor plan \"norepinephrine to MAP >= 65\" and the progress notes document \"... extremities cool; vasopressors on.\" (History & Physical - Admit Orders; Critical Care Progress Note, p. 363). R65.21 (septic shock) requires documentation of vasopressor use and lactate criteria; these elements are present in the record. - Procedures: the record documents CT-guided percutaneous drainage and VARD (IR drainage then VARD). The operative/procedure narrative supports drainage/debridement rather than an excision of pancreatic tissue. (Discharge / Transfer Summary, pp. 1042-1043). Endotracheal intubation and prolonged ventilation are documented (Procedure Note - Endotracheal Intubation; Respiratory Therapy notes and discharge statement of extubation on ICU day 18), supporting the ventilator >96-hour code. Correction being applied: (1) Principal diagnosis will be corrected to reflect infected necrotizing pancreatitis due to gallstones (position 1: K85.82 per billed set - representing acute pancreatitis with infected necrosis) rather than K85.01 (idiopathic). (2) Remove duplicate/conflicting pancreatitis codes (K85.01 and K85.11) that are not supported together with infected necrosis. (3) Replace A41.50 + B96.1 with organism-specific sepsis code A41.53 (sepsis due to Klebsiella pneumoniae) and ensure POA indicators reflect the documentation (sepsis/septic shock present on admission). (4) Remove 0FBG3ZZ (excision of pancreas) and retain drainage/debridement and device insertion codes supported by the procedure notes (percutaneous drainage, VARD mapping to appropriate drainage/debridement PCS), ETT insertion, central line/PICC insertion, arterial monitoring device insertion, PEG/feeding device insertion, and ventilation >96 hours. Final coding adjustments will be reflected on the corrected diagnosis and procedure lists sent with the formal audit disposition. Request / next steps: please confirm (a) whether the attending will accept sequencing the principal diagnosis as infected necrotizing pancreatitis (K85.82) versus selecting an organism-sepsis principal (A41.53) per payer sequencing rules, (b) provide the definitive operative VARD / IR procedural dictation that confirms whether any pancreatic tissue excision occurred (to permit selection of the correct PCS), and (c) confirm POA flag for the sepsis/A41.x and R65.21 codes. If the attending can document an explicit statement that septic shock was present on admission (or if flowsheets show vasopressor initiation on admission), we will set POA=Y for sepsis codes consistent with the chart. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.052199,
+    "time_to_run_seconds": 145.956,
+    "retrieval_seconds": 25.222,
+    "retrieval_turns": 4,
+    "judge_seconds": 120.734,
+    "total_cost_per_claim_usd": 30.582199,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.052199
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), p. 241",
+      "role": "contradicts billed code",
+      "excerpt": "Imaging confirmed severe necrotizing pancreatitis with 40-50% pancreatic necrosis and cholelithiasis as the presumptive etiology."
+    },
+    {
+      "citation": "History & Physical (Admitting), p. 241",
+      "role": "supports billed code",
+      "excerpt": "2 | Infected pancreatic necrosis with Klebsiella pneumoniae"
+    },
+    {
+      "citation": "Discharge / Transfer Summary, pp. 1042-1043",
+      "role": "supports billed code",
+      "excerpt": "infected pancreatic necrosis with Klebsiella pneumoniae treated with meropenem and a step-up approach including CT-guided percutaneous drainage on ICU day 13 followed by video-assisted retroperitoneal debridement on ICU day 16"
+    },
+    {
+      "citation": "Critical Care Progress Note, p. 363",
+      "role": "supports billed code",
+      "excerpt": "Cor: Tachy; RRR; no M/R/G; extremities cool; vasopressors on."
+    },
+    {
+      "citation": "Procedure Note - Endotracheal Intubation, p. 376",
+      "role": "supports billed code",
+      "excerpt": "Indication for Procedure: Respiratory failure from pancreatitis and pain"
+    },
+    {
+      "citation": "Respiratory Therapy Note, p. 640",
+      "role": "supports billed code",
+      "excerpt": "Interface/settings (07:00): AC/VC, FiO2 90%, PEEP 14, Vt 274 mL. Gas exchange: pH 7.30 / PaCO2 45 / PaO2 68 (P/F 75)."
+    },
+    {
+      "citation": "Transfer Instructions, p. 1039",
+      "role": "supports billed code",
+      "excerpt": "Destination: Long-Term Acute Care Hospital"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

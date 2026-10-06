@@ -1,0 +1,293 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_18",
+  "encounter_information": {
+    "claim_number": "MR_18",
+    "payer": "Great Basin Preferred Care",
+    "dates_of_service": "2026-07-12\u20132026-12-05",
+    "facility_pos": "Great Basin Regional Hospital",
+    "attending_provider": null,
+    "patient": "Owen Blackthorn \u2014 MRN: MRN-6194720",
+    "medical_record": "MR_18.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I21.09",
+      "description": "ST elevation myocardial infarction involving other coronary artery of anterior wall",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R57.0",
+      "description": "Cardiogenic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I50.23",
+      "description": "Acute on chronic systolic (congestive) heart failure",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I46.9",
+      "description": "Cardiac arrest, cause unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I48.91",
+      "description": "Unspecified atrial fibrillation",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.89XA",
+      "description": "Other complications of procedures, not elsewhere classified, initial encounter",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "T81.4XXA",
+      "description": "Infection following a procedure, initial encounter",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B95.61",
+      "description": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I82.401",
+      "description": "Acute embolism and thrombosis of unspecified deep veins of right lower extremity",
+      "poa": "N",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I25.10",
+      "description": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z66",
+      "description": "Do not resuscitate",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02703DZ",
+      "description": "Dilation of coronary artery, one site with drug-eluting intraluminal device, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HA3RZ",
+      "description": "Insertion of short-term external heart assist system into heart, percutaneous"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HW3TZ",
+      "description": "Insertion of intraluminal device into thoracic aorta, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "021009W",
+      "description": "Bypass coronary artery, one site from aorta with autologous venous tissue, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "021109W",
+      "description": "Bypass coronary artery, two sites from aorta with autologous venous tissue, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "06BQ0ZZ",
+      "description": "Excision of right saphenous vein, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1221Z",
+      "description": "Performance of cardiac output, continuous"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "ICU to Cardiac Rehabilitation Facility",
+      "revised_diagnosis_set": [
+        "I21.09",
+        "R57.0",
+        "I50.23",
+        "J96.01",
+        "I46.9",
+        "N17.9",
+        "I48.91",
+        "T81.89XA",
+        "T81.4XXA",
+        "B95.61",
+        "I82.401",
+        "I25.10",
+        "E11.65",
+        "I10",
+        "E78.5",
+        "Z66"
+      ],
+      "revised_procedure_set": [
+        "02703DZ",
+        "02HA3RZ",
+        "02HW3TZ",
+        "021009W",
+        "021109W",
+        "06BQ0ZZ",
+        "0BH17EZ",
+        "5A1D90Z",
+        "5A1221Z"
+      ],
+      "confidence": 0.8,
+      "confidence_basis": "All 8 evidence_cited excerpt(s) verified verbatim at their claimed page/date in retrieved data."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.8,
+  "review_status": "auto-finalized",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "Billed principal diagnosis I21.09 (STEMI) and accompanying MCCs (R57.0 cardiogenic shock; J96.01 acute respiratory failure with hypoxia; I50.23 acute on chronic systolic HF) are supported by the record. H&P and consult notes document anterior STEMI on arrival, hypotension, pulmonary edema, need for mechanical circulatory support (Impella CP + IABP) and vasopressors, and invasive ventilation (supporting R57.0 and J96.01 per policy). However, two billed diagnoses are documented as present-on-admission (POA=Y) on the claim but are clearly recorded in the medical record as occurring during the hospitalization: (1) I46.9 (cardiac arrest) - the Discharge / Transfer Summary documents a \"pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS...\" (Discharge / Transfer Summary, p. 956), and (2) T81.4XXA (infection following a procedure) - Infectious Diseases and the Discharge Summary document a superficial sternal wound infection that developed post-operatively and was treated during the admission. Per the DRG cardiogenic shock policy, initiation of mechanical circulatory support with provider attribution meets shock validation criteria (Policy Documents/DRG/Cardiogenic Shock.docx, Validation Criteria - presumption rule). Per the acute respiratory failure policy, invasive mechanical ventilation attributed to respiratory failure satisfies objective hypoxemia requirements (Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Medical Pathway - presumption rule). Action: adjust POA flags to reflect that I46.9 and T81.4XXA were NOT present on admission (POA=N). No diagnosis codes are being removed or added as a result of this audit; the corrected diagnosis list remains the same codes in the original sequence. Corrected procedure list also unchanged. Citations: History & Physical (Admitting), p. 13 (STEMI, hypotension, ABG); Discharge / Transfer Summary, p. 956 (timing of arrest, post-op infection, summary of procedures and complications); Infectious Diseases Consultation, p. 154 (MSSA sternal wound); Policy Documents/DRG/Cardiogenic Shock.docx (Validation Criteria, presumption rule); Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx (Medical Pathway, presumption rule).",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: DRG audit of inpatient claim MR_18 - Determination of POA flags We reviewed the medical record and coding for the above-referenced inpatient stay (admit 07/12/2026 - transfer 12/05/2026) including the principal diagnosis I21.09 (acute anterior STEMI) and all secondary diagnoses and procedures billed. The clinical record supports the principal diagnosis (acute anterior STEMI) and the major complication codes (cardiogenic shock R57.0 and acute hypoxemic respiratory failure J96.01) consistent with documented hemodynamic instability, placement of mechanical circulatory support (Impella CP and IABP), vasopressor/inotrope therapy, and invasive ventilation. Finding (POA flag errors): Two diagnosis lines were incorrectly reported as present-on-admission on the claim when the record documents that they developed during the hospitalization: - I46.9 (Cardiac arrest): The Discharge / Transfer Summary documents a pulseless ventricular tachycardia arrest on ICU day 4 with successful return of spontaneous circulation after 8 minutes of ACLS, indicating the arrest occurred after admission and therefore should be reported POA = N (not present on admission). (Discharge / Transfer Summary, p. 956: \"...pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS...\"). - T81.4XXA (Infection following a procedure): Infectious Diseases consultation and the Discharge / Transfer Summary document a superficial sternal wound infection (MSSA) that developed post-operatively and was treated during the admission, indicating this complication was not present on admission and should be reported POA = N. (Infectious Diseases Consultation, p. 154: \"Superficial sternal wound infection... Deep wound culture positive for methicillin-susceptible Staphylococcus aureus.\"; Discharge / Transfer Summary, p. 956: \"...a superficial sternal wound infection with methicillin-susceptible S. aureus treated with cefazolin and wound VAC therapy...\" ). Basis (policy and record): The cardiogenic shock policy supports reporting R57.0 as an MCC when provider documentation and either hemodynamic instability or initiation of mechanical circulatory support are present; the record documents initiation of Impella and IABP for hemodynamic support with explicit provider attribution (History & Physical (Admitting), p. 13; Policy Documents/DRG/Cardiogenic Shock.docx, Validation Criteria - presumption rule). The acute respiratory failure policy similarly permits J96.01 when invasive mechanical ventilation is initiated and attributed to respiratory failure (History & Physical (Admitting), p. 13; Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Medical Pathway - presumption rule). These support the clinical validity of the substantive diagnoses and procedures billed. Correction being made: Change the POA indicator for I46.9 (Cardiac arrest) from Y to N and change the POA indicator for T81.4XXA (Infection following a procedure) from Y to N. No other diagnosis or procedure codes are being removed or added. The corrected diagnosis list (position 1 = principal) and procedure list are provided below. Corrected diagnosis list (complete, position 1 = principal): 1. I21.09 2. R57.0 3. I50.23 4. J96.01 5. I46.9 6. N17.9 7. I48.91 8. T81.89XA 9. T81.4XXA 10. B95.61 11. I82.401 12. I25.10 13. E11.65 14. I10 15. E78.5 16. Z66 Corrected procedure list (complete): - 02703DZ - 02HA3RZ - 02HW3TZ - 021009W - 021109W - 06BQ0ZZ - 0BH17EZ - 5A1D90Z - 5A1221Z If you disagree with the POA corrections above, please provide dated documentary evidence placing the cardiac arrest and/or the sternal wound infection on or prior to the date of admission, or an attending physician attestation clarifying timing. Thank you for your attention to this matter. Sincerely, Clinical Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.044402,
+    "time_to_run_seconds": 111.331,
+    "retrieval_seconds": 26.295,
+    "retrieval_turns": 11,
+    "judge_seconds": 85.036,
+    "total_cost_per_claim_usd": 30.574402,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.044402
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "History & Physical (Admitting), History & Physical, p. 13",
+      "role": "supports billed code",
+      "excerpt": "On EMS assessment, the patient was noted to be diaphoretic and hypotensive (systolic 84 mmHg) with a heart rate of 118. A pre-hospital 12-lead ECG demonstrated ST-segment elevation in leads V1-V4 with reciprocal changes, and STEMI activation was called."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, p. 13",
+      "role": "supports billed code",
+      "excerpt": "Cardiogenic shock: Impella CP + IABP support; inotropes (dobutamine); norepinephrine for MAP; monitor mixed venous."
+    },
+    {
+      "citation": "History & Physical (Admitting), History & Physical, p. 13",
+      "role": "supports billed code",
+      "excerpt": "ABG pH 7.28 / PaCO2 34 / PaO2 62 on NRB 15L."
+    },
+    {
+      "citation": "Policy Documents/DRG/Cardiogenic Shock.docx, Validation Criteria \u001a Medical - Cardiogenic Shock without Cardiac Procedure Pathway",
+      "role": "supports billed code",
+      "excerpt": "[1] Presumption rule: When the medical record documents initiation of mechanical circulatory support (intra-aortic balloon pump, Impella device, or venoarterial ECMO) with provider attribution to hemodynamic instability from cardiac cause, Criterion 2 is presumed satisfied even if the blood pressure thresholds are not explicitly documented as sustained below 90 mmHg, provided the provider documents cardiogenic shock as the indication for device placement."
+    },
+    {
+      "citation": "Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx, Validation Criteria \u001a Medical Pathway",
+      "role": "supports billed code",
+      "excerpt": "[1] Presumption rule: When the provider documents initiation of invasive mechanical ventilation and attributes the need for ventilation to acute respiratory failure, Criterion 2 (objective hypoxemia measurement) is presumed satisfied even if a pre-intubation room-air ABG is not documented. Emergent intubation may preclude room-air measurement; provider documentation of the clinical urgency is sufficient."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, p. 956",
+      "role": "contradicts billed code",
+      "excerpt": "The course was complicated by contrast-induced acute kidney injury (KDIGO 2, non-dialysis), pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS and targeted temperature management, and cardiogenic shock refractory to medical therapy."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, Transfer / Discharge Summary, p. 956",
+      "role": "contradicts billed code",
+      "excerpt": "The post-operative course was complicated by post-cardiotomy hypotension requiring transfusion, failed extubation from flash pulmonary edema with reintubation on ICU day 11, new-onset atrial fibrillation post-cardiotomy controlled with amiodarone, a superficial sternal wound infection with methicillin-susceptible S. aureus treated with cefazolin and wound VAC therapy, catheter-associated right popliteal DVT treated with therapeutic anticoagulation, and profound ICU-acquired weakness."
+    },
+    {
+      "citation": "Infectious Diseases Consultation, Chart Notes, p. 154",
+      "role": "contradicts billed code",
+      "excerpt": "Superficial sternal wound infection with local signs. Deep wound culture positive for methicillin-susceptible Staphylococcus aureus. No evidence of mediastinitis on clinical exam; systemic signs absent."
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}

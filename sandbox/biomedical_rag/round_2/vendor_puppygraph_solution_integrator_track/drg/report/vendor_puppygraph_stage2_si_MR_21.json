@@ -1,0 +1,304 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "DRG",
+  "claim_id": "MR_21",
+  "encounter_information": {
+    "claim_number": "MR_21",
+    "payer": "Rocky Mountain Health Preferred",
+    "dates_of_service": "2026-08-14\u20132027-01-05",
+    "facility_pos": "Front Range University Hospital",
+    "attending_provider": null,
+    "patient": "Fatima Al-Rashidi \u2014 MRN: MRN-1938472",
+    "medical_record": "MR_21.pdf",
+    "medical_record_pages": null
+  },
+  "billed_coding": [
+    {
+      "code_system": "ICD-10-CM",
+      "code": "M72.6",
+      "description": "Necrotizing fasciitis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "A49.59",
+      "description": "Other streptococcal infection of unspecified site",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "R65.21",
+      "description": "Severe sepsis with septic shock",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.10",
+      "description": "Type 2 diabetes mellitus with ketoacidosis without coma",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E87.2",
+      "description": "Acidosis",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J96.01",
+      "description": "Acute respiratory failure with hypoxia",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "J80",
+      "description": "Acute respiratory distress syndrome",
+      "poa": "N",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "N17.9",
+      "description": "Acute kidney failure, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "A49.02",
+      "description": "Methicillin resistant Staphylococcus aureus infection, unspecified site",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "B95.62",
+      "description": "MRSA as the cause of diseases classified elsewhere",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "L03.116",
+      "description": "Cellulitis of right lower limb",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.65",
+      "description": "Type 2 diabetes mellitus with hyperglycemia",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.22",
+      "description": "Type 2 diabetes mellitus with diabetic chronic kidney disease",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E11.40",
+      "description": "Type 2 diabetes mellitus with diabetic neuropathy, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I10",
+      "description": "Essential (primary) hypertension",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "E78.5",
+      "description": "Hyperlipidemia, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "F32.9",
+      "description": "Major depressive disorder, single episode, unspecified",
+      "poa": "Y",
+      "cc": true,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "Z99.11",
+      "description": "Dependence on respirator [ventilator] status",
+      "poa": "N",
+      "cc": false,
+      "mcc": false
+    },
+    {
+      "code_system": "ICD-10-CM",
+      "code": "I63.9",
+      "description": "Cerebral infarction, unspecified",
+      "poa": "Y",
+      "cc": false,
+      "mcc": true
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0BH17EZ",
+      "description": "Insertion of endotracheal airway into trachea, via natural or artificial opening"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0JBM0ZZ",
+      "description": "Excision of right upper leg subcutaneous tissue and fascia, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0KBQ0ZZ",
+      "description": "Excision of right upper leg muscle, open approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "0HRJX73",
+      "description": "Replacement of right upper leg skin with autologous tissue substitute, full thickness"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "02HV33Z",
+      "description": "Insertion of infusion device into superior vena cava, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "03HY32Z",
+      "description": "Insertion of monitoring device into upper artery, percutaneous approach"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "5A1D90Z",
+      "description": "Assistance with respiratory ventilation, greater than 96 consecutive hours"
+    },
+    {
+      "code_system": "ICD-10-PCS",
+      "code": "30280B1",
+      "description": "Transfusion of nonautologous platelets into central vein, open approach"
+    }
+  ],
+  "total_billed_charges": null,
+  "required_scoring_fields": [
+    {
+      "determination": "Finding",
+      "discharge_disposition": "Destination: Long-Term Acute Care Hospital",
+      "revised_diagnosis_set": [
+        "A40.0",
+        "R65.21",
+        "M72.6",
+        "E11.10",
+        "E87.2",
+        "J96.01",
+        "J80",
+        "N17.9",
+        "A49.02",
+        "B95.62",
+        "L03.116",
+        "E11.65",
+        "E11.22",
+        "E11.40",
+        "I10",
+        "E78.5",
+        "F32.9",
+        "Z99.11",
+        "I63.9"
+      ],
+      "revised_procedure_set": [
+        "0BH17EZ",
+        "0JBM0ZZ",
+        "0KBQ0ZZ",
+        "0HRJX73",
+        "02HV33Z",
+        "03HY32Z",
+        "5A1D90Z",
+        "30280B1"
+      ],
+      "confidence": 0.4,
+      "confidence_basis": "5/6 evidence_cited excerpt(s) verified verbatim at their claimed page/date; NOT CONFIRMED (text not found, or found only at a different page/date than cited): ['Discharge / Transfer Summary, p.1026']."
+    }
+  ],
+  "coding_determination": "Finding",
+  "confidence": 0.4,
+  "review_status": "pending_sme_review",
+  "corrected_coding_set": null,
+  "adjusted_apc_set": null,
+  "system_note": "What was billed: Principal diagnosis listed on the claim = M72.6 (Necrotizing fasciitis). The claim also includes R65.21 (Severe sepsis with septic shock) as an additional MCC, but no organism-specific sepsis code (A40.- or A41.-) in principal position. What the record shows: admission H&P and imaging document necrotizing fasciitis and the patient presented in septic shock with hypotension and markedly elevated lactate; vasopressors were ordered, and deep tissue cultures grew Streptococcus pyogenes (Group A) and MRSA. (Citations: History & Physical (Admitting), p.20; Discharge / Transfer Summary, p.1026). What the policy requires: the sepsis policy explicitly states that R65.21 is reported as an additional code with A40.- or A41.- as the principal diagnosis (R65.21 is not a standalone principal code). Because the chart documents organism-identified sepsis (Group A Streptococcus), an organism-specific sepsis code (A40.0 per the policy guide) should be present and sequenced appropriately with R65.21 as the accompanying severe sepsis with septic shock code. (Citation: Policy Documents/DRG/Sepsis and Septic Shock.docx, Scope). Conclusion and correction: R65.21 is clinically supported and appropriately flagged POA=Y, but the coding/sequencing is incorrect because an A40.-/A41.- sepsis code is missing and A49.59 (Other streptococcal infection) was used instead. The corrected coding should include A40.0 (sepsis due to Group A Streptococcus) as the principal diagnosis (position 1) with R65.21 as an additional code. M72.6 (necrotizing fasciitis) remains supported by CT and by operative debridement documentation and should remain on the claim. Other billed MCC/CC codes (J96.01 acute respiratory failure with hypoxia; J80 ARDS; N17.9 AKI; E11.x diabetes codes) are supported by the record. Evidence: CT confirming necrotizing fasciitis (H&P p.20), admission vitals/labs showing hypotension and lactate 8.6 mmol/L and ABG pH 6.98 supporting severe sepsis/septic shock (H&P p.20), vasopressor plan/orders (H&P p.20), and cultures identifying Group A Strep + MRSA (Discharge / Transfer Summary p.1026). Recommended billing correction applied: add/sequence A40.0 as principal diagnosis (replace A49.59), keep R65.21 as additional MCC, retain M72.6 and the remaining supported diagnoses.",
+  "hitl_escalation_point": "No escalation required.",
+  "rationale_letter": "Re: MR_21 - DRG coding determination Dear Provider/Coding Team, We completed a DRG-level medical record audit of the above inpatient stay (admit 08/14/2026-discharge/transfer 01/05/2027). The audit reviewed the chart documentation, operative and imaging findings, microbiology, and applicable coding policy for necrotizing soft-tissue infection and sepsis. Finding: Coding/sequencing error - R65.21 (Severe sepsis with septic shock) was coded without the required organism-specific sepsis principal diagnosis (A40.- or A41.-). Policy governing sepsis coding requires that R65.21 be reported as an additional code accompanying an A40.-/A41.- sepsis code when sepsis due to an identified organism or septic shock is present (Policy Documents/DRG/Sepsis and Septic Shock.docx, Scope). The medical record documents septic shock on admission with hypotension, vasopressor therapy, and lactate 8.6 mmol/L (History & Physical (Admitting), p.20). Deep tissue cultures returned Streptococcus pyogenes (Group A) and MRSA (Discharge / Transfer Summary, p.1026). CT imaging documented necrotizing fasciitis of the right thigh (History & Physical (Admitting), p.20) and the patient underwent operative debridement-supporting M72.6. Basis for correction: Given the positive cultures for Group A Streptococcus and provider documentation of septic shock, the sepsis should be coded with the organism-specific sepsis code A40.0 (sepsis due to Streptococcus, group A) per the policy guidance (Policy Documents/DRG/Sepsis and Septic Shock.docx, ICD-10-CM Organism-Specific Sepsis Code Selection Guide). R65.21 is supported by the chart (vasopressor use and elevated lactate) and should remain as the additional severe sepsis with septic shock code, but it must be accompanied by and sequenced with the appropriate A40.-/A41.- code. Using A49.59 (Other streptococcal infection) in place of the organism-specific sepsis code is inconsistent with the policy when sepsis/septic shock is documented and an organism is identified. Correction being made: The claim will be adjusted to sequence A40.0 (Sepsis due to Streptococcus, group A) as the principal diagnosis (position 1) with R65.21 (Severe sepsis with septic shock) as an additional MCC. Necrotizing fasciitis (M72.6) and the other documented diagnoses (e.g., J96.01 acute respiratory failure with hypoxia; J80 ARDS; N17.9 AKI; E11.x diabetes codes) are clinically supported and will remain on the record. If you disagree with this sequencing or believe another organism-specific sepsis code (e.g., A41.02 for MRSA sepsis) is more accurate given the chart, please provide your rationale and the source documentation directing that sequencing. References to documentation relied upon: - History & Physical (Admitting), p.20 - CT confirmed necrotizing fasciitis; initial vitals/labs including lactate 8.6 mmol/L and ABG pH 6.98; vasopressor plan/orders. - Discharge / Transfer Summary, p.1026 - deep tissue cultures grew Streptococcus pyogenes (Group A) and methicillin-resistant Staphylococcus aureus. - Policy Documents/DRG/Sepsis and Septic Shock.docx - R65.21 must be reported with an A40.- or A41.- principal diagnosis; organism-specific sepsis code selection guidance. Sincerely, Clinical Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.043401,
+    "time_to_run_seconds": 95.142,
+    "retrieval_seconds": 20.643,
+    "retrieval_turns": 7,
+    "judge_seconds": 74.498,
+    "total_cost_per_claim_usd": 30.573401,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.043401
+    }
+  },
+  "evidence_cited": [
+    {
+      "citation": "Policy Documents/DRG/Sepsis and Septic Shock.docx, Scope",
+      "role": "contradicts billed code",
+      "excerpt": "R65.21 - Severe sepsis with septic shock (reported as additional code with A40.- or A41.- as principal diagnosis) [MCC]"
+    },
+    {
+      "citation": "History & Physical (Admitting), p.20",
+      "role": "supports billed code",
+      "excerpt": "CT scan confirmed necrotizing fasciitis of the right thigh, and emergent surgical consultation was obtained."
+    },
+    {
+      "citation": "History & Physical (Admitting), p.20",
+      "role": "supports billed code",
+      "excerpt": "WBC 32.4 (with left shift); Hgb 14.2; platelets 285; PT 14.8; Na 128, K 5.8, Cl 92, CO2 5, BUN 42, creatinine 2.4; glucose 542; anion gap 34; beta-hydroxybutyrate 12.2 mmol/L; lactate 8.6 mmol/L; procalcitonin 88.6 ng/mL. Urine ketones 3+. ABG pH 6.98 / PaCO2 12 / PaO2 78 on NRB."
+    },
+    {
+      "citation": "History & Physical (Admitting), p.20",
+      "role": "supports billed code",
+      "excerpt": "Hemodynamics: norepinephrine to MAP >= 65; vasopressin if refractory; steroids if > 0.3 mcg/kg/min norepinephrine."
+    },
+    {
+      "citation": "Discharge / Transfer Summary, p.1026",
+      "role": "supports billed code",
+      "excerpt": "deep tissue cultures grew Streptococcus pyogenes (Group A) and methicillin-resistant Staphylococcus aureus."
+    },
+    {
+      "citation": "Policy Documents/DRG/Necrotizing Fasciitis.docx, Validation Criteria \u203a Surgical Pathway",
+      "role": "supports billed code",
+      "excerpt": "CT imaging demonstrating subcutaneous gas, fascial plane thickening and enhancement (fascial fluid tracking), or air within the fascial planes"
+    }
+  ],
+  "produced_by": "agent_query_puppygraph.py (automated tool-call run)"
+}
