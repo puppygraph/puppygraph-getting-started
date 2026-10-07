@@ -1,6 +1,6 @@
 services:
   puppygraph:
-    image: puppygraph/puppygraph:1.0-preview-20260421
+    image: puppygraph/puppygraph:latest
     pull_policy: always
     container_name: puppygraph
     environment:
@@ -13,7 +13,7 @@ services:
       - "8182:8182"
       - "7687:7687"
   clickhouse:
-    image: clickhouse/clickhouse-server:latest
+    image: clickhouse/clickhouse-server:25.12.1
     container_name: clickhouse
     environment:
       - CLICKHOUSE_USER=ch_user
