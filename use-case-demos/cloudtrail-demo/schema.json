@@ -1,5 +1,5 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "iceberg_test",
       "type": "iceberg",
@@ -20,435 +20,587 @@
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "Account",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "security_graph",
-            "table": "Account"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "account_id",
-                "alias": "puppy_id_account_id"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "STRING",
-              "field": "account_id",
-              "alias": "account_id"
-            },
-            {
-              "type": "STRING",
-              "field": "account_alias",
-              "alias": "account_alias"
-            },
-            {
-              "type": "STRING",
-              "field": "email",
-              "alias": "email"
-            },
-            {
-              "type": "STRING",
-              "field": "phone",
-              "alias": "phone"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Session",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "security_graph",
-            "table": "Session"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "session_id",
-                "alias": "puppy_id_session_id"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "STRING",
-              "field": "session_id",
-              "alias": "session_id"
-            },
-            {
-              "type": "DATETIME",
-              "field": "creation_date",
-              "alias": "creation_date"
-            },
-            {
-              "type": "BOOLEAN",
-              "field": "mfa_authenticated",
-              "alias": "mfa_authenticated"
-            },
-            {
-              "type": "STRING",
-              "field": "additional_info",
-              "alias": "additional_info"
-            },
-            {
-              "type": "STRING",
-              "field": "identity_id",
-              "alias": "identity_id"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Identity",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "security_graph",
-            "table": "Identity"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "identity_id",
-                "alias": "puppy_id_identity_id"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "STRING",
-              "field": "identity_id",
-              "alias": "identity_id"
-            },
-            {
-              "type": "STRING",
-              "field": "type",
-              "alias": "type"
-            },
-            {
-              "type": "STRING",
-              "field": "principal_id",
-              "alias": "principal_id"
-            },
-            {
-              "type": "STRING",
-              "field": "arn",
-              "alias": "arn"
-            },
-            {
-              "type": "STRING",
-              "field": "user_name",
-              "alias": "user_name"
-            },
-            {
-              "type": "STRING",
-              "field": "account_id",
-              "alias": "account_id"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Event",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "security_graph",
-            "table": "Event"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "event_id",
-                "alias": "puppy_id_event_id"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "STRING",
-              "field": "event_id",
-              "alias": "event_id"
-            },
-            {
-              "type": "DATETIME",
-              "field": "event_time",
-              "alias": "event_time"
-            },
-            {
-              "type": "STRING",
-              "field": "event_source",
-              "alias": "event_source"
-            },
-            {
-              "type": "STRING",
-              "field": "event_name",
-              "alias": "event_name"
-            },
-            {
-              "type": "STRING",
-              "field": "source_ip",
-              "alias": "source_ip"
-            },
-            {
-              "type": "STRING",
-              "field": "user_agent",
-              "alias": "user_agent"
-            },
-            {
-              "type": "STRING",
-              "field": "request_params",
-              "alias": "request_params"
-            },
-            {
-              "type": "STRING",
-              "field": "response_params",
-              "alias": "response_params"
-            },
-            {
-              "type": "STRING",
-              "field": "identity_id",
-              "alias": "identity_id"
-            },
-            {
-              "type": "STRING",
-              "field": "session_id",
-              "alias": "session_id"
-            },
-            {
-              "type": "STRING",
-              "field": "account_id",
-              "alias": "account_id"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Resource",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "security_graph",
-            "table": "Resource"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "resource_id",
-                "alias": "puppy_id_resource_id"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "STRING",
-              "field": "resource_id",
-              "alias": "resource_id"
-            },
-            {
-              "type": "STRING",
-              "field": "resource_name",
-              "alias": "resource_name"
-            },
-            {
-              "type": "STRING",
-              "field": "resource_type",
-              "alias": "resource_type"
-            },
-            {
-              "type": "STRING",
-              "field": "additional_metadata",
-              "alias": "additional_metadata"
-            }
-          ]
-        }
-      }
-    ],
-    "edges": [
-      {
-        "label": "HasIdentity",
-        "fromVertex": "Account",
-        "toVertex": "Identity",
-        "tableSource": {
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "security_graph",
-          "table": "Identity"
-        },
-        "id": {
-          "fields": [
+          "table": "Account",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "identity_id",
-              "alias": "puppy_id_identity_id"
-            }
-          ]
-        },
-        "fromId": {
-          "fields": [
+              "sourceFieldName": "account_id",
+              "targetFieldName": "puppy_id_account_id"
+            },
             {
-              "type": "STRING",
-              "field": "account_id",
-              "alias": "puppy_from_account_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
             {
-              "type": "STRING",
-              "field": "identity_id",
-              "alias": "puppy_to_identity_id"
+              "sourceFieldName": "account_alias",
+              "targetFieldName": "account_alias"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "phone",
+              "targetFieldName": "phone"
             }
           ]
         }
       },
-      {
-        "label": "HasSession",
-        "fromVertex": "Identity",
-        "toVertex": "Session",
-        "tableSource": {
+      "label": "Account",
+      "id": [
+        {
+          "name": "puppy_id_account_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "account_id",
+          "type": "STRING"
+        },
+        {
+          "name": "account_alias",
+          "type": "STRING"
+        },
+        {
+          "name": "email",
+          "type": "STRING"
+        },
+        {
+          "name": "phone",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "security_graph",
-          "table": "Session"
-        },
-        "id": {
-          "fields": [
+          "table": "Session",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "session_id",
-              "alias": "puppy_id_session_id"
-            }
-          ]
-        },
-        "fromId": {
-          "fields": [
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_id_session_id"
+            },
             {
-              "type": "STRING",
-              "field": "identity_id",
-              "alias": "puppy_from_identity_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
+              "sourceFieldName": "session_id",
+              "targetFieldName": "session_id"
+            },
             {
-              "type": "STRING",
-              "field": "session_id",
-              "alias": "puppy_to_session_id"
+              "sourceFieldName": "creation_date",
+              "targetFieldName": "creation_date"
+            },
+            {
+              "sourceFieldName": "mfa_authenticated",
+              "targetFieldName": "mfa_authenticated"
+            },
+            {
+              "sourceFieldName": "additional_info",
+              "targetFieldName": "additional_info"
+            },
+            {
+              "sourceFieldName": "identity_id",
+              "targetFieldName": "identity_id"
             }
           ]
         }
       },
-      {
-        "label": "RecordsEvent",
-        "fromVertex": "Session",
-        "toVertex": "Event",
-        "tableSource": {
+      "label": "Session",
+      "id": [
+        {
+          "name": "puppy_id_session_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "session_id",
+          "type": "STRING"
+        },
+        {
+          "name": "creation_date",
+          "type": "DATETIME"
+        },
+        {
+          "name": "mfa_authenticated",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "additional_info",
+          "type": "STRING"
+        },
+        {
+          "name": "identity_id",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "security_graph",
-          "table": "Event"
-        },
-        "id": {
-          "fields": [
+          "table": "Identity",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "event_id",
-              "alias": "puppy_id_event_id"
-            }
-          ]
-        },
-        "fromId": {
-          "fields": [
+              "sourceFieldName": "identity_id",
+              "targetFieldName": "puppy_id_identity_id"
+            },
             {
-              "type": "STRING",
-              "field": "session_id",
-              "alias": "puppy_from_session_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
+              "sourceFieldName": "identity_id",
+              "targetFieldName": "identity_id"
+            },
             {
-              "type": "STRING",
-              "field": "event_id",
-              "alias": "puppy_to_event_id"
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "principal_id",
+              "targetFieldName": "principal_id"
+            },
+            {
+              "sourceFieldName": "arn",
+              "targetFieldName": "arn"
+            },
+            {
+              "sourceFieldName": "user_name",
+              "targetFieldName": "user_name"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
             }
           ]
         }
       },
-      {
-        "label": "OperatesOn",
-        "fromVertex": "Event",
-        "toVertex": "Resource",
-        "tableSource": {
+      "label": "Identity",
+      "id": [
+        {
+          "name": "puppy_id_identity_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "identity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "type",
+          "type": "STRING"
+        },
+        {
+          "name": "principal_id",
+          "type": "STRING"
+        },
+        {
+          "name": "arn",
+          "type": "STRING"
+        },
+        {
+          "name": "user_name",
+          "type": "STRING"
+        },
+        {
+          "name": "account_id",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "security_graph",
-          "table": "EventResource"
-        },
-        "id": {
-          "fields": [
+          "table": "Event",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "event_id",
-              "alias": "puppy_id_event_id"
+              "sourceFieldName": "event_id",
+              "targetFieldName": "puppy_id_event_id"
+            },
+            {
+              "sourceFieldName": "event_id",
+              "targetFieldName": "event_id"
+            },
+            {
+              "sourceFieldName": "event_time",
+              "targetFieldName": "event_time"
+            },
+            {
+              "sourceFieldName": "event_source",
+              "targetFieldName": "event_source"
+            },
+            {
+              "sourceFieldName": "event_name",
+              "targetFieldName": "event_name"
+            },
+            {
+              "sourceFieldName": "source_ip",
+              "targetFieldName": "source_ip"
+            },
+            {
+              "sourceFieldName": "user_agent",
+              "targetFieldName": "user_agent"
+            },
+            {
+              "sourceFieldName": "request_params",
+              "targetFieldName": "request_params"
+            },
+            {
+              "sourceFieldName": "response_params",
+              "targetFieldName": "response_params"
+            },
+            {
+              "sourceFieldName": "identity_id",
+              "targetFieldName": "identity_id"
+            },
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "session_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
             }
           ]
+        }
+      },
+      "label": "Event",
+      "id": [
+        {
+          "name": "puppy_id_event_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "event_id",
+          "type": "STRING"
         },
-        "fromId": {
-          "fields": [
+        {
+          "name": "event_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "event_source",
+          "type": "STRING"
+        },
+        {
+          "name": "event_name",
+          "type": "STRING"
+        },
+        {
+          "name": "source_ip",
+          "type": "STRING"
+        },
+        {
+          "name": "user_agent",
+          "type": "STRING"
+        },
+        {
+          "name": "request_params",
+          "type": "STRING"
+        },
+        {
+          "name": "response_params",
+          "type": "STRING"
+        },
+        {
+          "name": "identity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "session_id",
+          "type": "STRING"
+        },
+        {
+          "name": "account_id",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "Resource",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "event_id",
-              "alias": "puppy_from_event_id"
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "puppy_id_resource_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "resource_name",
+              "targetFieldName": "resource_name"
+            },
+            {
+              "sourceFieldName": "resource_type",
+              "targetFieldName": "resource_type"
+            },
+            {
+              "sourceFieldName": "additional_metadata",
+              "targetFieldName": "additional_metadata"
             }
           ]
+        }
+      },
+      "label": "Resource",
+      "id": [
+        {
+          "name": "puppy_id_resource_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "resource_id",
+          "type": "STRING"
         },
-        "toId": {
-          "fields": [
+        {
+          "name": "resource_name",
+          "type": "STRING"
+        },
+        {
+          "name": "resource_type",
+          "type": "STRING"
+        },
+        {
+          "name": "additional_metadata",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "Identity",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "resource_id",
-              "alias": "puppy_to_resource_id"
+              "sourceFieldName": "identity_id",
+              "targetFieldName": "puppy_id_identity_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "puppy_from_account_id"
+            },
+            {
+              "sourceFieldName": "identity_id",
+              "targetFieldName": "puppy_to_identity_id"
             }
           ]
+        }
+      },
+      "label": "HasIdentity",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Identity",
+      "id": [
+        {
+          "name": "puppy_id_identity_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_account_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_identity_id",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "Session",
+          "mappedField": [
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_id_session_id"
+            },
+            {
+              "sourceFieldName": "identity_id",
+              "targetFieldName": "puppy_from_identity_id"
+            },
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_to_session_id"
+            }
+          ]
+        }
+      },
+      "label": "HasSession",
+      "fromNodeLabel": "Identity",
+      "toNodeLabel": "Session",
+      "id": [
+        {
+          "name": "puppy_id_session_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_identity_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_session_id",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "Event",
+          "mappedField": [
+            {
+              "sourceFieldName": "event_id",
+              "targetFieldName": "puppy_id_event_id"
+            },
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_from_session_id"
+            },
+            {
+              "sourceFieldName": "event_id",
+              "targetFieldName": "puppy_to_event_id"
+            }
+          ]
+        }
+      },
+      "label": "RecordsEvent",
+      "fromNodeLabel": "Session",
+      "toNodeLabel": "Event",
+      "id": [
+        {
+          "name": "puppy_id_event_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_session_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_event_id",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "security_graph",
+          "table": "EventResource",
+          "mappedField": [
+            {
+              "sourceFieldName": "event_id",
+              "targetFieldName": "puppy_id_event_id"
+            },
+            {
+              "sourceFieldName": "event_id",
+              "targetFieldName": "puppy_from_event_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "puppy_to_resource_id"
+            },
+            {
+              "sourceFieldName": "event_id",
+              "targetFieldName": "event_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "pre_state",
+              "targetFieldName": "pre_state"
+            },
+            {
+              "sourceFieldName": "post_state",
+              "targetFieldName": "post_state"
+            }
+          ]
+        }
+      },
+      "label": "OperatesOn",
+      "fromNodeLabel": "Event",
+      "toNodeLabel": "Resource",
+      "id": [
+        {
+          "name": "puppy_id_event_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_event_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_resource_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "event_id",
+          "type": "STRING"
         },
-        "attributes": [
-          {
-            "type": "STRING",
-            "field": "event_id",
-            "alias": "event_id"
-          },
-          {
-            "type": "STRING",
-            "field": "resource_id",
-            "alias": "resource_id"
-          },
-          {
-            "type": "STRING",
-            "field": "pre_state",
-            "alias": "pre_state"
-          },
-          {
-            "type": "STRING",
-            "field": "post_state",
-            "alias": "post_state"
-          }
-        ]
-      }
-    ]
-  }
+        {
+          "name": "resource_id",
+          "type": "STRING"
+        },
+        {
+          "name": "pre_state",
+          "type": "STRING"
+        },
+        {
+          "name": "post_state",
+          "type": "STRING"
+        }
+      ]
+    }
+  ]
 }

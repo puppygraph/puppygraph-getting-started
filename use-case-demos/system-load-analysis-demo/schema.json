@@ -1,5 +1,5 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "iceberg_test",
       "type": "iceberg",
@@ -18,488 +18,638 @@
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "Component",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "big_call_graph",
-            "table": "Component"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "big_call_graph",
+          "table": "Component",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "String",
-              "field": "version",
-              "alias": "version"
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             },
             {
-              "type": "String",
-              "field": "type",
-              "alias": "type"
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
             },
             {
-              "type": "Double",
-              "field": "cpu_usage",
-              "alias": "cpu_usage"
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
             },
             {
-              "type": "Double",
-              "field": "mem_usage",
-              "alias": "mem_usage"
+              "sourceFieldName": "cpu_usage",
+              "targetFieldName": "cpu_usage"
             },
             {
-              "type": "Double",
-              "field": "network_bandwidth",
-              "alias": "network_bandwidth"
+              "sourceFieldName": "mem_usage",
+              "targetFieldName": "mem_usage"
+            },
+            {
+              "sourceFieldName": "network_bandwidth",
+              "targetFieldName": "network_bandwidth"
             }
           ]
         }
       },
-      {
-        "label": "ComponentHistory",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "big_call_graph",
-            "table": "ComponentHistory"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Component",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "version",
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "type": "String"
+        },
+        {
+          "name": "cpu_usage",
+          "type": "Double"
+        },
+        {
+          "name": "mem_usage",
+          "type": "Double"
+        },
+        {
+          "name": "network_bandwidth",
+          "type": "Double"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "big_call_graph",
+          "table": "ComponentHistory",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "component_id",
-              "alias": "component_id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "DateTime",
-              "field": "record_time",
-              "alias": "record_time"
+              "sourceFieldName": "component_id",
+              "targetFieldName": "component_id"
             },
             {
-              "type": "Double",
-              "field": "cpu_usage",
-              "alias": "cpu_usage"
+              "sourceFieldName": "record_time",
+              "targetFieldName": "record_time"
             },
             {
-              "type": "Double",
-              "field": "mem_usage",
-              "alias": "mem_usage"
+              "sourceFieldName": "cpu_usage",
+              "targetFieldName": "cpu_usage"
             },
             {
-              "type": "Double",
-              "field": "network_bandwidth",
-              "alias": "network_bandwidth"
+              "sourceFieldName": "mem_usage",
+              "targetFieldName": "mem_usage"
+            },
+            {
+              "sourceFieldName": "network_bandwidth",
+              "targetFieldName": "network_bandwidth"
             }
           ]
         }
       },
-      {
-        "label": "Invocation",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "big_call_graph",
-            "table": "Invocation"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "ComponentHistory",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "component_id",
+          "type": "Long"
+        },
+        {
+          "name": "record_time",
+          "type": "DateTime"
+        },
+        {
+          "name": "cpu_usage",
+          "type": "Double"
+        },
+        {
+          "name": "mem_usage",
+          "type": "Double"
+        },
+        {
+          "name": "network_bandwidth",
+          "type": "Double"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "big_call_graph",
+          "table": "Invocation",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "from_com_id",
-              "alias": "from_com_id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "Long",
-              "field": "to_com_id",
-              "alias": "to_com_id"
+              "sourceFieldName": "from_com_id",
+              "targetFieldName": "from_com_id"
             },
             {
-              "type": "DateTime",
-              "field": "req_time",
-              "alias": "req_time"
+              "sourceFieldName": "to_com_id",
+              "targetFieldName": "to_com_id"
             },
             {
-              "type": "DateTime",
-              "field": "res_time",
-              "alias": "res_time"
+              "sourceFieldName": "req_time",
+              "targetFieldName": "req_time"
             },
             {
-              "type": "String",
-              "field": "status",
-              "alias": "status"
+              "sourceFieldName": "res_time",
+              "targetFieldName": "res_time"
             },
             {
-              "type": "String",
-              "field": "err_msg",
-              "alias": "err_msg"
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
             },
             {
-              "type": "Long",
-              "field": "parent_id",
-              "alias": "parent_id"
+              "sourceFieldName": "err_msg",
+              "targetFieldName": "err_msg"
             },
             {
-              "type": "Long",
-              "field": "history_id",
-              "alias": "history_id"
+              "sourceFieldName": "parent_id",
+              "targetFieldName": "parent_id"
+            },
+            {
+              "sourceFieldName": "history_id",
+              "targetFieldName": "history_id"
             }
           ]
         }
-      }
-    ],
-    "edges": [
-      {
-        "label": "WorkloadHis",
-        "fromVertex": "Component",
-        "toVertex": "ComponentHistory",
-        "tableSource": {
-          "catalog": "iceberg_test",
-          "schema": "big_call_graph",
-          "table": "ComponentHistory"
-        },
-        "id": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
-            }
-          ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "component_id",
-              "alias": "component_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "to_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "DateTime",
-            "field": "record_time",
-            "alias": "record_time"
-          }
-        ]
       },
-      {
-        "label": "HasInvocation",
-        "fromVertex": "Component",
-        "toVertex": "Component",
-        "tableSource": {
+      "label": "Invocation",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "from_com_id",
+          "type": "Long"
+        },
+        {
+          "name": "to_com_id",
+          "type": "Long"
+        },
+        {
+          "name": "req_time",
+          "type": "DateTime"
+        },
+        {
+          "name": "res_time",
+          "type": "DateTime"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        },
+        {
+          "name": "err_msg",
+          "type": "String"
+        },
+        {
+          "name": "parent_id",
+          "type": "Long"
+        },
+        {
+          "name": "history_id",
+          "type": "Long"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "big_call_graph",
-          "table": "ComponentInvocationCount"
-        },
-        "id": {
-          "fields": [
+          "table": "ComponentHistory",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "component_id",
+              "targetFieldName": "component_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "record_time",
+              "targetFieldName": "record_time"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "from_com_id",
-              "alias": "from_com_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "to_com_id",
-              "alias": "to_com_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "Int",
-            "field": "invocate_times",
-            "alias": "invocate_times"
-          }
-        ]
+        }
       },
-      {
-        "label": "InvocationFrom",
-        "fromVertex": "Component",
-        "toVertex": "Invocation",
-        "tableSource": {
+      "label": "WorkloadHis",
+      "fromNodeLabel": "Component",
+      "toNodeLabel": "ComponentHistory",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "component_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "record_time",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "big_call_graph",
-          "table": "Invocation"
-        },
-        "id": {
-          "fields": [
+          "table": "ComponentInvocationCount",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "from_com_id",
+              "targetFieldName": "from_com_id"
+            },
+            {
+              "sourceFieldName": "to_com_id",
+              "targetFieldName": "to_com_id"
+            },
+            {
+              "sourceFieldName": "invocate_times",
+              "targetFieldName": "invocate_times"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "from_com_id",
-              "alias": "from_com_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "to_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "DateTime",
-            "field": "req_time",
-            "alias": "req_time"
-          },
-          {
-            "type": "DateTime",
-            "field": "res_time",
-            "alias": "res_time"
-          },
-          {
-            "type": "String",
-            "field": "status",
-            "alias": "status"
-          },
-          {
-            "type": "String",
-            "field": "err_msg",
-            "alias": "err_msg"
-          }
-        ]
+        }
       },
-      {
-        "label": "InvocationTo",
-        "fromVertex": "Invocation",
-        "toVertex": "Component",
-        "tableSource": {
+      "label": "HasInvocation",
+      "fromNodeLabel": "Component",
+      "toNodeLabel": "Component",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_com_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_com_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "invocate_times",
+          "type": "Int"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "big_call_graph",
-          "table": "Invocation"
-        },
-        "id": {
-          "fields": [
+          "table": "Invocation",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "from_com_id",
+              "targetFieldName": "from_com_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "req_time",
+              "targetFieldName": "req_time"
+            },
+            {
+              "sourceFieldName": "res_time",
+              "targetFieldName": "res_time"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            },
+            {
+              "sourceFieldName": "err_msg",
+              "targetFieldName": "err_msg"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "from_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "to_com_id",
-              "alias": "to_com_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "DateTime",
-            "field": "req_time",
-            "alias": "req_time"
-          },
-          {
-            "type": "DateTime",
-            "field": "res_time",
-            "alias": "res_time"
-          },
-          {
-            "type": "String",
-            "field": "status",
-            "alias": "status"
-          },
-          {
-            "type": "String",
-            "field": "err_msg",
-            "alias": "err_msg"
-          }
-        ]
+        }
       },
-      {
-        "label": "InvocationHis",
-        "fromVertex": "Invocation",
-        "toVertex": "ComponentHistory",
-        "tableSource": {
+      "label": "InvocationFrom",
+      "fromNodeLabel": "Component",
+      "toNodeLabel": "Invocation",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_com_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "req_time",
+          "type": "DateTime"
+        },
+        {
+          "name": "res_time",
+          "type": "DateTime"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        },
+        {
+          "name": "err_msg",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "big_call_graph",
-          "table": "Invocation"
-        },
-        "id": {
-          "fields": [
+          "table": "Invocation",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "to_com_id",
+              "targetFieldName": "to_com_id"
+            },
+            {
+              "sourceFieldName": "req_time",
+              "targetFieldName": "req_time"
+            },
+            {
+              "sourceFieldName": "res_time",
+              "targetFieldName": "res_time"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            },
+            {
+              "sourceFieldName": "err_msg",
+              "targetFieldName": "err_msg"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "from_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "history_id",
-              "alias": "history_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "InvocationStack",
-        "fromVertex": "Invocation",
-        "toVertex": "Invocation",
-        "tableSource": {
+      "label": "InvocationTo",
+      "fromNodeLabel": "Invocation",
+      "toNodeLabel": "Component",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_com_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "req_time",
+          "type": "DateTime"
+        },
+        {
+          "name": "res_time",
+          "type": "DateTime"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        },
+        {
+          "name": "err_msg",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "big_call_graph",
-          "table": "Invocation"
-        },
-        "id": {
-          "fields": [
+          "table": "Invocation",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "history_id",
+              "targetFieldName": "history_id"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "parent_id",
-              "alias": "parent_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "to_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "HisStack",
-        "fromVertex": "ComponentHistory",
-        "toVertex": "ComponentHistory",
-        "tableSource": {
+      "label": "InvocationHis",
+      "fromNodeLabel": "Invocation",
+      "toNodeLabel": "ComponentHistory",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "history_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "big_call_graph",
-          "table": "ComponentHistory"
-        },
-        "id": {
-          "fields": [
+          "table": "Invocation",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "parent_id",
+              "targetFieldName": "parent_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "to_id"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
+        }
+      },
+      "label": "InvocationStack",
+      "fromNodeLabel": "Invocation",
+      "toNodeLabel": "Invocation",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "parent_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "big_call_graph",
+          "table": "ComponentHistory",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "parent_id",
-              "alias": "parent_id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "parent_id",
+              "targetFieldName": "parent_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "to_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "to_id"
-            }
-          ]
-        },
-        "attributes": []
-      }
-    ]
-  }
+        }
+      },
+      "label": "HisStack",
+      "fromNodeLabel": "ComponentHistory",
+      "toNodeLabel": "ComponentHistory",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "parent_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "Long"
+        }
+      ]
+    }
+  ]
 }

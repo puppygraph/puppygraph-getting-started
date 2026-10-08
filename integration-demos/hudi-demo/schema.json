@@ -1,5 +1,5 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "hudi_security_graph",
       "type": "hudi",
@@ -8,840 +8,1075 @@
         "hiveMetastoreUrl": "thrift://metastore:9083"
       },
       "storage": {
-        "type": "S3",
         "useInstanceProfile": "false",
         "accessKey": "admin",
         "secretKey": "password",
         "enableSsl": "false",
         "endpoint": "http://minio:9000",
-        "enablePathStyleAccess": "true"
+        "enablePathStyleAccess": "true",
+        "type": "S3"
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "User",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "Users"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "user_id",
-                "alias": "user_id"
-              }
-            ]
-          },
-          "attributes": [
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "Users",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "username",
-              "alias": "username"
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
             },
             {
-              "type": "String",
-              "field": "email",
-              "alias": "email"
+              "sourceFieldName": "username",
+              "targetFieldName": "username"
             },
             {
-              "type": "String",
-              "field": "phone",
-              "alias": "phone"
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
             },
             {
-              "type": "Datetime",
-              "field": "created_at",
-              "alias": "created_at"
+              "sourceFieldName": "phone",
+              "targetFieldName": "phone"
             },
             {
-              "type": "Datetime",
-              "field": "last_login",
-              "alias": "last_login"
+              "sourceFieldName": "created_at",
+              "targetFieldName": "created_at"
             },
             {
-              "type": "String",
-              "field": "account_status",
-              "alias": "account_status"
+              "sourceFieldName": "last_login",
+              "targetFieldName": "last_login"
             },
             {
-              "type": "String",
-              "field": "authentication_method",
-              "alias": "authentication_method"
+              "sourceFieldName": "account_status",
+              "targetFieldName": "account_status"
             },
             {
-              "type": "Long",
-              "field": "failed_login_attempts",
-              "alias": "failed_login_attempts"
+              "sourceFieldName": "authentication_method",
+              "targetFieldName": "authentication_method"
+            },
+            {
+              "sourceFieldName": "failed_login_attempts",
+              "targetFieldName": "failed_login_attempts"
             }
           ]
         }
       },
-      {
-        "label": "InternetGateway",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "InternetGateways"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "internet_gateway_id",
-                "alias": "internet_gateway_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "User",
+      "id": [
+        {
+          "name": "user_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "username",
+          "type": "String"
+        },
+        {
+          "name": "email",
+          "type": "String"
+        },
+        {
+          "name": "phone",
+          "type": "String"
+        },
+        {
+          "name": "created_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "last_login",
+          "type": "Datetime"
+        },
+        {
+          "name": "account_status",
+          "type": "String"
+        },
+        {
+          "name": "authentication_method",
+          "type": "String"
+        },
+        {
+          "name": "failed_login_attempts",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "InternetGateways",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
             },
             {
-              "type": "String",
-              "field": "region",
-              "alias": "region"
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             },
             {
-              "type": "String",
-              "field": "status",
-              "alias": "status"
+              "sourceFieldName": "region",
+              "targetFieldName": "region"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
             }
           ]
         }
       },
-      {
-        "label": "VPC",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "VPCs"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "vpc_id",
-                "alias": "vpc_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "InternetGateway",
+      "id": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "region",
+          "type": "String"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "VPCs",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
         }
       },
-      {
-        "label": "Subnet",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "Subnets"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "subnet_id",
-                "alias": "subnet_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "VPC",
+      "id": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "Subnets",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "vpc_id",
-              "alias": "vpc_id"
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
             },
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
         }
       },
-      {
-        "label": "SecurityGroup",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "SecurityGroups"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "security_group_id",
-                "alias": "security_group_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Subnet",
+      "id": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "SecurityGroups",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
         }
       },
-      {
-        "label": "NetworkInterface",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "NetworkInterfaces"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "network_interface_id",
-                "alias": "network_interface_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "SecurityGroup",
+      "id": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "NetworkInterfaces",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "subnet_id",
-              "alias": "subnet_id"
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
             },
             {
-              "type": "Long",
-              "field": "security_group_id",
-              "alias": "security_group_id"
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
             },
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
         }
       },
-      {
-        "label": "VMInstance",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "VMInstances"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "vm_instance_id",
-                "alias": "vm_instance_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "NetworkInterface",
+      "id": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        },
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "VMInstances",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "network_interface_id",
-              "alias": "network_interface_id"
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
             },
             {
-              "type": "Long",
-              "field": "role_id",
-              "alias": "role_id"
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
             },
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
         }
       },
-      {
-        "label": "Role",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "Roles"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "role_id",
-                "alias": "role_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "VMInstance",
+      "id": [
+        {
+          "name": "vm_instance_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        },
+        {
+          "name": "role_id",
+          "type": "Long"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "Roles",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
         }
       },
-      {
-        "label": "Resource",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "Resources"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "resource_id",
-                "alias": "resource_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Role",
+      "id": [
+        {
+          "name": "role_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "Resources",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
         }
       },
-      {
-        "label": "PublicIP",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "PublicIPs"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "public_ip_id",
-                "alias": "public_ip_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Resource",
+      "id": [
+        {
+          "name": "resource_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "PublicIPs",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "ip_address",
-              "alias": "ip_address"
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
             },
             {
-              "type": "Long",
-              "field": "network_interface_id",
-              "alias": "network_interface_id"
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
             }
           ]
         }
       },
-      {
-        "label": "PrivateIP",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "PrivateIPs"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "private_ip_id",
-                "alias": "private_ip_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "PublicIP",
+      "id": [
+        {
+          "name": "public_ip_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ip_address",
+          "type": "String"
+        },
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "PrivateIPs",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "ip_address",
-              "alias": "ip_address"
+              "sourceFieldName": "private_ip_id",
+              "targetFieldName": "private_ip_id"
             },
             {
-              "type": "Long",
-              "field": "network_interface_id",
-              "alias": "network_interface_id"
+              "sourceFieldName": "ip_address",
+              "targetFieldName": "ip_address"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
             }
           ]
         }
       },
-      {
-        "label": "IngressRule",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "hudi_security_graph",
-            "schema": "security_graph",
-            "table": "IngressRules"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "ingress_rule_id",
-                "alias": "ingress_rule_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "PrivateIP",
+      "id": [
+        {
+          "name": "private_ip_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ip_address",
+          "type": "String"
+        },
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "IngressRules",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "security_group_id",
-              "alias": "security_group_id"
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
             },
             {
-              "type": "String",
-              "field": "protocol",
-              "alias": "protocol"
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
             },
             {
-              "type": "String",
-              "field": "port_range",
-              "alias": "port_range"
+              "sourceFieldName": "protocol",
+              "targetFieldName": "protocol"
             },
             {
-              "type": "String",
-              "field": "source",
-              "alias": "source"
+              "sourceFieldName": "port_range",
+              "targetFieldName": "port_range"
+            },
+            {
+              "sourceFieldName": "source",
+              "targetFieldName": "source"
             }
           ]
         }
-      }
-    ],
-    "edges": [
-      {
-        "label": "ACCESS",
-        "fromVertex": "User",
-        "toVertex": "InternetGateway",
-        "tableSource": {
-          "catalog": "hudi_security_graph",
-          "schema": "security_graph",
-          "table": "UserInternetGatewayAccess"
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "user_id",
-              "alias": "user_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "internet_gateway_id",
-              "alias": "internet_gateway_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "String",
-            "field": "access_level",
-            "alias": "access_level"
-          },
-          {
-            "type": "Datetime",
-            "field": "granted_at",
-            "alias": "granted_at"
-          },
-          {
-            "type": "Datetime",
-            "field": "expires_at",
-            "alias": "expires_at"
-          },
-          {
-            "type": "Datetime",
-            "field": "last_accessed_at",
-            "alias": "last_accessed_at"
-          }
-        ]
       },
-      {
-        "label": "ACCESS_RECORD",
-        "fromVertex": "User",
-        "toVertex": "InternetGateway",
-        "tableSource": {
+      "label": "IngressRule",
+      "id": [
+        {
+          "name": "ingress_rule_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        },
+        {
+          "name": "protocol",
+          "type": "String"
+        },
+        {
+          "name": "port_range",
+          "type": "String"
+        },
+        {
+          "name": "source",
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "UserInternetGatewayAccessLog"
-        },
-        "id": {
-          "fields": [
+          "table": "UserInternetGatewayAccess",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "log_id",
-              "alias": "log_id"
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "access_level",
+              "targetFieldName": "access_level"
+            },
+            {
+              "sourceFieldName": "granted_at",
+              "targetFieldName": "granted_at"
+            },
+            {
+              "sourceFieldName": "expires_at",
+              "targetFieldName": "expires_at"
+            },
+            {
+              "sourceFieldName": "last_accessed_at",
+              "targetFieldName": "last_accessed_at"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "user_id",
-              "alias": "user_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "internet_gateway_id",
-              "alias": "internet_gateway_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "Datetime",
-            "field": "access_time",
-            "alias": "access_time"
-          }
-        ]
+        }
       },
-      {
-        "label": "GATEWAY_TO",
-        "fromVertex": "InternetGateway",
-        "toVertex": "VPC",
-        "tableSource": {
+      "label": "ACCESS",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "InternetGateway",
+      "fromKey": [
+        {
+          "name": "user_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "access_level",
+          "type": "String"
+        },
+        {
+          "name": "granted_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "expires_at",
+          "type": "Datetime"
+        },
+        {
+          "name": "last_accessed_at",
+          "type": "Datetime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "InternetGatewayVPC"
-        },
-        "fromId": {
-          "fields": [
+          "table": "UserInternetGatewayAccessLog",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "internet_gateway_id",
-              "alias": "internet_gateway_id"
+              "sourceFieldName": "log_id",
+              "targetFieldName": "log_id"
+            },
+            {
+              "sourceFieldName": "user_id",
+              "targetFieldName": "user_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "access_time",
+              "targetFieldName": "access_time"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "vpc_id",
-              "alias": "vpc_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "CONTAINS",
-        "fromVertex": "VPC",
-        "toVertex": "Subnet",
-        "tableSource": {
+      "label": "ACCESS_RECORD",
+      "fromNodeLabel": "User",
+      "toNodeLabel": "InternetGateway",
+      "id": [
+        {
+          "name": "log_id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "user_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "access_time",
+          "type": "Datetime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "Subnets"
-        },
-        "fromId": {
-          "fields": [
+          "table": "InternetGatewayVPC",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "vpc_id",
-              "alias": "vpc_id"
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
+            },
+            {
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "subnet_id",
-              "alias": "subnet_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "HOSTS_INTERFACE",
-        "fromVertex": "Subnet",
-        "toVertex": "NetworkInterface",
-        "tableSource": {
+      "label": "GATEWAY_TO",
+      "fromNodeLabel": "InternetGateway",
+      "toNodeLabel": "VPC",
+      "fromKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "NetworkInterfaces"
-        },
-        "fromId": {
-          "fields": [
+          "table": "Subnets",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "subnet_id",
-              "alias": "subnet_id"
+              "sourceFieldName": "vpc_id",
+              "targetFieldName": "vpc_id"
+            },
+            {
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "network_interface_id",
-              "alias": "network_interface_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "PROTECTS",
-        "fromVertex": "SecurityGroup",
-        "toVertex": "NetworkInterface",
-        "tableSource": {
+      "label": "CONTAINS",
+      "fromNodeLabel": "VPC",
+      "toNodeLabel": "Subnet",
+      "fromKey": [
+        {
+          "name": "vpc_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "NetworkInterfaces"
-        },
-        "fromId": {
-          "fields": [
+          "table": "NetworkInterfaces",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "security_group_id",
-              "alias": "security_group_id"
+              "sourceFieldName": "subnet_id",
+              "targetFieldName": "subnet_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "network_interface_id",
-              "alias": "network_interface_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "ATTACHED_TO",
-        "fromVertex": "NetworkInterface",
-        "toVertex": "VMInstance",
-        "tableSource": {
+      "label": "HOSTS_INTERFACE",
+      "fromNodeLabel": "Subnet",
+      "toNodeLabel": "NetworkInterface",
+      "fromKey": [
+        {
+          "name": "subnet_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "VMInstances"
-        },
-        "fromId": {
-          "fields": [
+          "table": "NetworkInterfaces",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "network_interface_id",
-              "alias": "network_interface_id"
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "vm_instance_id",
-              "alias": "vm_instance_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "ASSIGNED_ROLE",
-        "fromVertex": "VMInstance",
-        "toVertex": "Role",
-        "tableSource": {
+      "label": "PROTECTS",
+      "fromNodeLabel": "SecurityGroup",
+      "toNodeLabel": "NetworkInterface",
+      "fromKey": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "VMInstances"
-        },
-        "fromId": {
-          "fields": [
+          "table": "VMInstances",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "vm_instance_id",
-              "alias": "vm_instance_id"
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "role_id",
-              "alias": "role_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "ALLOWS_ACCESS_TO",
-        "fromVertex": "Role",
-        "toVertex": "Resource",
-        "tableSource": {
+      "label": "ATTACHED_TO",
+      "fromNodeLabel": "NetworkInterface",
+      "toNodeLabel": "VMInstance",
+      "fromKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "vm_instance_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "RoleResourceAccess"
-        },
-        "fromId": {
-          "fields": [
+          "table": "VMInstances",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "role_id",
-              "alias": "role_id"
+              "sourceFieldName": "vm_instance_id",
+              "targetFieldName": "vm_instance_id"
+            },
+            {
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "resource_id",
-              "alias": "resource_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "HAS_PUBLIC_IP",
-        "fromVertex": "NetworkInterface",
-        "toVertex": "PublicIP",
-        "tableSource": {
+      "label": "ASSIGNED_ROLE",
+      "fromNodeLabel": "VMInstance",
+      "toNodeLabel": "Role",
+      "fromKey": [
+        {
+          "name": "vm_instance_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "role_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "PublicIPs"
-        },
-        "fromId": {
-          "fields": [
+          "table": "RoleResourceAccess",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "network_interface_id",
-              "alias": "network_interface_id"
+              "sourceFieldName": "role_id",
+              "targetFieldName": "role_id"
+            },
+            {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "resource_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "public_ip_id",
-              "alias": "public_ip_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "HAS_PRIVATE_IP",
-        "fromVertex": "NetworkInterface",
-        "toVertex": "PrivateIP",
-        "tableSource": {
+      "label": "ALLOWS_ACCESS_TO",
+      "fromNodeLabel": "Role",
+      "toNodeLabel": "Resource",
+      "fromKey": [
+        {
+          "name": "role_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "resource_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "PrivateIPs"
-        },
-        "fromId": {
-          "fields": [
+          "table": "PublicIPs",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "network_interface_id",
-              "alias": "network_interface_id"
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "public_ip_id",
+              "targetFieldName": "public_ip_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "private_ip_id",
-              "alias": "private_ip_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "HAS_RULE",
-        "fromVertex": "SecurityGroup",
-        "toVertex": "IngressRule",
-        "tableSource": {
+      "label": "HAS_PUBLIC_IP",
+      "fromNodeLabel": "NetworkInterface",
+      "toNodeLabel": "PublicIP",
+      "fromKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "public_ip_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "IngressRules"
-        },
-        "fromId": {
-          "fields": [
+          "table": "PrivateIPs",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "security_group_id",
-              "alias": "security_group_id"
+              "sourceFieldName": "network_interface_id",
+              "targetFieldName": "network_interface_id"
+            },
+            {
+              "sourceFieldName": "private_ip_id",
+              "targetFieldName": "private_ip_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "ingress_rule_id",
-              "alias": "ingress_rule_id"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "ALLOWS_TRAFFIC_FROM",
-        "fromVertex": "IngressRule",
-        "toVertex": "InternetGateway",
-        "tableSource": {
+      "label": "HAS_PRIVATE_IP",
+      "fromNodeLabel": "NetworkInterface",
+      "toNodeLabel": "PrivateIP",
+      "fromKey": [
+        {
+          "name": "network_interface_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "private_ip_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "hudi_security_graph",
           "schema": "security_graph",
-          "table": "IngressRuleInternetGateway"
-        },
-        "fromId": {
-          "fields": [
+          "table": "IngressRules",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "ingress_rule_id",
-              "alias": "ingress_rule_id"
+              "sourceFieldName": "security_group_id",
+              "targetFieldName": "security_group_id"
+            },
+            {
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
             }
           ]
-        },
-        "toId": {
-          "fields": [
+        }
+      },
+      "label": "HAS_RULE",
+      "fromNodeLabel": "SecurityGroup",
+      "toNodeLabel": "IngressRule",
+      "fromKey": [
+        {
+          "name": "security_group_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "ingress_rule_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "hudi_security_graph",
+          "schema": "security_graph",
+          "table": "IngressRuleInternetGateway",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "internet_gateway_id",
-              "alias": "internet_gateway_id"
+              "sourceFieldName": "ingress_rule_id",
+              "targetFieldName": "ingress_rule_id"
+            },
+            {
+              "sourceFieldName": "internet_gateway_id",
+              "targetFieldName": "internet_gateway_id"
             }
           ]
-        },
-        "attributes": []
-      }
-    ]
-  }
+        }
+      },
+      "label": "ALLOWS_TRAFFIC_FROM",
+      "fromNodeLabel": "IngressRule",
+      "toNodeLabel": "InternetGateway",
+      "fromKey": [
+        {
+          "name": "ingress_rule_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "internet_gateway_id",
+          "type": "Long"
+        }
+      ]
+    }
+  ]
 }

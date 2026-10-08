@@ -1,5 +1,5 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "iceberg_test",
       "type": "iceberg",
@@ -18,259 +18,334 @@
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "Artifact",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "cicd",
-            "table": "Artifact"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "cicd",
+          "table": "Artifact",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "String",
-              "field": "version",
-              "alias": "version"
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             },
             {
-              "type": "String",
-              "field": "type",
-              "alias": "type"
+              "sourceFieldName": "version",
+              "targetFieldName": "version"
             },
             {
-              "type": "DateTime",
-              "field": "created_time",
-              "alias": "created_time"
+              "sourceFieldName": "type",
+              "targetFieldName": "type"
+            },
+            {
+              "sourceFieldName": "created_time",
+              "targetFieldName": "created_time"
             }
           ]
         }
       },
-      {
-        "label": "Build",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "cicd",
-            "table": "Build"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Artifact",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "version",
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "type": "String"
+        },
+        {
+          "name": "created_time",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "cicd",
+          "table": "Build",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "artifact_id",
-              "alias": "artifact_id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "String",
-              "field": "status",
-              "alias": "status"
+              "sourceFieldName": "artifact_id",
+              "targetFieldName": "artifact_id"
             },
             {
-              "type": "DateTime",
-              "field": "start_time",
-              "alias": "start_time"
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
             },
             {
-              "type": "DateTime",
-              "field": "end_time",
-              "alias": "end_time"
+              "sourceFieldName": "start_time",
+              "targetFieldName": "start_time"
+            },
+            {
+              "sourceFieldName": "end_time",
+              "targetFieldName": "end_time"
             }
           ]
         }
       },
-      {
-        "label": "Deployment",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "cicd",
-            "table": "Deployment"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Build",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "artifact_id",
+          "type": "Long"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        },
+        {
+          "name": "start_time",
+          "type": "DateTime"
+        },
+        {
+          "name": "end_time",
+          "type": "DateTime"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "cicd",
+          "table": "Deployment",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "artifact_id",
-              "alias": "artifact_id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "String",
-              "field": "environment",
-              "alias": "environment"
+              "sourceFieldName": "artifact_id",
+              "targetFieldName": "artifact_id"
             },
             {
-              "type": "String",
-              "field": "status",
-              "alias": "status"
+              "sourceFieldName": "environment",
+              "targetFieldName": "environment"
             },
             {
-              "type": "DateTime",
-              "field": "deployed_time",
-              "alias": "deployed_time"
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
+            },
+            {
+              "sourceFieldName": "deployed_time",
+              "targetFieldName": "deployed_time"
             }
           ]
         }
-      }
-    ],
-    "edges": [
-      {
-        "label": "DEPENDS_ON",
-        "fromVertex": "Artifact",
-        "toVertex": "Artifact",
-        "tableSource": {
-          "catalog": "iceberg_test",
-          "schema": "cicd",
-          "table": "Dependency"
-        },
-        "id": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
-            }
-          ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "from_artifact_id",
-              "alias": "from_artifact_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "to_artifact_id",
-              "alias": "to_artifact_id"
-            }
-          ]
-        },
-        "attributes": []
       },
-      {
-        "label": "HAS_BUILD",
-        "fromVertex": "Artifact",
-        "toVertex": "Build",
-        "tableSource": {
+      "label": "Deployment",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "artifact_id",
+          "type": "Long"
+        },
+        {
+          "name": "environment",
+          "type": "String"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        },
+        {
+          "name": "deployed_time",
+          "type": "DateTime"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "cicd",
-          "table": "Build"
-        },
-        "id": {
-          "fields": [
+          "table": "Dependency",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "from_artifact_id",
+              "targetFieldName": "from_artifact_id"
+            },
+            {
+              "sourceFieldName": "to_artifact_id",
+              "targetFieldName": "to_artifact_id"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "artifact_id",
-              "alias": "artifact_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "to_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "String",
-            "field": "status",
-            "alias": "status"
-          }
-        ]
+        }
       },
-      {
-        "label": "HAS_DEPLOYMENT",
-        "fromVertex": "Artifact",
-        "toVertex": "Deployment",
-        "tableSource": {
+      "label": "DEPENDS_ON",
+      "fromNodeLabel": "Artifact",
+      "toNodeLabel": "Artifact",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_artifact_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_artifact_id",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "cicd",
-          "table": "Deployment"
-        },
-        "id": {
-          "fields": [
+          "table": "Build",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "artifact_id",
+              "targetFieldName": "artifact_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
+        }
+      },
+      "label": "HAS_BUILD",
+      "fromNodeLabel": "Artifact",
+      "toNodeLabel": "Build",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "artifact_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "status",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "cicd",
+          "table": "Deployment",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "artifact_id",
-              "alias": "artifact_id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "artifact_id",
+              "targetFieldName": "artifact_id"
+            },
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "status",
+              "targetFieldName": "status"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "id",
-              "alias": "to_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "String",
-            "field": "status",
-            "alias": "status"
-          }
-        ]
-      }
-    ]
-  }
+        }
+      },
+      "label": "HAS_DEPLOYMENT",
+      "fromNodeLabel": "Artifact",
+      "toNodeLabel": "Deployment",
+      "id": [
+        {
+          "name": "id",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "artifact_id",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "status",
+          "type": "String"
+        }
+      ]
+    }
+  ]
 }
