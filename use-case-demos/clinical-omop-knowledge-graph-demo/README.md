@@ -59,7 +59,7 @@ docker exec -i postgres psql -U postgres -d mimic < ./import_csv.sql
    - Password: `puppygraph123`
 
 2. Upload the schema:
-   - In the **Upload Graph Schema JSON** section, select the file `schema.json` and click **Upload**.
+   - Click **Upload Schema**, select the file `schema.json` and click **Upload**.
    - You can also upload the schema using `curl`:
 
         ```bash

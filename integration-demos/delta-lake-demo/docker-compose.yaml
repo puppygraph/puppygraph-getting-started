@@ -12,6 +12,7 @@ services:
   spark:
     image: apache/spark:3.5.6
     container_name: spark
+    user: root
     networks:
       deltalake_net:
     volumes:
@@ -22,7 +23,7 @@ services:
       AWS_SECRET_ACCESS_KEY: password
     command: ["bash", "-lc", "tail -f /dev/null"]
   puppygraph:
-    image: puppygraph/puppygraph:0.97a
+    image: puppygraph/puppygraph:latest
     container_name: puppygraph
     networks:
       deltalake_net:

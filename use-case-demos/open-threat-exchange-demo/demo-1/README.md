@@ -107,7 +107,7 @@ Log into the PuppyGraph Web UI at [http://localhost:8081](http://localhost:8081)
 
 Upload the schema:
 
-- Under **Upload Graph Schema JSON**, select `schema.json` and click **Upload**.
+- Click **Upload Schema**, select the file `schema.json` and click **Upload**.
 
 ## Querying via PuppyGraph
 

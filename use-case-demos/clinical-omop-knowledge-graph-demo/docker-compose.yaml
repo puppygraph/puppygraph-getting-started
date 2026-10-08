@@ -12,7 +12,7 @@ services:
       - "5432:5432"
     
   puppygraph:
-    image: puppygraph/puppygraph:0.109
+    image: puppygraph/puppygraph:latest
     container_name: puppygraph
     ports:
       - "8081:8081"
