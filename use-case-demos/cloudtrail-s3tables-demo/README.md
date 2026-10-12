@@ -127,7 +127,7 @@ Start PuppyGraph using Docker by running the following command:
   -p 8081:8081 -p 8182:8182 -p 7687:7687 \
   -e PUPPYGRAPH_PASSWORD=puppygraph123  -e QUERY_TIMEOUT=5m \
   -d --name puppy --rm --pull=always \
-  puppygraph/puppygraph:stable
+  puppygraph/puppygraph:latest
   ```
 
 ## Modeling the Graph
@@ -137,7 +137,7 @@ Start PuppyGraph using Docker by running the following command:
    - Password: `puppygraph123`
 
 2. Upload the schema `schema.json` after replacing the placeholders (`access-key`, `secret-key`, `table-bucket-arn`, and `region`) in the catalog with your actual AWS credentials, table bucket ARN, and region:
-   - Select the file `schema.json` in the Upload Graph Schema JSON section and click on Upload.
+   - Click **Upload Schema**, select the file `schema.json` and click **Upload**.
    - You can also use `curl` command to upload the schema in the terminal:
      ```bash
      curl -XPOST -H "content-type: application/json" \
