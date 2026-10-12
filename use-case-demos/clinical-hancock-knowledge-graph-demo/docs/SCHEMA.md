@@ -2,7 +2,7 @@
 
 ## Stack
 - Source: 4 JSON files → DuckDB (4 raw tables + 7 views)
-- Graph layer: PuppyGraph (logical mapping over Glue/Iceberg)
+- Graph layer: PuppyGraph (logical mapping over the Iceberg tables)
 
 ---
 

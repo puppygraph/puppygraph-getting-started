@@ -1,8 +1,6 @@
-schemas/
-
 hancock_demo.db
+parquet_data/
 
 .venv
-.env
 
 __pycache__/

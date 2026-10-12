@@ -9,145 +9,32 @@ This holistic view facilitates efficient management of supply and demand within 
 
 - **`README.md`**: Provides an overview of the project, including setup instructions and key details about the demo.
 - **`csv_data/`**: Contains randomly generated CSV files representing customer orders, product inventories, materials, and locations.
-                   These files are directly inserted into Amazon Redshift to model the supply chain's operations and logistical network, enabling data analysis and optimization.
+- **`sql/init.sql`**: Creates the `supply` schema and tables in PostgreSQL and imports the CSV data.
+- **`docker-compose.yaml`**: Starts PostgreSQL with the data loaded and PuppyGraph.
+- **`schema.json`**: Graph schema mapping the tables to vertices and edges.
 
 ## Prerequisites:
 - Docker
 - Docker Compose
 
 ## Note:
-The following Data Preparation step populate example data for this demo.
-For real-world applications, you can connect PuppyGraph directly to your existing Redshift, enabling seamless integration for real-time supply chain analytics, bypassing the need for these steps.
+The data preparation below populates example data for this demo.
+For real-world applications, you can connect PuppyGraph directly to your existing data warehouse, enabling real-time supply chain analytics without these steps.
 
 ## Demo Data Preparation
-1. Log in to Amazon Redshift Query Editor v2
-2. Create Schema:
-- Create a new schema (`supply`).
-3. Execute the following SQL commands to create tables:
-```sql
-CREATE TABLE supply.customers (
-    id bigint ENCODE az64,
-    customername character varying(64) ENCODE lzo,
-    city character varying(64) ENCODE lzo,
-    state character varying(64) ENCODE lzo,
-    location_id bigint ENCODE az64
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.distance (
-    id bigint ENCODE az64,
-    from_loc_id bigint ENCODE az64,
-    to_loc_id bigint ENCODE az64,
-    distance double precision ENCODE raw
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.factory (
-    id bigint ENCODE az64,
-    factoryname character varying(64) ENCODE lzo,
-    locationid bigint ENCODE az64
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.inventory (
-    id bigint ENCODE az64,
-    productid bigint ENCODE az64,
-    locationid bigint ENCODE az64,
-    quantity integer ENCODE az64,
-    lastupdated timestamp without time zone ENCODE az64,
-    status character varying(20) ENCODE lzo
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.locations (
-    id bigint ENCODE az64,
-    address character varying(256) ENCODE lzo,
-    city character varying(64) ENCODE lzo,
-    country character varying(64) ENCODE lzo,
-    lat double precision ENCODE raw,
-    lng double precision ENCODE raw
-) DISTSTYLE AUTO;
-    
-CREATE TABLE supply.materialfactory (
-    id bigint ENCODE az64,
-    material_id bigint ENCODE az64,
-    factory_id bigint ENCODE az64
-) DISTSTYLE AUTO;
-    
-CREATE TABLE supply.materialinventory (
-    id bigint ENCODE az64,
-    materialid bigint ENCODE az64,
-    locationid bigint ENCODE az64,
-    quantity bigint ENCODE az64,
-    lastupdated timestamp without time zone ENCODE az64,
-    status character varying(20) ENCODE lzo
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.materialorders (
-    id bigint ENCODE az64,
-    materialid bigint ENCODE az64,
-    factoryid bigint ENCODE az64,
-    quantity bigint ENCODE az64,
-    orderdate timestamp without time zone ENCODE az64,
-    expectedarrivaldate timestamp without time zone ENCODE az64,
-    status character varying(32) ENCODE lzo
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.materials (
-    id bigint ENCODE az64,
-    materialname character varying(64) ENCODE lzo
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.productcomposition (
-    id bigint ENCODE az64,
-    productid bigint ENCODE az64,
-    materialid bigint ENCODE az64,
-    quantity bigint ENCODE az64
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.products (
-    id bigint ENCODE az64,
-    productname character varying(64) ENCODE lzo,
-    price double precision ENCODE raw
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.productsales (
-    id bigint ENCODE az64,
-    productid bigint ENCODE az64,
-    customerid bigint ENCODE az64,
-    quantity bigint ENCODE az64,
-    saledate timestamp without time zone ENCODE az64,
-    totalprice double precision ENCODE raw
-) DISTSTYLE AUTO;
-
-CREATE TABLE supply.productshipment (
-    id bigint ENCODE az64,
-    productid bigint ENCODE az64,
-    fromlocationid bigint ENCODE az64,
-    tolocationid bigint ENCODE az64,
-    quantity bigint ENCODE az64,
-    shipmentdate timestamp without time zone ENCODE az64,
-    expectedarrivaldate timestamp without time zone ENCODE az64,
-    status character varying(32) ENCODE lzo
-) DISTSTYLE AUTO;
-
+Start PostgreSQL and PuppyGraph:
+```bash
+docker compose up -d
 ```
-4. Import CSV Data:
-- Use the "Load data" feature in Redshift Query Editor v2 to load the CSV data into the respective tables.
-![img_import.png](img/img_import.png)
-![img_import02.png](img/img_import02.png)
+PostgreSQL runs `sql/init.sql` on first start, which creates the `supply` schema and tables and imports the CSV files.
 
 ## Modeling the Graph
-1. Start the PuppyGraph:
-```bash
-sudo docker run -p 8080:8080 -p 8081:8081 -p 8182:8182 -p 7687:7687 -d --name puppy --rm puppygraph/puppygraph:stable
-```
-
-2. Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
+1. Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
 - Username: `puppygraph`
 - Password: `puppygraph123`
 
-3. Update `schema.json` with Redshift Credentials
-- Replace the `username`, `password` and `jdbcUri` fields in the `schema.json` file with your Redshift credentials.
-
-4. Upload the schema:
-- Select the file `schema.json` in the Upload Graph Schema JSON section and click on Upload.
+2. Upload the schema:
+- Click **Upload Schema**, select the file `schema.json` and click **Upload**.
 
 ## Querying the Graph
 
@@ -217,7 +104,7 @@ g.V("Product[88]")
 ```
 
 ## Cleanup and Teardown
-- To stop and remove the PuppyGraph container:
+- To stop and remove the containers:
 ```bash
-sudo docker stop puppy
+docker compose down
 ```
