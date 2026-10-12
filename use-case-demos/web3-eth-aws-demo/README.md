@@ -113,7 +113,7 @@ docker run \
    - Password: the `PUPPYGRAPH_PASSWORD` set in `.env` (default `puppygraph123`)
 
 2. Upload the schema `schema.json`:
-   - Select `schema.json` in the Upload Graph Schema JSON section and click **Upload**.
+   - Click **Upload Schema**, select `schema.json` and click **Upload**.
    - You can also use `curl` to upload the schema from the terminal. The first line loads `PUPPYGRAPH_PASSWORD` from `.env` into your shell:
      ```bash
      export $(grep '^PUPPYGRAPH_PASSWORD=' .env)
