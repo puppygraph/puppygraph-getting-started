@@ -16,7 +16,7 @@ This demo showcases real-time analysis by integrating StreamNative's Ursa cluste
 
 Before running this demo, ensure you have the following:
 
-* **AWS Account:**  You'll access to your AWS account for provisioning the [BYOC infrastructure](https://docs.streamnative.io/docs/byoc-overview).
+* **AWS Account:**  You'll access to your AWS account for provisioning the [BYOC infrastructure](https://docs.streamnative.io/cloud/clusters/byoc/byoc-overview).
 * **Docker:** To run PuppyGraph docker container.
 * **Python 3.7+:**  Ensure you have Python 3.7 or higher installed.
 * **Python Packages:** Install the necessary Python packages using `pip`:
@@ -27,7 +27,7 @@ pip install confluent-kafka
 
 ## Deploying Your StreamNative Ursa Cluster
 
-For deploying Ursa Cluster, follow the official [getting started guide](https://docs.streamnative.io/docs/quickstart-ursa) up to step 8. You can skip the Java and Maven prerequisites for this demo.
+For deploying Ursa Cluster, follow the official [getting started guide](https://docs.streamnative.io/cloud/get-started/quickstart-byoc-costprofile) up to step 8. You can skip the Java and Maven prerequisites for this demo.
 
 We also list the steps here.
 1. Sign up
@@ -100,7 +100,7 @@ SELECT count(*) FROM account;
 Run the following command to launch the PuppyGraph container. 
 
 ```bash
-docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 -e DATAACCESS_DATA_CACHE_STRATEGY=adaptive -d --name puppy --rm --pull=always puppygraph/puppygraph:stable
+docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 -e DATAACCESS_DATA_CACHE_STRATEGY=adaptive -d --name puppy --rm --pull=always puppygraph/puppygraph:latest
 ```
 
 Open your browser and navigate to localhost:8081 (or your instance's URL) to access the PuppyGraph login screen. Log into the PuppyGraph Web UI with the following credentials:
@@ -113,7 +113,7 @@ To connect PuppyGraph to the compacted data, you need to define the graph schema
 In `graph_schema.json`, replace all occurrences of `<Databricks catalog name>`, `<Databricks host>`, `<Databricks token>`, `<Region>`, `<Access key>`, `<Secret key>`, `<schema name>` with the actual values. For details about these fields, refer to the PuppyGraph 
 [connecting document](https://docs.puppygraph.com/connecting/connecting-to-delta-lake/).
 
-In Web UI, select the file `schema.json` in the `Upload Graph Schema JSON` section and click on Upload.
+In the Web UI, click **Upload Schema**, select the file `graph_schema.json` and click **Upload**.
 
 ## Query the graph
 You can try some [Gremlin or Cypher queries](https://docs.puppygraph.com/querying/) of the snapshot data for PuppyGraph.

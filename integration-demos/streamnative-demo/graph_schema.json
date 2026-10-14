@@ -1,950 +1,1258 @@
 {
-    "catalogs": [
-      {
-        "name": "<Databricks catalog name>",
-        "type": "deltalake",
-        "metastore": {
-          "type": "unity",
-          "host": "<Databricks host>",
-          "token": "<Databricks token>",
-          "databricksCatalogName": "<Databricks catalog name>"
-        },
-        "storage": {
-          "useInstanceProfile": "false",
-          "region": "<Region>",
-          "accessKey": "<Access key>",
-          "secretKey": "<Secret key>",
-          "enableSsl": "false",
-          "type": "S3"
-        }
+  "catalog": [
+    {
+      "name": "<Databricks catalog name>",
+      "type": "deltalake",
+      "metastore": {
+        "type": "unity",
+        "host": "<Databricks host>",
+        "token": "<Databricks token>",
+        "databricksCatalogName": "<Databricks catalog name>"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "region": "<Region>",
+        "accessKey": "<Access key>",
+        "secretKey": "<Secret key>",
+        "enableSsl": "false",
+        "type": "S3"
       }
-    ],
-    "graph": {
-      "vertices": [
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "loan",
+          "mappedField": [
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "loanAmount",
+              "targetFieldName": "loanAmount"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "loanUsage",
+              "targetFieldName": "loanUsage"
+            },
+            {
+              "sourceFieldName": "interestRate",
+              "targetFieldName": "interestRate"
+            }
+          ]
+        }
+      },
+      "label": "Loan",
+      "id": [
         {
-          "label": "Loan",
-          "oneToOne": {
-            "tableSource": {
-              "catalog": "<Databricks catalog name>",
-              "schema": "<schema name>",
-              "table": "loan"
-            },
-            "id": {
-              "fields": [
-                {
-                  "type": "Long",
-                  "field": "loanId",
-                  "alias": "loanId"
-                }
-              ]
-            },
-            "attributes": [
-              {
-                "type": "Double",
-                "field": "loanAmount",
-                "alias": "loanAmount"
-              },
-              {
-                "type": "Double",
-                "field": "balance",
-                "alias": "balance"
-              },
-              {
-                "type": "String",
-                "field": "createTime",
-                "alias": "createTime"
-              },
-              {
-                "type": "String",
-                "field": "loanUsage",
-                "alias": "loanUsage"
-              },
-              {
-                "type": "Double",
-                "field": "interestRate",
-                "alias": "interestRate"
-              }
-            ]
-          }
-        },
-        {
-          "label": "Person",
-          "oneToOne": {
-            "tableSource": {
-              "catalog": "<Databricks catalog name>",
-              "schema": "<schema name>",
-              "table": "person"
-            },
-            "id": {
-              "fields": [
-                {
-                  "type": "Long",
-                  "field": "personId",
-                  "alias": "personId"
-                }
-              ]
-            },
-            "attributes": [
-              {
-                "type": "String",
-                "field": "personName",
-                "alias": "personName"
-              },
-              {
-                "type": "Boolean",
-                "field": "isBlocked",
-                "alias": "isBlocked"
-              },
-              {
-                "type": "String",
-                "field": "createTime",
-                "alias": "createTime"
-              },
-              {
-                "type": "String",
-                "field": "gender",
-                "alias": "gender"
-              },
-              {
-                "type": "String",
-                "field": "birthday",
-                "alias": "birthday"
-              },
-              {
-                "type": "String",
-                "field": "country",
-                "alias": "country"
-              },
-              {
-                "type": "String",
-                "field": "city",
-                "alias": "city"
-              }
-            ]
-          }
-        },
-        {
-          "label": "Account",
-          "oneToOne": {
-            "tableSource": {
-              "catalog": "<Databricks catalog name>",
-              "schema": "<schema name>",
-              "table": "account"
-            },
-            "id": {
-              "fields": [
-                {
-                  "type": "Long",
-                  "field": "accountId",
-                  "alias": "accountId"
-                }
-              ]
-            },
-            "attributes": [
-              {
-                "type": "String",
-                "field": "createTime",
-                "alias": "createTime"
-              },
-              {
-                "type": "Boolean",
-                "field": "isBlocked",
-                "alias": "isBlocked"
-              },
-              {
-                "type": "String",
-                "field": "accountType",
-                "alias": "accountType"
-              },
-              {
-                "type": "String",
-                "field": "nickname",
-                "alias": "nickname"
-              },
-              {
-                "type": "String",
-                "field": "phonenum",
-                "alias": "phonenum"
-              },
-              {
-                "type": "String",
-                "field": "email",
-                "alias": "email"
-              },
-              {
-                "type": "String",
-                "field": "freqLoginType",
-                "alias": "freqLoginType"
-              },
-              {
-                "type": "String",
-                "field": "lastLoginTime",
-                "alias": "lastLoginTime"
-              },
-              {
-                "type": "String",
-                "field": "accountLevel",
-                "alias": "accountLevel"
-              }
-            ]
-          }
-        },
-        {
-          "label": "Company",
-          "oneToOne": {
-            "tableSource": {
-              "catalog": "<Databricks catalog name>",
-              "schema": "<schema name>",
-              "table": "company"
-            },
-            "id": {
-              "fields": [
-                {
-                  "type": "Long",
-                  "field": "companyId",
-                  "alias": "companyId"
-                }
-              ]
-            },
-            "attributes": [
-              {
-                "type": "String",
-                "field": "companyName",
-                "alias": "companyName"
-              },
-              {
-                "type": "Boolean",
-                "field": "isBlocked",
-                "alias": "isBlocked"
-              },
-              {
-                "type": "String",
-                "field": "createTime",
-                "alias": "createTime"
-              },
-              {
-                "type": "String",
-                "field": "country",
-                "alias": "country"
-              },
-              {
-                "type": "String",
-                "field": "city",
-                "alias": "city"
-              },
-              {
-                "type": "String",
-                "field": "business",
-                "alias": "business"
-              },
-              {
-                "type": "String",
-                "field": "description",
-                "alias": "description"
-              },
-              {
-                "type": "String",
-                "field": "url",
-                "alias": "url"
-              }
-            ]
-          }
-        },
-        {
-          "label": "Medium",
-          "oneToOne": {
-            "tableSource": {
-              "catalog": "<Databricks catalog name>",
-              "schema": "<schema name>",
-              "table": "medium"
-            },
-            "id": {
-              "fields": [
-                {
-                  "type": "Long",
-                  "field": "mediumId",
-                  "alias": "mediumId"
-                }
-              ]
-            },
-            "attributes": [
-              {
-                "type": "String",
-                "field": "mediumType",
-                "alias": "mediumType"
-              },
-              {
-                "type": "Boolean",
-                "field": "isBlocked",
-                "alias": "isBlocked"
-              },
-              {
-                "type": "String",
-                "field": "createTime",
-                "alias": "createTime"
-              },
-              {
-                "type": "String",
-                "field": "lastLoginTime",
-                "alias": "lastLoginTime"
-              },
-              {
-                "type": "String",
-                "field": "riskLevel",
-                "alias": "riskLevel"
-              }
-            ]
-          }
+          "name": "loanId",
+          "type": "Long"
         }
       ],
-      "edges": [
+      "attribute": [
         {
-          "label": "CompanyInvestCompany",
-          "fromVertex": "Company",
-          "toVertex": "Company",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "companyinvestcompany"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "companyinvestcompanyId",
-                "alias": "companyinvestcompanyId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "investorId",
-                "alias": "investorId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "companyId",
-                "alias": "companyId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "Double",
-              "field": "ratio",
-              "alias": "ratio"
-            },
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            }
-          ]
+          "name": "loanAmount",
+          "type": "Double"
         },
         {
-          "label": "CompanyOwnAccount",
-          "fromVertex": "Company",
-          "toVertex": "Account",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "companyownaccount"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "companyownaccountId",
-                "alias": "companyownaccountId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "companyId",
-                "alias": "companyId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "accountId",
-                "alias": "accountId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            }
-          ]
+          "name": "balance",
+          "type": "Double"
         },
         {
-          "label": "CompanyGuaranteeCompany",
-          "fromVertex": "Company",
-          "toVertex": "Company",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "companyguaranteecompany"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "companyguaranteecompanyId",
-                "alias": "companyguaranteecompanyId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "fromId",
-                "alias": "fromId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "toId",
-                "alias": "toId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            },
-            {
-              "type": "String",
-              "field": "relation",
-              "alias": "relation"
-            }
-          ]
+          "name": "createTime",
+          "type": "String"
         },
         {
-          "label": "AccountWithdrawAccount",
-          "fromVertex": "Account",
-          "toVertex": "Account",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "accountwithdrawaccount"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "accountwithdrawaccountId",
-                "alias": "accountwithdrawaccountId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "fromId",
-                "alias": "fromId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "toId",
-                "alias": "toId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "Double",
-              "field": "amount",
-              "alias": "amount"
-            },
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            }
-          ]
+          "name": "loanUsage",
+          "type": "String"
         },
         {
-          "label": "PersonGuaranteePerson",
-          "fromVertex": "Person",
-          "toVertex": "Person",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "personguaranteeperson"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "personguaranteepersonId",
-                "alias": "personguaranteepersonId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "fromId",
-                "alias": "fromId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "toId",
-                "alias": "toId"
-              }
-            ]
-          },
-          "attributes": [
+          "name": "interestRate",
+          "type": "Double"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "person",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
             },
             {
-              "type": "String",
-              "field": "relation",
-              "alias": "relation"
+              "sourceFieldName": "personName",
+              "targetFieldName": "personName"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "gender",
+              "targetFieldName": "gender"
+            },
+            {
+              "sourceFieldName": "birthday",
+              "targetFieldName": "birthday"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
             }
           ]
+        }
+      },
+      "label": "Person",
+      "id": [
+        {
+          "name": "personId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "personName",
+          "type": "String"
         },
         {
-          "label": "AccountRepayLoan",
-          "fromVertex": "Account",
-          "toVertex": "Loan",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "accountrepayloan"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "accountrepayloanId",
-                "alias": "accountrepayloanId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "accountId",
-                "alias": "accountId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "loanId",
-                "alias": "loanId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "Double",
-              "field": "amount",
-              "alias": "amount"
-            },
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            }
-          ]
+          "name": "isBlocked",
+          "type": "Boolean"
         },
         {
-          "label": "PersonInvestCompany",
-          "fromVertex": "Person",
-          "toVertex": "Company",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "personinvestcompany"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "personinvestcompanyId",
-                "alias": "personinvestcompanyId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "investorId",
-                "alias": "investorId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "companyId",
-                "alias": "companyId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "Double",
-              "field": "ratio",
-              "alias": "ratio"
-            },
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            }
-          ]
+          "name": "createTime",
+          "type": "String"
         },
         {
-          "label": "PersonApplyLoan",
-          "fromVertex": "Person",
-          "toVertex": "Loan",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "personapplyloan"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "personapplyloanId",
-                "alias": "personapplyloanId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "personId",
-                "alias": "personId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "loanId",
-                "alias": "loanId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            },
-            {
-              "type": "String",
-              "field": "org",
-              "alias": "org"
-            }
-          ]
+          "name": "gender",
+          "type": "String"
         },
         {
-          "label": "LoanDepositAccount",
-          "fromVertex": "Loan",
-          "toVertex": "Account",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "loandepositaccount"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "loandepositaccountId",
-                "alias": "loandepositaccountId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "loanId",
-                "alias": "loanId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "accountId",
-                "alias": "accountId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "Double",
-              "field": "amount",
-              "alias": "amount"
-            },
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            }
-          ]
+          "name": "birthday",
+          "type": "String"
         },
         {
-          "label": "PersonOwnAccount",
-          "fromVertex": "Person",
-          "toVertex": "Account",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "personownaccount"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "personownaccountId",
-                "alias": "personownaccountId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "personId",
-                "alias": "personId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "accountId",
-                "alias": "accountId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            }
-          ]
+          "name": "country",
+          "type": "String"
         },
         {
-          "label": "MediumSignInAccount",
-          "fromVertex": "Medium",
-          "toVertex": "Account",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "mediumsigninaccount"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "mediumsigninaccountId",
-                "alias": "mediumsigninaccountId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "mediumId",
-                "alias": "mediumId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "accountId",
-                "alias": "accountId"
-              }
-            ]
-          },
-          "attributes": [
+          "name": "city",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "account",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
             },
             {
-              "type": "String",
-              "field": "location",
-              "alias": "location"
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "accountType",
+              "targetFieldName": "accountType"
+            },
+            {
+              "sourceFieldName": "nickname",
+              "targetFieldName": "nickname"
+            },
+            {
+              "sourceFieldName": "phonenum",
+              "targetFieldName": "phonenum"
+            },
+            {
+              "sourceFieldName": "email",
+              "targetFieldName": "email"
+            },
+            {
+              "sourceFieldName": "freqLoginType",
+              "targetFieldName": "freqLoginType"
+            },
+            {
+              "sourceFieldName": "lastLoginTime",
+              "targetFieldName": "lastLoginTime"
+            },
+            {
+              "sourceFieldName": "accountLevel",
+              "targetFieldName": "accountLevel"
             }
           ]
+        }
+      },
+      "label": "Account",
+      "id": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "String"
         },
         {
-          "label": "AccountTransferAccount",
-          "fromVertex": "Account",
-          "toVertex": "Account",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "accounttransferaccount"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "accounttransferaccountId",
-                "alias": "accounttransferaccountId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "fromId",
-                "alias": "fromId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "toId",
-                "alias": "toId"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "Double",
-              "field": "amount",
-              "alias": "amount"
-            },
-            {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
-            },
-            {
-              "type": "String",
-              "field": "orderNum",
-              "alias": "orderNum"
-            },
-            {
-              "type": "String",
-              "field": "comment",
-              "alias": "comment"
-            },
-            {
-              "type": "String",
-              "field": "payType",
-              "alias": "payType"
-            },
-            {
-              "type": "String",
-              "field": "goodsType",
-              "alias": "goodsType"
-            }
-          ]
+          "name": "isBlocked",
+          "type": "Boolean"
         },
         {
-          "label": "CompanyApplyLoan",
-          "fromVertex": "Company",
-          "toVertex": "Loan",
-          "tableSource": {
-            "catalog": "<Databricks catalog name>",
-            "schema": "<schema name>",
-            "table": "companyapplyloan"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "companyapplyloanId",
-                "alias": "companyapplyloanId"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "companyId",
-                "alias": "companyId"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "loanId",
-                "alias": "loanId"
-              }
-            ]
-          },
-          "attributes": [
+          "name": "accountType",
+          "type": "String"
+        },
+        {
+          "name": "nickname",
+          "type": "String"
+        },
+        {
+          "name": "phonenum",
+          "type": "String"
+        },
+        {
+          "name": "email",
+          "type": "String"
+        },
+        {
+          "name": "freqLoginType",
+          "type": "String"
+        },
+        {
+          "name": "lastLoginTime",
+          "type": "String"
+        },
+        {
+          "name": "accountLevel",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "company",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "createTime",
-              "alias": "createTime"
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
             },
             {
-              "type": "String",
-              "field": "org",
-              "alias": "org"
+              "sourceFieldName": "companyName",
+              "targetFieldName": "companyName"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            },
+            {
+              "sourceFieldName": "business",
+              "targetFieldName": "business"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "url",
+              "targetFieldName": "url"
             }
           ]
+        }
+      },
+      "label": "Company",
+      "id": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "companyName",
+          "type": "String"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "createTime",
+          "type": "String"
+        },
+        {
+          "name": "country",
+          "type": "String"
+        },
+        {
+          "name": "city",
+          "type": "String"
+        },
+        {
+          "name": "business",
+          "type": "String"
+        },
+        {
+          "name": "description",
+          "type": "String"
+        },
+        {
+          "name": "url",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "medium",
+          "mappedField": [
+            {
+              "sourceFieldName": "mediumId",
+              "targetFieldName": "mediumId"
+            },
+            {
+              "sourceFieldName": "mediumType",
+              "targetFieldName": "mediumType"
+            },
+            {
+              "sourceFieldName": "isBlocked",
+              "targetFieldName": "isBlocked"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "lastLoginTime",
+              "targetFieldName": "lastLoginTime"
+            },
+            {
+              "sourceFieldName": "riskLevel",
+              "targetFieldName": "riskLevel"
+            }
+          ]
+        }
+      },
+      "label": "Medium",
+      "id": [
+        {
+          "name": "mediumId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "mediumType",
+          "type": "String"
+        },
+        {
+          "name": "isBlocked",
+          "type": "Boolean"
+        },
+        {
+          "name": "createTime",
+          "type": "String"
+        },
+        {
+          "name": "lastLoginTime",
+          "type": "String"
+        },
+        {
+          "name": "riskLevel",
+          "type": "String"
         }
       ]
     }
-  }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "companyinvestcompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyinvestcompanyId",
+              "targetFieldName": "companyinvestcompanyId"
+            },
+            {
+              "sourceFieldName": "investorId",
+              "targetFieldName": "investorId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "CompanyInvestCompany",
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Company",
+      "id": [
+        {
+          "name": "companyinvestcompanyId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "investorId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ratio",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "companyownaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyownaccountId",
+              "targetFieldName": "companyownaccountId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "CompanyOwnAccount",
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "companyownaccountId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "companyguaranteecompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyguaranteecompanyId",
+              "targetFieldName": "companyguaranteecompanyId"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        }
+      },
+      "label": "CompanyGuaranteeCompany",
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Company",
+      "id": [
+        {
+          "name": "companyguaranteecompanyId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "fromId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "toId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "String"
+        },
+        {
+          "name": "relation",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "accountwithdrawaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountwithdrawaccountId",
+              "targetFieldName": "accountwithdrawaccountId"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "AccountWithdrawAccount",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "accountwithdrawaccountId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "fromId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "toId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "personguaranteeperson",
+          "mappedField": [
+            {
+              "sourceFieldName": "personguaranteepersonId",
+              "targetFieldName": "personguaranteepersonId"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        }
+      },
+      "label": "PersonGuaranteePerson",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Person",
+      "id": [
+        {
+          "name": "personguaranteepersonId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "fromId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "toId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "String"
+        },
+        {
+          "name": "relation",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "accountrepayloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "accountrepayloanId",
+              "targetFieldName": "accountrepayloanId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "AccountRepayLoan",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Loan",
+      "id": [
+        {
+          "name": "accountrepayloanId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "personinvestcompany",
+          "mappedField": [
+            {
+              "sourceFieldName": "personinvestcompanyId",
+              "targetFieldName": "personinvestcompanyId"
+            },
+            {
+              "sourceFieldName": "investorId",
+              "targetFieldName": "investorId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "PersonInvestCompany",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Company",
+      "id": [
+        {
+          "name": "personinvestcompanyId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "investorId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ratio",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "personapplyloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "personapplyloanId",
+              "targetFieldName": "personapplyloanId"
+            },
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "org",
+              "targetFieldName": "org"
+            }
+          ]
+        }
+      },
+      "label": "PersonApplyLoan",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Loan",
+      "id": [
+        {
+          "name": "personapplyloanId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "personId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "String"
+        },
+        {
+          "name": "org",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "loandepositaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "loandepositaccountId",
+              "targetFieldName": "loandepositaccountId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "LoanDepositAccount",
+      "fromNodeLabel": "Loan",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "loandepositaccountId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "personownaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "personownaccountId",
+              "targetFieldName": "personownaccountId"
+            },
+            {
+              "sourceFieldName": "personId",
+              "targetFieldName": "personId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            }
+          ]
+        }
+      },
+      "label": "PersonOwnAccount",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "personownaccountId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "personId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "mediumsigninaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "mediumsigninaccountId",
+              "targetFieldName": "mediumsigninaccountId"
+            },
+            {
+              "sourceFieldName": "mediumId",
+              "targetFieldName": "mediumId"
+            },
+            {
+              "sourceFieldName": "accountId",
+              "targetFieldName": "accountId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "location",
+              "targetFieldName": "location"
+            }
+          ]
+        }
+      },
+      "label": "MediumSignInAccount",
+      "fromNodeLabel": "Medium",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "mediumsigninaccountId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "mediumId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "accountId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "String"
+        },
+        {
+          "name": "location",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "accounttransferaccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "accounttransferaccountId",
+              "targetFieldName": "accounttransferaccountId"
+            },
+            {
+              "sourceFieldName": "fromId",
+              "targetFieldName": "fromId"
+            },
+            {
+              "sourceFieldName": "toId",
+              "targetFieldName": "toId"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "orderNum",
+              "targetFieldName": "orderNum"
+            },
+            {
+              "sourceFieldName": "comment",
+              "targetFieldName": "comment"
+            },
+            {
+              "sourceFieldName": "payType",
+              "targetFieldName": "payType"
+            },
+            {
+              "sourceFieldName": "goodsType",
+              "targetFieldName": "goodsType"
+            }
+          ]
+        }
+      },
+      "label": "AccountTransferAccount",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "accounttransferaccountId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "fromId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "toId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "amount",
+          "type": "Double"
+        },
+        {
+          "name": "createTime",
+          "type": "String"
+        },
+        {
+          "name": "orderNum",
+          "type": "String"
+        },
+        {
+          "name": "comment",
+          "type": "String"
+        },
+        {
+          "name": "payType",
+          "type": "String"
+        },
+        {
+          "name": "goodsType",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "<Databricks catalog name>",
+          "schema": "<schema name>",
+          "table": "companyapplyloan",
+          "mappedField": [
+            {
+              "sourceFieldName": "companyapplyloanId",
+              "targetFieldName": "companyapplyloanId"
+            },
+            {
+              "sourceFieldName": "companyId",
+              "targetFieldName": "companyId"
+            },
+            {
+              "sourceFieldName": "loanId",
+              "targetFieldName": "loanId"
+            },
+            {
+              "sourceFieldName": "createTime",
+              "targetFieldName": "createTime"
+            },
+            {
+              "sourceFieldName": "org",
+              "targetFieldName": "org"
+            }
+          ]
+        }
+      },
+      "label": "CompanyApplyLoan",
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Loan",
+      "id": [
+        {
+          "name": "companyapplyloanId",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "companyId",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loanId",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "createTime",
+          "type": "String"
+        },
+        {
+          "name": "org",
+          "type": "String"
+        }
+      ]
+    }
+  ]
+}
