@@ -541,6 +541,10 @@
               "targetFieldName": "puppy_id_event_id"
             },
             {
+              "sourceFieldName": "resource_id",
+              "targetFieldName": "puppy_id_resource_id"
+            },
+            {
               "sourceFieldName": "event_id",
               "targetFieldName": "puppy_from_event_id"
             },
@@ -573,6 +577,10 @@
       "id": [
         {
           "name": "puppy_id_event_id",
+          "type": "STRING"
+        },
+        {
+          "name": "puppy_id_resource_id",
           "type": "STRING"
         }
       ],
