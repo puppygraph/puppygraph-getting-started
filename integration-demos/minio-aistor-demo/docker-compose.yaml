@@ -1,0 +1,38 @@
+services:
+  aistor:
+    image: ${AISTOR_IMAGE:-quay.io/minio/aistor/minio:latest}
+    ports:
+      - "127.0.0.1:${AISTOR_PORT:-9000}:9000"
+      - "127.0.0.1:${AISTOR_CONSOLE_PORT:-9001}:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - aistor-data:/mnt/data
+      - type: bind
+        source: ${AISTOR_LICENSE_PATH:-./minio.license}
+        target: /minio.license
+        read_only: true
+        bind:
+          create_host_path: false
+    command: [minio, server, /mnt/data, --console-address, ":9001", --license, /minio.license]
+    healthcheck:
+      test: [CMD, curl, -fsS, http://localhost:9000/minio/health/live]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  puppygraph:
+    image: ${PUPPYGRAPH_IMAGE:-puppygraph/puppygraph:latest}
+    ports:
+      - "127.0.0.1:${PUPPYGRAPH_PORT:-8081}:8081"
+      - "127.0.0.1:${GREMLIN_PORT:-8182}:8182"
+      - "127.0.0.1:${BOLT_PORT:-7687}:7687"
+    environment:
+      PUPPYGRAPH_USERNAME: puppygraph
+      PUPPYGRAPH_PASSWORD: puppygraph123
+      AI_API_KEY: ${AI_API_KEY:-}
+    depends_on:
+      aistor:
+        condition: service_healthy
+volumes:
+  aistor-data:
