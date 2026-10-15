@@ -31,7 +31,7 @@ TABLES = [
 ]
 
 DB_PATH = 'hancock_demo.db'
-S3_BUCKET = os.environ.get("S3_BUCKET", "puppy-aws-hcls-hancock-demo")
+S3_BUCKET = os.environ["S3_BUCKET"]
 S3_PREFIX = os.environ.get("S3_PREFIX", "parquet_data")
 GLUE_DATABASE = os.environ.get("GLUE_DATABASE", "hancock_db")
 GLUE_WAREHOUSE = f"s3://{S3_BUCKET}/warehouse/"

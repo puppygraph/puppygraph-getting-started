@@ -33,9 +33,14 @@ aws configure --profile hancock-demo
 export AWS_PROFILE=hancock-demo
 ```
 
-Configure your S3 and Glue settings (or leave defaults to use the demo bucket):
+Create an S3 bucket you own for the parquet files and the Iceberg warehouse. Bucket names are global across all AWS accounts, so replace `YOUR_ACCOUNT_ID` with your account ID:
 ```bash
-export S3_BUCKET=puppy-aws-hcls-hancock-demo
+aws s3 mb s3://hancock-demo-YOUR_ACCOUNT_ID --profile hancock-demo
+```
+
+Configure your S3 and Glue settings:
+```bash
+export S3_BUCKET=hancock-demo-YOUR_ACCOUNT_ID
 export S3_PREFIX=parquet_data
 export GLUE_DATABASE=hancock_db
 export OVERWRITE_GLUE_TABLES=true
