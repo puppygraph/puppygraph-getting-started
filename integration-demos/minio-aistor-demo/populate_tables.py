@@ -2,27 +2,21 @@ import argparse
 import os
 from pathlib import Path
 
+import pyarrow as pa
 import pyarrow.parquet as pq
 from pyiceberg.catalog.rest import RestCatalog
 
-from json_to_parquet import FIELDS, SCHEMAS
+TABLE_NAMES = ("Account", "Identity", "Session", "Event", "Resource", "EventResource")
 
 
-def iceberg_schema(name):
-    from pyiceberg.schema import Schema
-    from pyiceberg.types import BooleanType, NestedField, StringType, TimestampType
-
-    types = {
-        "STRING": StringType(),
-        "DATETIME": TimestampType(),
-        "BOOLEAN": BooleanType(),
-    }
-    return Schema(
-        *(
-            NestedField(i, field, types[kind], required=False)
-            for i, (field, kind) in enumerate(FIELDS[name.lower()], 1)
-        )
-    )
+def read_table(folder, name):
+    data = pq.read_table(folder / f"{name}.parquet")
+    timestamp_column = {"Session": "creation_date", "Event": "event_time"}.get(name)
+    if timestamp_column:
+        index = data.schema.get_field_index(timestamp_column)
+        values = data[timestamp_column].cast(pa.timestamp("us", tz="UTC"))
+        data = data.set_column(index, timestamp_column, values.cast(pa.timestamp("us")))
+    return data
 
 
 def catalog():
@@ -50,15 +44,12 @@ def catalog():
 
 
 def load(folder, namespace="cloudtrail", replace=False):
-    tables = {
-        name: pq.read_table(folder / f"{name}.parquet").cast(schema)
-        for name, schema in SCHEMAS.items()
-    }
+    tables = {name: read_table(folder, name) for name in TABLE_NAMES}
     connection = catalog()
     connection.create_namespace_if_not_exists(namespace)
     if not replace:
         existing = [
-            name for name in SCHEMAS if connection.table_exists((namespace, name))
+            name for name in TABLE_NAMES if connection.table_exists((namespace, name))
         ]
         if existing:
             raise ValueError(
@@ -66,7 +57,7 @@ def load(folder, namespace="cloudtrail", replace=False):
             )
     for name, data in tables.items():
         table = connection.create_table_if_not_exists(
-            (namespace, name), schema=iceberg_schema(name)
+            (namespace, name), schema=data.schema
         )
         table.overwrite(data)
         actual = table.scan().count()

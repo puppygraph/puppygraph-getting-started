@@ -31,6 +31,7 @@ Download and extract the public archive (about 240 MiB):
 curl -fL https://summitroute.com/downloads/flaws_cloudtrail_logs.tar -o flaws_cloudtrail_logs.tar
 mkdir -p json_data
 tar -xf flaws_cloudtrail_logs.tar --strip-components=1 -C json_data
+gunzip json_data/*.gz
 ```
 
 Create a Python environment and convert the logs into six Parquet files:
@@ -42,9 +43,9 @@ pip install -r requirements.txt
 python json_to_parquet.py json_data parquet_data
 ```
 
-The converter reads JSON and gzipped JSON, so a separate `gunzip` step is
-unnecessary. It holds normalized rows in memory during conversion. Missing
-sessions and MFA values remain unknown; account contact details are left empty.
+The parser is the original CloudTrail demo script. It keeps the first encountered
+event/resource relationship for each resource and generates random resource IDs.
+Account aliases, email addresses, and phone numbers are synthetic demo values.
 
 ## Getting Started
 
@@ -102,18 +103,22 @@ LIMIT 100
 
 ### If a given resource is compromised, who is the blast radius?
 
+Select a Resource node in the first query result and copy its `resource_id` into
+the query below. IDs are generated during conversion and differ between runs.
+
 ```cypher
 MATCH path = (a:Account)-[:HasIdentity]->(i:Identity)
              -[:HasSession]->(s:Session)
              -[:RecordsEvent]->(e:Event)
              -[:OperatesOn]->(r:Resource {resource_id:
-'3df9b313bb2514d0d12686ca1c54d8475bcb9dba3237911390997b546cd5acec'})
+'<resource_id>'})
 RETURN path
 ```
 
 These paths show observed API activity, including attempted operations. They do
-not establish permissions, compromise, or blast radius. Resource extraction
-covers common CloudTrail fields; the graph is not a complete AWS access model.
+not establish permissions, compromise, or blast radius. The parser keeps only
+one event per resource, so these results illustrate the workflow rather than
+all observed interactions.
 
 For optional AI Chat, configure a provider key using the
 [PuppyGraph AI configuration guide](https://docs.puppygraph.com/ai/built-in-chatbot/),
