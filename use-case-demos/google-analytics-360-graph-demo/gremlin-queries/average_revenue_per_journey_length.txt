@@ -1,0 +1,19 @@
+g.E().
+  has('total_revenue', P.gt(0)).
+  group().
+    by('visit_id').
+    by(__.values('total_revenue').fold()).
+  unfold().
+  project('length', 'revenue').
+    by(select(values).count(local)).       
+    by(select(values).sum(local)).         
+  group().
+    by('length').
+    by(__.select('revenue').mean()).
+  unfold().
+  project('length', 'avg_revenue').
+    by(select(keys)).
+    by(select(values)).
+  order().
+    by('length', asc).
+  toList()
