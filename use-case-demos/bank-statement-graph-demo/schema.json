@@ -1,0 +1,1303 @@
+{
+  "catalog": [
+    {
+      "name": "bank_data",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "myuser",
+        "password": "mypassword",
+        "jdbcUri": "jdbc:postgresql://postgres:5432/myapp_db",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "accounts",
+          "mappedField": [
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "account_holder",
+              "targetFieldName": "account_holder"
+            },
+            {
+              "sourceFieldName": "account_number",
+              "targetFieldName": "account_number"
+            },
+            {
+              "sourceFieldName": "address",
+              "targetFieldName": "address"
+            },
+            {
+              "sourceFieldName": "business_name",
+              "targetFieldName": "business_name"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_accounts",
+          "mappedField": [
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "account_holder",
+              "targetFieldName": "account_holder"
+            },
+            {
+              "sourceFieldName": "account_number",
+              "targetFieldName": "account_number"
+            },
+            {
+              "sourceFieldName": "address",
+              "targetFieldName": "address"
+            },
+            {
+              "sourceFieldName": "business_name",
+              "targetFieldName": "business_name"
+            }
+          ]
+        }
+      },
+      "label": "Account",
+      "id": [
+        {
+          "name": "account_id",
+          "type": "String"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "account_holder",
+          "type": "String"
+        },
+        {
+          "name": "account_number",
+          "type": "String"
+        },
+        {
+          "name": "address",
+          "type": "String"
+        },
+        {
+          "name": "business_name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "statements",
+          "mappedField": [
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "filename",
+              "targetFieldName": "filename"
+            },
+            {
+              "sourceFieldName": "page_no",
+              "targetFieldName": "page_no"
+            },
+            {
+              "sourceFieldName": "statement_date",
+              "targetFieldName": "statement_date"
+            },
+            {
+              "sourceFieldName": "statement_number",
+              "targetFieldName": "statement_number"
+            },
+            {
+              "sourceFieldName": "statement_period",
+              "targetFieldName": "statement_period"
+            },
+            {
+              "sourceFieldName": "opening_balance",
+              "targetFieldName": "opening_balance"
+            },
+            {
+              "sourceFieldName": "closing_balance",
+              "targetFieldName": "closing_balance"
+            },
+            {
+              "sourceFieldName": "total_deposits",
+              "targetFieldName": "total_deposits"
+            },
+            {
+              "sourceFieldName": "total_withdrawals",
+              "targetFieldName": "total_withdrawals"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_statements",
+          "mappedField": [
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "filename",
+              "targetFieldName": "filename"
+            },
+            {
+              "sourceFieldName": "page_no",
+              "targetFieldName": "page_no"
+            },
+            {
+              "sourceFieldName": "statement_date",
+              "targetFieldName": "statement_date"
+            },
+            {
+              "sourceFieldName": "statement_number",
+              "targetFieldName": "statement_number"
+            },
+            {
+              "sourceFieldName": "statement_period",
+              "targetFieldName": "statement_period"
+            },
+            {
+              "sourceFieldName": "opening_balance",
+              "targetFieldName": "opening_balance"
+            },
+            {
+              "sourceFieldName": "closing_balance",
+              "targetFieldName": "closing_balance"
+            },
+            {
+              "sourceFieldName": "total_deposits",
+              "targetFieldName": "total_deposits"
+            },
+            {
+              "sourceFieldName": "total_withdrawals",
+              "targetFieldName": "total_withdrawals"
+            }
+          ]
+        }
+      },
+      "label": "Statement",
+      "id": [
+        {
+          "name": "statement_id",
+          "type": "String"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "account_id",
+          "type": "String"
+        },
+        {
+          "name": "filename",
+          "type": "String"
+        },
+        {
+          "name": "page_no",
+          "type": "String"
+        },
+        {
+          "name": "statement_date",
+          "type": "String"
+        },
+        {
+          "name": "statement_number",
+          "type": "String"
+        },
+        {
+          "name": "statement_period",
+          "type": "String"
+        },
+        {
+          "name": "opening_balance",
+          "type": "String"
+        },
+        {
+          "name": "closing_balance",
+          "type": "String"
+        },
+        {
+          "name": "total_deposits",
+          "type": "String"
+        },
+        {
+          "name": "total_withdrawals",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "counterparty",
+              "targetFieldName": "counterparty"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "local_transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "counterparty",
+              "targetFieldName": "counterparty"
+            }
+          ]
+        }
+      },
+      "label": "Counterparty",
+      "id": [
+        {
+          "name": "counterparty",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "counterparty",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            },
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "filename",
+              "targetFieldName": "filename"
+            },
+            {
+              "sourceFieldName": "row_index",
+              "targetFieldName": "row_index"
+            },
+            {
+              "sourceFieldName": "txn_date",
+              "targetFieldName": "txn_date"
+            },
+            {
+              "sourceFieldName": "value_date",
+              "targetFieldName": "value_date"
+            },
+            {
+              "sourceFieldName": "cheque_no",
+              "targetFieldName": "cheque_no"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "branch_code",
+              "targetFieldName": "branch_code"
+            },
+            {
+              "sourceFieldName": "debit",
+              "targetFieldName": "debit"
+            },
+            {
+              "sourceFieldName": "credit",
+              "targetFieldName": "credit"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            },
+            {
+              "sourceFieldName": "counterparty",
+              "targetFieldName": "counterparty"
+            },
+            {
+              "sourceFieldName": "payment_rail",
+              "targetFieldName": "payment_rail"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            },
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "filename",
+              "targetFieldName": "filename"
+            },
+            {
+              "sourceFieldName": "row_index",
+              "targetFieldName": "row_index"
+            },
+            {
+              "sourceFieldName": "txn_date",
+              "targetFieldName": "txn_date"
+            },
+            {
+              "sourceFieldName": "value_date",
+              "targetFieldName": "value_date"
+            },
+            {
+              "sourceFieldName": "cheque_no",
+              "targetFieldName": "cheque_no"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "branch_code",
+              "targetFieldName": "branch_code"
+            },
+            {
+              "sourceFieldName": "debit",
+              "targetFieldName": "debit"
+            },
+            {
+              "sourceFieldName": "credit",
+              "targetFieldName": "credit"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            },
+            {
+              "sourceFieldName": "counterparty",
+              "targetFieldName": "counterparty"
+            },
+            {
+              "sourceFieldName": "payment_rail",
+              "targetFieldName": "payment_rail"
+            }
+          ]
+        }
+      },
+      "label": "Transaction",
+      "id": [
+        {
+          "name": "transaction_id",
+          "type": "String"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "statement_id",
+          "type": "String"
+        },
+        {
+          "name": "account_id",
+          "type": "String"
+        },
+        {
+          "name": "filename",
+          "type": "String"
+        },
+        {
+          "name": "row_index",
+          "type": "Int"
+        },
+        {
+          "name": "txn_date",
+          "type": "String"
+        },
+        {
+          "name": "value_date",
+          "type": "String"
+        },
+        {
+          "name": "cheque_no",
+          "type": "String"
+        },
+        {
+          "name": "description",
+          "type": "String"
+        },
+        {
+          "name": "branch_code",
+          "type": "String"
+        },
+        {
+          "name": "debit",
+          "type": "String"
+        },
+        {
+          "name": "credit",
+          "type": "String"
+        },
+        {
+          "name": "balance",
+          "type": "String"
+        },
+        {
+          "name": "counterparty",
+          "type": "String"
+        },
+        {
+          "name": "payment_rail",
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "statements",
+          "mappedField": [
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_statements",
+          "mappedField": [
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            }
+          ]
+        }
+      },
+      "label": "OwnsStatement",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Statement",
+      "id": [
+        {
+          "name": "id",
+          "type": "String"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "account_id",
+          "type": "String"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "statement_id",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            },
+            {
+              "sourceFieldName": "txn_date",
+              "targetFieldName": "txn_date"
+            },
+            {
+              "sourceFieldName": "value_date",
+              "targetFieldName": "value_date"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "debit",
+              "targetFieldName": "debit"
+            },
+            {
+              "sourceFieldName": "credit",
+              "targetFieldName": "credit"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            },
+            {
+              "sourceFieldName": "txn_date",
+              "targetFieldName": "txn_date"
+            },
+            {
+              "sourceFieldName": "value_date",
+              "targetFieldName": "value_date"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "debit",
+              "targetFieldName": "debit"
+            },
+            {
+              "sourceFieldName": "credit",
+              "targetFieldName": "credit"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            }
+          ]
+        }
+      },
+      "label": "HasTransaction",
+      "fromNodeLabel": "Statement",
+      "toNodeLabel": "Transaction",
+      "id": [
+        {
+          "name": "id",
+          "type": "String"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "statement_id",
+          "type": "String"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "transaction_id",
+          "type": "String"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "txn_date",
+          "type": "String"
+        },
+        {
+          "name": "value_date",
+          "type": "String"
+        },
+        {
+          "name": "description",
+          "type": "String"
+        },
+        {
+          "name": "debit",
+          "type": "String"
+        },
+        {
+          "name": "credit",
+          "type": "String"
+        },
+        {
+          "name": "balance",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "base_transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            }
+          ]
+        }
+      },
+      "label": "OwnsTransaction",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Transaction",
+      "id": [
+        {
+          "name": "id",
+          "type": "String"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "account_id",
+          "type": "String"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "transaction_id",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            },
+            {
+              "sourceFieldName": "counterparty",
+              "targetFieldName": "counterparty"
+            },
+            {
+              "sourceFieldName": "payment_rail",
+              "targetFieldName": "payment_rail"
+            }
+          ]
+        },
+        "localDataSource": {
+          "enabled": true,
+          "localTableName": "local_transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            },
+            {
+              "sourceFieldName": "counterparty",
+              "targetFieldName": "counterparty"
+            },
+            {
+              "sourceFieldName": "payment_rail",
+              "targetFieldName": "payment_rail"
+            }
+          ]
+        }
+      },
+      "label": "TransactsWith",
+      "fromNodeLabel": "Transaction",
+      "toNodeLabel": "Counterparty",
+      "fromKey": [
+        {
+          "name": "transaction_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "counterparty",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "payment_rail",
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "localTable": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "accounts",
+          "mappedField": [
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "account_holder",
+              "targetFieldName": "account_holder"
+            },
+            {
+              "sourceFieldName": "account_number",
+              "targetFieldName": "account_number"
+            },
+            {
+              "sourceFieldName": "address",
+              "targetFieldName": "address"
+            },
+            {
+              "sourceFieldName": "business_name",
+              "targetFieldName": "business_name"
+            }
+          ]
+        }
+      },
+      "name": "base_accounts",
+      "column": [
+        {
+          "name": "account_id",
+          "type": "String"
+        },
+        {
+          "name": "account_holder",
+          "type": "String"
+        },
+        {
+          "name": "account_number",
+          "type": "String"
+        },
+        {
+          "name": "address",
+          "type": "String"
+        },
+        {
+          "name": "business_name",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "account_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "statements",
+          "mappedField": [
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "filename",
+              "targetFieldName": "filename"
+            },
+            {
+              "sourceFieldName": "page_no",
+              "targetFieldName": "page_no"
+            },
+            {
+              "sourceFieldName": "statement_date",
+              "targetFieldName": "statement_date"
+            },
+            {
+              "sourceFieldName": "statement_number",
+              "targetFieldName": "statement_number"
+            },
+            {
+              "sourceFieldName": "statement_period",
+              "targetFieldName": "statement_period"
+            },
+            {
+              "sourceFieldName": "opening_balance",
+              "targetFieldName": "opening_balance"
+            },
+            {
+              "sourceFieldName": "closing_balance",
+              "targetFieldName": "closing_balance"
+            },
+            {
+              "sourceFieldName": "total_deposits",
+              "targetFieldName": "total_deposits"
+            },
+            {
+              "sourceFieldName": "total_withdrawals",
+              "targetFieldName": "total_withdrawals"
+            }
+          ]
+        }
+      },
+      "name": "base_statements",
+      "column": [
+        {
+          "name": "statement_id",
+          "type": "String"
+        },
+        {
+          "name": "account_id",
+          "type": "String"
+        },
+        {
+          "name": "filename",
+          "type": "String"
+        },
+        {
+          "name": "page_no",
+          "type": "String"
+        },
+        {
+          "name": "statement_date",
+          "type": "String"
+        },
+        {
+          "name": "statement_number",
+          "type": "String"
+        },
+        {
+          "name": "statement_period",
+          "type": "String"
+        },
+        {
+          "name": "opening_balance",
+          "type": "String"
+        },
+        {
+          "name": "closing_balance",
+          "type": "String"
+        },
+        {
+          "name": "total_deposits",
+          "type": "String"
+        },
+        {
+          "name": "total_withdrawals",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "statement_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            },
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "filename",
+              "targetFieldName": "filename"
+            },
+            {
+              "sourceFieldName": "row_index",
+              "targetFieldName": "row_index"
+            },
+            {
+              "sourceFieldName": "txn_date",
+              "targetFieldName": "txn_date"
+            },
+            {
+              "sourceFieldName": "value_date",
+              "targetFieldName": "value_date"
+            },
+            {
+              "sourceFieldName": "cheque_no",
+              "targetFieldName": "cheque_no"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "branch_code",
+              "targetFieldName": "branch_code"
+            },
+            {
+              "sourceFieldName": "debit",
+              "targetFieldName": "debit"
+            },
+            {
+              "sourceFieldName": "credit",
+              "targetFieldName": "credit"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            }
+          ]
+        }
+      },
+      "name": "base_transactions",
+      "column": [
+        {
+          "name": "transaction_id",
+          "type": "String"
+        },
+        {
+          "name": "statement_id",
+          "type": "String"
+        },
+        {
+          "name": "account_id",
+          "type": "String"
+        },
+        {
+          "name": "filename",
+          "type": "String"
+        },
+        {
+          "name": "row_index",
+          "type": "Int"
+        },
+        {
+          "name": "txn_date",
+          "type": "String"
+        },
+        {
+          "name": "value_date",
+          "type": "String"
+        },
+        {
+          "name": "cheque_no",
+          "type": "String"
+        },
+        {
+          "name": "description",
+          "type": "String"
+        },
+        {
+          "name": "branch_code",
+          "type": "String"
+        },
+        {
+          "name": "debit",
+          "type": "String"
+        },
+        {
+          "name": "credit",
+          "type": "String"
+        },
+        {
+          "name": "balance",
+          "type": "String"
+        },
+        {
+          "name": "counterparty",
+          "type": "String"
+        },
+        {
+          "name": "payment_rail",
+          "type": "String"
+        }
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 10,
+            "column": [
+              "transaction_id"
+            ]
+          }
+        }
+      ],
+      "partitionBy": {},
+      "replicationNum": 1
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "bank_data",
+          "schema": "public",
+          "table": "transactions",
+          "mappedField": [
+            {
+              "sourceFieldName": "counterparty",
+              "targetFieldName": "counterparty"
+            },
+            {
+              "sourceFieldName": "transaction_id",
+              "targetFieldName": "transaction_id"
+            },
+            {
+              "sourceFieldName": "statement_id",
+              "targetFieldName": "statement_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "filename",
+              "targetFieldName": "filename"
+            },
+            {
+              "sourceFieldName": "row_index",
+              "targetFieldName": "row_index"
+            },
+            {
+              "sourceFieldName": "txn_date",
+              "targetFieldName": "txn_date"
+            },
+            {
+              "sourceFieldName": "value_date",
+              "targetFieldName": "value_date"
+            },
+            {
+              "sourceFieldName": "cheque_no",
+              "targetFieldName": "cheque_no"
+            },
+            {
+              "sourceFieldName": "description",
+              "targetFieldName": "description"
+            },
+            {
+              "sourceFieldName": "branch_code",
+              "targetFieldName": "branch_code"
+            },
+            {
+              "sourceFieldName": "debit",
+              "targetFieldName": "debit"
+            },
+            {
+              "sourceFieldName": "credit",
+              "targetFieldName": "credit"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            },
+            {
+              "sourceFieldName": "payment_rail",
+              "targetFieldName": "payment_rail"
+            },
+            {
+              "sourceFieldName": "raw_json",
+              "targetFieldName": "raw_json"
+            }
+          ]
+        }
+      },
+      "name": "local_transactions",
+      "column": [
+        {
+          "name": "counterparty",
+          "type": "STRING"
+        },
+        {
+          "name": "transaction_id",
+          "type": "STRING"
+        },
+        {
+          "name": "statement_id",
+          "type": "STRING"
+        },
+        {
+          "name": "account_id",
+          "type": "STRING"
+        },
+        {
+          "name": "filename",
+          "type": "STRING"
+        },
+        {
+          "name": "row_index",
+          "type": "INT"
+        },
+        {
+          "name": "txn_date",
+          "type": "STRING"
+        },
+        {
+          "name": "value_date",
+          "type": "STRING"
+        },
+        {
+          "name": "cheque_no",
+          "type": "STRING"
+        },
+        {
+          "name": "description",
+          "type": "STRING"
+        },
+        {
+          "name": "branch_code",
+          "type": "STRING"
+        },
+        {
+          "name": "debit",
+          "type": "STRING"
+        },
+        {
+          "name": "credit",
+          "type": "STRING"
+        },
+        {
+          "name": "balance",
+          "type": "STRING"
+        },
+        {
+          "name": "payment_rail",
+          "type": "STRING"
+        },
+        {
+          "name": "raw_json",
+          "type": "STRING"
+        }
+      ],
+      "indexColumn": [
+        "counterparty"
+      ],
+      "distributeBy": [
+        {
+          "bucket": {
+            "num": 12,
+            "column": [
+              "counterparty"
+            ]
+          }
+        }
+      ],
+      "orderBy": [
+        {
+          "column": "counterparty"
+        }
+      ],
+      "colocateKey": "co_dvs9qr_counterparty",
+      "replicationNum": 1
+    }
+  ]
+}
