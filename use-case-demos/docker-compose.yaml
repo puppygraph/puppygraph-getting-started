@@ -1,0 +1,43 @@
+# Try the PuppyGraph AI Assistant against your Roblox MySQL dataset.
+# 
+# Quick start:
+#   export ANTHROPIC_API_KEY=sk-ant-...
+#   docker compose up -d
+#
+# Open http://localhost:8081 and log in (puppygraph / puppygraph123).
+
+services:
+  puppygraph:
+    image: ${PUPPYGRAPH_IMAGE:-puppygraph/puppygraph:latest}
+    container_name: ai-agent-puppygraph
+    environment:
+      PUPPYGRAPH_USERNAME: puppygraph
+      PUPPYGRAPH_PASSWORD: puppygraph12345
+      AI_ENABLED: "true"
+      AI_PROVIDER: anthropic
+      AI_MODEL: ${AI_MODEL:-claude-opus-4-8}
+      AI_MODELS: ${AI_MODELS:-claude-opus-4-8,claude-sonnet-4-6,claude-haiku-4-5-20251001}
+      AI_API_KEY: "<YOUR_PUPPYGRAPH_API_KEY>"
+    ports:
+      - "8081:8081"   # Web UI
+      - "8182:8182"   # Gremlin
+      - "7687:7687"   # Bolt (Neo4j-compatible)
+    networks:
+      - ai-agent-net
+
+  mysql:
+    image: mysql:8.0.33
+    container_name: mysql-server
+    environment:
+      - MYSQL_ROOT_PASSWORD=Secret_Password  # Your original schema password
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpassword
+      - MYSQL_DATABASE=roblox_economy  # Your database name
+    networks:
+      - ai-agent-net
+    ports:
+      - "3306:3306"
+
+networks:
+  ai-agent-net:
+    name: ai-agent-net
