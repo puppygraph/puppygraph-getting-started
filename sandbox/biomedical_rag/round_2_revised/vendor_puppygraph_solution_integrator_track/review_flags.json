@@ -420,6 +420,7 @@
         "required": true,
         "reasons": [
           "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "The review proposed A41.02 (sepsis due to MRSA) as principal; it is not in the final coded set, which keeps the billed principal L03.119 and R65.21 without a sepsis code; confirm the sepsis coding and sequencing before applying.",
           "Billed E87.2 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
           "The review proposed R65.21 as principal instead of the billed L03.119; the billed principal is kept and R65.21 is listed as secondary; confirm the principal.",
           "The patient's documentation (Procedure Note - Split-Thickness Skin Graft to Right Thigh, p.100) contradicts billed 0JBM0ZZ, but the review keeps it; confirm."
