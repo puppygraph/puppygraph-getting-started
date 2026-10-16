@@ -1,0 +1,192 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_APC_04",
+  "review_type": "APC",
+  "determination": "Finding",
+  "concept_id": "APC-04",
+  "target_cpt_hcpcs": "64721-LT",
+  "action": "remove",
+  "corrected_cpt_hcpcs": null,
+  "adjusted_apc_code": null,
+  "rationale": "Billed line: 64721-RT (Neuroplasty/transposition; median nerve at carpal tunnel). Governing policy (APC-04) requires that when bilateral carpal tunnel release is performed in the same session, each laterality must be supported independently by (1) documented history, (2) positive provocative testing (Tinel's/Phalen's), and (3) a failed conservative trial specific to that side. Evidence: the policy language (APC-04) requires independent medical necessity per side (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-04-4). The medical record documents that the right hand meets those criteria: pre-op history documents severe, EMG-confirmed neuropathy and a completed 6-week trial of nighttime splinting that failed (NOTE-APC-medical-records-MR_APC_04.pdf-n25 and -n4), and physical exam documents positive provocative tests on the right (NOTE-APC-medical-records-MR_APC_04.pdf-n4). The operative note and operative summary document that an open carpal tunnel release was performed on the right and describe intraoperative findings of a markedly flattened, hyperemic median nerve consistent with severe chronic compression (NOTE-APC-medical-records-MR_APC_04.pdf-n25). Taken together, the right-sided documentation satisfies the APC-04 policy elements for an independent, medically necessary procedure on the right; therefore the billed 64721-RT is supported and requires no correction. Key supporting citations: policy APC-04 (requires independent documentation per side); H&P and History (failed 6-week splinting, EMG severe on right); Physical exam (positive Tinel's/Phalen's on right); Operative note (procedure performed and intraoperative findings consistent with severe right median nerve compression). Line reviewed: billed CPT 64721-LT (Neuroplasty/transposition; median nerve at carpal tunnel). Governing policy (APC-04) requires that when bilateral carpal tunnel releases are performed in the same session, each side must have independent medical necessity documented per side: a documented history, positive provocative testing (Tinel's/Phalen's), and a failed conservative treatment trial specific to that side (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-04-4). Operative and pre-op documentation differentiate the two sides: the right side meets those criteria (severe EMG/NCS-confirmed neuropathy with positive provocative testing and a documented 6-week night-splint trial) but the left side is documented only as mild/borderline and lacks the required side-specific conservative-trial and positive provocative-testing documentation. Evidence and reasoning: - Governing policy requirement: APC concept requires each laterality to have its own independently supported medical necessity including documented history, positive provocative testing, and a failed conservative trial (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-04-4) [policy text]. See ev1. - Operative Note documents left-side findings as mild with only electrodiagnostic slowing and intermittent non-limiting symptoms, and that the left was \"offered at the same operative setting\" (Operative Note, p.24) - this does not show the positive provocative tests or failed conservative trial required per policy (NOTE-APC-medical-records-MR_APC_04.pdf-n25). See ev2. - History & Physical documents a supervised 6-week night-splinting trial for the right hand only and describes the left as having only intermittent, non-limiting tingling (History & Physical, p.4) - no documented conservative trial for left (NOTE-APC-medical-records-MR_APC_04.pdf-n4). See ev3. - Physical exam documents left provocative testing as equivocal/negative (Left hand: Tinel's and Phalen's tests equivocal/negative, no thenar atrophy, normal two-point discrimination, full grip strength) (History & Physical, p.5) - failing to meet the policy requirement for positive provocative testing on that side (NOTE-APC-medical-records-MR_APC_04.pdf-n4). See ev4. - Informed consent references proceeding with the contralateral release without a separately itemized discussion of left-hand risks/alternatives, which does not substitute for the independent per-side medical necessity the policy mandates (Informed Consent, p.11) (NOTE-APC-medical-records-MR_APC_04.pdf-n10). See ev5. Conclusion: the left-side line (64721-LT) lacks the independent, side-specific medical necessity documentation required by the governing APC policy. The billed left-side procedure therefore does not meet coverage criteria and is a Finding. Recommended billing correction: remove the 64721-LT line (no replacement CPT code is supported by the record). Right-side billing (64721-RT) remains supported by the record (see Operative Note / H&P for right-side severe disease and failed conservative care) (NOTE-APC-medical-records-MR_APC_04.pdf-n25; NOTE-APC-medical-records-MR_APC_04.pdf-n4).",
+  "evidence_ids": [
+    "ev_0001",
+    "ev_0002",
+    "ev_0003",
+    "ev_0004",
+    "ev_0005",
+    "ev_0006",
+    "ev_0007",
+    "ev_0008",
+    "ev_0009"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "4",
+      "page_confirmed": true,
+      "quote": "She completed a supervised 6-week course of nighttime wrist splinting for the right hand under the referring physician's care beginning 01/2026, documented in outside records, with only marginal, transient improvement before symptoms returned to baseline.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "5",
+      "page_confirmed": true,
+      "quote": "Right hand: positive Tinel's sign at the wrist, positive Phalen's test reproducing symptoms within 8 seconds, decreased two-point discrimination in the median distribution, mild thenar atrophy noted. Left hand: Tinel's and Phalen's tests equivocal/negative, no thenar atrophy, normal two-point discrimination, full grip strength.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "24",
+      "page_confirmed": true,
+      "quote": "PROCEDURE PERFORMED: Open carpal tunnel release, right hand; open carpal tunnel release, left hand",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "25",
+      "page_confirmed": true,
+      "quote": "Right: markedly flattened, hyperemic median nerve proximal to a thickened transverse carpal ligament, consistent with severe chronic compression. Left: grossly normal-appearing median nerve and carpal tunnel contents without evidence of significant chronic compressive change.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "24",
+      "page_confirmed": true,
+      "quote": "Indication for Procedure Right hand: severe, EMG/NCS-confirmed median neuropathy with positive provocative testing, nocturnal symptoms, and functional impairment, refractory to a documented 6-week trial of night splinting. Left hand: mild electrodiagnostic slowing, intermittent non-limiting symptoms, offered at the same operative setting.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "4",
+      "page_confirmed": true,
+      "quote": "She completed a supervised 6-week course of nighttime wrist splinting for the right hand under the referring physician's care beginning 01/2026, documented in outside records, with only marginal, transient improvement before symptoms returned to baseline. She also reports occasional intermittent tingling in the left hand, not limiting activity.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "5",
+      "page_confirmed": true,
+      "quote": "Left hand: Tinel's and Phalen's tests equivocal/negative, no thenar atrophy, normal two-point discrimination, full grip strength.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "11",
+      "page_confirmed": true,
+      "quote": "The consent form also references proceeding with release 'and the contralateral side' without a separately itemized discussion of left-hand risks, benefits, or alternatives.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "MR_APC_04.pdf",
+      "page_ref": "24",
+      "page_confirmed": true,
+      "quote": "Right hand: severe, EMG/NCS-confirmed median neuropathy with positive provocative testing, nocturnal symptoms, and functional impairment, refractory to a documented 6-week trial of night splinting.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-04, row 4",
+      "quote": "64721 \u2014 Neuroplasty and/or transposition; median nerve at carpal tunnel (Carpal Tunnel Release) When carpal tunnel release is performed bilaterally at the same operative session, each side is billed as a distinct procedure line (typically distinguished by RT/LT modifiers), and each line requires its own independently supported medical necessity \u2014 a documented history, positive provocative testing (Tinel's, Phalen's), and a failed conservative treatment trial specific to that side. A contralateral line supported only by mild or equivocal exam findings, borderline electrodiagnostic results, and no documented conservative trial does not independently meet medical necessity, even when the anesthesia, consent, and operative note bundle both sides into a single narrative. Reviewers should evaluate each laterality's supporting documentation separately.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-04, row 4",
+      "quote": "When carpal tunnel release is performed bilaterally at the same operative session, each side is billed as a distinct procedure line (typically distinguished by RT/LT modifiers), and each line requires its own independently supported medical necessity \u2014 a documented history, positive provocative testing (Tinel's, Phalen's), and a failed conservative treatment trial specific to that side. A contralateral line supported only by mild or equivocal exam findings, borderline electrodiagnostic results, and no documented conservative trial does not independently meet medical necessity, even when the anesthesia, consent, and operative note bundle both sides into a single narrative.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    }
+  ],
+  "system_note": "Billed line: 64721-RT (Neuroplasty/transposition; median nerve at carpal tunnel). Governing policy (APC-04) requires that when bilateral carpal tunnel release is performed in the same session, each laterality must be supported independently by (1) documented history, (2) positive provocative testing (Tinel's/Phalen's), and (3) a failed conservative trial specific to that side. Evidence: the policy language (APC-04) requires independent medical necessity per side (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-04-4). The medical record documents that the right hand meets those criteria: pre-op history documents severe, EMG-confirmed neuropathy and a completed 6-week trial of nighttime splinting that failed (NOTE-APC-medical-records-MR_APC_04.pdf-n25 and -n4), and physical exam documents positive provocative tests on the right (NOTE-APC-medical-records-MR_APC_04.pdf-n4). The operative note and operative summary document that an open carpal tunnel release was performed on the right and describe intraoperative findings of a markedly flattened, hyperemic median nerve consistent with severe chronic compression (NOTE-APC-medical-records-MR_APC_04.pdf-n25). Taken together, the right-sided documentation satisfies the APC-04 policy elements for an independent, medically necessary procedure on the right; therefore the billed 64721-RT is supported and requires no correction. Key supporting citations: policy APC-04 (requires independent documentation per side); H&P and History (failed 6-week splinting, EMG severe on right); Physical exam (positive Tinel's/Phalen's on right); Operative note (procedure performed and intraoperative findings consistent with severe right median nerve compression). Line reviewed: billed CPT 64721-LT (Neuroplasty/transposition; median nerve at carpal tunnel). Governing policy (APC-04) requires that when bilateral carpal tunnel releases are performed in the same session, each side must have independent medical necessity documented per side: a documented history, positive provocative testing (Tinel's/Phalen's), and a failed conservative treatment trial specific to that side (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-04-4). Operative and pre-op documentation differentiate the two sides: the right side meets those criteria (severe EMG/NCS-confirmed neuropathy with positive provocative testing and a documented 6-week night-splint trial) but the left side is documented only as mild/borderline and lacks the required side-specific conservative-trial and positive provocative-testing documentation. Evidence and reasoning: - Governing policy requirement: APC concept requires each laterality to have its own independently supported medical necessity including documented history, positive provocative testing, and a failed conservative trial (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-04-4) [policy text]. See ev1. - Operative Note documents left-side findings as mild with only electrodiagnostic slowing and intermittent non-limiting symptoms, and that the left was \"offered at the same operative setting\" (Operative Note, p.24) - this does not show the positive provocative tests or failed conservative trial required per policy (NOTE-APC-medical-records-MR_APC_04.pdf-n25). See ev2. - History & Physical documents a supervised 6-week night-splinting trial for the right hand only and describes the left as having only intermittent, non-limiting tingling (History & Physical, p.4) - no documented conservative trial for left (NOTE-APC-medical-records-MR_APC_04.pdf-n4). See ev3. - Physical exam documents left provocative testing as equivocal/negative (Left hand: Tinel's and Phalen's tests equivocal/negative, no thenar atrophy, normal two-point discrimination, full grip strength) (History & Physical, p.5) - failing to meet the policy requirement for positive provocative testing on that side (NOTE-APC-medical-records-MR_APC_04.pdf-n4). See ev4. - Informed consent references proceeding with the contralateral release without a separately itemized discussion of left-hand risks/alternatives, which does not substitute for the independent per-side medical necessity the policy mandates (Informed Consent, p.11) (NOTE-APC-medical-records-MR_APC_04.pdf-n10). See ev5. Conclusion: the left-side line (64721-LT) lacks the independent, side-specific medical necessity documentation required by the governing APC policy. The billed left-side procedure therefore does not meet coverage criteria and is a Finding. Recommended billing correction: remove the 64721-LT line (no replacement CPT code is supported by the record). Right-side billing (64721-RT) remains supported by the record (see Operative Note / H&P for right-side severe disease and failed conservative care) (NOTE-APC-medical-records-MR_APC_04.pdf-n25; NOTE-APC-medical-records-MR_APC_04.pdf-n4).",
+  "rationale_letter": "Re: Audit of claim APC-2026-30442 / patient MRN-2245179 - Line 2 (CPT 64721-LT) Dear Provider, We completed a focused audit of the above claim line for CPT 64721-LT (neuroplasty/transposition; median nerve at carpal tunnel). The governing APC policy (APC-04) requires that when bilateral carpal tunnel release is performed during the same operative session, each side must have independently-documented medical necessity: a documented history, positive provocative testing (Tinel's or Phalen's), and a failed conservative treatment trial specific to that side (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-04-4). Basis for finding: - The operative note documents the right hand as severe with EMG/NCS confirmation, positive provocative testing, nocturnal symptoms, and a documented 6-week failed night-splint trial; these findings support the billed right-side procedure (NOTE-APC-medical-records-MR_APC_04.pdf-n25). (Operative Note, p.24) - The left hand is documented in the record as having only mild electrodiagnostic slowing and intermittent, non-limiting symptoms; provocative testing on the left is described as equivocal/negative, and there is no documentation of a failed conservative trial for the left side (History & Physical, p.4-5; Operative Note, p.24) (NOTE-APC-medical-records-MR_APC_04.pdf-n4; NOTE-APC-medical-records-MR_APC_04.pdf-n25). - The informed consent references proceeding with the contralateral side without a separately itemized discussion of left-hand risks/alternatives, which does not meet the policy's requirement for independent documentation of medical necessity per laterality (NOTE-APC-medical-records-MR_APC_04.pdf-n10). Determination and correction: Because the left side (64721-LT) lacks the side-specific documentation required by the governing APC policy, we are unable to support separate payment for the left-side carpal tunnel release as billed. Action: 64721-LT is disallowed for lack of independent medical necessity. There is no alternate CPT code supported by the clinical record for the left side; therefore the line should be removed from payment consideration. The right-side line (64721-RT) remains supported by the documentation. If you believe additional documentation exists demonstrating side-specific conservative treatment failure or positive provocative testing for the left hand, please submit those records for reconsideration. Thank you for your attention to this matter. Sincerely, Clinical Claims Auditor",
+  "metrics": {
+    "cost_of_processing_usd": 0.048994,
+    "time_to_run_seconds": 98.618,
+    "total_cost_per_claim_usd": 30.578994,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.048994
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-30442\", \"patient_mrn\": \"MRN-2245179\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"64721-RT\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-30442\", \"patient_mrn\": \"MRN-2245179\", \"keywords\": [\"median nerve\", \"carpal tunnel\", \"neuroplasty\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"carpal tunnel\",\"release\",\"open\",\"median nerve\"]}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"carpal tunnel\",\"release\"]}"
+    },
+    {
+      "step": 6,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-30442\", \"patient_mrn\": \"MRN-2245179\"}"
+    },
+    {
+      "step": 8,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"64721-LT\"}"
+    },
+    {
+      "step": 9,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-30442\", \"patient_mrn\": \"MRN-2245179\", \"keywords\": [\"carpal tunnel\", \"neuroplasty\", \"median nerve\"]}"
+    },
+    {
+      "step": 10,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"carpal tunnel release\",\"median nerve\"]}"
+    },
+    {
+      "step": 11,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

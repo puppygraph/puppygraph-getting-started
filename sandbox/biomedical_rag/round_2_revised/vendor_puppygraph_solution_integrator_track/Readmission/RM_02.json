@@ -1,0 +1,151 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_02",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "Reviewed readmission claim RM_02 (readmit admit 2026-04-30) paired to index claim MR_02 (index discharge 2026-04-25). Piedmont Blue Advantage HMO's guideline requires the readmission to be within the payer's review window before any relatedness determination; the guideline's review window is 30 days from prior discharge (policy: RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-b4) and this readmission occurred 5 days after discharge, therefore it is in scope (see evidence ev1). The guideline's Section B asks first whether the readmission diagnosis is the same as or clinically related to the condition treated during the prior stay (B1) and states that an affirmative meets the 'same or related condition' Finding (RULE-...-B1) (see evidence ev2). Clinical evidence: the index discharge summary documents heart failure as a discharge diagnosis (index MR_02 Discharge / Transfer Diagnoses includes heart failure with reduced ejection fraction (EF 35-40%)) and lists the index discharge date 2026-04-25 (NOTE-Readmission-RM_02-index-MR_02.pdf-n847) (see evidence ev3). The readmission's own discharge summary explicitly documents the clinical relationship: it states that the readmission (04/30-05/11/2026) was Acute on chronic systolic HF (I50.23) and that this represents a direct progression/acute decompensation of the HF established during the index STEMI/CABG admission; it further notes that both admissions code I50.23 (NOTE-Readmission-RM_02-readmission-RM_02.pdf-n139) (see evidence ev4). The readmission admission note documents an acute inpatient CVICU admission on 04/30/2026 (History & Physical admitting location: CVICU 3-Central) confirming this was an acute hospital readmission rather than a SNF or other excluded facility (NOTE-Readmission-RM_02-readmission-RM_02.pdf-n5) (see evidence ev5). Exclusions: the payer's exclusion list (Section C) was reviewed (RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-C1). None of the exclusions apply (the readmission was an acute inpatient CVICU admission, not a direct transfer, scheduled staged readmission, or a SNF-only admission), so the Section C check does not override the positive Section B finding (see evidence ev6 and ev5). Conclusion: the documentation supports that the readmission is clinically related to the index stay under Piedmont Blue Advantage HMO's Readmission Review Guideline Section B1 ('same or related condition') because the same principal diagnosis I50.23 (acute on chronic systolic heart failure) appears on both stays and the readmission discharge summary explicitly states the readmission represents acute decompensation/progression of the HF established during the index admission. Citations: ev1 (policy - review window), ev2 (policy - B1 same/related condition), ev3 (index discharge diagnoses including HF and index discharge date), ev4 (readmission discharge summary: clinical relationship / decompensation statement), ev5 (readmission H&P: CVICU acute inpatient admission), ev6 (policy - exclusions).",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "RM_02.pdf",
+      "page_ref": "135",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_02 (01/17\u201304/25/2026): Anterior STEMI with cardiogenic shock and emergency CABG; systolic HF with EF 25\u201330% established. Readmission RM_02 (04/30\u201305/11/2026): Acute on chronic systolic HF (I50.23) \u2014 direct progression of cardiac disease from the index STEMI/CABG admission. Both admissions code I50.23 as a principal/major diagnosis. Readmission represents acute decompensation of the HF established during index stay.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "RM_02.pdf",
+      "page_ref": "7",
+      "page_confirmed": true,
+      "quote": "History & Physical (Admitting) Date/Time: 2026-04-30 13:50 Location: Cardiovascular Intensive Care Unit (CVICU 3-Central) (admission)",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_02.pdf",
+      "page_ref": "748",
+      "page_confirmed": true,
+      "quote": "Discharge / Transfer Diagnoses Resolved acute anterior STEMI status post primary PCI to LAD and emergency 3-vessel CABG; heart failure with reduced ejection fraction (EF 35-40%); resolved cardiogenic shock; resolved post-cardiac-arrest state with intact neurologic function; resolved post-cardiotomy atrial fibrillation; contrast-induced AKI with renal recovery; superficial sternal wound infection (MSSA) on cefazolin with wound VAC; right popliteal DVT on apixaban; type 2 diabetes mellitus; hypertension; hyperlipidemia; ICU-acquired weakness.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "RM_02.pdf",
+      "page_ref": "135",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_02 (01/17\u201304/25/2026): Anterior STEMI with cardiogenic shock and emergency CABG; systolic HF with EF 25\u201330% established. Readmission RM_02 (04/30\u201305/11/2026): Acute on chronic systolic HF (I50.23) \u2014 direct progression of cardiac disease from the index STEMI/CABG admission.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "RM_02.pdf",
+      "page_ref": "135",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_02 (01/17\u201304/25/2026): Anterior STEMI with cardiogenic shock and emergency CABG; systolic HF with EF 25\u201330% established. Readmission RM_02 (04/30\u201305/11/2026): Acute on chronic systolic HF (I50.23) \u2014 direct progression of cardiac disease from the index STEMI/CABG admission. Both admissions code I50.23 as a principal/major diagnosis. Readmission represents acute decompensation of the HF established during index stay.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "RM_02.pdf",
+      "page_ref": "131",
+      "page_confirmed": true,
+      "quote": "Hospital Course Marcus D. Whitfield was readmitted with acute decompensated heart failure and recurrent demand-type cardiac ischemia in the setting of known coronary artery disease and prior myocardial infarction.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx",
+      "section": "Piedmont Blue Advantage HMO - Readmission Review Guideline, Review Window",
+      "quote": "30 days from prior discharge",
+      "document_version_hash": "sha256:75c330374936987f8620ce2849aaa80adc0e402bf1dda6bebd1bd305d626e0f9"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx",
+      "section": "Piedmont Blue Advantage HMO - Readmission Review Guideline \u203a Section B - Review Criteria",
+      "quote": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2.",
+      "document_version_hash": "sha256:75c330374936987f8620ce2849aaa80adc0e402bf1dda6bebd1bd305d626e0f9"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx",
+      "section": "Piedmont Blue Advantage HMO - Readmission Review Guideline \u203a Section C - Exclusions",
+      "quote": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility; Readmissions to a different facility within the same hospital system are handled under a separate transfer policy and are not reviewed here ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination.",
+      "document_version_hash": "sha256:75c330374936987f8620ce2849aaa80adc0e402bf1dda6bebd1bd305d626e0f9"
+    }
+  ],
+  "system_note": "Reviewed readmission claim RM_02 (readmit admit 2026-04-30) paired to index claim MR_02 (index discharge 2026-04-25). Piedmont Blue Advantage HMO's guideline requires the readmission to be within the payer's review window before any relatedness determination; the guideline's review window is 30 days from prior discharge (policy: RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-b4) and this readmission occurred 5 days after discharge, therefore it is in scope (see evidence ev1). The guideline's Section B asks first whether the readmission diagnosis is the same as or clinically related to the condition treated during the prior stay (B1) and states that an affirmative meets the 'same or related condition' Finding (RULE-...-B1) (see evidence ev2). Clinical evidence: the index discharge summary documents heart failure as a discharge diagnosis (index MR_02 Discharge / Transfer Diagnoses includes heart failure with reduced ejection fraction (EF 35-40%)) and lists the index discharge date 2026-04-25 (NOTE-Readmission-RM_02-index-MR_02.pdf-n847) (see evidence ev3). The readmission's own discharge summary explicitly documents the clinical relationship: it states that the readmission (04/30-05/11/2026) was Acute on chronic systolic HF (I50.23) and that this represents a direct progression/acute decompensation of the HF established during the index STEMI/CABG admission; it further notes that both admissions code I50.23 (NOTE-Readmission-RM_02-readmission-RM_02.pdf-n139) (see evidence ev4). The readmission admission note documents an acute inpatient CVICU admission on 04/30/2026 (History & Physical admitting location: CVICU 3-Central) confirming this was an acute hospital readmission rather than a SNF or other excluded facility (NOTE-Readmission-RM_02-readmission-RM_02.pdf-n5) (see evidence ev5). Exclusions: the payer's exclusion list (Section C) was reviewed (RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-C1). None of the exclusions apply (the readmission was an acute inpatient CVICU admission, not a direct transfer, scheduled staged readmission, or a SNF-only admission), so the Section C check does not override the positive Section B finding (see evidence ev6 and ev5). Conclusion: the documentation supports that the readmission is clinically related to the index stay under Piedmont Blue Advantage HMO's Readmission Review Guideline Section B1 ('same or related condition') because the same principal diagnosis I50.23 (acute on chronic systolic heart failure) appears on both stays and the readmission discharge summary explicitly states the readmission represents acute decompensation/progression of the HF established during the index admission. Citations: ev1 (policy - review window), ev2 (policy - B1 same/related condition), ev3 (index discharge diagnoses including HF and index discharge date), ev4 (readmission discharge summary: clinical relationship / decompensation statement), ev5 (readmission H&P: CVICU acute inpatient admission), ev6 (policy - exclusions).",
+  "rationale_letter": "Re: Readmission claim RM_02 - Determination: Finding (Related readmission - 'Same or related condition') Dear Provider, This letter documents the results of our readmission review for claim RM_02 (admit 04/30/2026). We reviewed the medical records for both the index admission MR_02 (01/17/2026-04/25/2026) and the readmission RM_02, and applied the Piedmont Blue Advantage HMO Readmission Review Guideline (effective 09/15/2023). The payer's guideline uses a 30-day review window and evaluates whether the readmission diagnosis is the same as or clinically related to the condition treated during the prior stay (Section B1). Finding: The readmission is determined to be clinically related to the index admission under the guideline's 'same or related condition' criterion. Basis for the Finding: - The payer's guideline specifies a 30-day review window (\"30 days from prior discharge\") and this readmission occurred within that window (5 days after the index discharge) (policy source: RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-b4) (ev1). - The guideline's Section B1 states that if the readmission diagnosis is the same as or clinically related to the condition treated during the prior stay, the readmission qualifies as a Finding under 'same or related condition' (RULE-...-B1) (ev2). - The index discharge summary documents heart failure as a discharge diagnosis (heart failure with reduced ejection fraction) and records the index discharge on 04/25/2026 (NOTE-Readmission-RM_02-index-MR_02.pdf-n847) (ev3). - The readmission discharge summary documents the principal diagnosis as Acute on chronic systolic heart failure (I50.23) and explicitly states the readmission is a direct progression/acute decompensation of the HF established during the index STEMI/CABG admission; it also notes that both admissions code I50.23 (NOTE-Readmission-RM_02-readmission-RM_02.pdf-n139) (ev4). - The readmission was an acute inpatient admission to the hospital CVICU (History & Physical admitting location: Cardiovascular Intensive Care Unit (CVICU 3-Central) on 04/30/2026), confirming this is an acute hospital readmission and that exclusion criteria for non-reviewed events (e.g., SNF admission only or scheduled staged readmission) do not apply (NOTE-Readmission-RM_02-readmission-RM_02.pdf-n5; see policy exclusions RULE-...-C1) (ev5, ev6). Because the readmission occurred within the payer's 30-day window, the principal diagnosis on the readmission is the same (I50.23) as the condition established during the index stay, and the readmission documentation explicitly attributes the readmission to progression/acute decompensation of the index hospitalization's heart failure, the readmission meets the Piedmont Blue Advantage HMO criterion for a related readmission ('same or related condition'). Action: This readmission is determined to be a Finding under the Piedmont Blue Advantage HMO Readmission Review Guideline, criterion: Same or related condition. If you disagree with this determination, please submit supporting clinical documentation demonstrating that the readmission diagnosis was unrelated to the index admission (for example, documentation of a new, unrelated acute process clearly separate from the prior hospitalization) along with the appeal. Sincerely, Clinical Review Team (References: policy and medical record passages cited in the enclosed audit documentation.)",
+  "metrics": {
+    "cost_of_processing_usd": 0.065417,
+    "time_to_run_seconds": 97.837,
+    "total_cost_per_claim_usd": 30.595417,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.065417
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\":\"RM_02\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\":\"Piedmont Blue Advantage HMO\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"MR_02\",\"keywords\":[\"Acute on chronic systolic (congestive) heart failure\",\"heart failure\",\"systolic heart failure\",\"acute heart failure\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

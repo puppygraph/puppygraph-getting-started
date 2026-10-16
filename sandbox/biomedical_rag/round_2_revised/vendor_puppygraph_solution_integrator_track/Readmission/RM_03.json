@@ -1,0 +1,162 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_03",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "Reviewed Rocky Mountain Health Preferred readmission guideline and the paired index (MR_03) and readmission (RM_03) records. Guideline review window is 45 days from prior discharge (Rocky Mountain Health Preferred Readmission Review Guideline; RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-b4). The index discharge summary documents discharge/transfer on 2026-05-09 (Discharge / Transfer Summary, MR_03, p.763) and the readmission record documents admission on 2026-05-14 (DISCHARGE SUMMARY, RM_03, p.127), a gap of 5 days which is within the payer's 45-day review window and therefore in scope for relatedness review (evidence: RULE-...-b4; NOTE-Readmission-RM_03-index-MR_03.pdf-n865 p.763; NOTE-Readmission-RM_03-readmission-RM_03.pdf-n132 p.127). Per the payer's decision flow (Section B1) a readmission is a Finding when the readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay (Rocky Mountain guideline, B1) (evidence: RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-B1). Clinical evidence: the index discharge summary documents that the index stay ended with communicating hydrocephalus and ventriculoperitoneal shunt placement (Discharge / Transfer Summary, MR_03, p.763: and persistent communicating hydrocephalus requiring ventriculoperitoneal shunt placement), and the readmission discharge summary documents that the patient represented 5 days later with enlarged ventricles due to VP shunt obstruction and underwent shunt revision (DISCHARGE SUMMARY, RM_03, p.127: Clinical Relationship: Index admission MR_03 (01/28-05/09/2026): Spontaneous ICH (I61.0), obstructive hydrocephalus (G91.1), VP shunt placed. Readmission RM_03 (05/14-05/25/2026): VP shunt malfunction (T85.09XA), obstructive hydrocephalus (G91.1) - direct mechanical complication of the shunt placed during the index ICH admission; and DISCHARGE SUMMARY, RM_03, p.127: 47M with spontaneous ICH and hydrocephalus managed with EVD and VP shunt during index admission MR_03 (01/28-05/09/2026, 102 days) presented 5 days post-discharge with headache, AMS, and GTC seizure. CT head showed enlarged lateral ventricles consistent with shunt obstruction. Neurosurgery revised the VP shunt on Day 2; new catheter placed.). The documentation therefore meets the payer's Section B1 criterion: the readmission diagnosis is the same/clinically related to and is a direct mechanical complication of the procedure (VP shunt) performed during the index stay. Section C exclusions were considered: the readmission was unscheduled acute ED/NCCU admission (not a transfer, scheduled admission, SNF/rehab, AMA discharge, transplant, newborn/obstetric, burn, or behavioral health), so no exclusion applies (this is supported by the readmission ED/H&P and discharge notes cited above). Determination: Finding under the guideline's 'same or related condition' criterion (documented mechanical VP shunt malfunction related to the index VP shunt placement). Cited evidence: RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-b4; RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-B1; NOTE-Readmission-RM_03-readmission-RM_03.pdf-n132 (Discharge Summary) p.127; NOTE-Readmission-RM_03-index-MR_03.pdf-n865 (Discharge / Transfer Summary) p.763.",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "RM_03.pdf",
+      "page_ref": "127",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_03 (01/28\u201305/09/2026): Spontaneous ICH (I61.0), obstructive hydrocephalus (G91.1), VP shunt placed. Readmission RM_03 (05/14\u201305/25/2026): VP shunt malfunction (T85.09XA), obstructive hydrocephalus (G91.1) \u2014 direct mechanical complication of the shunt placed during the index ICH admission. I61.0 and G91.1 present on both admissions.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "RM_03.pdf",
+      "page_ref": "128",
+      "page_confirmed": true,
+      "quote": "47M with spontaneous ICH and hydrocephalus managed with EVD and VP shunt during index admission MR_03 (01/28\u201305/09/2026, 102 days) presented 5 days post-discharge with headache, AMS, and GTC seizure. CT head showed enlarged lateral ventricles consistent with shunt obstruction. Neurosurgery revised the VP shunt on Day 2; new catheter placed.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_03.pdf",
+      "page_ref": "763",
+      "page_confirmed": true,
+      "quote": "and persistent communicating hydrocephalus requiring ventriculoperitoneal shunt placement.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_03.pdf",
+      "page_ref": "763",
+      "page_confirmed": true,
+      "quote": "Discharge / Transfer Summary Attending: Dr. Ilya Ashford, MD (Neurocritical Care) Admit: 2026-01-28 Transfer: 2026-05-09 LOS: 101 days Reason for Admission: Spontaneous intracerebral hemorrhage with hydrocephalus requiring neurocritical care.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "RM_03.pdf",
+      "page_ref": "127",
+      "page_confirmed": true,
+      "quote": "Admission Date: 05/14/2026 Primary Service: Neurocritical Care Unit (NCCU 8-West) Discharge Date: 05/25/2026 Claim Number: RM_03",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "RM_03.pdf",
+      "page_ref": "127",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_03 (01/28\u201305/09/2026): Spontaneous ICH (I61.0), obstructive hydrocephalus (G91.1), VP shunt placed. Readmission RM_03 (05/14\u201305/25/2026): VP shunt malfunction (T85.09XA), obstructive hydrocephalus (G91.1) \u2014 direct mechanical complication of the shunt placed during the index ICH admission. I61.0 and G91.1 present on both admissions.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_03.pdf",
+      "page_ref": "763",
+      "page_confirmed": true,
+      "quote": "The course was complicated by acute intracranial hypertension with hematoma expansion requiring aggressive osmotherapy including 23.4% hypertonic saline boluses, transtentorial herniation risk successfully managed medically, hospital-acquired Klebsiella pneumoniae ventilator-associated pneumonia treated with cefepime, prolonged mechanical ventilation requiring percutaneous tracheostomy, PEG placement for enteral nutrition, cerebral salt wasting managed with fludrocortisone, and persistent communicating hydrocephalus requiring ventriculoperitoneal shunt placement.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "RM_03.pdf",
+      "page_ref": "128",
+      "page_confirmed": true,
+      "quote": "HOSPITAL COURSE SUMMARY 47M with spontaneous ICH and hydrocephalus managed with EVD and VP shunt during index admission MR_03 (01/28\u201305/09/2026, 102 days) presented 5 days post-discharge with headache, AMS, and GTC seizure. CT head showed enlarged lateral ventricles consistent with shunt obstruction. Neurosurgery revised the VP shunt on Day 2; new catheter placed.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx",
+      "section": "Rocky Mountain Health Preferred - Readmission Review Guideline, Review Window",
+      "quote": "45 days from prior discharge",
+      "document_version_hash": "sha256:ae2cfbc7bec34c116f96c17e8f97bd67f2023508b1e8bce68a1678e790a58748"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx",
+      "section": "Rocky Mountain Health Preferred - Readmission Review Guideline \u203a Section B - Review Criteria",
+      "quote": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2.",
+      "document_version_hash": "sha256:ae2cfbc7bec34c116f96c17e8f97bd67f2023508b1e8bce68a1678e790a58748"
+    }
+  ],
+  "system_note": "Reviewed Rocky Mountain Health Preferred readmission guideline and the paired index (MR_03) and readmission (RM_03) records. Guideline review window is 45 days from prior discharge (Rocky Mountain Health Preferred Readmission Review Guideline; RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-b4). The index discharge summary documents discharge/transfer on 2026-05-09 (Discharge / Transfer Summary, MR_03, p.763) and the readmission record documents admission on 2026-05-14 (DISCHARGE SUMMARY, RM_03, p.127), a gap of 5 days which is within the payer's 45-day review window and therefore in scope for relatedness review (evidence: RULE-...-b4; NOTE-Readmission-RM_03-index-MR_03.pdf-n865 p.763; NOTE-Readmission-RM_03-readmission-RM_03.pdf-n132 p.127). Per the payer's decision flow (Section B1) a readmission is a Finding when the readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay (Rocky Mountain guideline, B1) (evidence: RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-B1). Clinical evidence: the index discharge summary documents that the index stay ended with communicating hydrocephalus and ventriculoperitoneal shunt placement (Discharge / Transfer Summary, MR_03, p.763: and persistent communicating hydrocephalus requiring ventriculoperitoneal shunt placement), and the readmission discharge summary documents that the patient represented 5 days later with enlarged ventricles due to VP shunt obstruction and underwent shunt revision (DISCHARGE SUMMARY, RM_03, p.127: Clinical Relationship: Index admission MR_03 (01/28-05/09/2026): Spontaneous ICH (I61.0), obstructive hydrocephalus (G91.1), VP shunt placed. Readmission RM_03 (05/14-05/25/2026): VP shunt malfunction (T85.09XA), obstructive hydrocephalus (G91.1) - direct mechanical complication of the shunt placed during the index ICH admission; and DISCHARGE SUMMARY, RM_03, p.127: 47M with spontaneous ICH and hydrocephalus managed with EVD and VP shunt during index admission MR_03 (01/28-05/09/2026, 102 days) presented 5 days post-discharge with headache, AMS, and GTC seizure. CT head showed enlarged lateral ventricles consistent with shunt obstruction. Neurosurgery revised the VP shunt on Day 2; new catheter placed.). The documentation therefore meets the payer's Section B1 criterion: the readmission diagnosis is the same/clinically related to and is a direct mechanical complication of the procedure (VP shunt) performed during the index stay. Section C exclusions were considered: the readmission was unscheduled acute ED/NCCU admission (not a transfer, scheduled admission, SNF/rehab, AMA discharge, transplant, newborn/obstetric, burn, or behavioral health), so no exclusion applies (this is supported by the readmission ED/H&P and discharge notes cited above). Determination: Finding under the guideline's 'same or related condition' criterion (documented mechanical VP shunt malfunction related to the index VP shunt placement). Cited evidence: RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-b4; RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-B1; NOTE-Readmission-RM_03-readmission-RM_03.pdf-n132 (Discharge Summary) p.127; NOTE-Readmission-RM_03-index-MR_03.pdf-n865 (Discharge / Transfer Summary) p.763.",
+  "rationale_letter": "Re: Readmission review for RM_03 (patient MRN-8309247) Dear Provider, This letter documents the results of Rocky Mountain Health Preferred's readmission review for inpatient claim RM_03. We reviewed the index admission MR_03 (admit 01/28/2026, transfer/discharge 05/09/2026) and the readmission RM_03 (admit 05/14/2026) against Rocky Mountain Health Preferred's Readmission Review Guideline (effective 06/01/2022) which uses a 45-day review window from prior discharge (policy: 45 days from prior discharge). The readmission occurred 5 days after index discharge and is therefore within the guideline review window. Finding: This readmission is clinically related to the index admission and is a Finding under the guideline's 'same or related condition' criterion (Section B1). Basis: the index discharge documentation confirms ventriculoperitoneal (VP) shunt placement for communicating hydrocephalus during MR_03, and the readmission documentation explicitly records presentation 5 days later with enlarged ventricles due to VP shunt obstruction and documents VP shunt revision during RM_03 (index: NOTE-Readmission-RM_03-index-MR_03.pdf-n865; readmission: NOTE-Readmission-RM_03-readmission-RM_03.pdf-n132). The payer guideline (Section B1) specifies that a readmission whose diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay qualifies as a Finding; the readmission diagnosis (T85.09XA - mechanical complication of ventricular shunt) is a direct mechanical complication of the VP shunt placed on the index stay. Correction: Per Rocky Mountain Health Preferred policy, this readmission has been determined to be related to the index admission and is a Finding under the 'same or related condition' criterion. Pursuant to the payer's readmission policy, this Finding indicates the readmission is clinically related to the prior stay and will be processed consistent with the payer's readmission payment rules (i.e., the readmission will be treated as related to the index admission per payer policy). If you have additional clinical information you believe would change this determination, please submit that documentation within the appeals timeframe. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.060854,
+    "time_to_run_seconds": 81.488,
+    "total_cost_per_claim_usd": 30.590854,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.060854
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\":\"RM_03\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\":\"Rocky Mountain Health Preferred\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"RM_03\",\"keywords\":[\"Other mechanical complication of ventricular intracranial shunt\",\"Obstructive hydrocephalus\",\"Nontraumatic intracerebral hemorrhage\",\"Pneumonitis due to inhalation\",\"Unspecified altered consciousness\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_04",
+  "review_type": "DRG",
+  "determination": "Finding",
+  "corrected_coding_set": [
+    {
+      "code": "S36.032A",
+      "poa": "Y",
+      "role": "principal",
+      "short_desc": "Major laceration of spleen, initial encounter"
+    },
+    {
+      "code": "S72.301A",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Unspecified fracture of shaft of right femur, initial encounter for closed fracture"
+    },
+    {
+      "code": "S32.810A",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Multiple fractures of pelvis with disruption of pelvic ring, initial encounter for closed fracture"
+    },
+    {
+      "code": "S22.42XA",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Multiple fractures of ribs, right side, initial encounter for closed fracture"
+    },
+    {
+      "code": "S27.4XXA",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Traumatic pneumothorax, initial encounter"
+    },
+    {
+      "code": "S36.115A",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Minor laceration of liver, initial encounter"
+    },
+    {
+      "code": "T79.4XXA",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Traumatic shock, initial encounter"
+    },
+    {
+      "code": "M62.88",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Other specified disorders of muscle - rhabdomyolysis"
+    },
+    {
+      "code": "N17.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute kidney failure, unspecified"
+    },
+    {
+      "code": "J95.851",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Ventilator associated pneumonia"
+    },
+    {
+      "code": "B95.62",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Methicillin susceptible Staphylococcus aureus (MSSA) as cause"
+    },
+    {
+      "code": "I82.401",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Acute embolism and thrombosis of unspecified deep veins of right lower extremity"
+    },
+    {
+      "code": "F43.10",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Post-traumatic stress disorder, unspecified"
+    },
+    {
+      "code": "D62",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Acute posthemorrhagic anemia"
+    },
+    {
+      "code": "Z87.891",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Personal history of nicotine dependence"
+    },
+    {
+      "code": "Z90.81",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Acquired absence of spleen"
+    }
+  ],
+  "corrected_procedure_set": [
+    "0BH17EZ",
+    "07TP0ZZ",
+    "0WH30YZ",
+    "04L33DZ",
+    "0SH90BZ",
+    "0QQ606Z",
+    "30233N1",
+    "02HV33Z",
+    "5A1D90Z"
+  ],
+  "code_actions": [
+    {
+      "code": "S72.302A",
+      "action": "recode",
+      "new_code": "S72.301A",
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "CT and discharge documentation describe a RIGHT femoral shaft fracture and right intramedullary nailing; the billed LEFT-side code is incorrect and must be recoded to the right-side shaft fracture.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0004"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "R57.01",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Clinical documentation attributes shock to hemorrhagic/traumatic etiology with massive transfusion and operative control of bleeding; there is no provider documentation of cardiogenic shock to support R57.01.",
+      "evidence_ids": [
+        "ev_0008",
+        "ev_0003"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "N17.9",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "Y",
+      "new_severity": null,
+      "rationale": "Admitting H&P and admission labs document AKI (KDIGO 2, creatinine elevated on admission); POA should be Y rather than the billed N.",
+      "evidence_ids": [
+        "ev_0006",
+        "ev_0007"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "J95.851",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "N",
+      "new_severity": "MCC",
+      "rationale": "ID consult and discharge summary document hospital-acquired VAP (MSSA) with culture-directed therapy. Policy requires J95.851 be assigned POA = N and is an MCC-level diagnosis; the claim's POA=Y and CC are incorrect.",
+      "evidence_ids": [
+        "ev_0005"
+      ],
+      "policy_citation_ids": [
+        "pol_001"
+      ]
+    },
+    {
+      "code": "0QH60BZ",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Operative/course documentation supports pelvic external fixation and right femoral intramedullary nailing but does not document an external fixation placed on the right upper femur; the chart supports removal of this procedure line.",
+      "evidence_ids": [
+        "ev_0004",
+        "ev_0003"
+      ],
+      "policy_citation_ids": []
+    }
+  ],
+  "discharge_disposition": "62 - Discharged/transferred to an inpatient rehabilitation facility (IRF)",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_04.pdf",
+      "page_ref": "653",
+      "page_confirmed": true,
+      "quote": "CT trauma panscan demonstrated Grade IV splenic laceration, Grade II liver laceration, pelvic ring injury with active extravasation, right femur fracture, and right hemopneumothorax with rib fractures.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_04.pdf",
+      "page_ref": "653",
+      "page_confirmed": true,
+      "quote": "Massive transfusion protocol was activated, and the patient was transferred to the operating room for damage-control laparotomy with splenectomy, followed by IR embolization for pelvic bleeding.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_04.pdf",
+      "page_ref": "838",
+      "page_confirmed": true,
+      "quote": "Emergency damage-control laparotomy with splenectomy was performed, followed by IR embolization of a bleeding right internal iliac branch.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_04.pdf",
+      "page_ref": "838",
+      "page_confirmed": true,
+      "quote": "The course was complicated by right hemopneumothorax requiring tube thoracostomy, pelvic ring injury requiring external fixation on ICU day 3, right femoral shaft fracture requiring intramedullary nailing on ICU day 4,",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_04.pdf",
+      "page_ref": "190",
+      "page_confirmed": true,
+      "quote": "Vancomycin AUC-dosed IV per pharmacy 02/16-02/18 Empiric VAP - stopped when MSSA identified",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_04.pdf",
+      "page_ref": "653",
+      "page_confirmed": true,
+      "quote": "7 Rhabdomyolysis with acute kidney injury (KDIGO 2), non-dialysis-requiring",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_04.pdf",
+      "page_ref": "588",
+      "page_confirmed": true,
+      "quote": "CBC: WBC 22.7 x103/uL, Hgb 12.4 g/dL, Hct 37%, platelets 95 x109/L (neutrophils 86%). BMP: Na 132, K 4.6, Cl 96, CO2 19, BUN 70, creatinine 3.73 mg/dL, glucose 206 mg/dL, Ca 7.9, Mg 2.0, Phos 4.8.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_04.pdf",
+      "page_ref": "653",
+      "page_confirmed": true,
+      "quote": "EMS assessment on arrival documented GCS 8 with tachycardia (HR 130) and hypotension (SBP 78).",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "MR_04.pdf",
+      "page_ref": "838",
+      "page_confirmed": true,
+      "quote": "Extubation was successful on ICU day 9 with brief VAP requiring aggressive pulmonary toileting rather than reintubation.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0010",
+      "document": "MR_04.pdf",
+      "page_ref": "542",
+      "page_confirmed": true,
+      "quote": "Consultation requested by the primary care team. Chart reviewed and patient examined at the bedside. Multi-system trauma with Grade IV splenic laceration status post emergency splenectomy and packing, IR embolization for pelvic bleeding, and pending orthopedic fixation.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/DRG/Ventilator-Associated Pneumonia.docx",
+      "section": "Scope, Primary Code",
+      "quote": "J95.851 \u2014 Ventilator associated pneumonia [MCC]",
+      "document_version_hash": "sha256:172fb73fa93f6dc023b7daedcee2ef2e46d7c02e8dad68e8dd8c07a8b2a1f269"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/DRG/Splenic Injury.docx",
+      "section": "Scope, Primary Code",
+      "quote": "S36.032A \u2014 Major laceration of spleen, initial encounter (AAST Grade III\u2013V) [MCC]",
+      "document_version_hash": "sha256:aa7b50a3dbfc547ec263db10b2dfe3b40ca14c1dcce239e951a2499b1e38183d"
+    }
+  ],
+  "system_note": "What was billed: Principal S36.032A (Major splenic laceration, MCC) with multiple MCC/CC comorbidities (including S72.302A - left femur shaft fracture, R57.01 cardiogenic shock, J95.851 VAP flagged POA=Y/CC), and 10 procedures including splenectomy (07TP0ZZ), endotracheal intubation (0BH17EZ), and prolonged ventilation (5A1D90Z). What the record actually documents and the audit decisions (evidence citations below): 1) Principal diagnosis S36.032A (major splenic laceration, MCC) - KEEP as principal. Trauma H&P documents Grade IV splenic laceration with immediate OR splenectomy and IR embolization consistent with the Policy validation for a surgical/splenectomy pathway for S36.032A [ev1; ev2; ev3]. Policy explicitly lists S36.032A as AAST Grade III-V (MCC) and requires operative documentation or grade confirmation to support MCC assignment [ev15]. 2) Femur fracture side miscoding - RECODE S72.302A (left) -> S72.301A (right). Multiple contemporaneous clinical documents repeatedly identify a displaced mid-shaft RIGHT femur fracture and definitive right femoral intramedullary nailing (ICU day 4 / discharge summary), not a LEFT femur shaft fracture; therefore the billed left-side code is incorrect and should be the right-side shaft fracture (S72.301A) [ev1; ev4]. 3) Ventilator-associated pneumonia (J95.851) - KEEP the diagnosis code but CORRECT its POA and severity. Infectious Diseases documents \"VAP developing shortly after extubation with clinical and radiographic features\" and the discharge summary documents \"hospital-acquired methicillin-susceptible S. aureus ventilator-associated pneumonia treated with cefazolin\" with culture-directed therapy (vancomycin stopped when MSSA identified; cefazolin used) [ev5; ev6; ev7]. The governing VAP policy explicitly designates J95.851 as an MCC-level VAP diagnosis and requires POA = N because VAP is, by definition, hospital-acquired; the policy language states J95.851 should always carry POA = N and defines the timing and clinical criteria required to support assignment [ev9; ev8]. The claim had J95.851 flagged POA=Y and CC - both are incorrect per record + policy; POA must be N and severity MCC. 4) Acute kidney failure (N17.9) POA flag incorrect - KEEP diagnosis but CHANGE POA to Y. The admitting H&P lists \"Rhabdomyolysis with acute kidney injury (KDIGO 2), non-dialysis-requiring\" and trauma/ICU labs on admission show creatinine 3.73 mg/dL, consistent with AKI present at admission (POA = Y) rather than a new inpatient-onset AKI; the claim currently shows POA = N [ev10; ev11]. 5) Cardiogenic shock (R57.01) - REMOVE. The contemporaneous documentation attributes the patient's shock physiology to hemorrhagic/traumatic shock (hypotension in field, massive transfusion protocol, hemorrhagic shock, splenic hemorrhage) and operative splenectomy for hemorrhage; there is no provider documentation of cardiogenic shock in the record. Because cardiogenic shock is not documented or supported, R57.01 is not valid for this encounter and should be removed [ev12; ev3]. 6) Procedure-level corrections: all operative and procedural lines are supported except one external-fixation-of-right-upper-femur line (0QH60BZ) - REMOVE 0QH60BZ. The record documents pelvic external fixation and right femoral intramedullary nailing (pelvis ex-fix, IM nail of right femur). The orthopedic consultation and discharge/operative course describe external fixation of the pelvis and IM nailing of the right femur; there is no operative documentation that external fixation was placed on the right femur itself, so 0QH60BZ (external fixation of right upper femur) appears unsupported by the operative/course documentation and should be removed; the pelvic external fixator code (0SH90BZ) and right femur IM fixation (0QQ606Z) remain supported [ev4; ev3]. 7) Ventilator duration/procedure 5A1D90Z - KEEP. The discharge summary documents successful extubation on ICU day 9 (i.e. >96 hours of mechanical ventilation) and the chart shows continued mechanical ventilation and ICU therapy consistent with billing this prolonged-ventilation assistance code [ev13; ev2]. Summary of audit actions: remove unsupported cardiogenic-shock diagnosis (R57.01) and unsupported procedure 0QH60BZ; recode left femur shaft (S72.302A) to right-side (S72.301A); change POA and severity flags for J95.851 (POA from Y -> N; CC -> MCC) and change POA for N17.9 (N -> Y). All other billed diagnoses/procedures are supported and retained. Key evidence (document/section/page): see evidence_cited list below (ev1-ev15).",
+  "rationale_letter": "Re: Clinical coding audit - MR_04 (Level 1 trauma admission) Dear Provider/Coding Team, We completed a DRG-level audit of claim MR_04 (admit 02/08/2026 to 05/23/2026). Our review compared the billed diagnosis/procedure set to the medical record and the governing coding policies. Based on the record and policy, we have the following Finding(s) requiring correction: 1) Incorrect laterality for femur fracture: The chart documents a displaced mid-shaft RIGHT femur fracture with intramedullary nailing on ICU day 4; the claim was coded as S72.302A (shaft of LEFT femur). We will recode that line to S72.301A (shaft of RIGHT femur). Supporting documentation: CT trauma panscan and discharge summary describing a displaced mid-shaft right femur fracture and right femoral intramedullary nailing (see H&P and Discharge Summary, 02/08/2026 and discharge) [evidence: CT/H&P and Discharge Summary]. 2) Unsupported diagnosis removed: R57.01 (cardiogenic shock) is removed. The record documents hemorrhagic/traumatic shock requiring massive transfusion and operative splenectomy, with no provider documentation of cardiogenic shock. Therefore R57.01 is not supported by the contemporaneous clinical documentation. 3) Ventilator-associated pneumonia (J95.851) - POA and severity correction: The record (ID consult and discharge summary) documents hospital-acquired ventilator-associated pneumonia due to MSSA, with culture-directed therapy. Per the VAP policy, J95.851 is an MCC-level diagnosis and must carry POA = N (VAP is hospital-acquired by definition). The claim currently lists J95.851 as POA=Y and CC; we will correct J95.851 to POA = N and severity = MCC. Supporting documentation: Infectious Diseases consult (02/16/2026), discharge summary and microbiology/pharmacy notes showing MSSA-directed therapy [evidence cited]. 4) Acute kidney injury POA correction: The admitting H&P documents rhabdomyolysis with acute kidney injury (KDIGO 2) and initial labs show elevated creatinine on admission; AKI was present on admission and managed without RRT. The claim lists N17.9 with POA = N; the chart supports POA = Y. We will change the POA indicator for N17.9 to Y. 5) Procedure removal: 0QH60BZ (insertion of external fixation device into right upper femur) is not supported by the operative/course documentation; the record documents pelvic external fixation and right femoral intramedullary nailing. We will remove 0QH60BZ and retain 0SH90BZ (pelvic external fixation) and 0QQ606Z (right femur intramedullary fixation). Corrective action to the claim: We will (a) recode S72.302A -> S72.301A (right femur); (b) remove R57.01; (c) change POA for N17.9 to Y; (d) change POA for J95.851 to N and severity to MCC; and (e) remove procedure 0QH60BZ. The splenic injury (S36.032A) and splenectomy (07TP0ZZ) remain the principal diagnosis and operative procedure as documented. Basis for changes: specific verbatim clinical documentation (admitting H&P, trauma operative course and discharge summary) and the applicable DRG coding policies for splenic injury and ventilator-associated pneumonia (policy requires documented AAST grade or operative/procedural confirmation for S36.032A MCC assignment and requires POA=N and MCC-level assignment for VAP) were applied in the review. Representative supporting documentation includes: CT trauma panscan and admitting H&P documenting Grade IV splenic laceration and right femoral fracture; Infectious Diseases consultation documenting VAP onset and discharge summary documenting MSSA VAP treated with cefazolin; policy text specifying POA and severity rules for J95.851 [evidence cited]. If you disagree with these corrections, please provide the specific contemporaneous provider documentation (operative note, radiology report with explicit laterality/AAST grade, or physician notes) that supports the original coding (left femur laterality or cardiogenic shock) within 30 days so we may reconsider. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.064365,
+    "time_to_run_seconds": 112.476,
+    "total_cost_per_claim_usd": 30.594365,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.064365
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number: 'MR_04'})-[:BILLED_BY]->(v:Visit) RETURN v\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number: 'MR_04'})-[:BILLED_BY]->(v:Visit)<-[:HAS_VISIT](p:Patient) RETURN p.patient_mrn, p.patient_name\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number: 'MR_04'})-[:HAS_LINE]->(l:Line) RETURN l.position, l.code, l.description, l.poa, l.cc, l.mcc\"}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"S36.032A\"}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"S72.302A\"}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"R57.01\"}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"J95.851\"}"
+    },
+    {
+      "step": 8,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"S27.4XXA\"}"
+    },
+    {
+      "step": 9,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"M62.88\"}"
+    },
+    {
+      "step": 10,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"MR_04\",\"keywords\":[\"ventilator\",\"pneumonia\",\"shock\",\"laceration\",\"traumatic\"]}"
+    },
+    {
+      "step": 11,
+      "kind": "retrieval",
+      "tool": "get_discharge_disposition_note",
+      "arguments": "{\"claim_number\":\"MR_04\"}"
+    },
+    {
+      "step": 12,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

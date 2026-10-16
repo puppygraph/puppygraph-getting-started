@@ -1,0 +1,176 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_10",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "Billed readmission: RM_10 (principal diagnosis T81.4XXA - Infection following a procedure). Review gate: Lake Ontario Health Cooperative review window = 30 days from prior discharge; the readmission occurred within that window (index discharge 2026-08-15 -> readmit 2026-08-20). Guideline: Section B1 asks whether the readmission diagnosis is the same as, or clinically related to, the condition/procedure treated during the prior stay; a YES here is a Finding unless an exclusion in Section C applies. Clinical evidence: the readmission discharge summary explicitly documents this as a Post-sternotomy deep sternal wound infection/mediastinitis with MSSA bacteremia and states it is a direct infectious complication of the CABG performed on the index stay. The index discharge record documents emergency 3-vessel CABG during MR_10 and that the patient was discharged home with home-health (not a direct transfer). No Section C exclusion (for example, direct transfer or scheduled admission) applies. Conclusion: the documentation meets Lake Ontario Health Cooperative's B1 criterion (same or clinically related condition); the readmission is therefore a Finding (related to the index stay). Key supporting citations (document / section / page): - Lake Ontario guideline, Review Window: 30 days from prior discharge (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-b4). - Lake Ontario guideline, Section B1 (same or clinically related condition) (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-B1). - Lake Ontario guideline, Section C1 (exclusions list) (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-C1). - Readmission DISCHARGE SUMMARY (Transfer / Discharge Summary), RM_10 - Clinical Relationship paragraph documents: Index MR_10 (04/15-08/15/2026) included emergency 3-vessel CABG; Readmission RM_10 (08/20-08/31/2026) is post-sternotomy deep sternal wound infection/mediastinitis with MSSA bacteremia explicitly described as a direct infectious complication of the CABG sternotomy (NOTE-Readmission-RM_10-readmission-RM_10.pdf-n139, DISCHARGE SUMMARY, p.135). - Index Discharge / Transfer Summary MR_10 documents the emergency 3-vessel CABG (NOTE-Readmission-RM_10-index-MR_10.pdf-n1039, Discharge / Transfer Summary, p.913) and that the patient was discharged home with home-health wound VAC care (same document, p.913), showing this was not a direct transfer exclusion. Evidence relied on (IDs): ev1 (review window), ev2 (B1 criterion), ev3 (C1 exclusions), ev4 (readmission discharge summary clinical relationship), ev5 (index discharge summary documenting CABG), ev6 (index discharge showing discharge home with home-health). This set directly ties the readmission diagnosis to the index procedure, falls inside the payer's 30-day window, and documents that no Section C exclusion applies. Determination: Finding under the payer's 'same or related condition' criterion.",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "RM_10.pdf",
+      "page_ref": "135",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_10 (04/15\u201308/15/2026): Anterior STEMI (I21.09), emergency 3-vessel CABG (sternotomy), systolic HF with EF 25\u201330%. Readmission RM_10 (08/20\u201308/31/2026): Post-sternotomy deep sternal wound infection/mediastinitis (T81.4XXA) with MSSA bacteremia (A41.511) \u2014 direct infectious complication of the CABG sternotomy from the index admission. Both admissions share I50.23 (acute on chronic systolic HF) and I21.09 as coded diagnoses.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_10.pdf",
+      "page_ref": "913",
+      "page_confirmed": true,
+      "quote": "After multidisciplinary heart-team evaluation, emergency 3-vessel coronary artery bypass grafting (LIMA to LAD, SVG to OM1 and RCA) was performed on ICU day 7 with difficult wean from cardiopulmonary bypass.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_10.pdf",
+      "page_ref": "913",
+      "page_confirmed": true,
+      "quote": "The patient was discharged home in stable condition with home health nursing support for sternal wound VAC care and anticoagulation monitoring, and with a referral to an outpatient cardiac rehabilitation program for continued reconditioning.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "RM_10.pdf",
+      "page_ref": "136",
+      "page_confirmed": true,
+      "quote": "Discharge summary completed and attested by the attending physician of record on 08/31/2026. This document serves as the authoritative discharge record for claim RM_10.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_10.pdf",
+      "page_ref": "914",
+      "page_confirmed": true,
+      "quote": "Electronically signed: Malik Bello, MD, Cardiovascular Critical Care (Attending) | 2026-08-15 11:30",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "RM_10.pdf",
+      "page_ref": "135",
+      "page_confirmed": true,
+      "quote": "Readmission RM_10 (08/20\u201308/31/2026): Post-sternotomy deep sternal wound infection/mediastinitis (T81.4XXA) with MSSA bacteremia (A41.511) \u2014 direct infectious complication of the CABG sternotomy from the index admission.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "RM_10.pdf",
+      "page_ref": "1",
+      "page_confirmed": true,
+      "quote": "Admission (ED) 2026-08-20 12:20",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "RM_10.pdf",
+      "page_ref": "136",
+      "page_confirmed": true,
+      "quote": "62M with anterior STEMI, cardiogenic shock, and emergency 3-vessel CABG (MR_10, 04/15\u201308/15/2026, 123 days) presented 5 days post-discharge with sternal wound erythema, purulent drainage, fever (39.1\u00b0C), and septic physiology.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lake Ontario Health Cooperative - Readmission Review Guideline.docx",
+      "section": "Lake Ontario Health Cooperative - Readmission Review Guideline, Review Window",
+      "quote": "30 days from prior discharge",
+      "document_version_hash": "sha256:ffbc2247ddb66dd54caab49d21dded67ad44b2439e54c4bfe0c721d21ba76ff4"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lake Ontario Health Cooperative - Readmission Review Guideline.docx",
+      "section": "Lake Ontario Health Cooperative - Readmission Review Guideline \u203a Section B - Review Criteria",
+      "quote": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay.",
+      "document_version_hash": "sha256:ffbc2247ddb66dd54caab49d21dded67ad44b2439e54c4bfe0c721d21ba76ff4"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lake Ontario Health Cooperative - Readmission Review Guideline.docx",
+      "section": "Lake Ontario Health Cooperative - Readmission Review Guideline \u203a Section C - Exclusions",
+      "quote": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination.",
+      "document_version_hash": "sha256:ffbc2247ddb66dd54caab49d21dded67ad44b2439e54c4bfe0c721d21ba76ff4"
+    },
+    {
+      "policy_citation_id": "pol_004",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lake Ontario Health Cooperative - Readmission Review Guideline.docx",
+      "section": "Lake Ontario Health Cooperative - Readmission Review Guideline \u203a Section A - General Questions",
+      "quote": "Was sufficient documentation received for both the prior stay and the readmission to complete a review determination? ____Yes: Continue to Section B. ____No: Complete the review with the documentation on file.",
+      "document_version_hash": "sha256:ffbc2247ddb66dd54caab49d21dded67ad44b2439e54c4bfe0c721d21ba76ff4"
+    }
+  ],
+  "system_note": "Billed readmission: RM_10 (principal diagnosis T81.4XXA - Infection following a procedure). Review gate: Lake Ontario Health Cooperative review window = 30 days from prior discharge; the readmission occurred within that window (index discharge 2026-08-15 -> readmit 2026-08-20). Guideline: Section B1 asks whether the readmission diagnosis is the same as, or clinically related to, the condition/procedure treated during the prior stay; a YES here is a Finding unless an exclusion in Section C applies. Clinical evidence: the readmission discharge summary explicitly documents this as a Post-sternotomy deep sternal wound infection/mediastinitis with MSSA bacteremia and states it is a direct infectious complication of the CABG performed on the index stay. The index discharge record documents emergency 3-vessel CABG during MR_10 and that the patient was discharged home with home-health (not a direct transfer). No Section C exclusion (for example, direct transfer or scheduled admission) applies. Conclusion: the documentation meets Lake Ontario Health Cooperative's B1 criterion (same or clinically related condition); the readmission is therefore a Finding (related to the index stay). Key supporting citations (document / section / page): - Lake Ontario guideline, Review Window: 30 days from prior discharge (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-b4). - Lake Ontario guideline, Section B1 (same or clinically related condition) (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-B1). - Lake Ontario guideline, Section C1 (exclusions list) (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-C1). - Readmission DISCHARGE SUMMARY (Transfer / Discharge Summary), RM_10 - Clinical Relationship paragraph documents: Index MR_10 (04/15-08/15/2026) included emergency 3-vessel CABG; Readmission RM_10 (08/20-08/31/2026) is post-sternotomy deep sternal wound infection/mediastinitis with MSSA bacteremia explicitly described as a direct infectious complication of the CABG sternotomy (NOTE-Readmission-RM_10-readmission-RM_10.pdf-n139, DISCHARGE SUMMARY, p.135). - Index Discharge / Transfer Summary MR_10 documents the emergency 3-vessel CABG (NOTE-Readmission-RM_10-index-MR_10.pdf-n1039, Discharge / Transfer Summary, p.913) and that the patient was discharged home with home-health wound VAC care (same document, p.913), showing this was not a direct transfer exclusion. Evidence relied on (IDs): ev1 (review window), ev2 (B1 criterion), ev3 (C1 exclusions), ev4 (readmission discharge summary clinical relationship), ev5 (index discharge summary documenting CABG), ev6 (index discharge showing discharge home with home-health). This set directly ties the readmission diagnosis to the index procedure, falls inside the payer's 30-day window, and documents that no Section C exclusion applies. Determination: Finding under the payer's 'same or related condition' criterion.",
+  "rationale_letter": "To: Billing/Clinical Documentation Office From: Lake Ontario Health Cooperative - Readmission Review Re: Claim RM_10 (Readmission 08/20/2026-08/31/2026) - Determination: Finding (clinically related to prior admission MR_10) We completed a records-based review of readmission claim RM_10 under Lake Ontario Health Cooperative's Readmission Review Guideline. The Plan's review window is 30 days from prior discharge; this readmission occurred 5 days after discharge from the index stay (index discharge 08/15/2026; readmission 08/20/2026), and therefore is within the guideline's review period (30 days). (See: Lake Ontario Health Cooperative Readmission Review Guideline - Review Window: 30 days from prior discharge.) Basis for Finding: The readmission's discharge summary (RM_10, Discharge Summary, p.135) documents Post-sternotomy deep sternal wound infection/mediastinitis (T81.4XXA) with MSSA bacteremia and explicitly states this is a direct infectious complication of the coronary artery bypass grafting (CABG) performed during the index admission MR_10. The index discharge summary (MR_10, Discharge / Transfer Summary, p.913) documents that emergency 3-vessel CABG (LIMA to LAD, SVG to OM1 and RCA) was performed during MR_10 and that the patient was discharged home with home-health wound VAC care (not a direct facility-to-facility transfer). Under the Lake Ontario guideline, Section B1 asks whether the readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay; the documentation supports that it is. Section C (exclusions) does not apply in this case (no direct transfer, scheduled admission, or other listed exclusions are present). Correction / Effect of Determination: The readmission RM_10 is adjudicated as clinically related to the index stay MR_10 under Lake Ontario Health Cooperative's Readmission Review Guideline (Finding under 'same or related condition'). Per payer policy, this readmission will be processed as related to the index admission in accordance with contractual/payment rules (i.e. not separately reimbursable as an unrelated readmission). If you dispute this determination, please provide additional contemporaneous medical record documentation that rebuts the clinical link between the CABG procedure during MR_10 and the post-sternotomy infection documented on RM_10. Sincerely, Lake Ontario Health Cooperative - Readmission Review Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.062565,
+    "time_to_run_seconds": 85.474,
+    "total_cost_per_claim_usd": 30.592565,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.062565
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\":\"RM_10\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\":\"Lake Ontario Health Cooperative\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"RM_10\",\"keywords\":[\"Infection following a procedure\",\"principal diagnosis\",\"post-surgical infection\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

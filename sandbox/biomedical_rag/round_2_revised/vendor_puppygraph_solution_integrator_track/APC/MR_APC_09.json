@@ -1,0 +1,216 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_APC_09",
+  "review_type": "APC",
+  "determination": "Finding",
+  "concept_id": "APC-09",
+  "target_cpt_hcpcs": "11045",
+  "action": "remove",
+  "corrected_cpt_hcpcs": null,
+  "adjusted_apc_code": null,
+  "rationale": "Billed: CPT 11042 (Debridement, subcutaneous tissue; first 20 sq cm or less). The medical record documents an intraoperative excisional debridement to the subcutaneous plane with a surgeon-measured final debrided wound bed of 9.5 cm x 4 cm (38 cm2), measured directly with a sterile ruler and confirmed/photographed in the operative note (Operative Note, [p.25]). The intraoperative circulating RN independently documents confirmation with the surgeon at 08:28 that the final measured debrided wound bed is 9.5 cm x 4 cm (38 cm2) and that the measurement was recorded on the intraoperative measurement log (Nursing Notes - All Phases, [p.33]). The applicable APC policy concept (APC-09 concept text) states that CPT 11042 covers the first 20 cm2 of debrided subcutaneous tissue and that unit counting must be derived from the surgeon's intraoperative measurement of the final debrided wound bed (policy concept_text). Because the record shows an intraoperative final debrided area (38 cm2) and the policy explicitly requires use of the surgeon's intraoperative measurement to apply the 20 cm2 tiers, the documentation supports billing CPT 11042 as the base code for this procedure. Note: the claim lines returned also include two units of 11045 (add-on unit) on this claim; a 38 cm2 final bed would support one 11045 add-on (20 cm2 base + one additional 20 cm2 unit covers up to 40 cm2). That possible overage pertains to the separate 11045 lines (positions 2-3) and should be addressed on those lines; it does not change the support for line 1 (11042) itself. Evidence: Operative Note (NOTE-APC-medical-records-MR_APC_09.pdf-n25, p.25); Nursing intraop confirmation (NOTE-APC-medical-records-MR_APC_09.pdf-n33, p.33); APC policy concept (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-09-6-code). Billed line: CPT 11045 (line 2 of claim APC-2026-58821). Claim-level lines include 11042 (base debridement) plus two 11045 add-on units (positions 2 and 3 on the claim). Governing policy requires that add-on unit count for 11045 be derived from the surgeon's intraoperative measurement of the final debrided wound bed (post-excision) and that CPT 11042 covers the first 20 cm2, with each 11045 covering each additional 20 cm2 or part thereof (APC concept APC-09). Operative documentation records the final debrided wound bed as 9.5 cm x 4 cm = 38 cm2 (surgeon-measured intraoperatively). Arithmetic: 20 cm2 covered by 11042, the remaining 18 cm2 is a part thereof of the next 20 cm2 tier, which justifies one unit of 11045. Therefore the first billed 11045 (line 2) is supported by the record and policy. Note: the claim shows a second 11045 line (position 3); the operative measurement documents only one add-on unit (38 cm2 total), so that second 11045 may not be supported by the same documentation - that sibling line was not adjudicated here but should be reviewed separately. Evidence: APC policy concept (APC-09) requires surgeon's final debrided measurement and defines the 20 cm2 tiers (see evidence ev1), and the Operative Note documents the surgeon-measured final debrided bed = 9.5 x 4 cm (38 cm2) (see evidence ev2). Line billed: CPT 11045 (second unit on claim line 3). Claim also includes 11042 (first 20 cm2) and one other 11045 unit. Governing policy (APC-09) requires unit count for 11045 be calculated from the surgeon's intraoperative measurement of the final debrided wound bed (post-excision); 11042 covers the first 20 cm2, and each 11045 covers each additional 20 cm2 or part thereof (policy language: RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-09-4). The operative note documents a final debrided wound bed of 9.5 cm x 4 cm (38 cm2) (Operative Note, SECTION 8 OF 13, p.25: NOTE-APC-medical-records-MR_APC_09.pdf-n25), a measurement independently corroborated by the circulating RN noting the final measured debrided wound bed is 9.5 cm x 4 cm (38 cm2) on the intraoperative measurement log (Nursing Notes - Circulator, p.33: NOTE-APC-medical-records-MR_APC_09.pdf-n33). Arithmetic per the policy: total debrided surface area = 38 cm2; 11042 covers first 20 cm2, leaving 18 cm2 beyond that. Because 11045 is an add-on that covers each additional 20 cm2 or part thereof, only one add-on unit of 11045 is supported (ceil((38 - 20)/20) = 1). The claim billed two units of 11045 (lines 2 and 3); the second unit (line 3) is not supported by the intraoperative measurement and should be removed. Evidence: policy (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-09-4, operative note NOTE-APC-medical-records-MR_APC_09.pdf-n25 [p.25], and nursing/circulator NOTE-APC-medical-records-MR_APC_09.pdf-n33 [p.33]).",
+  "evidence_ids": [
+    "ev_0001",
+    "ev_0002",
+    "ev_0003",
+    "ev_0004",
+    "ev_0005"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_APC_09.pdf",
+      "page_ref": "25 or 26",
+      "page_confirmed": false,
+      "quote": "The final debrided wound bed was measured directly with a sterile disposable ruler and calculated to be approximately 9.5 cm x 4 cm (38 cm\u00b2) irregular debridement bed after excisional debridement to healthy, bleeding subcutaneous tissue.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_APC_09.pdf",
+      "page_ref": "33 or 34",
+      "page_confirmed": false,
+      "quote": "Circulator independently confirms with surgeon at 0828 that the final measured debrided wound bed is 9.5 cm x 4 cm (38 cm\u00b2), consistent with the operative note, and this measurement is documented on the intraoperative count/measurement log prior to dressing application.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_APC_09.pdf",
+      "page_ref": "25 or 26",
+      "page_confirmed": false,
+      "quote": "The final debrided wound bed was measured directly with a sterile disposable ruler and calculated to be approximately 9.5 cm x 4 cm (38 cm\u00b2) irregular debridement bed after excisional debridement to healthy, bleeding subcutaneous tissue. This measurement was confirmed a second time and photographed for the record prior to dressing application.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_APC_09.pdf",
+      "page_ref": "25 or 26",
+      "page_confirmed": false,
+      "quote": "The final debrided wound bed was measured directly with a sterile disposable ruler and calculated to be approximately 9.5 cm x 4 cm (38 cm\u00b2) irregular debridement bed after excisional debridement to healthy, bleeding subcutaneous tissue.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_APC_09.pdf",
+      "page_ref": "33 or 34",
+      "page_confirmed": false,
+      "quote": "Circulator independently confirms with surgeon at 0828 that the final measured debrided wound bed is 9.5 cm x 4 cm (38 cm\u00b2), consistent with the operative note, and this measurement is documented on the intraoperative count/measurement log prior to dressing application.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-09, row 4",
+      "quote": "CPT 11042 covers excisional debridement of subcutaneous tissue for the first 20 cm\u00b2 of wound surface area; each add-on unit of 11045 covers each additional 20 cm\u00b2 or part thereof beyond that base. Unit count must be derived from the surgeon's own intraoperative measurement of the final debrided wound bed (post-excision), not from a pre-debridement clinical wound assessment, which typically describes a visually larger or more irregular wound due to undermining, callus, or slough that is excised during the procedure. Reviewers should locate the operative note's stated final debrided dimensions and apply the 20 cm\u00b2 tier arithmetic directly, cross-checking against any independently recorded intraoperative measurement log, rather than relying on pre-procedure wound-assessment measurements.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-09, row 4",
+      "quote": "11045 \u2014 Debridement, subcutaneous tissue; each additional 20 sq cm, or part thereof (List separately in addition to code for primary procedure 11042) CPT 11042 covers excisional debridement of subcutaneous tissue for the first 20 cm\u00b2 of wound surface area; each add-on unit of 11045 covers each additional 20 cm\u00b2 or part thereof beyond that base. Unit count must be derived from the surgeon's own intraoperative measurement of the final debrided wound bed (post-excision), not from a pre-debridement clinical wound assessment, which typically describes a visually larger or more irregular wound due to undermining, callus, or slough that is excised during the procedure. Reviewers should locate the operative note's stated final debrided dimensions and apply the 20 cm\u00b2 tier arithmetic directly, cross-checking against any independently recorded intraoperative measurement log, rather than relying on pre-procedure wound-assessment measurements.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-09, row 4",
+      "quote": "11045 \u2014 Debridement, subcutaneous tissue; each additional 20 sq cm, or part thereof (List separately in addition to code for primary procedure 11042) CPT 11042 covers excisional debridement of subcutaneous tissue for the first 20 cm\u00b2 of wound surface area; each add-on unit of 11045 covers each additional 20 cm\u00b2 or part thereof beyond that base. Unit count must be derived from the surgeon's own intraoperative measurement of the final debrided wound bed (post-excision), not from a pre-debridement clinical wound assessment, which typically describes a visually larger or more irregular wound due to undermining, callus, or slough that is excised during the procedure. Reviewers should locate the operative note's stated final debrided dimensions and apply the 20 cm\u00b2 tier arithmetic directly, cross-checking against any independently recorded intraoperative measurement log, rather than relying on pre-procedure wound-assessment measurements.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    }
+  ],
+  "system_note": "Billed: CPT 11042 (Debridement, subcutaneous tissue; first 20 sq cm or less). The medical record documents an intraoperative excisional debridement to the subcutaneous plane with a surgeon-measured final debrided wound bed of 9.5 cm x 4 cm (38 cm2), measured directly with a sterile ruler and confirmed/photographed in the operative note (Operative Note, [p.25]). The intraoperative circulating RN independently documents confirmation with the surgeon at 08:28 that the final measured debrided wound bed is 9.5 cm x 4 cm (38 cm2) and that the measurement was recorded on the intraoperative measurement log (Nursing Notes - All Phases, [p.33]). The applicable APC policy concept (APC-09 concept text) states that CPT 11042 covers the first 20 cm2 of debrided subcutaneous tissue and that unit counting must be derived from the surgeon's intraoperative measurement of the final debrided wound bed (policy concept_text). Because the record shows an intraoperative final debrided area (38 cm2) and the policy explicitly requires use of the surgeon's intraoperative measurement to apply the 20 cm2 tiers, the documentation supports billing CPT 11042 as the base code for this procedure. Note: the claim lines returned also include two units of 11045 (add-on unit) on this claim; a 38 cm2 final bed would support one 11045 add-on (20 cm2 base + one additional 20 cm2 unit covers up to 40 cm2). That possible overage pertains to the separate 11045 lines (positions 2-3) and should be addressed on those lines; it does not change the support for line 1 (11042) itself. Evidence: Operative Note (NOTE-APC-medical-records-MR_APC_09.pdf-n25, p.25); Nursing intraop confirmation (NOTE-APC-medical-records-MR_APC_09.pdf-n33, p.33); APC policy concept (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-09-6-code). Billed line: CPT 11045 (line 2 of claim APC-2026-58821). Claim-level lines include 11042 (base debridement) plus two 11045 add-on units (positions 2 and 3 on the claim). Governing policy requires that add-on unit count for 11045 be derived from the surgeon's intraoperative measurement of the final debrided wound bed (post-excision) and that CPT 11042 covers the first 20 cm2, with each 11045 covering each additional 20 cm2 or part thereof (APC concept APC-09). Operative documentation records the final debrided wound bed as 9.5 cm x 4 cm = 38 cm2 (surgeon-measured intraoperatively). Arithmetic: 20 cm2 covered by 11042, the remaining 18 cm2 is a part thereof of the next 20 cm2 tier, which justifies one unit of 11045. Therefore the first billed 11045 (line 2) is supported by the record and policy. Note: the claim shows a second 11045 line (position 3); the operative measurement documents only one add-on unit (38 cm2 total), so that second 11045 may not be supported by the same documentation - that sibling line was not adjudicated here but should be reviewed separately. Evidence: APC policy concept (APC-09) requires surgeon's final debrided measurement and defines the 20 cm2 tiers (see evidence ev1), and the Operative Note documents the surgeon-measured final debrided bed = 9.5 x 4 cm (38 cm2) (see evidence ev2). Line billed: CPT 11045 (second unit on claim line 3). Claim also includes 11042 (first 20 cm2) and one other 11045 unit. Governing policy (APC-09) requires unit count for 11045 be calculated from the surgeon's intraoperative measurement of the final debrided wound bed (post-excision); 11042 covers the first 20 cm2, and each 11045 covers each additional 20 cm2 or part thereof (policy language: RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-09-4). The operative note documents a final debrided wound bed of 9.5 cm x 4 cm (38 cm2) (Operative Note, SECTION 8 OF 13, p.25: NOTE-APC-medical-records-MR_APC_09.pdf-n25), a measurement independently corroborated by the circulating RN noting the final measured debrided wound bed is 9.5 cm x 4 cm (38 cm2) on the intraoperative measurement log (Nursing Notes - Circulator, p.33: NOTE-APC-medical-records-MR_APC_09.pdf-n33). Arithmetic per the policy: total debrided surface area = 38 cm2; 11042 covers first 20 cm2, leaving 18 cm2 beyond that. Because 11045 is an add-on that covers each additional 20 cm2 or part thereof, only one add-on unit of 11045 is supported (ceil((38 - 20)/20) = 1). The claim billed two units of 11045 (lines 2 and 3); the second unit (line 3) is not supported by the intraoperative measurement and should be removed. Evidence: policy (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-09-4, operative note NOTE-APC-medical-records-MR_APC_09.pdf-n25 [p.25], and nursing/circulator NOTE-APC-medical-records-MR_APC_09.pdf-n33 [p.33]).",
+  "rationale_letter": "Re: Audit of claim APC-2026-58821 / Patient MRN-3384719 - CPT 11045 (line 3) Dear Provider, We reviewed the operative documentation and the governing APC policy for the above-referenced ambulatory surgery visit dated 03/17/2026. The operative note documents the final debrided wound bed measurement as 9.5 cm x 4 cm (38 cm2) (Operative Note, p.25). The facility policy for CPT 11045 (APC-09) specifies that CPT 11042 covers the first 20 cm2 of excisional subcutaneous debridement and that each unit of CPT 11045 represents each additional 20 cm2 or part thereof beyond that base; unit counts must be derived from the surgeon's intraoperative measurement of the final debrided wound bed (policy reference: APC-09 concept text). Basis for Finding: - Operative documentation: final debrided wound bed = 9.5 cm x 4 cm (38 cm2) (Operative Note, 03/17/2026). This measurement is corroborated in the intraoperative nursing/circulating record and measurement log. - Policy arithmetic: 11042 covers first 20 cm2; remaining surface area = 38 - 20 = 18 cm2. Under the policy, an add-on 11045 is billed per additional 20 cm2 or part thereof; 18 cm2 is a single \"part thereof\" and therefore supports only one unit of 11045. Correction to Claim: - The documentation supports one unit of add-on CPT 11045 in addition to CPT 11042. The second billed unit of CPT 11045 (claim line 3) is not supported by the intraoperative measurement and will be denied/removed. The approved coding after this adjustment is CPT 11042 plus one unit of CPT 11045. If you disagree with this determination or have additional intraoperative measurement documentation not included in the medical record reviewed (for example, a contemporaneous measurement log or photograph not previously submitted), please provide that documentation within 30 days to support billing of the additional add-on unit. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.076872,
+    "time_to_run_seconds": 129.809,
+    "total_cost_per_claim_usd": 30.606872,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.076872
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-58821\", \"patient_mrn\": \"MRN-3384719\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"11042\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-58821\", \"patient_mrn\": \"MRN-3384719\", \"keywords\": [\"debridement\", \"subcutaneous tissue\", \"tissue removal\", \"wound care\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"debridement\",\"subcutaneous tissue\",\"diabetic foot ulcer\",\"excisional\",\"38 cm2\"]}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"debridement\",\"subcutaneous tissue\",\"diabetic foot ulcer\",\"excisional\"]}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"debridement\",\"subcutaneous tissue\"]}"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    },
+    {
+      "step": 8,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-58821\", \"patient_mrn\": \"MRN-3384719\"}"
+    },
+    {
+      "step": 9,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"11045\"}"
+    },
+    {
+      "step": 10,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-58821\", \"patient_mrn\": \"MRN-3384719\", \"keywords\": [\"debridement\", \"subcutaneous tissue\", \"tissue\", \"surgery\"]}"
+    },
+    {
+      "step": 11,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"debridement\",\"subcutaneous\",\"tissue\",\"additional\"]}"
+    },
+    {
+      "step": 12,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    },
+    {
+      "step": 13,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-58821\", \"patient_mrn\": \"MRN-3384719\"}"
+    },
+    {
+      "step": 14,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-58821\", \"patient_mrn\": \"MRN-3384719\", \"keywords\": [\"debridement\", \"subcutaneous tissue\"]}"
+    },
+    {
+      "step": 15,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"11045\"}"
+    },
+    {
+      "step": 16,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"debridement\",\"diabetic foot ulcer\",\"subcutaneous tissue\"]}"
+    },
+    {
+      "step": 17,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"debridement\",\"foot\",\"subcutaneous\"]}"
+    },
+    {
+      "step": 18,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"debridement\",\"foot\"]}"
+    },
+    {
+      "step": 19,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"debridement\"]}"
+    },
+    {
+      "step": 20,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

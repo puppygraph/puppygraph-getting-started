@@ -1,0 +1,115 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_APC_07",
+  "review_type": "APC",
+  "determination": "Finding",
+  "concept_id": "APC-07",
+  "target_cpt_hcpcs": "63685",
+  "action": "recode",
+  "corrected_cpt_hcpcs": "63650",
+  "adjusted_apc_code": "5462",
+  "rationale": "Billed: CPT 63685 (Insertion/replacement of spinal neurostimulator pulse generator) on claim APC-2026-10453 line 1. Medical record documentation demonstrates this encounter was a temporary percutaneous spinal cord stimulator (SCS) trial with externalized leads and an external trial stimulator, not a permanent generator implantation. Operative Note documents PROCEDURE PERFORMED: Trial percutaneous placement of two spinal cord stimulator leads with connection to an external trial stimulator (Operative Note, NOTE-APC-medical-records-MR_APC_07.pdf-n25, p.25; evidence ev1). The same operative documentation states At no point was an implantable pulse generator pocket created, and no IPG was opened, prepared, back-table prepped, or implanted during this encounter (Operative Note, NOTE-APC-medical-records-MR_APC_07.pdf-n25, p.25-26; evidence ev2). Discharge Summary likewise records Procedure Performed | Trial percutaneous placement of two spinal cord stimulator leads with external trial stimulator; no permanent generator implanted (Discharge Summary, NOTE-APC-medical-records-MR_APC_07.pdf-n39, p.39; evidence ev3). Informed consent and nursing/intraoperative notes consistently describe a planned externalized trial only (Informed Consent Documentation, NOTE-APC-medical-records-MR_APC_07.pdf-n10, p.12; evidence ev4). Governing policy for CPT 63685 (APC-07) requires that a permanent implantable pulse generator be opened/prepared/implanted during the billed encounter; the policy explicitly states that percutaneous SCS trial encounters map to CPT 63650 (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-07-4, section; evidence ev5). Because the documentation explicitly indicates no IPG was created or implanted, the billed 63685 is not supported and should be recoded to 63650 (per policy text). Evidence cited: Operative Note (p.25-26) NOTE-APC-medical-records-MR_APC_07.pdf-n25 (ev1, ev2); Discharge Summary (p.39) NOTE-APC-medical-records-MR_APC_07.pdf-n39 (ev3); Informed Consent (p.12) NOTE-APC-medical-records-MR_APC_07.pdf-n10 (ev4); Governing policy APC-07 concept_text RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-07-4 (ev5).",
+  "evidence_ids": [
+    "ev_0001",
+    "ev_0002",
+    "ev_0003",
+    "ev_0004"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_APC_07.pdf",
+      "page_ref": "25",
+      "page_confirmed": true,
+      "quote": "PROCEDURE PERFORMED: Trial percutaneous placement of two spinal cord stimulator leads with connection to an external trial stimulator",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_APC_07.pdf",
+      "page_ref": "25 or 26",
+      "page_confirmed": false,
+      "quote": "At no point was an implantable pulse generator pocket created, and no IPG was opened, prepared, back-table prepped, or implanted during this encounter. This remains a percutaneous trial only; a decision regarding permanent implantation will be deferred pending the outcome of the planned 5-7 day home trial period, per the trial plan discussed and documented at the time of consent.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_APC_07.pdf",
+      "page_ref": "39",
+      "page_confirmed": true,
+      "quote": "Procedure Performed | Trial percutaneous placement of two spinal cord stimulator leads with external trial stimulator; no permanent generator implanted",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_APC_07.pdf",
+      "page_ref": "12",
+      "page_confirmed": true,
+      "quote": "Patient explicitly counseled this is a trial, reversible, temporary placement, and verbalized understanding that no permanent generator will be implanted today. Written informed consent obtained for the percutaneous trial only.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [],
+  "system_note": "Billed: CPT 63685 (Insertion/replacement of spinal neurostimulator pulse generator) on claim APC-2026-10453 line 1. Medical record documentation demonstrates this encounter was a temporary percutaneous spinal cord stimulator (SCS) trial with externalized leads and an external trial stimulator, not a permanent generator implantation. Operative Note documents PROCEDURE PERFORMED: Trial percutaneous placement of two spinal cord stimulator leads with connection to an external trial stimulator (Operative Note, NOTE-APC-medical-records-MR_APC_07.pdf-n25, p.25; evidence ev1). The same operative documentation states At no point was an implantable pulse generator pocket created, and no IPG was opened, prepared, back-table prepped, or implanted during this encounter (Operative Note, NOTE-APC-medical-records-MR_APC_07.pdf-n25, p.25-26; evidence ev2). Discharge Summary likewise records Procedure Performed | Trial percutaneous placement of two spinal cord stimulator leads with external trial stimulator; no permanent generator implanted (Discharge Summary, NOTE-APC-medical-records-MR_APC_07.pdf-n39, p.39; evidence ev3). Informed consent and nursing/intraoperative notes consistently describe a planned externalized trial only (Informed Consent Documentation, NOTE-APC-medical-records-MR_APC_07.pdf-n10, p.12; evidence ev4). Governing policy for CPT 63685 (APC-07) requires that a permanent implantable pulse generator be opened/prepared/implanted during the billed encounter; the policy explicitly states that percutaneous SCS trial encounters map to CPT 63650 (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-07-4, section; evidence ev5). Because the documentation explicitly indicates no IPG was created or implanted, the billed 63685 is not supported and should be recoded to 63650 (per policy text). Evidence cited: Operative Note (p.25-26) NOTE-APC-medical-records-MR_APC_07.pdf-n25 (ev1, ev2); Discharge Summary (p.39) NOTE-APC-medical-records-MR_APC_07.pdf-n39 (ev3); Informed Consent (p.12) NOTE-APC-medical-records-MR_APC_07.pdf-n10 (ev4); Governing policy APC-07 concept_text RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-07-4 (ev5).",
+  "rationale_letter": "Re: Audit Determination - Claim APC-2026-10453 / Patient MRN-4820371 To Whom It May Concern: This letter documents the results of an audit of procedure line 1 on claim APC-2026-10453 (patient MRN-4820371). The line billed CPT 63685 (Insertion or replacement of spinal neurostimulator pulse generator or receiver). After review of the medical record and the applicable APC policy, we have determined the billed code is not supported for the date of service 03/09/2026. Basis for Determination - The patient's operative documentation states the procedure performed was a trial percutaneous placement of two spinal cord stimulator leads with connection to an external trial stimulator (Operative Note, p.25). The operative documentation further states that no implantable pulse generator pocket was created and no IPG was opened, prepared, or implanted during the encounter (Operative Note, p.25-26) (evidence: Operative Note, NOTE-APC-medical-records-MR_APC_07.pdf-n25). The Discharge Summary similarly records the encounter as a trial with no permanent generator implanted (Discharge Summary, p.39) (evidence: NOTE-APC-medical-records-MR_APC_07.pdf-n39). The informed consent also documents the patient was counseled that no permanent generator would be implanted at this visit and that the procedure was a temporary trial (Informed Consent, p.12) (evidence: NOTE-APC-medical-records-MR_APC_07.pdf-n10). - The governing APC coding concept for CPT 63685 (APC-07) requires that a permanent implantable pulse generator be opened, prepared, and connected to the electrode array during the billed encounter. The policy explicitly states that a percutaneous SCS trial (leads placed and externalized to a temporary trial stimulator, with no generator pocketed or implanted) maps to CPT 63650 rather than CPT 63685 (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-07-4) (evidence: APC policy concept_text). Audit Conclusion and Correction - Finding: The billed CPT 63685 is not supported by the documentation for the 03/09/2026 encounter. Category: Extent/Completeness Not Met (the billed service implies permanent generator implantation that did not occur). - Correction: Recode the procedure line to CPT 63650 to reflect the documented percutaneous SCS trial with externalized leads. Please adjust the claim accordingly. If you believe additional documentation exists to support billing CPT 63685 for this date of service (for example, operative documentation showing IPG pocket creation and implantation or a generator serial number recorded in the record), please submit that documentation for reconsideration. Sincerely, Clinical Claims Audit Team Evidence referenced: Operative Note p.25-26 (NOTE-APC-medical-records-MR_APC_07.pdf-n25), Discharge Summary p.39 (NOTE-APC-medical-records-MR_APC_07.pdf-n39), Informed Consent p.12 (NOTE-APC-medical-records-MR_APC_07.pdf-n10), APC policy concept (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-07-4).",
+  "metrics": {
+    "cost_of_processing_usd": 0.031913,
+    "time_to_run_seconds": 46.492,
+    "total_cost_per_claim_usd": 30.561913,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.031913
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-10453\", \"patient_mrn\": \"MRN-4820371\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-10453\", \"patient_mrn\": \"MRN-4820371\", \"keywords\": [\"spinal neurostimulator\", \"generator\", \"stimulation\", \"procedure\", \"implant\"]}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"63685\"}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"percutaneous\",\"spinal cord stimulator\",\"trial\",\"leads\",\"external\"]}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"spinal cord stimulator\",\"trial\",\"leads\"]}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"spinal cord stimulator\",\"trial\"]}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"spinal cord stimulator\"]}"
+    },
+    {
+      "step": 8,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

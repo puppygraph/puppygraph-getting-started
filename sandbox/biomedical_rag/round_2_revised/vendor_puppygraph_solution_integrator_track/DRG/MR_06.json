@@ -1,0 +1,376 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_06",
+  "review_type": "DRG",
+  "determination": "Finding",
+  "corrected_coding_set": [
+    {
+      "code": "K85.11",
+      "poa": "Y",
+      "role": "principal",
+      "short_desc": "Biliary acute pancreatitis with uninfected necrosis"
+    },
+    {
+      "code": "K85.82",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Other acute pancreatitis with infected necrosis"
+    },
+    {
+      "code": "K80.2",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Calculus of gallbladder without cholecystitis"
+    },
+    {
+      "code": "R65.21",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Severe sepsis with septic shock"
+    },
+    {
+      "code": "A41.50",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Gram-negative sepsis, unspecified"
+    },
+    {
+      "code": "B96.1",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Klebsiella pneumoniae as the cause of diseases classified elsewhere"
+    },
+    {
+      "code": "J96.01",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute respiratory failure with hypoxia"
+    },
+    {
+      "code": "J80",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute respiratory distress syndrome"
+    },
+    {
+      "code": "N17.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute kidney failure, unspecified"
+    },
+    {
+      "code": "I48.91",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Unspecified atrial fibrillation"
+    },
+    {
+      "code": "E11.6",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Type 2 diabetes mellitus with other specified complication (new-onset)"
+    },
+    {
+      "code": "K86.8",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Other specified diseases of pancreas (exocrine insufficiency)"
+    },
+    {
+      "code": "I10",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Essential (primary) hypertension"
+    },
+    {
+      "code": "E78.5",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "K21.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Gastro-esophageal reflux disease without esophagitis"
+    }
+  ],
+  "corrected_procedure_set": [
+    "0BH17EZ",
+    "0DH64UZ",
+    "0F9G30Z",
+    "0W9G3ZZ",
+    "02HV33Z",
+    "03HY32Z",
+    "5A1D90Z"
+  ],
+  "code_actions": [
+    {
+      "code": "K85.01",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Record documents gallstone etiology at admission and later confirmed infected pancreatic necrosis; idiopathic/uninfected necrosis (K85.01) is not supported by admission imaging and procedural/ID confirmation of infection.",
+      "evidence_ids": [
+        "ev_0004",
+        "ev_0001",
+        "ev_0002",
+        "ev_0005"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "K85.82",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "N",
+      "new_severity": null,
+      "rationale": "Infected pancreatic necrosis was confirmed in-hospital by CT-guided aspiration/culture and imaging (gas in collections); infection occurred after admission and is POA=N but is a high-severity (MCC) condition.",
+      "evidence_ids": [
+        "ev_0002",
+        "ev_0003",
+        "ev_0007",
+        "ev_0005"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "K57.21",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "No CT or operative documentation supports perforated diverticulitis/abscess; CT shows no pneumoperitoneum and the findings/procedures are limited to pancreatic collections and drainage.",
+      "evidence_ids": [
+        "ev_0008",
+        "ev_0001"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "R65.21",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "N",
+      "new_severity": null,
+      "rationale": "Severe sepsis/septic shock is supported by clinical course, lactate/PCT, and infection documented after admission; the general surgery consult documents sterile necrosis early (supporting that fulminant sepsis developed later), and aspiration/microbiology confirm in-hospital infection, supporting POA=N.",
+      "evidence_ids": [
+        "ev_0006",
+        "ev_0002"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "J80",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "Y",
+      "new_severity": null,
+      "rationale": "ARDS requiring prolonged mechanical ventilation is documented in the problem list and discharge summary (extubation on ICU day 18), supporting ARDS presence and POA=Y (present early in the ICU course).",
+      "evidence_ids": [
+        "ev_0009",
+        "ev_0013"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "K65.0",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "No imaging or operative documentation supports generalized (acute) peritonitis; CT shows no pneumoperitoneum and clinical/operative documentation describes retroperitoneal/pancreatic drainage rather than management of generalized peritonitis.",
+      "evidence_ids": [
+        "ev_0008",
+        "ev_0007"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "0FBG3ZZ",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "No documentation supports a percutaneous excision of the pancreas; the record documents CT-guided aspiration, percutaneous drainage and VARD (debridement), not pancreatic excision.",
+      "evidence_ids": [
+        "ev_0005",
+        "ev_0002"
+      ],
+      "policy_citation_ids": []
+    }
+  ],
+  "discharge_disposition": "63 - Discharged/transferred to a Medicare-certified long-term care hospital (LTCH)",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_06.pdf",
+      "page_ref": "115",
+      "page_confirmed": true,
+      "quote": "Impression Severe necrotizing gallstone pancreatitis with 40-50% pancreatic necrosis.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_06.pdf",
+      "page_ref": "601",
+      "page_confirmed": true,
+      "quote": "Impression Confirmed infected pancreatic necrosis - gram-negative organisms.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_06.pdf",
+      "page_ref": "601",
+      "page_confirmed": true,
+      "quote": "CT-guided aspiration performed of the pancreatic bed. Purulent material obtained. Gram stain and cultures sent. Confirmatory infection.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_06.pdf",
+      "page_ref": "141",
+      "page_confirmed": true,
+      "quote": "Imaging confirmed severe necrotizing pancreatitis with 40-50% pancreatic necrosis and cholelithiasis as the presumptive etiology.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_06.pdf",
+      "page_ref": "1079",
+      "page_confirmed": true,
+      "quote": "The course was complicated by ARDS with successful prone positioning, AKI managed conservatively, transient abdominal compartment concerns managed non-operatively, infected pancreatic necrosis with Klebsiella pneumoniae treated with meropenem and a step-up approach including CT-guided percutaneous drainage on ICU day 13 followed by video-assisted retroperitoneal debridement on ICU day 16,",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_06.pdf",
+      "page_ref": "110",
+      "page_confirmed": true,
+      "quote": "Necrotizing pancreatitis with 40-50% necrosis by CT. Currently sterile necrosis. Monitor for infection - step-up approach if infected.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_06.pdf",
+      "page_ref": "601",
+      "page_confirmed": true,
+      "quote": "Impression Infected pancreatic necrosis suggested by gas in necrotic collections.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_06.pdf",
+      "page_ref": "115",
+      "page_confirmed": true,
+      "quote": "Free fluid in the pelvis. No pneumoperitoneum.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "MR_06.pdf",
+      "page_ref": "141",
+      "page_confirmed": true,
+      "quote": "5 ARDS requiring prolonged mechanical ventilation",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0010",
+      "document": "MR_06.pdf",
+      "page_ref": "141",
+      "page_confirmed": true,
+      "quote": "Medical: Cholelithiasis (recent symptomatic episodes), hypertension, hyperlipidemia, gastroesophageal reflux disease, obesity.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0011",
+      "document": "MR_06.pdf",
+      "page_ref": "658",
+      "page_confirmed": true,
+      "quote": "Intubation for respiratory support and pain control.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0012",
+      "document": "MR_06.pdf",
+      "page_ref": "141",
+      "page_confirmed": true,
+      "quote": "3 Status post IR percutaneous drainage",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0013",
+      "document": "MR_06.pdf",
+      "page_ref": "1079",
+      "page_confirmed": true,
+      "quote": "Extubation was successful on ICU day 18 following resolution of ARDS.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0014",
+      "document": "MR_06.pdf",
+      "page_ref": "141",
+      "page_confirmed": true,
+      "quote": "4 Status post video-assisted retroperitoneal debridement (VARD)",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [],
+  "system_note": "What was billed: Position 1 billed K85.01 (Idiopathic acute pancreatitis with uninfected necrosis). What the record documents: multiple contemporaneous notes, imaging, procedure, and discharge documentation establish gallstone (biliary) necrotizing pancreatitis with subsequent confirmed infected pancreatic necrosis (Klebsiella) and multiorgan dysfunction. Key supporting documentation: CT Abdomen (3/02) documents 40-50% pancreatic necrosis and cholelithiasis (NOTE-Medical-Records-1-15-MR_06.pdf-n13, Diagnostic Imaging Report - Contrast-Enhanced CT Abdomen and Pelvis, p.115: Impression: Severe necrotizing gallstone pancreatitis with 40-50% pancreatic necrosis), the CT-guided aspiration and procedure notes confirm purulent material and gram-negative organisms (NOTE-Medical-Records-1-15-MR_06.pdf-n70, CT-Guided Aspiration: Impression: Confirmed infected pancreatic necrosis - gram-negative organisms; NOTE-Medical-Records-1-15-MR_06.pdf-n72, Procedure Note: CT-guided aspiration performed of the pancreatic bed. Purulent material obtained. Gram stain and cultures sent. Confirmatory infection.), and the Discharge/Transfer Summary documents infected pancreatic necrosis treated with IR drainage and VARD (NOTE-Medical-Records-1-15-MR_06.pdf-n950, Discharge / Transfer Summary, p.1079: The course was complicated by ... infected pancreatic necrosis with Klebsiella pneumoniae treated with meropenem and a step-up approach including CT-guided percutaneous drainage on ICU day 13 followed by video-assisted retroperitoneal debridement on ICU day 16,). Why this is a Finding: the billed principal diagnosis K85.01 (idiopathic, uninfected necrosis) conflicts with the contemporaneous clinical record that documents a biliary (gallstone) etiology on admission and later confirmed infected necrosis. Admission documentation (H&P and imaging) supports gallstone pancreatitis as the admitting (principal) diagnosis (NOTE-Medical-Records-1-15-MR_06.pdf-n9, History & Physical (Admitting), p.658: Imaging confirmed severe necrotizing pancreatitis with 40-50% pancreatic necrosis and cholelithiasis as the presumptive etiology.), while the aspiration/drainage and ID/IR documentation confirm infected necrosis developed and was treated during the stay (NOTE-Medical-Records-1-15-MR_06.pdf-n70, p.601; NOTE-Medical-Records-1-15-MR_06.pdf-n63, p.427). Specific recommended corrections: 1) Remove K85.01 (idiopathic/uninfected) - not supported. 2) Principal diagnosis should be the biliary/gallstone necrotizing pancreatitis code (billed K85.11) because gallstone etiology and necrosis were present on admission; retain the infected-necrosis code (K85.82) as a secondary diagnosis with POA=N (infection confirmed during the admission). 3) Remove unrelated/unsupported diagnoses (e.g. K57.21 diverticulitis with perforation and K65.0 generalized peritonitis) because imaging and operative documentation do not support perforated diverticulitis or generalized peritonitis (CT reports free fluid but no pneumoperitoneum; no imaging/operative note demonstrates perforated diverticulitis) (NOTE-Medical-Records-1-15-MR_06.pdf-n13, Diagnostic Imaging Report - Contrast-Enhanced CT Abdomen and Pelvis, p.115: Free fluid in the pelvis. No pneumoperitoneum.). 4) Procedure-level correction: remove 0FBG3ZZ (Excision of pancreas, percutaneous approach) - the record documents CT-guided aspiration, percutaneous drainage, and video-assisted retroperitoneal debridement (VARD), not a percutaneous pancreatic excision (NOTE-Medical-Records-1-15-MR_06.pdf-n72, Procedure Note, p.601; NOTE-Medical-Records-1-15-MR_06.pdf-n950, Discharge / Transfer Summary, p.1079). Evidence (selected): NOTE-Medical-Records-1-15-MR_06.pdf-n13 (CT Impression, p.115), NOTE-Medical-Records-1-15-MR_06.pdf-n70 (CT-Guided Aspiration, p.601), NOTE-Medical-Records-1-15-MR_06.pdf-n72 (Procedure Note, p.601), NOTE-Medical-Records-1-15-MR_06.pdf-n9 (History & Physical, p.658), NOTE-Medical-Records-1-15-MR_06.pdf-n950 (Discharge / Transfer Summary, p.1079). Line-by-line rationale and mapping to corrected list are provided in code_decisions. Reviewer note: I considered the CONFLICT markers (notably the flagged INPATIENT MEDICAL RECORD line) but multiple independent sources (admission H&P/imaging, IR aspiration & gram stain, ID & surgical notes, and the discharge summary) consistently document biliary etiology and subsequent infected necrosis; those records are relied on for this determination (see evidence_cited entries ev1-ev11).",
+  "rationale_letter": "RE: DRG audit - MR_06 Dear Provider, We reviewed the inpatient record for MR_06 (admit 03/02/2026) to determine whether the billed principal diagnosis and associated high-severity diagnoses/procedures for the admission are supported by the medical record. Our audit found the following: Finding - the billed principal diagnosis K85.01 (Idiopathic acute pancreatitis with uninfected necrosis) is not supported as submitted and the claim's coding requires correction. Basis for the Finding (clinical facts relied on): - Imaging on 03/02/2026 documents severe necrotizing gallstone pancreatitis with 40-50% pancreatic necrosis (Diagnostic Imaging Report - Contrast-Enhanced CT Abdomen and Pelvis, NOTE-Medical-Records-1-15-MR_06.pdf-n13, Impression: Severe necrotizing gallstone pancreatitis with 40-50% pancreatic necrosis). This establishes a biliary etiology on admission. - CT-guided aspiration performed on 03/11/2026 yielded purulent material and gram-negative organisms confirming infected pancreatic necrosis (CT-Guided Aspiration, NOTE-Medical-Records-1-15-MR_06.pdf-n70, Impression: Confirmed infected pancreatic necrosis - gram-negative organisms; Procedure Note, NOTE-Medical-Records-1-15-MR_06.pdf-n72: CT-guided aspiration performed of the pancreatic bed. Purulent material obtained. Gram stain and cultures sent. Confirmatory infection.). - The hospital course and discharge summary document treatment of Klebsiella-infected necrosis with IR drainage and VARD (Discharge / Transfer Summary, NOTE-Medical-Records-1-15-MR_06.pdf-n950: infected pancreatic necrosis with Klebsiella pneumoniae treated with meropenem and a step-up approach including CT-guided percutaneous drainage on ICU day 13 followed by video-assisted retroperitoneal debridement on ICU day 16). Correction(s) being made: - Remove K85.01 (Idiopathic acute pancreatitis with uninfected necrosis): this is inconsistent with the documented gallstone etiology and with subsequent confirmation of infected necrosis. - Sequence the principal diagnosis as the biliary (gallstone) necrotizing pancreatitis code (billed K85.11) because gallstone etiology and necrosis were documented on admission and occasioned the inpatient admission. - Retain the infected pancreatic necrosis code (K85.82) as a secondary diagnosis (POA = N) because infection was confirmed during the admission by aspiration/culture. - Remove K57.21 (diverticulitis with perforation/abscess) and K65.0 (generalized peritonitis) - the CT and operative/procedure documentation do not support perforated diverticulitis or generalized peritonitis (CT shows no pneumoperitoneum and the documented interventions are pancreatic drainage/debridement rather than management of perforated diverticulitis). - Remove the ICD-10-PCS code 0FBG3ZZ (Excision of pancreas, percutaneous approach) - the record documents CT-guided aspiration, percutaneous drainage and VARD (debridement), not a percutaneous pancreatic excision. Requested action: Please accept the corrected diagnosis/procedure set (enclosed with this letter) and amend the claim to reflect: principal = biliary necrotizing pancreatitis; secondary = infected pancreatic necrosis (POA=N) and the other supported comorbidities/procedures as listed. If you disagree with this determination, please provide the contemporaneous clinical documentation and/or coding rationale that supports K85.01 as principal and the other contested entries; specifically we would need documentation showing idiopathic etiology and absence of gallstones on admission, or documentation that infected necrosis was present on admission. Sincerely, Senior Clinical Claims Auditor",
+  "metrics": {
+    "cost_of_processing_usd": 0.046108,
+    "time_to_run_seconds": 121.315,
+    "total_cost_per_claim_usd": 30.576108,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.046108
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number:'MR_06'})<-[:BILLED_BY]-(v:Visit) RETURN c.claim_number, v.visit_id\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"MR_06\", \"keywords\": [\"necrotizing pancreatitis\", \"infected necrosis\", \"sepsis\"]}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"K85.01\"}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"K57.21\"}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"K80.2\"}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "get_discharge_disposition_note",
+      "arguments": "{\"claim_number\": \"MR_06\"}"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

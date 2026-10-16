@@ -1,0 +1,737 @@
+{
+  "description": "Where the system would call a human reviewer, and why. One entry per claim; not part of the scored claim files.",
+  "claims": {
+    "MR_01": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Billed 05H93JZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Diagnostic Imaging Report - Chest Radiograph, Portable AP, p.309) contradicts billed 5A1D90Z, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_02": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Please confirm (1) the correct specific ICD-10-CM code for the anterior-wall STEMI to replace billed I21.19 (treating documentation uniformly says 'acute anterior STEMI'); (2) reconcile ICD-10-PCS CABG coding for the operative report documenting emergency 3-vessel CABG (operative notes reference LIMA->LAD, SVG->OM1, SVG->RCA) versus the billed two separate bypass codes (021009W and 021109W) \u2014 should this be a single 3-site CABG code?; and (3) confirm POA for the sternal wound infection (recommended change from Y to N based on postoperative course). Conflict IDs: ,",
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to T81.4XXA; confirm before applying it.",
+          "Billed T81.4XXA isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 02HW3TZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The principal diagnosis changes from I21.19 to I21.09; confirm.",
+          "Every quote behind the change to T81.4XXA failed verification; confirm before applying it."
+        ]
+      }
+    },
+    "MR_03": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Resolve billed PCS 0B110F4 (open tracheostomy) vs. the Procedure Note documenting a bronchoscopically guided percutaneous dilational tracheostomy ( Please confirm the correct PCS code for the tracheostomy (percutaneous vs open) and, if the percutaneous approach is confirmed, recode 0B110F4 accordingly. Also confirm whether central venous infusion-device code 02HV33Z and monitoring-device code 03HY32Z are supported by discrete procedure documentation (provide source_id/operative note if present).",
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed R40.9 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 00H600Z isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Emergency Department Provider Note, p.117) contradicts billed G81.94, but the review keeps it; confirm.",
+          "The patient's documentation (Procedure Note - Ventriculoperitoneal Shunt Placement, p.751) contradicts billed 0016070, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_04": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "3 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed S27.4XXA isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed M62.88 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 0SH90BZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 0QQ606Z isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Microbiology, p.27) contradicts billed B95.62, but the review keeps it; confirm.",
+          "The patient's documentation (Diagnostic Imaging Report - CT Trauma Panscan, p.588) contradicts billed S22.42XA, but the review keeps it; confirm.",
+          "The patient's documentation (Procedure Note - Right Tube Thoracostomy, p.566) contradicts billed 0WH30YZ, but the review keeps it; confirm.",
+          "The patient's documentation (Procedure Note - IR Angioembolization - Pelvic, p.566) contradicts billed 04L33DZ, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_05": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: 1) Infectious Diseases / Attending: cultures grew both Group A Streptococcus and MRSA. For coding of sepsis (R65.21 documented), please clarify which organism should be assigned as the organism-specific sepsis code (A40.0 = Group A Streptococcus OR A41.02 = MRSA) or whether sepsis should be coded as polymicrobial (please state preferred ICD-10-CM code(s)). 2) Sequencing: should principal diagnosis remain M72.6 (necrotizing fasciitis) or should organism-specific sepsis (A40.- / A41.-) be sequenced principal with R65.21 as additional? Please confirm intended sequencing per physician documentation. 3) Procedure clarification: operative report(s) for the graft \u2014 was the documented graft a split-thickness skin graft (STSG) (operative note needed) rather than a full-thickness autologous replacement (0HRJX73)? Provide operative report to assign correct ICD-10-PCS.",
+          "4 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to A49.59, A49.02, B95.62, A40.0; confirm before applying it.",
+          "Billed E87.2 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 30280B1 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Procedure Note - Emergent Surgical Debridement - Right Thigh, p.869) contradicts billed 0JBM0ZZ, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_06": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed E11.6 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed K86.8 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed K80.2 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The principal diagnosis changes from K85.01 to K85.11; confirm.",
+          "Acute pancreatitis is coded more than once (K85.11, K85.82); a stay takes one code for it; confirm which."
+        ]
+      }
+    },
+    "MR_07": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Please review whether the attending physician explicitly intended and documented severe sepsis with septic shock (R65.21) as an active diagnosis on this encounter. Provide (or point to) the physician-authored assessment/note stating 'severe sepsis' or 'septic shock' (document/section/page) if present; if not, please authorize removal of R65.21. Rationale: objective data (high PCT, lactate, vasopressors) suggest possible septic shock, but I could not find an explicit physician diagnosis of sepsis in the assessment/discharge notes (see ev5 and ev9).",
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "1 citation(s) could be on either of two pages; confirm the page.",
+          "Billed Z95.81 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 02JYXZZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code."
+        ]
+      }
+    },
+    "MR_08": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Please confirm the exact ICD-10-PCS code to represent the documented bronchoscopically guided percutaneous dilational tracheostomy (Procedure Note  p.94). The claim currently bills 0B110F4 (open approach); the operative note documents a percutaneous dilational tracheostomy. Also confirm acceptance of removal of G93.0, G93.1 and F02.81 and sequencing G41.0 as principal given the admitting/discharge documentation (see ev1, ev2).",
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to J69.0; confirm before applying it.",
+          "Billed G41.0 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed R40.9 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The review proposed G41.0 as principal instead of the billed G93.0; the billed principal is kept and G41.0 is listed as secondary; confirm the principal."
+        ]
+      }
+    },
+    "MR_09": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Please confirm the correct ICD-10-PCS code to represent the documented bronchoscopically guided percutaneous dilational tracheostomy (procedure note p.468). Also confirm that the correct diagnosis code for the catheter-associated internal jugular DVT is the right-sided code (I82.C11) rather than the billed left-sided code (I82.C12).",
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed 05H93JZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Diagnostic Imaging Report - Chest Radiograph, Portable AP, p.489) contradicts billed 5A1D90Z, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_10": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Resolve the laterality conflict for the saphenous vein harvest / PCS 06BQ0ZZ: operative notes retrieved describe 'saphenous vein harvested from the left leg' while the billed PCS is for right saphenous excision (06BQ0ZZ). The retrieval's conflict flags (/ ) indicate the record and billed line cannot both be correct. Please reconcile the final operative/procedure note (side harvested) and confirm whether the billed 06BQ0ZZ should be corrected to the left-leg PCS (or removed) before final coding.",
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to T81.4XXA; confirm before applying it.",
+          "Billed T81.4XXA isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 02HW3TZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Every quote behind the change to T81.4XXA failed verification; confirm before applying it."
+        ]
+      }
+    },
+    "MR_11": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: The chart contains contradictory documentation regarding the tracheostomy technique (History & Physical indicates percutaneous tracheostomy; billed PCS is 0B110F4 - open bypass tracheostomy). Please confirm whether the tracheostomy was performed percutaneously or via an open approach and provide the signed operative/procedure note specifying the approach so the correct ICD-10-PCS code can be assigned.",
+          "3 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to G81.94; confirm before applying it.",
+          "Billed R40.9 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 00H600Z isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Emergency Department Provider Note, p.322) contradicts billed G81.94, but the review keeps it; confirm.",
+          "The patient's documentation (Procedure Note - Ventriculoperitoneal Shunt Placement, p.343) contradicts billed 0016070, but the review keeps it; confirm.",
+          "Every quote behind the change to G81.94 failed verification; confirm before applying it."
+        ]
+      }
+    },
+    "MR_12": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Please confirm from the definitive operative/procedural records whether (a) an external fixation device was inserted into the right upper femur (ICD-10-PCS 0QH60BZ) and (b) an infusion device was placed with tip in the superior vena cava (02HV33Z). Also confirm there is no documentation supporting cardiogenic shock (R57.01) and whether nicotine-dependence history (Z87.891) is documented elsewhere in the chart.",
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed S27.4XXA isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 0SH90BZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 0QQ606Z isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed B95.62 recoded to B95.61 to match the patient's documentation (two independent reviews chose the same code).",
+          "Billed M62.88 recoded to M62.82 to match the patient's documentation (two independent reviews chose the same code).",
+          "Billed S22.42XA recoded to S22.41XA to match the patient's documentation (two independent reviews chose the same code).",
+          "The patient's documentation (Procedure Note - Right Tube Thoracostomy, p.565) contradicts billed 0WH30YZ, but the review keeps it; confirm.",
+          "The patient's documentation (Procedure Note - IR Angioembolization - Pelvic, p.565) contradicts billed 04L33DZ, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_13": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "4 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to Z99.11, G93.6; confirm before applying it.",
+          "Billed A49.59 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed E87.2 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The review proposed E11.10 as principal instead of the billed M72.6; the billed principal is kept and E11.10 is listed as secondary; confirm the principal.",
+          "The patient's documentation (Procedure Note - Split-Thickness Skin Graft to Right Thigh, p.345) contradicts billed 0JBM0ZZ, but the review keeps it; confirm.",
+          "Every quote behind the change to Z99.11, G93.6 failed verification; confirm before applying it."
+        ]
+      }
+    },
+    "MR_14": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to B96.1; confirm before applying it.",
+          "Billed E11.6 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed K86.8 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed K80.2 recoded to K80.20 to match the patient's documentation (two independent reviews chose the same code).",
+          "The principal diagnosis changes from K85.90 to K85.82; confirm."
+        ]
+      }
+    },
+    "MR_15": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed Z95.81 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 02JYXZZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code."
+        ]
+      }
+    },
+    "MR_16": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: The record contains 'Percutaneous tracheostomy for prolonged coma' (H&P problem list) but the billed PCS is open tracheostomy (0B110F4). Please confirm whether the tracheostomy performed on ICU day 14 was percutaneous or open (provide the operative/procedure note specifying approach and date). This determines whether 0B110F4 is correct or must be recoded to the appropriate percutaneous tracheostomy PCS.",
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed G41.0 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed R40.9 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The review proposed G41.0 as principal instead of the billed B00.4; the billed principal is kept and G41.0 is listed as secondary; confirm the principal."
+        ]
+      }
+    },
+    "MR_17": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "3 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to Z99.2; confirm before applying it.",
+          "Billed 05H93JZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Diagnostic Imaging Report - Chest Radiograph, Portable AP, p.344) contradicts billed 5A1D90Z, but the review keeps it; confirm.",
+          "Every quote behind the change to Z99.2 failed verification; confirm before applying it."
+        ]
+      }
+    },
+    "MR_18": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: and related procedure coding: the chart contains a conflict about saphenous-vein laterality vs. the billed saphenous-vein excision (06BQ0ZZ). Please review the signed operative report(s) and advise (a) which leg the saphenous vein was harvested from, (b) which exact ICD-10-PCS code(s) best represent the performed 3-vessel CABG (one-site vs two-site vs three-site PCS codes), and (c) whether any of the currently billed CABG PCS codes should be removed or replaced. Also confirm whether a dated, signed DNR order exists that would support Z66 (we found the Facesheet documenting Full Code). Provide the specific source_id/page for any supporting docs.",
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed T81.4XXA isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 02HW3TZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code."
+        ]
+      }
+    },
+    "MR_19": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "3 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to 02HV33Z; confirm before applying it.",
+          "Billed R40.9 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 00H600Z isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Critical Care Progress Note, p.373) contradicts billed G81.94, but the review keeps it; confirm.",
+          "The patient's documentation (Emergency Department Provider Note, p.275) contradicts billed G81.94, but the review keeps it; confirm.",
+          "The patient's documentation (Procedure Note - Ventriculoperitoneal Shunt Placement, p.240) contradicts billed 0016070, but the review keeps it; confirm.",
+          "Every quote behind the change to 02HV33Z failed verification; confirm before applying it."
+        ]
+      }
+    },
+    "MR_20": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed S27.4XXA isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 0SH90BZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 0QQ606Z isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed B95.62 recoded to B95.61 to match the patient's documentation (two independent reviews chose the same code).",
+          "Billed M62.88 recoded to M62.82 to match the patient's documentation (two independent reviews chose the same code).",
+          "Billed S22.42XA recoded to S22.41XA to match the patient's documentation (two independent reviews chose the same code).",
+          "The patient's documentation (Emergency Department Provider Note, p.849) contradicts billed 0WH30YZ, but the review keeps it; confirm.",
+          "The patient's documentation (Discharge / Transfer Summary, p.1093) contradicts billed 04L33DZ, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_21": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "3 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed A49.59 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed E87.2 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Procedure Note - Emergent Surgical Debridement - Right Thigh, p.361) contradicts billed 0JBM0ZZ, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_22": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed E11.6 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed K86.8 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed K80.2 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The principal diagnosis changes from K85.01 to K85.81; confirm."
+        ]
+      }
+    },
+    "MR_23": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "No patient documentation is cited for the change to Z86.73; confirm before applying it.",
+          "Billed Z95.81 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 02JYXZZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Every quote behind the change to Z86.73 failed verification; confirm before applying it."
+        ]
+      }
+    },
+    "MR_24": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Billed G41.0 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed R40.9 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Discharge / Transfer Summary, p.835) contradicts billed 5A1D90Z, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_25": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed 05H93JZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Diagnostic Imaging Report - Chest Radiograph, Portable AP, p.154) contradicts billed 5A1D90Z, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_26": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Operative record discrepancy over saphenous-vein harvest side. Please confirm, from the operative record / OR nursing note, whether the saphenous vein was harvested from the left or right leg and provide the definitive operative note page to permit correct ICD-10-PCS coding (06BQ0ZZ vs the left-side equivalent).",
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed T81.4XXA isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 02HW3TZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code."
+        ]
+      }
+    },
+    "MR_27": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed R40.9 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 00H600Z isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The patient's documentation (Procedure Note - Ventriculoperitoneal Shunt Placement, p.135) contradicts billed 0016070, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_28": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed S27.4XXA isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 0SH90BZ isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed 0QQ606Z isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed M62.88 recoded to M62.82 to match the patient's documentation (two independent reviews chose the same code).",
+          "Billed S22.42XA recoded to S22.41XA to match the patient's documentation (two independent reviews chose the same code).",
+          "The principal diagnosis changes from S36.020A to S36.031A; confirm.",
+          "The patient's documentation (Critical Care Progress Note, p.247) contradicts billed B95.62, but the review keeps it; confirm.",
+          "The patient's documentation (Emergency Department Provider Note, p.242) contradicts billed 0WH30YZ, but the review keeps it; confirm.",
+          "The patient's documentation (Discharge / Transfer Summary, p.859) contradicts billed 04L33DZ, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_29": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed E87.2 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "The review proposed R65.21 as principal instead of the billed L03.119; the billed principal is kept and R65.21 is listed as secondary; confirm the principal.",
+          "The patient's documentation (Procedure Note - Split-Thickness Skin Graft to Right Thigh, p.100) contradicts billed 0JBM0ZZ, but the review keeps it; confirm."
+        ]
+      }
+    },
+    "MR_30": {
+      "review_type": "DRG",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Reviewer question from the model: Please adjudicate whether K72.90 (Hepatic failure, unspecified without coma) is supported as 'hepatic failure' (MCC) versus 'hepatic dysfunction' only. The chart documents transaminitis and bilirubin elevation and lists 'initial hepatic' involvement in multi-organ dysfunction (see H&P p.210 and Critical Care Progress p.562 and Discharge Summary p.836), but I cannot find a provider note explicitly diagnosing 'hepatic failure'. If hepatic failure is not explicitly documented, should K72.90 be removed?",
+          "3 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Billed E11.6 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed K86.8 isn't a valid ICD-10 code on the discharge date (a heading or no such code), but the review keeps it; confirm the specific code.",
+          "Billed K80.2 recoded to K80.20 to match the patient's documentation (two independent reviews chose the same code).",
+          "The principal diagnosis changes from K85.01 to K85.11; confirm.",
+          "The patient's documentation (Gastroenterology / Hepatology Consultation, p.447) contradicts billed K85.82, but the review keeps it; confirm.",
+          "The patient's documentation (Gastroenterology / Hepatology Consultation, p. 447) contradicts billed K85.82; the pancreatitis policy numbers K85 codes differently from ICD-10-CM, so the corrected code depends on which applies; confirm.",
+          "Acute pancreatitis is coded more than once (K85.11, K85.82); a stay takes one code for it; confirm which."
+        ]
+      }
+    },
+    "MR_APC_01": {
+      "review_type": "APC",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "3 citation(s) could be on either of two pages; confirm the page."
+        ]
+      }
+    },
+    "MR_APC_02": {
+      "review_type": "APC",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "1 citation(s) could be on either of two pages; confirm the page."
+        ]
+      }
+    },
+    "MR_APC_03": {
+      "review_type": "APC",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Line 1: 1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Line 4: 1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "4 citation(s) could be on either of two pages; confirm the page."
+        ]
+      }
+    },
+    "MR_APC_04": {
+      "review_type": "APC",
+      "confidence": 0.8,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Review scope: the claim bills 64721 on both sides, and this review removes the left-sided line (64721-LT) for missing side-specific medical necessity while finding the right side supported; if the review targets only the right-sided line, the answer is No Finding. Which line is under review?"
+        ]
+      }
+    },
+    "MR_APC_05": {
+      "review_type": "APC",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "MR_APC_06": {
+      "review_type": "APC",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "2 citation(s) could be on either of two pages; confirm the page."
+        ]
+      }
+    },
+    "MR_APC_07": {
+      "review_type": "APC",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Line 1: 1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "1 citation(s) could be on either of two pages; confirm the page."
+        ]
+      }
+    },
+    "MR_APC_08": {
+      "review_type": "APC",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Line 1: 1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "3 citation(s) could be on either of two pages; confirm the page."
+        ]
+      }
+    },
+    "MR_APC_09": {
+      "review_type": "APC",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "5 citation(s) could be on either of two pages; confirm the page."
+        ]
+      }
+    },
+    "MR_APC_10": {
+      "review_type": "APC",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "4 citation(s) could be on either of two pages; confirm the page."
+        ]
+      }
+    },
+    "MR_SNF_01": {
+      "review_type": "SNF",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "MR_SNF_02": {
+      "review_type": "SNF",
+      "confidence": 0.2,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Line 2: the model answered Insufficient Evidence; the day-by-day reconciliation of the daily notes gives No Finding, which is reported; confirm."
+        ]
+      }
+    },
+    "MR_SNF_03": {
+      "review_type": "SNF",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "MR_SNF_04": {
+      "review_type": "SNF",
+      "confidence": 0.5,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "No patient documentation is cited for the change to revenue code 0191, revenue code 0192; confirm before applying it.",
+          "Confidence 0.5 is below the auto-finalize threshold: No citations to check."
+        ]
+      }
+    },
+    "MR_SNF_05": {
+      "review_type": "SNF",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "MR_SNF_06": {
+      "review_type": "SNF",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Line 1: 1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them."
+        ]
+      }
+    },
+    "MR_SNF_07": {
+      "review_type": "SNF",
+      "confidence": 0.2,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Line 1: Reviewer question from the model: Record contains conflicting billing-level statements (and ) and the retrieved, citable TARs only show PT/OT sessions with source_ids for seven of the billed 10 days at 0192. Please: (1) confirm which specific dates within 2026-01-08 to 2026-01-21 the facility intended to bill at revenue code 0192; (2) provide the medical-record source_ids (daily progress notes or TAR lines) that document PT/OT sessions (or explicit per-diem-level determinations) for the three remaining billed dates (the extraction tool showed sessions on 01/19\u201301/21 but those rows lack source_ids in this extraction), and (3) resolve the internal conflict flagged as and (billing summary/discharge summary that state Rev 0191 days 1\u201314).",
+          "Line 1: 7 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them.",
+          "Line 2: Reviewer question from the model: Please reconcile and (billing summary vs. discharge summary disagreement) and provide the facility billing statement / discharge-summary source_ids/pages. Also provide the medical-record source_ids or PDF pages for the daily PT/OT session notes and the daily skilled nursing progress notes for the dates 2026-01-08 through 2026-01-21 so each date can be citable and assessed; specifically identify which exact calendar dates the 10 billed 0192 units were intended to cover and/or confirm whether the 10 0192-billed days were actually documented at 0191.",
+          "Line 1: the model answered Insufficient Evidence; the day-by-day reconciliation of the daily notes gives Finding, which is reported; confirm.",
+          "Line 2: the model answered Insufficient Evidence; the day-by-day reconciliation of the daily notes gives No Finding, which is reported; confirm."
+        ]
+      }
+    },
+    "MR_SNF_08": {
+      "review_type": "SNF",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "MR_SNF_09": {
+      "review_type": "SNF",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Line 1: 1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them."
+        ]
+      }
+    },
+    "MR_SNF_10": {
+      "review_type": "SNF",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "RM_01": {
+      "review_type": "Readmission",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Confidence 0.4 is below the auto-finalize threshold: 10/11 citation(s) verified on a confirmed page."
+        ]
+      }
+    },
+    "RM_02": {
+      "review_type": "Readmission",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "2 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them."
+        ]
+      }
+    },
+    "RM_03": {
+      "review_type": "Readmission",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them."
+        ]
+      }
+    },
+    "RM_04": {
+      "review_type": "Readmission",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "RM_05": {
+      "review_type": "Readmission",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "RM_06": {
+      "review_type": "Readmission",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them."
+        ]
+      }
+    },
+    "RM_07": {
+      "review_type": "Readmission",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "Confidence 0.4 is below the auto-finalize threshold: 11/12 citation(s) verified on a confirmed page."
+        ]
+      }
+    },
+    "RM_08": {
+      "review_type": "Readmission",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    },
+    "RM_09": {
+      "review_type": "Readmission",
+      "confidence": 0.4,
+      "human_review": {
+        "required": true,
+        "reasons": [
+          "1 supporting quote(s) the model proposed failed verification against the record and were left out; confirm the result stands without them."
+        ]
+      }
+    },
+    "RM_10": {
+      "review_type": "Readmission",
+      "confidence": 0.8,
+      "human_review": {
+        "required": false,
+        "reasons": []
+      }
+    }
+  }
+}
