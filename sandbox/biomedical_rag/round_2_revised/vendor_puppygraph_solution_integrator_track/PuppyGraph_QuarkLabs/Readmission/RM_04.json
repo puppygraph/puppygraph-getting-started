@@ -1,0 +1,194 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_04",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "BASIS: The Lake Ontario Health Cooperative guideline uses a 30-day review window (30 days from prior discharge) for this line of business (see guideline). The index admission discharged 2026-05-23 and the readmission began 2026-06-13, which places the readmission within the payer's 30-day review window (index discharge 05/23 -> readmit 06/13 = 21 days). The readmission discharge summary documents an infection of the left femoral internal fixation (T84.612A) and explicitly states this was a direct infectious complication of the orthopedic hardware implanted during the index trauma admission; the index stay documents intramedullary femoral fixation. Under Lake Ontario's Readmission Review Guideline, Section B1 (\"same or clinically related condition\") applies when the readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. Section C exclusions (e.g., direct transfers or admissions that began as SNF/IRF/LTAC) do not apply here because the patient presented from home 7 days after IRF discharge (not a direct facility-to-facility transfer). EVIDENCE (key passages relied on): - Lake Ontario guideline, Review Window: 30 days from prior discharge (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-b4) (ev1). - Lake Ontario guideline, Section B1 requirement: Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-B1) (ev2). - Lake Ontario guideline, Section C1 exclusions listing (direct transfers; admissions to SNF/IRF/LTAC, etc.) and instruction that exclusions override Section B (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-C1) (ev7). - Readmission DISCHARGE SUMMARY (RM_04), Clinical Relationship block stating index dates, readmission dates, and that the readmission (T84.612A) was a direct infectious complication of the orthopedic hardware placed during the index admission (NOTE-Readmission-RM_04-readmission-RM_04.pdf-n128, p.124) (ev3). - Readmission DISCHARGE SUMMARY (RM_04), DIAGNOSTIC CONCORDANCE showing the readmission principal diagnosis: Principal T84612A - Infection and inflammatory reaction due to internal fixation device of left femur, initial encounter (NOTE-Readmission-RM_04-readmission-RM_04.pdf-n128, p.124) (ev4). - Index Discharge / Transfer Summary (MR_04) documenting the index admission dates (Admit: 2026-02-08 Transfer: 2026-05-23) (NOTE-Readmission-RM_04-index-MR_04.pdf-n903, p.838) (ev5). - Index Discharge / Transfer Summary (MR_04) documenting that the index course included femoral intramedullary nailing (right femoral shaft fracture requiring intramedullary nailing on ICU day 4) (NOTE-Readmission-RM_04-index-MR_04.pdf-n903, p.838) (ev6). DETERMINATION: Finding under the Lake Ontario Health Cooperative Readmission Review Guideline, Section B1 ('same or related condition'). CITATIONS (selected): guideline B1 (ev2); guideline review window (ev1); guideline exclusions (ev7); readmission discharge summary clinical relationship and diagnosis (ev3, ev4); index discharge documenting femoral IMN and discharge date (ev5, ev6).",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "RM_04.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_04 (02/08\u201305/23/2026): Polytrauma with left femoral IMN placement (surgical hardware); discharged to an Inpatient Rehabilitation Facility (IRF) for continued functional recovery, completed a 14-day IRF stay, and was discharged home on 06/06/2026. Readmission RM_04 (06/13\u201306/24/2026): presented 7 days after returning home from the IRF with infection and inflammatory reaction due to internal fixation device, left femur (T84.612A); osteomyelitis (M86.262); E. coli sepsis (A41.51) \u2014 a direct infectious complication of the orthopedic hardware placed during the index trauma admission. The patient was living at home (not institutionalized) at the time of this readmission.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "RM_04.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "Principal T84612A \u2014 Infection and inflammatory reaction due to internal fixation device of left femur, initial encounter",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_04.pdf",
+      "page_ref": "838",
+      "page_confirmed": true,
+      "quote": "Admit: 2026-02-08 Transfer: 2026-05-23",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_04.pdf",
+      "page_ref": "838",
+      "page_confirmed": true,
+      "quote": "The course was complicated by right hemopneumothorax requiring tube thoracostomy, pelvic ring injury requiring external fixation on ICU day 3, right femoral shaft fracture requiring intramedullary nailing on ICU day 4, Grade II liver laceration managed non-operatively, rhabdomyolysis with AKI managed with aggressive hydration, hospital-acquired methicillin-susceptible S. aureus ventilator-associated pneumonia treated with cefazolin, catheter-associated right common femoral DVT treated with therapeutic anticoagulation, post-traumatic stress reaction managed with supportive care and psychiatric consultation, and",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "RM_04.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "DISCHARGE SUMMARY Admitting Physician: Attending Physician, MD Admission Date: 06/13/2026 Primary Service: Trauma / Surgical Intensive Care Unit (TSICU 6-West) Discharge Date: 06/23/2026 Claim Number: RM_04 Length of Stay: 10 days",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_04.pdf",
+      "page_ref": "838",
+      "page_confirmed": true,
+      "quote": "Discharge / Transfer Summary Attending: Dr. Thomas Kowalski, MD (Critical Care Medicine) Admit: 2026-02-08 Transfer: 2026-05-23 LOS: 103 days Reason for Admission: Severe polytrauma with hemorrhagic shock following motor vehicle collision.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "RM_04.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "Readmission RM_04 (06/13\u201306/24/2026): presented 7 days after returning home from the IRF with infection and inflammatory reaction due to internal fixation device, left femur (T84.612A); osteomyelitis (M86.262); E. coli sepsis (A41.51) \u2014 a direct infectious complication of the orthopedic hardware placed during the index trauma admission.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_04.pdf",
+      "page_ref": "653",
+      "page_confirmed": true,
+      "quote": "3 Right femoral shaft fracture status post intramedullary nailing",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "RM_04.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "Admission Date: 06/13/2026 Primary Service: Trauma / Surgical Intensive Care Unit (TSICU 6-West)",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0010",
+      "document": "RM_04.pdf",
+      "page_ref": "120",
+      "page_confirmed": true,
+      "quote": "By the time of discharge the patient was afebrile, hemodynamically stable, tolerating a regular diet, and safely mobilizing with assistance, and is discharged to a skilled nursing facility to complete the intravenous antibiotic course and continue rehabilitation.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lake Ontario Health Cooperative - Readmission Review Guideline.docx",
+      "section": "Lake Ontario Health Cooperative - Readmission Review Guideline, Review Window",
+      "quote": "30 days from prior discharge",
+      "document_version_hash": "sha256:ffbc2247ddb66dd54caab49d21dded67ad44b2439e54c4bfe0c721d21ba76ff4"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lake Ontario Health Cooperative - Readmission Review Guideline.docx",
+      "section": "Lake Ontario Health Cooperative - Readmission Review Guideline \u203a Section B - Review Criteria",
+      "quote": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2.",
+      "document_version_hash": "sha256:ffbc2247ddb66dd54caab49d21dded67ad44b2439e54c4bfe0c721d21ba76ff4"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lake Ontario Health Cooperative - Readmission Review Guideline.docx",
+      "section": "Lake Ontario Health Cooperative - Readmission Review Guideline \u203a Section C - Exclusions",
+      "quote": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination.",
+      "document_version_hash": "sha256:ffbc2247ddb66dd54caab49d21dded67ad44b2439e54c4bfe0c721d21ba76ff4"
+    },
+    {
+      "policy_citation_id": "pol_004",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lake Ontario Health Cooperative - Readmission Review Guideline.docx",
+      "section": "Lake Ontario Health Cooperative - Readmission Review Guideline \u203a Section A - General Questions",
+      "quote": "Was sufficient documentation received for both the prior stay and the readmission to complete a review determination? ____Yes: Continue to Section B. ____No: Complete the review with the documentation on file.",
+      "document_version_hash": "sha256:ffbc2247ddb66dd54caab49d21dded67ad44b2439e54c4bfe0c721d21ba76ff4"
+    }
+  ],
+  "system_note": "BASIS: The Lake Ontario Health Cooperative guideline uses a 30-day review window (30 days from prior discharge) for this line of business (see guideline). The index admission discharged 2026-05-23 and the readmission began 2026-06-13, which places the readmission within the payer's 30-day review window (index discharge 05/23 -> readmit 06/13 = 21 days). The readmission discharge summary documents an infection of the left femoral internal fixation (T84.612A) and explicitly states this was a direct infectious complication of the orthopedic hardware implanted during the index trauma admission; the index stay documents intramedullary femoral fixation. Under Lake Ontario's Readmission Review Guideline, Section B1 (\"same or clinically related condition\") applies when the readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. Section C exclusions (e.g., direct transfers or admissions that began as SNF/IRF/LTAC) do not apply here because the patient presented from home 7 days after IRF discharge (not a direct facility-to-facility transfer). EVIDENCE (key passages relied on): - Lake Ontario guideline, Review Window: 30 days from prior discharge (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-b4) (ev1). - Lake Ontario guideline, Section B1 requirement: Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-B1) (ev2). - Lake Ontario guideline, Section C1 exclusions listing (direct transfers; admissions to SNF/IRF/LTAC, etc.) and instruction that exclusions override Section B (RULE-Policy-Documents-Readmission-Payer-Guidelines-Lake-Ontario-Health-Cooperative-Readmission-Review-Guideline.docx-C1) (ev7). - Readmission DISCHARGE SUMMARY (RM_04), Clinical Relationship block stating index dates, readmission dates, and that the readmission (T84.612A) was a direct infectious complication of the orthopedic hardware placed during the index admission (NOTE-Readmission-RM_04-readmission-RM_04.pdf-n128, p.124) (ev3). - Readmission DISCHARGE SUMMARY (RM_04), DIAGNOSTIC CONCORDANCE showing the readmission principal diagnosis: Principal T84612A - Infection and inflammatory reaction due to internal fixation device of left femur, initial encounter (NOTE-Readmission-RM_04-readmission-RM_04.pdf-n128, p.124) (ev4). - Index Discharge / Transfer Summary (MR_04) documenting the index admission dates (Admit: 2026-02-08 Transfer: 2026-05-23) (NOTE-Readmission-RM_04-index-MR_04.pdf-n903, p.838) (ev5). - Index Discharge / Transfer Summary (MR_04) documenting that the index course included femoral intramedullary nailing (right femoral shaft fracture requiring intramedullary nailing on ICU day 4) (NOTE-Readmission-RM_04-index-MR_04.pdf-n903, p.838) (ev6). DETERMINATION: Finding under the Lake Ontario Health Cooperative Readmission Review Guideline, Section B1 ('same or related condition'). CITATIONS (selected): guideline B1 (ev2); guideline review window (ev1); guideline exclusions (ev7); readmission discharge summary clinical relationship and diagnosis (ev3, ev4); index discharge documenting femoral IMN and discharge date (ev5, ev6).",
+  "rationale_letter": "Re: Readmission Claim RM_04 - Determination of Relatedness to Prior Index Admission MR_04 Dear Provider, This office has completed a medical review of readmission claim RM_04 and the paired index claim MR_04 per the Lake Ontario Health Cooperative Readmission Review Guideline. We have determined that the readmission is clinically related to the prior index admission and therefore meets the payer's definition of a Readmission Finding under Section B1 (\"same or related condition\"). Basis for Determination: - Policy: Lake Ontario's guideline specifies a 30-day review window and requires a Finding when the readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay (Lake Ontario Readmission Review Guideline, Review Window: 30 days; Section B1) (evidence: guideline text). - Timing: The index stay discharged 05/23/2026 and the readmission began 06/13/2026, which is within the payer's 30-day review window. - Clinical linkage: The readmission discharge summary documents Infection and inflammatory reaction due to internal fixation device of left femur (T84.612A) as the principal diagnosis and explicitly states this was a direct infectious complication of the orthopedic hardware implanted during the index trauma admission. The index discharge documentation records intramedullary femoral fixation during the index hospitalization. (Evidence: readmission DISCHARGE SUMMARY; index DISCHARGE / TRANSFER SUMMARY.) - Exclusions: The guideline's exclusions (e.g., direct transfers, admissions that began as SNF/IRF/LTAC) do not apply: the readmission presented from home 7 days after discharge from the IRF (not a direct facility-to-facility transfer), so the exclusion for admissions that originated as SNF/IRF/LTAC does not negate the Finding. Conclusion and Action: Accordingly, under Lake Ontario Health Cooperative's Readmission Review Guideline, readmission RM_04 is a Finding under Section B1 (\"same or related condition\") because it documents a direct infectious complication of surgical hardware placed during the index admission MR_04 within the payer's 30-day review window. Please record this audit determination in your administrative/appeals systems. If you dispute this determination, provide supporting clinical documentation that rebuts the clinical linkage (for example, evidence the infection arose from an unrelated new injury or that the hardware was placed after the index stay). Sincerely, Clinical Claims Audit Team Cited evidence (representative): Lake Ontario Readmission Review Guideline (Section B1; Review Window 30 days), RM_04 Discharge Summary (Clinical Relationship and Diagnostic Concordance), MR_04 Discharge / Transfer Summary (index procedure and discharge date).",
+  "metrics": {
+    "cost_of_processing_usd": 0.072818,
+    "time_to_run_seconds": 98.053,
+    "total_cost_per_claim_usd": 30.602818,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.072818
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\":\"RM_04\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\":\"Lake Ontario Health Cooperative\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"RM_04\",\"keywords\":[\"Infection and inflammatory reaction due to internal fixation device of left femur\",\"Major laceration of spleen\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

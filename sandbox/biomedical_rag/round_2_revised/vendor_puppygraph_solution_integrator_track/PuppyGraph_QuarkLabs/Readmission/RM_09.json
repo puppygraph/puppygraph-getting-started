@@ -1,0 +1,151 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_09",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "Claim RM_09 is a readmission to index claim MR_09 with gap_days = 6 (index discharge 2026-08-01; readmit 2026-08-07). Rocky Mountain Health Preferred's guideline review window is 45 days from prior discharge, so this readmission is in-scope (Review Window: 45 days from prior discharge; RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-b4). The readmission Discharge Summary documents an explicit clinical relationship: Readmission RM_09 (08/07-08/17/2026): MSSA CLABSI (A41.89 + T80.218A) originating from the tunneled PICC placed during the index admission. The index-stay device directly caused the readmission infection (DISCHARGE SUMMARY, Transfer / Discharge Summary, p.122; NOTE-Readmission-RM_09-readmission-RM_09.pdf-n125). The index Discharge / Transfer Summary documents the patient left the index stay to home with home-based services including home infusion support to complete an antibiotic course (Discharge / Transfer Summary, p.887; NOTE-Readmission-RM_09-index-MR_09.pdf-n1008), which establishes the tunneled central line/device placed during MR_09 remained in the outpatient/home setting and was plausibly the source of the subsequent bloodstream infection. Per the payer guideline, the first applicable relatedness question (B1) asks whether the readmission diagnosis is the same as or clinically related to a condition/procedure treated during the prior stay; that question is answered Yes by the documentation and the guideline directs that a Finding be made under the 'same or related condition' criterion (RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-B1). Section C exclusions were reviewed (Does the readmission meet any of the following exclusions? ...); none apply because the patient was discharged home with home health services and was readmitted from home (policy exclusions question; RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-C1 and Discharge / Transfer Summary, Transfer Instructions, p.115-120; NOTE-Readmission-RM_09-readmission-RM_09.pdf-n124). Conclusion: documentation supports a Finding under the Rocky Mountain Health Preferred guideline, criterion: Same or related condition (index-stay tunneled PICC led to MSSA CLABSI on readmission). Evidence relied on: DISCHARGE SUMMARY (Transfer / Discharge Summary), p.122 (NOTE-Readmission-RM_09-readmission-RM_09.pdf-n125); Discharge / Transfer Summary (index MR_09), p.887 (NOTE-Readmission-RM_09-index-MR_09.pdf-n1008); Rocky Mountain Health Preferred Readmission Review Guideline (Review Window and B1 / C1 questions) (RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx).",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "RM_09.pdf",
+      "page_ref": "122",
+      "page_confirmed": true,
+      "quote": "Readmission RM_09 (08/07\u201308/17/2026): MSSA CLABSI (A41.89 + T80.218A) originating from the tunneled PICC placed during the index admission.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "RM_09.pdf",
+      "page_ref": "122",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_09 (04/04\u201308/01/2026): Septic shock (A40.3/R65.21), ARDS (J80), prolonged mechanical ventilation; discharged home with a tunneled PICC placed for home IV antibiotic completion. Readmission RM_09 (08/07\u201308/17/2026): MSSA CLABSI (A41.89 + T80.218A) originating from the tunneled PICC placed during the index admission.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_09.pdf",
+      "page_ref": "887",
+      "page_confirmed": true,
+      "quote": "Admit: 2026-04-04 Transfer: 2026-08-01",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "RM_09.pdf",
+      "page_ref": "122",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_09 (04/04\u201308/01/2026): Septic shock (A40.3/R65.21), ARDS (J80), prolonged mechanical ventilation; discharged home with a tunneled PICC placed for home IV antibiotic completion.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_09.pdf",
+      "page_ref": "887",
+      "page_confirmed": true,
+      "quote": "After extensive discharge planning, the patient was discharged directly home with spouse rather than to a long-term acute care facility, supported by skilled home health nursing, home respiratory therapy for continued tracheostomy/trach-collar weaning, home infusion services to complete the antibiotic course, and outpatient physical and occupational therapy.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "RM_09.pdf",
+      "page_ref": "122",
+      "page_confirmed": true,
+      "quote": "The index-stay device directly caused the readmission infection; the patient was living at home (not institutionalized) at the time of this readmission.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx",
+      "section": "Rocky Mountain Health Preferred - Readmission Review Guideline, Review Window",
+      "quote": "45 days from prior discharge",
+      "document_version_hash": "sha256:ae2cfbc7bec34c116f96c17e8f97bd67f2023508b1e8bce68a1678e790a58748"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx",
+      "section": "Rocky Mountain Health Preferred - Readmission Review Guideline \u203a Section B - Review Criteria",
+      "quote": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay.",
+      "document_version_hash": "sha256:ae2cfbc7bec34c116f96c17e8f97bd67f2023508b1e8bce68a1678e790a58748"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Rocky Mountain Health Preferred - Readmission Review Guideline.docx",
+      "section": "Rocky Mountain Health Preferred - Readmission Review Guideline \u203a Section C - Exclusions",
+      "quote": "Does the readmission meet any of the following exclusions?",
+      "document_version_hash": "sha256:ae2cfbc7bec34c116f96c17e8f97bd67f2023508b1e8bce68a1678e790a58748"
+    }
+  ],
+  "system_note": "Claim RM_09 is a readmission to index claim MR_09 with gap_days = 6 (index discharge 2026-08-01; readmit 2026-08-07). Rocky Mountain Health Preferred's guideline review window is 45 days from prior discharge, so this readmission is in-scope (Review Window: 45 days from prior discharge; RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-b4). The readmission Discharge Summary documents an explicit clinical relationship: Readmission RM_09 (08/07-08/17/2026): MSSA CLABSI (A41.89 + T80.218A) originating from the tunneled PICC placed during the index admission. The index-stay device directly caused the readmission infection (DISCHARGE SUMMARY, Transfer / Discharge Summary, p.122; NOTE-Readmission-RM_09-readmission-RM_09.pdf-n125). The index Discharge / Transfer Summary documents the patient left the index stay to home with home-based services including home infusion support to complete an antibiotic course (Discharge / Transfer Summary, p.887; NOTE-Readmission-RM_09-index-MR_09.pdf-n1008), which establishes the tunneled central line/device placed during MR_09 remained in the outpatient/home setting and was plausibly the source of the subsequent bloodstream infection. Per the payer guideline, the first applicable relatedness question (B1) asks whether the readmission diagnosis is the same as or clinically related to a condition/procedure treated during the prior stay; that question is answered Yes by the documentation and the guideline directs that a Finding be made under the 'same or related condition' criterion (RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-B1). Section C exclusions were reviewed (Does the readmission meet any of the following exclusions? ...); none apply because the patient was discharged home with home health services and was readmitted from home (policy exclusions question; RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx-C1 and Discharge / Transfer Summary, Transfer Instructions, p.115-120; NOTE-Readmission-RM_09-readmission-RM_09.pdf-n124). Conclusion: documentation supports a Finding under the Rocky Mountain Health Preferred guideline, criterion: Same or related condition (index-stay tunneled PICC led to MSSA CLABSI on readmission). Evidence relied on: DISCHARGE SUMMARY (Transfer / Discharge Summary), p.122 (NOTE-Readmission-RM_09-readmission-RM_09.pdf-n125); Discharge / Transfer Summary (index MR_09), p.887 (NOTE-Readmission-RM_09-index-MR_09.pdf-n1008); Rocky Mountain Health Preferred Readmission Review Guideline (Review Window and B1 / C1 questions) (RULE-Policy-Documents-Readmission-Payer-Guidelines-Rocky-Mountain-Health-Preferred-Readmission-Review-Guideline.docx).",
+  "rationale_letter": "Re: Readmission review - Claim RM_09 (readmit 08/07/2026) paired to index claim MR_09 (04/04/2026-08/01/2026) Dear Provider, This is the audit determination following review of documentation for the above-referenced readmission (RM_09) under the Rocky Mountain Health Preferred Readmission Review Guideline (effective 06/01/2022). The payer's guideline uses a 45-day review window from the prior discharge; RM_09 occurred within that window and is therefore in-scope for clinical relatedness review. Finding: The readmission RM_09 is clinically related to the prior index admission MR_09 and qualifies as a Finding under the guideline's 'same or related condition' criterion. Basis for Determination: - Policy: Rocky Mountain Health Preferred Readmission Review Guideline - Review Window: 45 days from prior discharge; question B1 asks whether the readmission diagnosis is the same as or clinically related to the condition or procedure treated during the prior stay and directs a Finding if so. - Clinical facts relied on: The readmission Discharge Summary explicitly documents MSSA CLABSI (A41.89 + T80.218A) originating from the tunneled PICC that was placed during the index admission and states that \"the index-stay device directly caused the readmission infection\" (DISCHARGE SUMMARY, Transfer / Discharge Summary, p.122). The index Discharge / Transfer Summary documents discharge home with home infusion/home health services to complete IV antibiotics following the index stay, establishing that a tunneled central catheter/device placed during MR_09 remained an outpatient device that plausibly led to the subsequent bloodstream infection (Discharge / Transfer Summary, p.887). The reviewer confirmed that none of the guideline's Section C exclusions apply (the patient was discharged home with home health and was not readmitted as a direct transfer or scheduled return). Correction: Based on the Finding under the Rocky Mountain Health Preferred Readmission Review Guideline (criterion: Same or related condition), RM_09 has been determined clinically related to the index admission MR_09. Please note this determination and the supporting documentation when responding to the audit or submitting any appeal. If you believe there is additional clinical information that would change this determination (for example, documentation refuting the central line as the source or demonstrating the readmission met a C1 exclusion), please submit that material with your appeal and cite the specific documents and dates. Sincerely, Clinical Claims Audit Team Rocky Mountain Health Preferred",
+  "metrics": {
+    "cost_of_processing_usd": 0.063881,
+    "time_to_run_seconds": 83.565,
+    "total_cost_per_claim_usd": 30.593881,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.063881
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\":\"RM_09\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\":\"Rocky Mountain Health Preferred\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"RM_09\",\"keywords\":[\"Other sepsis\",\"infection\",\"complication\",\"central venous catheter\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

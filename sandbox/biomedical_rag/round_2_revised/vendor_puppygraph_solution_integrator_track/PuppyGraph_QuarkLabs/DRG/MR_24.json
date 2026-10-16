@@ -1,0 +1,356 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_24",
+  "review_type": "DRG",
+  "determination": "Finding",
+  "corrected_coding_set": [
+    {
+      "code": "B00.4",
+      "poa": "Y",
+      "role": "principal",
+      "short_desc": "Herpesviral encephalitis"
+    },
+    {
+      "code": "G41.0",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Grand mal status epilepticus"
+    },
+    {
+      "code": "R40.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Unspecified coma"
+    },
+    {
+      "code": "J96.01",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute respiratory failure with hypoxia"
+    },
+    {
+      "code": "J69.0",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Pneumonitis due to inhalation of food and vomit"
+    },
+    {
+      "code": "J13",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Pneumonia due to Streptococcus pneumoniae"
+    },
+    {
+      "code": "E22.2",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Syndrome of inappropriate secretion of antidiuretic hormone"
+    },
+    {
+      "code": "I82.C11",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Acute embolism and thrombosis of right internal jugular vein"
+    },
+    {
+      "code": "R41.1",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Anterograde amnesia"
+    },
+    {
+      "code": "G81.94",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Hemiplegia, unspecified affecting right dominant side"
+    },
+    {
+      "code": "Z99.11",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Dependence on respirator [ventilator] status"
+    }
+  ],
+  "corrected_procedure_set": [
+    "0BH17EZ",
+    "009U3ZX",
+    "02HV33Z",
+    "03HY32Z",
+    "0B113F4",
+    "0DH60UZ",
+    "4A10X4G",
+    "5A1D90Z"
+  ],
+  "code_actions": [
+    {
+      "code": "J69.0",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "Y",
+      "new_severity": null,
+      "rationale": "Aspiration pneumonia due to inhalation is documented on the admitting H&P problem list and in the course; POA should be Y per documentation.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0009"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "J13",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "Y",
+      "new_severity": null,
+      "rationale": "Streptococcus pneumoniae aspiration pneumonia is documented in the admission problem list and discharge summary; POA=Y supported.",
+      "evidence_ids": [
+        "ev_0009",
+        "ev_0001"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "E22.2",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "Y",
+      "new_severity": null,
+      "rationale": "SIADH with mild hyponatremia appears in the H&P problem list and is documented and managed during the stay.",
+      "evidence_ids": [
+        "ev_0009",
+        "ev_0001"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "I82.C11",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "N",
+      "new_severity": null,
+      "rationale": "Catheter-associated right internal jugular DVT is documented in the hospital course and treated during the admission; POA=N.",
+      "evidence_ids": [
+        "ev_0009"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "G93.1",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "No documentation or imaging supports anoxic brain damage; MRI reports 'No other acute intracranial abnormality' and the neurologic deficits are attributable to HSV encephalitis.",
+      "evidence_ids": [
+        "ev_0008"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "F02.81",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Chart documents post-encephalitis cognitive dysfunction and memory impairment but does not contain a provider diagnosis of dementia (F02.81); remove.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0003"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "I63.9",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "No imaging or treating-provider documentation of an acute ischemic infarct; MRI shows HSV-typical temporal lobe changes and explicitly 'No other acute intracranial abnormality.'",
+      "evidence_ids": [
+        "ev_0008",
+        "ev_0003"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "0B110F4",
+      "action": "recode",
+      "new_code": "0B113F4",
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Chart documents a percutaneous tracheostomy for prolonged ventilation (admitting problem list and hospital course). The billed PCS (0B110F4) indicates an open approach; change to the percutaneous tracheostomy PCS (0B113F4) to reflect documented technique.",
+      "evidence_ids": [
+        "ev_0007",
+        "ev_0009"
+      ],
+      "policy_citation_ids": []
+    }
+  ],
+  "discharge_disposition": "62 - Discharged/transferred to an inpatient rehabilitation facility (IRF)",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_24.pdf",
+      "page_ref": "630",
+      "page_confirmed": true,
+      "quote": "The patient was intubated for airway protection with escalation of anticonvulsants and empiric acyclovir initiation given clinical suspicion for HSV encephalitis.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_24.pdf",
+      "page_ref": "229",
+      "page_confirmed": true,
+      "quote": "MRI features characteristic of HSV encephalitis.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_24.pdf",
+      "page_ref": "835",
+      "page_confirmed": true,
+      "quote": "CSF HSV-1 PCR was positive and MRI demonstrated bilateral temporal lobe changes characteristic of HSV encephalitis; a full 21-day course of intravenous acyclovir was completed.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_24.pdf",
+      "page_ref": "61",
+      "page_confirmed": true,
+      "quote": "ABG (02:00): pH 7.29 / PaCO2 45 / PaO2 62 / HCO3 20; lactate 5.4 mmol/L; P/F ratio 65.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_24.pdf",
+      "page_ref": "291",
+      "page_confirmed": true,
+      "quote": "Airway: orally intubated, mechanically ventilated.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_24.pdf",
+      "page_ref": "835",
+      "page_confirmed": true,
+      "quote": "tracheostomy-dependent respiratory status (trach collar);",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_24.pdf",
+      "page_ref": "731",
+      "page_confirmed": true,
+      "quote": "7 Percutaneous tracheostomy for prolonged coma",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_24.pdf",
+      "page_ref": "229",
+      "page_confirmed": true,
+      "quote": "No other acute intracranial abnormality.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "MR_24.pdf",
+      "page_ref": "835",
+      "page_confirmed": true,
+      "quote": "The course was complicated by aspiration pneumonia with Streptococcus pneumoniae treated with ceftriaxone, catheter-associated right internal jugular DVT treated with therapeutic anticoagulation, mild SIADH managed with fluid restriction, prolonged mechanical ventilation requiring tracheostomy on ICU day 14, PEG placement for enteral nutrition on ICU day 16, and profound ICU-acquired weakness.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0010",
+      "document": "MR_24.pdf",
+      "page_ref": "731",
+      "page_confirmed": true,
+      "quote": "Preliminary lumbar puncture showed pleocytosis; CSF studies pending.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/DRG/Herpesviral Encephalitis.docx",
+      "section": "Validation Criteria \u203a HSV Encephalitis Diagnostic Findings and Coding Implications",
+      "quote": "Diagnostic Finding: CSF HSV PCR positive; Sensitivity / Specificity: 96-98% / 99%; Coding Implication: B00.4 \u2014 definitive confirmation; Action: Code B00.4; no query required if provider documented HSV encephalitis",
+      "document_version_hash": "sha256:4438a90703b2023abf5a8475e0446f8f6939aab31366c0fd4e18546c367b1d64"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx",
+      "section": "Validation Criteria \u203a Medical Pathway",
+      "quote": "[1] Presumption rule: When the provider documents initiation of invasive mechanical ventilation and attributes the need for ventilation to acute respiratory failure, Criterion 2 (objective hypoxemia measurement) is presumed satisfied even if a pre-intubation room-air ABG is not documented. Emergent intubation may preclude room-air measurement; provider documentation of the clinical urgency is sufficient.",
+      "document_version_hash": "sha256:78286f647e528a2d3782130fdb6604b670aa7ded6f5245381e6178259ad8139f"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx",
+      "section": "Validation Criteria \u203a Medical Pathway",
+      "quote": "\u2022 Arterial blood gas (ABG) with PaO2 less than 60 mm Hg on room air",
+      "document_version_hash": "sha256:78286f647e528a2d3782130fdb6604b670aa7ded6f5245381e6178259ad8139f"
+    }
+  ],
+  "system_note": "Claim MR_24 review (whole-stay DRG): Principal billed diagnosis B00.4 (Herpesviral encephalitis) is supported by the record: the admitting H&P documents empiric acyclovir for suspected HSV encephalitis and ongoing seizures (History & Physical, Dr. Ashford, 2026-09-16) (NOTE-Medical-Records-16-30-MR_24.pdf-n9, p.630), the MRI is reported as characteristic of HSV encephalitis (Diagnostic Imaging Report - MRI Brain, 2026-09-17) (NOTE-Medical-Records-16-30-MR_24.pdf-n23, p.229), and the discharge summary documents CSF HSV-1 PCR positive and completion of a 21-day IV acyclovir course (Discharge / Transfer Summary, transfer 2027-01-29) (NOTE-Medical-Records-16-30-MR_24.pdf-n1148, p.835). These elements meet the policy Validation Criteria for B00.4 (provider diagnosis + diagnostic confirmation + antiviral therapy) (RULE-Policy-Documents-DRG-Herpesviral-Encephalitis.docx-b61-r1; RULE-Policy-Documents-DRG-Herpesviral-Encephalitis.docx-b35). Acute respiratory failure (J96.01) and status epilepticus (G41.0) are supported as present on admission and meet MCC criteria: the neurology consult and progress notes document invasive mechanical ventilation with objective hypoxemia (ABG PaO2 62, P/F 65) and the patient was intubated on presentation (Neurology Consultation, 2026-09-16; Critical Care Progress Note 2026-09-16) (NOTE-Medical-Records-16-30-MR_24.pdf-n12, p.61; NOTE-Medical-Records-16-30-MR_24.pdf-n11, p.291). The acute respiratory failure policy presumes Criterion 2 (objective hypoxemia) when invasive ventilation is documented and attributed to respiratory failure (RULE-Policy-Documents-DRG-Acute-Respiratory-Failure-with-Hypoxia.docx-b37), and the ABG/PF supports severe hypoxemia (NOTE-Medical-Records-16-30-MR_24.pdf-n12, p.61). Mechanical ventilation >96 hours and PEG placement are documented in the hospital course and discharge (Discharge / Transfer Summary, p.835) and support the corresponding procedure codes for prolonged ventilation and PEG (NOTE-Medical-Records-16-30-MR_24.pdf-n1148, p.835). Findings requiring correction (basis and citations): 1) Unsupported/insufficient diagnoses removed: I63.9 (cerebral infarction, unspecified) and G93.1 (anoxic brain damage). The MRI imaging report documents bilateral temporal lobe T2/FLAIR hyperintensity characteristic of HSV encephalitis and explicitly states No other acute intracranial abnormality, and the discharge summary and imaging do not document an acute ischemic infarct or anoxic brain injury to support those codes (Diagnostic Imaging Report - MRI Brain, p.229; Discharge / Transfer Summary, p.835) (NOTE-Medical-Records-16-30-MR_24.pdf-n23, p.229; NOTE-Medical-Records-16-30-MR_24.pdf-n1148, p.835). These billed codes lack clinical support and should be removed. 2) Dementia code (F02.81) is not supported by the record as a physician-documented dementia diagnosis. The record documents post-encephalitis cognitive dysfunction and memory impairment but shows the team treated encephalitis with resulting cognitive sequelae; there is no provider documentation diagnosing dementia (History & Physical active problem list and Discharge / Transfer Summary) (NOTE-Medical-Records-16-30-MR_24.pdf-n9, p.630; NOTE-Medical-Records-16-30-MR_24.pdf-n1148, p.835). Remove F02.81. 3) Procedure technique mismatch: billed PCS 0B110F4 (Bypass trachea to cutaneous with tracheostomy device, open approach) conflicts with the chart documentation of a percutaneous tracheostomy. The admitting problem list and subsequent course explicitly document a percutaneous tracheostomy for prolonged ventilation/tracheostomy on ICU day 14 (History & Physical active problem list; Discharge / Transfer Summary) (NOTE-Medical-Records-16-30-MR_24.pdf-n9, p.630; NOTE-Medical-Records-16-30-MR_24.pdf-n1148, p.835). Recode the tracheostomy PCS to the percutaneous tracheostomy code (percutaneous approach) rather than the open approach code originally billed. 4) POA corrections where the chart contradicts billed POA: aspiration pneumonia (J69.0) and S. pneumoniae pneumonia (J13) are documented on the admission problem list and in the ED/H&P; these support POA=Y rather than POA=N on the bill (History & Physical active problem list; Discharge / Transfer Summary) (NOTE-Medical-Records-16-30-MR_24.pdf-n9, p.630; NOTE-Medical-Records-16-30-MR_24.pdf-n1148, p.835). Conversely, the catheter-associated right internal jugular DVT (I82.C11) is documented as catheter-associated during the hospital course and treated with anticoagulation and therefore supports POA=N (Discharge / Transfer Summary) (NOTE-Medical-Records-16-30-MR_24.pdf-n1148, p.835). Evidence relied on (document / section / page): - History & Physical (Admitting), Dr. Ilya Ashford, 2026-09-16 - provider documentation of suspected/treated HSV encephalitis, empiric IV acyclovir, intubation, LP pleocytosis, problem list entries including aspiration pneumonia, PEG, percutaneous tracheostomy (NOTE-Medical-Records-16-30-MR_24.pdf-n9, p.630-731). - Neurology Consultation (2026-09-16) and Critical Care Progress Note (2026-09-16) - EEG/status epilepticus, ABG and ventilator support with PaO2 62 and P/F 65 (NOTE-Medical-Records-16-30-MR_24.pdf-n12, p.61; NOTE-Medical-Records-16-30-MR_24.pdf-n11, p.291). - Diagnostic Imaging Report - MRI Brain (2026-09-17) - bilateral temporal lobe T2/FLAIR hyperintensity characteristic of HSV encephalitis; No other acute intracranial abnormality (NOTE-Medical-Records-16-30-MR_24.pdf-n23, p.229). - Discharge / Transfer Summary (2027-01-29) - CSF HSV-1 PCR positive, completion of 21-day IV acyclovir, aspiration pneumonia with S. pneumoniae, catheter-associated right internal jugular DVT, prolonged ventilation requiring tracheostomy on ICU day 14, PEG on ICU day 16, transfer to acute inpatient rehabilitation (NOTE-Medical-Records-16-30-MR_24.pdf-n1148, p.835-836). - Governing policy citations used in rationale: Herpesviral encephalitis policy (validation criteria: CSF HSV PCR, MRI findings, EEG and empiric acyclovir) (RULE-Policy-Documents-DRG-Herpesviral-Encephalitis.docx-b61-r1; RULE-Policy-Documents-DRG-Herpesviral-Encephalitis.docx-b35) and Acute Respiratory Failure with Hypoxia policy (ABG/SpO2/PF thresholds, presumption rule when invasive mechanical ventilation is documented) (RULE-Policy-Documents-DRG-Acute-Respiratory-Failure-with-Hypoxia.docx-b29; RULE-Policy-Documents-DRG-Acute-Respiratory-Failure-with-Hypoxia.docx-b37). Conclusion / action: Remove I63.9 and G93.1 for lack of supporting diagnostic evidence; remove F02.81 (dementia) because the record documents cognitive impairment/amnestic sequelae but does not document a provider diagnosis of dementia; recode tracheostomy PCS from open approach (0B110F4) to the percutaneous tracheostomy code consistent with documentation (percutaneous tracheostomy). Correct POA flags where the chart explicitly documents presence on admission (J69.0, J13) or documents development during the stay (I82.C11, Z99.11 kept with POA=N). All other billed diagnoses/procedures are supported and retained. Full corrected diagnosis and procedure sets are provided below.",
+  "rationale_letter": "Re: DRG audit - Claim MR_24 (Admission 09/16/2026) Dear Provider, This letter documents the results of a clinical coding audit of Claim MR_24 covering the entire inpatient stay. We reviewed the billed diagnostic and procedure codes against the inpatient medical record and the applicable DRG clinical validation policies. Finding: After review, we have determined that some billed codes are not supported by the medical record and/or the policy criteria, and one procedure code is coded with the incorrect technique (open vs percutaneous). The specific corrections are detailed below. Basis for findings (selected record and policy items relied upon): - HSV encephalitis (B00.4) is supported as the principal diagnosis and an MCC. The admitting H&P documents empiric IV acyclovir for suspected HSV encephalitis and intubation for airway protection (History & Physical, 09/16/2026). MRI demonstrates bilateral temporal lobe changes characteristic of HSV encephalitis, and the discharge summary documents a positive CSF HSV-1 PCR and completion of a 21-day IV acyclovir course (Diagnostic Imaging Report - MRI Brain, 09/17/2026; Discharge / Transfer Summary, 01/29/2027). These elements meet the published policy validation criteria for B00.4 (CSF PCR or characteristic MRI + antiviral therapy) (Herpesviral Encephalitis policy, RULE-Policy-Documents-DRG-Herpesviral-Encephalitis). - Acute hypoxemic respiratory failure (J96.01) and status epilepticus (G41.0) are supported and remain coded as MCC-level secondary diagnoses. The chart documents invasive mechanical ventilation, an ABG with PaO2 62 mm Hg and P/F \u224865, and management in the ICU for refractory status epilepticus (Neurology Consultation and Progress Notes). The Acute Respiratory Failure policy allows presumption of objective hypoxemia when invasive ventilation is documented and attributed to acute respiratory failure (RULE-Policy-Documents-DRG-Acute-Respiratory-Failure-with-Hypoxia). Corrections to the billed claim: 1) Remove I63.9 (cerebral infarction, unspecified) - MRI and radiology interpretation documented characteristic HSV encephalitis and explicitly stated no other acute intracranial abnormality; there is no imaging or treating-provider documentation supporting an acute cerebral infarction. 2) Remove G93.1 (anoxic brain damage) - the record contains no documentation of a global anoxic brain injury (no cardiac arrest or imaging supporting anoxic injury); neurologic deficits are explained by HSV encephalitis and its sequelae. 3) Remove F02.81 (dementia in other diseases) - the chart documents post-encephalitis cognitive impairment and memory loss but does not contain a provider diagnosis of dementia; policy and coding convention require a provider diagnosis of dementia to support F02.81. 4) Recode tracheostomy PCS from 0B110F4 (open approach) to the percutaneous tracheostomy code (per documentation of a percutaneous tracheostomy performed for prolonged mechanical ventilation on ICU day 14). 5) Correct POA flags where charted: aspiration/streptococcal pneumonia (J69.0 / J13) are documented on admission and documented in the admitting H&P and problem list - adjust POA to Y. Catheter-associated right internal jugular DVT (I82.C11) is documented as catheter-associated and treated during the hospital course - set POA = N. Correction effect: The principal diagnosis remains B00.4 (Herpesviral encephalitis). Two diagnosis codes lacking clinical support (I63.9 and G93.1) have been removed; F02.81 has been removed due to absence of a dementia diagnosis. The tracheostomy procedure code has been changed to the percutaneous approach to reflect operative technique documented in the chart. POA indicators have been aligned with the clinical documentation. If you disagree with these findings or have additional documentation (operative note specifying open tracheostomy, radiology report demonstrating infarction or anoxic injury, or a provider-signed diagnosis of dementia), please provide the records or clinician clarification for reconsideration. Sincerely, Clinical Coding Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.059822,
+    "time_to_run_seconds": 120.003,
+    "total_cost_per_claim_usd": 30.589822,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.059822
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\":\"MATCH (c:Claim {claim_number:'MR_24'})-[:HAS_LINE]->(l:Line) RETURN l.position, l.code, l.description, l.pojo AS POA, l.cc, l.mcc\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"B00.4\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"G41.0\"}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"J96.01\"}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"0B110F4\"}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"MR_24\", \"keywords\": [\"Herpesviral encephalitis\", \"Grand mal status epilepticus\", \"acute respiratory failure\", \"tracheostomy\"]}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_discharge_disposition_note",
+      "arguments": "{\"claim_number\":\"MR_24\"}"
+    },
+    {
+      "step": 8,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "opt_in_declaration": "I am opting into the Solution Integrator track",
+  "submission_round": "Round 2 (Blind)",
+  "review_types": [
+    "APC",
+    "DRG",
+    "Readmission",
+    "SNF"
+  ],
+  "claim_counts": {
+    "DRG": 30,
+    "APC": 10,
+    "SNF": 10,
+    "Readmission": 10
+  },
+  "submission_date": "2026-10-15"
+}

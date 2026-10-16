@@ -1,0 +1,169 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_01",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "Review summary: Readmission claim RM_01 (admit 05/02/2026, gap_days=21) is within Cascade Health PPO's 30-day review window (policy: Review Window: 30 days from prior discharge). The payer's guideline (Section B1) requires a Finding when the readmission diagnosis is the same as, or clinically related to, the condition treated during the prior stay. The readmission documentation explicitly states the readmission was a direct complication/continuation of the index ICU course, and the index stay documents prolonged ICU-level respiratory failure with tracheostomy and planned LTAC transfer. No exclusion in Section C (direct transfer, planned readmission, SNF/LTAC admission, etc.) applies. Policy gate (review window): Cascade Health PPO Readmission Review Guideline - Review Window: 30 days from prior discharge (policy row: RULE-Policy-Documents-Readmission-Payer-Guidelines-Cascade-Health-PPO-Readmission-Review-Guideline.docx-b4). Index discharge 04/11/2026 -> readmit 05/02/2026 = 21 days, therefore in scope. Relatedness criterion (per payer B1): The guideline asks whether the readmission diagnosis is the same as, or clinically related to, the condition treated during the prior stay; a Yes here is a Finding under 'same or related condition' (policy row: RULE-Policy-Documents-Readmission-Payer-Guidelines-Cascade-Health-PPO-Readmission-Review-Guideline.docx-B1). Clinical evidence: The readmission Discharge Summary documents that the patient \"presented 7 days after returning home from the LTAC with post-institutional pneumonia (J15.9) with acute hypoxemic respiratory failure (J96.01) - a direct complication of the prior 96-day ICU course and subsequent LTAC stay\" (Discharge Summary, p.146; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n153). The readmission Admission H&P and Discharge/Transfer Summary document septic shock, severe pneumonia and acute hypoxemic respiratory failure requiring MICU care and intubation (History & Physical (Admitting), p.7; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n5; Discharge / Transfer Summary, p.142; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n152). The index Discharge / Transfer Summary documents a prolonged ICU course with intubation/tracheostomy and plans/transfer to a long-term acute care facility for continued ventilator/tracheostomy weaning (Index Discharge / Transfer Summary, p.818; source NOTE-Readmission-RM_01-index-MR_01.pdf-n829) and other index documentation documents prolonged ventilator dependence and ARDS. Taken together the clinical narrative supports that the readmission respiratory failure/pneumonia is a continuation/complication of the index illness and its ICU course. Exclusions check: Section C1 lists exclusions (direct transfers, planned staged readmissions, admissions to SNF/LTAC/IRF, etc.) that would override a B-section Finding (RULE-Policy-Documents-Readmission-Payer-Guidelines-Cascade-Health-PPO-Readmission-Review-Guideline.docx-C1). The readmission was an acute hospital admission to the MICU after the patient had been discharged home from LTAC 7 days earlier (Discharge Summary, p.146; NOTE-Readmission-RM_01-readmission-RM_01.pdf-n153 and Discharge Summary/Transfer record, p.142; NOTE-Readmission-RM_01-readmission-RM_01.pdf-n152). This is not a direct transfer nor a scheduled/planned readmission nor an admission only to a post-acute facility; therefore no Section C exclusion applies. Determination: Finding under the Cascade Health PPO Readmission Review Guideline, Section B1 - Same or related condition. Evidence relied upon: RULE guideline rows (B1, C1, Review Window) and the readmission Discharge Summary and index Discharge / Transfer Summary and readmission H&P (source_ids cited below).",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "RM_01.pdf",
+      "page_ref": "146",
+      "page_confirmed": true,
+      "quote": "Readmission RM_01 (05/02\u201305/15/2026): presented 7 days after returning home from the LTAC with post-institutional pneumonia (J15.9) with acute hypoxemic respiratory failure (J96.01) \u2014 a direct complication of the prior 96-day ICU course and subsequent LTAC stay.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_01.pdf",
+      "page_ref": "818",
+      "page_confirmed": true,
+      "quote": "An extubation attempt failed and reintubation was required, after which a tracheostomy was placed for prolonged ventilation and a PEG for enteral nutrition.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "RM_01.pdf",
+      "page_ref": "7",
+      "page_confirmed": true,
+      "quote": "Assessment 79-year-old woman with severe multifocal community-acquired pneumonia complicated by septic shock, hypoxemic respiratory failure meeting ARDS criteria, acute kidney injury, and sepsis-associated encephalopathy. High illness severity; admitted to MICU.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_01.pdf",
+      "page_ref": "818",
+      "page_confirmed": true,
+      "quote": "Discharge / Transfer Summary Attending: Dr. Marcus Bell, MD (Critical Care Medicine) Admit: 2026-01-06 Transfer: 2026-04-11 LOS: 95 days Reason for Admission: Septic shock and severe pneumonia with respiratory failure requiring intensive care.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "RM_01.pdf",
+      "page_ref": "142",
+      "page_confirmed": true,
+      "quote": "Discharge / Transfer Summary Attending: Dr. Elena Whitfield, MD (Critical Care Medicine) Admit: 2026-05-02 Transfer: 2026-05-15 LOS: 13 days Reason for Admission: Septic shock and severe pneumonia with respiratory failure requiring intensive care.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "RM_01.pdf",
+      "page_ref": "146",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_01 (01/06\u201304/11/2026): Septic shock (A40.3), ARDS (J80), AKI requiring HD, prolonged mechanical ventilation; discharged to a Long-Term Acute Care Hospital (LTAC) for continued weaning, completed a 14-day LTAC stay, and was discharged home on 04/25/2026. Readmission RM_01 (05/02\u201305/15/2026): presented 7 days after returning home from the LTAC with post-institutional pneumonia (J15.9) with acute hypoxemic respiratory failure (J96.01) \u2014 a direct complication of the prior 96-day ICU course and subsequent LTAC stay. Shared diagnoses: J96.01, J44.9 (COPD), E11.65, I10, I48.91. The readmission represents continuation of the respiratory pathology from the index stay; the patient was living at home (not institutionalized) at the time of this readmission.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_01.pdf",
+      "page_ref": "818",
+      "page_confirmed": true,
+      "quote": "Elena Papadopoulos presented with septic shock and severe multifocal pneumonia, was intubated for hypoxemic respiratory failure, and required norepinephrine and vasopressin.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "RM_01.pdf",
+      "page_ref": "6",
+      "page_confirmed": true,
+      "quote": "Admitted to the Medical Intensive Care Unit in critical condition for septic shock and hypoxemic respiratory failure; care transferred to the critical care team.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx",
+      "section": "Cascade Health PPO - Readmission Review Guideline, Review Window",
+      "quote": "Review Window: 30 days from prior discharge",
+      "document_version_hash": "sha256:8d736b0b4656183464a0e22197e1e1e80de4c4c89975519768569badd7423a3d"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx",
+      "section": "Cascade Health PPO - Readmission Review Guideline \u203a Section B - Review Criteria",
+      "quote": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2.",
+      "document_version_hash": "sha256:8d736b0b4656183464a0e22197e1e1e80de4c4c89975519768569badd7423a3d"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Cascade Health PPO - Readmission Review Guideline.docx",
+      "section": "Cascade Health PPO - Readmission Review Guideline \u203a Section C - Exclusions",
+      "quote": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination.",
+      "document_version_hash": "sha256:8d736b0b4656183464a0e22197e1e1e80de4c4c89975519768569badd7423a3d"
+    }
+  ],
+  "system_note": "Review summary: Readmission claim RM_01 (admit 05/02/2026, gap_days=21) is within Cascade Health PPO's 30-day review window (policy: Review Window: 30 days from prior discharge). The payer's guideline (Section B1) requires a Finding when the readmission diagnosis is the same as, or clinically related to, the condition treated during the prior stay. The readmission documentation explicitly states the readmission was a direct complication/continuation of the index ICU course, and the index stay documents prolonged ICU-level respiratory failure with tracheostomy and planned LTAC transfer. No exclusion in Section C (direct transfer, planned readmission, SNF/LTAC admission, etc.) applies. Policy gate (review window): Cascade Health PPO Readmission Review Guideline - Review Window: 30 days from prior discharge (policy row: RULE-Policy-Documents-Readmission-Payer-Guidelines-Cascade-Health-PPO-Readmission-Review-Guideline.docx-b4). Index discharge 04/11/2026 -> readmit 05/02/2026 = 21 days, therefore in scope. Relatedness criterion (per payer B1): The guideline asks whether the readmission diagnosis is the same as, or clinically related to, the condition treated during the prior stay; a Yes here is a Finding under 'same or related condition' (policy row: RULE-Policy-Documents-Readmission-Payer-Guidelines-Cascade-Health-PPO-Readmission-Review-Guideline.docx-B1). Clinical evidence: The readmission Discharge Summary documents that the patient \"presented 7 days after returning home from the LTAC with post-institutional pneumonia (J15.9) with acute hypoxemic respiratory failure (J96.01) - a direct complication of the prior 96-day ICU course and subsequent LTAC stay\" (Discharge Summary, p.146; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n153). The readmission Admission H&P and Discharge/Transfer Summary document septic shock, severe pneumonia and acute hypoxemic respiratory failure requiring MICU care and intubation (History & Physical (Admitting), p.7; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n5; Discharge / Transfer Summary, p.142; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n152). The index Discharge / Transfer Summary documents a prolonged ICU course with intubation/tracheostomy and plans/transfer to a long-term acute care facility for continued ventilator/tracheostomy weaning (Index Discharge / Transfer Summary, p.818; source NOTE-Readmission-RM_01-index-MR_01.pdf-n829) and other index documentation documents prolonged ventilator dependence and ARDS. Taken together the clinical narrative supports that the readmission respiratory failure/pneumonia is a continuation/complication of the index illness and its ICU course. Exclusions check: Section C1 lists exclusions (direct transfers, planned staged readmissions, admissions to SNF/LTAC/IRF, etc.) that would override a B-section Finding (RULE-Policy-Documents-Readmission-Payer-Guidelines-Cascade-Health-PPO-Readmission-Review-Guideline.docx-C1). The readmission was an acute hospital admission to the MICU after the patient had been discharged home from LTAC 7 days earlier (Discharge Summary, p.146; NOTE-Readmission-RM_01-readmission-RM_01.pdf-n153 and Discharge Summary/Transfer record, p.142; NOTE-Readmission-RM_01-readmission-RM_01.pdf-n152). This is not a direct transfer nor a scheduled/planned readmission nor an admission only to a post-acute facility; therefore no Section C exclusion applies. Determination: Finding under the Cascade Health PPO Readmission Review Guideline, Section B1 - Same or related condition. Evidence relied upon: RULE guideline rows (B1, C1, Review Window) and the readmission Discharge Summary and index Discharge / Transfer Summary and readmission H&P (source_ids cited below).",
+  "rationale_letter": "To: Medical Records / Admissions Office Re: Claim RM_01 - Readmission review outcome We have completed a review of readmission claim RM_01 (admit 05/02/2026) against Cascade Health PPO's Readmission Review Guideline (effective 03/01/2024). The payer's guideline uses a 30-day review window and a set of relatedness criteria. The readmission occurred 21 days after the index discharge (index discharge 04/11/2026), placing RM_01 within the 30-day review window (Cascade Health PPO Readmission Review Guideline - Review Window: 30 days from prior discharge). Finding: This readmission is determined to be clinically related to the prior index admission MR_01 under the guideline's Section B1 criterion (\"same as, or clinically related to, the condition or procedure treated during the prior stay\"). Basis: The readmission documentation explicitly states that the patient presented 7 days after return from an LTAC with post-institutional pneumonia and acute hypoxemic respiratory failure \"a direct complication of the prior 96-day ICU course and subsequent LTAC stay\" (Discharge Summary, p.146; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n153). The readmission H&P and Discharge / Transfer Summary document septic shock and acute hypoxemic respiratory failure requiring MICU-level care and intubation (History & Physical (Admitting), p.7; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n5; Discharge / Transfer Summary, p.142; source NOTE-Readmission-RM_01-readmission-RM_01.pdf-n152). The index discharge summary documents a prolonged ICU course with tracheostomy and planned LTAC transfer for ventilator weaning (Index Discharge / Transfer Summary, p.818; source NOTE-Readmission-RM_01-index-MR_01.pdf-n829). Under the payer's guideline, these facts satisfy the 'same or related condition' criterion. Exclusions: We reviewed the guideline's exclusions (Section C1). This readmission is not a direct transfer from another acute-care facility, not a scheduled staged admission, nor an admission only to a SNF/LTAC/IRF; therefore no exclusion applies to override the Section B1 Finding (RULE-Policy-Documents-Readmission-Payer-Guidelines-Cascade-Health-PPO-Readmission-Review-Guideline.docx-C1). Conclusion / action: Per Cascade Health PPO Readmission Review Guideline (Section B1), RM_01 is a Finding (same or related condition). Please expect adjudication consistent with the payer's policy for readmissions deemed clinically related to a prior stay. If you disagree with this determination, submit additional supporting clinical documentation demonstrating either (a) the readmission diagnosis is unrelated to the index stay, or (b) one of the guideline exclusions applies (for example, documentation that this was a direct transfer or a scheduled staged admission). If you submit additional materials, include specific cross-references to the index and readmission records. Sincerely, Clinical Claims Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.060827,
+    "time_to_run_seconds": 82.4,
+    "total_cost_per_claim_usd": 30.590827,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.060827
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\":\"RM_01\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\":\"Cascade Health PPO\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"RM_01\",\"keywords\":[\"Acute respiratory failure with hypoxia\",\"acute respiratory failure\",\"respiratory failure\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_03",
+  "review_type": "DRG",
+  "determination": "Finding",
+  "corrected_coding_set": [
+    {
+      "code": "I61.0",
+      "poa": "Y",
+      "role": "principal",
+      "short_desc": "Nontraumatic intracerebral hemorrhage in hemisphere, subcortical"
+    },
+    {
+      "code": "G93.6",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Cerebral edema"
+    },
+    {
+      "code": "G91.1",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Obstructive hydrocephalus"
+    },
+    {
+      "code": "R40.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Unspecified coma"
+    },
+    {
+      "code": "J96.01",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute respiratory failure with hypoxia"
+    },
+    {
+      "code": "J15.9",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Unspecified bacterial pneumonia"
+    },
+    {
+      "code": "B96.1",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Klebsiella pneumoniae as the cause of diseases classified elsewhere"
+    },
+    {
+      "code": "I10",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Essential (primary) hypertension"
+    },
+    {
+      "code": "E11.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "E78.5",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Hyperlipidemia, unspecified"
+    },
+    {
+      "code": "G81.94",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Hemiplegia, unspecified affecting right dominant side"
+    },
+    {
+      "code": "R47.1",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Dysarthria and anarthria"
+    },
+    {
+      "code": "Z99.11",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Dependence on respirator [ventilator] status"
+    }
+  ],
+  "corrected_procedure_set": [
+    "0BH17EZ",
+    "00H600Z",
+    "0016070",
+    "02HV33Z",
+    "03HY32Z",
+    "0B110F4",
+    "0DH60UZ",
+    "5A1D90Z"
+  ],
+  "code_actions": [
+    {
+      "code": "I97.5",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "No radiology or neurosurgery documentation of a subdural hematoma; imaging and consults document intracerebral hemorrhage with IVH and hydrocephalus instead.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0002",
+        "ev_0004"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "E22.2",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Record documents cerebral salt wasting with hypotonic hyponatremia rather than SIADH (provider problem list and discharge summary); documentation does not support E22.2.",
+      "evidence_ids": [
+        "ev_0005",
+        "ev_0004"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "Z98.62",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Operative documentation describes VP shunt placement (programmable valve and distal catheter to peritoneum); there is no documentation of an intracranial neurostimulator.",
+      "evidence_ids": [
+        "ev_0004"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "I63.9",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "CT and contemporaneous notes explicitly state no acute infarct; no documentation of ischemic stroke to support I63.9.",
+      "evidence_ids": [
+        "ev_0006"
+      ],
+      "policy_citation_ids": []
+    }
+  ],
+  "discharge_disposition": "62 - Discharged/transferred to an inpatient rehabilitation facility (IRF)",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_03.pdf",
+      "page_ref": "119",
+      "page_confirmed": true,
+      "quote": "Emergent CT head demonstrated a large left basal-ganglia intracerebral hemorrhage with intraventricular extension and obstructive hydrocephalus.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_03.pdf",
+      "page_ref": "514",
+      "page_confirmed": true,
+      "quote": "Large left basal-ganglia hyperdense hemorrhage measuring approximately 42 mL with extension into the left lateral ventricle, third ventricle, and fourth ventricle.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_03.pdf",
+      "page_ref": "73",
+      "page_confirmed": true,
+      "quote": "Bronchoscopically guided percutaneous dilational tracheostomy performed at the second-third tracheal interspace. Tube placed with immediate capnographic confirmation; minimal bleeding; no pneumothorax on post-procedure CXR.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_03.pdf",
+      "page_ref": "938",
+      "page_confirmed": true,
+      "quote": "Resolving left basal-ganglia intracerebral hemorrhage with residual right hemiparesis and aphasia; ventriculoperitoneal shunt-dependent communicating hydrocephalus; tracheostomy-dependent respiratory status (weaning to trach collar); resolved Klebsiella VAP; cerebral salt wasting resolved; poorly controlled hypertension now improved; type 2 diabetes mellitus; hyperlipidemia; ICU-acquired weakness.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_03.pdf",
+      "page_ref": "119",
+      "page_confirmed": true,
+      "quote": "10 Cerebral salt wasting with hypotonic hyponatremia",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_03.pdf",
+      "page_ref": "514",
+      "page_confirmed": true,
+      "quote": "No acute infarct.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_03.pdf",
+      "page_ref": "191",
+      "page_confirmed": true,
+      "quote": "Interface/settings (07:00): AC/VC, FiO2 90%, PEEP 15, Vt 244 mL. Gas exchange: pH 7.32 / PaCO2 47 / PaO2 67 (P/F 74).",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_03.pdf",
+      "page_ref": "148",
+      "page_confirmed": true,
+      "quote": "Reviewed the concept of brain swelling, ICP monitoring, and treatments used to control pressure.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/DRG/Acute Respiratory Failure with Hypoxia.docx",
+      "section": "Validation Criteria \u203a Medical Pathway",
+      "quote": "[1] Presumption rule: When the provider documents initiation of invasive mechanical ventilation and attributes the need for ventilation to acute respiratory failure, Criterion 2 (objective hypoxemia measurement) is presumed satisfied even if a pre-intubation room-air ABG is not documented. Emergent intubation may preclude room-air measurement; provider documentation of the clinical urgency is sufficient.",
+      "document_version_hash": "sha256:78286f647e528a2d3782130fdb6604b670aa7ded6f5245381e6178259ad8139f"
+    }
+  ],
+  "system_note": "Audit of MR_03 (complete-stay DRG review). Principal billed diagnosis I61.0 (left basal-ganglia intracerebral hemorrhage) is supported by contemporaneous imaging and the admitting H&P (Chief Complaint/GCS/intubation/EVD placement) (see ev1, ev2). Acute respiratory failure with hypoxia J96.01 is supported by provider documentation of respiratory failure, invasive ventilation, and objective hypoxemia (ABG P/F 74 and ventilator / RT flows) and meets the policy's Validation Criteria including the presumption rule when invasive mechanical ventilation is documented (RULE...-b40) (see ev3, ev4, ev10). Ventricular drainage and subsequent VP shunt placement are documented (EVD placement and VP shunt procedure note) supporting the ventricular-device procedure codes (see ev6). Klebsiella ventilator-associated pneumonia and B96.1 are documented and POA=N is consistent with the chart (see ev7). However, several billed diagnosis lines lack clinical documentation support and therefore must be removed: - I97.5 (nontraumatic subdural hemorrhage): imaging and neurosurgical documentation repeatedly describe a large left basal-ganglia intracerebral hemorrhage with intraventricular extension and obstructive hydrocephalus; there is no radiology or consultant note documenting a subdural hematoma (CT and H&P contain multiple explicit descriptions of ICH/IVH but not subdural) (see ev1, ev2). - I63.9 (cerebral infarction, unspecified): the initial CT explicitly states no acute infarct; no progress note documents a new ischemic stroke to justify coding I63.9 (see ev9). - E22.2 (SIADH): the chart documents cerebral salt wasting / hypotonic hyponatremia (Active Problem List and discharge summary) rather than SIADH; provider documentation supports cerebral salt wasting, not SIADH, so E22.2 is not supported as coded (see ev8, ev7). - Z98.62 (presence of intracranial neurostimulator): the record documents insertion of a ventriculoperitoneal (VP) shunt (VP shunt procedure, programmable valve) not an intracranial neurostimulator; the chart supports a shunt but not a neurostimulator (see ev6, ev7). Procedure/technique note: the chart contains a Procedure Note documenting a bronchoscopically guided percutaneous dilational tracheostomy (NOTE-Medical-Records-1-15-MR_03.pdf-n96). The billed ICD-10-PCS 0B110F4 describes an open approach tracheostomy (billed as open). This is a technique mismatch that must be resolved (CONFLICT-00020) - see ev5. Because the record's procedure note and the billed open-approach code cannot both be correct without reconciliation, human review is required to confirm the correct PCS code for the tracheostomy (see hitl_question). Summary of auditor actions recommended in this review: remove unsupported diagnoses I97.5, I63.9, E22.2, and Z98.62 from the claim; retain principal diagnosis I61.0 in position 1. Retain J96.01 (MCC) supported by ABG/ventilator data and policy presumption. Retain J15.9/B96.1 for Klebsiella VAP (POA=N). Retain VP shunt and EVD procedure codes. Escalate CONFLICT-00020 (tracheostomy approach) to clinician coder for PCS technique recode (percutaneous vs open). Key cited evidence (document/section/page): see evidence_cited entries ev1-ev11 for the exact quoted passages used to reach these conclusions.",
+  "rationale_letter": "To: Medical Records / Coding Department Re: DRG audit determination for Claim MR_03 (Admission 01/28/2026-05/09/2026) We reviewed the entire medical record for the above admission and compared documentation to the applicable coding policy guidance. This audit found a partial lack of clinical support for several billed diagnosis codes and a technique mismatch for the tracheostomy procedure that requires clarification. The determination and corrective actions follow. Finding (diagnosis lines removed): 1) I97.5 - Nontraumatic subdural hemorrhage: REMOVED. Basis: multiple contemporaneous documents (admitting H&P and neuroradiology CT) consistently document a large left basal-ganglia intracerebral hemorrhage with intraventricular extension and obstructive hydrocephalus; there is no radiology or neurosurgery documentation of a subdural hematoma to support I97.5 (see H&P: NOTE-Medical-Records-1-15-MR_03.pdf-n9, CT: NOTE-Medical-Records-1-15-MR_03.pdf-n13). 2) I63.9 - Cerebral infarction, unspecified: REMOVED. Basis: initial CT and contemporaneous notes state there is no acute infarct; no charted ischemic stroke meeting coding criteria was found (see CT: NOTE-Medical-Records-1-15-MR_03.pdf-n13). 3) E22.2 - Syndrome of inappropriate antidiuretic hormone secretion (SIADH): REMOVED. Basis: the problem list and discharge documentation specifically document cerebral salt wasting with hypotonic hyponatremia rather than SIADH; the record supports salt wasting (and its treatment) rather than SIADH, so E22.2 is not supported by the provider documentation (see H&P problem list and Discharge Summary: NOTE-Medical-Records-1-15-MR_03.pdf-n9 and n878). 4) Z98.62 - Presence of intracranial neurostimulator: REMOVED. Basis: the operative documentation describes a ventriculoperitoneal (VP) shunt placement (programmable valve, distal catheter to peritoneum) rather than placement of an intracranial neurostimulator; the chart supports a shunt device but not a neurostimulator (see VP shunt operative note: NOTE-Medical-Records-1-15-MR_03.pdf-n122 and Discharge Summary: NOTE-Medical-Records-1-15-MR_03.pdf-n878). Supported/retained codes (examples and basis): - I61.0 (principal) - supported by CT and admitting H&P documenting left basal-ganglia ICH with IVH and obstructive hydrocephalus (NOTE-Medical-Records-1-15-MR_03.pdf-n9; NOTE-Medical-Records-1-15-MR_03.pdf-n13). - J96.01 (Acute respiratory failure with hypoxia - MCC) - supported by provider documentation of respiratory failure, invasive mechanical ventilation, and objective hypoxemia (ABG PaO2 67, P/F 74), and meets the policy presumption for ventilation-initiated cases (RULE-Policy-Documents-DRG-Acute-Respiratory-Failure-with-Hypoxia, see excerpt). The presence of prolonged invasive ventilation and subsequent tracheostomy corroborates this diagnosis (see Critical Care Progress Note and Respiratory Therapy notes: NOTE-Medical-Records-1-15-MR_03.pdf-n11; NOTE-Medical-Records-1-15-MR_03.pdf-n15 and policy: RULE-Policy-Documents-DRG-Acute-Respiratory-Failure-with-Hypoxia.docx-b40). - J15.9 and B96.1 (Klebsiella VAP) - supported by discharge summary and antibiotic administration for Klebsiella ventilator-associated pneumonia (NOTE-Medical-Records-1-15-MR_03.pdf-n878). - VP shunt and EVD procedure codes - supported by neurosurgical procedure notes (NOTE-Medical-Records-1-15-MR_03.pdf-n122 and CT post-op verification: NOTE-Medical-Records-1-15-MR_03.pdf-n127). Procedure technique mismatch requiring clarification (human review requested): - Billed: ICD-10-PCS 0B110F4 (Bypass trachea to cutaneous with tracheostomy device, open approach). - Charted procedure note: Bronchoscopically guided percutaneous dilational tracheostomy (NOTE-Medical-Records-1-15-MR_03.pdf-n96) - this documents a percutaneous approach. The documentation and the billed PCS approach code cannot both be correct without reconciliation; please review CONFLICT-00020 (procedure note vs billed PCS) and apply the correct PCS value for a bronchoscopically-guided percutaneous dilational tracheostomy. Correction being made by this audit: - Remove I97.5, I63.9, E22.2, and Z98.62 from the claim. Retain I61.0 as principal diagnosis in position 1 and retain J96.01 (MCC) and other supported diagnoses/procedures as documented. Request coding office to correct the tracheostomy PCS to the percutaneous tracheostomy code consistent with the operative note (or provide clarifying documentation if an open approach was in fact performed). Discharge disposition: Transfer to Acute Inpatient Rehabilitation Facility (Transfer / Discharge Summary and Transfer Instructions dated 05/09/2026; NOTE-Medical-Records-1-15-MR_03.pdf-n874 / n878). If you disagree with removal of any diagnosis listed above, please provide the specific provider note, imaging report, or operative report that documents the missing condition (e.g., imaging confirming subdural hematoma, documentation of acute infarct, a provider diagnosis of SIADH, or documentation of an intracranial neurostimulator). Also please resolve CONFLICT-00020 for tracheostomy approach so the correct PCS can be assigned. Sincerely, Clinical Claims Auditor",
+  "metrics": {
+    "cost_of_processing_usd": 0.059962,
+    "time_to_run_seconds": 135.379,
+    "total_cost_per_claim_usd": 30.589962,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.059962
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number:'MR_03'}) RETURN c LIMIT 1\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number:'MR_03'})-[:HAS_LINE]->(l:Line) RETURN l.position, l.code, l.description, l.poa, l.cc, l.mcc\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\":\"MATCH (c:Claim {claim_number:'MR_03'}) WITH c MATCH (c)<-[:BILLED_BY]-(v:Visit) MATCH (v)-[:DOCUMENTED_BY]->(mr:MedicalRecord {review_type:'DRG'}) RETURN v, mr\"}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number:'MR_03'}) RETURN c.claim_number AS claim_number\"}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number:'MR_03'})<-[:BILLED_BY]-(v:Visit) RETURN v.visit_role, v.claim_admit_date, v.claim_discharge_date\"}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim {claim_number:'MR_03'})<-[:BILLED_BY]-(v:Visit)-[:DOCUMENTED_BY]->(mr:MedicalRecord {review_type:'DRG'}) RETURN mr\"}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"I61.0\"}"
+    },
+    {
+      "step": 8,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"I97.5\"}"
+    },
+    {
+      "step": 9,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"G93.6\"}"
+    },
+    {
+      "step": 10,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"R40.9\"}"
+    },
+    {
+      "step": 11,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"J96.01\"}"
+    },
+    {
+      "step": 12,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"MR_03\", \"keywords\": [\"bleeding\", \"hemorrhage\", \"coma\", \"ventilation\"]}"
+    },
+    {
+      "step": 13,
+      "kind": "retrieval",
+      "tool": "get_discharge_disposition_note",
+      "arguments": "{\"claim_number\":\"MR_03\"}"
+    },
+    {
+      "step": 14,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

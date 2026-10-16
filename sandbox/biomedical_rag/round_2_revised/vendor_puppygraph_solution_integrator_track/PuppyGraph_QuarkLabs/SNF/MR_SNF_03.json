@@ -1,0 +1,199 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_SNF_03",
+  "review_type": "SNF",
+  "determination": "Finding",
+  "recovery_type": "Partial Recovery",
+  "skilled_services_assessment": "Both",
+  "revenue_corrections": [
+    {
+      "revenue_code": "0191",
+      "corrected_units": 8,
+      "date_of_service": [
+        "2026-03-16",
+        "2026-03-18",
+        "2026-03-20",
+        "2026-03-22",
+        "2026-03-25",
+        "2026-03-27",
+        "2026-03-30",
+        "2026-04-01"
+      ],
+      "rationale": "0 day(s) billed at 0191. 8 day(s) billed at 0192 are documented at 0191 by that day's skilled nursing progress note (2026-03-16, 2026-03-18, 2026-03-20, 2026-03-22, 2026-03-25, 2026-03-27, 2026-03-30, 2026-04-01). Corrected to 8 day(s) at 0191.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0002",
+        "ev_0003",
+        "ev_0004",
+        "ev_0005",
+        "ev_0006",
+        "ev_0007",
+        "ev_0008",
+        "ev_0009"
+      ]
+    },
+    {
+      "revenue_code": "0192",
+      "corrected_units": 19,
+      "date_of_service": [
+        "2026-03-16",
+        "2026-03-18",
+        "2026-03-20",
+        "2026-03-22",
+        "2026-03-25",
+        "2026-03-27",
+        "2026-03-30",
+        "2026-04-01"
+      ],
+      "rationale": "27 day(s) billed at 0192. 8 day(s) billed at 0192 are documented at 0191 by that day's skilled nursing progress note (2026-03-16, 2026-03-18, 2026-03-20, 2026-03-22, 2026-03-25, 2026-03-27, 2026-03-30, 2026-04-01). Corrected to 19 day(s) at 0192.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0002",
+        "ev_0003",
+        "ev_0004",
+        "ev_0005",
+        "ev_0006",
+        "ev_0007",
+        "ev_0008",
+        "ev_0009"
+      ]
+    }
+  ],
+  "adjusted_dates_of_service": [
+    "2026-03-16",
+    "2026-03-18",
+    "2026-03-20",
+    "2026-03-22",
+    "2026-03-25",
+    "2026-03-27",
+    "2026-03-30",
+    "2026-04-01"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "220",
+      "page_confirmed": true,
+      "quote": "Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "224",
+      "page_confirmed": true,
+      "quote": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "228",
+      "page_confirmed": true,
+      "quote": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "232",
+      "page_confirmed": true,
+      "quote": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "238",
+      "page_confirmed": true,
+      "quote": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "242",
+      "page_confirmed": true,
+      "quote": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "248",
+      "page_confirmed": true,
+      "quote": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "252",
+      "page_confirmed": true,
+      "quote": "Combined total: 90 min. Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "MR_SNF_03.pdf",
+      "page_ref": "8",
+      "page_confirmed": true,
+      "quote": "Prior hospitalization: Banner University Medical Center, Phoenix, AZ \u2014 admitted 03/05/2026, discharged 03/10/2026.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Revenue codes 0191-0194",
+      "quote": "Revenue codes 0191-0194: Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy), 0193 (sub-acute), 0194 (weanable ventilator management).",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    }
+  ],
+  "system_note": "Billed: revenue code 0192 (rehabilitation therapy) for 27 days, 2026-03-10 through 2026-04-06. The facility's own daily skilled nursing progress notes explicitly state that eight dates within this range do NOT meet the documentation threshold for Level 2 (0192) and support only Level 1 (0191): 2026-03-16, 03-18, 03-20, 03-22, 03-25, 03-27, 03-30, 04-01 (see evidence ev1-ev8). The nursing notes state the combined therapy minutes for each of these dates were 90 minutes and explicitly conclude: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date (NOTE-SNF-medical-records-MR_SNF_03.pdf n224 p.219-220; n226 p.223-224; n228 p.227-228; n230 p.231-232; n233 p.237-238; n235 p.241-242; n238 p.??; n240 p.?? - see evidence mapping below). The facility-authored per-date determinations are dispositive here because the payer-specific guideline for Aetna MA is not available in the dataset and the SNF reference guide teaches to rely on the facility daily-level statement when present (RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b2/b13). The admission H&P documents a qualifying prior inpatient hospital stay (admitted 03/05/2026, discharged 03/10/2026) and an interdisciplinary plan for skilled PT/OT/SLP (NOTE-SNF-medical-records-MR_SNF_03.pdf-n10 p.8), confirming the overall need for skilled services but not validating Level 2 on the eight disputed dates. Because 8 of the billed 27 days are explicitly documented by the facility as supporting only Level 1 (0191), the billed 0192 line must be adjusted: reduce 0192 days from 27 to 19 and reclassify the eight dates listed above to 0191. Evidence: facility daily notes listing combined minutes and level determinations for each affected date (ev1-ev8) and the SNF reference definition of revenue codes (ev10) and the admission H&P confirming the qualifying hospital stay and skilled services (ev9).",
+  "rationale_letter": "Re: Audit determination for MR_SNF_03 - Revenue Code 0192 (03/10/2026-04/06/2026) Dear Provider, We reviewed the medical record for patient MR_SNF_03 in relation to the billed SNF per-diem revenue code 0192 for dates of service 03/10/2026 through 04/06/2026 (27 days). The facility's own daily skilled nursing progress notes identify eight specific dates (03/16/2026, 03/18/2026, 03/20/2026, 03/22/2026, 03/25/2026, 03/27/2026, 03/30/2026, and 04/01/2026) where combined therapy minutes were 90 minutes and the facility explicitly documents that these minutes are below the 120-minute threshold for Level 2 (0192) and therefore support only Level 1 (0191) billing on those dates (see nursing progress notes cited below). The admission history/physical documents a qualifying prior inpatient hospital stay and an ordered plan of skilled PT/OT/SLP, which supports that skilled services were appropriate for the stay overall, but does not change the facility's per-date determinations for the eight cited dates. Finding: Documentation does not support Level 2 (0192) on eight dates listed above; those dates are supported only at Level 1 (0191). Correction: reduce billed 0192 days from 27 to 19 and reclassify the eight dates to revenue code 0191. Basis: facility daily progress notes explicitly state Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date (see cited progress notes). Policy context: revenue codes 0191-0194 identify the SNF per-diem levels; facility daily-level statements are the operative per-date documentation when present and identify the appropriate per-diem for that date. Cited records (examples): - SKILLED NURSING PROGRESS NOTE 03/16/2026: Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date. (NOTE-SNF-medical-records-MR_SNF_03.pdf-n224 p.219-220) - SKILLED NURSING PROGRESS NOTE 03/18/2026: Note: Combined therapy minutes (90 min) below 120-minute Level 2 (0192) threshold. Level 1 (Rev 0191) billing is supported for this date. (NOTE-SNF-medical-records-MR_SNF_03.pdf-n226 p.223-224) - Admission H&P documents prior inpatient stay 03/05/2026-03/10/2026 and orders for skilled PT/OT/SLP (NOTE-SNF-medical-records-MR_SNF_03.pdf-n10 p.8). If you disagree with the reclassification for any of the eight dates, please provide contemporaneous documentation that shows the level-of-care criteria for Level 2 were met on those dates (for example, a facility daily note or clinician progress note stating a different combined therapy-minute total or other substantiating skilled need for Level 2). Absent such documentation, the audit adjustment will stand as described above. Sincerely, Clinical Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.023714,
+    "time_to_run_seconds": 44.521,
+    "total_cost_per_claim_usd": 30.553714,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.023714
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_daily_services",
+      "arguments": "{\"claim_number\": \"MR_SNF_03\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_per_diem_guideline",
+      "arguments": "{\"payer\": \"Aetna Medicare Advantage\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_per_diem_level_notes",
+      "arguments": "{\"claim_number\": \"MR_SNF_03\"}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"MR_SNF_03\", \"keywords\": [\"support\", \"level 2\", \"documentation\", \"therapy minutes\"]}"
+    },
+    {
+      "step": 5,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

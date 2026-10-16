@@ -1,0 +1,119 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_SNF_05",
+  "review_type": "SNF",
+  "determination": "No Finding",
+  "recovery_type": null,
+  "skilled_services_assessment": "Both",
+  "revenue_corrections": [],
+  "adjusted_dates_of_service": [],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_SNF_05.pdf",
+      "page_ref": "114",
+      "page_confirmed": true,
+      "quote": "Weekend Skilled Nursing Day: No therapy scheduled. Skilled nursing care per orders. Rev 0191, Level 1.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_SNF_05.pdf",
+      "page_ref": "114",
+      "page_confirmed": true,
+      "quote": "Weekend Skilled Nursing Day: No therapy scheduled. Skilled nursing care per orders. Rev 0191, Level 1.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Skilled need",
+      "quote": "Skilled need: A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Non-covered day",
+      "quote": "Non-covered day: A day within an otherwise covered stay where documentation does not support the billed level of care for that specific day; does not require the entire stay to be denied.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Skilled need",
+      "quote": "A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_004",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Revenue codes 0191-0194",
+      "quote": "Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy), 0193 (sub-acute), 0194 (weanable ventilator management).",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    }
+  ],
+  "system_note": "Billed line: revenue code 0192 (Rehabilitation Therapy), 13 days, DOS 05/05/2026-05/22/2026. The facility's daily skilled-nursing progress notes (as supplied) document 14 days at Level 2 (0192) and 4 days at Level 1 (0191); the billed 13 Level-2 days therefore fall within the dates the facility itself documented as Level 2. The governing SNF reference defines a skilled need as a service requiring licensed nursing or therapy staff and identifies a \"Non-covered day\" as a day where documentation does not support the billed level of care (i.e., non-covered days are assessed per-day rather than denying the entire stay) (Policy: SNF Level of Care - Definitions and Reference Guide, Skilled need / Non-covered day) (ev1, ev2). The record also contains a daily skilled nursing progress note for 05/09/2026 stating: Weekend Skilled Nursing Day: No therapy scheduled. Skilled nursing care per orders. Rev 0191, Level 1. (NOTE-SNF-medical-records-MR_SNF_05.pdf-n99) (ev3) - this documents one of the Level-1 weekend days and explains absence of therapy on that date. The therapy-session schedule (get_daily_services) shows PT and OT sessions on the Level-2 days in the billed range (therapies present on weekdays; therapy absent on documented Level-1 weekend dates), which is consistent with the facility's own level documentation and the reference guide's criteria for skilled care. Because (a) the facility notes document 14 Level-2 days (more than the 13 billed), (b) the facility explicitly documents Level-1 on days without therapy (ev3), and (c) the SNF reference supports assessing coverage per day (ev1, ev2), the documentation as a whole supports the billed 13 days at revenue code 0192 for the DOS range given. Determination: No Finding. Evidence relied on: SNF level-of-care definitions (skilled need / non-covered day) and the facility's 05/09/2026 skilled nursing progress note documenting a Level-1 weekend day. If further payer-specific numeric minute thresholds are later provided (Aetna MA guideline, not present in the dataset), re-review may be warranted. Reviewed revenue line 2 (0191) billed 4 days within DOS range 2026-05-05 to 2026-05-22. Facility daily documentation establishes four Level 1 (0191) days (weekend skilled nursing days) and the record contains an explicit skilled-nursing-level statement for 05/09/2026: Weekend Skilled Nursing Day: No therapy scheduled. Skilled nursing care per orders. Rev 0191, Level 1 (ev1). The SNF Level-of-Care reference defines \"Skilled need\" as a service requiring licensed nursing or therapy staff (the basis for 0191 when therapy is not scheduled) (ev2) and identifies 0191 as the skilled-nursing per-diem code (ev3). Therapy session records (daily PT/OT entries) show therapy provided on multiple non-weekend dates and are absent on the documented weekend skilled nursing day (05/09), consistent with the facility's Level 1 designation for weekend days. Because the facility's clinical note documents skilled nursing need on the weekend day and the payer-agnostic reference supports Level 1 when therapy is not scheduled, the documentation supports the billed Level 1 per-diem for the four days billed as 0191. No adjustment to units or revenue code is indicated for this revenue line.",
+  "rationale_letter": null,
+  "metrics": {
+    "cost_of_processing_usd": 0.030283,
+    "time_to_run_seconds": 88.593,
+    "total_cost_per_claim_usd": 30.560283,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.030283
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_daily_services",
+      "arguments": "{\"claim_number\": \"MR_SNF_05\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_per_diem_guideline",
+      "arguments": "{\"payer\": \"Aetna Medicare Advantage\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_per_diem_level_notes",
+      "arguments": "{\"claim_number\": \"MR_SNF_05\"}"
+    },
+    {
+      "step": 4,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "get_daily_services",
+      "arguments": "{\"claim_number\": \"MR_SNF_05\"}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "get_per_diem_level_notes",
+      "arguments": "{\"claim_number\": \"MR_SNF_05\"}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_per_diem_guideline",
+      "arguments": "{\"payer\": \"Aetna Medicare Advantage\"}"
+    },
+    {
+      "step": 8,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

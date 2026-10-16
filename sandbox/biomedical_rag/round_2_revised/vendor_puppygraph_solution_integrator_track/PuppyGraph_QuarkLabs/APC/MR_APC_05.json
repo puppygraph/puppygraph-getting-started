@@ -1,0 +1,208 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_APC_05",
+  "review_type": "APC",
+  "determination": "No Finding",
+  "concept_id": "APC-05",
+  "target_cpt_hcpcs": "43264",
+  "action": "keep",
+  "corrected_cpt_hcpcs": null,
+  "adjusted_apc_code": null,
+  "rationale": "Billed: CPT 43264 (ERCP with endoscopic retrograde removal of biliary calculus/calculi) on claim APC-2026-58231 (line 1). Claim also contains CPT 43274 with modifier 59 (line 2). Governing policy (APC-05) allows a second ERCP code with modifier 59 only when the record documents two anatomically distinct duct systems, each with its own independently documented diagnosis and antecedent imaging, and each intervention confirmed on its own dedicated fluoroscopic images. (Policy: RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-05-4; ev1). What the record documents: the pre-op H&P documents two separate problems with antecedent imaging for each (choledocholithiasis on MRCP and a mid pancreatic duct stricture on CT) and states the plan to address both duct systems in one ERCP encounter (History & Physical - NOTE-APC-medical-records-MR_APC_05.pdf-n4; ev5). The Operative Note explicitly lists two components and states the pancreatic component was reported with modifier 59 as a distinct duct system/diagnosis/procedure (Operative Note - NOTE-APC-medical-records-MR_APC_05.pdf-n25; ev2). The Operative Note further documents a dedicated cholangiogram with an 8 mm distal CBD filling defect and documented extraction with repeat occlusion cholangiogram confirming clearance (Operative Note - NOTE-APC-medical-records-MR_APC_05.pdf-n25; ev4). It separately documents that the pancreatic duct was cannulated separately and that a dedicated pancreatogram was obtained on independent fluoroscopic images, followed by balloon dilation and stent placement with fluoroscopic confirmation (Operative Note - NOTE-APC-medical-records-MR_APC_05.pdf-n25; ev3). The Intraoperative Record also lists equipment and devices consistent with both components (retrieval balloon and basket for stone extraction; balloon dilator and 5Fr x 7cm pancreatic duct stent) (Intraoperative Record - NOTE-APC-medical-records-MR_APC_05.pdf-n24; ev6). Reasoning: The policy's explicit criteria for accepting modifier 59 (distinct duct systems, independent diagnoses with antecedent imaging, and interventions confirmed on dedicated fluoroscopic images) are met by the chart: (1) separate diagnoses and antecedent imaging are documented in the H&P (ev5); (2) the biliary intervention included a cholangiogram demonstrating an 8 mm distal CBD stone and documented extraction with confirmation of clearance (ev4); (3) the pancreatic intervention was performed as a separate step with a dedicated pancreatogram on independent fluoroscopic images and subsequent balloon dilation and stent placement (ev3); and (4) the operative note explicitly frames the pancreatic component as reported with modifier 59 as a distinct duct system/diagnosis/procedure (ev2). These facts satisfy the policy requirement (ev1). Therefore CPT 43264 as billed is supported by the medical record and governing policy. No Finding. Line billed: position 2 procedure 43274-59. Claim also contains line 1 procedure 43264 (ERCP with endoscopic removal of biliary calculus). Governing policy (APC-05) allows modifier 59 on a second ERCP code only when the record documents two anatomically distinct duct systems, each with its own antecedent imaging-confirmed diagnosis, and each intervention confirmed on its own dedicated fluoroscopic images taken during technically separate steps (see ev1). The medical record documents antecedent imaging proving separate problems: MRCP/US showing a distal common bile duct filling defect consistent with choledocholithiasis (ev2) and a prior CT showing a focal mid-pancreatic duct stricture with upstream dilation (ev3). The pre-op/operative documentation explicitly plans and reports two separate ERCP interventions and states the pancreatic duct stent was reported with modifier 59 as a distinct duct system/diagnosis/procedure (ev4). Intraoperative documentation confirms use of fluoroscopy and documents fluoroscopic confirmation of common bile duct clearance (ev6) and the implant of a 5Fr x 7cm pancreatic duct stent (ev5). Taken together, the record satisfies the APC-05 criteria for anatomically distinct duct system interventions with antecedent imaging and intraoperative fluoroscopic confirmation of separate steps; modifier 59 and CPT 43274 as billed are supported. Evidence cited: ev1 (policy), ev2-ev4 (H&P/Procedure plan), ev5-ev6 (intraoperative confirmation).",
+  "evidence_ids": [],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "27",
+      "page_confirmed": true,
+      "quote": "PROCEDURE PERFORMED: 1) ERCP with biliary sphincterotomy and endoscopic extraction of common bile duct calculus. 2) ERCP with cannulation and pancreatogram of the pancreatic duct, balloon dilation of pancreatic duct stricture, and placement of pancreatic duct stent (reported with modifier 59 as a distinct duct system, distinct diagnosis, and distinct procedure from the biliary component).",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "28",
+      "page_confirmed": true,
+      "quote": "The pancreatic duct orifice was cannulated separately using a guidewire, and a dedicated pancreatogram was obtained on independent fluoroscopic images.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "27",
+      "page_confirmed": true,
+      "quote": "A cholangiogram was obtained and demonstrated a dilated common bile duct measuring 11 mm with a discrete 8 mm filling defect in the distal common bile duct, confirming choledocholithiasis.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "4",
+      "page_confirmed": true,
+      "quote": "Given the combination of symptomatic choledocholithiasis and a symptomatic, imaging-confirmed pancreatic duct stricture, he is scheduled for ERCP to address both duct systems in a single anesthesia encounter.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "26",
+      "page_confirmed": true,
+      "quote": "Equipment Used: Olympus therapeutic duodenoscope, fluoroscopy C-arm, sphincterotome, extraction balloon and retrieval basket, biliary/pancreatic guidewires, balloon dilator, 5Fr x 7cm single-pigtail pancreatic duct stent",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "4",
+      "page_confirmed": true,
+      "quote": "Right upper quadrant ultrasound showed a dilated common bile duct to 11 mm, and subsequent MRCP confirmed a 7-8 mm filling defect in the distal common bile duct consistent with choledocholithiasis, with no intrahepatic ductal dilation.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "4",
+      "page_confirmed": true,
+      "quote": "CT abdomen obtained two months ago for this separate complaint showed parenchymal calcifications throughout the pancreatic body and tail with a focal stricture of the mid pancreatic duct and upstream ductal dilation to 6 mm, distinct from and unrelated to the biliary findings.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "5",
+      "page_confirmed": true,
+      "quote": "Procedure: 1) ERCP with biliary sphincterotomy and endoscopic extraction of common bile duct calculus. 2) ERCP with cannulation and pancreatogram of the pancreatic duct, balloon dilation of pancreatic duct stricture, and placement of pancreatic duct stent (reported with modifier 59 as a distinct duct system, distinct diagnosis, and distinct procedure from the biliary component).",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "26",
+      "page_confirmed": true,
+      "quote": "Implants / Devices: One 5Fr x 7cm single-pigtail plastic pancreatic duct stent",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0010",
+      "document": "MR_APC_05.pdf",
+      "page_ref": "25",
+      "page_confirmed": true,
+      "quote": "the extracted common bile duct stone was discarded after fluoroscopic confirmation of complete ductal clearance, per standard endoscopy unit protocol.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-05, row 4",
+      "quote": "Modifier 59 is supportable on a second ERCP code only when the record establishes two anatomically distinct duct systems (common bile duct vs. pancreatic duct), each with its own independently documented diagnosis supported by antecedent imaging, and each intervention confirmed on its own dedicated fluoroscopic images taken during technically separate steps of the procedure.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-05, row 4",
+      "quote": "ERCP component codes performed at the same session are frequently bundled under NCCI, since most multi-step interventions within a single duct are inherent to one another. Modifier 59 is supportable on a second ERCP code only when the record establishes two anatomically distinct duct systems (common bile duct vs. pancreatic duct), each with its own independently documented diagnosis supported by antecedent imaging, and each intervention confirmed on its own dedicated fluoroscopic images taken during technically separate steps of the procedure. A single duct addressed twice, or a duct cannulated incidentally without its own diagnosis and imaging, does not meet this bar. Reviewers should confirm each duct system's diagnosis, imaging, and intervention are documented as genuinely separate before accepting modifier 59.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    }
+  ],
+  "system_note": "Billed: CPT 43264 (ERCP with endoscopic retrograde removal of biliary calculus/calculi) on claim APC-2026-58231 (line 1). Claim also contains CPT 43274 with modifier 59 (line 2). Governing policy (APC-05) allows a second ERCP code with modifier 59 only when the record documents two anatomically distinct duct systems, each with its own independently documented diagnosis and antecedent imaging, and each intervention confirmed on its own dedicated fluoroscopic images. (Policy: RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-05-4; ev1). What the record documents: the pre-op H&P documents two separate problems with antecedent imaging for each (choledocholithiasis on MRCP and a mid pancreatic duct stricture on CT) and states the plan to address both duct systems in one ERCP encounter (History & Physical - NOTE-APC-medical-records-MR_APC_05.pdf-n4; ev5). The Operative Note explicitly lists two components and states the pancreatic component was reported with modifier 59 as a distinct duct system/diagnosis/procedure (Operative Note - NOTE-APC-medical-records-MR_APC_05.pdf-n25; ev2). The Operative Note further documents a dedicated cholangiogram with an 8 mm distal CBD filling defect and documented extraction with repeat occlusion cholangiogram confirming clearance (Operative Note - NOTE-APC-medical-records-MR_APC_05.pdf-n25; ev4). It separately documents that the pancreatic duct was cannulated separately and that a dedicated pancreatogram was obtained on independent fluoroscopic images, followed by balloon dilation and stent placement with fluoroscopic confirmation (Operative Note - NOTE-APC-medical-records-MR_APC_05.pdf-n25; ev3). The Intraoperative Record also lists equipment and devices consistent with both components (retrieval balloon and basket for stone extraction; balloon dilator and 5Fr x 7cm pancreatic duct stent) (Intraoperative Record - NOTE-APC-medical-records-MR_APC_05.pdf-n24; ev6). Reasoning: The policy's explicit criteria for accepting modifier 59 (distinct duct systems, independent diagnoses with antecedent imaging, and interventions confirmed on dedicated fluoroscopic images) are met by the chart: (1) separate diagnoses and antecedent imaging are documented in the H&P (ev5); (2) the biliary intervention included a cholangiogram demonstrating an 8 mm distal CBD stone and documented extraction with confirmation of clearance (ev4); (3) the pancreatic intervention was performed as a separate step with a dedicated pancreatogram on independent fluoroscopic images and subsequent balloon dilation and stent placement (ev3); and (4) the operative note explicitly frames the pancreatic component as reported with modifier 59 as a distinct duct system/diagnosis/procedure (ev2). These facts satisfy the policy requirement (ev1). Therefore CPT 43264 as billed is supported by the medical record and governing policy. No Finding. Line billed: position 2 procedure 43274-59. Claim also contains line 1 procedure 43264 (ERCP with endoscopic removal of biliary calculus). Governing policy (APC-05) allows modifier 59 on a second ERCP code only when the record documents two anatomically distinct duct systems, each with its own antecedent imaging-confirmed diagnosis, and each intervention confirmed on its own dedicated fluoroscopic images taken during technically separate steps (see ev1). The medical record documents antecedent imaging proving separate problems: MRCP/US showing a distal common bile duct filling defect consistent with choledocholithiasis (ev2) and a prior CT showing a focal mid-pancreatic duct stricture with upstream dilation (ev3). The pre-op/operative documentation explicitly plans and reports two separate ERCP interventions and states the pancreatic duct stent was reported with modifier 59 as a distinct duct system/diagnosis/procedure (ev4). Intraoperative documentation confirms use of fluoroscopy and documents fluoroscopic confirmation of common bile duct clearance (ev6) and the implant of a 5Fr x 7cm pancreatic duct stent (ev5). Taken together, the record satisfies the APC-05 criteria for anatomically distinct duct system interventions with antecedent imaging and intraoperative fluoroscopic confirmation of separate steps; modifier 59 and CPT 43274 as billed are supported. Evidence cited: ev1 (policy), ev2-ev4 (H&P/Procedure plan), ev5-ev6 (intraoperative confirmation).",
+  "rationale_letter": null,
+  "metrics": {
+    "cost_of_processing_usd": 0.052725,
+    "time_to_run_seconds": 80.792,
+    "total_cost_per_claim_usd": 30.582725,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.052725
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-58231\", \"patient_mrn\": \"MRN-4471982\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"43264\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-58231\", \"patient_mrn\": \"MRN-4471982\", \"keywords\": [\"ERCP\", \"biliary calculus\", \"endoscopic retrograde removal\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"endoscopic extraction\",\"biliary calculus\",\"removal\",\"cannulation\",\"pancreatic duct\",\"stricture\"]}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"endoscopic extraction\",\"biliary calculus\",\"pancreatic duct\"]}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"ERCP\",\"biliary\",\"pancreatic duct\"]}"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    },
+    {
+      "step": 8,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-58231\", \"patient_mrn\": \"MRN-4471982\"}"
+    },
+    {
+      "step": 9,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"43274\"}"
+    },
+    {
+      "step": 10,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-58231\", \"patient_mrn\": \"MRN-4471982\", \"keywords\": [\"43274\", \"esophagogastroduodenoscopy\", \"staging\", \"biopsy\"]}"
+    },
+    {
+      "step": 11,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"ERCP\",\"stent\",\"biliary\",\"pancreatic duct\"]}"
+    },
+    {
+      "step": 12,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"ERCP\",\"stent\"]}"
+    },
+    {
+      "step": 13,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"ERCP\"]}"
+    },
+    {
+      "step": 14,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

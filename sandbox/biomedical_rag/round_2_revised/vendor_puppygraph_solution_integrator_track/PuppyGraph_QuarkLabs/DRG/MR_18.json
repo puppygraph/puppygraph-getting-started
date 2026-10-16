@@ -1,0 +1,285 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_18",
+  "review_type": "DRG",
+  "determination": "Finding",
+  "corrected_coding_set": [
+    {
+      "code": "I21.09",
+      "poa": "Y",
+      "role": "principal",
+      "short_desc": "ST elevation myocardial infarction involving other coronary artery of anterior wall"
+    },
+    {
+      "code": "R57.0",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Cardiogenic shock"
+    },
+    {
+      "code": "I50.23",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute on chronic systolic (congestive) heart failure"
+    },
+    {
+      "code": "J96.01",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute respiratory failure with hypoxia"
+    },
+    {
+      "code": "I46.9",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Cardiac arrest, cause unspecified"
+    },
+    {
+      "code": "N17.9",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Acute kidney failure, unspecified"
+    },
+    {
+      "code": "I48.91",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Unspecified atrial fibrillation"
+    },
+    {
+      "code": "T81.89XA",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Other complications of procedures, not elsewhere classified, initial encounter"
+    },
+    {
+      "code": "T81.4XXA",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Infection following a procedure, initial encounter"
+    },
+    {
+      "code": "B95.61",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere"
+    },
+    {
+      "code": "I82.401",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Acute embolism and thrombosis of unspecified deep veins of right lower extremity"
+    },
+    {
+      "code": "I25.10",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+    },
+    {
+      "code": "E11.65",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Type 2 diabetes mellitus with hyperglycemia"
+    },
+    {
+      "code": "I10",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Essential (primary) hypertension"
+    },
+    {
+      "code": "E78.5",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Hyperlipidemia, unspecified"
+    }
+  ],
+  "corrected_procedure_set": [
+    "02703DZ",
+    "02HA3RZ",
+    "02HW3TZ",
+    "021009W",
+    "021109W",
+    "06BQ0ZZ",
+    "0BH17EZ",
+    "5A1D90Z",
+    "5A1221Z"
+  ],
+  "code_actions": [
+    {
+      "code": "I46.9",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "N",
+      "new_severity": null,
+      "rationale": "The cardiac arrest is documented as occurring on ICU day 4 (in-hospital), therefore POA should be N. Discharge summary documents pulseless VT arrest with ROSC (ev_0001).",
+      "evidence_ids": [
+        "ev_0001"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "T81.4XXA",
+      "action": "keep",
+      "new_code": null,
+      "new_poa": "N",
+      "new_severity": null,
+      "rationale": "The sternal wound infection is described as a post-operative complication (Discharge/Transfer Summary) and therefore should be POA = N instead of Y (ev_0004).",
+      "evidence_ids": [
+        "ev_0004"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "Z66",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Patient Facesheet documents Code Status: Full Code on admission; no supporting signed DNR order or documentation was found in the retrieved record to justify Z66. Remove Z66 unless a signed DNR order is provided.",
+      "evidence_ids": [
+        "ev_0005"
+      ],
+      "policy_citation_ids": []
+    }
+  ],
+  "discharge_disposition": "62 - Discharged/transferred to an inpatient rehabilitation facility (IRF)",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_18.pdf",
+      "page_ref": "956",
+      "page_confirmed": true,
+      "quote": "pulseless ventricular tachycardia arrest on ICU day 4 with successful ROSC after 8 minutes of ACLS",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_18.pdf",
+      "page_ref": "363",
+      "page_confirmed": true,
+      "quote": "Airway/Support: orally intubated, mechanically ventilated.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_18.pdf",
+      "page_ref": "96",
+      "page_confirmed": true,
+      "quote": "KDIGO stage 2 AKI from iodinated contrast exposure in setting of cardiogenic shock and poor perfusion. Creatinine peak 2.8; oliguric with adequate response to careful diuresis.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_18.pdf",
+      "page_ref": "956",
+      "page_confirmed": true,
+      "quote": "post-operative course was complicated by post-cardiotomy hypotension requiring transfusion, failed extubation from flash pulmonary edema with reintubation on ICU day 11, new-onset atrial fibrillation post-cardiotomy controlled with amiodarone, a superficial sternal wound infection with methicillin-susceptible S. aureus treated with cefazolin and wound VAC therapy",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_18.pdf",
+      "page_ref": "4",
+      "page_confirmed": true,
+      "quote": "Code Status Full Code",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_18.pdf",
+      "page_ref": "956",
+      "page_confirmed": true,
+      "quote": "emergency 3-vessel coronary artery bypass grafting (LIMA to LAD, SVG to OM1 and RCA) was performed on ICU day 7",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [],
+  "system_note": "Summary of review (claim MR_18, admit 2026-07-12 to 2026-12-05): I reviewed the billed diagnosis and procedure set against the medical record and the governing DRG validation criteria. Key supported items: acute anterior STEMI with cardiogenic shock requiring mechanical circulatory support and emergency CABG (principal I21.09 is supported), cardiogenic shock (R57.0) is supported, acute respiratory failure with hypoxia (J96.01) is supported, and contrast-induced AKI (N17.9) is supported. Citations: Interventional Cardiology Consultation (p.363) documents cardiogenic shock with MCS placement (evidence ev1), and the Discharge/Transfer Summary (p.956) documents the arrest and post-operative course including CABG and sternal wound infection (ev2, ev5, ev7). Finding details and auditor reasoning (line-by-line highlights): 1) I46.9 (Cardiac arrest) - POA flag incorrect. Discharge summary documents a pulseless ventricular tachycardia arrest on ICU day 4 with ROSC after 8 minutes of ACLS (Discharge/Transfer Summary, p.956). Because the arrest occurred during the admission, the POA indicator should be N, not Y. Evidence: pulseless arrest occurred on ICU day 4 (NOTE-Medical-Records-16-30-MR_18.pdf-n1244, p.956). (See evidence ev2.) 2) T81.4XXA (Infection following a procedure) - POA flag incorrect. The chart documents a superficial sternal wound infection developing in the post-operative course and treated in-hospital with cefazolin and wound VAC (Discharge/Transfer Summary, p.956). This is a post-procedural complication and therefore should be POA = N (not present on admission). Evidence: the infection is described as a post-operative complication (NOTE-Medical-Records-16-30-MR_18.pdf-n1244, p.956). (See evidence ev5.) 3) Z66 (Do not resuscitate) - unsupported by the chart; remove. The Patient Facesheet at admission records Code Status: Full Code (NOTE-Medical-Records-16-30-MR_18.pdf-n4, p.4). No contemporaneous provider order or documented DNR/Do Not Resuscitate instruction appears in the record passages retrieved to justify Z66 as present on admission. Therefore Z66 is not supported by the record as billed and should be removed. (See evidence ev6.) 4) R57.0 (Cardiogenic shock) and I21.09 (STEMI principal) - supported and appropriately sequenced. The record documents an acute anterior STEMI with hemodynamic collapse; Impella CP and IABP were placed for hemodynamic support (Interventional Cardiology Consultation, p.363) and the Discharge Summary states the reason for admission was acute anterior STEMI with cardiogenic shock requiring primary PCI and MCS and emergency CABG (NOTE-Medical-Records-16-30-MR_18.pdf-n12 p.363; NOTE-Medical-Records-16-30-MR_18.pdf-n1244 p.956). The documentation satisfies the policy presumption rules for reporting cardiogenic shock when MCS is placed for cardiac etiology. (See evidence ev1 and ev7.) 5) J96.01 (Acute respiratory failure with hypoxia) - supported. Multiple notes document severe hypoxemia (SpO2 88% on NRB 15 L) and intubation/mechanical ventilation; Interventional Cardiology and admitting H&P document the patient was intubated and mechanically ventilated (NOTE-Medical-Records-16-30-MR_18.pdf-n12 p.363; NOTE-Medical-Records-16-30-MR_18.pdf-n9 p.13). This satisfies the J96.01 validation criteria (provider documentation + mechanical ventilation / hypoxemia). (See evidence ev3.) 6) N17.9 (Acute kidney injury) - supported. Nephrology documents KDIGO stage 2 AKI from iodinated contrast exposure in the setting of cardiogenic shock with a creatinine peak and oliguria (Nephrology Consultation, p.96). This meets N17.9 criteria (NOTE-Medical-Records-16-30-MR_18.pdf-n30, p.96). (See evidence ev4.) 7) Procedures and laterality / PCS coding conflicts - HITL required. The discharge summary documents emergency 3-vessel CABG (LIMA to LAD, SVG to OM1 and RCA) on ICU day 7 (Discharge/Transfer Summary, p.956) supporting that CABG(s) were performed; however, there is a documented conflict in the record between an operative/procedure note and the billed saphenous-vein excision laterality (CONFLICT-00132). Because the record as provided does not settle the laterality and the billed PCS includes an excision of the right saphenous vein while an operative line documents harvesting from the left leg, a human reviewer must adjudicate the correct laterality and the correct set of ICD-10-PCS CABG codes to reflect a three-vessel procedure. I am NOT changing the procedure set in the corrected list because the operative-note/claim-side conflict cannot be resolved automatically from the retrieved rows. (See evidence ev7 and CONFLICT-00132 in the record build.) Summary of required corrections I am applying now (claim-level): - Remove Z66 (Do not resuscitate) - unsupported (Patient Facesheet documents Full Code). (ev6) - Change I46.9 POA indicator to N (cardiac arrest occurred during the hospital stay, ICU day 4). (ev2) - Change T81.4XXA POA indicator to N (sternal wound infection is documented as post-operative). (ev5) Items flagged for human adjudication (HITL): - Resolve the laterality conflict and PCS coding for saphenous vein harvest / excision (CONFLICT-00132). The operative note vs. billed laterality must be reconciled and the correct PCS code(s) for the 3-vessel CABG confirmed. (See ev7 + CONFLICT-00132 note.) - Confirm there is no separate documented DNR order later in the chart that would justify Z66 prior to removal; if such an order exists, provide the exact signed order/note with date/time. Documents and pages relied upon (representative): - History & Physical (Admitting), 07/12/2026 (NOTE-Medical-Records-16-30-MR_18.pdf-n9, p.13) - Interventional Cardiology Consultation, 07/12/2026 (NOTE-Medical-Records-16-30-MR_18.pdf-n12, p.363) - cardiogenic shock, MCS, intubation (ev1, ev3) - Nephrology Consultation, 07/14/2026 (NOTE-Medical-Records-16-30-MR_18.pdf-n30, p.96) - KDIGO stage 2 AKI (ev4) - Discharge / Transfer Summary, 12/05/2026 (NOTE-Medical-Records-16-30-MR_18.pdf-n1244, p.956) - arrest on ICU day 4; emergency 3-vessel CABG; sternal wound infection (ev2, ev5, ev7) - Patient Facesheet (NOTE-Medical-Records-16-30-MR_18.pdf-n4, p.4) - Code Status Full Code (ev6) I will list the exact evidence passages I relied on in evidence_cited below so the coding/audit team can trace each change to the record line-by-line.",
+  "rationale_letter": "Re: Clinical Coding Audit - Inpatient Claim MR_18 (Admit 07/12/2026) Dear Provider/Coding Team, We completed a DRG coding audit of inpatient claim MR_18 (admit 07/12/2026 - discharge/transfer 12/05/2026). The medical record documents an acute anterior ST-elevation myocardial infarction complicated by cardiogenic shock requiring primary PCI, mechanical circulatory support (Impella CP and IABP), emergency 3-vessel CABG, cardiac arrest with ROSC, respiratory failure requiring mechanical ventilation, contrast-induced AKI, and post-operative sternal wound infection. These clinical events are documented in the Interventional Cardiology Consultation, admitting H&P, nephrology consultation, and the Discharge/Transfer Summary and support many of the billed diagnoses and procedures (see cited items below). Finding (summary): - We found documentation-based discrepancies in the present-on-admission (POA) indicators and one unsupported status code. Specifically: 1) Cardiac arrest (I46.9) is documented as occurring on ICU day 4 (pulseless ventricular tachycardia with successful ROSC after 8 minutes of ACLS). Therefore I46.9 should be POA = N (not present on admission). (Record: Discharge/Transfer Summary, p.956.) 2) Infection following a procedure (T81.4XXA) is documented as a post-operative superficial sternal wound infection (MSSA) treated in-hospital; therefore it should be POA = N (not present on admission). (Record: Discharge/Transfer Summary, p.956.) 3) Z66 (Do not resuscitate) is not supported in the retrieved record: the Patient Facesheet documents Code Status: Full Code at admission. No signed DNR order or contemporaneous documentation supporting Z66 was found in the chart excerpts used for this audit. Therefore Z66 should be removed unless you produce a dated provider order or other definitive documentation to the contrary. (Record: Patient Facesheet, p.4.) Correction being made by the auditor: remove Z66; update POA for I46.9 to N; update POA for T81.4XXA to N. These adjustments correct the POA indicators and remove an unsupported status code, and they will change the claim's POA reporting and may affect internal quality/complication reporting. Outstanding issues requiring provider clarification (appeal / HITL): - Laterality and PCS coding for saphenous-vein harvest/excision and exact ICD-10-PCS for the 3-vessel CABG: the medical record contains conflicting procedural detail regarding which leg the saphenous vein was harvested from and there are multiple CABG PCS codes billed (one-site and two-site bypass codes together). Please supply the operative report(s) with explicit documentation of the harvested conduit(s), laterality, and the exact number and targets of bypass grafts so that the correct PCS code(s) can be assigned. (Discharge/Transfer Summary, p.956 references emergency 3-vessel CABG.) If you disagree with the above changes, please respond with the specific supporting documentation (scanned operative note signed and timed, signed DNR order if present, or other signed provider documentation) within 30 days so we may re-open the review. Sincerely, Clinical Audit Team Cited record passages relied on: Discharge/Transfer Summary (p.956), Interventional Cardiology Consultation (p.363), Nephrology Consultation (p.96), Patient Facesheet (p.4).",
+  "metrics": {
+    "cost_of_processing_usd": 0.079485,
+    "time_to_run_seconds": 130.461,
+    "total_cost_per_claim_usd": 30.609485,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.079485
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\":\"MATCH (c:Claim {claim_number: 'MR_18'}) MATCH (v:Visit)-[:BILLED_BY]->(c) RETURN c.claim_number, v.visit_id, c.claim_admit_date, c.claim_discharge_date\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\":\"MATCH (c:Claim {claim_number: 'MR_18'})-[:HAS_LINE]->(line:Line) RETURN line.position, line.code, line.description, line.poa, line.cc, line.mcc\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"I21.09\"}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"R57.0\"}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"I50.23\"}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"J96.01\"}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"I46.9\"}"
+    },
+    {
+      "step": 8,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"N17.9\"}"
+    },
+    {
+      "step": 9,
+      "kind": "retrieval",
+      "tool": "get_condition_policy",
+      "arguments": "{\"code\": \"I48.91\"}"
+    },
+    {
+      "step": 10,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"MR_18\",\"keywords\":[\"cardiogenic shock\",\"ST elevation myocardial infarction\",\"acute respiratory failure\",\"cardiac arrest\",\"acute kidney failure\"]}"
+    },
+    {
+      "step": 11,
+      "kind": "retrieval",
+      "tool": "get_discharge_disposition_note",
+      "arguments": "{\"claim_number\":\"MR_18\"}"
+    },
+    {
+      "step": 12,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

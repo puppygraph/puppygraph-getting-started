@@ -1,0 +1,180 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_APC_10",
+  "review_type": "APC",
+  "determination": "No Finding",
+  "concept_id": "APC-10",
+  "target_cpt_hcpcs": "44180",
+  "action": "keep",
+  "corrected_cpt_hcpcs": null,
+  "adjusted_apc_code": null,
+  "rationale": "Billed line: CPT 49656 (Laparoscopic repair, recurrent incisional/ventral hernia, reducible (includes mesh)). Claim also includes CPT 44180 on the same date. Governing policy (APC concept for 44180) states that lysis of adhesions is ordinarily bundled into a laparoscopic hernia repair unless the adhesiolysis is extensive, distinctly documented apart from the primary procedure, and represents substantial additional operative time, anatomic extent, and procedural risk (examples: explicit separate timing, description of dense/vascularized adhesions involving bowel, recognition of elevated risk such as risk of enterotomy) (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-10-4). The medical record documents precisely those elements and shows the hernia repair performed with mesh: Operative Note documents the case as 1) diagnostic laparoscopy; 2) extensive laparoscopic lysis of adhesions (75 minutes, separately timed); 3) laparoscopic recurrent ventral hernia repair with synthetic mesh (NOTE-APC-medical-records-MR_APC_10.pdf-n27, p.27). The Operative Note further documents that after the adhesiolysis the fascial defect was identified and measured at 5.1 cm x 4.4 cm and that a 16cm x 12cm macroporous polypropylene mesh was fashioned and fixed (NOTE-APC-medical-records-MR_APC_10.pdf-n27, p.27-28). The intraoperative record and implants/devices section corroborate mesh implantation (16cm x 12cm polypropylene mesh) and the separately-timed 75-minute adhesiolysis (NOTE-APC-medical-records-MR_APC_10.pdf-n26, p.23-26). Pre-operative planning likewise listed the adhesiolysis as separately timed and the laparoscopic hernia repair with mesh (NOTE-APC-medical-records-MR_APC_10.pdf-n18, p.17-18). Taken together, the documentation meets the policy's acceptability criteria for an extensive, separately-documented adhesiolysis and documents the laparoscopic recurrent ventral hernia repair with mesh exactly as described by CPT 49656. Therefore the billed CPT 49656 is supported by the record and governing policy. Evidence relied on: Operative Note (Detailed Procedural Documentation) - procedure list and separate timing (NOTE-APC-medical-records-MR_APC_10.pdf-n27, p.27); Operative Note - defect size and mesh fixation details (NOTE-APC-medical-records-MR_APC_10.pdf-n27, p.27-28); Intraoperative Record - implants/mesh and separate adhesiolysis timing (NOTE-APC-medical-records-MR_APC_10.pdf-n26, p.23-26); APC policy concept re: 44180 separate-procedure criteria (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-10-4, section). Billed line: CPT 44180 Laparoscopy, surgical, enterolysis (separate procedure) on claim APC-2026-58831 (patient MRN-4471982), billed alongside CPT 49656 laparoscopic recurrent ventral hernia repair. Governing policy for 44180 (APC-10) requires separate documentation that adhesiolysis was extensive, distinctly documented apart from the primary procedure, and represents substantial additional operative time, anatomic extent, and procedural risk (examples: explicit separate timing, dense/vascularized adhesions to bowel, recognition of elevated risk such as enterotomy) before accepting 44180 as separately billable (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-10-4, APC section, p. [policy row]). The medical record independently documents each of those criteria: the Operative Note documents an extensive adhesiolysis performed separately from the hernia repair and timed at ~75 minutes (Operative Note, NOTE-APC-medical-records-MR_APC_10.pdf-n27, pp.27-28; evidence ev1, ev3). The Operative Note explicitly states the lysis of adhesions was undertaken \"separately and distinctly from the subsequent hernia repair\" and describes dense, vascularized adhesions between small bowel/omentum and prior mesh with recognition of enterotomy risk (Operative Note, NOTE-APC-medical-records-MR_APC_10.pdf-n27, pp.27-28; evidence ev2, ev4). The intraoperative record and nursing documentation corroborate the separate timing and extended dissection (Intraoperative Record / Surgical Safety Checklist, NOTE-APC-medical-records-MR_APC_10.pdf-n26 and Nursing Notes, NOTE-APC-medical-records-MR_APC_10.pdf-n35). Taken together the operative documentation meets the policy's required elements for separate reporting of extensive adhesiolysis; therefore CPT 44180 is supported as billed. Citations: Operative Note (NOTE-APC-medical-records-MR_APC_10.pdf-n27, pp.27-28); Policy concept APC-10 (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-10-4); Intraoperative Record / Surgical Safety Checklist (NOTE-APC-medical-records-MR_APC_10.pdf-n26); Nursing Notes (NOTE-APC-medical-records-MR_APC_10.pdf-n35).",
+  "evidence_ids": [],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_APC_10.pdf",
+      "page_ref": "27",
+      "page_confirmed": true,
+      "quote": "PROCEDURE PERFORMED: 1. Diagnostic laparoscopy. 2. Extensive laparoscopic lysis of adhesions (75 minutes, separately timed). 3. Laparoscopic recurrent ventral hernia repair with synthetic mesh.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_APC_10.pdf",
+      "page_ref": "27 or 28",
+      "page_confirmed": false,
+      "quote": "Following completion of the adhesiolysis and confirmation of a clear working field with the entire fascial defect and surrounding abdominal wall now visualized, attention was turned to the hernia repair. The fascial defect was identified and measured at 5.1 cm x 4.4 cm, located just superior to the umbilicus at the site of the prior incision.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_APC_10.pdf",
+      "page_ref": "25",
+      "page_confirmed": true,
+      "quote": "Implants / Devices: 16cm x 12cm macroporous polypropylene mesh with absorbable tacking fixation and transfascial sutures",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_APC_10.pdf",
+      "page_ref": "17",
+      "page_confirmed": true,
+      "quote": "Planned Procedure: 1. Diagnostic laparoscopy. 2. Extensive laparoscopic lysis of adhesions (75 minutes, separately timed). 3. Laparoscopic recurrent ventral hernia repair with synthetic mesh.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_APC_10.pdf",
+      "page_ref": "27",
+      "page_confirmed": true,
+      "quote": "PROCEDURE PERFORMED: 1. Diagnostic laparoscopy. 2. Extensive laparoscopic lysis of adhesions (75 minutes, separately timed). 3. Laparoscopic recurrent ventral hernia repair with synthetic mesh.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_APC_10.pdf",
+      "page_ref": "27 or 28",
+      "page_confirmed": false,
+      "quote": "Given the extent of adhesive disease encountered, a dedicated, extensive lysis of adhesions was undertaken and is documented here separately and distinctly from the subsequent hernia repair.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_APC_10.pdf",
+      "page_ref": "27 or 28",
+      "page_confirmed": false,
+      "quote": "The adhesiolysis required approximately 75 minutes of continuous dissection time, timed separately from and in addition to the time spent on the hernia repair itself.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_APC_10.pdf",
+      "page_ref": "27 or 28",
+      "page_confirmed": false,
+      "quote": "Dense, mature adhesions were encountered between loops of small bowel, the omentum, and the anterior abdominal wall, with particularly firm and vascularized adhesions noted where the omentum and an adjacent loop of small bowel were densely adherent to the previously placed polypropylene mesh from the 2018 open repair.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-10, row 4",
+      "quote": "Separate reporting is appropriate only when the adhesiolysis is extensive, distinctly documented apart from the primary procedure, and represents substantial additional operative time, anatomic extent, and procedural risk beyond what is normally incidental \u2014 for example, explicit separate timing of the adhesiolysis, description of dense/vascularized adhesions involving bowel, and recognition of elevated risk (e.g., risk of enterotomy) requiring a deliberate change in technique. Reviewers should confirm the operative note independently establishes additional time, extent, and risk before accepting 44180 as separately billable alongside a hernia repair.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-10, row 4",
+      "quote": "44180 \u2014 Laparoscopy, surgical, enterolysis (freeing of intestinal adhesion) (separate procedure) CPT 44180 carries a 'separate procedure' designation and is ordinarily bundled into a more extensive companion procedure such as laparoscopic hernia repair, since incidental lysis of minor adhesions encountered while gaining surgical access or exposure is not separately reportable. Separate reporting is appropriate only when the adhesiolysis is extensive, distinctly documented apart from the primary procedure, and represents substantial additional operative time, anatomic extent, and procedural risk beyond what is normally incidental \u2014 for example, explicit separate timing of the adhesiolysis, description of dense/vascularized adhesions involving bowel, and recognition of elevated risk (e.g., risk of enterotomy) requiring a deliberate change in technique. Reviewers should confirm the operative note independently establishes additional time, extent, and risk before accepting 44180 as separately billable alongside a hernia repair.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    }
+  ],
+  "system_note": "Billed line: CPT 49656 (Laparoscopic repair, recurrent incisional/ventral hernia, reducible (includes mesh)). Claim also includes CPT 44180 on the same date. Governing policy (APC concept for 44180) states that lysis of adhesions is ordinarily bundled into a laparoscopic hernia repair unless the adhesiolysis is extensive, distinctly documented apart from the primary procedure, and represents substantial additional operative time, anatomic extent, and procedural risk (examples: explicit separate timing, description of dense/vascularized adhesions involving bowel, recognition of elevated risk such as risk of enterotomy) (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-10-4). The medical record documents precisely those elements and shows the hernia repair performed with mesh: Operative Note documents the case as 1) diagnostic laparoscopy; 2) extensive laparoscopic lysis of adhesions (75 minutes, separately timed); 3) laparoscopic recurrent ventral hernia repair with synthetic mesh (NOTE-APC-medical-records-MR_APC_10.pdf-n27, p.27). The Operative Note further documents that after the adhesiolysis the fascial defect was identified and measured at 5.1 cm x 4.4 cm and that a 16cm x 12cm macroporous polypropylene mesh was fashioned and fixed (NOTE-APC-medical-records-MR_APC_10.pdf-n27, p.27-28). The intraoperative record and implants/devices section corroborate mesh implantation (16cm x 12cm polypropylene mesh) and the separately-timed 75-minute adhesiolysis (NOTE-APC-medical-records-MR_APC_10.pdf-n26, p.23-26). Pre-operative planning likewise listed the adhesiolysis as separately timed and the laparoscopic hernia repair with mesh (NOTE-APC-medical-records-MR_APC_10.pdf-n18, p.17-18). Taken together, the documentation meets the policy's acceptability criteria for an extensive, separately-documented adhesiolysis and documents the laparoscopic recurrent ventral hernia repair with mesh exactly as described by CPT 49656. Therefore the billed CPT 49656 is supported by the record and governing policy. Evidence relied on: Operative Note (Detailed Procedural Documentation) - procedure list and separate timing (NOTE-APC-medical-records-MR_APC_10.pdf-n27, p.27); Operative Note - defect size and mesh fixation details (NOTE-APC-medical-records-MR_APC_10.pdf-n27, p.27-28); Intraoperative Record - implants/mesh and separate adhesiolysis timing (NOTE-APC-medical-records-MR_APC_10.pdf-n26, p.23-26); APC policy concept re: 44180 separate-procedure criteria (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-10-4, section). Billed line: CPT 44180 Laparoscopy, surgical, enterolysis (separate procedure) on claim APC-2026-58831 (patient MRN-4471982), billed alongside CPT 49656 laparoscopic recurrent ventral hernia repair. Governing policy for 44180 (APC-10) requires separate documentation that adhesiolysis was extensive, distinctly documented apart from the primary procedure, and represents substantial additional operative time, anatomic extent, and procedural risk (examples: explicit separate timing, dense/vascularized adhesions to bowel, recognition of elevated risk such as enterotomy) before accepting 44180 as separately billable (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-10-4, APC section, p. [policy row]). The medical record independently documents each of those criteria: the Operative Note documents an extensive adhesiolysis performed separately from the hernia repair and timed at ~75 minutes (Operative Note, NOTE-APC-medical-records-MR_APC_10.pdf-n27, pp.27-28; evidence ev1, ev3). The Operative Note explicitly states the lysis of adhesions was undertaken \"separately and distinctly from the subsequent hernia repair\" and describes dense, vascularized adhesions between small bowel/omentum and prior mesh with recognition of enterotomy risk (Operative Note, NOTE-APC-medical-records-MR_APC_10.pdf-n27, pp.27-28; evidence ev2, ev4). The intraoperative record and nursing documentation corroborate the separate timing and extended dissection (Intraoperative Record / Surgical Safety Checklist, NOTE-APC-medical-records-MR_APC_10.pdf-n26 and Nursing Notes, NOTE-APC-medical-records-MR_APC_10.pdf-n35). Taken together the operative documentation meets the policy's required elements for separate reporting of extensive adhesiolysis; therefore CPT 44180 is supported as billed. Citations: Operative Note (NOTE-APC-medical-records-MR_APC_10.pdf-n27, pp.27-28); Policy concept APC-10 (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-10-4); Intraoperative Record / Surgical Safety Checklist (NOTE-APC-medical-records-MR_APC_10.pdf-n26); Nursing Notes (NOTE-APC-medical-records-MR_APC_10.pdf-n35).",
+  "rationale_letter": null,
+  "metrics": {
+    "cost_of_processing_usd": 0.048024,
+    "time_to_run_seconds": 75.45,
+    "total_cost_per_claim_usd": 30.578024,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.048024
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-58831\", \"patient_mrn\": \"MRN-4471982\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"49656\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-58831\", \"patient_mrn\": \"MRN-4471982\", \"keywords\": [\"hernia\", \"repair\", \"laparoscopic\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"hernia\",\"recurrent\",\"laparoscopic\",\"repair\"]}"
+    },
+    {
+      "step": 5,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-58831\", \"patient_mrn\": \"MRN-4471982\"}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-58831\", \"patient_mrn\": \"MRN-4471982\", \"keywords\": [\"Laparoscopy\", \"enterolysis\", \"intestinal adhesion\"]}"
+    },
+    {
+      "step": 8,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"44180\"}"
+    },
+    {
+      "step": 9,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"laparoscopic\",\"lysis of adhesions\",\"hernia repair\"]}"
+    },
+    {
+      "step": 10,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"laparoscopic\",\"lysis of adhesions\"]}"
+    },
+    {
+      "step": 11,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"lysis of adhesions\"]}"
+    },
+    {
+      "step": 12,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

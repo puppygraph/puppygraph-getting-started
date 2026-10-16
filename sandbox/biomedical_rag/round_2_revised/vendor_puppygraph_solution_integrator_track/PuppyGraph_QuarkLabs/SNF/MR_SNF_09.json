@@ -1,0 +1,175 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_SNF_09",
+  "review_type": "SNF",
+  "determination": "Finding",
+  "recovery_type": "Partial Recovery",
+  "skilled_services_assessment": "Both",
+  "revenue_corrections": [
+    {
+      "revenue_code": "0191",
+      "corrected_units": 11,
+      "date_of_service": null,
+      "rationale": "9 day(s) billed at 0191. 2 day(s) billed at 0192 are documented at 0191 by that day's skilled nursing progress note; the claim's lines share one date range, so which days isn't known. Corrected to 11 day(s) at 0191.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0002",
+        "ev_0003",
+        "ev_0004",
+        "ev_0005",
+        "ev_0006",
+        "ev_0007"
+      ]
+    },
+    {
+      "revenue_code": "0192",
+      "corrected_units": 16,
+      "date_of_service": null,
+      "rationale": "18 day(s) billed at 0192. 2 day(s) billed at 0192 are documented at 0191 by that day's skilled nursing progress note; the claim's lines share one date range, so which days isn't known. Corrected to 16 day(s) at 0192.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0002",
+        "ev_0003",
+        "ev_0004",
+        "ev_0005",
+        "ev_0006",
+        "ev_0007"
+      ]
+    }
+  ],
+  "adjusted_dates_of_service": [],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_SNF_09.pdf",
+      "page_ref": "18",
+      "page_confirmed": true,
+      "quote": "I certify the need for these medically necessary services furnished under this plan of treatment while under my care from 05/12/2026 through 06/11/2026.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_SNF_09.pdf",
+      "page_ref": "55",
+      "page_confirmed": true,
+      "quote": "Total minutes this session: 60 minutes (4 billable units) | Revenue Code: 0431",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_SNF_09.pdf",
+      "page_ref": "53",
+      "page_confirmed": true,
+      "quote": "Assessment: Wound healed; transitioning to weight bearing Skilled PT remains medically necessary to achieve safe functional mobility and discharge goals.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_SNF_09.pdf",
+      "page_ref": "10",
+      "page_confirmed": true,
+      "quote": "Skilled PT evaluation and treatment 5-7x/week per plan of care",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_SNF_09.pdf",
+      "page_ref": "18",
+      "page_confirmed": true,
+      "quote": "Certification Period: 05/12/2026 \u2014 06/11/2026",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_SNF_09.pdf",
+      "page_ref": "99",
+      "page_confirmed": true,
+      "quote": "PT completed 90 min; OT completed 60 min \u2014 combined 150 min.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_SNF_09.pdf",
+      "page_ref": "99",
+      "page_confirmed": true,
+      "quote": "Skilled nursing hours documented: 2.5 hours.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Skilled need",
+      "quote": "Skilled need: A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    }
+  ],
+  "system_note": "Reviewed billed revenue line: Rev Code 0192, 18 days billed (05/12/2026-06/08/2026). Facility documentation (daily skilled nursing progress notes, per pre-coded daily-level mapping) shows 16 days supported at the rehabilitation per-diem (0192) and 12 days supported at the skilled nursing per-diem (0191), i.e. 2 of the billed 0192 days are documented at the lower level 0191. Policy: the per-diem level requires a documented skilled need (involvement of licensed nursing or therapy staff) and the clinical documentation supporting the billed level (RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b6). The medical record contains contemporaneous therapy documentation showing skilled PT/OT services and repeated daily 90-minute PT + 60-minute OT sessions on initial days of the stay and ongoing skilled PT progress notes through 05/27/2026 (see cited PT/OT notes below) that support rehabilitation-level care for the documented 16 days. However, the numeric reconciliation in the record (documentation-coded days: 16 at 0192 vs. 18 billed at 0192) requires a correction: two billed 0192 days lack supporting documentation at that level and should be downcoded to 0191. Because the billed line spans a single date range and the two discrepant dates are not identifiable from the claim lines, the appropriate correction is to reduce the 0192 line's units from 18 to 16 (0192 adjusted_units_billed = 16) and reclassify the two unsupported 0192 days to 0191. Evidence relied upon: PT evaluation certifying medically necessary skilled PT for 05/12/2026-06/11/2026 and multiple PT/OT daily progress notes documenting 90-minute PT and 60-minute OT skilled sessions and explicit statements that Skilled PT remains medically necessary (see evidence_cited entries). Reference policy: SNF Level of Care reference guide definition of Skilled need (RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b6). Audited line: revenue code 0191 (9 days billed), date range 05/12/2026-06/08/2026. Facility daily documentation supports skilled care and therapy across the stay and the PT plan/certification covers the billed period. The interdisciplinary plan of care documents skilled PT/OT and daily CWOCN wound care (Skilled PT evaluation and treatment 5-7x/week per plan of care) and the PT evaluation certifies the need for skilled therapy for the period 05/12/2026-06/11/2026. Skilled nursing progress notes document both skilled nursing hours and combined PT/OT minutes on multiple days (example: PT completed 90 min; OT completed 60 min - combined 150 min; Skilled nursing hours documented: 2.5 hours). The per-diem level-determination query returned no explicit downcoding statements for any dates in the range (null statements), which (per retrieval note) commonly means the facility had no exception to record because the billed level's documentation thresholds were met. Given the nursing and therapy documentation, the record contains at least 12 days documented at the 0191 level (daily notes mapping shows 12 days at 0191 vs. 9 days billed), and therefore the documentation supports the facility's billed 9 units for revenue code 0191. I did not rely on the facility billing-summary lines that conflict with the clinical notes (see provided conflict flags); the clinical notes and PT certification were used for the determination. Cited evidence: INTERDISCIPLINARY PLAN OF CARE and PT evaluation (plan/certification) demonstrating planned skilled PT/OT and certification for services 05/12/2026-06/11/2026, and skilled nursing progress notes documenting PT/OT minutes and skilled nursing hours on stay days. Conclusion: documentation supports the billed 9 days at revenue code 0191 for the line's date range; No Finding.",
+  "rationale_letter": "Dear Provider, We completed an audit of the SNF per-diem billing for patient MR_SNF_09 for the period 05/12/2026 through 06/08/2026 (Rev Code 0192, 18 days billed). Our review of the clinical record and facility documentation finds that while skilled rehabilitation therapy was provided and documented on multiple dates, the facility-coded daily-level summary shows only 16 days supported at the rehabilitation per-diem (0192) and 12 days at the skilled nursing per-diem (0191). Therefore, two of the 18 billed 0192 days are not supported at the rehabilitation level in the record and must be downcoded to the lower-skilled nursing per-diem. Basis for Determination - Policy requires that a billed per-diem level be supported by clinical documentation demonstrating a skilled need (licensed therapy or nursing involvement) for each billed date (SNF Level of Care - Definitions and Reference Guide: Skilled need). (Reference: RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b6.) - The medical record contains contemporaneous PT and OT documentation certifying skilled, medically necessary services (PT evaluation certifying need for services from 05/12/2026 through 06/11/2026 and repeated PT/OT daily progress notes documenting sessions of 90 minutes PT and 60 minutes OT and assessments stating Skilled PT remains medically necessary). These notes support rehabilitation-level billing for the dates they cover, consistent with 16 documented 0192 days. (Selected supporting notes cited below.) Correction Being Made - Rev Code 0192: reduce billed units from 18 to 16 (adjusted_units_billed = 16). Two days of the originally billed 0192 will be reclassified to Rev Code 0191 based on the facility's own daily-level coding in the chart. If you have additional clinical documentation that unambiguously assigns the two disputed dates to Rev Code 0192 (for example, daily skilled nursing progress notes or explicit per-diem level statements for those dates), please submit it within the appeal period for reconsideration. Sincerely, Clinical Audit Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.047535,
+    "time_to_run_seconds": 97.359,
+    "total_cost_per_claim_usd": 30.577535,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.047535
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\": \"MATCH (c:Claim) WHERE c.claim_number = 'MR_SNF_09' RETURN c.claim_number, c.claim_billed_days, c.claim_authorized_days, c.claim_stay_days, c.claim_principal_dx, c.claim_skilled_care_basis, c.claim_admit_date, c.claim_discharge_date\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_daily_services",
+      "arguments": "{\"claim_number\": \"MR_SNF_09\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_per_diem_guideline",
+      "arguments": "{\"payer\": \"Aetna Medicare Advantage\"}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "get_per_diem_level_notes",
+      "arguments": "{\"claim_number\": \"MR_SNF_09\"}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"MR_SNF_09\",\"keywords\":[\"skilled care\",\"therapy minutes\",\"level determination\"]}"
+    },
+    {
+      "step": 6,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"MR_SNF_09\",\"keywords\":[\"skilled need\",\"therapy minutes\",\"progress notes\",\"level of care\",\"documentation\"]}"
+    },
+    {
+      "step": 8,
+      "kind": "retrieval",
+      "tool": "get_per_diem_level_notes",
+      "arguments": "{\"claim_number\":\"MR_SNF_09\"}"
+    },
+    {
+      "step": 9,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

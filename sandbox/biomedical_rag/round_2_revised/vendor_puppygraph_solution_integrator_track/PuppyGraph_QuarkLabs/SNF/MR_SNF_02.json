@@ -1,0 +1,130 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_SNF_02",
+  "review_type": "SNF",
+  "determination": "No Finding",
+  "recovery_type": null,
+  "skilled_services_assessment": "Therapy",
+  "revenue_corrections": [],
+  "adjusted_dates_of_service": [],
+  "evidence": [],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Revenue codes 0191-0194",
+      "quote": "Revenue codes 0191-0194: Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy), 0193 (sub-acute), 0194 (weanable ventilator management).",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Skilled need",
+      "quote": "Skilled need: A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Care plan",
+      "quote": "Care plan: The interdisciplinary plan developed for the patient at admission and updated as needs change; the billed level of care should be consistent with what the care plan describes.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_004",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Non-covered day",
+      "quote": "Non-covered day: A day within an otherwise covered stay where documentation does not support the billed level of care for that specific day; does not require the entire stay to be denied.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_005",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Skilled need",
+      "quote": "Skilled need: A service that requires the involvement of licensed nursing or therapy staff, and could not be safely or effectively provided by non-skilled caregivers.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_006",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Revenue codes 0191-0194",
+      "quote": "Revenue codes 0191-0194: Standard billing codes for the four SNF per-diem levels of care referenced in these guidelines: 0191 (skilled nursing), 0192 (rehabilitation therapy), 0193 (sub-acute), 0194 (weanable ventilator management).",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_007",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a Definitions, Non-covered day",
+      "quote": "Non-covered day: A day within an otherwise covered stay where documentation does not support the billed level of care for that specific day; does not require the entire stay to be denied.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    },
+    {
+      "policy_citation_id": "pol_008",
+      "document": "Policy Documents/SNF/Reference Materials/SNF Level of Care - Definitions and Reference Guide.docx",
+      "section": "SNF Level of Care - Definitions and Reference Guide \u203a How to use this guide",
+      "quote": "Start with the payer-specific guideline in Payer Guidelines that matches the claim's plan. Confirm the guideline's effective date covers the claim's date of service before applying it; if it doesn't, check Archive - DO NOT USE for a version that does.",
+      "document_version_hash": "sha256:7382bf7e5159c9cb0cb85aca46d9b422a0f73ab9f2f3e45cb41a2ede3f817aa1"
+    }
+  ],
+  "system_note": "Billed line: revenue code 0192 (rehabilitation therapy), 10 days billed 2026-06-02 through 2026-06-15. The facility's therapy treatment logs (get_daily_services) document PT and OT sessions on each billed date totaling 150 therapy minutes per day (PT 90 min + OT 60 min) on 2026-06-02, 06-03, 06-04, 06-05, 06-08, 06-09, 06-10, 06-11, 06-12 and 06-15. The SNF Level of Care reference guide defines 0192 as rehabilitation therapy and states that a skilled need is a service requiring licensed therapy staff (RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b8; RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b6). The reference guide also directs that the billed level should be consistent with the interdisciplinary care plan and that non-covered days are those with documentation that does not support the billed level (b10, b11). There is no payer-specific Aetna Medicare Advantage guideline in the record (data gap), so the payer-agnostic Level of Care reference guide was used. The facility's per-diem-level extraction (get_per_diem_level_notes) returned no explicit downcoding statements for the billed dates (null level_determination_statement on each date), which-per the extraction tool's note-commonly means the documentation met the billed level and the facility had no exception to report. Taken together, the daily therapy encounters (consistent, licensed PT and OT provided each billed date totaling 150 minutes/day) meet the rehabilitation/therapy skilled-need expectation in the reference guide for the full billed date range. Therefore no adjustment to the 0192 line is made. Evidence used: RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b8; -b6; -b10; -b11. Claim MR_SNF_02 - Revenue line 2 (0191) billed 3 day(s) for the date range 06/02/2026-06/15/2026 was reviewed. Retrieved clinical data show frequent skilled therapy sessions on 06/02, 06/03, 06/04, 06/05, 06/08, 06/09, 06/10, 06/11, 06/12 and 06/15 (documented PT and OT minutes), but no therapy entries were retrieved for 06/06, 06/07, 06/13 and 06/14. The per-diem-level extraction tool returned null level_determination_statement for every date (no explicit, citable per-date level statement was extracted). The policy reference defines skilled need as a service that requires licensed nursing or therapy staff and that could not be safely or effectively provided by non-skilled caregivers (RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b6). The same reference identifies revenue code 0191 as the skilled nursing per-diem level (0191 = skilled nursing; 0192 = rehabilitation therapy) (RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b8) and explains that a Non-covered day is a day where documentation does not support the billed level for that specific day (RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b11). The dataset contains no payer-specific Aetna Medicare Advantage per-diem guideline to apply numeric or discipline-specific thresholds; the reference guide instructs starting with the payer guideline but none was available here (RULE-Policy-Documents-SNF-Reference-Materials-SNF-Level-of-Care-Definitions-and-Reference-Guide.docx-b13). Because (a) the per-day facility level statements were not extracted as citable text for any date, (b) several dates in the billed range (06/06, 06/07, 06/13, 06/14) have no retrieved therapy minutes and no retrieved nursing-skilled documentation in the queried rows, and (c) there is no payer-specific guideline with numeric thresholds in the dataset to determine whether the documented therapy minutes (on other dates) meet the plan's required standard, the record as retrieved does not support a definitive determination that the billed 0191 per-diem is fully supported for the entire billed date range. Recommendation: obtain the facility daily skilled-nursing progress notes or other nursing documentation that explicitly state the per-diem level for each date (or provide the missing payer guideline) to allow a per-date determination. Cited policy: skilled-need definition (b6), revenue-code mapping (b8), non-covered-day definition (b11), and payer-guideline instruction (b13).",
+  "rationale_letter": null,
+  "metrics": {
+    "cost_of_processing_usd": 0.025209,
+    "time_to_run_seconds": 67.304,
+    "total_cost_per_claim_usd": 30.555209,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.025209
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_daily_services",
+      "arguments": "{\"claim_number\": \"MR_SNF_02\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_per_diem_guideline",
+      "arguments": "{\"payer\": \"Aetna Medicare Advantage\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_per_diem_level_notes",
+      "arguments": "{\"claim_number\": \"MR_SNF_02\"}"
+    },
+    {
+      "step": 4,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "get_daily_services",
+      "arguments": "{\"claim_number\": \"MR_SNF_02\"}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "get_per_diem_guideline",
+      "arguments": "{\"payer\": \"Aetna Medicare Advantage\"}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "get_per_diem_level_notes",
+      "arguments": "{\"claim_number\": \"MR_SNF_02\"}"
+    },
+    {
+      "step": 8,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

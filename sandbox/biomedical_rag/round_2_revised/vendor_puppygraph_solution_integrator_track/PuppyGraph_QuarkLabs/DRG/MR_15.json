@@ -1,0 +1,209 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_15",
+  "review_type": "DRG",
+  "determination": "Finding",
+  "corrected_coding_set": [
+    {
+      "code": "I26.09",
+      "poa": "Y",
+      "role": "principal",
+      "short_desc": "Other pulmonary embolism with acute cor pulmonale"
+    },
+    {
+      "code": "I46.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Cardiac arrest, cause unspecified"
+    },
+    {
+      "code": "G93.1",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Anoxic brain damage, not elsewhere classified"
+    },
+    {
+      "code": "J96.01",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute respiratory failure with hypoxia"
+    },
+    {
+      "code": "I50.30",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Unspecified diastolic (congestive) heart failure"
+    },
+    {
+      "code": "N17.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute kidney failure, unspecified"
+    },
+    {
+      "code": "I82.401",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Acute embolism and thrombosis of unspecified deep veins of right lower extremity"
+    },
+    {
+      "code": "E03.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Hypothyroidism, unspecified"
+    },
+    {
+      "code": "F32.9",
+      "poa": "Y",
+      "role": "secondary",
+      "short_desc": "Major depressive disorder, single episode, unspecified"
+    },
+    {
+      "code": "Z86.73",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Personal history of transient ischemic attack and cerebral infarction"
+    },
+    {
+      "code": "Z79.01",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Long term (current) use of anticoagulants"
+    },
+    {
+      "code": "Z95.81",
+      "poa": "N",
+      "role": "secondary",
+      "short_desc": "Presence of other vascular implants and grafts (IVC filter)"
+    }
+  ],
+  "corrected_procedure_set": [
+    "0BH17EZ",
+    "02JYXZZ",
+    "06H03DZ",
+    "027Q3ZZ",
+    "3E043GC",
+    "02HV33Z",
+    "03HY32Z",
+    "5A2204Z"
+  ],
+  "code_actions": [
+    {
+      "code": "I82.402",
+      "action": "recode",
+      "new_code": "I82.401",
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "Diagnostic venous duplex documents thrombus in the right common femoral -> popliteal veins and explicitly states the left leg is patent; the billed I82.402 (left) is not supported. Recode to the right-side acute DVT code supported by imaging.",
+      "evidence_ids": [
+        "ev_0001",
+        "ev_0003"
+      ],
+      "policy_citation_ids": []
+    },
+    {
+      "code": "5A1D80Z",
+      "action": "remove",
+      "new_code": null,
+      "new_poa": null,
+      "new_severity": null,
+      "rationale": "H&P problem list and Transfer / Discharge Summary explicitly document post-arrest AKI as non-dialysis and managed conservatively; no dialysis procedure/note/orders were found to support 5A1D80Z. Remove the billed dialysis procedure.",
+      "evidence_ids": [
+        "ev_0002"
+      ],
+      "policy_citation_ids": []
+    }
+  ],
+  "discharge_disposition": "62 - Discharged/transferred to an inpatient rehabilitation facility (IRF)",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_15.pdf",
+      "page_ref": "8",
+      "page_confirmed": true,
+      "quote": "Right common femoral vein: non-compressible with echogenic intraluminal thrombus extending to popliteal vein. Left lower extremity: patent throughout with no thrombus identified.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_15.pdf",
+      "page_ref": "364",
+      "page_confirmed": true,
+      "quote": "8 Post-arrest AKI (KDIGO 2), non-dialysis, recovered",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_15.pdf",
+      "page_ref": "820",
+      "page_confirmed": true,
+      "quote": "Catheter-directed thrombolysis with tissue plasminogen activator was performed with excellent response and hemodynamic improvement.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_15.pdf",
+      "page_ref": "256",
+      "page_confirmed": true,
+      "quote": "06/09 10:30 Epinephrine 1 mg IV x 3 Cardiac arrest",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_15.pdf",
+      "page_ref": "483",
+      "page_confirmed": true,
+      "quote": "Emergency intubation performed.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_15.pdf",
+      "page_ref": "256",
+      "page_confirmed": true,
+      "quote": "06/09 10:30 Amiodarone 300 mg IV Pulseless VT",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_15.pdf",
+      "page_ref": "175",
+      "page_confirmed": true,
+      "quote": "Post-arrest patient with ROSC managed with TTM protocol at 36\u00b0C. Surface cooling wraps with esophageal temperature probe.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [],
+  "system_note": "Summary of what was billed and what the record shows, with citations: Principal diagnosis billed as I26.09 (Other PE with acute cor pulmonale) with many MCC/CC comorbidities and 9 procedures. The medical record documents a massive bilateral pulmonary embolism with out-of-hospital cardiac arrest, catheter-directed thrombolysis with tPA, successful ROSC after prolonged CPR, targeted temperature management, a right-sided (not left-sided) lower-extremity DVT on duplex, an IVC filter placed during the hospitalization, and AKI that was managed conservatively (no renal replacement therapy). Key contradictions to the billed claim: (1) the billed diagnosis I82.402 (acute DVT of the left lower extremity) conflicts with the facility venous duplex (right common femoral -> popliteal DVT; left patent) (NOTE-Medical-Records-1-15-MR_15.pdf-n91, Diagnostic Imaging Report - Venous Duplex Ultrasound). (2) the billed procedure 5A1D80Z (urinary filtration / prolonged intermittent dialysis) is not supported - the chart documents post-arrest AKI managed conservatively and explicitly lists the AKI as non-dialysis (H&P/problem list and Transfer / Discharge Summary) (NOTE-Medical-Records-1-15-MR_15.pdf-n7, History & Physical (Admitting); NOTE-Medical-Records-1-15-MR_15.pdf-n1158, Transfer / Discharge Summary). Evidence that supports the major billed items: CT pulmonary angiography documents massive bilateral PE (NOTE-Medical-Records-1-15-MR_15.pdf-n11) and the interventional cardiology consult and MAR document catheter-directed thrombolysis with tPA (NOTE-Medical-Records-1-15-MR_15.pdf-n10; NOTE-Medical-Records-1-15-MR_15.pdf-n1150). Emergency intubation and documented resuscitation support the billed airway and cardiac-resuscitation procedure (NOTE-Medical-Records-1-15-MR_15.pdf-n6; NOTE-Medical-Records-1-15-MR_15.pdf-n1150). Based on the explicit imaging and problem-list documentation, the appropriate correction is to recode the billed left lower-extremity DVT (I82.402) to the right-sided DVT code supported by duplex, and to remove the dialysis procedure 5A1D80Z because the record documents that AKI was non-dialysis and was managed conservatively. Detailed evidence (document/section/page) behind each point is provided in evidence_cited below and used in the code_decisions entries.",
+  "rationale_letter": "To: Medical Records / Coding Department Re: Audit determination for inpatient claim MR_15 (admit 06/09/2026) We reviewed the inpatient medical record and coding for the above admission (massive pulmonary embolism with cardiac arrest). Basis of review: DRG three-way audit comparing billed codes to the medical record and governing clinical documentation. The record documents massive bilateral pulmonary emboli with hemodynamic compromise, out-of-hospital cardiac arrest with ROSC, catheter-directed thrombolysis with tissue plasminogen activator, targeted temperature management, right lower-extremity deep venous thrombosis, IVC filter placement, and an acute kidney injury that was managed conservatively (no dialysis). Finding: We identified two coding errors that require correction: 1) Diagnosis miscoding: The facility duplex ultrasound documents a right common femoral -> popliteal deep venous thrombosis and the left leg is patent. The claim lists I82.402 (acute DVT of left lower extremity). The correct code supported by the record is the right lower-extremity acute DVT code (ICD-10-CM I82.401). Evidence: Diagnostic Imaging Report - Venous Duplex Ultrasound (NOTE-Medical-Records-1-15-MR_15.pdf-n91) documents right common femoral non-compressible with echogenic thrombus extending to popliteal vein; left lower extremity patent throughout with no thrombus identified. 2) Unsupported procedure: The claim lists 5A1D80Z (performance of urinary filtration, prolonged intermittent, <6 hours/day). The clinical documentation (History & Physical problem list and Transfer / Discharge Summary) documents post-arrest AKI managed conservatively and explicitly notes the AKI as non-dialysis. No dialysis procedure/performance note or dialysis orders appear in the record to support 5A1D80Z. Therefore 5A1D80Z must be removed. Evidence: H&P Active Problem List (NOTE-Medical-Records-1-15-MR_15.pdf-n7) lists Post-arrest AKI (KDIGO 2), non-dialysis, recovered; Transfer / Discharge Summary (NOTE-Medical-Records-1-15-MR_15.pdf-n1158) documents 'mild post-arrest AKI managed conservatively.' Corrections required: Recode the DVT to the right-sided acute DVT code and remove the dialysis procedure 5A1D80Z. The remainder of the principal diagnosis (I26.09 Massive PE with acute cor pulmonale), cardiac arrest, targeted temperature management, catheter-directed thrombolysis with tPA, endotracheal intubation, IVC filter placement, and related supportive diagnoses are supported by the record (CT pulmonary angiography, interventional cardiology consult, medication administration record, procedure/transfer notes). Please see the enclosed code_decisions and supporting documentation citations for line-by-line detail. If you disagree with the recoding or removal based on internal documentation that we did not review (e.g., a procedure note for dialysis or an alternative venous-ultrasound), please supply the specific source document and page so we can reconsider. Sincerely, Senior Clinical Claims Auditor",
+  "metrics": {
+    "cost_of_processing_usd": 0.046019,
+    "time_to_run_seconds": 98.039,
+    "total_cost_per_claim_usd": 30.576019,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.046019
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "query_puppygraph",
+      "arguments": "{\"cypher\":\"MATCH (c:Claim {claim_number:'MR_15'})<-[:BILLED_BY]-(v:Visit)-[:DOCUMENTED_BY]->(mr:MedicalRecord {review_type:'DRG'})-[:HAS_NOTE]->(n:Note) WHERE toLower(n.text) CONTAINS toLower('pulmonary embolism') OR toLower(n.text) CONTAINS toLower('cardiac arrest') OR toLower(n.text) CONTAINS toLower('brain damage') OR toLower(n.text) CONTAINS toLower('respiratory failure') OR toLower(n.text) CONTAINS toLower('heart failure') OR toLower(n.text) CONTAINS toLower('acute kidney failure') OR toLower(n.text) CONTAINS toLower('thrombosis') OR toLower(n.text) CONTAINS toLower('depressive disorder') RETURN id(n) AS source_id, n.title AS title, n.text AS text\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_discharge_disposition_note",
+      "arguments": "{\"claim_number\":\"MR_15\"}"
+    },
+    {
+      "step": 3,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

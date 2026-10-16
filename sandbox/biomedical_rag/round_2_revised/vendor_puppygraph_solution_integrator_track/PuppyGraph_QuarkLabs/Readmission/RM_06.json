@@ -1,0 +1,169 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_06",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "Billed claim: Readmission RM_06 (admit 06/26/2026, gap_days=6) to Great Basin Regional Hospital. Governing policy: Great Basin Preferred Care Readmission Review Guideline (effective 07/15/2026) requires that readmissions within 30 days of prior discharge be reviewed for clinical relatedness (Review Window: 30 days from prior discharge) (RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-b4). The guideline's Section B asks first whether the readmission diagnosis is the same as or clinically related to the condition treated during the prior stay; a Yes at B1 yields a Finding under 'same or related condition' (RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-B1). Evidence: The readmission's own discharge documentation explicitly states the clinical relationship between the two admissions: \"Clinical Relationship: Index admission MR_06 (03/02-06/20/2026): Necrotizing gallstone pancreatitis (K85.12) with 40-50% necrosis; step-up drainage and VARD performed; cholecystectomy for biliary etiology. Readmission RM_06 (06/26-07/08/2026): Infected pancreatic pseudocyst (K86.3) with infected necrosis (K85.12) - direct late complication of the index necrotizing pancreatitis. Both admissions share K85.12 as a coded diagnosis.\" (DISCHARGE SUMMARY, p.139; source NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142). This same discharge also documents the readmission hospital course with CT demonstrating an 8 cm pseudocyst with infected necrosis/abscess and percutaneous CT-guided drainage with Klebsiella culture (DISCHARGE SUMMARY, p.139; source NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142). The index discharge/transfer summary documents the index course of severe necrotizing gallstone pancreatitis complicated by infected pancreatic necrosis treated with meropenem and a step-up approach including CT-guided percutaneous drainage and VARD (Discharge / Transfer Summary, MR_06, p.822; source NOTE-Readmission-RM_06-index-MR_06.pdf-n937). Together these records satisfy the guideline's B1 relatedness test: the readmission diagnosis (infected pancreatic pseudocyst/infected necrosis) is the same/clinically related to the condition treated during the prior stay (necrotizing gallstone pancreatitis with infected necrosis). Exclusions: The guideline's Section C exclusions were checked. The readmission is not a direct transfer, was not a scheduled staged admission, was an acute inpatient admission to the SICU (not an admission to SNF/LTAC/IRF), and none of the listed exclusions apply (RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-C1). Therefore the B1 Finding stands. Determination: Finding. Finding Reason: Same or related condition (readmission is an infected pancreatic pseudocyst / infected necrosis documented as a direct late complication of the index necrotizing gallstone pancreatitis). Evidence cited: NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142 (Discharge Summary, p.139), NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142 (Discharge Summary, hospital course lines), NOTE-Readmission-RM_06-index-MR_06.pdf-n937 (Index Discharge / Transfer Summary, p.822), RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-b4 (Review Window: 30 days), RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-B1 (B1 Same/related condition).",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "RM_06.pdf",
+      "page_ref": "139",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_06 (03/02\u201306/20/2026): Necrotizing gallstone pancreatitis (K85.12) with 40\u201350% necrosis; step-up drainage and VARD performed; cholecystectomy for biliary etiology. Readmission RM_06 (06/26\u201307/08/2026): Infected pancreatic pseudocyst (K86.3) with infected necrosis (K85.12) \u2014 direct late complication of the index necrotizing pancreatitis. Both admissions share K85.12 as a coded diagnosis.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "RM_06.pdf",
+      "page_ref": "140",
+      "page_confirmed": true,
+      "quote": "HOSPITAL COURSE SUMMARY 59F with necrotizing gallstone pancreatitis (MR_06, 03/02\u201306/20/2026, 111 days) presented 6 days post-discharge with fever, abdominal pain, and nausea. CT showed 8 cm pseudocyst with infected necrosis/abscess. Percutaneous CT-guided drainage placed by interventional radiology on Day 2; drain output initially 180 mL/24h, decreasing over 11 days. Cultures: Klebsiella. IV ertapenem started per ID; drains removed when output <10 mL/24h.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "RM_06.pdf",
+      "page_ref": "139",
+      "page_confirmed": true,
+      "quote": "DISCHARGE SUMMARY Admitting Physician: Attending Physician, MD Admission Date: 06/26/2026 Primary Service: Surgical Intensive Care Unit (SICU 5-Central)Discharge Date: 07/08/2026 Claim Number: RM_06 Length of Stay: 12 days Discharge Destination: Skilled Nursing Facility \u2014 Silver State Care Center",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "MR_06.pdf",
+      "page_ref": "822",
+      "page_confirmed": true,
+      "quote": "Discharge / Transfer Summary Attending: Dr. Naomi Adeyemi, MD (Critical Care Medicine) Admit: 2026-03-02 Transfer: 2026-06-20 LOS: 110 days Reason for Admission: Severe necrotizing gallstone pancreatitis with multi-organ dysfunction.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "RM_06.pdf",
+      "page_ref": "139",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_06 (03/02\u201306/20/2026): Necrotizing gallstone pancreatitis (K85.12) with 40\u201350% necrosis; step-up drainage and VARD performed; cholecystectomy for biliary etiology. Readmission RM_06 (06/26\u201307/08/2026): Infected pancreatic pseudocyst (K86.3) with infected necrosis (K85.12) \u2014 direct late complication of the index necrotizing pancreatitis. Both admissions share K85.12 as a coded diagnosis.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "MR_06.pdf",
+      "page_ref": "822",
+      "page_confirmed": true,
+      "quote": "Reason for Admission: Severe necrotizing gallstone pancreatitis with multi-organ dysfunction.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "RM_06.pdf",
+      "page_ref": "7",
+      "page_confirmed": true,
+      "quote": "Disposition Admit - ICU",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "RM_06.pdf",
+      "page_ref": "139",
+      "page_confirmed": true,
+      "quote": "Discharge Destination: Skilled Nursing Facility \u2014 Silver State Care Center",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Great Basin Preferred Care - Readmission Review Guideline.docx",
+      "section": "Great Basin Preferred Care - Readmission Review Guideline, Review Window",
+      "quote": "30 days from prior discharge",
+      "document_version_hash": "sha256:b4baba4d836e61eb1ab331ae00f233aaf428b70acf210751c9d0650d4378d089"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Great Basin Preferred Care - Readmission Review Guideline.docx",
+      "section": "Great Basin Preferred Care - Readmission Review Guideline \u203a Section B - Review Criteria",
+      "quote": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2.",
+      "document_version_hash": "sha256:b4baba4d836e61eb1ab331ae00f233aaf428b70acf210751c9d0650d4378d089"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Great Basin Preferred Care - Readmission Review Guideline.docx",
+      "section": "Great Basin Preferred Care - Readmission Review Guideline \u203a Section A - General Questions",
+      "quote": "Was sufficient documentation received for both the prior stay and the readmission to complete a review determination? ____Yes: Continue to Section B. ____No: Complete the review with the documentation on file.",
+      "document_version_hash": "sha256:b4baba4d836e61eb1ab331ae00f233aaf428b70acf210751c9d0650d4378d089"
+    }
+  ],
+  "system_note": "Billed claim: Readmission RM_06 (admit 06/26/2026, gap_days=6) to Great Basin Regional Hospital. Governing policy: Great Basin Preferred Care Readmission Review Guideline (effective 07/15/2026) requires that readmissions within 30 days of prior discharge be reviewed for clinical relatedness (Review Window: 30 days from prior discharge) (RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-b4). The guideline's Section B asks first whether the readmission diagnosis is the same as or clinically related to the condition treated during the prior stay; a Yes at B1 yields a Finding under 'same or related condition' (RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-B1). Evidence: The readmission's own discharge documentation explicitly states the clinical relationship between the two admissions: \"Clinical Relationship: Index admission MR_06 (03/02-06/20/2026): Necrotizing gallstone pancreatitis (K85.12) with 40-50% necrosis; step-up drainage and VARD performed; cholecystectomy for biliary etiology. Readmission RM_06 (06/26-07/08/2026): Infected pancreatic pseudocyst (K86.3) with infected necrosis (K85.12) - direct late complication of the index necrotizing pancreatitis. Both admissions share K85.12 as a coded diagnosis.\" (DISCHARGE SUMMARY, p.139; source NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142). This same discharge also documents the readmission hospital course with CT demonstrating an 8 cm pseudocyst with infected necrosis/abscess and percutaneous CT-guided drainage with Klebsiella culture (DISCHARGE SUMMARY, p.139; source NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142). The index discharge/transfer summary documents the index course of severe necrotizing gallstone pancreatitis complicated by infected pancreatic necrosis treated with meropenem and a step-up approach including CT-guided percutaneous drainage and VARD (Discharge / Transfer Summary, MR_06, p.822; source NOTE-Readmission-RM_06-index-MR_06.pdf-n937). Together these records satisfy the guideline's B1 relatedness test: the readmission diagnosis (infected pancreatic pseudocyst/infected necrosis) is the same/clinically related to the condition treated during the prior stay (necrotizing gallstone pancreatitis with infected necrosis). Exclusions: The guideline's Section C exclusions were checked. The readmission is not a direct transfer, was not a scheduled staged admission, was an acute inpatient admission to the SICU (not an admission to SNF/LTAC/IRF), and none of the listed exclusions apply (RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-C1). Therefore the B1 Finding stands. Determination: Finding. Finding Reason: Same or related condition (readmission is an infected pancreatic pseudocyst / infected necrosis documented as a direct late complication of the index necrotizing gallstone pancreatitis). Evidence cited: NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142 (Discharge Summary, p.139), NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142 (Discharge Summary, hospital course lines), NOTE-Readmission-RM_06-index-MR_06.pdf-n937 (Index Discharge / Transfer Summary, p.822), RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-b4 (Review Window: 30 days), RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-B1 (B1 Same/related condition).",
+  "rationale_letter": "Re: Audit Determination - Readmission Claim RM_06 (admit 06/26/2026) Dear Provider, This letter documents the results of Great Basin Preferred Care's readmission review for patient claim RM_06. We reviewed the index admission MR_06 (03/02/2026-06/20/2026) and the readmission RM_06 (06/26/2026-07/08/2026) under Great Basin Preferred Care's Readmission Review Guideline (effective 07/15/2026). The guideline's review window is 30 days from the prior discharge; the readmission on 06/26/2026 falls within that window (Review Window: 30 days from prior discharge) (Policy: Great Basin Preferred Care Readmission Review Guideline, Review Window text). Finding: The readmission RM_06 is clinically related to the index admission MR_06 and therefore meets the Guideline's Finding criterion for 'same or related condition.' Basis: The readmission discharge summary documents that the patient presented 6 days after discharge with an 8 cm infected pancreatic pseudocyst and infected necrosis, underwent CT-guided drainage with cultures positive for Klebsiella, and explicitly states: \"Infected pancreatic pseudocyst (K86.3) with infected necrosis (K85.12) - direct late complication of the index necrotizing pancreatitis. Both admissions share K85.12 as a coded diagnosis.\" (DISCHARGE SUMMARY, p.139; source NOTE-Readmission-RM_06-readmission-RM_06.pdf-n142). The index discharge summary documents the index course of necrotizing gallstone pancreatitis complicated by infected pancreatic necrosis treated with a step-up approach including CT-guided drainage and VARD (Index Discharge / Transfer Summary, p.822; source NOTE-Readmission-RM_06-index-MR_06.pdf-n937). Under Section B1 of the Guideline, a readmission that is the same as or clinically related to the condition treated during the prior stay is a Finding; the documentation above satisfies that criterion (RULE-Policy-Documents-Readmission-Payer-Guidelines-Great-Basin-Preferred-Care-Readmission-Review-Guideline.docx-B1). Action/Correction: Based on this Finding, the readmission RM_06 is being adjudicated as clinically related to the index stay MR_06 under Great Basin Preferred Care policy. Please refer to your contract terms for financial reconciliation; this determination documents the clinical basis for the Finding and any payment adjustment consistent with Great Basin Preferred Care's readmission policy. If you disagree with this determination, you may submit an appeal with supporting clinical documentation that rebuts the specific clinical linkage cited above (index MR_06 infected necrosis / step-up drainage and readmission RM_06 infected pseudocyst with positive cultures and IR drainage). The key supporting documentation should address why the readmission is not a complication or progression of the index condition. Sincerely, Clinical Review Team Great Basin Preferred Care",
+  "metrics": {
+    "cost_of_processing_usd": 0.057657,
+    "time_to_run_seconds": 79.187,
+    "total_cost_per_claim_usd": 30.587657,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.057657
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\": \"RM_06\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\": \"Great Basin Preferred Care\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"RM_06\",\"keywords\":[\"Pseudocyst of pancreas\",\"acute pancreatitis\",\"necrotyzing pancreatitis\",\"infection\",\"complication\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

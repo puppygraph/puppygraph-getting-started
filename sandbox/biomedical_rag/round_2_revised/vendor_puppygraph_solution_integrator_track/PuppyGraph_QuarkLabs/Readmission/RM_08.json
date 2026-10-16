@@ -1,0 +1,171 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_08",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "Reviewed readmission claim RM_08 (gap_days=5) paired to index claim MR_08. Governing policy: Piedmont Blue Advantage HMO Readmission Review Guideline (effective 09/15/2023) - Review Window 30 days from prior discharge; readmission 07/23/2026 is within 30 days of index discharge 07/18/2026, so the claim is in-scope for review (Policy: Review Window: 30 days from prior discharge) [RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-b4]. Clinical evidence: the facility's readmission Discharge Summary (RM_08) explicitly documents the clinical relationship between the two stays: \"Clinical Relationship: Index admission MR_08 (03/24-07/18/2026): Status epilepticus (G40.311) secondary to HSV-1 encephalitis (B00.4); tracheostomy for airway management. Readmission RM_08 (07/23-08/03/2026): Breakthrough generalized epilepsy with status epilepticus (G40.311) - acute decompensation of the epilepsy established by the index HSV encephalitis. G40.311 present as a principal diagnosis on both admissions.\" (DISCHARGE SUMMARY, RM_08, p.124) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n130]. That same readmission note shows the admit date 07/23/2026 (DISCHARGE SUMMARY, RM_08, p.124) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n130]. The index discharge/transfer summary documents index discharge on 07/18/2026 (Discharge / Transfer Summary, MR_08, p.865) [NOTE-Readmission-RM_08-index-MR_08.pdf-n983]. Exclusions check: Piedmont's guideline lists exclusions (direct transfers, scheduled readmissions, discharges to SNF/LTAC/IRF, AMA discharges, etc.) that would override a Section B Finding if present (Policy: exclusions list) [RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-C1]. The index discharge documentation shows the patient was discharged directly home with skilled home health supports rather than transferred to another acute/post-acute facility (Discharge / Transfer Summary, MR_08, p.865) [NOTE-Readmission-RM_08-index-MR_08.pdf-n983]. The readmission was an emergent presentation via EMS for status epilepticus (History & Physical (Admitting), RM_08, p.7: Arrival EMS, ground (Status epilepticus)) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n5]. These facts demonstrate none of the guideline exclusions apply. Conclusion and rationale: The readmission is within the payer's 30-day review window and the medical record explicitly documents that the readmission (breakthrough generalized epilepsy with status epilepticus) is an acute decompensation of the epilepsy established during the index admission for HSV-1 encephalitis. Per Piedmont Blue Advantage HMO Readmission Review Guideline, Section B1 is met: \"The readmission diagnosis is the same as, or clinically related to, the condition...treated during the prior stay.\" Therefore the determination is Finding under the criterion: Same or related condition. (Key evidence: DISCHARGE SUMMARY RM_08 p.124; Discharge/Transfer Summary MR_08 p.865; Policy: Review Window and B1 / exclusions.)",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_08.pdf",
+      "page_ref": "865",
+      "page_confirmed": true,
+      "quote": "Admit: 2026-03-24 Transfer: 2026-07-18",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "RM_08.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_08 (03/24\u201307/18/2026): Status epilepticus (G40.311) secondary to HSV-1 encephalitis (B00.4); tracheostomy for airway management. Readmission RM_08 (07/23\u201308/03/2026): Breakthrough generalized epilepsy with status epilepticus (G40.311) \u2014 acute decompensation of the epilepsy established by the index HSV encephalitis. G40.311 present as a principal diagnosis on both admissions.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_08.pdf",
+      "page_ref": "865",
+      "page_confirmed": true,
+      "quote": "With committed family caregivers, satisfactory therapy progress, and a safe home environment, the patient progressed well enough that, rather than requiring transfer to an acute inpatient rehabilitation facility, discharge directly home was arranged with the tracheostomy on trach collar and PEG still in place, supported by skilled home health nursing, home-based physical, occupational, and speech therapy, and close outpatient neurology follow-up for continued recovery and eventual decannulation candidacy assessment.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "RM_08.pdf",
+      "page_ref": "7",
+      "page_confirmed": true,
+      "quote": "Arrival EMS, ground (Status epilepticus)",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_08.pdf",
+      "page_ref": "865",
+      "page_confirmed": true,
+      "quote": "Attending: Dr. Grace Yamamoto, MD (Neurocritical Care) Admit: 2026-03-24 Transfer: 2026-07-18 LOS: 116 days Reason for Admission: Refractory status epilepticus with HSV encephalitis requiring neurocritical care.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "RM_08.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "DISCHARGE SUMMARY Admitting Physician: Attending Physician, MD Admission Date: 07/23/2026 Primary Service: Neurocritical Care Unit (NCCU 6-West) Discharge Date: 08/03/2026 Claim Number: RM_08 Length of Stay: 11 days",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "MR_08.pdf",
+      "page_ref": "865",
+      "page_confirmed": true,
+      "quote": "Hospital Course Terrence Blackwell presented with new-onset refractory status epilepticus that failed to respond to first-line benzodiazepines and levetiracetam, ultimately requiring midazolam infusion and pentobarbital-induced burst suppression for 72 hours. CSF HSV-1 PCR was positive and MRI demonstrated bilateral temporal lobe changes characteristic of HSV encephalitis; a full 21-day course of intravenous acyclovir was completed.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_08.pdf",
+      "page_ref": "865",
+      "page_confirmed": true,
+      "quote": "discharge directly home was arranged with the tracheostomy on trach collar and PEG still in place, supported by skilled home health nursing, home-based physical, occupational, and speech therapy, and close outpatient neurology follow-up for continued recovery and eventual decannulation candidacy assessment.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "RM_08.pdf",
+      "page_ref": "7",
+      "page_confirmed": true,
+      "quote": "Family called EMS and additional seizure activity was noted en route.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx",
+      "section": "Piedmont Blue Advantage HMO - Readmission Review Guideline, Review Window",
+      "quote": "Review Window: 30 days from prior discharge",
+      "document_version_hash": "sha256:75c330374936987f8620ce2849aaa80adc0e402bf1dda6bebd1bd305d626e0f9"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Piedmont Blue Advantage HMO - Readmission Review Guideline.docx",
+      "section": "Piedmont Blue Advantage HMO - Readmission Review Guideline \u203a Section C - Exclusions",
+      "quote": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility; Readmissions to a different facility within the same hospital system are handled under a separate transfer policy and are not reviewed here",
+      "document_version_hash": "sha256:75c330374936987f8620ce2849aaa80adc0e402bf1dda6bebd1bd305d626e0f9"
+    }
+  ],
+  "system_note": "Reviewed readmission claim RM_08 (gap_days=5) paired to index claim MR_08. Governing policy: Piedmont Blue Advantage HMO Readmission Review Guideline (effective 09/15/2023) - Review Window 30 days from prior discharge; readmission 07/23/2026 is within 30 days of index discharge 07/18/2026, so the claim is in-scope for review (Policy: Review Window: 30 days from prior discharge) [RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-b4]. Clinical evidence: the facility's readmission Discharge Summary (RM_08) explicitly documents the clinical relationship between the two stays: \"Clinical Relationship: Index admission MR_08 (03/24-07/18/2026): Status epilepticus (G40.311) secondary to HSV-1 encephalitis (B00.4); tracheostomy for airway management. Readmission RM_08 (07/23-08/03/2026): Breakthrough generalized epilepsy with status epilepticus (G40.311) - acute decompensation of the epilepsy established by the index HSV encephalitis. G40.311 present as a principal diagnosis on both admissions.\" (DISCHARGE SUMMARY, RM_08, p.124) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n130]. That same readmission note shows the admit date 07/23/2026 (DISCHARGE SUMMARY, RM_08, p.124) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n130]. The index discharge/transfer summary documents index discharge on 07/18/2026 (Discharge / Transfer Summary, MR_08, p.865) [NOTE-Readmission-RM_08-index-MR_08.pdf-n983]. Exclusions check: Piedmont's guideline lists exclusions (direct transfers, scheduled readmissions, discharges to SNF/LTAC/IRF, AMA discharges, etc.) that would override a Section B Finding if present (Policy: exclusions list) [RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-C1]. The index discharge documentation shows the patient was discharged directly home with skilled home health supports rather than transferred to another acute/post-acute facility (Discharge / Transfer Summary, MR_08, p.865) [NOTE-Readmission-RM_08-index-MR_08.pdf-n983]. The readmission was an emergent presentation via EMS for status epilepticus (History & Physical (Admitting), RM_08, p.7: Arrival EMS, ground (Status epilepticus)) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n5]. These facts demonstrate none of the guideline exclusions apply. Conclusion and rationale: The readmission is within the payer's 30-day review window and the medical record explicitly documents that the readmission (breakthrough generalized epilepsy with status epilepticus) is an acute decompensation of the epilepsy established during the index admission for HSV-1 encephalitis. Per Piedmont Blue Advantage HMO Readmission Review Guideline, Section B1 is met: \"The readmission diagnosis is the same as, or clinically related to, the condition...treated during the prior stay.\" Therefore the determination is Finding under the criterion: Same or related condition. (Key evidence: DISCHARGE SUMMARY RM_08 p.124; Discharge/Transfer Summary MR_08 p.865; Policy: Review Window and B1 / exclusions.)",
+  "rationale_letter": "Re: Readmission review of RM_08 (paired index MR_08) - Determination: Finding (Same or related condition) Dear Provider, This letter documents the results of a medical review of inpatient readmission claim RM_08 (admit 07/23/2026 - discharge 08/03/2026), paired to the index admission MR_08 (03/24/2026 - 07/18/2026), performed under the Piedmont Blue Advantage HMO Readmission Review Guideline (effective 09/15/2023). The payer's guideline applies to all lines of business and uses a 30-day review window from the prior discharge; the readmission on 07/23/2026 falls within that 30-day window (Review Window: 30 days from prior discharge) [Piedmont Blue Advantage HMO Readmission Review Guideline]. Finding: Under the Piedmont guideline, this readmission is a Finding for being clinically related to the index admission under the \"same or clinically related condition\" criterion. The facility's own documentation states the relationship: Clinical Relationship: Index admission MR_08 (03/24-07/18/2026): Status epilepticus (G40.311) secondary to HSV-1 encephalitis (B00.4); Readmission RM_08 (07/23-08/03/2026): Breakthrough generalized epilepsy with status epilepticus (G40.311) - acute decompensation of the epilepsy established by the index HSV encephalitis. G40.311 is present as the principal diagnosis on both admissions (DISCHARGE SUMMARY, RM_08, p.124) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n130]. Index discharge date is documented as 07/18/2026 (Discharge / Transfer Summary, MR_08, p.865) [NOTE-Readmission-RM_08-index-MR_08.pdf-n983]. The readmission arrived emergently by EMS for status epilepticus (History & Physical (Admitting), RM_08, p.7) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n5]. The payer's exclusions (direct transfers, scheduled readmissions, discharges to SNF/LTAC/IRF, AMA discharges, etc.) were reviewed and do not apply to this case (Policy exclusions list) [RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-C1]. Basis for correction: Because the readmission meets Section B1 of the Piedmont Blue Advantage HMO Readmission Review Guideline (the readmission diagnosis is the same as, or clinically related to, the condition treated during the prior stay) and no Section C exclusion applies, the readmission has been determined to be clinically related to the index admission. As a result, the readmission will be handled per Piedmont Blue Advantage HMO payment policy for related readmissions (i.e., processed as related to the index admission and subject to adjustment in accordance with payer rules). If you disagree with this determination, please submit any additional clinical documentation or justification for reconsideration or appeal, referencing claim RM_08 and index MR_08. Sincerely, Clinical Claims Audit Team Key documents relied upon: DISCHARGE SUMMARY, RM_08 (p.124) [NOTE-Readmission-RM_08-readmission-RM_08.pdf-n130]; Discharge / Transfer Summary, MR_08 (p.865) [NOTE-Readmission-RM_08-index-MR_08.pdf-n983]; Piedmont Blue Advantage HMO Readmission Review Guideline (effective 09/15/2023) [RULE-Policy-Documents-Readmission-Payer-Guidelines-Piedmont-Blue-Advantage-HMO-Readmission-Review-Guideline.docx-b4 / -C1].",
+  "metrics": {
+    "cost_of_processing_usd": 0.064066,
+    "time_to_run_seconds": 98.26,
+    "total_cost_per_claim_usd": 30.594066,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.064066
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\":\"RM_08\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\":\"Piedmont Blue Advantage HMO\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"RM_08\",\"keywords\":[\"Generalized idiopathic epilepsy\",\"status epilepticus\",\"seizures\",\"epilepsy\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

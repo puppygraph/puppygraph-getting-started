@@ -1,0 +1,114 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "claim_id": "MR_APC_02",
+  "review_type": "APC",
+  "determination": "Finding",
+  "concept_id": "APC-02",
+  "target_cpt_hcpcs": "11604",
+  "action": "remove",
+  "corrected_cpt_hcpcs": null,
+  "adjusted_apc_code": null,
+  "rationale": "Billed line: CPT 11604 (Excision, malignant lesion; excised diameter 3.1 to 4.0 cm) for diagnosis C43.59. Governing policy requires the surgeon's intraoperative excised-diameter measurement to select the CPT tier and explicitly disallows using post-fixation pathology measurements to choose the code (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-02-4). The operative note (Operative Note - Detailed Procedural Documentation) documents the surgeon's intraoperative measurements: lesion 1.8 cm with 0.5 cm margins yielding a planned excised diameter of 2.8 cm (NOTE-APC-medical-records-MR_APC_02.pdf-n25, p.24). The post-procedure progress note and pathology correlate show a formalin-fixed specimen measured 3.4 x 2.8 cm, but the progress note explicitly states the pathology dimensions are larger than the documented intraoperative 2.8 cm and attributes the difference to fixation/processing rather than additional tissue excised in the OR (NOTE-APC-medical-records-MR_APC_02.pdf-n39, p.39). Because the surgeon-documented intraoperative excised diameter (2.8 cm) falls below the 3.1 cm minimum required for CPT 11604 and the governing policy prohibits substituting pathology post-fixation measurements for the intraoperative measurement, the billed CPT 11604 is not supported by the medical record. Recommendation: remove CPT 11604 from the claim (no substitute code identified in the record). Evidence: ev1 (policy), ev2 (operative note intraoperative measurement), ev3 (post-procedure note explaining pathology vs intraop discrepancy), ev4 (pathology specimen size - post-fixation).",
+  "evidence_ids": [
+    "ev_0001",
+    "ev_0002",
+    "ev_0003"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_APC_02.pdf",
+      "page_ref": "24 or 25",
+      "page_confirmed": false,
+      "quote": "Using a sterile ruler, the visible lesion/scar was measured and found to be 1.8 cm in greatest diameter. A surgical margin of 0.5 cm was marked circumferentially around the lesion with a gentian violet marking pen, yielding a total planned excised diameter of 2.8 cm (1.8 cm lesion + 0.5 cm margin x 2 sides), consistent with the preoperative surgical plan.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "MR_APC_02.pdf",
+      "page_ref": "39",
+      "page_confirmed": true,
+      "quote": "Final pathology report reviewed with patient: specimen received in formalin fixative, described by pathology as a '3.4 x 2.8 cm formalin-fixed specimen' of skin and subcutaneous tissue with a central 1.6 cm residual pigmented area; final diagnosis confirms malignant melanoma, Breslow depth 0.6 mm, Clark level III, margins clear with closest margin 4 mm. Pathology's reported specimen dimensions of 3.4 x 2.8 cm reflect the fixed, formalin-preserved tissue and are larger than the 2.8 cm excised diameter documented intraoperatively by the surgeon at the time of excision (1.8 cm lesion plus 0.5 cm margin per side), a discrepancy attributable to tissue relaxation and distortion during fixation and gross processing rather than to any additional tissue excised in the operating room.",
+      "supporting_summary": null
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "MR_APC_02.pdf",
+      "page_ref": "37",
+      "page_confirmed": true,
+      "quote": "Received in formalin labeled 'mid-back, wide local excision, 12 o'clock suture' is a 3.4 x 2.8 cm ellipse of skin and subcutaneous tissue.",
+      "supporting_summary": null
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/APC/APC_Policy_Concepts.xlsx",
+      "section": "sheet APC-02, row 4",
+      "quote": "11604 \u2014 Excision, malignant lesion including margins, trunk, arms, or legs; excised diameter 3.1 to 4.0 cm Code selection for malignant lesion excision (1160x series) is tiered strictly by the excised diameter \u2014 the lesion's greatest clinical dimension plus the margin required for complete excision \u2014 as measured and documented by the operating surgeon at the time of excision, prior to specimen fixation. Formalin fixation reliably causes tissue shrinkage in one axis and relaxation/spreading in another, so a pathology report's post-fixation specimen measurement is not an equivalent substitute for the intraoperative excised-diameter measurement and should not be used to select the CPT code. Reviewers should locate the surgeon's own stated excised diameter in the operative note, not the gross pathology description, when validating the billed code tier.",
+      "document_version_hash": "sha256:6229df6cbb701613ae7d9f0cc0dbe0481ebe07cdff85755db9e6b2eb9e596dd8"
+    }
+  ],
+  "system_note": "Billed line: CPT 11604 (Excision, malignant lesion; excised diameter 3.1 to 4.0 cm) for diagnosis C43.59. Governing policy requires the surgeon's intraoperative excised-diameter measurement to select the CPT tier and explicitly disallows using post-fixation pathology measurements to choose the code (RULE-Policy-Documents-APC-APC_Policy_Concepts.xlsx-APC-02-4). The operative note (Operative Note - Detailed Procedural Documentation) documents the surgeon's intraoperative measurements: lesion 1.8 cm with 0.5 cm margins yielding a planned excised diameter of 2.8 cm (NOTE-APC-medical-records-MR_APC_02.pdf-n25, p.24). The post-procedure progress note and pathology correlate show a formalin-fixed specimen measured 3.4 x 2.8 cm, but the progress note explicitly states the pathology dimensions are larger than the documented intraoperative 2.8 cm and attributes the difference to fixation/processing rather than additional tissue excised in the OR (NOTE-APC-medical-records-MR_APC_02.pdf-n39, p.39). Because the surgeon-documented intraoperative excised diameter (2.8 cm) falls below the 3.1 cm minimum required for CPT 11604 and the governing policy prohibits substituting pathology post-fixation measurements for the intraoperative measurement, the billed CPT 11604 is not supported by the medical record. Recommendation: remove CPT 11604 from the claim (no substitute code identified in the record). Evidence: ev1 (policy), ev2 (operative note intraoperative measurement), ev3 (post-procedure note explaining pathology vs intraop discrepancy), ev4 (pathology specimen size - post-fixation).",
+  "rationale_letter": "Re: Claim APC-2026-30417 / Patient MRN-4821793 - Line item billed CPT 11604 We reviewed the documentation supporting the billed procedure: CPT 11604 (Excision, malignant lesion, trunk/arms/legs; excised diameter 3.1-4.0 cm). The facility's governing APC policy for this code requires that the excised diameter used to select the correct CPT tier be the surgeon's own intraoperative measurement (the lesion's greatest clinical dimension plus the margin documented at the time of excision) and states that post-fixation pathology specimen measurements must not be used for CPT selection. Audit finding: The operative note documents the lesion measured 1.8 cm and the surgeon marked a 0.5 cm margin per side, yielding a total planned excised diameter of 2.8 cm (surgeon intraoperative measurement). The final pathology describes a formalin-fixed specimen of 3.4 x 2.8 cm. The post-procedure progress note explicitly acknowledges that the pathology dimensions reflect fixation-related changes and are larger than the surgeon's intraoperative 2.8 cm measurement. Because the surgeon-documented intraoperative excised diameter (2.8 cm) is below the 3.1 cm minimum required for CPT 11604 and policy prohibits using the pathology post-fixation measurement for code selection, CPT 11604 is not supported by the medical record. Correction: Remove CPT 11604 from the claim. No alternate CPT code was identified in the record that would be supported by the surgeon-documented intraoperative measurement. If you believe a different intraoperative measurement exists in the medical record (surgeon's note or other contemporaneous operative documentation), please submit that specific intraoperative documentation showing an excised diameter within the 3.1-4.0 cm range for reconsideration. References relied upon in this determination: - APC policy: Code selection requires surgeon's intraoperative excised-diameter measurement; post-fixation pathology measurements are not an equivalent substitute. (APC policy concept) - Operative Note (intraoperative measurement documented as 1.8 cm lesion + 0.5 cm margins x2 = 2.8 cm) - Post-procedure note and pathology (pathology fixed specimen 3.4 x 2.8 cm; progress note states pathology dimensions are larger than the intraoperative 2.8 cm and reflect fixation/processing rather than additional tissue excised in the OR) Sincerely, Clinical Claims Auditor",
+  "metrics": {
+    "cost_of_processing_usd": 0.030062,
+    "time_to_run_seconds": 42.093,
+    "total_cost_per_claim_usd": 30.560062,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.030062
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_claim_lines",
+      "arguments": "{\"claim_number\": \"APC-2026-30417\", \"patient_mrn\": \"MRN-4821793\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_governing_policy",
+      "arguments": "{\"cpt_code\": \"11604\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\": \"APC-2026-30417\", \"patient_mrn\": \"MRN-4821793\", \"keywords\": [\"excision\", \"malignant lesion\", \"excised diameter\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"malignant melanoma\",\"wide local excision\",\"mid-back\"]}"
+    },
+    {
+      "step": 5,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"malignant melanoma\",\"wide local excision\"]}"
+    },
+    {
+      "step": 6,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"wide local excision\",\"lesion\",\"skin\"]}"
+    },
+    {
+      "step": 7,
+      "kind": "retrieval",
+      "tool": "find_sibling_codes",
+      "arguments": "{\"keywords\":[\"wide local excision\"]}"
+    },
+    {
+      "step": 8,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}

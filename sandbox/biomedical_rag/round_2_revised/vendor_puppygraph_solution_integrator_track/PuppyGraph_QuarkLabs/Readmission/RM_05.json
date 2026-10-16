@@ -1,0 +1,187 @@
+{
+  "vendor_name": "PuppyGraph + Quark Labs",
+  "vendor_track": "Solution Integrator",
+  "submission_round": "Round 2 (Blind)",
+  "review_type": "Readmission",
+  "determination": "Finding",
+  "case_id": "RM_05",
+  "finding_criterion": "B1",
+  "finding_reason": "B1 - same or related condition",
+  "criteria_evaluated": [
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "exclusion_applied": false,
+  "exclusion_rationale": null,
+  "rationale": "Readmission RM_05 (gap_days=5) falls within Lone Star Health Advantage's 30-day review window and is clinically related to index stay MR_05 per the payer's Readmission Review Guideline. Evidence: the payer's guideline defines the review window as \"30 days from prior discharge\" (Lone Star Readmission Review Guideline, Review Window) and the index discharge and readmission dates place this readmission 5 days after discharge (Index discharge: Admit: 2026-02-19 Transfer: 2026-06-06 [Discharge / Transfer Summary, MR_05, p.801]; Readmission admission date: Admission Date: 06/11/2026 [DISCHARGE SUMMARY, RM_05, p.123]). The guideline's first relatedness criterion (Section B1) asks whether the readmission diagnosis is the same as, or clinically related to, the condition/procedure treated during the prior stay; a documented Yes to B1 requires a Finding under the 'same or related condition' criterion. The readmission discharge summary documents the clinical link: it explicitly states that the index admission MR_05 (02/19-06/06/2026) included DKA (E11.10) and necrotizing soft-tissue infection (M72.6) with surgical debridements and skin grafting, and that Readmission RM_05 (06/11-06/21/2026) was recurrent DKA (E11.10) with a skin-graft wound infection identified as a complication of the prior surgical care (DISCHARGE SUMMARY, RM_05, p.123-124). The readmission hospital course further documents that the patient \"presented 5 days post-discharge with DKA (glucose 548, AG 24, pH 7.21) and purulent drainage from the skin graft wound site\" (DISCHARGE SUMMARY, RM_05, p.123). The guideline's exclusions (Section C1) do not apply in this case (the index discharge was to home with home health and the readmission was an emergent EMS/ED admission from home), so the B1 determination is not overridden. Conclusion: per Lone Star Health Advantage Readmission Review Guideline (effective 01/10/2025), RM_05 meets the 'same or related condition' criterion and is therefore a Finding. Cited evidence: RULE: Readmission Review Guideline (Review Window and Section B1/B1 text and Section C1 exclusions) and the index and readmission discharge summaries (MR_05 and RM_05, DISCHARGE SUMMARY pages cited above).",
+  "evidence": [
+    {
+      "evidence_id": "ev_0001",
+      "document": "MR_05.pdf",
+      "page_ref": "801",
+      "page_confirmed": true,
+      "quote": "Admit: 2026-02-19 Transfer: 2026-06-06",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0002",
+      "document": "RM_05.pdf",
+      "page_ref": "123",
+      "page_confirmed": true,
+      "quote": "Admission Date: 06/11/2026",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0003",
+      "document": "RM_05.pdf",
+      "page_ref": "123",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_05 (02/19\u201306/06/2026): DKA (E11.10) and NSTI right thigh (M72.6) requiring surgical debridements and skin grafting. Readmission RM_05 (06/11\u201306/21/2026): Recurrent DKA (E11.10) \u2014 same principal diagnosis as index admission; skin graft wound infection \u2014 complication of prior surgical care. Both admissions share E11.10 as the principal coded diagnosis.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0004",
+      "document": "RM_05.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "68M with Type 2 DM and prior NSTI of right thigh (MR_05, 02/19\u201306/06/2026, 108 days, multiple debridements and skin grafting) presented 5 days post-discharge with DKA (glucose 548, AG 24, pH 7.21) and purulent drainage from the skin graft wound site.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0005",
+      "document": "MR_05.pdf",
+      "page_ref": "801",
+      "page_confirmed": true,
+      "quote": "Attending: Dr. Thomas Kowalski, MD (Critical Care Medicine) Admit: 2026-02-19 Transfer: 2026-06-06 LOS: 106 days Reason for Admission: Severe DKA with concurrent necrotizing fasciitis and septic shock.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0006",
+      "document": "RM_05.pdf",
+      "page_ref": "124",
+      "page_confirmed": true,
+      "quote": "Discharge summary completed and attested by the attending physician of record on 06/21/2026. This document serves as the authoritative discharge record for claim RM_05.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0007",
+      "document": "RM_05.pdf",
+      "page_ref": "123",
+      "page_confirmed": true,
+      "quote": "Clinical Relationship: Index admission MR_05 (02/19\u201306/06/2026): DKA (E11.10) and NSTI right thigh (M72.6) requiring surgical debridements and skin grafting. Readmission RM_05 (06/11\u201306/21/2026): Recurrent DKA (E11.10) \u2014 same principal diagnosis as index admission; skin graft wound infection \u2014 complication of prior surgical care. Both admissions share E11.10 as the principal coded diagnosis.",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    },
+    {
+      "evidence_id": "ev_0008",
+      "document": "MR_05.pdf",
+      "page_ref": "801",
+      "page_confirmed": true,
+      "quote": "Rafael E. Alvarez presented with severe diabetic ketoacidosis (pH 6.98) complicated by necrotizing fasciitis of the right thigh with septic shock. Emergent surgical debridement was performed on admission with two additional debridements on ICU days 2 and 4. Deep tissue cultures grew Streptococcus pyogenes (Group A) and methicillin-resistant Staphylococcus aureus. The course was complicated by ARDS with successful prone positioning, contrast-induced AKI managed conservatively without RRT, mucus plugging requiring bronchoscopy, and profound ICU-acquired weakness. Wound care with vacuum-assisted closure was ongoing throughout the stay followed by successful split-thickness skin graft on ICU day 18 with excellent graft take. Diabetes management was optimized with endocrinology consultation and the SGLT2 inhibitor was discontinued.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0009",
+      "document": "MR_05.pdf",
+      "page_ref": "801",
+      "page_confirmed": true,
+      "quote": "The patient progressed well enough with physical therapy and wound healing that, rather than requiring transfer to a long-term acute care facility, discharge directly home was arranged with home health nursing for skilled wound care and completion of IV/oral antibiotic therapy.",
+      "supporting_summary": null,
+      "record_leg": "index"
+    },
+    {
+      "evidence_id": "ev_0010",
+      "document": "RM_05.pdf",
+      "page_ref": "7",
+      "page_confirmed": true,
+      "quote": "Arrival EMS, ground",
+      "supporting_summary": null,
+      "record_leg": "readmission"
+    }
+  ],
+  "policy_citations": [
+    {
+      "policy_citation_id": "pol_001",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lone Star Health Advantage - Readmission Review Guideline.docx",
+      "section": "Lone Star Health Advantage - Readmission Review Guideline, Review Window",
+      "quote": "30 days from prior discharge",
+      "document_version_hash": "sha256:5f1eef6a5464273e6c5f05bbbc239439934249239f1817c94bb46458106b63ad"
+    },
+    {
+      "policy_citation_id": "pol_002",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lone Star Health Advantage - Readmission Review Guideline.docx",
+      "section": "Lone Star Health Advantage - Readmission Review Guideline \u203a Section B - Review Criteria",
+      "quote": "Does the documentation support: The readmission diagnosis is the same as, or clinically related to, the condition or procedure treated during the prior stay. ____Yes: This readmission qualifies as a Finding under the 'same or related condition' criterion. Continue to Section C. ____No: Continue to question B2.",
+      "document_version_hash": "sha256:5f1eef6a5464273e6c5f05bbbc239439934249239f1817c94bb46458106b63ad"
+    },
+    {
+      "policy_citation_id": "pol_003",
+      "document": "Policy Documents/Readmission/Payer Guidelines/Lone Star Health Advantage - Readmission Review Guideline.docx",
+      "section": "Lone Star Health Advantage - Readmission Review Guideline \u203a Section C - Exclusions",
+      "quote": "Does the readmission meet any of the following exclusions? Direct transfers from another acute-care facility; Readmissions that were scheduled in advance as part of a staged treatment plan; Readmissions related to burn injuries; Admissions to a skilled nursing facility, long-term acute care facility, or inpatient rehabilitation facility; Cases where the prior stay ended in a discharge against medical advice; Newborn and obstetric admissions; Transplant and transplant-related admissions; Admissions to an inpatient behavioral health unit or facility ____Yes: No Finding. The exclusion applies regardless of any criterion supported in Section B. ____No: Finding confirmed under the criterion identified in Section B. Document which criterion (or criteria) applied in the review determination.",
+      "document_version_hash": "sha256:5f1eef6a5464273e6c5f05bbbc239439934249239f1817c94bb46458106b63ad"
+    }
+  ],
+  "system_note": "Readmission RM_05 (gap_days=5) falls within Lone Star Health Advantage's 30-day review window and is clinically related to index stay MR_05 per the payer's Readmission Review Guideline. Evidence: the payer's guideline defines the review window as \"30 days from prior discharge\" (Lone Star Readmission Review Guideline, Review Window) and the index discharge and readmission dates place this readmission 5 days after discharge (Index discharge: Admit: 2026-02-19 Transfer: 2026-06-06 [Discharge / Transfer Summary, MR_05, p.801]; Readmission admission date: Admission Date: 06/11/2026 [DISCHARGE SUMMARY, RM_05, p.123]). The guideline's first relatedness criterion (Section B1) asks whether the readmission diagnosis is the same as, or clinically related to, the condition/procedure treated during the prior stay; a documented Yes to B1 requires a Finding under the 'same or related condition' criterion. The readmission discharge summary documents the clinical link: it explicitly states that the index admission MR_05 (02/19-06/06/2026) included DKA (E11.10) and necrotizing soft-tissue infection (M72.6) with surgical debridements and skin grafting, and that Readmission RM_05 (06/11-06/21/2026) was recurrent DKA (E11.10) with a skin-graft wound infection identified as a complication of the prior surgical care (DISCHARGE SUMMARY, RM_05, p.123-124). The readmission hospital course further documents that the patient \"presented 5 days post-discharge with DKA (glucose 548, AG 24, pH 7.21) and purulent drainage from the skin graft wound site\" (DISCHARGE SUMMARY, RM_05, p.123). The guideline's exclusions (Section C1) do not apply in this case (the index discharge was to home with home health and the readmission was an emergent EMS/ED admission from home), so the B1 determination is not overridden. Conclusion: per Lone Star Health Advantage Readmission Review Guideline (effective 01/10/2025), RM_05 meets the 'same or related condition' criterion and is therefore a Finding. Cited evidence: RULE: Readmission Review Guideline (Review Window and Section B1/B1 text and Section C1 exclusions) and the index and readmission discharge summaries (MR_05 and RM_05, DISCHARGE SUMMARY pages cited above).",
+  "rationale_letter": "Re: Readmission review of RM_05 (index MR_05) Dear Provider, We completed a Lone Star Health Advantage readmission review for inpatient stay RM_05, following the Lone Star Health Advantage Readmission Review Guideline (effective 01/10/2025). The review determined that the readmission is clinically related to the prior index admission MR_05 and therefore meets the payer's criterion for a related readmission. Finding: This readmission is a Finding under the guideline's 'same or related condition' criterion (Section B1). Basis for Determination: - The Lone Star Health Advantage guideline uses a 30-day review window from prior discharge; this readmission (admitted 06/11/2026) occurred 5 days after the index discharge on 06/06/2026 and is therefore in scope (Guideline: Review Window: 30 days from prior discharge). - The readmission and the index stay share the same principal diagnosis of Type 2 diabetes mellitus with ketoacidosis (E11.10). The readmission discharge summary explicitly documents that the readmission was \"Recurrent DKA (E11.10) - same principal diagnosis as index admission\" and that the patient had a skin-graft wound infection identified as a complication of the prior surgical care (DISCHARGE SUMMARY, RM_05, p.123-124). The readmission hospital course documents that the patient \"presented 5 days post-discharge with DKA (glucose 548, AG 24, pH 7.21) and purulent drainage from the skin graft wound site\" (DISCHARGE SUMMARY, RM_05, p.123). These clinical notes directly satisfy the guideline's Section B1 requirement that the readmission diagnosis be the same as, or clinically related to, the condition treated during the prior stay. - The guideline's Section C exclusions (direct transfer, scheduled/staged readmission, burn, SNF/LTAC/IRF, AMA, newborn/obstetric, transplant, inpatient behavioral health) do not apply here; the index discharge was to home with home health and the readmission was an emergent admission from home. Correction/Action: Based on the above, RM_05 is classified as a related readmission under Lone Star Health Advantage policy (Section B1). Per payer policy, related readmissions are Findings and are subject to the payer's adjustment processes (i.e., the readmission is not separately reimbursable as an unrelated new admission). Please refer to the cited documentation and the Lone Star Health Advantage Readmission Review Guideline for further detail. If you dispute this determination, submit clinical documentation addressing the specific connection cited above (e.g., documentation that the readmission was for an unrelated new condition or evidence that an exclusion applies). Thank you for your attention. Sincerely, Clinical Review Team",
+  "metrics": {
+    "cost_of_processing_usd": 0.062278,
+    "time_to_run_seconds": 82.829,
+    "total_cost_per_claim_usd": 30.592278,
+    "cost_breakdown_usd": {
+      "data_build_ingestion": 30.53,
+      "agentic_review": 0.062278
+    }
+  },
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "kind": "retrieval",
+      "tool": "get_index_claim",
+      "arguments": "{\"readmission_claim_number\":\"RM_05\"}"
+    },
+    {
+      "step": 2,
+      "kind": "retrieval",
+      "tool": "get_payer_guideline",
+      "arguments": "{\"payer\":\"Lone Star Health Advantage\"}"
+    },
+    {
+      "step": 3,
+      "kind": "retrieval",
+      "tool": "get_medical_record_notes",
+      "arguments": "{\"claim_number\":\"RM_05\",\"keywords\":[\"Type 2 diabetes mellitus with ketoacidosis without coma\",\"ketoacidosis\",\"diabetes\",\"E11.10\"]}"
+    },
+    {
+      "step": 4,
+      "kind": "criterion",
+      "criterion": "A1",
+      "answer": "yes"
+    },
+    {
+      "step": 5,
+      "kind": "criterion",
+      "criterion": "B1",
+      "answer": "yes"
+    },
+    {
+      "step": 6,
+      "kind": "criterion",
+      "criterion": "C1",
+      "answer": "no"
+    },
+    {
+      "step": 7,
+      "kind": "judgment",
+      "model": "gpt-5-mini"
+    }
+  ]
+}
