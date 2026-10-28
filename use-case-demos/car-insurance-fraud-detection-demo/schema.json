@@ -1,0 +1,651 @@
+{
+  "catalogs": [
+    {
+      "name": "demo",
+      "type": "iceberg",
+      "metastore": {
+        "type": "rest",
+        "uri": "http://iceberg-rest:8181",
+        "warehouse": "s3://warehouse/",
+        "security": "OAUTH2",
+        "session": "default",
+        "credential": "default",
+        "token": "default",
+        "enableIcebergMetaCache": "true",
+        "icebergMetaCacheTTL": "180",
+        "scope": "default"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "accessKey": "admin",
+        "secretKey": "password",
+        "enableSsl": "false",
+        "endpoint": "http://minio:9000",
+        "enablePathStyleAccess": "true",
+        "type": "S3"
+      }
+    }
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "label": "accident_sites",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "insurance",
+            "table": "accident_sites"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "site_id",
+                "alias": "puppy_id_site_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "site_id",
+              "alias": "site_id"
+            },
+            {
+              "type": "STRING",
+              "field": "accident_site",
+              "alias": "accident_site"
+            }
+          ]
+        }
+      },
+      {
+        "label": "channels",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "insurance",
+            "table": "channels"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "channel_id",
+                "alias": "puppy_id_channel_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "channel_id",
+              "alias": "channel_id"
+            },
+            {
+              "type": "STRING",
+              "field": "channel",
+              "alias": "channel"
+            }
+          ]
+        }
+      },
+      {
+        "label": "claim_dates",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "insurance",
+            "table": "claim_dates"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "date_id",
+                "alias": "puppy_id_date_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "date_id",
+              "alias": "date_id"
+            },
+            {
+              "type": "STRING",
+              "field": "claim_date",
+              "alias": "claim_date"
+            },
+            {
+              "type": "STRING",
+              "field": "claim_day_of_week",
+              "alias": "claim_day_of_week"
+            }
+          ]
+        }
+      },
+      {
+        "label": "claims",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "insurance",
+            "table": "claims"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "claim_id",
+                "alias": "puppy_id_claim_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "claim_id",
+              "alias": "claim_id"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "total_claim",
+              "alias": "total_claim"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "injury_claim",
+              "alias": "injury_claim"
+            },
+            {
+              "type": "STRING",
+              "field": "fraud_reported",
+              "alias": "fraud_reported"
+            },
+            {
+              "type": "INT",
+              "field": "days_open",
+              "alias": "days_open"
+            },
+            {
+              "type": "INT",
+              "field": "form_defects",
+              "alias": "form_defects"
+            }
+          ]
+        }
+      },
+      {
+        "label": "drivers",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "insurance",
+            "table": "drivers"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "driver_id",
+                "alias": "puppy_id_driver_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "driver_id",
+              "alias": "driver_id"
+            },
+            {
+              "type": "INT",
+              "field": "age_of_driver",
+              "alias": "age_of_driver"
+            },
+            {
+              "type": "STRING",
+              "field": "gender",
+              "alias": "gender"
+            },
+            {
+              "type": "INT",
+              "field": "marital_status",
+              "alias": "marital_status"
+            },
+            {
+              "type": "INT",
+              "field": "safety_rating",
+              "alias": "safety_rating"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "annual_income",
+              "alias": "annual_income"
+            },
+            {
+              "type": "INT",
+              "field": "high_education",
+              "alias": "high_education"
+            },
+            {
+              "type": "INT",
+              "field": "address_change",
+              "alias": "address_change"
+            },
+            {
+              "type": "STRING",
+              "field": "property_status",
+              "alias": "property_status"
+            }
+          ]
+        }
+      },
+      {
+        "label": "vehicles",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "insurance",
+            "table": "vehicles"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "vehicle_id",
+                "alias": "puppy_id_vehicle_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "vehicle_id",
+              "alias": "vehicle_id"
+            },
+            {
+              "type": "STRING",
+              "field": "vehicle_category",
+              "alias": "vehicle_category"
+            },
+            {
+              "type": "STRING",
+              "field": "vehicle_color",
+              "alias": "vehicle_color"
+            },
+            {
+              "type": "INT",
+              "field": "age_of_vehicle",
+              "alias": "age_of_vehicle"
+            },
+            {
+              "type": "DOUBLE",
+              "field": "vehicle_price",
+              "alias": "vehicle_price"
+            }
+          ]
+        }
+      },
+      {
+        "label": "zipcodes",
+        "oneToOne": {
+          "tableSource": {
+            "catalog": "demo",
+            "schema": "insurance",
+            "table": "zipcodes"
+          },
+          "id": {
+            "fields": [
+              {
+                "type": "STRING",
+                "field": "zip_id",
+                "alias": "puppy_id_zip_id"
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "type": "STRING",
+              "field": "zip_id",
+              "alias": "zip_id"
+            },
+            {
+              "type": "STRING",
+              "field": "zip_code",
+              "alias": "zip_code"
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "label": "FILED",
+        "fromVertex": "drivers",
+        "toVertex": "claims",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "insurance",
+          "table": "driver_claim_edges"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "edge_id",
+              "alias": "puppy_id_edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "driver_id",
+              "alias": "puppy_from_driver_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "claim_id",
+              "alias": "puppy_to_claim_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "edge_id",
+            "alias": "edge_id"
+          },
+          {
+            "type": "STRING",
+            "field": "driver_id",
+            "alias": "driver_id"
+          },
+          {
+            "type": "STRING",
+            "field": "claim_id",
+            "alias": "claim_id"
+          }
+        ]
+      },
+      {
+        "label": "INVOLVES",
+        "fromVertex": "claims",
+        "toVertex": "vehicles",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "insurance",
+          "table": "claim_vehicle_edges"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "edge_id",
+              "alias": "puppy_id_edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "claim_id",
+              "alias": "puppy_from_claim_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "vehicle_id",
+              "alias": "puppy_to_vehicle_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "edge_id",
+            "alias": "edge_id"
+          },
+          {
+            "type": "STRING",
+            "field": "claim_id",
+            "alias": "claim_id"
+          },
+          {
+            "type": "STRING",
+            "field": "vehicle_id",
+            "alias": "vehicle_id"
+          }
+        ]
+      },
+      {
+        "label": "OCCURRED_IN",
+        "fromVertex": "claims",
+        "toVertex": "zipcodes",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "insurance",
+          "table": "claim_zip_edges"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "edge_id",
+              "alias": "puppy_id_edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "claim_id",
+              "alias": "puppy_from_claim_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "zip_id",
+              "alias": "puppy_to_zip_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "edge_id",
+            "alias": "edge_id"
+          },
+          {
+            "type": "STRING",
+            "field": "claim_id",
+            "alias": "claim_id"
+          },
+          {
+            "type": "STRING",
+            "field": "zip_id",
+            "alias": "zip_id"
+          }
+        ]
+      },
+      {
+        "label": "OCCURRED_AT",
+        "fromVertex": "claims",
+        "toVertex": "accident_sites",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "insurance",
+          "table": "claim_site_edges"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "edge_id",
+              "alias": "puppy_id_edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "claim_id",
+              "alias": "puppy_from_claim_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "site_id",
+              "alias": "puppy_to_site_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "edge_id",
+            "alias": "edge_id"
+          },
+          {
+            "type": "STRING",
+            "field": "claim_id",
+            "alias": "claim_id"
+          },
+          {
+            "type": "STRING",
+            "field": "site_id",
+            "alias": "site_id"
+          }
+        ]
+      },
+      {
+        "label": "SUBMITTED_THROUGH",
+        "fromVertex": "claims",
+        "toVertex": "channels",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "insurance",
+          "table": "claim_channel_edges"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "edge_id",
+              "alias": "puppy_id_edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "claim_id",
+              "alias": "puppy_from_claim_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "channel_id",
+              "alias": "puppy_to_channel_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "edge_id",
+            "alias": "edge_id"
+          },
+          {
+            "type": "STRING",
+            "field": "claim_id",
+            "alias": "claim_id"
+          },
+          {
+            "type": "STRING",
+            "field": "channel_id",
+            "alias": "channel_id"
+          }
+        ]
+      },
+      {
+        "label": "HAPPENED_ON",
+        "fromVertex": "claims",
+        "toVertex": "claim_dates",
+        "tableSource": {
+          "catalog": "demo",
+          "schema": "insurance",
+          "table": "claim_date_edges"
+        },
+        "id": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "edge_id",
+              "alias": "puppy_id_edge_id"
+            }
+          ]
+        },
+        "fromId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "claim_id",
+              "alias": "puppy_from_claim_id"
+            }
+          ]
+        },
+        "toId": {
+          "fields": [
+            {
+              "type": "STRING",
+              "field": "date_id",
+              "alias": "puppy_to_date_id"
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "type": "STRING",
+            "field": "edge_id",
+            "alias": "edge_id"
+          },
+          {
+            "type": "STRING",
+            "field": "claim_id",
+            "alias": "claim_id"
+          },
+          {
+            "type": "STRING",
+            "field": "date_id",
+            "alias": "date_id"
+          }
+        ]
+      }
+    ]
+  }
+}
