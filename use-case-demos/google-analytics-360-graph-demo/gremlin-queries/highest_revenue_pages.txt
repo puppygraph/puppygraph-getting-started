@@ -1,0 +1,8 @@
+g.V().
+  has('total_revenue', P.gt(0)).
+  project('page_path', 'total_revenue').
+    by('page_path').
+    by('total_revenue').
+  order().
+    by(select('total_revenue'), desc).
+  toList()
