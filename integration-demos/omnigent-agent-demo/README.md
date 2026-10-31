@@ -29,8 +29,7 @@ Omnigent enforces a read-only guardrail on every graph query.
 | `docker-compose.yaml` | Postgres (sample data) + PuppyGraph (`latest`; last verified on 1.12.0) |
 | `data/init.sql` | 15 accounts, 6 devices, transfers, including a planted fraud ring around `acc_007` |
 | `schema.json` | PuppyGraph graph schema (v2 format) over the Postgres tables |
-| `agent/config.yaml` | The Omnigent agent: harness/model, guardrails, prompt |
-| `agent/tools/mcp/puppygraph.yaml` | PuppyGraph MCP server wiring (stdio) |
+| `agent/config.yaml` | The Omnigent agent: harness/model, MCP tools, guardrails, prompt |
 | `.env.example` | Connection settings for the local stack |
 | `run.sh` | `./run.sh "question"` (one-shot) or `./run.sh` (interactive REPL) |
 
@@ -50,7 +49,7 @@ curl --fail --retry 20 --retry-all-errors --retry-delay 3 \
 #    or in the Web UI: select schema.json under "Upload Graph Schema JSON", then Upload
 
 # 3. Omnigent
-uv tool install --python 3.12 omnigent            # tested with omnigent 0.15.0 and 0.16.0
+uv tool install --python 3.12 'omnigent==0.20.0'
 
 # 4. PuppyGraph MCP server, installed as `puppygraph-mcp` on PATH
 npm install -g @puppygraph/mcp-server@1.3.0
@@ -114,17 +113,13 @@ omnigent run agent/ --no-session \
 With the same override, a read (`... RETURN a.owner_name, a.status`) goes
 through and returns rows.
 
-## Notes for Omnigent 0.15.0 and 0.16.0
+## Agent configuration
 
 A few details of the agent bundle layout that are easy to get wrong:
 
-- The MCP server is declared in `agent/tools/mcp/puppygraph.yaml`, not inline
-  under `tools:` in `config.yaml`. `omnigent run` resolves `${VAR}` in the
-  `env:` of `tools/mcp/*.yaml` files, but passes it through literally for an
-  inline `type: mcp` entry
-  ([omnigent-ai/omnigent#8338](https://github.com/omnigent-ai/omnigent/issues/8338)).
-  The fix ([#8544](https://github.com/omnigent-ai/omnigent/pull/8544)) shipped
-  in 0.17.0; the separate file remains supported.
+- The MCP server is declared under `tools.puppygraph` in `agent/config.yaml`.
+  Inline environment-variable expansion requires Omnigent 0.17.0 or later;
+  the setup above pins 0.20.0.
 - In a `spec_version: 1` bundle, policies go under `guardrails.policies`. A
   top-level `policies:` block works in a single-file agent YAML but is
   silently ignored in a bundle.
