@@ -36,7 +36,7 @@ Omnigent enforces a read-only guardrail on every graph query.
 
 ## Run it
 
-Prerequisites: Docker, curl 7.71+, Node 18+, Python 3.12+ with `uv`, and an `OPENAI_API_KEY`.
+Prerequisites: Docker, curl 7.71+, Node 20+, Python 3.12+ with `uv`, and an `OPENAI_API_KEY`.
 To use a different harness, change `executor` in `agent/config.yaml`.
 
 ```bash
@@ -53,8 +53,7 @@ curl --fail --retry 20 --retry-all-errors --retry-delay 3 \
 uv tool install --python 3.12 omnigent            # tested with omnigent 0.15.0 and 0.16.0
 
 # 4. PuppyGraph MCP server, installed as `puppygraph-mcp` on PATH
-git clone --depth 1 https://github.com/puppygraph/puppygraph-mcp-server
-(cd puppygraph-mcp-server && npm install && npm run build && npm install -g .)
+npm install -g @puppygraph/mcp-server@1.3.0
 
 # 5. Ask questions
 cp .env.example .env && echo "OPENAI_API_KEY=sk-..." >> .env
@@ -124,8 +123,8 @@ A few details of the agent bundle layout that are easy to get wrong:
   `env:` of `tools/mcp/*.yaml` files, but passes it through literally for an
   inline `type: mcp` entry
   ([omnigent-ai/omnigent#8338](https://github.com/omnigent-ai/omnigent/issues/8338)).
-  The fix ([#8544](https://github.com/omnigent-ai/omnigent/pull/8544)) is merged
-  but not yet in a release; the separate file keeps working after it ships.
+  The fix ([#8544](https://github.com/omnigent-ai/omnigent/pull/8544)) shipped
+  in 0.17.0; the separate file remains supported.
 - In a `spec_version: 1` bundle, policies go under `guardrails.policies`. A
   top-level `policies:` block works in a single-file agent YAML but is
   silently ignored in a bundle.
