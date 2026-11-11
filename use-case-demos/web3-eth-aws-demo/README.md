@@ -5,6 +5,8 @@ This demo shows how to query the [AWS Public Blockchain Dataset](https://registr
 
 AWS Public Blockchain Data was accessed on 2026-05-20 from https://registry.opendata.aws/aws-public-blockchain.
 
+> **Disclaimer:** This demo is provided as an example for learning and evaluation only. It is not production-ready; review, test, and adapt it to your own requirements before using it in a production environment. You use it at your own risk.
+
 ## Prerequisites
 - Docker
 - AWS CLI
