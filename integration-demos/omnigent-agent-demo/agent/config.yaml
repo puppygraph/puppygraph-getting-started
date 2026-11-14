@@ -1,21 +1,3 @@
-# PuppyGraph Analyst: answer multi-hop questions over lakehouse/warehouse data
-# as a graph, through the PuppyGraph MCP server, from inside Omnigent.
-#
-# PuppyGraph maps existing tables (Postgres, Iceberg, Delta Lake / Databricks
-# Unity Catalog, Snowflake, BigQuery, ...) into a graph and serves
-# openCypher/Gremlin over them in place, so there is no ETL and no second copy of the data.
-# Omnigent wires the MCP server in as a governed tool: an allow-list of
-# tools, a read-only guardrail policy, and a spend cap.
-#
-# Setup (PuppyGraph, the `puppygraph-mcp` server, connection settings and
-# OPENAI_API_KEY) is described in ../README.md.
-#
-# The MCP server itself is declared in tools/mcp/puppygraph.yaml.
-#
-# Usage:
-#   omnigent run agent/                  # interactive REPL (web UI: see ../README.md)
-#   omnigent run agent/ -p "question"    # one-shot, headless
-
 spec_version: 1
 name: puppygraph_analyst
 description: >-
@@ -33,9 +15,27 @@ executor:
     type: api_key
     api_key: ${OPENAI_API_KEY}
 
+tools:
+  puppygraph:
+    type: mcp
+    description: Query PuppyGraph (openCypher / Gremlin over existing tables) and read its graph schema.
+    transport: stdio
+    command: puppygraph-mcp
+    env:
+      PUPPYGRAPH_URL: ${PUPPYGRAPH_BOLT_URL}
+      PUPPYGRAPH_USERNAME: ${PUPPYGRAPH_USERNAME}
+      PUPPYGRAPH_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+      PUPPYGRAPH_GREMLIN_URL: ${PUPPYGRAPH_GREMLIN_URL}
+      PUPPYGRAPH_GREMLIN_USERNAME: ${PUPPYGRAPH_USERNAME}
+      PUPPYGRAPH_GREMLIN_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+      PUPPYGRAPH_SCHEMA_URL: ${PUPPYGRAPH_SCHEMA_URL}
+      PUPPYGRAPH_SCHEMA_USERNAME: ${PUPPYGRAPH_USERNAME}
+      PUPPYGRAPH_SCHEMA_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+    tools: [puppygraph_schema, puppygraph_query, puppygraph_status]
+
 # Guardrails are evaluated by Omnigent on every tool call, independently of
 # the model and the prompt. They must live under `guardrails.policies` (see
-# "Notes for Omnigent 0.15.0 and 0.16.0" in ../README.md).
+# "Agent configuration" in ../README.md).
 guardrails:
   policies:
     # Read-only: deny any graph query that contains a Cypher/Gremlin write or
