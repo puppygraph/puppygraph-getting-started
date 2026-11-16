@@ -1,0 +1,192 @@
+{
+  "catalog": [
+    {
+      "name": "player_catalog",
+      "type": "mysql",
+      "jdbc": {
+        "username": "root",
+        "password": "Secret_Password",
+        "jdbcUri": "jdbc:mysql://mysql:3306/player_service",
+        "driverClass": "com.mysql.jdbc.Driver",
+        "driverUrl": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.49/mysql-connector-java-5.1.49.jar",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    },
+    {
+      "name": "trade_catalog",
+      "type": "mysql",
+      "jdbc": {
+        "username": "root",
+        "password": "Secret_Password",
+        "jdbcUri": "jdbc:mysql://mysql:3306/trade_service",
+        "driverClass": "com.mysql.jdbc.Driver",
+        "driverUrl": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.49/mysql-connector-java-5.1.49.jar",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "player_catalog",
+          "schema": "player_service",
+          "table": "players",
+          "mappedField": [
+            { "sourceFieldName": "id", "targetFieldName": "id" },
+            { "sourceFieldName": "username", "targetFieldName": "username" },
+            { "sourceFieldName": "robuxBalance", "targetFieldName": "robuxBalance" },
+            { "sourceFieldName": "accountAgeDays", "targetFieldName": "accountAgeDays" }
+          ]
+        }
+      },
+      "label": "Player",
+      "id": [{ "name": "id", "type": "String" }],
+      "attribute": [
+        { "name": "username", "type": "String" },
+        { "name": "robuxBalance", "type": "Int" },
+        { "name": "accountAgeDays", "type": "Int" }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "player_catalog",
+          "schema": "player_service",
+          "table": "items",
+          "mappedField": [
+            { "sourceFieldName": "id", "targetFieldName": "id" },
+            { "sourceFieldName": "name", "targetFieldName": "name" },
+            { "sourceFieldName": "estimatedValue", "targetFieldName": "estimatedValue" },
+            { "sourceFieldName": "itemType", "targetFieldName": "itemType" }
+          ]
+        }
+      },
+      "label": "Item",
+      "id": [{ "name": "id", "type": "String" }],
+      "attribute": [
+        { "name": "name", "type": "String" },
+        { "name": "estimatedValue", "type": "Int" },
+        { "name": "itemType", "type": "String" }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trade_catalog",
+          "schema": "trade_service",
+          "table": "marketplace_sales",
+          "mappedField": [
+            { "sourceFieldName": "seller_id", "targetFieldName": "seller_id" },
+            { "sourceFieldName": "buyer_id", "targetFieldName": "buyer_id" },
+            { "sourceFieldName": "sale_id", "targetFieldName": "sale_id" },
+            { "sourceFieldName": "itemId", "targetFieldName": "itemId" },
+            { "sourceFieldName": "pricePaid", "targetFieldName": "pricePaid" },
+            { "sourceFieldName": "transaction_timestamp", "targetFieldName": "transaction_timestamp" }
+          ]
+        }
+      },
+      "label": "SOLD_TO",
+      "fromNodeLabel": "Player",
+      "toNodeLabel": "Player",
+      "fromKey": [{ "name": "seller_id", "type": "String" }],
+      "toKey": [{ "name": "buyer_id", "type": "String" }],
+      "attribute": [
+        { "name": "sale_id", "type": "String" },
+        { "name": "itemId", "type": "String" },
+        { "name": "pricePaid", "type": "Int" },
+        { "name": "transaction_timestamp", "type": "Timestamp" }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trade_catalog",
+          "schema": "trade_service",
+          "table": "marketplace_sales",
+          "mappedField": [
+            { "sourceFieldName": "buyer_id", "targetFieldName": "buyer_id" },
+            { "sourceFieldName": "seller_id", "targetFieldName": "seller_id" },
+            { "sourceFieldName": "pricePaid", "targetFieldName": "pricePaid" },
+            { "sourceFieldName": "itemId", "targetFieldName": "itemId" },
+            { "sourceFieldName": "sale_id", "targetFieldName": "sale_id" },
+            { "sourceFieldName": "transaction_timestamp", "targetFieldName": "transaction_timestamp" }
+          ]
+        }
+      },
+      "label": "BOUGHT_FROM",
+      "fromNodeLabel": "Player",
+      "toNodeLabel": "Player",
+      "fromKey": [{ "name": "buyer_id", "type": "String" }],
+      "toKey": [{ "name": "seller_id", "type": "String" }],
+      "attribute": [
+        { "name": "pricePaid", "type": "Int" },
+        { "name": "itemId", "type": "String" },
+        { "name": "sale_id", "type": "String" },
+        { "name": "transaction_timestamp", "type": "Timestamp" }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trade_catalog",
+          "schema": "trade_service",
+          "table": "marketplace_sales",
+          "mappedField": [
+            { "sourceFieldName": "seller_id", "targetFieldName": "seller_id" },
+            { "sourceFieldName": "itemId", "targetFieldName": "itemId" },
+            { "sourceFieldName": "pricePaid", "targetFieldName": "pricePaid" },
+            { "sourceFieldName": "sale_id", "targetFieldName": "sale_id" },
+            { "sourceFieldName": "buyer_id", "targetFieldName": "buyer_id" }
+          ]
+        }
+      },
+      "label": "SOLD",
+      "fromNodeLabel": "Player",
+      "toNodeLabel": "Item",
+      "fromKey": [{ "name": "seller_id", "type": "String" }],
+      "toKey": [{ "name": "itemId", "type": "String" }],
+      "attribute": [
+        { "name": "pricePaid", "type": "Int" },
+        { "name": "sale_id", "type": "String" },
+        { "name": "buyer_id", "type": "String" }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "trade_catalog",
+          "schema": "trade_service",
+          "table": "marketplace_sales",
+          "mappedField": [
+            { "sourceFieldName": "itemId", "targetFieldName": "itemId" },
+            { "sourceFieldName": "buyer_id", "targetFieldName": "buyer_id" },
+            { "sourceFieldName": "pricePaid", "targetFieldName": "pricePaid" },
+            { "sourceFieldName": "sale_id", "targetFieldName": "sale_id" },
+            { "sourceFieldName": "seller_id", "targetFieldName": "seller_id" }
+          ]
+        }
+      },
+      "label": "PURCHASED",
+      "fromNodeLabel": "Item",
+      "toNodeLabel": "Player",
+      "fromKey": [{ "name": "itemId", "type": "String" }],
+      "toKey": [{ "name": "buyer_id", "type": "String" }],
+      "attribute": [
+        { "name": "pricePaid", "type": "Int" },
+        { "name": "sale_id", "type": "String" },
+        { "name": "seller_id", "type": "String" }
+      ]
+    }
+  ]
+}
