@@ -117,21 +117,3 @@ To stop and remove the containers and the loaded data:
 ```bash
 docker compose down -v
 ```
-
-## About the Data Snapshot
-
-The CSV files in `data/` were produced from the [OpenTelemetry Demo](https://github.com/open-telemetry/opentelemetry-demo) as follows. These steps are background only; you do not need to repeat them to run this demo.
-
-1. The OpenTelemetry Demo was run with traces stored in OpenSearch, and traffic was generated with its built-in load generator.
-2. Spans were read from OpenSearch (`otel-traces-*`) and linked by their parent/child relationships.
-3. Each call from one service to another was aggregated into one row of `service_edges.csv`, with the number of calls (`call_count`) and their average latency in milliseconds (`avg_latency_ms`). `services.csv` lists the services.
-4. `service_metrics.csv` holds per-service span counts and latencies from the same traces. It is not part of the graph schema.
-
-The snapshot only covers the calls captured during that run, so a few services have no edges (for example `quote` and `image-provider`). The calls to `flagd` with an average latency of around 600,000 ms are its long-lived streaming connections, not slow requests.
-
-## Notes
-- This demo stays at the service level for clarity and reproducibility.
-- Future extensions (out of scope for v1) could include:
-  - Span-level graphs
-  - Critical path analysis
-  - Trace-as-graph modeling
