@@ -17,53 +17,55 @@ This demo intentionally focuses on a **clean and reproducible service-level view
 - Docker Compose
 - Python 3
 
-
 ## Deployment (Generate Trace Data)
 Start the OpenTelemetry Demo stack (with OpenSearch enabled in this environment):
 
 ```bash
-
 docker compose up -d
+```
 
 Generate traffic via either:
-	•	The demo frontend UI (open in browser and click around), or
-	•	The built-in load generator:
+- The demo frontend UI (open in browser and click around), or
+- The built-in load generator:
 
+```bash
 docker compose up -d load-generator
+```
 
 This will produce OpenTelemetry traces stored in OpenSearch.
 
+## Data Preparation (Export CSVs)
 
-
-Data Preparation (Export CSVs)
-
-1) Export service dependency CSVs from OpenSearch
+### 1) Export service dependency CSVs from OpenSearch
 
 Run the export script:
 
+```bash
 python3 tools/export_spans_from_opensearch.py
+```
 
 This script:
-	•	Reads OpenTelemetry spans from OpenSearch (otel-traces-*)
-	•	Builds span parent/child relationships
-	•	Aggregates them into service-level dependencies
-	•	Produces the following files:
-	•	exports/services.csv
-	•	exports/service_edges.csv
+- Reads OpenTelemetry spans from OpenSearch (`otel-traces-*`)
+- Builds span parent/child relationships
+- Aggregates them into service-level dependencies
+- Produces the following files:
+  - `exports/services.csv`
+  - `exports/service_edges.csv`
 
-2) Copy CSVs into this demo directory
+### 2) Copy CSVs into this demo directory
 
 From the OpenTelemetry demo repo root:
 
+```bash
 cp exports/services.csv exports/service_edges.csv \
   ~/work/puppygraph-getting-started/use-case-demos/otel-service-dependency/data/
+```
 
 Note: This demo repository only includes the derived CSVs + schema + README to keep the scope focused on graph modeling.
 
+## Directory Structure
 
-
-Directory Structure
-
+```
 otel-service-dependency/
 ├── data/
 │   ├── init.sql
@@ -73,74 +75,78 @@ otel-service-dependency/
 ├── docker-compose.yaml
 ├── schema.json
 └── README.md
+```
 
-
-
-
-Modeling the Graph
+## Modeling the Graph
 
 The graph schema is defined in:
-	•	schema.json (PuppyGraph schema; its catalog points at a PostgreSQL database holding the two CSVs)
+- `schema.json` (PuppyGraph schema; its catalog points at a PostgreSQL database holding the two CSVs)
 
 Mapping:
-	•	Each row in data/services.csv becomes a Service vertex
-	•	Each row in data/service_edges.csv becomes a CALLS edge (Service -> Service)
-	•	Edge properties:
-	•	call_count
-	•	avg_latency_ms
+- Each row in `data/services.csv` becomes a `Service` vertex
+- Each row in `data/service_edges.csv` becomes a `CALLS` edge (`Service -> Service`)
+- Edge properties:
+  - `call_count`
+  - `avg_latency_ms`
 
+## Querying the Graph
 
+In the PuppyGraph Web UI, open the **Query** panel and select **Cypher**. Queries that return a path (`p`) are drawn on the **Graph** tab; queries that return columns appear on the **Table** tab. Click **Clear Canvas** before running the next query.
 
-Querying the Graph (Gremlin Examples)
+### 1) Full service dependency graph
 
-Exact query syntax may vary slightly depending on how you load the schema, but the intent is the same.
+Which services call which?
 
-1) Count services
+```cypher
+MATCH p = (:Service)-[:CALLS]->(:Service)
+RETURN p
+```
 
-g.V().hasLabel('Service').count()
+### 2) Blast radius of a service
 
-2) List all services
+Which services depend on `product-catalog`, directly or through other services, and would be affected if it went down?
 
-g.V().hasLabel('Service').values('service_name')
+```cypher
+MATCH p = (:Service)-[:CALLS*1..5]->(:Service {service_name: 'product-catalog'})
+RETURN p
+```
 
-3) Find downstream dependencies of a service
+### 3) Slowest service interactions
 
-Question: Which services are called by frontend?
+Which calls have the highest average latency? The filter skips calls averaging a minute or more: in this data those are `flagd` streaming connections that stay open until they time out, not slow requests.
 
-g.V().hasLabel('Service').has('service_name', 'frontend')
-  .outE('CALLS')
-  .project('to','call_count','avg_latency_ms')
-  .by(inV().values('service_name'))
-  .by(values('call_count'))
-  .by(values('avg_latency_ms'))
+As a graph:
 
-4) Identify highest-volume service interactions
+```cypher
+MATCH p = (:Service)-[r:CALLS]->(:Service)
+WHERE r.avg_latency_ms < 60000
+RETURN p
+ORDER BY r.avg_latency_ms DESC
+LIMIT 5
+```
 
-g.E().hasLabel('CALLS')
-  .order().by('call_count', desc)
-  .limit(20)
+As a table, with call volume alongside latency:
 
-5) Identify latency bottlenecks
+```cypher
+MATCH (a:Service)-[r:CALLS]->(b:Service)
+WHERE r.avg_latency_ms < 60000
+RETURN a.service_name AS caller, b.service_name AS callee,
+       r.call_count AS calls, r.avg_latency_ms AS avg_latency_ms
+ORDER BY avg_latency_ms DESC
+LIMIT 5
+```
 
-g.E().hasLabel('CALLS')
-  .order().by('avg_latency_ms', desc)
-  .limit(20)
-
-
-
-
-Cleanup (OpenTelemetry Demo)
+## Cleanup (OpenTelemetry Demo)
 
 If you started the OpenTelemetry demo stack and want to stop everything:
 
+```bash
 docker compose down --volumes --remove-orphans
+```
 
-
-
-
-Notes
-	•	This demo stays at the service level for clarity and reproducibility.
-	•	Future extensions (out of scope for v1) could include:
-	•	Span-level graphs
-	•	Critical path analysis
-	•	Trace-as-graph modeling
+## Notes
+- This demo stays at the service level for clarity and reproducibility.
+- Future extensions (out of scope for v1) could include:
+  - Span-level graphs
+  - Critical path analysis
+  - Trace-as-graph modeling
