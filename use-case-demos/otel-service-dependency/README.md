@@ -3,6 +3,8 @@
 ## Summary
 This demo shows how **OpenTelemetry trace data** can be transformed into a **service-level dependency graph** using **PuppyGraph**.
 
+The data is a pre-built snapshot of traces from the [OpenTelemetry Demo](https://github.com/open-telemetry/opentelemetry-demo), a sample microservices web shop maintained by the OpenTelemetry project. The traces were aggregated into one row per service and one row per service-to-service call. In this demo you load that snapshot into PostgreSQL and query it as a graph with PuppyGraph; you do not need to run the OpenTelemetry Demo yourself.
+
 By modeling service-to-service calls as a graph, we can easily analyze:
 - Upstream and downstream service dependencies
 - High-traffic service interactions
@@ -10,58 +12,13 @@ By modeling service-to-service calls as a graph, we can easily analyze:
 
 This demo intentionally focuses on a **clean and reproducible service-level view** (simple v1). It can be extended later to span-level graphs or critical path analysis.
 
-
+**Overview:**
+- **`docker-compose.yaml`**: Starts PostgreSQL and PuppyGraph.
+- **`data/`**: The trace snapshot as CSV files, and `init.sql`, which loads them into PostgreSQL when the container first starts.
+- **`schema.json`**: The PuppyGraph schema that maps the PostgreSQL tables to a graph.
 
 ## Prerequisites
 - Docker
-- Docker Compose
-- Python 3
-
-## Deployment (Generate Trace Data)
-Start the OpenTelemetry Demo stack (with OpenSearch enabled in this environment):
-
-```bash
-docker compose up -d
-```
-
-Generate traffic via either:
-- The demo frontend UI (open in browser and click around), or
-- The built-in load generator:
-
-```bash
-docker compose up -d load-generator
-```
-
-This will produce OpenTelemetry traces stored in OpenSearch.
-
-## Data Preparation (Export CSVs)
-
-### 1) Export service dependency CSVs from OpenSearch
-
-Run the export script:
-
-```bash
-python3 tools/export_spans_from_opensearch.py
-```
-
-This script:
-- Reads OpenTelemetry spans from OpenSearch (`otel-traces-*`)
-- Builds span parent/child relationships
-- Aggregates them into service-level dependencies
-- Produces the following files:
-  - `exports/services.csv`
-  - `exports/service_edges.csv`
-
-### 2) Copy CSVs into this demo directory
-
-From the OpenTelemetry demo repo root:
-
-```bash
-cp exports/services.csv exports/service_edges.csv \
-  ~/work/puppygraph-getting-started/use-case-demos/otel-service-dependency/data/
-```
-
-Note: This demo repository only includes the derived CSVs + schema + README to keep the scope focused on graph modeling.
 
 ## Directory Structure
 
@@ -76,6 +33,23 @@ otel-service-dependency/
 ├── schema.json
 └── README.md
 ```
+
+## Deployment
+
+From this directory, start PostgreSQL and PuppyGraph:
+
+```bash
+docker compose up -d
+```
+
+PostgreSQL loads the CSV files from `data/` the first time it starts.
+
+## PuppyGraph Setup
+
+1. Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
+   - Username: `puppygraph`
+   - Password: `puppygraph123`
+2. Upload the schema: on the **Upload Schema** card, click **Upload JSON**, then **Select Schema File**, choose `schema.json` and click **Upload**.
 
 ## Modeling the Graph
 
@@ -136,13 +110,24 @@ ORDER BY avg_latency_ms DESC
 LIMIT 5
 ```
 
-## Cleanup (OpenTelemetry Demo)
+## Cleanup and Teardown
 
-If you started the OpenTelemetry demo stack and want to stop everything:
+To stop and remove the containers and the loaded data:
 
 ```bash
-docker compose down --volumes --remove-orphans
+docker compose down -v
 ```
+
+## About the Data Snapshot
+
+The CSV files in `data/` were produced from the [OpenTelemetry Demo](https://github.com/open-telemetry/opentelemetry-demo) as follows. These steps are background only; you do not need to repeat them to run this demo.
+
+1. The OpenTelemetry Demo was run with traces stored in OpenSearch, and traffic was generated with its built-in load generator.
+2. Spans were read from OpenSearch (`otel-traces-*`) and linked by their parent/child relationships.
+3. Each call from one service to another was aggregated into one row of `service_edges.csv`, with the number of calls (`call_count`) and their average latency in milliseconds (`avg_latency_ms`). `services.csv` lists the services.
+4. `service_metrics.csv` holds per-service span counts and latencies from the same traces. It is not part of the graph schema.
+
+The snapshot only covers the calls captured during that run, so a few services have no edges (for example `quote` and `image-provider`). The calls to `flagd` with an average latency of around 600,000 ms are its long-lived streaming connections, not slow requests.
 
 ## Notes
 - This demo stays at the service level for clarity and reproducibility.
