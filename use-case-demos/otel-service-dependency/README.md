@@ -21,6 +21,7 @@ By modeling service-to-service calls as a graph, we can easily analyze:
 ## Prerequisites:
 
 - Docker
+- An [Anthropic API key](https://console.anthropic.com/) (optional), to ask questions in natural language with PuppyGraph AI
 
 ## Deployment
 
@@ -59,7 +60,23 @@ curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --u
 
 ## Querying the Graph
 
-Navigate to the Query panel on the left side and select **Cypher**. Queries that return a path are drawn on the **Graph** tab; queries that return columns appear on the **Table** tab.
+You can query the graph in two ways: ask questions in natural language with PuppyGraph AI, or write Cypher yourself in the Query panel.
+
+### Using PuppyGraph AI
+
+PuppyGraph AI is a built-in chatbot that turns natural language questions into Cypher, runs them over the graph, and shows the generated query along with the results.
+
+1. Click **AI** in the left panel.
+2. The first time, enter your Claude API key and click **Save & Continue**. You can update the key later in **Settings**.
+3. Ask a question about the services, for example:
+
+- "What data do I have?"
+- "Which services depend on product-catalog, directly or through other services?"
+- "What are the slowest service-to-service calls?"
+
+### Using the Query Panel
+
+To run the example Cypher queries below yourself, navigate to the Query panel on the left side and select **Cypher**. Queries that return a path are drawn on the **Graph** tab; queries that return columns appear on the **Table** tab.
 
 After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization.
 You can do this by clicking the **Clear Canvas** button located in the top-right corner of the page.
