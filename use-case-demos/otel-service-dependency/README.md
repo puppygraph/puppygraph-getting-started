@@ -66,8 +66,11 @@ Directory Structure
 
 otel-service-dependency/
 ├── data/
+│   ├── init.sql
 │   ├── services.csv
-│   └── service_edges.csv
+│   ├── service_edges.csv
+│   └── service_metrics.csv
+├── docker-compose.yaml
 ├── schema.json
 └── README.md
 
