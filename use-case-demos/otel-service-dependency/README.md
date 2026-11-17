@@ -68,8 +68,7 @@ otel-service-dependency/
 ├── data/
 │   ├── services.csv
 │   └── service_edges.csv
-├── schema/
-│   └── graph.yaml
+├── schema.json
 └── README.md
 
 
@@ -78,7 +77,7 @@ otel-service-dependency/
 Modeling the Graph
 
 The graph schema is defined in:
-	•	schema/graph.yaml
+	•	schema.json (PuppyGraph schema; its catalog points at a PostgreSQL database holding the two CSVs)
 
 Mapping:
 	•	Each row in data/services.csv becomes a Service vertex
