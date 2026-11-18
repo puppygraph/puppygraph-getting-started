@@ -142,14 +142,13 @@ ORDER BY conversion_pct DESC
 LIMIT 10
 ```
 
-6. See where shoppers go after the basket, split by whether the visit ended in a purchase
+6. See where shoppers go after the basket, counting visits that ended in a purchase and visits that did not
 
 ```cypher
-MATCH (:Page {page_path: '/basket.html'})-[r:NEXT]->(next:Page)
-MATCH (s:Session {session_id: r.session_id})
+MATCH (:Page {page_path: '/basket.html'})-[l:LINKS_TO]->(next:Page)
 RETURN next.page_path AS next_page,
-       sum(CASE WHEN s.purchased THEN 1 ELSE 0 END) AS buyers,
-       sum(CASE WHEN s.purchased THEN 0 ELSE 1 END) AS non_buyers
+       l.buyer_sessions AS buyers,
+       l.sessions - l.buyer_sessions AS non_buyers
 ORDER BY non_buyers DESC
 LIMIT 10
 ```
