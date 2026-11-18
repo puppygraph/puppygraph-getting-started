@@ -2,15 +2,16 @@
 
 ## Summary
 
-This demo shows how **OpenTelemetry trace data** can be transformed into a **service-level dependency graph** using **PuppyGraph**.
-The data is a pre-built snapshot of traces from the [OpenTelemetry Demo](https://github.com/open-telemetry/opentelemetry-demo), a sample microservices web shop maintained by the OpenTelemetry project, aggregated into one row per service and one row per service-to-service call.
-This demo uses PostgreSQL to store the snapshot.
+In a microservices system, one slow or failing service can affect every service that calls it, directly or through a chain of other services. This demo uses PuppyGraph to model service-to-service calls as a **dependency graph**, so you can follow those chains: find everything that depends on a service, see how far an outage would spread, and spot where latency builds up.
 
 By modeling service-to-service calls as a graph, we can easily analyze:
 
 - Upstream and downstream service dependencies
 - High-traffic service interactions
 - Potential latency bottlenecks across microservices
+
+The data is a pre-built snapshot of traces from the [OpenTelemetry Demo](https://github.com/open-telemetry/opentelemetry-demo), a sample microservices web shop maintained by the OpenTelemetry project, aggregated into one row per service and one row per service-to-service call.
+This demo uses PostgreSQL to store the snapshot.
 
 **Overview:**
 
@@ -21,7 +22,7 @@ By modeling service-to-service calls as a graph, we can easily analyze:
 ## Prerequisites:
 
 - Docker
-- An [Anthropic API key](https://console.anthropic.com/) (optional), to ask questions in natural language with PuppyGraph AI
+- An API key for an AI model provider (optional), to ask questions in natural language with PuppyGraph AI. See the [PuppyGraph AI documentation](https://docs.puppygraph.com/ai/puppygraph-ai/) for supported providers.
 
 ## Deployment
 
@@ -67,7 +68,7 @@ You can query the graph in two ways: ask questions in natural language with Pupp
 PuppyGraph AI is a built-in chatbot that turns natural language questions into Cypher, runs them over the graph, and shows the generated query along with the results.
 
 1. Click **AI** in the left panel.
-2. The first time, enter your Claude API key and click **Save & Continue**. You can update the key later in **Settings**.
+2. The first time, enter your API key and click **Save & Continue**. You can update the key later in **Settings**. PuppyGraph AI uses Anthropic's Claude models by default; to use an OpenAI-style API or your own model endpoint, see the [PuppyGraph AI documentation](https://docs.puppygraph.com/ai/puppygraph-ai/).
 3. Ask a question about the services, for example:
 
 - "What data do I have?"
