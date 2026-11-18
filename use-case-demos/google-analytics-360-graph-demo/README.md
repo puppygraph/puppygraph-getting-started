@@ -8,6 +8,8 @@ A visit to an online store is a path: a visitor lands on a page, moves from page
 By modeling page views as a graph, we can easily analyze:
 
 - The full journey of any single visit
+- The checkout funnel buyers follow from basket to order
+- Where buyers enter the site, and how often they come back before buying
 - Which landing pages convert best
 - The steps visitors take right before completing an order
 - Where shoppers go after the basket when they don't buy
@@ -26,9 +28,12 @@ This demo uses MySQL to store the data.
 | Element | Source table | Description |
 | --- | --- | --- |
 | `Page` vertex | `pages` | One per page path, with hit count, number of visits, average seconds on page, and entrance and exit rates. |
+| `Visitor` vertex | `visitors` | One per visitor, with the number of visits that day and total revenue. |
 | `Session` vertex | `sessions` | One per visit, with device, browser, country, hit count, `revenue` in US dollars and `purchased`. |
+| `HAD_VISIT` edge | `sessions` | From a `Visitor` to each of their visits. |
 | `LANDED_ON` edge | `landings` | From a `Session` to the first page of that visit. |
 | `NEXT` edge | `transitions` | From one `Page` to the next page viewed in the same visit. `session_id` says which visit it belongs to, and `step` numbers the moves within the visit (1, 2, 3, ...). Repeated hits on the same page are skipped. |
+| `LINKS_TO` edge | `page_links` | From one `Page` to another, one per pair of pages: `moves` counts the `NEXT` moves between them, `sessions` the visits that made the move, and `buyer_sessions` those visits that ended in a purchase. Use it to draw navigation without one line per move. |
 
 GA360 repeats a visit's total revenue on every hit of that visit, so `init.sql` stores revenue once per visit on the `Session` vertex. A visit is identified by `fullVisitorId` plus `visitId`, because `visitId` alone is the visit's start time and can be shared by different visitors.
 
@@ -92,10 +97,13 @@ PuppyGraph AI is a built-in chatbot that turns natural language questions into C
 - "What data do I have?"
 - "Which landing pages lead to the most purchases?"
 - "Show the journey of the visit with the highest revenue."
+- "Which buyers visited the store more than once?"
 
 ### Using the Query Panel
 
 To run the example Cypher queries below yourself, navigate to the Query panel on the left side and select **Cypher**. Queries that return a path are drawn on the **Graph** tab; queries that return columns appear on the **Table** tab.
+
+Pages and visits appear as dots on the **Graph** tab. Click one to see its properties, such as `page_path`.
 
 After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization.
 You can do this by clicking the **Clear Canvas** button located in the top-right corner of the page.
@@ -112,7 +120,32 @@ WHERE r.session_id = s.session_id
 RETURN p
 ```
 
-2. Compare purchases and revenue by device
+2. Show where buyers enter the site: each visit that ended in a purchase, linked to its first page
+
+```cypher
+MATCH p = (s:Session)-[:LANDED_ON]->(:Page)
+WHERE s.purchased
+RETURN p
+```
+
+3. Show buyers who visited more than once that day, with all of their visits and the page each visit started on
+
+```cypher
+MATCH (v:Visitor)-[:HAD_VISIT]->(b:Session)
+WHERE b.purchased AND v.sessions >= 2
+MATCH p = (v)-[:HAD_VISIT]->(:Session)-[:LANDED_ON]->(:Page)
+RETURN p
+```
+
+4. Draw the checkout funnel: the routes from the basket to a completed order, keeping only page links used by at least 3 buyers
+
+```cypher
+MATCH p = (:Page {page_path: '/basket.html'})-[:LINKS_TO*1..4]->(:Page {page_path: '/ordercompleted.html'})
+WHERE all(l IN relationships(p) WHERE l.buyer_sessions >= 3)
+RETURN p
+```
+
+5. Compare purchases and revenue by device
 
 ```cypher
 MATCH (s:Session)
@@ -121,7 +154,7 @@ RETURN s.device AS device, count(s) AS purchases, round(sum(s.revenue), 2) AS re
 ORDER BY revenue DESC
 ```
 
-3. Find the landing pages with the highest conversion rate, among pages that started at least 20 visits
+6. Find the landing pages with the highest conversion rate, among pages that started at least 20 visits
 
 ```cypher
 MATCH (s:Session)-[:LANDED_ON]->(p:Page)
@@ -133,7 +166,7 @@ ORDER BY conversion_pct DESC
 LIMIT 10
 ```
 
-4. Find the two pages visitors viewed right before completing an order. The `WHERE` clause keeps only moves made one after the other in the same visit.
+7. Find the two pages visitors viewed right before completing an order. The `WHERE` clause keeps only moves made one after the other in the same visit.
 
 ```cypher
 MATCH (a:Page)-[r1:NEXT]->(b:Page)-[r2:NEXT]->(:Page {page_path: '/ordercompleted.html'})
@@ -145,7 +178,7 @@ LIMIT 10
 
 To see the same paths drawn on the **Graph** tab, replace the `RETURN` clause with `RETURN p` and start the pattern with `MATCH p = `.
 
-5. See where shoppers go after the basket, split by whether the visit ended in a purchase
+8. See where shoppers go after the basket, split by whether the visit ended in a purchase
 
 ```cypher
 MATCH (:Page {page_path: '/basket.html'})-[r:NEXT]->(next:Page)

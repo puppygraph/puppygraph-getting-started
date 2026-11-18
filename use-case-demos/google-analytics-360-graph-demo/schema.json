@@ -200,6 +200,55 @@
           "type": "BOOLEAN"
         }
       ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "visitors",
+          "mappedField": [
+            {
+              "sourceFieldName": "visitor_id",
+              "targetFieldName": "puppy_id_visitor_id"
+            },
+            {
+              "sourceFieldName": "visitor_id",
+              "targetFieldName": "visitor_id"
+            },
+            {
+              "sourceFieldName": "sessions",
+              "targetFieldName": "sessions"
+            },
+            {
+              "sourceFieldName": "revenue",
+              "targetFieldName": "revenue"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "Visitor",
+      "id": [
+        {
+          "name": "puppy_id_visitor_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "visitor_id",
+          "type": "STRING"
+        },
+        {
+          "name": "sessions",
+          "type": "INT"
+        },
+        {
+          "name": "revenue",
+          "type": "DOUBLE"
+        }
+      ]
     }
   ],
   "edge": [
@@ -308,6 +357,123 @@
         },
         {
           "name": "step",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "sessions",
+          "mappedField": [
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_id_session_id"
+            },
+            {
+              "sourceFieldName": "visitor_id",
+              "targetFieldName": "puppy_from_visitor_id"
+            },
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_to_session_id"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "HAD_VISIT",
+      "fromNodeLabel": "Visitor",
+      "toNodeLabel": "Session",
+      "id": [
+        {
+          "name": "puppy_id_session_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_visitor_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_session_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": []
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "page_links",
+          "mappedField": [
+            {
+              "sourceFieldName": "link_id",
+              "targetFieldName": "puppy_id_link_id"
+            },
+            {
+              "sourceFieldName": "from_page",
+              "targetFieldName": "puppy_from_from_page"
+            },
+            {
+              "sourceFieldName": "to_page",
+              "targetFieldName": "puppy_to_to_page"
+            },
+            {
+              "sourceFieldName": "moves",
+              "targetFieldName": "moves"
+            },
+            {
+              "sourceFieldName": "sessions",
+              "targetFieldName": "sessions"
+            },
+            {
+              "sourceFieldName": "buyer_sessions",
+              "targetFieldName": "buyer_sessions"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "LINKS_TO",
+      "fromNodeLabel": "Page",
+      "toNodeLabel": "Page",
+      "id": [
+        {
+          "name": "puppy_id_link_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_from_page",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_to_page",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "moves",
+          "type": "INT"
+        },
+        {
+          "name": "sessions",
+          "type": "INT"
+        },
+        {
+          "name": "buyer_sessions",
           "type": "INT"
         }
       ]

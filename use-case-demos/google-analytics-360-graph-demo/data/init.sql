@@ -141,3 +141,37 @@ FROM (
     FROM sample_data
 ) h
 WHERE from_page IS NOT NULL AND from_page <> page_path;
+
+-- LINKS_TO edges: one row per pair of pages, summing the NEXT moves between
+-- them. Used to draw the site's navigation without one line per move.
+CREATE TABLE page_links (
+    link_id VARCHAR(520) PRIMARY KEY,
+    from_page VARCHAR(255),
+    to_page VARCHAR(255),
+    moves INT,
+    sessions INT,
+    buyer_sessions INT
+);
+INSERT INTO page_links
+SELECT
+    CONCAT(t.from_page, ' -> ', t.to_page),
+    t.from_page,
+    t.to_page,
+    COUNT(*),
+    COUNT(DISTINCT t.session_id),
+    COUNT(DISTINCT CASE WHEN s.purchased THEN t.session_id END)
+FROM transitions t
+JOIN sessions s ON s.session_id = t.session_id
+GROUP BY t.from_page, t.to_page;
+
+-- Visitor vertices: one row per visitor. HAD_VISIT edges are read from the
+-- sessions table (visitor_id -> session_id).
+CREATE TABLE visitors (
+    visitor_id VARCHAR(32) PRIMARY KEY,
+    sessions INT,
+    revenue DOUBLE
+);
+INSERT INTO visitors
+SELECT visitor_id, COUNT(*), ROUND(SUM(revenue), 2)
+FROM sessions
+GROUP BY visitor_id;
