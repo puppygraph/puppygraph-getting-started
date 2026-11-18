@@ -1,144 +1,166 @@
-# PuppyGraph Demo GA360 Analytics
+# Google Analytics 360 Customer Journey Graph Demo
 
-## Prerequisites
-- `./docker-compose.yaml`
-- Data file at `./data/sample_data.csv`
-- SQL files (`./sql-queries/hit_tables.sql`, `./sql-queries/nodes.sql`, `./sql-queries/edges.sql`
-- Assumed MySQL Root Password: `mysql123`
-- Assumed MySQL Database Name: `journey`
+## Summary
 
----
-## 1.  Launch Containers
-Launch PuppyGraph and MySQL container defined in docker-compose.yml
+This demo showcases how to analyze website customer journeys using PuppyGraph's graph querying capabilities, running directly over MySQL tables with no ETL required.
+A visit to an online store is a path: a visitor lands on a page, moves from page to page, and either buys something or leaves. PuppyGraph turns those paths into a graph, so you can follow a single visitor's journey, see which pages lead to a purchase, and find where shoppers drop out of checkout.
+
+By modeling page views as a graph, we can easily analyze:
+
+- The full journey of any single visit
+- Which landing pages convert best
+- The steps visitors take right before completing an order
+- Where shoppers go after the basket when they don't buy
+
+The data is one day (2017-08-01) of the [Google Analytics 360 sample dataset](https://support.google.com/analytics/answer/7586738) for the Google Merchandise Store, exported from the BigQuery public table `bigquery-public-data.google_analytics_sample.ga_sessions_20170801` with one row per hit (13,233 hits across 2,556 visits).
+This demo uses MySQL to store the data.
+
+**Overview:**
+
+- **`docker-compose.yaml`**: Defines the docker services needed to run the demo. This includes both the MySQL database and the PuppyGraph instance.
+- **`data/`**: Contains the GA360 export as `sample_data.csv` and the MySQL setup script `init.sql`, which loads the CSV and builds the tables the graph is mapped from.
+- **`schema.json`**: Maps the tables to the graph described below.
+
+**Graph model:**
+
+| Element | Source table | Description |
+| --- | --- | --- |
+| `Page` vertex | `pages` | One per page path, with hit count, number of visits, average seconds on page, and entrance and exit rates. |
+| `Session` vertex | `sessions` | One per visit, with device, browser, country, hit count, `revenue` in US dollars and `purchased`. |
+| `LANDED_ON` edge | `landings` | From a `Session` to the first page of that visit. |
+| `NEXT` edge | `transitions` | From one `Page` to the next page viewed in the same visit. `session_id` says which visit it belongs to, and `step` numbers the moves within the visit (1, 2, 3, ...). Repeated hits on the same page are skipped. |
+
+GA360 repeats a visit's total revenue on every hit of that visit, so `init.sql` stores revenue once per visit on the `Session` vertex. A visit is identified by `fullVisitorId` plus `visitId`, because `visitId` alone is the visit's start time and can be shared by different visitors.
+
+## Prerequisites:
+
+- Docker
+- An API key for an AI model provider (optional), to ask questions in natural language with PuppyGraph AI. See the [PuppyGraph AI documentation](https://docs.puppygraph.com/ai/puppygraph-ai/) for supported providers.
+
+## Deployment
+
+- Start MySQL and PuppyGraph by running:
+
 ```bash
 docker compose up -d
 ```
 
----
-
-## 2. Copy Data and Create/Load Schema (Execute Inside MySQL Shell)
-
- 2a. Copy the CSV file to the MySQL container's secure directory
-```bash
-docker cp ./data/sample_data.csv mysql-server:/var/lib/mysql-files/sample_data.csv
-```
-
- 2b. Create Tables and Import Data
-```bash
-docker exec -it mysql-server mysql -uroot -pmysql123
-```
--- Database Creation
-``` bash
-CREATE DATABASE journey;
-USE journey;
-```
-
--- Table Creation (as provided)
-```bash
-CREATE TABLE sample_data (
-    visitId bigint,
-    visitNumber int,
-    visitStartTime int,
-    date date,
-    fullVisitorId varchar(255),
-    total_visits int,
-    total_hits int,
-    total_pageviews int,
-    total_bounces int,
-    total_session_quality int,
-    total_revenue bigint,
-    source varchar(255),
-    medium varchar(255),
-    campaign varchar(255),
-    keyword varchar(255),
-    device varchar(50),
-    browser varchar(50),
-    operatingSystem varchar(50),
-    country varchar(100),
-    city varchar(100),
-    hit_number int,
-    page_path text,
-    page_title text,
-    is_entrance varchar(5),
-    is_exit varchar(5),
-    time int,
-    action_type int,
-    action_step int,
-    transaction_id varchar(255),
-    event_category varchar(255),
-    event_action varchar(255),
-    event_label varchar(255),
-    product_names text,
-    product_skus text,
-    product_categories text
-);
-
-```
-
--- Data Loading
-```bash
-LOAD DATA INFILE '/var/lib/mysql-files/sample_data.csv'
-INTO TABLE sample_data
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-```
-
-# Grant user permissions
-```bash
-GRANT ALL PRIVILEGES ON journey.* TO 'mysqluser'@'%';
-FLUSH PRIVILEGES;
-exit
-```
-
----
-
-## 3. Run Preparatory SQL Files (Derive Graph Tables)
+Example output:
 
 ```bash
-docker exec -i mysql-server mysql -uroot -pmysql123 journey < ./sql-queries/hit_tables.sql
-docker exec -i mysql-server mysql -uroot -pmysql123 journey < ./sql-queries/nodes.sql
-docker exec -i mysql-server mysql -uroot -pmysql123 journey < ./sql-queries/edges.sql
-
+[+] Running 3/3
+✔ Network puppy-mysql     Created
+✔ Container mysql         Started
+✔ Container puppygraph    Started
 ```
 
----
+MySQL runs `data/init.sql` the first time it starts, which takes about 10 seconds. It is done when the following command prints `ready for connections` with `port: 3306`:
 
-## 4. PuppyGraph Configuration Steps (Manual Web UI)
+```bash
+docker logs mysql 2>&1 | grep "port: 3306"
+```
 
-1.  **Access UI:** Go to **`http://localhost:8081`**.
-    * **Username:** `puppygraph`
-    * **Password:** `puppygraph123`
+## Modeling the Graph
 
-2.  **Create Schema/Catalog:**
-    * Click **"Create Schema"**.
-    * **Engine:** `mysql8`
-    * **Name:** *[Any name]*
-    * **Username:** `mysqluser`
-    * **Password:** `mysqlpassword`
-    * **JDBC Connection String:** `jdbc:mysql://mysql:3306/journey?allowPublicKeyRetrieval=true`
-    * **Driver Class:** `com.mysql.cj.jdbc.Driver`
-    * **URL for downloading driver:** `https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar`
-    * Click **Save and Submit**.
+1. Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
 
-3.  **Add Nodes:**
-    * Click **"Add Node from Database"**.
-    * Select database `journey` and table `nodes`.
-    * Label name: `nodes`
-    * Click **"Add Node"**.
+- Username: `puppygraph`
+- Password: `puppygraph123`
 
-4.  **Add Edges:**
-    * Click **"Add Edge from Database"**.
-    * Select From: `nodes` To: `nodes`.
-    * Label name: `edges`
-    * Select database `journey` and table `edges`.
-    * **From Key:** `source_node_id`
-    * **To Key:** `target_node_id`
-    * Click **Submit**.
+2. Upload the schema:
 
----
+- On the **Upload Schema** card, click **Upload JSON**, then **Select Schema File**, choose `schema.json` and click **Upload**.
+- Alternatively, you can upload the schema via the following command:
 
-## 5. Run Demo Queries
+```bash
+curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --user "puppygraph:puppygraph123" localhost:8081/schema
+```
 
-Proceed to the PuppyGraph Query Editor to run your demo Gremlin queries.
+PuppyGraph downloads the MySQL JDBC driver from Maven Central the first time the schema is uploaded, using the `driverUrl` in `schema.json`.
+
+## Querying the Graph
+
+You can query the graph in two ways: ask questions in natural language with PuppyGraph AI, or write Cypher yourself in the Query panel.
+
+### Using PuppyGraph AI
+
+PuppyGraph AI is a built-in chatbot that turns natural language questions into Cypher, runs them over the graph, and shows the generated query along with the results.
+
+1. The first time, click **Add API Key** under the question box on the **Home** page and save your key. You can update the key later in **Settings**. PuppyGraph AI uses Anthropic's Claude models by default; to use an OpenAI-style API or your own model endpoint, see the [PuppyGraph AI documentation](https://docs.puppygraph.com/ai/puppygraph-ai/).
+2. Type a question in the box on the **Home** page, or click **Ask AI** on the **Graph** page. For example:
+
+- "What data do I have?"
+- "Which landing pages lead to the most purchases?"
+- "Show the journey of the visit with the highest revenue."
+
+### Using the Query Panel
+
+To run the example Cypher queries below yourself, navigate to the Query panel on the left side and select **Cypher**. Queries that return a path are drawn on the **Graph** tab; queries that return columns appear on the **Table** tab.
+
+After each query, remember to clear the graph panel before executing the next query to maintain a clean visualization.
+You can do this by clicking the **Clear Canvas** button located in the top-right corner of the page.
+
+Example Queries:
+
+1. Show the journey of the visit with the highest revenue
+
+```cypher
+MATCH (s:Session)
+WITH s ORDER BY s.revenue DESC LIMIT 1
+MATCH p = (:Page)-[r:NEXT]->(:Page)
+WHERE r.session_id = s.session_id
+RETURN p
+```
+
+2. Compare purchases and revenue by device
+
+```cypher
+MATCH (s:Session)
+WHERE s.purchased
+RETURN s.device AS device, count(s) AS purchases, round(sum(s.revenue), 2) AS revenue
+ORDER BY revenue DESC
+```
+
+3. Find the landing pages with the highest conversion rate, among pages that started at least 20 visits
+
+```cypher
+MATCH (s:Session)-[:LANDED_ON]->(p:Page)
+WITH p, count(s) AS sessions, sum(CASE WHEN s.purchased THEN 1 ELSE 0 END) AS purchases
+WHERE sessions >= 20
+RETURN p.page_path AS landing_page, sessions, purchases,
+       round(100.0 * purchases / sessions, 1) AS conversion_pct
+ORDER BY conversion_pct DESC
+LIMIT 10
+```
+
+4. Find the two pages visitors viewed right before completing an order. The `WHERE` clause keeps only moves made one after the other in the same visit.
+
+```cypher
+MATCH (a:Page)-[r1:NEXT]->(b:Page)-[r2:NEXT]->(:Page {page_path: '/ordercompleted.html'})
+WHERE r1.session_id = r2.session_id AND r2.step = r1.step + 1
+RETURN a.page_path AS two_steps_before, b.page_path AS one_step_before, count(*) AS orders
+ORDER BY orders DESC
+LIMIT 10
+```
+
+To see the same paths drawn on the **Graph** tab, replace the `RETURN` clause with `RETURN p` and start the pattern with `MATCH p = `.
+
+5. See where shoppers go after the basket, split by whether the visit ended in a purchase
+
+```cypher
+MATCH (:Page {page_path: '/basket.html'})-[r:NEXT]->(next:Page)
+MATCH (s:Session {session_id: r.session_id})
+RETURN next.page_path AS next_page,
+       sum(CASE WHEN s.purchased THEN 1 ELSE 0 END) AS buyers,
+       sum(CASE WHEN s.purchased THEN 0 ELSE 1 END) AS non_buyers
+ORDER BY non_buyers DESC
+LIMIT 10
+```
+
+## Cleanup and Teardown
+
+- To stop and remove the containers and the loaded data, run:
+
+```bash
+docker compose down -v
+```
