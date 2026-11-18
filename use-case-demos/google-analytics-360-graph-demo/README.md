@@ -11,7 +11,6 @@ By modeling page views as a graph, we can easily analyze:
 - The checkout funnel buyers follow from basket to order
 - Where buyers enter the site, and how often they come back before buying
 - Which landing pages convert best
-- The steps visitors take right before completing an order
 - Where shoppers go after the basket when they don't buy
 
 The data is one day (2017-08-01) of the [Google Analytics 360 sample dataset](https://support.google.com/analytics/answer/7586738) for the Google Merchandise Store, exported from the BigQuery public table `bigquery-public-data.google_analytics_sample.ga_sessions_20170801` with one row per hit (13,233 hits across 2,556 visits).
@@ -145,16 +144,7 @@ WHERE all(l IN relationships(p) WHERE l.buyer_sessions >= 3)
 RETURN p
 ```
 
-5. Compare purchases and revenue by device
-
-```cypher
-MATCH (s:Session)
-WHERE s.purchased
-RETURN s.device AS device, count(s) AS purchases, round(sum(s.revenue), 2) AS revenue
-ORDER BY revenue DESC
-```
-
-6. Find the landing pages with the highest conversion rate, among pages that started at least 20 visits
+5. Find the landing pages with the highest conversion rate, among pages that started at least 20 visits
 
 ```cypher
 MATCH (s:Session)-[:LANDED_ON]->(p:Page)
@@ -166,19 +156,7 @@ ORDER BY conversion_pct DESC
 LIMIT 10
 ```
 
-7. Find the two pages visitors viewed right before completing an order. The `WHERE` clause keeps only moves made one after the other in the same visit.
-
-```cypher
-MATCH (a:Page)-[r1:NEXT]->(b:Page)-[r2:NEXT]->(:Page {page_path: '/ordercompleted.html'})
-WHERE r1.session_id = r2.session_id AND r2.step = r1.step + 1
-RETURN a.page_path AS two_steps_before, b.page_path AS one_step_before, count(*) AS orders
-ORDER BY orders DESC
-LIMIT 10
-```
-
-To see the same paths drawn on the **Graph** tab, replace the `RETURN` clause with `RETURN p` and start the pattern with `MATCH p = `.
-
-8. See where shoppers go after the basket, split by whether the visit ended in a purchase
+6. See where shoppers go after the basket, split by whether the visit ended in a purchase
 
 ```cypher
 MATCH (:Page {page_path: '/basket.html'})-[r:NEXT]->(next:Page)
