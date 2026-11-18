@@ -8,7 +8,7 @@ A visit to an online store is a path: a visitor lands on a page, moves from page
 By modeling page views as a graph, we can easily analyze:
 
 - The full journey of any single visit
-- The checkout funnel buyers follow from basket to order
+- The routes buyers take from basket to order
 - Where buyers enter the site, and how often they come back before buying
 - Which landing pages convert best
 - Where shoppers go after the basket when they don't buy
@@ -122,11 +122,14 @@ MATCH p = (v)-[:HAD_VISIT]->(:Session)-[:LANDED_ON]->(:Page)
 RETURN p
 ```
 
-4. Draw the checkout funnel: the routes from the basket to a completed order, keeping only page links used by at least 3 buyers
+4. Show the paths buyers took from the basket to a completed order, keeping only moves made in the same visit
 
 ```cypher
-MATCH p = (:Page {page_path: '/basket.html'})-[:LINKS_TO*1..4]->(:Page {page_path: '/ordercompleted.html'})
-WHERE all(l IN relationships(p) WHERE l.buyer_sessions >= 3)
+MATCH p = (:Page {page_path: '/basket.html'})-[:NEXT*3..4]->(:Page {page_path: '/ordercompleted.html'})
+WITH p, relationships(p) AS m
+WHERE all(r IN m WHERE r.session_id = head(m).session_id)
+  AND reduce(prev = head(m).step - 1, r IN m |
+             CASE WHEN r.step = prev + 1 THEN r.step ELSE -1 END) <> -1
 RETURN p
 ```
 

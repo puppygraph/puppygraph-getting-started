@@ -62,21 +62,34 @@ CREATE TABLE pages (
     entrance_rate DOUBLE,
     exit_rate DOUBLE
 );
+-- Time on page treats consecutive hits on the same page as one stay, which
+-- ends when the visitor moves to another page. The last page of a visit has
+-- no end time and is left out of the average.
 INSERT INTO pages
 SELECT
-    page_path,
-    ANY_VALUE(page_title),
+    h.page_path,
+    ANY_VALUE(h.page_title),
     COUNT(*),
-    COUNT(DISTINCT session_id),
-    ROUND(AVG(next_time - time) / 1000, 1),
-    ROUND(SUM(is_entrance = 'true') / COUNT(*), 3),
-    ROUND(SUM(is_exit = 'true') / COUNT(*), 3)
-FROM (
-    SELECT session_id, page_path, page_title, is_entrance, is_exit, time,
-           LEAD(time) OVER (PARTITION BY session_id ORDER BY hit_number) AS next_time
-    FROM sample_data
-) h
-GROUP BY page_path;
+    COUNT(DISTINCT h.session_id),
+    stays.avg_seconds,
+    ROUND(SUM(h.is_entrance = 'true') / COUNT(*), 3),
+    ROUND(SUM(h.is_exit = 'true') / COUNT(*), 3)
+FROM sample_data h
+LEFT JOIN (
+    SELECT page_path, ROUND(AVG(next_stay_time - time) / 1000, 1) AS avg_seconds
+    FROM (
+        SELECT page_path, time,
+               LEAD(time) OVER (PARTITION BY session_id ORDER BY hit_number) AS next_stay_time
+        FROM (
+            SELECT session_id, hit_number, page_path, time,
+                   LAG(page_path) OVER (PARTITION BY session_id ORDER BY hit_number) AS prev_page
+            FROM sample_data
+        ) x
+        WHERE prev_page IS NULL OR prev_page <> page_path
+    ) s
+    GROUP BY page_path
+) stays ON stays.page_path = h.page_path
+GROUP BY h.page_path, stays.avg_seconds;
 
 -- Session vertices: one row per visit. GA360 repeats the visit's revenue
 -- (in micros) on every hit, so it is stored here once, in dollars.
