@@ -2,7 +2,8 @@
 
 ## Summary
 
-In a microservices system, one slow or failing service can affect every service that calls it, directly or through a chain of other services. This demo uses PuppyGraph to model service-to-service calls as a **dependency graph**, so you can follow those chains: find everything that depends on a service, see how far an outage would spread, and spot where latency builds up.
+This demo showcases how to map and analyze the dependencies between microservices using PuppyGraph's graph querying capabilities, running directly over PostgreSQL tables with no ETL required.
+In a microservices system, a slow or failing service affects every service that calls it, directly or through a chain of other services. PuppyGraph turns those chains into paths in a graph, so you can find everything that depends on a service, see how far an outage would spread, and spot where latency builds up.
 
 By modeling service-to-service calls as a graph, we can easily analyze:
 
