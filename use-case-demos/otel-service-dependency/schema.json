@@ -1,0 +1,123 @@
+{
+  "catalog": [
+    {
+      "name": "postgres_data",
+      "type": "postgresql",
+      "jdbc": {
+        "username": "postgres",
+        "password": "postgres123",
+        "jdbcUri": "jdbc:postgresql://postgres:5432/postgres",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "services",
+          "mappedField": [
+            {
+              "sourceFieldName": "service",
+              "targetFieldName": "puppy_id_service"
+            },
+            {
+              "sourceFieldName": "service",
+              "targetFieldName": "service_name"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "Service",
+      "id": [
+        {
+          "name": "puppy_id_service",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "service_name",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "postgres_data",
+          "schema": "public",
+          "table": "service_edges",
+          "mappedField": [
+            {
+              "sourceFieldName": "src_service",
+              "targetFieldName": "puppy_id_src_service"
+            },
+            {
+              "sourceFieldName": "dst_service",
+              "targetFieldName": "puppy_id_dst_service"
+            },
+            {
+              "sourceFieldName": "src_service",
+              "targetFieldName": "puppy_from_src_service"
+            },
+            {
+              "sourceFieldName": "dst_service",
+              "targetFieldName": "puppy_to_dst_service"
+            },
+            {
+              "sourceFieldName": "call_count",
+              "targetFieldName": "call_count"
+            },
+            {
+              "sourceFieldName": "avg_latency_ms",
+              "targetFieldName": "avg_latency_ms"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "CALLS",
+      "fromNodeLabel": "Service",
+      "toNodeLabel": "Service",
+      "id": [
+        {
+          "name": "puppy_id_src_service",
+          "type": "STRING"
+        },
+        {
+          "name": "puppy_id_dst_service",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_src_service",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_dst_service",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "call_count",
+          "type": "INT"
+        },
+        {
+          "name": "avg_latency_ms",
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  ]
+}
