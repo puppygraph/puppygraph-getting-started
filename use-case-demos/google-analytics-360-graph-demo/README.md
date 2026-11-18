@@ -20,21 +20,7 @@ This demo uses MySQL to store the data.
 
 - **`docker-compose.yaml`**: Defines the docker services needed to run the demo. This includes both the MySQL database and the PuppyGraph instance.
 - **`data/`**: Contains the GA360 export as `sample_data.csv` and the MySQL setup script `init.sql`, which loads the CSV and builds the tables the graph is mapped from.
-- **`schema.json`**: Maps the tables to the graph described below.
-
-**Graph model:**
-
-| Element | Source table | Description |
-| --- | --- | --- |
-| `Page` vertex | `pages` | One per page path, with hit count, number of visits, average seconds on page, and entrance and exit rates. |
-| `Visitor` vertex | `visitors` | One per visitor, with the number of visits that day and total revenue. |
-| `Session` vertex | `sessions` | One per visit, with device, browser, country, hit count, `revenue` in US dollars and `purchased`. |
-| `HAD_VISIT` edge | `sessions` | From a `Visitor` to each of their visits. |
-| `LANDED_ON` edge | `landings` | From a `Session` to the first page of that visit. |
-| `NEXT` edge | `transitions` | From one `Page` to the next page viewed in the same visit. `session_id` says which visit it belongs to, and `step` numbers the moves within the visit (1, 2, 3, ...). Repeated hits on the same page are skipped. |
-| `LINKS_TO` edge | `page_links` | From one `Page` to another, one per pair of pages: `moves` counts the `NEXT` moves between them, `sessions` the visits that made the move, and `buyer_sessions` those visits that ended in a purchase. Use it to draw navigation without one line per move. |
-
-GA360 repeats a visit's total revenue on every hit of that visit, so `init.sql` stores revenue once per visit on the `Session` vertex. A visit is identified by `fullVisitorId` plus `visitId`, because `visitId` alone is the visit's start time and can be shared by different visitors.
+- **`schema.json`**: Maps the tables to `Page`, `Session` and `Visitor` vertices and to the edges between them: `LANDED_ON` for a visit's first page, `NEXT` for each move between pages, `LINKS_TO` for page-to-page traffic, and `HAD_VISIT` for a visitor's visits.
 
 ## Prerequisites:
 
