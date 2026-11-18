@@ -149,7 +149,7 @@ MATCH (:Page {page_path: '/basket.html'})-[l:LINKS_TO]->(next:Page)
 RETURN next.page_path AS next_page,
        l.buyer_sessions AS buyers,
        l.sessions - l.buyer_sessions AS non_buyers
-ORDER BY non_buyers DESC
+ORDER BY non_buyers DESC, next_page
 LIMIT 10
 ```
 
