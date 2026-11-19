@@ -8,7 +8,6 @@ A visit to an online store is a path: a visitor lands on a page, moves from page
 By modeling page views as a graph, we can easily analyze:
 
 - The full journey of any single visit
-- The routes buyers take from basket to order
 - Where buyers enter the site, and how often they come back before buying
 - Which landing pages convert best
 - Where shoppers go after the basket when they don't buy
@@ -122,18 +121,7 @@ MATCH p = (v)-[:HAD_VISIT]->(:Session)-[:LANDED_ON]->(:Page)
 RETURN p
 ```
 
-4. Show the paths buyers took from the basket to a completed order, keeping only moves made in the same visit
-
-```cypher
-MATCH p = (:Page {page_path: '/basket.html'})-[:NEXT*3..4]->(:Page {page_path: '/ordercompleted.html'})
-WITH p, relationships(p) AS m
-WHERE all(r IN m WHERE r.session_id = head(m).session_id)
-  AND reduce(prev = head(m).step - 1, r IN m |
-             CASE WHEN r.step = prev + 1 THEN r.step ELSE -1 END) <> -1
-RETURN p
-```
-
-5. Find the landing pages with the highest conversion rate, among pages that started at least 20 visits
+4. Find the landing pages with the highest conversion rate, among pages that started at least 20 visits
 
 ```cypher
 MATCH (s:Session)-[:LANDED_ON]->(p:Page)
@@ -145,7 +133,7 @@ ORDER BY conversion_pct DESC
 LIMIT 10
 ```
 
-6. See where shoppers go after the basket, counting visits that ended in a purchase and visits that did not
+5. See where shoppers go after the basket, counting visits that ended in a purchase and visits that did not
 
 ```cypher
 MATCH (:Page {page_path: '/basket.html'})-[l:LINKS_TO]->(next:Page)
