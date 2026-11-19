@@ -66,10 +66,10 @@ docker exec -i spark /opt/spark/bin/pyspark < import_csv.py
 
 2. Upload the schema:
    - In the **Upload Graph Schema JSON** section, select the file `schema.json` and click **Upload**. When prompted whether to cache data after upload, select **Cache data only**.
-   - You can also upload the schema using `curl`:
+   - You can also upload the schema using `curl`. The `postUploadBehavior=load` parameter is the equivalent of **Cache data only**; without it the cached tables are created empty and queries return no rows:
 
         ```bash
-        curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --user "puppygraph:puppygraph123" localhost:8081/schema
+        curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --user "puppygraph:puppygraph123" "localhost:8081/schema?postUploadBehavior=load"
         ```
 
 ## Querying the Graph using Cypher

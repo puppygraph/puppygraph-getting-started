@@ -22,7 +22,7 @@ services:
       AWS_SECRET_ACCESS_KEY: password
     command: ["bash", "-lc", "tail -f /dev/null"]
   puppygraph:
-    image: puppygraph/puppygraph:1.0-preview
+    image: puppygraph/puppygraph:latest
     container_name: puppygraph
     networks:
       demo_net:

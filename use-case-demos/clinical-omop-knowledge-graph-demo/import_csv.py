@@ -40,7 +40,8 @@ tables = [
 ]
 
 for table, path in tables:
-    table_name = f"delta.`/delta/mimic/{table}`"
-    schema = spark.table(table_name).schema
+    location = f"/delta/mimic/{table}"
+    schema = spark.read.format("delta").load(location).schema
     df = spark.read.options(header=True).schema(schema).csv(path)
-    df.write.format("delta").mode("append").saveAsTable(table_name)
+    # Overwrite so that re-running the import does not duplicate rows
+    df.write.format("delta").mode("overwrite").save(location)
