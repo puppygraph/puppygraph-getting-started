@@ -1,352 +1,491 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "duckdb_data",
       "type": "duckdb",
       "jdbc": {
         "jdbcUri": "jdbc:duckdb:/data/data.duckdb",
-        "driverClass": "org.duckdb.DuckDBDriver"
+        "driverClass": "org.duckdb.DuckDBDriver",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "Patient",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "duckdb_data",
-            "schema": "main",
-            "table": "patients"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "String",
-                "field": "patient_id",
-                "alias": "patient_id"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "gender",
-              "alias": "gender"
-            },
-            {
-              "type": "Long",
-              "field": "birth_year",
-              "alias": "birth_year"
-            },
-            {
-              "type": "Long",
-              "field": "age",
-              "alias": "age"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Condition",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "duckdb_data",
-            "schema": "main",
-            "table": "conditions"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "String",
-                "field": "condition_code",
-                "alias": "condition_code"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "condition_display",
-              "alias": "condition_display"
-            },
-            {
-              "type": "String",
-              "field": "recorded_date",
-              "alias": "recorded_date"
-            },
-            {
-              "type": "String",
-              "field": "clinical_status",
-              "alias": "clinical_status"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Practitioner",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "duckdb_data",
-            "schema": "main",
-            "table": "practitioners"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "String",
-                "field": "practitioner_id",
-                "alias": "practitioner_id"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "name",
-              "alias": "name"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Medication",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "duckdb_data",
-            "schema": "main",
-            "table": "medication_requests"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "String",
-                "field": "drug_name",
-                "alias": "drug_name"
-              }
-            ]
-          },
-          "attributes": []
-        }
-      },
-      {
-        "label": "Observation",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "duckdb_data",
-            "schema": "main",
-            "table": "observations"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "String",
-                "field": "observation_code",
-                "alias": "observation_code"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "observation_display",
-              "alias": "observation_display"
-            },
-            {
-              "type": "String",
-              "field": "value_type",
-              "alias": "value_type"
-            },
-            {
-              "type": "String",
-              "field": "effective_date",
-              "alias": "effective_date"
-            },
-            {
-              "type": "Double",
-              "field": "value_numeric",
-              "alias": "value_numeric"
-            },
-            {
-              "type": "String",
-              "field": "value_text",
-              "alias": "value_text"
-            }
-          ]
-        }
-      }
-    ],
-    "edges": [
-      {
-        "label": "HAS_CONDITION",
-        "fromVertex": "Patient",
-        "toVertex": "Condition",
-        "tableSource": {
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "duckdb_data",
           "schema": "main",
-          "table": "conditions"
-        },
-        "id": {
-          "fields": [
+          "table": "patients",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "edge_id",
-              "alias": "edge_id"
+              "sourceFieldName": "patient_id",
+              "targetFieldName": "puppy_id_patient_id"
+            },
+            {
+              "sourceFieldName": "patient_id",
+              "targetFieldName": "patient_id"
+            },
+            {
+              "sourceFieldName": "gender",
+              "targetFieldName": "gender"
+            },
+            {
+              "sourceFieldName": "birth_year",
+              "targetFieldName": "birth_year"
+            },
+            {
+              "sourceFieldName": "age",
+              "targetFieldName": "age"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "String",
-              "field": "patient_id",
-              "alias": "patient_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "String",
-              "field": "condition_code",
-              "alias": "condition_code"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "String",
-            "field": "condition_display",
-            "alias": "condition_display"
-          }
-        ]
+        }
       },
-      {
-        "label": "TREATED_BY",
-        "fromVertex": "Patient",
-        "toVertex": "Practitioner",
-        "tableSource": {
+      "label": "Patient",
+      "id": [
+        {
+          "name": "puppy_id_patient_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "patient_id",
+          "type": "STRING"
+        },
+        {
+          "name": "gender",
+          "type": "STRING"
+        },
+        {
+          "name": "birth_year",
+          "type": "LONG"
+        },
+        {
+          "name": "age",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "duckdb_data",
           "schema": "main",
-          "table": "medication_requests"
-        },
-        "id": {
-          "fields": [
+          "table": "practitioners",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "edge_id",
-              "alias": "edge_id"
+              "sourceFieldName": "npi",
+              "targetFieldName": "puppy_id_npi"
+            },
+            {
+              "sourceFieldName": "npi",
+              "targetFieldName": "npi"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "String",
-              "field": "patient_id",
-              "alias": "patient_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "String",
-              "field": "practitioner_id",
-              "alias": "practitioner_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "String",
-            "field": "drug_name",
-            "alias": "drug_name"
-          }
-        ]
+        }
       },
-      {
-        "label": "TAKES",
-        "fromVertex": "Patient",
-        "toVertex": "Medication",
-        "tableSource": {
+      "label": "Practitioner",
+      "id": [
+        {
+          "name": "puppy_id_npi",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "npi",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "duckdb_data",
           "schema": "main",
-          "table": "medication_requests"
-        },
-        "id": {
-          "fields": [
+          "table": "condition_codes",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "edge_id",
-              "alias": "edge_id"
+              "sourceFieldName": "condition_code",
+              "targetFieldName": "puppy_id_condition_code"
+            },
+            {
+              "sourceFieldName": "condition_code",
+              "targetFieldName": "condition_code"
+            },
+            {
+              "sourceFieldName": "condition_display",
+              "targetFieldName": "condition_display"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "String",
-              "field": "patient_id",
-              "alias": "patient_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "String",
-              "field": "drug_name",
-              "alias": "drug_name"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "HAS_OBSERVATION",
-        "fromVertex": "Patient",
-        "toVertex": "Observation",
-        "tableSource": {
+      "label": "Condition",
+      "id": [
+        {
+          "name": "puppy_id_condition_code",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "condition_code",
+          "type": "STRING"
+        },
+        {
+          "name": "condition_display",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "duckdb_data",
           "schema": "main",
-          "table": "observations"
-        },
-        "id": {
-          "fields": [
+          "table": "observation_codes",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "edge_id",
-              "alias": "edge_id"
+              "sourceFieldName": "observation_code",
+              "targetFieldName": "puppy_id_observation_code"
+            },
+            {
+              "sourceFieldName": "observation_code",
+              "targetFieldName": "observation_code"
+            },
+            {
+              "sourceFieldName": "observation_display",
+              "targetFieldName": "observation_display"
             }
           ]
+        }
+      },
+      "label": "Observation",
+      "id": [
+        {
+          "name": "puppy_id_observation_code",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "observation_code",
+          "type": "STRING"
         },
-        "fromId": {
-          "fields": [
+        {
+          "name": "observation_display",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "medications",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "patient_id",
-              "alias": "patient_id"
+              "sourceFieldName": "drug_name",
+              "targetFieldName": "puppy_id_drug_name"
+            },
+            {
+              "sourceFieldName": "drug_name",
+              "targetFieldName": "drug_name"
             }
           ]
-        },
-        "toId": {
-          "fields": [
+        }
+      },
+      "label": "Medication",
+      "id": [
+        {
+          "name": "puppy_id_drug_name",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "drug_name",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "conditions",
+          "mappedField": [
             {
-              "type": "String",
-              "field": "observation_code",
-              "alias": "observation_code"
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "puppy_id_edge_id"
+            },
+            {
+              "sourceFieldName": "patient_id",
+              "targetFieldName": "puppy_from_patient_id"
+            },
+            {
+              "sourceFieldName": "condition_code",
+              "targetFieldName": "puppy_to_condition_code"
+            },
+            {
+              "sourceFieldName": "recorded_date",
+              "targetFieldName": "recorded_date"
+            },
+            {
+              "sourceFieldName": "clinical_status",
+              "targetFieldName": "clinical_status"
             }
           ]
+        }
+      },
+      "label": "HAS_CONDITION",
+      "fromNodeLabel": "Patient",
+      "toNodeLabel": "Condition",
+      "id": [
+        {
+          "name": "puppy_id_edge_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_patient_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_condition_code",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "recorded_date",
+          "type": "STRING"
         },
-        "attributes": [
-          {
-            "type": "String",
-            "field": "observation_display",
-            "alias": "observation_display"
-          }
-        ]
-      }
-    ]
-  }
+        {
+          "name": "clinical_status",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "observations",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "puppy_id_edge_id"
+            },
+            {
+              "sourceFieldName": "patient_id",
+              "targetFieldName": "puppy_from_patient_id"
+            },
+            {
+              "sourceFieldName": "observation_code",
+              "targetFieldName": "puppy_to_observation_code"
+            },
+            {
+              "sourceFieldName": "effective_date",
+              "targetFieldName": "effective_date"
+            },
+            {
+              "sourceFieldName": "value_type",
+              "targetFieldName": "value_type"
+            },
+            {
+              "sourceFieldName": "value_numeric",
+              "targetFieldName": "value_numeric"
+            },
+            {
+              "sourceFieldName": "value_text",
+              "targetFieldName": "value_text"
+            }
+          ]
+        }
+      },
+      "label": "HAS_OBSERVATION",
+      "fromNodeLabel": "Patient",
+      "toNodeLabel": "Observation",
+      "id": [
+        {
+          "name": "puppy_id_edge_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_patient_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_observation_code",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "effective_date",
+          "type": "STRING"
+        },
+        {
+          "name": "value_type",
+          "type": "STRING"
+        },
+        {
+          "name": "value_numeric",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "value_text",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "medication_requests",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "puppy_id_edge_id"
+            },
+            {
+              "sourceFieldName": "patient_id",
+              "targetFieldName": "puppy_from_patient_id"
+            },
+            {
+              "sourceFieldName": "drug_name",
+              "targetFieldName": "puppy_to_drug_name"
+            },
+            {
+              "sourceFieldName": "authored_on",
+              "targetFieldName": "authored_on"
+            }
+          ]
+        }
+      },
+      "label": "TAKES",
+      "fromNodeLabel": "Patient",
+      "toNodeLabel": "Medication",
+      "id": [
+        {
+          "name": "puppy_id_edge_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_patient_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_drug_name",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "authored_on",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "main",
+          "table": "medication_requests",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "puppy_id_edge_id"
+            },
+            {
+              "sourceFieldName": "patient_id",
+              "targetFieldName": "puppy_from_patient_id"
+            },
+            {
+              "sourceFieldName": "practitioner_npi",
+              "targetFieldName": "puppy_to_practitioner_npi"
+            },
+            {
+              "sourceFieldName": "drug_name",
+              "targetFieldName": "drug_name"
+            },
+            {
+              "sourceFieldName": "authored_on",
+              "targetFieldName": "authored_on"
+            }
+          ]
+        }
+      },
+      "label": "PRESCRIBED_BY",
+      "fromNodeLabel": "Patient",
+      "toNodeLabel": "Practitioner",
+      "id": [
+        {
+          "name": "puppy_id_edge_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_patient_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_practitioner_npi",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "drug_name",
+          "type": "STRING"
+        },
+        {
+          "name": "authored_on",
+          "type": "STRING"
+        }
+      ]
+    }
+  ]
 }

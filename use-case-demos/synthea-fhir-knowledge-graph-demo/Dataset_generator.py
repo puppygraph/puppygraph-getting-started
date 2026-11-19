@@ -135,33 +135,61 @@ def parse_practitioner(resource):
     prefix = name_info.get("prefix", [""])[0]
     name = f"{prefix} {given} {family}".strip()
     
+    npi = next(
+        (i.get("value") for i in resource.get("identifier", [])
+         if "us-npi" in i.get("system", "")),
+        None,
+    )
+
     return {
         "practitioner_id": practitioner_id,
+        "npi": npi,
         "name": name
     }
 
-def parse_medication_request(resource):
+def parse_medication_request(resource, medications_by_ref):
+    """
+    medications_by_ref maps a bundle entry's fullUrl to its Medication resource.
+    Newer Synthea releases put the drug in a Medication resource and point to it
+    with medicationReference instead of an inline medicationCodeableConcept.
+    """
     if resource.get("resourceType") != "MedicationRequest":
         return None
-        
+
     patient_ref = resource.get("subject", {}).get("reference", "")
     patient_id = patient_ref.replace("urn:uuid:", "").split("/")[-1]
-    
+
+    # Kept raw: resolved to a practitioner NPI in main(), once all bundles are read.
     practitioner_ref = resource.get("requester", {}).get("reference", "")
-    practitioner_id = practitioner_ref.replace("urn:uuid:", "").split("/")[-1]
-    
-    coding = resource.get("medicationCodeableConcept", {}).get("coding", [])
+
+    concept = resource.get("medicationCodeableConcept")
+    if concept is None:
+        med_ref = resource.get("medicationReference", {}).get("reference", "")
+        concept = medications_by_ref.get(med_ref, {}).get("code", {})
+    coding = concept.get("coding", [])
     drug_name = coding[0].get("display") if coding else None
-    
-    if not practitioner_id or not patient_id:
+
+    if not practitioner_ref or not patient_id or not drug_name:
         return None
-        
+
     return {
         "patient_id": patient_id,
-        "practitioner_id": practitioner_id,
+        "practitioner_ref": practitioner_ref,
         "drug_name": drug_name,
         "authored_on": resource.get("authoredOn")
     }
+
+
+def resolve_practitioner_npi(ref, npi_by_id):
+    """
+    Synthea references practitioners in two ways, depending on the release:
+      urn:uuid:<practitioner id>                                   (2019)
+      Practitioner?identifier=http://hl7.org/fhir/sid/us-npi|<NPI> (2021)
+    Both are resolved to the practitioner's NPI, which is the vertex ID.
+    """
+    if "identifier=" in ref:
+        return ref.rsplit("|", 1)[-1]
+    return npi_by_id.get(ref.replace("urn:uuid:", "").split("/")[-1])
 
 def main():
     _maybe_seed_rng()
@@ -209,6 +237,12 @@ def main():
         except Exception as e:
             continue
         
+        medications_by_ref = {
+            entry.get("fullUrl"): entry.get("resource", {})
+            for entry in bundle.get("entry", [])
+            if entry.get("resource", {}).get("resourceType") == "Medication"
+        }
+
         for entry in bundle.get("entry", []):
             resource = entry.get("resource", {})
             rtype = resource.get("resourceType")
@@ -226,7 +260,7 @@ def main():
                 row = parse_practitioner(resource)
                 if row: practitioners.append(row)
             elif rtype == "MedicationRequest":
-                row = parse_medication_request(resource)
+                row = parse_medication_request(resource, medications_by_ref)
                 if row: medication_requests.append(row)
 
     print("Converting to Pandas DataFrames...")
@@ -253,6 +287,35 @@ def main():
     observations_df = observations_df.drop(columns=["value"])
     observations_df["patient_id"] = observations_df["patient_id"].str.replace("urn:uuid:", "", regex=False)
 
+    # Resolve each prescription's requester to a practitioner NPI (the Practitioner vertex ID)
+    npi_by_id = dict(zip(practitioners_df["practitioner_id"], practitioners_df["npi"]))
+    med_req_df["practitioner_npi"] = med_req_df["practitioner_ref"].map(
+        lambda ref: resolve_practitioner_npi(ref, npi_by_id)
+    )
+    med_req_df = med_req_df.drop(columns=["practitioner_ref"])
+    known = med_req_df["practitioner_npi"].isin(set(practitioners_df["npi"].dropna()))
+    if (~known).any():
+        print(f"  Dropping {(~known).sum():,} MedicationRequests whose requester is not in the data")
+    med_req_df = med_req_df[known]
+    practitioners_df = practitioners_df.dropna(subset=["npi"]).drop_duplicates(subset=["npi"])
+
+    # Vertex tables: one row per vertex ID. The per-patient tables above hold one row
+    # per FHIR resource (many rows per code), so they are used only as edge tables.
+    # A code can carry more than one display text; keep the most common one.
+    def one_row_per_code(df, code_col, display_col):
+        return (
+            df.dropna(subset=[code_col])
+            .groupby(code_col)[display_col]
+            .agg(lambda d: d.mode().iat[0] if not d.mode().empty else None)
+            .reset_index()
+        )
+
+    condition_codes_df = one_row_per_code(conditions_df, "condition_code", "condition_display")
+    observation_codes_df = one_row_per_code(observations_df, "observation_code", "observation_display")
+    medications_df = med_req_df[["drug_name"]].drop_duplicates().reset_index(drop=True)
+    conditions_df = conditions_df.dropna(subset=["condition_code"])
+    observations_df = observations_df.dropna(subset=["observation_code"])
+
     # Add edge ID columns (PuppyGraph needs a unique edge ID per edge row)
     conditions_df = conditions_df.reset_index(drop=True)
     conditions_df["edge_id"] = conditions_df.index.astype(str)
@@ -263,19 +326,22 @@ def main():
     med_req_df = med_req_df.reset_index(drop=True)
     med_req_df["edge_id"] = med_req_df.index.astype(str)
 
-    # Write Parquet files
-    print("Writing Parquet files...")
-    observations_path = OUT_DIR / "observations.parquet"
-    patients_path = OUT_DIR / "patients.parquet"
-    conditions_path = OUT_DIR / "conditions.parquet"
-    practitioners_path = OUT_DIR / "practitioners.parquet"
-    med_req_path = OUT_DIR / "medication_requests.parquet"
+    tables = {
+        # vertex tables
+        "patients": patients_df,
+        "practitioners": practitioners_df,
+        "condition_codes": condition_codes_df,
+        "observation_codes": observation_codes_df,
+        "medications": medications_df,
+        # edge tables (one row per FHIR resource)
+        "conditions": conditions_df,
+        "observations": observations_df,
+        "medication_requests": med_req_df,
+    }
 
-    observations_df.to_parquet(observations_path, index=False)
-    patients_df.to_parquet(patients_path, index=False)
-    conditions_df.to_parquet(conditions_path, index=False)
-    practitioners_df.to_parquet(practitioners_path, index=False)
-    med_req_df.to_parquet(med_req_path, index=False)
+    print("Writing Parquet files...")
+    for name, df in tables.items():
+        df.to_parquet(OUT_DIR / f"{name}.parquet", index=False)
 
     # Create DuckDB with real tables (not views) so PuppyGraph can read them inside Docker
     print("Creating DuckDB with tables...")
@@ -285,16 +351,14 @@ def main():
     con = duckdb.connect(str(db_path))
 
     # Create actual tables from the Parquet data (uses default 'main' schema)
-    con.execute(f"CREATE TABLE patients AS SELECT * FROM read_parquet('{patients_path.absolute()}')")
-    con.execute(f"CREATE TABLE conditions AS SELECT * FROM read_parquet('{conditions_path.absolute()}')")
-    con.execute(f"CREATE TABLE observations AS SELECT * FROM read_parquet('{observations_path.absolute()}')")
-    con.execute(f"CREATE TABLE practitioners AS SELECT * FROM read_parquet('{practitioners_path.absolute()}')")
-    con.execute(f"CREATE TABLE medication_requests AS SELECT * FROM read_parquet('{med_req_path.absolute()}')")
+    for name in tables:
+        parquet_path = (OUT_DIR / f"{name}.parquet").absolute()
+        con.execute(f"CREATE TABLE {name} AS SELECT * FROM read_parquet('{parquet_path}')")
 
     # Verify
-    for tbl in ['patients', 'conditions', 'observations', 'practitioners', 'medication_requests']:
-        count = con.execute(f"SELECT COUNT(*) FROM {tbl}").fetchone()[0]
-        print(f"  {tbl}: {count:,} rows")
+    for name in tables:
+        count = con.execute(f"SELECT COUNT(*) FROM {name}").fetchone()[0]
+        print(f"  {name}: {count:,} rows")
 
     con.close()
     print("DuckDB tables created successfully.")
