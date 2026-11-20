@@ -11,6 +11,7 @@ services:
       - "3000:3000"
   spark:
     image: apache/spark:3.5.6
+    user: root
     container_name: spark
     networks:
       demo_net:
