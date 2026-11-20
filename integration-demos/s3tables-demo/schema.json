@@ -1,184 +1,224 @@
 {
-    "catalogs": [
-      {
-        "name": "test",
-        "type": "iceberg",
-        "metastore": {
-          "type": "s3tables",
-          "useInstanceProfile": "false",
-          "region": "<region>",
-          "accessKey": "<access-key>",
-          "secretKey": "<secret-key>",
-          "warehouse": "<table-bucket-arn>",
-          "enableIcebergMetaCache": "true",
-          "icebergMetaCacheTTL": "180",
-          "useDefaultCredentialsProviderChain": "false"
-        },
-        "storage": {
-          "useInstanceProfile": "false",
-          "region": "<region>",
-          "accessKey": "<access-key>",
-          "secretKey": "<secret-key>",
-          "enableSsl": "true",
-          "type": "S3",
-          "useDefaultCredentialsProviderChain": "false"
-        }
+  "catalog": [
+    {
+      "name": "test",
+      "type": "iceberg",
+      "metastore": {
+        "type": "s3tables",
+        "useInstanceProfile": "false",
+        "region": "<region>",
+        "accessKey": "<access-key>",
+        "secretKey": "<secret-key>",
+        "warehouse": "<table-bucket-arn>",
+        "enableIcebergMetaCache": "true",
+        "icebergMetaCacheTTL": "180",
+        "useDefaultCredentialsProviderChain": "false"
+      },
+      "storage": {
+        "useInstanceProfile": "false",
+        "region": "<region>",
+        "accessKey": "<access-key>",
+        "secretKey": "<secret-key>",
+        "enableSsl": "true",
+        "type": "S3",
+        "useDefaultCredentialsProviderChain": "false"
       }
-    ],
-    "graph": {
-      "vertices": [
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "test",
+          "schema": "puppygraph_test",
+          "table": "person",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "age",
+              "targetFieldName": "age"
+            }
+          ]
+        }
+      },
+      "label": "person",
+      "id": [
         {
-          "label": "person",
-          "oneToOne": {
-            "tableSource": {
-              "catalog": "test",
-              "schema": "puppygraph_test",
-              "table": "person"
-            },
-            "id": {
-              "fields": [
-                {
-                  "type": "STRING",
-                  "field": "id",
-                  "alias": "id_id"
-                }
-              ]
-            },
-            "attributes": [
-              {
-                "type": "STRING",
-                "field": "name",
-                "alias": "name"
-              },
-              {
-                "type": "INT",
-                "field": "age",
-                "alias": "age"
-              }
-            ]
-          }
-        },
-        {
-          "label": "software",
-          "oneToOne": {
-            "tableSource": {
-              "catalog": "test",
-              "schema": "puppygraph_test",
-              "table": "software"
-            },
-            "id": {
-              "fields": [
-                {
-                  "type": "STRING",
-                  "field": "id",
-                  "alias": "id_id"
-                }
-              ]
-            },
-            "attributes": [
-              {
-                "type": "STRING",
-                "field": "name",
-                "alias": "name"
-              },
-              {
-                "type": "STRING",
-                "field": "lang",
-                "alias": "lang"
-              }
-            ]
-          }
+          "name": "id_id",
+          "type": "STRING"
         }
       ],
-      "edges": [
+      "attribute": [
         {
-          "label": "knows",
-          "fromVertex": "person",
-          "toVertex": "person",
-          "tableSource": {
-            "catalog": "test",
-            "schema": "puppygraph_test",
-            "table": "knows"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "id",
-                "alias": "id_id"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "from_id",
-                "alias": "from_from_id"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "to_id",
-                "alias": "to_to_id"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "DOUBLE",
-              "field": "weight",
-              "alias": "weight"
-            }
-          ]
+          "name": "name",
+          "type": "STRING"
         },
         {
-          "label": "created",
-          "fromVertex": "person",
-          "toVertex": "software",
-          "tableSource": {
-            "catalog": "test",
-            "schema": "puppygraph_test",
-            "table": "created"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "id",
-                "alias": "id_id"
-              }
-            ]
-          },
-          "fromId": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "fromid",
-                "alias": "from_fromid"
-              }
-            ]
-          },
-          "toId": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "to_id",
-                "alias": "to_to_id"
-              }
-            ]
-          },
-          "attributes": [
+          "name": "age",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "test",
+          "schema": "puppygraph_test",
+          "table": "software",
+          "mappedField": [
             {
-              "type": "DOUBLE",
-              "field": "weight",
-              "alias": "weight"
+              "sourceFieldName": "id",
+              "targetFieldName": "id_id"
+            },
+            {
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "lang",
+              "targetFieldName": "lang"
             }
           ]
+        }
+      },
+      "label": "software",
+      "id": [
+        {
+          "name": "id_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "lang",
+          "type": "STRING"
         }
       ]
     }
-  }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "test",
+          "schema": "puppygraph_test",
+          "table": "knows",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id_id"
+            },
+            {
+              "sourceFieldName": "from_id",
+              "targetFieldName": "from_from_id"
+            },
+            {
+              "sourceFieldName": "to_id",
+              "targetFieldName": "to_to_id"
+            },
+            {
+              "sourceFieldName": "weight",
+              "targetFieldName": "weight"
+            }
+          ]
+        }
+      },
+      "label": "knows",
+      "fromNodeLabel": "person",
+      "toNodeLabel": "person",
+      "id": [
+        {
+          "name": "id_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "weight",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "test",
+          "schema": "puppygraph_test",
+          "table": "created",
+          "mappedField": [
+            {
+              "sourceFieldName": "id",
+              "targetFieldName": "id_id"
+            },
+            {
+              "sourceFieldName": "fromid",
+              "targetFieldName": "from_fromid"
+            },
+            {
+              "sourceFieldName": "to_id",
+              "targetFieldName": "to_to_id"
+            },
+            {
+              "sourceFieldName": "weight",
+              "targetFieldName": "weight"
+            }
+          ]
+        }
+      },
+      "label": "created",
+      "fromNodeLabel": "person",
+      "toNodeLabel": "software",
+      "id": [
+        {
+          "name": "id_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_fromid",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "weight",
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  ]
+}

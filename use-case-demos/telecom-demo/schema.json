@@ -1,5 +1,5 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "Telecom_Example",
       "type": "duckdb",
@@ -11,460 +11,607 @@
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "Customer",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "Telecom_Example",
-            "schema": "main",
-            "table": "customers"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "customer_id",
-                "alias": "puppy_id_customer_id"
-              }
-            ]
-          },
-          "attributes": [
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "customers",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "customer_id",
-              "alias": "customer_id"
+              "sourceFieldName": "customer_id",
+              "targetFieldName": "puppy_id_customer_id"
             },
             {
-              "type": "LONG",
-              "field": "age",
-              "alias": "age"
+              "sourceFieldName": "customer_id",
+              "targetFieldName": "customer_id"
             },
             {
-              "type": "LONG",
-              "field": "tenure_months",
-              "alias": "tenure_months"
+              "sourceFieldName": "age",
+              "targetFieldName": "age"
             },
             {
-              "type": "STRING",
-              "field": "phone_number",
-              "alias": "phone_number"
+              "sourceFieldName": "tenure_months",
+              "targetFieldName": "tenure_months"
             },
             {
-              "type": "LONG",
-              "field": "churned",
-              "alias": "churned"
+              "sourceFieldName": "phone_number",
+              "targetFieldName": "phone_number"
             },
             {
-              "type": "STRING",
-              "field": "family_plan_id",
-              "alias": "family_plan_id"
+              "sourceFieldName": "churned",
+              "targetFieldName": "churned"
+            },
+            {
+              "sourceFieldName": "family_plan_id",
+              "targetFieldName": "family_plan_id"
             }
           ]
         }
       },
-      {
-        "label": "Phone_Number",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "Telecom_Example",
-            "schema": "main",
-            "table": "customer_calls"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "source_customer",
-                "alias": "puppy_id_source_customer"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Customer",
+      "id": [
+        {
+          "name": "puppy_id_customer_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "customer_id",
+          "type": "STRING"
+        },
+        {
+          "name": "age",
+          "type": "LONG"
+        },
+        {
+          "name": "tenure_months",
+          "type": "LONG"
+        },
+        {
+          "name": "phone_number",
+          "type": "STRING"
+        },
+        {
+          "name": "churned",
+          "type": "LONG"
+        },
+        {
+          "name": "family_plan_id",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "customers",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "source_customer",
-              "alias": "source_customer"
-            },
-            {
-              "type": "STRING",
-              "field": "target_customer",
-              "alias": "target_customer"
-            },
-            {
-              "type": "LONG",
-              "field": "call_duration",
-              "alias": "call_duration"
+              "sourceFieldName": "phone_number",
+              "targetFieldName": "puppy_id_phone_number"
             }
           ]
         }
       },
-      {
-        "label": "Family_Plan",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "Telecom_Example",
-            "schema": "main",
-            "table": "family_plans"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "family_plan_id",
-                "alias": "puppy_id_family_plan_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Phone_Number",
+      "id": [
+        {
+          "name": "puppy_id_phone_number",
+          "type": "STRING"
+        }
+      ],
+      "attribute": []
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "family_plans",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "primary_id",
-              "alias": "primary_id"
+              "sourceFieldName": "family_plan_id",
+              "targetFieldName": "puppy_id_family_plan_id"
             },
             {
-              "type": "STRING",
-              "field": "plan_id",
-              "alias": "plan_id"
+              "sourceFieldName": "primary_id",
+              "targetFieldName": "primary_id"
             },
             {
-              "type": "STRING",
-              "field": "family_plan_id",
-              "alias": "family_plan_id"
+              "sourceFieldName": "plan_id",
+              "targetFieldName": "plan_id"
             },
             {
-              "type": "STRING",
-              "field": "members",
-              "alias": "members"
+              "sourceFieldName": "family_plan_id",
+              "targetFieldName": "family_plan_id"
             },
             {
-              "type": "STRING",
-              "field": "shared_location",
-              "alias": "shared_location"
+              "sourceFieldName": "members",
+              "targetFieldName": "members"
+            },
+            {
+              "sourceFieldName": "shared_location",
+              "targetFieldName": "shared_location"
             }
           ]
         }
       },
-      {
-        "label": "Ticket",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "Telecom_Example",
-            "schema": "main",
-            "table": "customer_support"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "ticket_id",
-                "alias": "puppy_id_ticket_id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "Family_Plan",
+      "id": [
+        {
+          "name": "puppy_id_family_plan_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "primary_id",
+          "type": "STRING"
+        },
+        {
+          "name": "plan_id",
+          "type": "STRING"
+        },
+        {
+          "name": "family_plan_id",
+          "type": "STRING"
+        },
+        {
+          "name": "members",
+          "type": "STRING"
+        },
+        {
+          "name": "shared_location",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "customer_support",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "ticket_id",
-              "alias": "ticket_id"
+              "sourceFieldName": "ticket_id",
+              "targetFieldName": "puppy_id_ticket_id"
             },
             {
-              "type": "STRING",
-              "field": "customer_id",
-              "alias": "customer_id"
+              "sourceFieldName": "ticket_id",
+              "targetFieldName": "ticket_id"
             },
             {
-              "type": "STRING",
-              "field": "channel",
-              "alias": "channel"
+              "sourceFieldName": "customer_id",
+              "targetFieldName": "customer_id"
             },
             {
-              "type": "STRING",
-              "field": "issue_type",
-              "alias": "issue_type"
+              "sourceFieldName": "channel",
+              "targetFieldName": "channel"
             },
             {
-              "type": "LONG",
-              "field": "resolution_time_min",
-              "alias": "resolution_time_min"
+              "sourceFieldName": "issue_type",
+              "targetFieldName": "issue_type"
             },
             {
-              "type": "BOOLEAN",
-              "field": "escalated",
-              "alias": "escalated"
+              "sourceFieldName": "resolution_time_min",
+              "targetFieldName": "resolution_time_min"
             },
             {
-              "type": "DOUBLE",
-              "field": "satisfaction_score",
-              "alias": "satisfaction_score"
+              "sourceFieldName": "escalated",
+              "targetFieldName": "escalated"
+            },
+            {
+              "sourceFieldName": "satisfaction_score",
+              "targetFieldName": "satisfaction_score"
             }
           ]
         }
-      }
-    ],
-    "edges": [
-      {
-        "label": "customer_calls",
-        "fromVertex": "Phone_Number",
-        "toVertex": "Phone_Number",
-        "tableSource": {
-          "catalog": "Telecom_Example",
-          "schema": "main",
-          "table": "customer_calls"
-        },
-        "id": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "target_customer",
-              "alias": "puppy_id_target_customer"
-            }
-          ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "source_customer",
-              "alias": "puppy_from_source_customer"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "target_customer",
-              "alias": "puppy_to_target_customer"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "STRING",
-            "field": "source_customer",
-            "alias": "source_customer"
-          },
-          {
-            "type": "STRING",
-            "field": "target_customer",
-            "alias": "target_customer"
-          },
-          {
-            "type": "LONG",
-            "field": "call_duration",
-            "alias": "call_duration"
-          }
-        ]
       },
-      {
-        "label": "Member",
-        "fromVertex": "Family_Plan",
-        "toVertex": "Customer",
-        "tableSource": {
+      "label": "Ticket",
+      "id": [
+        {
+          "name": "puppy_id_ticket_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ticket_id",
+          "type": "STRING"
+        },
+        {
+          "name": "customer_id",
+          "type": "STRING"
+        },
+        {
+          "name": "channel",
+          "type": "STRING"
+        },
+        {
+          "name": "issue_type",
+          "type": "STRING"
+        },
+        {
+          "name": "resolution_time_min",
+          "type": "LONG"
+        },
+        {
+          "name": "escalated",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "satisfaction_score",
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "Telecom_Example",
           "schema": "main",
-          "table": "family_plans"
-        },
-        "id": {
-          "fields": [
+          "table": "customer_calls",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "primary_id",
-              "alias": "puppy_id_primary_id"
+              "sourceFieldName": "target_customer",
+              "targetFieldName": "puppy_id_target_customer"
+            },
+            {
+              "sourceFieldName": "source_customer",
+              "targetFieldName": "puppy_from_source_customer"
+            },
+            {
+              "sourceFieldName": "target_customer",
+              "targetFieldName": "puppy_to_target_customer"
+            },
+            {
+              "sourceFieldName": "source_customer",
+              "targetFieldName": "source_customer"
+            },
+            {
+              "sourceFieldName": "target_customer",
+              "targetFieldName": "target_customer"
+            },
+            {
+              "sourceFieldName": "call_duration",
+              "targetFieldName": "call_duration"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "family_plan_id",
-              "alias": "puppy_from_family_plan_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "members",
-              "alias": "puppy_to_members"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "STRING",
-            "field": "primary_id",
-            "alias": "primary_id"
-          },
-          {
-            "type": "STRING",
-            "field": "plan_id",
-            "alias": "plan_id"
-          },
-          {
-            "type": "STRING",
-            "field": "family_plan_id",
-            "alias": "family_plan_id"
-          },
-          {
-            "type": "STRING",
-            "field": "members",
-            "alias": "members"
-          },
-          {
-            "type": "STRING",
-            "field": "shared_location",
-            "alias": "shared_location"
-          }
-        ]
+        }
       },
-      {
-        "label": "Filed",
-        "fromVertex": "Customer",
-        "toVertex": "Ticket",
-        "tableSource": {
+      "label": "customer_calls",
+      "fromNodeLabel": "Phone_Number",
+      "toNodeLabel": "Phone_Number",
+      "id": [
+        {
+          "name": "puppy_id_target_customer",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_source_customer",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_target_customer",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "source_customer",
+          "type": "STRING"
+        },
+        {
+          "name": "target_customer",
+          "type": "STRING"
+        },
+        {
+          "name": "call_duration",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "Telecom_Example",
           "schema": "main",
-          "table": "customer_support"
-        },
-        "id": {
-          "fields": [
+          "table": "family_plans",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "ticket_id",
-              "alias": "puppy_id_ticket_id"
+              "sourceFieldName": "primary_id",
+              "targetFieldName": "puppy_id_primary_id"
+            },
+            {
+              "sourceFieldName": "family_plan_id",
+              "targetFieldName": "puppy_from_family_plan_id"
+            },
+            {
+              "sourceFieldName": "members",
+              "targetFieldName": "puppy_to_members"
+            },
+            {
+              "sourceFieldName": "primary_id",
+              "targetFieldName": "primary_id"
+            },
+            {
+              "sourceFieldName": "plan_id",
+              "targetFieldName": "plan_id"
+            },
+            {
+              "sourceFieldName": "family_plan_id",
+              "targetFieldName": "family_plan_id"
+            },
+            {
+              "sourceFieldName": "members",
+              "targetFieldName": "members"
+            },
+            {
+              "sourceFieldName": "shared_location",
+              "targetFieldName": "shared_location"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "customer_id",
-              "alias": "puppy_from_customer_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "ticket_id",
-              "alias": "puppy_to_ticket_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "STRING",
-            "field": "ticket_id",
-            "alias": "ticket_id"
-          },
-          {
-            "type": "STRING",
-            "field": "customer_id",
-            "alias": "customer_id"
-          },
-          {
-            "type": "STRING",
-            "field": "channel",
-            "alias": "channel"
-          },
-          {
-            "type": "STRING",
-            "field": "issue_type",
-            "alias": "issue_type"
-          },
-          {
-            "type": "LONG",
-            "field": "resolution_time_min",
-            "alias": "resolution_time_min"
-          },
-          {
-            "type": "BOOLEAN",
-            "field": "escalated",
-            "alias": "escalated"
-          },
-          {
-            "type": "DOUBLE",
-            "field": "satisfaction_score",
-            "alias": "satisfaction_score"
-          }
-        ]
+        }
       },
-      {
-        "label": "Cust_Number",
-        "fromVertex": "Customer",
-        "toVertex": "Phone_Number",
-        "tableSource": {
+      "label": "Member",
+      "fromNodeLabel": "Family_Plan",
+      "toNodeLabel": "Customer",
+      "id": [
+        {
+          "name": "puppy_id_primary_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_family_plan_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_members",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "primary_id",
+          "type": "STRING"
+        },
+        {
+          "name": "plan_id",
+          "type": "STRING"
+        },
+        {
+          "name": "family_plan_id",
+          "type": "STRING"
+        },
+        {
+          "name": "members",
+          "type": "STRING"
+        },
+        {
+          "name": "shared_location",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "Telecom_Example",
           "schema": "main",
-          "table": "customers"
-        },
-        "id": {
-          "fields": [
+          "table": "customer_support",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "customer_id",
-              "alias": "puppy_id_customer_id"
+              "sourceFieldName": "ticket_id",
+              "targetFieldName": "puppy_id_ticket_id"
+            },
+            {
+              "sourceFieldName": "customer_id",
+              "targetFieldName": "puppy_from_customer_id"
+            },
+            {
+              "sourceFieldName": "ticket_id",
+              "targetFieldName": "puppy_to_ticket_id"
+            },
+            {
+              "sourceFieldName": "ticket_id",
+              "targetFieldName": "ticket_id"
+            },
+            {
+              "sourceFieldName": "customer_id",
+              "targetFieldName": "customer_id"
+            },
+            {
+              "sourceFieldName": "channel",
+              "targetFieldName": "channel"
+            },
+            {
+              "sourceFieldName": "issue_type",
+              "targetFieldName": "issue_type"
+            },
+            {
+              "sourceFieldName": "resolution_time_min",
+              "targetFieldName": "resolution_time_min"
+            },
+            {
+              "sourceFieldName": "escalated",
+              "targetFieldName": "escalated"
+            },
+            {
+              "sourceFieldName": "satisfaction_score",
+              "targetFieldName": "satisfaction_score"
             }
           ]
+        }
+      },
+      "label": "Filed",
+      "fromNodeLabel": "Customer",
+      "toNodeLabel": "Ticket",
+      "id": [
+        {
+          "name": "puppy_id_ticket_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_customer_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_ticket_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "ticket_id",
+          "type": "STRING"
         },
-        "fromId": {
-          "fields": [
+        {
+          "name": "customer_id",
+          "type": "STRING"
+        },
+        {
+          "name": "channel",
+          "type": "STRING"
+        },
+        {
+          "name": "issue_type",
+          "type": "STRING"
+        },
+        {
+          "name": "resolution_time_min",
+          "type": "LONG"
+        },
+        {
+          "name": "escalated",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "satisfaction_score",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "Telecom_Example",
+          "schema": "main",
+          "table": "customers",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "customer_id",
-              "alias": "puppy_from_customer_id"
+              "sourceFieldName": "customer_id",
+              "targetFieldName": "puppy_id_customer_id"
+            },
+            {
+              "sourceFieldName": "customer_id",
+              "targetFieldName": "puppy_from_customer_id"
+            },
+            {
+              "sourceFieldName": "phone_number",
+              "targetFieldName": "puppy_to_phone_number"
+            },
+            {
+              "sourceFieldName": "customer_id",
+              "targetFieldName": "customer_id"
+            },
+            {
+              "sourceFieldName": "age",
+              "targetFieldName": "age"
+            },
+            {
+              "sourceFieldName": "tenure_months",
+              "targetFieldName": "tenure_months"
+            },
+            {
+              "sourceFieldName": "phone_number",
+              "targetFieldName": "phone_number"
+            },
+            {
+              "sourceFieldName": "churned",
+              "targetFieldName": "churned"
+            },
+            {
+              "sourceFieldName": "family_plan_id",
+              "targetFieldName": "family_plan_id"
             }
           ]
+        }
+      },
+      "label": "Cust_Number",
+      "fromNodeLabel": "Customer",
+      "toNodeLabel": "Phone_Number",
+      "id": [
+        {
+          "name": "puppy_id_customer_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_customer_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_phone_number",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "customer_id",
+          "type": "STRING"
         },
-        "toId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "phone_number",
-              "alias": "puppy_to_phone_number"
-            }
-          ]
+        {
+          "name": "age",
+          "type": "LONG"
         },
-        "attributes": [
-          {
-            "type": "STRING",
-            "field": "customer_id",
-            "alias": "customer_id"
-          },
-          {
-            "type": "LONG",
-            "field": "age",
-            "alias": "age"
-          },
-          {
-            "type": "LONG",
-            "field": "tenure_months",
-            "alias": "tenure_months"
-          },
-          {
-            "type": "STRING",
-            "field": "phone_number",
-            "alias": "phone_number"
-          },
-          {
-            "type": "LONG",
-            "field": "churned",
-            "alias": "churned"
-          },
-          {
-            "type": "STRING",
-            "field": "family_plan_id",
-            "alias": "family_plan_id"
-          }
-        ]
-      }
-    ]
-  }
+        {
+          "name": "tenure_months",
+          "type": "LONG"
+        },
+        {
+          "name": "phone_number",
+          "type": "STRING"
+        },
+        {
+          "name": "churned",
+          "type": "LONG"
+        },
+        {
+          "name": "family_plan_id",
+          "type": "STRING"
+        }
+      ]
+    }
+  ]
 }

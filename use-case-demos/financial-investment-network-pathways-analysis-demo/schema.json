@@ -1,5 +1,5 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "iceberg_test",
       "type": "iceberg",
@@ -18,354 +18,453 @@
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "Group",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "Financial_Service",
-            "table": "Group"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "ID",
-                "alias": "ID"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "Name",
-              "alias": "Name"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Person",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "Financial_Service",
-            "table": "Person"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "ID",
-                "alias": "ID"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "Name",
-              "alias": "Name"
-            },
-            {
-              "type": "Date",
-              "field": "Birthday",
-              "alias": "Birthday"
-            },
-            {
-              "type": "String",
-              "field": "Email",
-              "alias": "Email"
-            },
-            {
-              "type": "String",
-              "field": "PhoneNum",
-              "alias": "PhoneNum"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Trust",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "Financial_Service",
-            "table": "Trust"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "ID",
-                "alias": "ID"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "Name",
-              "alias": "Name"
-            },
-            {
-              "type": "String",
-              "field": "TrustType",
-              "alias": "TrustType"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Account",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "Financial_Service",
-            "table": "Account"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "ID",
-                "alias": "ID"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "AccountNumber",
-              "alias": "AccountNumber"
-            },
-            {
-              "type": "String",
-              "field": "AccountType",
-              "alias": "AccountType"
-            },
-            {
-              "type": "Double",
-              "field": "Balance",
-              "alias": "Balance"
-            }
-          ]
-        }
-      },
-      {
-        "label": "Securities",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "iceberg_test",
-            "schema": "Financial_Service",
-            "table": "Securities"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "Long",
-                "field": "ID",
-                "alias": "ID"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "type": "String",
-              "field": "SecurityType",
-              "alias": "SecurityType"
-            },
-            {
-              "type": "String",
-              "field": "SecurityName",
-              "alias": "SecurityName"
-            },
-            {
-              "type": "Float",
-              "field": "CurrentPrice",
-              "alias": "CurrentPrice"
-            }
-          ]
-        }
-      }
-    ],
-    "edges": [
-      {
-        "label": "GroupHasPerson",
-        "fromVertex": "Group",
-        "toVertex": "Person",
-        "tableSource": {
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "Financial_Service",
-          "table": "GroupPerson"
-        },
-        "id": {
-          "fields": [
+          "table": "Group",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "ID",
-              "alias": "ID"
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "Name",
+              "targetFieldName": "Name"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "GroupID",
-              "alias": "GroupID"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "PersonID",
-              "alias": "PersonID"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "PersonHasTrust",
-        "fromVertex": "Person",
-        "toVertex": "Trust",
-        "tableSource": {
+      "label": "Group",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "Name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "Financial_Service",
-          "table": "PersonTrust"
-        },
-        "id": {
-          "fields": [
+          "table": "Person",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "ID",
-              "alias": "ID"
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "Name",
+              "targetFieldName": "Name"
+            },
+            {
+              "sourceFieldName": "Birthday",
+              "targetFieldName": "Birthday"
+            },
+            {
+              "sourceFieldName": "Email",
+              "targetFieldName": "Email"
+            },
+            {
+              "sourceFieldName": "PhoneNum",
+              "targetFieldName": "PhoneNum"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "PersonID",
-              "alias": "PersonID"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "TrustID",
-              "alias": "TrustID"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "Float",
-            "field": "Weight",
-            "alias": "Weight"
-          }
-        ]
+        }
       },
-      {
-        "label": "TrustHasAccount",
-        "fromVertex": "Trust",
-        "toVertex": "Account",
-        "tableSource": {
+      "label": "Person",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "Name",
+          "type": "String"
+        },
+        {
+          "name": "Birthday",
+          "type": "Date"
+        },
+        {
+          "name": "Email",
+          "type": "String"
+        },
+        {
+          "name": "PhoneNum",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "Financial_Service",
-          "table": "TrustAccount"
-        },
-        "id": {
-          "fields": [
+          "table": "Trust",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "ID",
-              "alias": "ID"
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "Name",
+              "targetFieldName": "Name"
+            },
+            {
+              "sourceFieldName": "TrustType",
+              "targetFieldName": "TrustType"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "TrustID",
-              "alias": "TrustID"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "Long",
-              "field": "AccountID",
-              "alias": "AccountID"
-            }
-          ]
-        },
-        "attributes": []
+        }
       },
-      {
-        "label": "AccountHasSecurities",
-        "fromVertex": "Account",
-        "toVertex": "Securities",
-        "tableSource": {
+      "label": "Trust",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "Name",
+          "type": "String"
+        },
+        {
+          "name": "TrustType",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "iceberg_test",
           "schema": "Financial_Service",
-          "table": "AccountSecurities"
-        },
-        "id": {
-          "fields": [
+          "table": "Account",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "ID",
-              "alias": "ID"
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "AccountNumber",
+              "targetFieldName": "AccountNumber"
+            },
+            {
+              "sourceFieldName": "AccountType",
+              "targetFieldName": "AccountType"
+            },
+            {
+              "sourceFieldName": "Balance",
+              "targetFieldName": "Balance"
             }
           ]
+        }
+      },
+      "label": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "AccountNumber",
+          "type": "String"
         },
-        "fromId": {
-          "fields": [
+        {
+          "name": "AccountType",
+          "type": "String"
+        },
+        {
+          "name": "Balance",
+          "type": "Double"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "Securities",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "AccountID",
-              "alias": "AccountID"
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "SecurityType",
+              "targetFieldName": "SecurityType"
+            },
+            {
+              "sourceFieldName": "SecurityName",
+              "targetFieldName": "SecurityName"
+            },
+            {
+              "sourceFieldName": "CurrentPrice",
+              "targetFieldName": "CurrentPrice"
             }
           ]
+        }
+      },
+      "label": "Securities",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "SecurityType",
+          "type": "String"
         },
-        "toId": {
-          "fields": [
+        {
+          "name": "SecurityName",
+          "type": "String"
+        },
+        {
+          "name": "CurrentPrice",
+          "type": "Float"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "GroupPerson",
+          "mappedField": [
             {
-              "type": "Long",
-              "field": "SecurityID",
-              "alias": "SecurityID"
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "GroupID",
+              "targetFieldName": "GroupID"
+            },
+            {
+              "sourceFieldName": "PersonID",
+              "targetFieldName": "PersonID"
             }
           ]
+        }
+      },
+      "label": "GroupHasPerson",
+      "fromNodeLabel": "Group",
+      "toNodeLabel": "Person",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "GroupID",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "PersonID",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "PersonTrust",
+          "mappedField": [
+            {
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "PersonID",
+              "targetFieldName": "PersonID"
+            },
+            {
+              "sourceFieldName": "TrustID",
+              "targetFieldName": "TrustID"
+            },
+            {
+              "sourceFieldName": "Weight",
+              "targetFieldName": "Weight"
+            }
+          ]
+        }
+      },
+      "label": "PersonHasTrust",
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Trust",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "PersonID",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "TrustID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "Weight",
+          "type": "Float"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "TrustAccount",
+          "mappedField": [
+            {
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "TrustID",
+              "targetFieldName": "TrustID"
+            },
+            {
+              "sourceFieldName": "AccountID",
+              "targetFieldName": "AccountID"
+            }
+          ]
+        }
+      },
+      "label": "TrustHasAccount",
+      "fromNodeLabel": "Trust",
+      "toNodeLabel": "Account",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "TrustID",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "AccountID",
+          "type": "Long"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "iceberg_test",
+          "schema": "Financial_Service",
+          "table": "AccountSecurities",
+          "mappedField": [
+            {
+              "sourceFieldName": "ID",
+              "targetFieldName": "ID"
+            },
+            {
+              "sourceFieldName": "AccountID",
+              "targetFieldName": "AccountID"
+            },
+            {
+              "sourceFieldName": "SecurityID",
+              "targetFieldName": "SecurityID"
+            },
+            {
+              "sourceFieldName": "Quantity",
+              "targetFieldName": "Quantity"
+            },
+            {
+              "sourceFieldName": "PurchaseDate",
+              "targetFieldName": "PurchaseDate"
+            },
+            {
+              "sourceFieldName": "PurchasePrice",
+              "targetFieldName": "PurchasePrice"
+            }
+          ]
+        }
+      },
+      "label": "AccountHasSecurities",
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Securities",
+      "id": [
+        {
+          "name": "ID",
+          "type": "Long"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "AccountID",
+          "type": "Long"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "SecurityID",
+          "type": "Long"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "Quantity",
+          "type": "Int"
         },
-        "attributes": [
-          {
-            "type": "Int",
-            "field": "Quantity",
-            "alias": "Quantity"
-          },
-          {
-            "type": "Date",
-            "field": "PurchaseDate",
-            "alias": "PurchaseDate"
-          },
-          {
-            "type": "Float",
-            "field": "PurchasePrice",
-            "alias": "PurchasePrice"
-          }
-        ]
-      }
-    ]
-  }
+        {
+          "name": "PurchaseDate",
+          "type": "Date"
+        },
+        {
+          "name": "PurchasePrice",
+          "type": "Float"
+        }
+      ]
+    }
+  ]
 }

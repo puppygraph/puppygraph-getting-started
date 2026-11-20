@@ -18,8 +18,8 @@ Example output:
 ```bash
 [+] Running 6/6
 ✔ Network puppy-iceberg         Created
-✔ Container minio               Started
-✔ Container mc                  Started
+✔ Container object-store        Healthy
+✔ Container create-bucket       Started
 ✔ Container iceberg-rest        Started
 ✔ Container spark-iceberg       Started
 ✔ Container puppygraph          Started
@@ -93,7 +93,9 @@ quit;
 
 ![img_login.png](img/img_login.png)
 
-- Create Graph Schema
+- Upload the schema: click **Upload Schema**, select the file `schema.json` and click **Upload**.
+
+- Alternatively, create the graph schema by hand in the Web UI as shown below (screenshots from an earlier UI version).
 
 ![img_ds.png](img/img_ds.png)
 

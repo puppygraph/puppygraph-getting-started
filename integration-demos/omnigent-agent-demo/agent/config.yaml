@@ -1,0 +1,102 @@
+spec_version: 1
+name: puppygraph_analyst
+description: >-
+  Graph analyst that answers multi-hop questions (fraud rings, lineage,
+  dependencies, 360 views) over existing tables through PuppyGraph, read-only.
+
+executor:
+  type: omnigent
+  config:
+    # Any Omnigent harness works here (claude-sdk, codex, cursor, pi, ...);
+    # the PuppyGraph MCP tools and guardrails stay the same.
+    harness: openai-agents
+  model: gpt-5.4-mini
+  auth:
+    type: api_key
+    api_key: ${OPENAI_API_KEY}
+
+tools:
+  puppygraph:
+    type: mcp
+    description: Query PuppyGraph (openCypher / Gremlin over existing tables) and read its graph schema.
+    transport: stdio
+    command: puppygraph-mcp
+    env:
+      PUPPYGRAPH_URL: ${PUPPYGRAPH_BOLT_URL}
+      PUPPYGRAPH_USERNAME: ${PUPPYGRAPH_USERNAME}
+      PUPPYGRAPH_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+      PUPPYGRAPH_GREMLIN_URL: ${PUPPYGRAPH_GREMLIN_URL}
+      PUPPYGRAPH_GREMLIN_USERNAME: ${PUPPYGRAPH_USERNAME}
+      PUPPYGRAPH_GREMLIN_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+      PUPPYGRAPH_SCHEMA_URL: ${PUPPYGRAPH_SCHEMA_URL}
+      PUPPYGRAPH_SCHEMA_USERNAME: ${PUPPYGRAPH_USERNAME}
+      PUPPYGRAPH_SCHEMA_PASSWORD: ${PUPPYGRAPH_PASSWORD}
+    tools: [puppygraph_schema, puppygraph_query, puppygraph_status]
+
+# Guardrails are evaluated by Omnigent on every tool call, independently of
+# the model and the prompt. They must live under `guardrails.policies` (see
+# "Agent configuration" in ../README.md).
+guardrails:
+  policies:
+    # Read-only: deny any graph query that contains a Cypher/Gremlin write or
+    # procedure clause, or a Gremlin script call into PuppyGraph's schema
+    # management API (graph.getTopology2()). CEL must return a map:
+    # {"result": "DENY"} blocks, {} abstains. A missing or non-string query
+    # argument is denied too.
+    puppygraph_read_only:
+      type: function
+      on: [tool_call]
+      function:
+        path: omnigent.policies.builtins.cel.cel_policy
+        arguments:
+          expression: >-
+            event.type == "tool_call" && event.data.name.endsWith("puppygraph_query")
+            ? (
+                !has(event.data.arguments.query)
+                || type(event.data.arguments.query) != string
+                || event.data.arguments.query.matches("(?i)\\b(create|merge|delete|detach|set|remove|drop|addv|adde|mergev|mergee|property|load|call|gettopology\\w*)\\b")
+                ? {"result": "DENY"}
+                : {}
+              )
+            : {}
+          reason: >-
+            The PuppyGraph analyst is read-only. Omnigent policy blocked this
+            query because it contains a write or procedure clause
+            (CREATE/MERGE/DELETE/SET/REMOVE/DROP/CALL,
+            addV/addE/mergeV/mergeE/property/drop) or a schema management call.
+    # Cap runaway tool loops.
+    tool_call_limit:
+      type: function
+      on: [tool_call]
+      function:
+        path: omnigent.policies.builtins.safety.max_tool_calls_per_session
+        arguments:
+          limit: 40
+    # Cap spend per session.
+    budget:
+      type: function
+      on: [request, tool_call]
+      function:
+        path: omnigent.policies.builtins.cost.cost_budget
+        arguments:
+          max_cost_usd: 2.00
+          ask_thresholds_usd: [1.00]
+
+prompt: |
+  You are a graph analyst. You answer questions about connected data using
+  PuppyGraph, which exposes existing relational/lakehouse tables as a graph.
+
+  Tools (from the `puppygraph` MCP server):
+  - `puppygraph_schema`: vertex labels, edge labels and their properties.
+    Call it first; never assume a label or property exists.
+  - `puppygraph_query`: run a read-only openCypher (preferred) or Gremlin query.
+  - `puppygraph_status`: check connectivity if a query fails.
+
+  Rules:
+  - Use openCypher. Vertex ids are returned by `id(n)` and look like
+    `Account[acc_007]`; filter by id with `WHERE id(n) = 'Account[acc_007]'`.
+  - Prefer one multi-hop query (variable-length paths such as
+    `-[:TRANSFER*1..5]->`) over many single-hop lookups.
+  - Always add a LIMIT to exploratory queries.
+  - Queries are read-only; write clauses are blocked by policy.
+  - Show the Cypher you ran with each finding so the answer is auditable.

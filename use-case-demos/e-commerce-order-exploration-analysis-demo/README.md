@@ -28,6 +28,21 @@ You can view more details about the dataset on the [Kaggle website](https://www.
 ```bash
 unzip archive.zip -d ./csv_data/
 ```
+
+- We will create a virtual environment and run the python script `CsvToParquet.py` to convert CSV files to Parquet format. On some Linux distributions, you may need to install `python3-venv` first.
+```bash
+# On some Linux distributions, install `python3-venv` first.
+sudo apt-get update
+sudo apt-get install python3-venv
+```
+
+- Create a virtual environment, activate it and install the necessary packages.
+```bash
+python3 -m venv demo_venv
+source demo_venv/bin/activate
+pip install pandas pyarrow
+```
+
 - Convert CSV files to Parquet format:
 ```bash
 python3 CsvToParquet.py ./csv_data ./parquet_data
@@ -42,8 +57,8 @@ Example output:
 ```bash
 [+] Running 6/6
 ✔ Network puppy-iceberg         Created
-✔ Container minio               Started
-✔ Container mc                  Started
+✔ Container object-store        Healthy
+✔ Container create-bucket       Started
 ✔ Container iceberg-rest        Started
 ✔ Container spark-iceberg       Started
 ✔ Container puppygraph          Started
@@ -215,7 +230,7 @@ quit;
 - Password: `puppygraph123`
 
 2. Upload the schema:
-- Select the file `schema.json` in the Upload Graph Schema JSON section and click on Upload.
+- Click **Upload Schema**, select the file `schema.json` and click **Upload**.
 
 
 ## Querying the Graph

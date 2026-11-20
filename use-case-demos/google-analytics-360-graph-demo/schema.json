@@ -1,0 +1,482 @@
+{
+  "catalog": [
+    {
+      "name": "mysql_data",
+      "type": "mysql",
+      "jdbc": {
+        "username": "mysqluser",
+        "password": "mysqlpassword",
+        "jdbcUri": "jdbc:mysql://mysql:3306/journey?allowPublicKeyRetrieval=true&useSSL=false",
+        "driverClass": "com.mysql.cj.jdbc.Driver",
+        "driverUrl": "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar",
+        "enableMetaCache": "true",
+        "metaCacheExpireSec": "600"
+      }
+    }
+  ],
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "pages",
+          "mappedField": [
+            {
+              "sourceFieldName": "page_path",
+              "targetFieldName": "puppy_id_page_path"
+            },
+            {
+              "sourceFieldName": "page_path",
+              "targetFieldName": "page_path"
+            },
+            {
+              "sourceFieldName": "page_title",
+              "targetFieldName": "page_title"
+            },
+            {
+              "sourceFieldName": "hits",
+              "targetFieldName": "hits"
+            },
+            {
+              "sourceFieldName": "sessions",
+              "targetFieldName": "sessions"
+            },
+            {
+              "sourceFieldName": "avg_seconds_on_page",
+              "targetFieldName": "avg_seconds_on_page"
+            },
+            {
+              "sourceFieldName": "entrance_rate",
+              "targetFieldName": "entrance_rate"
+            },
+            {
+              "sourceFieldName": "exit_rate",
+              "targetFieldName": "exit_rate"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "Page",
+      "id": [
+        {
+          "name": "puppy_id_page_path",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "page_path",
+          "type": "STRING"
+        },
+        {
+          "name": "page_title",
+          "type": "STRING"
+        },
+        {
+          "name": "hits",
+          "type": "INT"
+        },
+        {
+          "name": "sessions",
+          "type": "INT"
+        },
+        {
+          "name": "avg_seconds_on_page",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "entrance_rate",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "exit_rate",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "sessions",
+          "mappedField": [
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_id_session_id"
+            },
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "session_id"
+            },
+            {
+              "sourceFieldName": "visitor_id",
+              "targetFieldName": "visitor_id"
+            },
+            {
+              "sourceFieldName": "visit_number",
+              "targetFieldName": "visit_number"
+            },
+            {
+              "sourceFieldName": "device",
+              "targetFieldName": "device"
+            },
+            {
+              "sourceFieldName": "browser",
+              "targetFieldName": "browser"
+            },
+            {
+              "sourceFieldName": "operating_system",
+              "targetFieldName": "operating_system"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "hits",
+              "targetFieldName": "hits"
+            },
+            {
+              "sourceFieldName": "revenue",
+              "targetFieldName": "revenue"
+            },
+            {
+              "sourceFieldName": "purchased",
+              "targetFieldName": "purchased"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "Session",
+      "id": [
+        {
+          "name": "puppy_id_session_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "session_id",
+          "type": "STRING"
+        },
+        {
+          "name": "visitor_id",
+          "type": "STRING"
+        },
+        {
+          "name": "visit_number",
+          "type": "INT"
+        },
+        {
+          "name": "device",
+          "type": "STRING"
+        },
+        {
+          "name": "browser",
+          "type": "STRING"
+        },
+        {
+          "name": "operating_system",
+          "type": "STRING"
+        },
+        {
+          "name": "country",
+          "type": "STRING"
+        },
+        {
+          "name": "hits",
+          "type": "INT"
+        },
+        {
+          "name": "revenue",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "purchased",
+          "type": "BOOLEAN"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "visitors",
+          "mappedField": [
+            {
+              "sourceFieldName": "visitor_id",
+              "targetFieldName": "puppy_id_visitor_id"
+            },
+            {
+              "sourceFieldName": "visitor_id",
+              "targetFieldName": "visitor_id"
+            },
+            {
+              "sourceFieldName": "sessions",
+              "targetFieldName": "sessions"
+            },
+            {
+              "sourceFieldName": "revenue",
+              "targetFieldName": "revenue"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "Visitor",
+      "id": [
+        {
+          "name": "puppy_id_visitor_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "visitor_id",
+          "type": "STRING"
+        },
+        {
+          "name": "sessions",
+          "type": "INT"
+        },
+        {
+          "name": "revenue",
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "landings",
+          "mappedField": [
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_id_session_id"
+            },
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_from_session_id"
+            },
+            {
+              "sourceFieldName": "page_path",
+              "targetFieldName": "puppy_to_page_path"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "LANDED_ON",
+      "fromNodeLabel": "Session",
+      "toNodeLabel": "Page",
+      "id": [
+        {
+          "name": "puppy_id_session_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_session_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_page_path",
+          "type": "STRING"
+        }
+      ],
+      "attribute": []
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "transitions",
+          "mappedField": [
+            {
+              "sourceFieldName": "transition_id",
+              "targetFieldName": "puppy_id_transition_id"
+            },
+            {
+              "sourceFieldName": "from_page",
+              "targetFieldName": "puppy_from_from_page"
+            },
+            {
+              "sourceFieldName": "to_page",
+              "targetFieldName": "puppy_to_to_page"
+            },
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "session_id"
+            },
+            {
+              "sourceFieldName": "step",
+              "targetFieldName": "step"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "NEXT",
+      "fromNodeLabel": "Page",
+      "toNodeLabel": "Page",
+      "id": [
+        {
+          "name": "puppy_id_transition_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_from_page",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_to_page",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "session_id",
+          "type": "STRING"
+        },
+        {
+          "name": "step",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "sessions",
+          "mappedField": [
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_id_session_id"
+            },
+            {
+              "sourceFieldName": "visitor_id",
+              "targetFieldName": "puppy_from_visitor_id"
+            },
+            {
+              "sourceFieldName": "session_id",
+              "targetFieldName": "puppy_to_session_id"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "HAD_VISIT",
+      "fromNodeLabel": "Visitor",
+      "toNodeLabel": "Session",
+      "id": [
+        {
+          "name": "puppy_id_session_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_visitor_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_session_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": []
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "catalog": "mysql_data",
+          "schema": "journey",
+          "table": "page_links",
+          "mappedField": [
+            {
+              "sourceFieldName": "link_id",
+              "targetFieldName": "puppy_id_link_id"
+            },
+            {
+              "sourceFieldName": "from_page",
+              "targetFieldName": "puppy_from_from_page"
+            },
+            {
+              "sourceFieldName": "to_page",
+              "targetFieldName": "puppy_to_to_page"
+            },
+            {
+              "sourceFieldName": "moves",
+              "targetFieldName": "moves"
+            },
+            {
+              "sourceFieldName": "sessions",
+              "targetFieldName": "sessions"
+            },
+            {
+              "sourceFieldName": "buyer_sessions",
+              "targetFieldName": "buyer_sessions"
+            }
+          ],
+          "enabled": true
+        }
+      },
+      "label": "LINKS_TO",
+      "fromNodeLabel": "Page",
+      "toNodeLabel": "Page",
+      "id": [
+        {
+          "name": "puppy_id_link_id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "puppy_from_from_page",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "puppy_to_to_page",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "moves",
+          "type": "INT"
+        },
+        {
+          "name": "sessions",
+          "type": "INT"
+        },
+        {
+          "name": "buyer_sessions",
+          "type": "INT"
+        }
+      ]
+    }
+  ]
+}

@@ -38,8 +38,8 @@ aws s3tables create-table --cli-input-json file://table_definition/knows_definit
 aws s3tables create-table --cli-input-json file://table_definition/created_definition.json
 ```
 
-### Grant Lake Formation permissions on your table
-Follow the step 3 in [s3 tables tutorial](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-getting-started.html#s3-tables-tutorial-create-table).
+### Integrate the table bucket with AWS analytics services
+Athena reads S3 Tables through the AWS Glue Data Catalog. Create the table bucket with **Enable integration** selected, or follow [Integrating Amazon S3 Tables with AWS analytics services](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-aws.html).
 
 ### Insert data
 Use AWS [Athena](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-athena.html) to insert data into tables.
@@ -73,7 +73,7 @@ docker run \
   -p 8081:8081 -p 8182:8182 -p 7687:7687 \
   -e PUPPYGRAPH_PASSWORD=puppygraph123  -e QUERY_TIMEOUT=5m \
   -d --name puppy --rm --pull=always \
-  puppygraph/puppygraph:stable
+  puppygraph/puppygraph:latest
 ```
 
 ### Log into the UI
@@ -84,9 +84,7 @@ Log into the PuppyGraph Web UI at http://localhost:8081 with the following crede
 ### Modeling the Graph
 Upload the schema:
 - Replace the placeholder in `schema.json` by your real value. (`table-bucket-arn` is something like `arn:aws:s3tables:<region>:<account-id>:bucket/<table-bucket-name>`.)
-- In Web UI, select the file `schema.json` under **Upload Graph Schema JSON**, then click on **Upload**.
-
-Optional: You can also create the schema using the schema builder via click on **Create graph schema**. You will add vertices and edges step by step. See the demo [video](https://www.youtube.com/watch?v=aKmHxjlComo).
+- Click **Upload Schema**, select the file `schema.json` and click **Upload**.
 
 ## Querying via PuppyGraph
 
@@ -131,25 +129,25 @@ Navigate to **Query** in the Web UI:
       --region <region> \
       --table-bucket-arn <table-bucket-arn> \
       --namespace puppygraph_test  \
-      --table-name person 
+      --name person 
 
   aws s3tables delete-table \
       --region <region> \
       --table-bucket-arn <table-bucket-arn> \
       --namespace puppygraph_test  \
-      --table-name software
+      --name software
 
   aws s3tables delete-table \
       --region <region> \
       --table-bucket-arn <table-bucket-arn> \
       --namespace puppygraph_test  \
-      --table-name knows
+      --name knows
   
   aws s3tables delete-table \
       --region <region> \
       --table-bucket-arn <table-bucket-arn> \
       --namespace puppygraph_test  \
-      --table-name created
+      --name created
 
   # Delete the namespace
   aws s3tables delete-namespace \

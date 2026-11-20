@@ -6,7 +6,7 @@ This demo showcases how to combine **Trino** (SQL OLAP engine) with **PuppyGraph
 over synthetic financial data in **Apache Iceberg**, inspired by the LDBC Financial Benchmark —
 no separate graph database needed, as PuppyGraph queries Iceberg tables directly.
 
-As data preparation, we first load local Parquet files into Iceberg (via MinIO object storage).
+As data preparation, we first load local Parquet files into Iceberg (via RustFS object storage).
 Then two complementary analytics patterns run on the same data:
 
 1. **SQL analytics via Trino** — aggregations, joins, and window functions.
@@ -14,7 +14,7 @@ Then two complementary analytics patterns run on the same data:
 
 ## Architecture: Dual-Path Data Access
 
-At the storage layer, data resides in Apache Iceberg tables backed by MinIO object storage. Trino provides a distributed SQL query engine that accesses these Iceberg tables through
+At the storage layer, data resides in Apache Iceberg tables backed by RustFS object storage. Trino provides a distributed SQL query engine that accesses these Iceberg tables through
 its connector framework, exposing them via a unified SQL interface.
 
 PuppyGraph can access this data in two ways:
@@ -41,12 +41,11 @@ data or maintaining separate graph pipelines.
 
 ```
 ├── README.md                          # This file
-├── docker-compose.yml                 # Trino, PuppyGraph, Iceberg REST, MinIO, mc
+├── docker-compose.yml                 # Trino, PuppyGraph, Iceberg REST, RustFS
 ├── versions.env                       # Docker image versions
 ├── config.yml                         # Python script config (localhost endpoints)
 ├── load_to_iceberg.py                 # Loads Parquet data into Iceberg
-├── schema-v2.json                     # PuppyGraph graph schema v2 (for PuppyGraph 1.x)
-├── schema-v1.json                     # PuppyGraph graph schema v1 (for PuppyGraph 0.x)
+├── schema.json                        # PuppyGraph graph schema
 ├── requirements.txt                   # Python dependencies
 ├── trino/
 │   └── catalog/
@@ -71,8 +70,7 @@ The services include:
 - **Trino** — SQL query engine (port 8080)
 - **PuppyGraph** — graph analytics engine (port 8081)
 - **Iceberg REST Catalog** — table metadata service (port 8181)
-- **MinIO** — S3-compatible object storage (API port 9000, console port 9001)
-- **mc** — MinIO client for initial bucket setup
+- **RustFS** — S3-compatible object storage (API port 9000, console port 9001); a one-shot `create-bucket` container creates the `warehouse` bucket
 
 ## Setting Up Python Environment
 
@@ -86,14 +84,14 @@ uv pip install -r requirements.txt
 
 ## Loading Data into Iceberg
 
-After the containers are up and the MinIO bucket is ready, load the Parquet data into Iceberg.
+After the containers are up and the `create-bucket` container has exited, load the Parquet data into Iceberg.
 
 ```bash
 python load_to_iceberg.py
 ```
 
 This script reads all 18 tables from `parquet_data/`, creates corresponding Iceberg tables under the
-`demo` namespace, and writes the data to MinIO-backed storage.
+`demo` namespace, and writes the data to RustFS-backed storage.
 
 ## Querying in Trino
 
@@ -135,20 +133,13 @@ Log into the PuppyGraph Web UI at http://localhost:8081 with the following crede
 - Username: `puppygraph`
 - Password: `puppygraph123`
 
-This demo defaults to PuppyGraph `1.0-preview` with the v2 schema format. Both schemas include
-local tables (called "local cache" in 0.x) for better query performance. Two schema files are
-provided:
+The schema in `schema.json` caches each Iceberg table into a PuppyGraph local table for better
+query performance.
 
-- **`schema-v2.json`** — v2 schema for PuppyGraph 1.x.
-- **`schema-v1.json`** — v1 schema for PuppyGraph 0.x (e.g., 0.113). PuppyGraph `1.0-preview` also
-  accepts v1 schemas and automatically converts them to v2 format when uploaded via the Web UI.
+To upload the schema: go to the **Graph** page in the Web UI, click **Upload**, select
+`schema.json` and choose **Cache data only** under **After Upload**.
 
-To upload the schema in PuppyGraph `1.0-preview`: go to the **Schema** page in the Web UI, click
-**Upload Schema**, and select `schema-v2.json`. Choose **Cache data only** under **After Upload**.
-For PuppyGraph 0.x, upload `schema-v1.json` instead.
-
-Wait for the schema to be uploaded successfully and the local tables (or local cache) to be fully
-loaded.
+Wait for the schema to be uploaded successfully and the local tables to be fully loaded.
 
 ## Querying via PuppyGraph
 

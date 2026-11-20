@@ -59,7 +59,7 @@ Follow the instructions up to step 4, **Manage the IP access list**:
 ## Modeling the Graph
 * Start PuppyGraph using Docker by running the following command:
   ```bash
-  docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 -e PUPPYGRAPH_PASSWORD=puppygraph123 -d --name puppy --rm --pull=always puppygraph/puppygraph:stable
+  docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 -e PUPPYGRAPH_PASSWORD=puppygraph123 -d --name puppy --rm --pull=always puppygraph/puppygraph:latest
   ```
 
 * Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
@@ -67,8 +67,8 @@ Follow the instructions up to step 4, **Manage the IP access list**:
   - Password: `puppygraph123`
 
 * Upload the schema:
-  - Fill the `username`, `password` and `jdbcUri` fields in the `schema.json` file with your MongoDB Atlas database credentials and JDBC URI.
-  - Select the file `schema.json` in the **Upload Graph Schema JSON** section and click on **Upload**. You can also upload the schema from the terminal using the `curl` command below.
+  - In `schema.json`, replace the `<atlas_db_user>`, `<atlas_db_password>` and `<atlas_sql_jdbc_uri>` placeholders with your MongoDB Atlas database user, its password and the Atlas SQL JDBC URI.
+  - Click **Upload Schema**, select the file `schema.json` and click **Upload**. You can also upload the schema from the terminal using the `curl` command below.
       ```sh
       curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --user "puppygraph:puppygraph123" localhost:8081/schema
       ```

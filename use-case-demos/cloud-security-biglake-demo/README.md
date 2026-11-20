@@ -100,7 +100,7 @@ docker run -p 8081:8081 -p 7687:7687 \
 	-e PUPPYGRAPH_USERNAME=puppygraph -e PUPPYGRAPH_PASSWORD=puppygraph123 \
 	-e AI_ENABLED=true \
 	--env-file .env \
-	-d --name puppy --rm --pull=always puppygraph/puppygraph:1.0-preview
+	-d --name puppy --rm --pull=always puppygraph/puppygraph:latest
 ```
 
 **Using a service account key file**, mount it into the container:
@@ -112,7 +112,7 @@ docker run -p 8081:8081 -p 7687:7687 \
 	-e PUPPYGRAPH_USERNAME=puppygraph -e PUPPYGRAPH_PASSWORD=puppygraph123 \
 	-e AI_ENABLED=true \
 	--env-file .env \
-	-d --name puppy --rm --pull=always puppygraph/puppygraph:1.0-preview
+	-d --name puppy --rm --pull=always puppygraph/puppygraph:latest
 ```
 
 Replace `<key_file>` with the path to your service account key file.

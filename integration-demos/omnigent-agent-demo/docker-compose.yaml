@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: payments
+    volumes:
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d payments"]
+      interval: 2s
+      retries: 30
+
+  puppygraph:
+    image: puppygraph/puppygraph:latest
+    environment:
+      PUPPYGRAPH_USERNAME: puppygraph
+      PUPPYGRAPH_PASSWORD: puppygraph123
+    ports:
+      - "8081:8081"   # Web UI + REST (schema)
+      - "8182:8182"   # Gremlin
+      - "7687:7687"   # Bolt (openCypher)
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+networks:
+  default:
+    name: puppy-omnigent-agent

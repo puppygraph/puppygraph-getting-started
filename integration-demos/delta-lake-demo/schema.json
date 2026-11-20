@@ -1,5 +1,5 @@
 {
-  "catalogs": [
+  "catalog": [
     {
       "name": "demo",
       "type": "deltalake",
@@ -13,160 +13,200 @@
       }
     }
   ],
-  "graph": {
-    "vertices": [
-      {
-        "label": "person",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "demo",
-            "schema": "modern",
-            "table": "person"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+  "node": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "demo",
+          "schema": "modern",
+          "table": "person",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "INT",
-              "field": "age",
-              "alias": "age"
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "age",
+              "targetFieldName": "age"
             }
           ]
         }
       },
-      {
-        "label": "software",
-        "oneToOne": {
-          "tableSource": {
-            "catalog": "demo",
-            "schema": "modern",
-            "table": "software"
-          },
-          "id": {
-            "fields": [
-              {
-                "type": "STRING",
-                "field": "id",
-                "alias": "id"
-              }
-            ]
-          },
-          "attributes": [
+      "label": "person",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "age",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "demo",
+          "schema": "modern",
+          "table": "software",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "name",
-              "alias": "name"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
             },
             {
-              "type": "STRING",
-              "field": "lang",
-              "alias": "lang"
+              "sourceFieldName": "name",
+              "targetFieldName": "name"
+            },
+            {
+              "sourceFieldName": "lang",
+              "targetFieldName": "lang"
             }
           ]
         }
-      }
-    ],
-    "edges": [
-      {
-        "label": "created",
-        "fromVertex": "person",
-        "toVertex": "software",
-        "tableSource": {
-          "catalog": "demo",
-          "schema": "modern",
-          "table": "created"
-        },
-        "id": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "id",
-              "alias": "id"
-            }
-          ]
-        },
-        "fromId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "from_id",
-              "alias": "from_id"
-            }
-          ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "to_id",
-              "alias": "to_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "DOUBLE",
-            "field": "weight",
-            "alias": "weight"
-          }
-        ]
       },
-      {
-        "label": "knows",
-        "fromVertex": "person",
-        "toVertex": "person",
-        "tableSource": {
+      "label": "software",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "lang",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
           "catalog": "demo",
           "schema": "modern",
-          "table": "knows"
-        },
-        "id": {
-          "fields": [
+          "table": "created",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "id",
-              "alias": "id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "from_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "to_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "weight",
+              "targetFieldName": "weight"
             }
           ]
-        },
-        "fromId": {
-          "fields": [
+        }
+      },
+      "label": "created",
+      "fromNodeLabel": "person",
+      "toNodeLabel": "software",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "weight",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "demo",
+          "schema": "modern",
+          "table": "knows",
+          "mappedField": [
             {
-              "type": "STRING",
-              "field": "from_id",
-              "alias": "from_id"
+              "sourceFieldName": "id",
+              "targetFieldName": "id"
+            },
+            {
+              "sourceFieldName": "from_id",
+              "targetFieldName": "from_id"
+            },
+            {
+              "sourceFieldName": "to_id",
+              "targetFieldName": "to_id"
+            },
+            {
+              "sourceFieldName": "weight",
+              "targetFieldName": "weight"
             }
           ]
-        },
-        "toId": {
-          "fields": [
-            {
-              "type": "STRING",
-              "field": "to_id",
-              "alias": "to_id"
-            }
-          ]
-        },
-        "attributes": [
-          {
-            "type": "DOUBLE",
-            "field": "weight",
-            "alias": "weight"
-          }
-        ]
-      }
-    ]
-  }
+        }
+      },
+      "label": "knows",
+      "fromNodeLabel": "person",
+      "toNodeLabel": "person",
+      "id": [
+        {
+          "name": "id",
+          "type": "STRING"
+        }
+      ],
+      "fromKey": [
+        {
+          "name": "from_id",
+          "type": "STRING"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "weight",
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  ]
 }

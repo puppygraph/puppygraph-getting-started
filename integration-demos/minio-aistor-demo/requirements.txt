@@ -1,0 +1,6 @@
+pyarrow==23.0.1
+pyiceberg[pyarrow,s3fs]==0.11.1
+boto3==1.42.49
+ijson==3.4.0.post0
+pandas==2.3.3
+Faker==37.12.0

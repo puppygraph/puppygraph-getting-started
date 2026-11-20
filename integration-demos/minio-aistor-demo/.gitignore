@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+*.license
+schema.runtime.json
+json_data/
+parquet_data/
+*.tar

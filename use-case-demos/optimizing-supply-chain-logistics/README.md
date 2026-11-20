@@ -136,7 +136,7 @@ CREATE TABLE supply.productshipment (
 ## Modeling the Graph
 1. Start the PuppyGraph:
 ```bash
-sudo docker run -p 8080:8080 -p 8081:8081 -p 8182:8182 -p 7687:7687 -d --name puppy --rm puppygraph/puppygraph:stable
+docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 -e PUPPYGRAPH_PASSWORD=puppygraph123 -d --name puppy --rm --pull=always puppygraph/puppygraph:latest
 ```
 
 2. Log into the PuppyGraph Web UI at http://localhost:8081 with the following credentials:
@@ -147,7 +147,7 @@ sudo docker run -p 8080:8080 -p 8081:8081 -p 8182:8182 -p 7687:7687 -d --name pu
 - Replace the `username`, `password` and `jdbcUri` fields in the `schema.json` file with your Redshift credentials.
 
 4. Upload the schema:
-- Select the file `schema.json` in the Upload Graph Schema JSON section and click on Upload.
+- Click **Upload Schema**, select the file `schema.json` and click **Upload**.
 
 ## Querying the Graph
 
@@ -219,5 +219,5 @@ g.V("Product[88]")
 ## Cleanup and Teardown
 - To stop and remove the PuppyGraph container:
 ```bash
-sudo docker stop puppy
+docker stop puppy
 ```

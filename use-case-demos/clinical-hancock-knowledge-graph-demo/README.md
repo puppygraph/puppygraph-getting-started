@@ -33,9 +33,14 @@ aws configure --profile hancock-demo
 export AWS_PROFILE=hancock-demo
 ```
 
-Configure your S3 and Glue settings (or leave defaults to use the demo bucket):
+Create an S3 bucket you own for the parquet files and the Iceberg warehouse. Bucket names are global across all AWS accounts, so replace `YOUR_ACCOUNT_ID` with your account ID:
 ```bash
-export S3_BUCKET=puppy-aws-hcls-hancock-demo
+aws s3 mb s3://hancock-demo-YOUR_ACCOUNT_ID --profile hancock-demo
+```
+
+Configure your S3 and Glue settings:
+```bash
+export S3_BUCKET=hancock-demo-YOUR_ACCOUNT_ID
 export S3_PREFIX=parquet_data
 export GLUE_DATABASE=hancock_db
 export OVERWRITE_GLUE_TABLES=true
@@ -101,7 +106,7 @@ docker run -p 8081:8081 -p 8182:8182 -p 7687:7687 \
   -e AWS_REGION=<region> \
   -e AWS_ACCESS_KEY_ID=<AccessKeyId> \
   -e AWS_SECRET_ACCESS_KEY=<SecretAccessKey> \
-  -d --name puppy --rm --pull=always puppygraph/puppygraph:stable
+  -d --name puppy --rm --pull=always puppygraph/puppygraph:latest
 ```
 
 ### Log into the UI
@@ -111,9 +116,7 @@ Log into the PuppyGraph Web UI at http://localhost:8081 with the following crede
 
 ### Modeling the Graph
 Upload the schema:
-- In Web UI, select the file `schema.json` under **Upload Graph Schema JSON**, then click on **Upload**.
-
-Optional: You can also create the schema using the schema builder via click on **Create graph schema**. You will add vertices and edges step by step.
+- Click **Upload Schema**, select the file `schema.json` and click **Upload**.
 
 ## Querying via PuppyGraph
 
