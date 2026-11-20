@@ -1,0 +1,34 @@
+SET search_path TO mimic;
+
+\copy person FROM '/tmp/1_omop_data_csv/person.csv' CSV HEADER
+\copy observation_period FROM '/tmp/1_omop_data_csv/observation_period.csv' CSV HEADER
+\copy visit_occurrence FROM '/tmp/1_omop_data_csv/visit_occurrence.csv' CSV HEADER
+\copy visit_detail FROM '/tmp/1_omop_data_csv/visit_detail.csv' CSV HEADER
+\copy condition_occurrence FROM '/tmp/1_omop_data_csv/condition_occurrence.csv' CSV HEADER
+\copy drug_exposure FROM '/tmp/1_omop_data_csv/drug_exposure.csv' CSV HEADER
+\copy procedure_occurrence FROM '/tmp/1_omop_data_csv/procedure_occurrence.csv' CSV HEADER
+\copy device_exposure FROM '/tmp/1_omop_data_csv/device_exposure.csv' CSV HEADER
+\copy measurement FROM '/tmp/1_omop_data_csv/measurement.csv' CSV HEADER
+\copy observation FROM '/tmp/1_omop_data_csv/observation.csv' CSV HEADER
+\copy death FROM '/tmp/1_omop_data_csv/death.csv' CSV HEADER
+\copy note FROM '/tmp/1_omop_data_csv/note.csv' CSV HEADER
+\copy note_nlp FROM '/tmp/1_omop_data_csv/note_nlp.csv' CSV HEADER
+\copy specimen FROM '/tmp/1_omop_data_csv/specimen.csv' CSV HEADER
+\copy fact_relationship FROM '/tmp/1_omop_data_csv/fact_relationship.csv' CSV HEADER
+\copy location FROM '/tmp/1_omop_data_csv/location.csv' CSV HEADER
+\copy care_site FROM '/tmp/1_omop_data_csv/care_site.csv' CSV HEADER
+\copy provider FROM '/tmp/1_omop_data_csv/provider.csv' CSV HEADER
+\copy payer_plan_period FROM '/tmp/1_omop_data_csv/payer_plan_period.csv' CSV HEADER
+\copy cost FROM '/tmp/1_omop_data_csv/cost.csv' CSV HEADER
+\copy drug_era FROM '/tmp/1_omop_data_csv/drug_era.csv' CSV HEADER
+\copy dose_era FROM '/tmp/1_omop_data_csv/dose_era.csv' CSV HEADER
+\copy condition_era FROM '/tmp/1_omop_data_csv/condition_era.csv' CSV HEADER
+\copy metadata FROM '/tmp/1_omop_data_csv/metadata.csv' CSV HEADER
+\copy cdm_source FROM '/tmp/1_omop_data_csv/cdm_source.csv' CSV HEADER
+\copy concept FROM '/tmp/1_omop_data_csv/2b_concept.csv' CSV HEADER
+\copy vocabulary FROM '/tmp/1_omop_data_csv/2b_vocabulary.csv' CSV HEADER
+\copy concept_relationship FROM '/tmp/1_omop_data_csv/2b_concept_relationship.csv' CSV HEADER
+\copy cohort_definition FROM '/tmp/1_omop_data_csv/cohort_definition.csv' CSV HEADER
+\copy cohort FROM '/tmp/1_omop_data_csv/cohort.csv' CSV HEADER
+\copy cohort_attribute FROM '/tmp/1_omop_data_csv/cohort_attribute.csv' CSV HEADER
+\copy attribute_definition FROM '/tmp/1_omop_data_csv/attribute_definition.csv' CSV HEADER

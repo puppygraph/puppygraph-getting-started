@@ -10,7 +10,7 @@ This demo illustrates how **PuppyGraph** enables complex multi-hop queries on he
 - **Multi-Dimensional Analysis:** Discover complex patients with diverse healthcare interactions across conditions, medications, and measurements
 - **Care Coordination:** Identify high-risk patients requiring coordinated care management
 
-The system uses **Unity Catalog** with **Delta Lake** tables, and **Apache Spark** for the initial writes. **PuppyGraph** is used as the graph query engine, allowing seamless integration of relational healthcare data into a graph structure for powerful multi-hop analytics.
+The system uses **PostgreSQL** as the data storage backend and **PuppyGraph** as the graph query engine, allowing seamless integration of relational healthcare data into a graph structure for powerful multi-hop analytics.
 
 ## Project Structure
 
@@ -19,8 +19,7 @@ The system uses **Unity Catalog** with **Delta Lake** tables, and **Apache Spark
 ├── docker-compose.yaml
 ├── schema.json
 ├── create_tables.sql
-├── import_csv.py
-├── register.sh
+├── import_csv.sql
 └── 1_omop_data_csv/       # Place MIMIC-IV OMOP CSV files here
 ```
 
@@ -30,7 +29,7 @@ The system uses **Unity Catalog** with **Delta Lake** tables, and **Apache Spark
 
 ## Deployment
 
-1. Start Unity Catalog, Apache Spark, and PuppyGraph by running:
+1. Start PostgreSQL and PuppyGraph by running:
 ```bash
 docker compose up -d
 ```
@@ -42,20 +41,15 @@ docker compose up -d
    - Scroll to the bottom of the page to find the data files
    - Download the CSV files and place them into the `1_omop_data_csv` directory.
 
-2. Copy the downloaded data into the Spark container:
+2. Copy the downloaded data into the postgres container:
 ```bash
-docker cp ./1_omop_data_csv spark:/tmp/
+docker cp ./1_omop_data_csv postgres:/tmp/
 ```
 
-3. From the `clinical-omop-knowledge-graph-demo` project directory on the host machine, execute the SQL files to create tables and import data:
+3. From the `mimic-omop` project directory on the host machine, execute the SQL files to create tables and import data:  
 ```bash
-docker exec -i spark /opt/spark/bin/spark-sql < create_tables.sql
-docker exec -i spark /opt/spark/bin/pyspark < import_csv.py
-```
-
-4. From the `clinical-omop-knowledge-graph-demo` project directory on the host machine, execute the following Bash script to register the tables in Unity Catalog:
-```bash
-./register.sh
+docker exec -i postgres psql -U postgres -d mimic < ./create_tables.sql
+docker exec -i postgres psql -U postgres -d mimic < ./import_csv.sql
 ```
 
 ## Modeling the Graph
@@ -65,11 +59,11 @@ docker exec -i spark /opt/spark/bin/pyspark < import_csv.py
    - Password: `puppygraph123`
 
 2. Upload the schema:
-   - In the **Upload Graph Schema JSON** section, select the file `schema.json` and click **Upload**. When prompted whether to cache data after upload, select **Cache data only**.
-   - You can also upload the schema using `curl`. The `postUploadBehavior=load` parameter is the equivalent of **Cache data only**; without it the cached tables are created empty and queries return no rows:
+   - Click **Upload Schema**, select the file `schema.json` and click **Upload**.
+   - You can also upload the schema using `curl`:
 
         ```bash
-        curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --user "puppygraph:puppygraph123" "localhost:8081/schema?postUploadBehavior=load"
+        curl -XPOST -H "content-type: application/json" --data-binary @./schema.json --user "puppygraph:puppygraph123" localhost:8081/schema
         ```
 
 ## Querying the Graph using Cypher
