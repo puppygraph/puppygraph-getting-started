@@ -10,7 +10,7 @@ This demo illustrates how **PuppyGraph** enables complex multi-hop queries on he
 - **Multi-Dimensional Analysis:** Discover complex patients with diverse healthcare interactions across conditions, medications, and measurements
 - **Care Coordination:** Identify high-risk patients requiring coordinated care management
 
-The system uses **Unity Catalog** with **Delta Lake** tables, and **Apache Spark** for the initial writes. **PuppyGraph** is used as the graph query engine, allowing seamless integration of relational healthcare data into a graph structure for powerful multi-hop analytics.
+The system uses **Unity Catalog** with **Delta Lake** tables, and **Apache Spark** for loading the data into the tables. **PuppyGraph** is used as the graph query engine, allowing seamless integration of relational healthcare data into a graph structure for powerful multi-hop analytics.
 
 A PostgreSQL version of this demo is available in [clinical-omop-knowledge-graph-demo](../clinical-omop-knowledge-graph-demo/).
 
