@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: bank360-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: puppygraph123
+      POSTGRES_DB: bank360
+    volumes:
+      - ./data:/data
+    ports:
+      - "5432:5432"
+    networks:
+      - bank360-net
+
+  puppygraph:
+    image: puppygraph/puppygraph:1.0-preview
+    container_name: puppygraph
+    environment:
+      - PUPPYGRAPH_USERNAME=puppygraph
+      - PUPPYGRAPH_PASSWORD=puppygraph123
+    ports:
+      - "8081:8081"
+      - "8182:8182"
+      - "7687:7687"
+    depends_on:
+      - postgres
+    networks:
+      - bank360-net
+
+networks:
+  bank360-net:

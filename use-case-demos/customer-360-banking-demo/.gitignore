@@ -1,0 +1,10 @@
+data/*.csv
+data/
+
+# Python
+__pycache__/
+*.pyc
+
+
+.claude/
+.DS_Store
