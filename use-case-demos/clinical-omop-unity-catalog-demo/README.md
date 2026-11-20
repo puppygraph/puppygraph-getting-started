@@ -49,7 +49,7 @@ docker compose up -d
 docker cp ./1_omop_data_csv spark:/tmp/
 ```
 
-3. From the `clinical-omop-unity-catalog-demo` project directory on the host machine, execute the SQL files to create tables and import data:
+3. From the `clinical-omop-unity-catalog-demo` project directory on the host machine, run the SQL script to create the tables and the Python script to import the data:
 ```bash
 docker exec -i spark /opt/spark/bin/spark-sql < create_tables.sql
 docker exec -i spark /opt/spark/bin/pyspark < import_csv.py

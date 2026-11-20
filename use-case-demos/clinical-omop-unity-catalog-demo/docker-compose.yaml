@@ -1,6 +1,6 @@
 services:
   unitycatalog:
-    image: unitycatalog/unitycatalog:latest
+    image: unitycatalog/unitycatalog:v0.7.0
     container_name: unitycatalog
     networks:
       demo_net:
@@ -18,9 +18,6 @@ services:
     volumes:
       - ./spark-conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
       - ./delta:/delta
-    environment:
-      AWS_ACCESS_KEY_ID: admin
-      AWS_SECRET_ACCESS_KEY: password
     command: ["bash", "-lc", "tail -f /dev/null"]
   puppygraph:
     image: puppygraph/puppygraph:latest
